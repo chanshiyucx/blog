@@ -72,18 +72,18 @@ avatar: //dn-coding-net-production-pp.qbox.me/3532da9e-bcde-4aff-83c9-0679eea3c7
 
 ## 岁月小筑
 
-link: https://www.iamlzh.com/
-cover: https://dn-coding-net-production-pp.qbox.me/bdceacf3-4640-413c-a250-b36349cc1150.png
-avatar: https://www.iamlzh.com/wp-content/uploads/2018/05/touxiang.png
+link: //www.iamlzh.com/
+cover: //dn-coding-net-production-pp.qbox.me/bdceacf3-4640-413c-a250-b36349cc1150.png
+avatar: //www.iamlzh.com/wp-content/uploads/2018/05/touxiang.png
 
 ## 下午茶的轻音部
 
-link: https://www.haibara.top/
-cover: https://dn-coding-net-production-pp.qbox.me/7a39ba8a-8a28-418e-a08d-834cd4dbc71f.png
-avatar: https://dn-coding-net-production-pp.qbox.me/8da727b1-fde2-4531-9fd8-b7eed851311e.png
+link: //www.haibara.top/
+cover: //dn-coding-net-production-pp.qbox.me/7a39ba8a-8a28-418e-a08d-834cd4dbc71f.png
+avatar: //dn-coding-net-production-pp.qbox.me/8da727b1-fde2-4531-9fd8-b7eed851311e.png
 
 ## MIKUSAの小站
 
-link: https://www.himiku.com
-cover: https://dn-coding-net-production-pp.qbox.me/b3f20bb5-6548-48cc-91fb-bbad93cea3a1.png
-avatar: https://file.mikusa.cn/usr/uploads/pictures/user.jpg
+link: //www.himiku.com
+cover: //dn-coding-net-production-pp.qbox.me/b3f20bb5-6548-48cc-91fb-bbad93cea3a1.png
+avatar: //file.mikusa.cn/usr/uploads/pictures/user.jpg
