@@ -1,4 +1,4 @@
-JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和 张易江（设计）完成，由[三生石上](http://sanshi.me/)翻译完成。其实去年本已读完此书，这次温故知新，做一番总结。<!-- more -->
+JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。<!-- more -->
 
 ## 对象
 
@@ -37,25 +37,27 @@ Foo.prototype = {
 
 // 设置 Bar.prototype 属性为 Foo 的实例对象
 Bar.prototype = new Foo()
-Bar.prototype.foo = ‘Hello World’
+Bar.prototype.foo = 'Hello World'
 
 // 修正 Bar.prototype.constructor 为 Bar 本身
 Bar.prototype.constructor = Bar
 
-test [Bar的实例]
-    Bar.prototype [Foo的实例]
-      { foo: ‘Hello World’ }
-      Foo.prototype
-          { method: ... }
-          Object.prototype
-              { toString:... }
+/**
+ * test [Bar的实例]
+ *     Bar.prototype [Foo的实例]
+ *       { foo: 'Hello World' }
+ *       Foo.prototype
+ *           { method: ... }
+ *           Object.prototype
+ *               { toString:... }
+ */
 ```
 
 ![继承与原型链](https://dn-coding-net-production-pp.qbox.me/b5d9bf26-e327-4728-b46d-2618d30b04cb.png)
 
-> 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object ）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象 ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
+> 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
-**someObject.[[Prototype]]** 符号是用于指向 someObject 的原型。从 ECMAScript 6 开始，`[[Prototype]]` 可以通过 `Object.getPrototypeOf()` 和 `Object.setPrototypeOf()` 访问器来访问。这个等同于 JavaScript 的非标准但许多浏览器实现的属性 `__proto__`。
+**someObject.[[Prototype]]** 符号是用于指向 someObject 的原型。从 ECMAScript6 开始，`[[Prototype]]` 可以通过 `Object.getPrototypeOf()` 和 `Object.setPrototypeOf()` 访问器来访问。这个等同于 JavaScript 的非标准但许多浏览器实现的属性 `__proto__`。
 
 但它不应该与构造函数 func 的 `prototype` 属性相混淆。被构造函数创建的实例对象的 `[[prototype]]` 指向 func 的 `prototype` 属性。 **Object.prototype** 属性表示 object 的原型对象。
 
@@ -91,11 +93,11 @@ const foo = function bar() {
 bar() // 出错：ReferenceError
 ```
 
-bar 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo； 然而在 bar 内部依然可见。这是由于 JavaScript 的 命名处理所致，函数名在函数内总是可见的。
+bar 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo； 然而在 bar 内部依然可见。这是由于 JavaScript 的命名处理所致，函数名在函数内总是可见的。
 
 ### this 的工作原理
 
-JavaScript 有一套完全不同于其它语言的对 this 的处理机制。 在**五**种不同的情况下 ，this 指向的各不相同。
+JavaScript 有一套完全不同于其它语言的对 this 的处理机制。在**五**种不同的情况下，this 指向的各不相同。
 
 - 全局范围内：this 指向全局对象。但在严格模式下，不存在全局变量，this 将会是 undefined。
 - 函数调用：this 指向全局对象。
@@ -148,14 +150,14 @@ arguments 对象为其内部属性以及函数形式参数创建 getter 和 sett
 ```javascript
 function foo(a, b, c) {
   arguments[0] = 2
-  a // 2
+  console.log(a) // 2
 
   b = 4
-  arguments[1] // 4
+  console.log(arguments[1]) // 4
 
   var d = c
   d = 9
-  c // 3
+  console.log(c) // 3
 }
 foo(1, 2, 3)
 ```
@@ -198,6 +200,8 @@ foo // [1, 2, 3]
 
 ### 相等与比较
 
+JavaScript 是弱类型语言，这就意味着等于操作符会为了比较两个值而进行强制类型转换。
+
 ```javascript
 ''           ==   '0'           // false
 0            ==   ''            // true
@@ -225,7 +229,7 @@ typeof foo !== 'undefined'
 ### JavaScript 类型表格
 
 | Value              | Class    | Type     |
-|:-----------------: | :------: | :------: |
+| :----------------: | :------: | :------: |
 | 'foo'              | String   | string   |
 | new String('foo')  | String   | object   |
 | 1.2                | Number   | number   |
@@ -283,9 +287,6 @@ new String('foo') instanceof Object // true
 'foo' instanceof Object // false
 ```
 
-有一点需要注意，instanceof 用来比较属于不同 JavaScript 上下文的对象（比如，浏览器中不同的文档结构）时将会出错， 因为它们的构造函数不会是同一个对象。
+有一点需要注意，instanceof 用来比较属于不同 JavaScript 上下文的对象（比如，浏览器中不同的文档结构）时将会出错，因为它们的构造函数不会是同一个对象。
 
-instanceof 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。 正如 typeof 操作符一样，任何其它的用法都应该是避免的。
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMzAzMjU0M119
--->
+instanceof 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。正如 typeof 操作符一样，任何其它的用法都应该是避免的。
