@@ -1,14 +1,14 @@
 《JavaScript 设计模式与开发实践》是去年在多看阅读上买的电子书，拖延症晚期患者在快一年后终于把这本书粗略读完，顺便做个笔记，加以总结，以便往后重新翻阅温习。
 
-##  设计模式
+## 设计模式
 
 设计模式的定义：**在面向对象软件设计过程中针对特定问题的简洁而优雅的解决方案**。
 
 所有设计模式的实现都遵循一条原则，即“**找出程序中变化的地方，并将变化封装起来**”。
 
-《JavaScript常用设计模式》分为三大部分：
+《JavaScript 常用设计模式》分为三大部分：
 
-第一部分面向对象的 JavaScript， 讲解了 JavaScript 面向对象和函数式编程方面的知识，主要包括静态类型语言和动态类型语言的区别及其在实现设计模式时的异同，以及封装、继承、多态在动态类型语言中的体现，此外还介绍了 JavaScript 基于原型继承的面向对象系统的来龙去脉，给学习设计模式做好铺垫。
+第一部分讲解了 JavaScript 面向对象和函数式编程方面的知识，主要包括静态类型语言和动态类型语言的区别及其在实现设计模式时的异同，以及封装、继承、多态在动态类型语言中的体现，此外还介绍了 JavaScript 基于原型继承的面向对象系统的来龙去脉，给学习设计模式做好铺垫。
 
 第二部分是核心部分，通过从普通到更好的代码示例，由浅到深地讲解了 16 个设计模式。
 
@@ -16,7 +16,11 @@
 
 本篇是第一部分基础知识的相关总结。
 
-## 动态类型语言和鸭子类型
+## 面向对象的 JavaScript
+
+JavaScript 没有提供传统面向对象语言中的类式继承，而是通过原型委托的方式来实现对象与对象之间的继承。
+
+### 动态类型语言和鸭子类型
 
 编程语言按照数据类型大体可以分为两类，一类是静态类型语言，另一类是动态类型语言。
 
@@ -26,66 +30,63 @@
 
 这一切都建立在鸭子类型（duck typing）的概念上，鸭子类型指导我们只关注对象的行为，而不关注对象本身，也就是关注 **HAS-A**，而不是 **IS-A**。
 
-在动态类型语言的面向对象设计中，鸭子类型的概念至关重要。利用鸭子类型的思想，我们不必借助超类型的帮助，就能轻松地在动态类型语言中实现一个原则：**“面向接口编程，而不是面向实现编程”**。“面向接口编程”是设计模式中最重要的思想。
+在动态类型语言的面向对象设计中，鸭子类型的概念至关重要。利用鸭子类型的思想，我们不必借助超类型的帮助，就能轻松地在动态类型语言中实现一个原则：**“面向接口编程，而不是面向实现编程”**。
 
 在静态类型语言中，要实现“面向接口编程”并不是一件容易的事情，往往要通过抽象类或者接口等将对象进行向上转型。当对象的真正类型被隐藏在它的超类型身后，这些对象才能在类型检查系统的“监视”之下互相被替换使用。只有当对象能够被互相替换使用，才能体现出对象多态性的价值。
 
-JavaScript 没有提供传统面向对象语言中的类式继承，而是通过原型委托的方式来实现对象与对象之间的继承。
-
-## 多态
+### 多态
 
 多态的实际含义：**同一操作作用于不同的对象上面，可以产生不同的解释和不同的执行结果**。
 
 多态背后的思想是将“做什么”和“谁去做以及怎样去做”分离开来，也就是将“不变的事物”与“可能改变的事物”分离开来。把不变的部分隔离出来，把可变的部分封装起来，这给予了我们扩展程序的能力，程序看起来是可生长的，也是符合开放—封闭原则的，相对于修改代码来说，仅仅增加代码就能完成同样的功能，这显然优雅和安全得多。
 
-### 继承与多态
+#### 继承与多态
 
 对于静态语言类型，类型检查是在表现出对象多态性之前的一个绕不开的话题，静态类型的面向对象语言通常被设计为可以向上转型：当给一个类变量赋值时，这个变量的类型既可以使用这个类本身，也可以使用这个类的超类。
 
 使用继承来得到多态效果，是让对象表现出多态性的最常用手段。继承通常包括实现继承和接口继承。
 
 ```java
-public abstract class Animal {    
-  abstract void makeSound();   // 抽象方法
+public abstract class Animal {
+  abstract void makeSound(); // 抽象方法
 }
 
-public class Chicken extends Animal{    
-  public void makeSound(){        
-    System.out.println( "咯咯咯" );    
+public class Chicken extends Animal {
+  public void makeSound() {
+    System.out.println( "咯咯咯" );
   }
 }
 
-public class Duck extends Animal{    
-  public void makeSound(){        
-    System.out.println( "嘎嘎嘎" );    
+public class Duck extends Anima{
+  public void makeSound() {
+    System.out.println( "嘎嘎嘎" );
   }
 }
 
-Animal duck = new Duck();          // (1)
-Animal chicken = new Chicken();    // (2)
+Animal duck = new Duck();       // (1)
+Animal chicken = new Chicken(); // (2)
 
-public class AnimalSound{    
-  public void makeSound( Animal animal ){    // 接受Animal类型的参数        
-    animal.makeSound();    
+public class AnimalSoun{
+  public void makeSound(Animal animal) { // 接受Animal类型的参数
+    animal.makeSound();
   }
 }
 
 public class Test {
-  public static void main( String args[] ){        
-    AnimalSound animalSound= new AnimalSound ();        
-    Animal duck = new Duck();        
-    Animal chicken = new Chicken();        
-    animalSound.makeSound( duck );    // 输出嘎嘎嘎        
-    animalSound.makeSound( chicken ); // 输出咯咯咯    
-  }
+  public static void main(String args[]) {
+    AnimalSound animalSound= new AnimalSound();
+    Animal duck = new Duck();
+    Animal chicken = new Chicken();
+    animalSound.makeSound(duck);    // 输出嘎嘎嘎
+    animalSound.makeSound(chicken); // 输出咯咯咯
 }
 ```
 
 上面 java 例子中先创建一个 Animal 抽象类，再分别让 Duck 和 Chicken 都继承自 Animal 抽象类，然后让 AnimalSound 类的 makeSound 方法接受 Animal 类型的参数，而不是具体的 Duck 类型或者 Chicken 类型。
 
-### JavaScript 的多态
+#### JavaScript 的多态
 
-多态的思想实际上是把“做什么”和“谁去做”分离开来，要实现这一点，归根结底先要消除类型之间的耦合关系。在 Java 中，可以通过向上转型来实现多态。而 JavaScript 的变量类型在运行期是可变的，这意味着  JavaScript 对象的多态性是与生俱来的，并不需要诸如向上转型之类的技术来取得多态的效果。
+多态的思想实际上是把“做什么”和“谁去做”分离开来，要实现这一点，归根结底先要消除类型之间的耦合关系。在 Java 中，可以通过向上转型来实现多态。而 JavaScript 的变量类型在运行期是可变的，这意味着 JavaScript 对象的多态性是与生俱来的，并不需要诸如向上转型之类的技术来取得多态的效果。
 
 Martin Fowler在《重构：改善既有代码的设计》里写到：
 
@@ -95,19 +96,19 @@ Martin Fowler在《重构：改善既有代码的设计》里写到：
 
 ```javascript
 let googleMap = {
-  show:  function() {
+  show: function() {
     console.log('开始渲染谷歌地图')
   }
 }
 
 let baiduMap = {
-  show:  function() {
+  show: function() {
     console.log('开始渲染百度地图')
   }
 }
 
-let  renderMap  =  function(map) {
-  if (map.show instanceof  Function) {
+let renderMap = function(map) {
+  if (map.show instanceof Function) {
     map.show()
   }
 }
@@ -116,21 +117,21 @@ renderMap(googleMap) // 输出：开始渲染谷歌地图
 renderMap(baiduMap)  // 输出：开始渲染百度地图
 ```
 
-在 JavaScript 这种将函数作为一等对象的语言中，函数本身也是对象，函数用来封装行为并且能够被四处传递。当我们对一些函数发出“调用”的消息时，这些函数会返回不同的执行结果，这是“多态性”的一种体现，也是很多设计模式在JavaScript 中可以用高阶函数来代替实现的原因。
+在 JavaScript 这种将函数作为一等对象的语言中，函数本身也是对象，函数用来封装行为并且能够被四处传递。当我们对一些函数发出“调用”的消息时，这些函数会返回不同的执行结果，这是“多态性”的一种体现，也是很多设计模式在 JavaScript 中可以用高阶函数来代替实现的原因。
 
-## 封装
+### 封装
 
 封装的目的是将信息隐藏。一般而言，我们讨论的封装是封装数据和封装实现。还有更广义的封装，不仅包括封装数据和封装实现，还包括封装类型和封装变化。
 
-### 封装数据
+#### 封装数据
 
 在许多语言的对象系统中，封装数据是由语法解析来实现的，如 java 提供了 private、public、protected 等关键字来提供不同的访问权限。但 JavaScript 并没有提供对这些关键字的支持，我们只能依赖变量的作用域来实现封装特性，而且只能模拟出 public 和 private 这两种封装性。
 
 ```javascript
 let myObject = (function() {
-  let __name =  'sven'  // 私有（private）变量
+  let __name = 'sven'  // 私有（private）变量
   return {
-    getName:  function() { // 公开（public）方法
+    getName: function() { // 公开（public）方法
       return __name
     }
   }
@@ -140,109 +141,114 @@ console.log(myObject.getName())  // 输出：sven
 console.log(myObject.__name)     // 输出：undefined
 ```
 
-###  封装实现
+#### 封装实现
 
 封装的目的是将信息隐藏，封装应该被视为“任何形式的封装”，也就是说，封装不仅仅是隐藏数据，还包括隐藏实现细节、设计细节以及隐藏对象的类型等。
 
 从封装实现细节来讲，封装使得对象内部的变化对其他对象而言是透明的，也就是不可见的。对象对它自己的行为负责。其他对象或者用户都不关心它的内部实现。封装使得对象之间的耦合变松散，对象之间只通过暴露的 API 接口来通信。当我们修改一个对象时，可以随意地修改它的内部实现，只要对外的接口没有变化，就不会影响到程序的其他功能。
 
-### 封装类型
+#### 封装类型
 
 封装类型是静态类型语言中一种重要的封装方式。一般而言，封装类型是通过**抽象类和接口**来进行的。把对象的真正类型隐藏在抽象类或者接口之后，相比对象的类型，客户更关心对象的行为。在许多静态语言的设计模式中，想方设法地去隐藏对象的类型，也是促使这些模式诞生的原因之一。比如工厂方法模式、组合模式等。
 
 当然在 JavaScript 中，并没有对抽象类和接口的支持。JavaScript 本身也是一门类型模糊的语言。在封装类型方面，JavaScript 没有能力，也没有必要做得更多。
 
-### 封装变化
+#### 封装变化
 
-《设计模式》一书曾提到如下文字：
+从设计模式的角度出发，封装在更重要的层面体现为封装变化。《设计模式》一书曾提到如下文字：
 
 > 考虑你的设计中哪些地方可能变化，这种方式与关注会导致重新设计的原因相反。它不是考虑什么时候会迫使你的设计改变，而是考虑你怎样才能够在不重新设计的情况下进行改变。这里的关键在于封装发生变化的概念，这是许多设计模式的主题。
 
 通过封装变化的方式，把系统中稳定不变的部分和容易变化的部分隔离开来，在系统的演变过程中，只需要替换那些容易变化的部分，如果这些部分是已经封装好的，替换起来也相对容易。这可以最大程度地保证程序的稳定性和可扩展性。
 
-## 原型模式
+### 原型模式
 
-在以类为中心的面向对象编程语言中，类和对象的关系可以想象成铸模和铸件的关系，对象总是从类中创建而来。而在原型编程的思想中，类并不是必需的，对象未必需要从类中创建而来，一个对象是通过克隆另外一个对象所得到的。
+在以类为中心的面向对象编程语言中，类和对象的关系可以想象成铸模和铸件的关系，对象总是从类中创建而来。而在原型编程的思想中，类并不是必需的，对象未必需要从类中创建而来，一个对象是通过克隆另外一个对象所得到的。**原型模式不单是一种设计模式，也被称为一种编程泛型。**
 
-**原型模式不单是一种设计模式，也被称为一种编程泛型。**
-
-### 使用克隆的原型模式
+#### 使用克隆的原型模式
 
 从设计模式的角度讲，原型模式是用于创建对象的一种模式，如果我们想要创建一个对象，一种方法是先指定它的类型，然后通过类来创建这个对象。原型模式选择了另外一种方式，我们不再关心对象的具体类型，而是找到一个对象，然后通过克隆来创建一个一模一样的对象。
 
-原型模式的实现关键，是语言本身是否提供了 clone 方法。ECMAScript 5 提供了 `Object.create` 方法，可以用来克隆对象。
+原型模式的实现关键，是语言本身是否提供了 clone 方法。ECMAScript5 提供了 `Object.create` 方法，可以用来克隆对象。
 
 在不支持 `Object.create` 方法的浏览器中，则可以使用以下代码：
 
 ```javascript
-Object.create =  Object.create ||function(obj) {
-  var  F  =  function() {}
+Object.create = Object.create || function(obj) {
+  var F = function() {}
   F.prototype = obj
-  return  new  F()
+  return new F()
 }
 ```
 
-### 原型编程泛型
+#### 原型编程泛型
 
-基于原型链的委托机制就是原型继承的本质。原型编程范型至少包括以下基本规则。
+基于原型链的委托机制就是原型继承的本质。原型编程范型至少包括以下基本规则：
 
-   * 所有的数据都是对象。   
-   * 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。   
-   * 对象会记住它的原型。   
-   * 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
+* 所有的数据都是对象。
+* 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。
+* 对象会记住它的原型。  
+* 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
 
-我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象。Object.prototype 对象是一个空的对象。我们在 JavaScript 遇到的每个对象，实际上都是从Object.prototype 对象克隆而来的，Object.prototype 对象就是它们的原型。
+我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象。Object.prototype 对象是一个空的对象。我们在 JavaScript 遇到的每个对象，实际上都是从 Object.prototype 对象克隆而来的，Object.prototype 对象就是它们的原型。
 
 ```javascript
 var obj1 = new Object()
 var obj2 = {}
 
-console.log( Object.getPrototypeOf( obj1 ) === Object.prototype )  // 输出：true
-console.log( Object.getPrototypeOf( obj2 ) === Object.prototype )  // 输出：true
+console.log(Object.getPrototypeOf(obj1) === Object.prototype)  // 输出：true
+console.log(Object.getPrototypeOf(obj2) === Object.prototype)  // 输出：true
 ```
+
+目前一直在讨论“对象的原型”，就 JavaScript 的真正实现来说，其实并不能说对象有原型，而只能说对象的构造器有原型。对于“对象把请求委托给它自己的原型”这句话，更好的说法是对象把请求委托给它的构造器的原型。
+
+JavaScript 给对象提供了一个名为 `__proto__` 的隐藏属性，某个对象的 `__proto__` 属性默认会指向它的构造器的原型对象，即`{Constructor}.prototype`。
 
 ```javascript
-var A = function(){}
+var A = function() {}
 A.prototype = { name: 'sven' }
-var B = function(){}
+var B = function() {}
 B.prototype = new A()
 var b = new B()
-console.log( b.name )  // 输出：sven
+console.log(b.name)  // 输出：sven
 ```
+
 和把 B.prototype 直接指向一个字面量对象相比，通过 B.prototype = new A() 形成的原型链比之前多了一层。但二者之间没有本质上的区别，都是将对象构造器的原型指向另外一个对象，继承总是发生在对象和对象之间。
 
-### 原型继承的未来
+#### 原型继承的未来
 
 美中不足是在当前的 JavaScript 引擎下，通过 Object.create 来创建对象的效率并不高，通常比通过构造函数创建对象要慢。此外通过 `Object.create( null )` 可以创建出没有原型的对象。
 
-ECMAScript 6 带来了新的 Class 语法。这让 JavaScript 看起来像是一门基于类的语言，但其背后仍是通过原型机制来创建对象。
+ECMAScript6 带来了新的 Class 语法。这让 JavaScript 看起来像是一门基于类的语言，但其背后仍是通过原型机制来创建对象。
 
 原型模式是一种设计模式，也是一种编程泛型，它构成了 JavaScript 这门语言的根本。
 
-## this
+## this、call 和 apply
 
-### this  指向
+### this
 
 JavaScript 的 this 总是指向一个对象，而具体指向哪个对象是在运行时基于函数的执行环境动态绑定的，而非函数被声明时的环境。
 
-除去不常用的 with 和 eval 的情况，具体到实际应用中，this 的指向大致可以分为以下 4 种。   
+#### this 指向
+
+除去不常用的 with 和 eval 的情况，具体到实际应用中，this 的指向大致可以分为以下 4 种。
 
 1. 作为对象的方法调用。  
-2. 作为普通函数调用。   
-3. 构造器调用。   
+2. 作为普通函数调用
+3. 构造器调用。
 4. Function.prototype.call 或 Function.prototype.apply 调用。
 
 关于 4 种调用方式的 this 指向，不再累述，可查阅《JavaScript 秘密花园》。
 
-### this 丢失
+#### this 丢失
 
 当方法作为普通函数调用时容易出现 this 丢失问题。例如获取根据 id 获取节点:
 
 ```javascript
-var getId = function( id ){    
-  return document.getElementById( id )
+var getId = function(id) {
+  return document.getElementById(id)
 };
-getId( 'div1' ) // ok!
+getId('div1') // ok!
 ```
 
 但是如果直接把方法赋值给一个变量：
@@ -252,13 +258,13 @@ var getId = document.getElementById
 getId( 'div1' ) // error!
 ```
 
-在 Chrome、Firefox、IE10 中执行这段代码抛出了一个异常。这是因为许多引擎的 document.getElementById  方法的内部实现中需要用到 this。这个 this 本来被期望指向 document，当 getElementById 方法作为 document 对象的属性被调用时，方法内部的 this 确实是指向 document 的。但当用 getId 来引用调用时就成了普通函数调用，函数内部的 this 指向了 window，而不是原来的 document。
+在 Chrome、Firefox、IE10 中执行这段代码抛出了一个异常。这是因为许多引擎的 document.getElementById 方法的内部实现中需要用到 this。这个 this 本来被期望指向 document，当 getElementById 方法作为 document 对象的属性被调用时，方法内部的 this 确实是指向 document 的。但当用 getId 来引用调用时就成了普通函数调用，函数内部的 this 指向了 window，而不是原来的 document。
 
 可以尝试利用 apply 把 document 当作 this 传入 getId 函数，帮助“修正” this：
 
 ```javascript
 document.getElementById = (function(func) {
-  return  function() {
+  return function() {
     return func.apply(document, arguments)
   }
 })(document.getElementById)
@@ -266,9 +272,9 @@ var getId = document.getElementById
 var div = getId('div1')
 ```
 
-## call 和 apply
+### call 和 apply
 
-在 JavaScript 版本的设计模式中，Function.prototype.call 和 Function.prototype.apply 都是非常常用的方法。它们的作用一模一样，区别仅在于传入参数形式的不同。
+Function.prototype.call 和 Function.prototype.apply 作用一模一样，区别仅在于传入参数形式的不同。
 
 apply 接受两个参数，第一个参数指定了函数体内 this 对象的指向，第二个参数为一个带下标的集合，这个集合可以为数组，也可以为类数组，apply 方法把这个集合中的元素作为参数传递给被调用的函数。
 
@@ -276,12 +282,12 @@ call 传入的参数数量不固定，跟 apply 相同的是，第一个参数�
 
 call 是包装在 apply 上面的一颗语法糖，apply 比 call 的使用率更高，我们不必关心具体有多少参数被传入函数，只要用 apply 一股脑地推过去就可以了。如果我们明确地知道函数接受多少个参数，而且想一目了然地表达形参和实参的对应关系，那么也可以用 call 来传送参数。
 
-当使用 call 或者 apply 的时候，如果我们传入的第一个参数为 null，函数体内的 this 会指向默认的宿主对象，在浏览器中则是window，但如果是在严格模式下，函数体内的 this 还是为 null（注意不是 undefined）。
+当使用 call 或者 apply 的时候，如果我们传入的第一个参数为 null，函数体内的 this 会指向默认的宿主对象，在浏览器中则是window，但如果是在严格模式下，函数体内的 this 还是为 null（**注意不是 undefined**）。
 
-有时候我们使用 call 或者 apply 的目的不在于指定 this 指向，而是另有用途，比如借用其他对象的方法。那么我们可以传入null 来代替某个具体的对象：
+有时候我们使用 call 或者 apply 的目的不在于指定 this 指向，而是另有用途，比如借用其他对象的方法。那么我们可以传入 null 来代替某个具体的对象：
 
 ```javascript
-Math.max.apply(null, [1, 2, 5, 3, 4]); // 输出：5
+Math.max.apply(null, [1, 2, 5, 3, 4]) // 输出：5
 ```
 
 call 和 apply 的用途主要有 3 种：
@@ -290,7 +296,7 @@ call 和 apply 的用途主要有 3 种：
 2. Function.prototype.bind
 3. 借用其他对象的方法
 
-### 改变 this 指向
+#### 改变 this 指向
 
 ```javascript
 document.getElementById('div1').onclick = function() {
@@ -301,26 +307,26 @@ document.getElementById('div1').onclick = function() {
 }
 ```
 
-### Function.prototype.bind 
+#### Function.prototype.bind 
 
 大部分高级浏览器都实现了内置的 Function.prototype.bind，用来指定函数内部的 this 指向，即使没有实现也可以模拟：
 
 ```javascript
 Function.prototype.bind = function(context) {
-  var self = this; // 保存原函数
+  var self = this // 保存原函数
   return function() { // 返回一个新的函数
     return self.apply(context, arguments) // 执行新的函数的时候，会把之前传入的 context 当作新函数体内的 this
   }
 }
 
 var obj = { name: 'sven' }
-var func = function(){   
-  console.log(this.name)   // 输出：sven
+var func = function(){
+  console.log(this.name) // 输出：sven
 }.bind(obj)
 func()
 ```
 
-在 Function.prototype.bind 的内部实现中，我们先把函数的引用保存起来，然后返回一个新的函数。当我们在将来执行函数时，实际上先执行的是这个刚刚返回的新函数。在新函数内部，`self.apply( context, arguments )` 这句代码才是执行原来的函数，并且指定 context 对象为函数体内的 this。
+在 Function.prototype.bind 的内部实现中，我们先把函数的引用保存起来，然后返回一个新的函数。当我们在将来执行函数时，实际上先执行的是这个刚刚返回的新函数。在新函数内部，`self.apply(context, arguments)` 这句代码才是执行原来的函数，并且指定 context 对象为函数体内的 this。
 
 这是一个简化版的 Function.prototype.bind 实现，通常我们还会把它实现得稍微复杂一点，使得可以往函数中预先填入一些参数：
 
@@ -329,14 +335,14 @@ Function.prototype.bind = function() {
   var self =  this, // 保存原函数
       context = [].shift.call(arguments), // 需要绑定的 this 上下文
       args = [].slice.call(arguments) // 剩余的参数转成数组
-  return  function() { // 返回一个新的函数
+  return function() { // 返回一个新的函数
     // 执行新的函数的时候，会把之前传入的 context 当作新函数体内的 this
     // 并且组合两次分别传入的参数，作为新函数的参数
-    return self.apply(context, [].concat.call(args, [].slice.call(arguments))) 
+    return self.apply(context, [].concat.call(args, [].slice.call(arguments)))
   }
 }
 
-var obj = { name:  'sven' };
+var obj = { name:  'sven' }
 var func = function(a, b, c, d) {
   console.log(this.name) // 输出：sven
   console.log([a, b, c, d]) // 输出：[ 1, 2, 3, 4 ]
@@ -344,9 +350,13 @@ var func = function(a, b, c, d) {
 func(3, 4)
 ```
 
-## 闭包
+## 闭包和高阶函数
 
-### 闭包的作用
+在 JavaScript 版本的设计模式中，许多模式都可以用闭包和高阶函数来实现。
+
+### 闭包
+
+#### 闭包的作用
 
 1. 封装变量
 
@@ -355,7 +365,7 @@ func(3, 4)
 ```javascript
 var mult = (function() {
   var cache = {}
-  var calculate = function() { // 封闭 calculate 函数
+  var calculate = function() {
     var a = 1
     for (var i = 0, l = arguments.length; i < l; i++) {
       a = a * arguments[i]
@@ -378,9 +388,10 @@ console.log(mult(1, 2, 3)) // 输出：6
 2. 延续局部变量的寿命
 
 img 对象经常用于进行数据上报，如下所示：
+
 ```javascript
-var report = function(src){    
-  var img = new Image() 
+var report = function(src) {
+  var img = new Image()
   img.src = src
 }
 report('http://xxx.com/getUserInfo')
@@ -391,17 +402,17 @@ report('http://xxx.com/getUserInfo')
 只要把 img 变量用闭包封闭起来，便能解决请求丢失的问题。
 
 ```javascript
-var report = (function(){    
+var report = (function() {
   var imgs = []
-  return function(src){        
-    var img = new Image()       
-    imgs.push( img )       
+  return function(src) {
+    var img = new Image()
+    imgs.push(img)
     img.src = src  
   }
 })()
 ```
 
-### 闭包和面向对象设计
+#### 闭包和面向对象设计
 
 过程与数据的结合是形容面向对象中的“对象”时经常使用的表达。对象以方法的形式包含了过程，而闭包则是在过程中以环境的形式包含了数据。通常用面向对象思想能实现的功能，用闭包也能实现。
 
@@ -418,6 +429,7 @@ var extent = function() {
   }
 }
 var extent = extent()
+extent.call()
 ```
 
 如果换成面向对象的写法：
@@ -447,7 +459,7 @@ var extent = new Extent()
 extent.call()
 ```
 
-### 闭包实现命令模式
+#### 闭包实现命令模式
 
 通过上节比较，这里分别使用闭包和面向对象来实现命令模式。
 
@@ -485,7 +497,7 @@ var setCommand = function(command) {
 setCommand(new OpenTvCommand(Tv))
 ```
 
-2.  闭包版本
+2. 闭包版本
 
 ```javascript
 var Tv = {
@@ -505,9 +517,9 @@ var createCommand = function(receiver) {
   var undo = function() {
     return receiver.close() // 执行命令，关闭电视机
   }
-  return { 
+  return {
     execute: execute,
-    undo: undo 
+    undo: undo
   }
 }
 
@@ -529,7 +541,7 @@ setCommand(createCommand(Tv))
 
 在面向对象版本的命令模式中，预先植入的命令接收者被当成对象的属性保存起来；而在闭包版本的命令模式中，命令接收者会被封闭在闭包形成的环境中。
 
-### 闭包与内存管理
+#### 闭包与内存管理
 
 闭包是一个非常强大的特性，但人们对其也有诸多误解。一种耸人听闻的说法是闭包会造成内存泄露，所以要尽量减少闭包的使用。
 
@@ -537,18 +549,18 @@ setCommand(createCommand(Tv))
 
 在基于引用计数策略的垃圾回收机制中，如果两个对象之间形成了循环引用，那么这两个对象都无法被回收，但循环引用造成的内存泄露在本质上也不是闭包造成的。如果要解决循环引用带来的内存泄露问题，我们只需要把循环引用中的变量设为 null 即可。将变量设置为 null 意味着切断变量与它此前引用的值之间的连接。当垃圾收集器下次运行时，就会删除这些值并回收它们占用的内存。
 
-## 高阶函数
+### 高阶函数
 
 高阶函数是指至少满足下列条件之一的函数：
 
- * 函数可以作为参数被传递 
- * 函数可以作为返回值输出
+* 函数可以作为参数被传递
+* 函数可以作为返回值输出
 
-### AOP
+#### AOP
 
 AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，这些跟业务逻辑无关的功能通常包括日志统计、安全控制、异常处理等。把这些功能抽离出来之后，再通过“动态织入”的方式掺入业务逻辑模块中。这样做的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用日志统计等功能模块。
 
-通常，在 JavaScript 中实现 AOP，都是指把一个函数“动态织入”到另外一个函数之中，这种使用 AOP 的方式来给函数添加职责，也是 JavaScript 语言中一种非常特别和巧妙的装饰者模式实现。
+通常在 JavaScript 中实现 AOP，都是指把一个函数“动态织入”到另外一个函数之中，这种使用 AOP 的方式来给函数添加职责，也是 JavaScript 语言中一种非常特别和巧妙的装饰者模式实现。
 
 ```javascript
 Function.prototype.before = function(beforefn) {
@@ -581,7 +593,7 @@ func = func.before(function() {
 func()
 ```
 
-### 高阶函数的应用
+#### 高阶函数的应用
 
 高阶函数常见的应用包括：currying、uncurrying、函数节流、分时函数、惰性加载函数等。
 
@@ -677,7 +689,7 @@ var throttle = function(fn, interval) {
   var __self = fn,
       timer,
       firstTime = true
-      
+
   return function() {
     var __me = this,
         args = arguments
@@ -686,7 +698,7 @@ var throttle = function(fn, interval) {
       __self.apply(__me, args)
       return firstTime = false
     }
-    
+
     if (timer) {
       return false
     }
@@ -698,6 +710,8 @@ var throttle = function(fn, interval) {
     }, interval || 500)
   }
 }
+
+// 注：除了使用 timer 定时器，还可以使用 Date 比较
 ```
 
 4. 分时函数
@@ -761,7 +775,7 @@ var addEvent = (function() {
 
 目前的 addEvent 函数依然有个缺点，也许我们从头到尾都没有使用过 addEvent 函数，这样看来，前一次的浏览器嗅探就是完全多余的操作，而且这也会稍稍延长页面 ready 的时间。
 
-第三种方案即是我们将要讨论的惰性载入函数方案。此时 addEvent 依然被声明为一个普通函数，在函数里依然有一些分支判断。但是在第一次进入条件分支之后，在函数内部会重写这个函数，重写之后的函数就是我们期望的 addEvent 函数，在下一次进入 addEvent 函数的时候，addEvent 函数里不再存在条件分支语句：
+第三种方案即是惰性载入函数方案。此时 addEvent 依然被声明为一个普通函数，在函数里依然有一些分支判断。但是在第一次进入条件分支之后，在函数内部会重写这个函数，重写之后的函数就是期望的 addEvent 函数，在下一次进入时函数里不再存在条件分支语句：
 
 ```javascript
 var addEvent = function(elem, type, handler) {
@@ -778,10 +792,4 @@ var addEvent = function(elem, type, handler) {
 }
 ```
 
-
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNDAwNDMyXX0=
--->
+以上便是《JavaScript 常用设计模式》第一部分总结，在 JavaScript 中，闭包和高阶函数的应用极多，很多设计模式都是通过闭包和高阶函数实现的。

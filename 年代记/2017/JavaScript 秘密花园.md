@@ -63,7 +63,7 @@ Bar.prototype.constructor = Bar
 
 ### hasOwnProperty 函数
 
-`hasOwnProperty` 是 JavaScript 中处理属性并且不会遍历原型链的方法之一(另一种方法: `Object.keys()`)。当检查对象某个属性是否存在时，`hasOwnProperty` 是唯一可用的方法。同时在使用 for in loop 遍历对象时，推荐总使用 `hasOwnProperty` 方法。
+`hasOwnProperty` 是 JavaScript 中处理属性并且不会遍历原型链的方法之一(另一种方法: `Object.keys()`)。当检查对象某个属性是否存在时，hasOwnProperty 是唯一可用的方法。同时在使用 for in loop 遍历对象时，推荐总使用 hasOwnProperty 方法。
 
 ## 函数
 
@@ -266,7 +266,7 @@ is('String', new String('test')) // true
 
 ### instanceof 操作符
 
-instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义，如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。
+instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义，如果用来比较内置类型，将会和 typeof 操作符一样用处不大。
 
 ```javascript
 function Foo() {}
