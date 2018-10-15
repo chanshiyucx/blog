@@ -35,6 +35,8 @@ Foo.prototype = {
   method: function() {}
 }
 
+function Bar() {}
+
 // 设置 Bar.prototype 属性为 Foo 的实例对象
 Bar.prototype = new Foo()
 Bar.prototype.foo = 'Hello World'
