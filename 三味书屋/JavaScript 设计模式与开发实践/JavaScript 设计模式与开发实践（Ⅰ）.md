@@ -160,11 +160,11 @@ console.log(myObject.__name)     // 输出：undefined
 
 ### 原型模式
 
-在以类为中心的面向对象编程语言中，类和对象的关系可以想象成铸模和铸件的关系，对象总是从类中创建而来。而在原型编程的思想中，类并不是必需的，对象未必需要从类中创建而来，一个对象是通过克隆另外一个对象所得到的。**原型模式不单是一种设计模式，也被称为一种编程泛型。**
+在以类为中心的面向对象编程语言中，类和对象的关系可以想象成铸模和铸件的关系，对象总是从类中创建而来。而在原型编程的思想中，一个对象是通过克隆另外一个对象所得到的。**原型模式不单是一种设计模式，也被称为一种编程泛型。**
 
 #### 使用克隆的原型模式
 
-从设计模式的角度讲，原型模式是用于创建对象的一种模式，如果我们想要创建一个对象，一种方法是先指定它的类型，然后通过类来创建这个对象。原型模式选择了另外一种方式，我们不再关心对象的具体类型，而是找到一个对象，然后通过克隆来创建一个一模一样的对象。
+从设计模式的角度讲，原型模式是用于创建对象的一种模式，如果想要创建一个对象，一种方法是先指定它的类型，然后通过类来创建这个对象。原型模式选择了另外一种方式，不再关心对象的具体类型，而是找到一个对象，然后通过克隆来创建一个一模一样的对象。
 
 原型模式的实现关键，是语言本身是否提供了 clone 方法。ECMAScript5 提供了 `Object.create` 方法，可以用来克隆对象。
 
@@ -187,14 +187,14 @@ Object.create = Object.create || function(obj) {
 * 对象会记住它的原型。  
 * 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
 
-我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象。Object.prototype 对象是一个空的对象。我们在 JavaScript 遇到的每个对象，实际上都是从 Object.prototype 对象克隆而来的，Object.prototype 对象就是它们的原型。
+我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象，它是一个空的对象。JavaScript 所有对象实际上都是从这个对象克隆而来的，Object.prototype 对象就是它们的原型。
 
 ```javascript
 var obj1 = new Object()
 var obj2 = {}
 
-console.log(Object.getPrototypeOf(obj1) === Object.prototype)  // 输出：true
-console.log(Object.getPrototypeOf(obj2) === Object.prototype)  // 输出：true
+console.log(Object.getPrototypeOf(obj1) === Object.prototype) // 输出：true
+console.log(Object.getPrototypeOf(obj2) === Object.prototype) // 输出：true
 ```
 
 目前一直在讨论“对象的原型”，就 JavaScript 的真正实现来说，其实并不能说对象有原型，而只能说对象的构造器有原型。对于“对象把请求委托给它自己的原型”这句话，更好的说法是对象把请求委托给它的构造器的原型。
@@ -214,7 +214,7 @@ console.log(b.name)  // 输出：sven
 
 #### 原型继承的未来
 
-美中不足是在当前的 JavaScript 引擎下，通过 Object.create 来创建对象的效率并不高，通常比通过构造函数创建对象要慢。此外通过 `Object.create( null )` 可以创建出没有原型的对象。
+美中不足是在当前的 JavaScript 引擎下，通过 Object.create 来创建对象的效率并不高，通常比通过构造函数创建对象要慢。此外通过 `Object.create(null)` 可以创建出没有原型的对象。
 
 ECMAScript6 带来了新的 Class 语法。这让 JavaScript 看起来像是一门基于类的语言，但其背后仍是通过原型机制来创建对象。
 
