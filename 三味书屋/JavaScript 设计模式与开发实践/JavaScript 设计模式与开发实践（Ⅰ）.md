@@ -10,7 +10,7 @@
 
 第一部分讲解了 JavaScript 面向对象和函数式编程方面的知识，主要包括静态类型语言和动态类型语言的区别及其在实现设计模式时的异同，以及封装、继承、多态在动态类型语言中的体现，此外还介绍了 JavaScript 基于原型继承的面向对象系统的来龙去脉，给学习设计模式做好铺垫。
 
-第二部分是核心部分，通过从普通到更好的代码示例，由浅到深地讲解了 16 个设计模式。
+第二部分是核心部分，通过从普通到更好的代码示例，由浅到深地讲解了 14 个设计模式。
 
 第三部分主要讲解面向对象的设计原则及其在设计模式中的体现，还介绍了一些常见的面向对象编程技巧和日常开发中的代码重构。
 
@@ -62,9 +62,6 @@ public class Duck extends Anima{
     System.out.println( "嘎嘎嘎" );
   }
 }
-
-Animal duck = new Duck();       // (1)
-Animal chicken = new Chicken(); // (2)
 
 public class AnimalSoun{
   public void makeSound(Animal animal) { // 接受Animal类型的参数
@@ -307,7 +304,7 @@ document.getElementById('div1').onclick = function() {
 }
 ```
 
-#### Function.prototype.bind 
+#### Function.prototype.bind
 
 大部分高级浏览器都实现了内置的 Function.prototype.bind，用来指定函数内部的 this 指向，即使没有实现也可以模拟：
 
@@ -605,7 +602,7 @@ func()
 
 ```javascript
 var monthlyCost = 0;
-var cost = function(money){    
+var cost = function(money) {
   monthlyCost += money
 }
 cost(100) // 第1天开销
