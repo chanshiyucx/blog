@@ -69,8 +69,8 @@ tea.init()
 JavaScript 并没有从语法层面提供对抽象类的支持。抽象类的第一个作用是隐藏对象的具体类型，由于 JavaScript 是一门“类型模糊”的语言，所以隐藏对象的类型在 JavaScript 中并不重要。另一方面，当在 JavaScript 中使用原型继承来模拟传统的类式继承时，并没有编译器进行任何形式的检查，没有办法保证子类会重写父类中的“抽象方法”。
 
 下面提供两种变通的解决方案。
-   
-- 第 1 种方案是用鸭子类型来模拟接口检查，以便确保子类中确实重写了父类的方法。但模拟接口检查会带来不必要的复杂性，而且要求程序员主动进行这些接口检查，这就要求在业务代码中添加一些跟业务逻辑无关的代码。   
+
+- 第 1 种方案是用鸭子类型来模拟接口检查，以便确保子类中确实重写了父类的方法。但模拟接口检查会带来不必要的复杂性，而且要求程序员主动进行这些接口检查，这就要求在业务代码中添加一些跟业务逻辑无关的代码。
 - 第 2 种方案是让抽象方法方法直接抛出一个异常，如果因为粗心忘记编写子类方法，那么至少会在程序运行时得到一个错误，这种方式实现简单，缺点是得到错误信息的时间点太靠后。
 
 ### 钩子方法
@@ -82,21 +82,21 @@ JavaScript 并没有从语法层面提供对抽象类的支持。抽象类的第
 依旧以上面的 Coffee or Tea 代码为例，改写模板方法：
 
 ```javascript
-Beverage.prototype.customerWantsCondiments = function(){   
+Beverage.prototype.customerWantsCondiments = function() {
   return true // 默认需要调料
 }
 Beverage.prototype.init = function() {
   this.boilWater()
   this.brew()
   this.pourInCup()
-  if (this.customerWantsCondiments()){ 
+  if (this.customerWantsCondiments()) {
     this.addCondiments()
   }
 }
 
 // 省略其他代码...
 Coffee.prototype.customerWantsCondiments= function() {
-   return window.confirm( '请问需要调料吗？' );
+   return window.confirm('请问需要调料吗？')
 }
 ```
 
@@ -116,7 +116,7 @@ Coffee.prototype.customerWantsCondiments= function() {
 
 模板方法模式是为数不多的基于继承的设计模式，但 JavaScript 语言实际上没有提供真正的类式继承，继承是通过对象与对象之间的委托来实现的。
 
-下面改写上面的 Coffee  or Tea 的例子：
+下面改写上面的 Coffee or Tea 的例子：
 
 ```javascript
 var Beverage = function(param) {
@@ -169,10 +169,10 @@ coffee.init()
 
 享元模式要求将对象的属性划分为内部状态与外部状态。享元模式的目标是尽量减少共享对象的数量，关于如何划分内部状态和外部状态，下面的几条经验提供了一些指引：
 
-   - 内部状态存储于对象内部。  
-   - 内部状态可以被一些对象共享。 
-   - 内部状态独立于具体的场景，通常不会改变。   
-   - 外部状态取决于具体的场景，并根据场景而变化，外部状态不能被共享。
+- 内部状态存储于对象内部。  
+- 内部状态可以被一些对象共享。
+- 内部状态独立于具体的场景，通常不会改变。
+- 外部状态取决于具体的场景，并根据场景而变化，外部状态不能被共享。
 
 这样一来，我们便可以把所有内部状态相同的对象都指定为同一个共享的对象。而外部状态可以从对象身上剥离出来，并储存在外部。剥离了外部状态的对象成为共享对象，外部状态在必要时被传入共享对象来组装成一个完整的对象。虽然组装外部状态成一个完整对象需要时间，但可以大大减少系统中对象数量，所以说享元模式是一种时间换空间的优化模式。
 
@@ -186,9 +186,6 @@ var Upload = function(uploadType) {
 }
 Upload.prototype.delFile = function(id) {
   uploadManager.setExternalState(id, this) // 通过管理器设置外部状态
-  if (this.fileSize < 3000) {
-    return this.dom.parentNode.removeChild(this.dom)
-  }
   if (window.confirm("确定要删除该文件吗? " + this.fileName)) {
     return this.dom.parentNode.removeChild(this.dom)
   }
@@ -202,7 +199,7 @@ var UploadFactory = (function() {
       if (createdFlyWeightObjs[uploadType]) {
         return createdFlyWeightObjs[uploadType]
       }
-      return (createdFlyWeightObjs[uploadType] = new Upload(uploadType));
+      return (createdFlyWeightObjs[uploadType] = new Upload(uploadType))
     }
   }
 })()
@@ -212,9 +209,9 @@ var uploadManager = (function() {
   var uploadDatabase = {} // 保存所有 uoload 对象外部状态
   return {
     add: function(id, uploadType, fileName, fileSize) {
-      var flyWeightObj = UploadFactory.create(uploadType);
-      var dom =  document.createElement("div");
-      dom.innerHTML =  "<span>文件名称:"  + fileName +  ", 文件大小: "  + fileSize +  "</span>"  + 
+      var flyWeightObj = UploadFactory.create(uploadType)
+      var dom = document.createElement("div")
+      dom.innerHTML = "<span>文件名称:" + fileName + ", 文件大小: " + fileSize + "</span>" +
         '<button class="delFile">删除</button>'
       dom.querySelector(".delFile").onclick = function() {
         flyWeightObj.delFile(id)
@@ -232,9 +229,9 @@ var uploadManager = (function() {
   }
 })()
 
-var id = 0;
+var id = 0
 window.startUpload = function(uploadType, files) {
-  for (var i = 0, file; (file = files[i++]); ) {
+  for (var i = 0, file; file = files[i++];) {
     var uploadObj = uploadManager.add(++id, uploadType, file.fileName, file.fileSize)
   }
 }
@@ -242,11 +239,11 @@ window.startUpload = function(uploadType, files) {
 
 享元模式是一种很好的性能优化方案，但它也会带来一些复杂性的问题，上面代码的比较可以看到，使用了享元模式之后，需要分别多维护一个 factory 对象和一个 manager 对象，在大部分不必要使用享元模式的环境下，这些开销是可以避免的。
 
-享元模式带来的好处很大程度上取决于如何使用以及何时使用，一般来说，以下情况发生时便可以使用享元模式。   
+享元模式带来的好处很大程度上取决于如何使用以及何时使用，一般来说，以下情况发生时便可以使用享元模式。
 
-- 一个程序中使用了大量的相似对象。   
+- 一个程序中使用了大量的相似对象。
 - 由于使用了大量对象，造成很大的内存开销。  
-- 对象的大多数状态都可以变为外部状态。   
+- 对象的大多数状态都可以变为外部状态。
 - 剥离出对象的外部状态之后，可以用相对较少的共享对象取代大量对象。
 
 ## 职责链模式
@@ -262,7 +259,7 @@ window.startUpload = function(uploadType, files) {
 ```javascript
 var order500 = function(orderType, pay, stock) {
   if (orderType === 1 && pay === true) {
-    console.log("500元定金预购，得到100优惠券");
+    console.log("500元定金预购，得到100优惠券")
   } else {
     return "nextSuccessor"
   }
@@ -316,7 +313,6 @@ chainOrder500.passRequest(1, false, 0) // 输出：手机库存不足
 ### 异步的职责链
 
 上一节的职责链模式中，每个节点函数同步返回一个特定的值 "nextSuccessor" 来表示是否把请求传递给下一个节点。而在现实开发中，经常会遇到一些异步的问题，比如要在节点函数中发起一个 ajax 异步请求，异步请求返回的结果才能决定是否继续在职责链中 passRequest。
-
 
 这时候让节点函数同步返回 "nextSuccessor" 已经没有意义了，所以要给 Chain 类再增加一个原型方法 Chain.prototype.next，表示手动传递请求给职责链中的下一个节点：
 
@@ -382,7 +378,7 @@ Function.prototype.after = function(fn) {
   }
 }
 
-var order = order500yuan.after( order200yuan ).after( orderNormal )
+var order = order500yuan.after(order200yuan).after(orderNormal)
 order( 1, true, 500 ) // 输出：500元定金预购，得到100优惠券
 ```
 
@@ -412,7 +408,7 @@ Player.prototype.die = function() {
 }
 Player.prototype.remove = function() {
   playerDirector.ReceiveMessage("removePlayer", this) // 给中介者发送消息，移除一个玩家
-} 
+}
 Player.prototype.changeTeam = function(color) {
   playerDirector.ReceiveMessage("changeTeam", this, color) // 给中介者发送消息，玩家换队
 }
@@ -583,7 +579,7 @@ window.onload = function() {
 Function.prototype.before = function(beforefn) {
   var __self = this // 保存原函数的引用
   return function() { // 返回包含了原函数和新函数的"代理"函数
-    beforefn.apply(this, arguments) // 执行新函数，且保证 this 不被劫持，新函数接受的参数也会被原封不动地传入原函数，新函数在原函数之前执行
+    beforefn.apply(this, arguments)
     return __self.apply(this, arguments) // 执行原函数并返回原函数的执行结果，并且保证 this 不被劫持
   }
 }
@@ -606,7 +602,6 @@ document.getElementById = document.getElementById.before(function() {
   alert(1)
 })
 var button = document.getElementById("button")
-
 
 window.onload = function() {
   alert(1)
@@ -682,7 +677,7 @@ ajax("get", "http:// xxx.com/userinfo", { name: "sven" })
 Function.prototype.before = function(beforefn) {
   var __self = this
   return function() {
-    // beforefn返回false的情况直接return，不再执行后面的原函数
+    // beforefn 返回 false 的情况直接 return，不再执行后面的原函数
     if (beforefn.apply(this, arguments) === false) {
       return
     }
@@ -735,7 +730,6 @@ alert(func.a) // 输出：undefined
 
 在虚拟代理实现图片预加载的例子中，本体负责设置 img 节点的 src，代理则提供了预加载的功能，这看起来也是“加入行为”的一种方式，但这种加入行为的方式和装饰者模式的偏重点是不一样的。装饰者模式是实实在在的为对象增加新的职责和行为，而代理做的事情还是跟本体一样，最终都是设置 src。但代理可以加入一些“聪明”的功能，比如在图片真正加载好之前，先使用一张占位的 loading 图片反馈给客户。
 
-
 ## 状态模式
 
 状态模式的关键是区分事物内部的状态，事物内部状态的改变往往会带来事物的行为改变。
@@ -779,24 +773,24 @@ var OffLightState = function(light) {
   this.light = light
 }
 OffLightState.prototype.buttonWasPressed = function() {
-  console.log("弱光") // offLightState对应的行为
-  this.light.setState(this.light.weakLightState) // 切换状态到weakLightState
+  console.log("弱光") // offLightState 对应的行为
+  this.light.setState(this.light.weakLightState) // 切换状态到 weakLightState
 }
 
 var WeakLightState = function(light) {
   this.light = light
 }
 WeakLightState.prototype.buttonWasPressed = function() {
-  console.log("强光") // weakLightState对应的行为
-  this.light.setState(this.light.strongLightState) // 切换状态到strongLightState
+  console.log("强光") // weakLightState 对应的行为
+  this.light.setState(this.light.strongLightState) // 切换状态到 strongLightState
 }
 
 var StrongLightState = function(light) {
   this.light = light
 }
 StrongLightState.prototype.buttonWasPressed = function() {
-  console.log("关灯") // strongLightState对应的行为
-  this.light.setState(this.light.offLightState) // 切换状态到offLightState
+  console.log("关灯") // strongLightState 对应的行为
+  this.light.setState(this.light.offLightState) // 切换状态到 offLightState
 }
 
 var Light = function() {
@@ -833,13 +827,13 @@ light.init()
 
 状态模式的优点如下：
 
- - 状态模式定义了状态与行为之间的关系，并将它们封装在一个类里。通过增加新的状态类，很容易增加新的状态和转换。  
- - 避免 Context 无限膨胀，状态切换的逻辑被分布在状态类中，也去掉了 Context 中原本过多的条件分支。   
- - 用对象代替字符串来记录当前状态，使得状态的切换更加一目了然。   
- - Context 中的请求动作和状态类中封装的行为可以非常容易地独立变化而互不影响。
- 
- 状态模式的缺点是会在系统中定义许多状态类，而且系统中会因此而增加不少对象。另外由于逻辑分散在状态类中，虽然避开了不受欢迎的条件分支语句，但也造成了逻辑分散的问题，无法在一个地方就看出整个状态机的逻辑。
- 
+- 状态模式定义了状态与行为之间的关系，并将它们封装在一个类里。通过增加新的状态类，很容易增加新的状态和转换。  
+- 避免 Context 无限膨胀，状态切换的逻辑被分布在状态类中，也去掉了 Context 中原本过多的条件分支。
+- 用对象代替字符串来记录当前状态，使得状态的切换更加一目了然。
+- Context 中的请求动作和状态类中封装的行为可以非常容易地独立变化而互不影响。
+
+状态模式的缺点是会在系统中定义许多状态类，而且系统中会因此而增加不少对象。另外由于逻辑分散在状态类中，虽然避开了不受欢迎的条件分支语句，但也造成了逻辑分散的问题，无法在一个地方就看出整个状态机的逻辑。
+
 ### 状态模式与策略模式
 
 状态模式与策略模式类似，它们的类图看起来几乎一模一样，但在意图上有很大不同，因此它们是两种迥然不同的模式。策略模式和状态模式的相同点是，它们都有一个上下文、一些策略或者状态类，上下文把请求委托给这些类来执行。
@@ -863,7 +857,7 @@ Light.prototype.init = function() {
   button.innerHTML = "已关灯"
   this.button = document.body.appendChild(button)
   this.button.onclick = function() {
-    self.currState.buttonWasPressed.call(self) // 把请求委托给FSM状态机
+    self.currState.buttonWasPressed.call(self) // 把请求委托给 FSM 状态机
   }
 }
 var FSM = {
@@ -921,7 +915,7 @@ var Light = function() {
 }
 Light.prototype.init = function() {
   var button = document.createElement("button"),
-    self = this
+      self = this
   button.innerHTML = "已关灯"
   this.button = document.body.appendChild(button)
   this.button.onclick = function() {
@@ -958,28 +952,6 @@ renderMap(baiduMapAdapter) // 输出：开始渲染百度地图
 
 适配器模式是一对相对简单的模式。有一些模式跟适配器模式的结构非常相似，比如装饰者模式、代理模式和外观模式。这几种模式都属于“包装模式”，都是由一个对象来包装另一个对象。区别它们的关键仍然是模式的意图。
 
- - 适配器模式主要用来解决两个已有接口之间不匹配的问题，它不考虑这些接口是怎样实现的，也不考虑它们将来可能会如何演化。适配器模式不需要改变已有的接口，就能够使它们协同作用。   
- - 装饰者模式和代理模式也不会改变原有对象的接口，但装饰者模式的作用是为了给对象增加功能。装饰者模式常常形成一条长的装饰链，而适配器模式通常只包装一次。代理模式是为了控制对对象的访问，通常也只包装一次。   
- - 外观模式的作用倒是和适配器比较相似，有人把外观模式看成一组对象的适配器，但外观模式最显著的特点是定义了一个新的接口。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY2ODQwMjU3XX0=
--->
+- 适配器模式主要用来解决两个已有接口之间不匹配的问题，它不考虑这些接口是怎样实现的，也不考虑它们将来可能会如何演化。适配器模式不需要改变已有的接口，就能够使它们协同作用。
+- 装饰者模式和代理模式也不会改变原有对象的接口，但装饰者模式的作用是为了给对象增加功能。装饰者模式常常形成一条长的装饰链，而适配器模式通常只包装一次。代理模式是为了控制对对象的访问，通常也只包装一次。
+- 外观模式的作用倒是和适配器比较相似，有人把外观模式看成一组对象的适配器，但外观模式最显著的特点是定义了一个新的接口。

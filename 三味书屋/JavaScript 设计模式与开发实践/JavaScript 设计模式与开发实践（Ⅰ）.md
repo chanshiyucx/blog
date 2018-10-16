@@ -307,7 +307,7 @@ document.getElementById('div1').onclick = function() {
 }
 ```
 
-#### Function.prototype.bind 
+#### Function.prototype.bind
 
 大部分高级浏览器都实现了内置的 Function.prototype.bind，用来指定函数内部的 this 指向，即使没有实现也可以模拟：
 
@@ -605,7 +605,7 @@ func()
 
 ```javascript
 var monthlyCost = 0;
-var cost = function(money){    
+var cost = function(money) {
   monthlyCost += money
 }
 cost(100) // 第1天开销
