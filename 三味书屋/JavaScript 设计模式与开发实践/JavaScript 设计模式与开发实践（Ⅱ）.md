@@ -1,43 +1,12 @@
-本篇是《JavaScript 设计模式与开发实践》第二部分读书笔记，总结前 7 种设计模式：单例模式、策略模式、代理模式、迭代器模式、发布-订阅模式、命令模式、组合模式。
+本篇是《JavaScript 设计模式与开发实践》第二部分读书笔记，总结前 7 种设计模式：单例模式、策略模式、代理模式、迭代器模式、发布-订阅模式、命令模式、组合模式。<!-- more -->
 
 ## 单例模式
 
 单例模式的定义是：保证一个类仅有一个实例，并提供一个访问它的全局访问点。单例模式常见如线程池、全局缓存、浏览器中的 window 对象等。
 
-### 透明单例
-
-以在页面中创建唯一的 div 节点为例，以下代码实现一个透明的单例类，用户从这个类中创建对象的时候，可以像使用其他任何普通类一样。
-
-```javascript
-var CreateDiv = (function() {
-  var instance
-  var CreateDiv = function(html) {
-    if (instance) {
-      return instance
-    }
-    this.html = html
-    this.init()
-    return instance = this
-  }
-
-  CreateDiv.prototype.init = function() {
-    var div = document.createElement("div")
-    div.innerHTML =  this.html
-    document.body.appendChild(div)
-  }
-  return CreateDiv
-})()
-
-var a = new CreateDiv("sven1")
-var b = new CreateDiv("sven2")
-alert(a === b) // true
-```
-
-上面透明单例为了把 instance 封装起来，使用了自执行的匿名函数和闭包，并且让这个匿名函数返回真正的 Singleton 构造方法，这增加了一些程序的复杂度。并且 CreateDiv 的构造函数实际上负责了两件事情。第一是创建对象和执行初始化 init 方法，第二是保证只有一个对象，根据 “单一职责原则” ，这段代码仍不理想。
-
 ### 代理单例
 
-通过引入代理类的方式，来解决上面提到的问题：
+通过引入代理类的方式来管理单例逻辑：
 
 ```javascript
 var CreateDiv = function(html) {
@@ -46,7 +15,7 @@ var CreateDiv = function(html) {
 }
 
 CreateDiv.prototype.init = function() {
-  var div = document.createElement("div")
+  var div = document.createElement('div')
   div.innerHTML = this.html
   document.body.appendChild(div)
 }
@@ -61,40 +30,16 @@ var ProxySingletonCreateDiv = (function() {
   }
 })()
 
-var a = new ProxySingletonCreateDiv("sven1")
-var b = new ProxySingletonCreateDiv("sven2")
+var a = new ProxySingletonCreateDiv('sven1')
+var b = new ProxySingletonCreateDiv('sven2')
 alert(a === b) // true
 ```
 
 ### 惰性单例
 
-惰性单例指的是在需要的时候才创建对象实例。下面以创建登录悬浮窗为例：
+惰性单例指的是在需要的时候才创建对象实例。可以把管理单例的逻辑从原来的代码中抽离出来，封装在 getSingle 函数内部，创建对象的方法 fn 被当成参数动态传入 getSingle 函数。
 
-```javascript
-var createLoginLayer = (function() {
-  var div
-  return function() {
-    if (!div) {
-      div = document.createElement("div")
-      div.innerHTML = "我是登录浮窗"
-      div.style.display = "none"
-      document.body.appendChild(div)
-    }
-    return div
-  }
-})()
-
-document.getElementById("loginBtn").onclick = function() {
-  var loginLayer = createLoginLayer()
-  loginLayer.style.display = "block"
-}
-```
-
-上面代码仍然存在问题：
-1. 违反单一职责原则的，创建对象和管理单例的逻辑都放在 createLoginLayer 对象内部。
-2. 代码只能用来创建登录悬浮窗，不能复用。
-
-可以把如何管理单例的逻辑从原来的代码中抽离出来，这些逻辑被封装在 getSingle 函数内部，创建对象的方法 fn 被当成参数动态传入 getSingle 函数：
+下面以创建登录悬浮窗为例：
 
 ```javascript
 var getSingle = function(fn) {
@@ -113,36 +58,40 @@ var createLoginLayer = function() {
 }
 var createSingleLoginLayer = getSingle(createLoginLayer)
 
-document.getElementById('loginBtn').onclick = function(){    
+document.getElementById('loginBtn').onclick = function() {
   var loginLayer = createSingleLoginLayer()
   loginLayer.style.display = 'block'
 }
 ```
 
+@蝉時雨：比较上面的代理单例，可以发现只是将立即执行函数表达式提取出单独函数 getSingle，其余毫无二致。
+
 ## 策略模式
 
 策略模式的定义是：定义一系列的算法，把它们一个个封装起来，并且使它们可以相互替换。
 
-一个基于策略模式的程序至少由两部分组成。第一个部分是一组策略类，策略类封装了具体的算法，并负责具体的计算过程。第二个部分是环境类 Context，Context 接受客户的请求，随后把请求委托给某一个策略类。要做到这点，说明 Context 中要维持对某个策略对象的引用。
+一个基于策略模式的程序至少由两部分组成。第一个部分是一组策略类，策略类封装了具体的算法，并负责具体的计算过程。第二个部分是环境类 Context，用来接受客户的请求，随后把请求委托给某一个策略类。要做到这点，说明 Context 中要维持对某个策略对象的引用。
 
 ### 计算奖金：
 
 ```javascript
 var strategies = {
   S: function(salary) {
-    return salary *  4
+    return salary * 4
   },
   A: function(salary) {
-    return salary *  3
+    return salary * 3
   },
   B: function(salary) {
-    return salary *  2
+    return salary * 2
   }
 }
 
 var calculateBonus = function(level, salary) {
   return strategies[level](salary)
 }
+
+calculateBonus('S', 20000)
 ```
 
 通过使用策略模式重构代码，消除了程序中大片的条件分支语句。通过替换 Context 中当前保存的策略对象，便能执行不同的算法来得到想要的结果，这也是多态在策略模式中的体现。
@@ -172,20 +121,20 @@ var tween = {
 }
 
 var Animate = function(dom) {
-  this.dom = dom     // 进行运动的dom节点
+  this.dom = dom     // 进行运动的 dom 节点
   this.startTime = 0 // 动画开始时间
-  this.startPos = 0  // 动画开始时，dom节点的位置，即dom的初始位置
-  this.endPos = 0    // 动画结束时，dom节点的位置，即dom的目标位置
-  this.propertyName = null  // dom节点需要被改变的css属性名
+  this.startPos = 0  // 动画开始时，dom 的初始位置
+  this.endPos = 0    // 动画结束时，dom 的目标位置
+  this.propertyName = null  // dom 节点需要被改变的 css 属性名
   this.easing = null    // 缓动算法
   this.duration = null  // 动画持续时间
 }
 
 Animate.prototype.start = function(propertyName, endPos, duration, easing) {
   this.startTime = +new Date() // 动画启动时间
-  this.startPos = this.dom.getBoundingClientRect()[propertyName] // dom节点初始位置
-  this.propertyName = propertyName // dom节点需要被改变的CSS属性名
-  this.endPos = endPos        // dom节点目标位置
+  this.startPos = this.dom.getBoundingClientRect()[propertyName] // dom 节点初始位置
+  this.propertyName = propertyName // dom 节点需要被改变的CSS属性名
+  this.endPos = endPos        // dom 节点目标位置
   this.duration = duration    // 动画持续时间
   this.easing = tween[easing] // 缓动算法
   var self = this
@@ -199,17 +148,17 @@ Animate.prototype.start = function(propertyName, endPos, duration, easing) {
 Animate.prototype.step = function() {
   var t = +new Date() // 取得当前时间
   if (t >= this.startTime + this.duration) {
-    this.update(this.endPos) // 更新小球的CSS属性值
+    this.update(this.endPos)
     return false
   }
   
   var pos = this.easing(
-    t -  this.startTime,
+    t - this.startTime,
     this.startPos,
     this.endPos - this.startPos,
     this.duration
   )
-  this.update(pos) // 更新小球的CSS属性值
+  this.update(pos)
 }
 
 Animate.prototype.update = function(pos) {
@@ -251,6 +200,7 @@ var Validator = function() {
 Validator.prototype.add = function(dom, rules) {
   var self = this
   for (var i = 0, rule; rule = rules[i++];) {
+    // @蝉時雨：没有必要用立即执行函数表达式，用 forEach 是否更合适
     (function(rule) {
       var strategyAry = rule.strategy.split(":")
       var errorMsg = rule.errorMsg
@@ -274,7 +224,7 @@ Validator.prototype.start = function() {
 }
 
 var validataFunc = function() {
-  var validator = new Validator() // 创建一个validator对象
+  var validator = new Validator() // 创建一个 validator 对象
   /*************** 添加一些校验规则 ****************/
   validator.add(registerForm.userName, [
     { strategy: "isNonEmpty", errorMsg: "用户名不能为空" },
@@ -286,15 +236,14 @@ var validataFunc = function() {
   validator.add(registerForm.phoneNumber, [
     { strategy: "isMobile", errorMsg: "手机号码格式不正确" }
   ])
-  var errorMsg = validator.start() 
+  var errorMsg = validator.start()
   return errorMsg // 返回校验结果
 }
 
 var registerForm = document.getElementById("registerForm")
 registerForm.onsubmit = function() {
-  var errorMsg = validataFunc() // 如果errorMsg有确切的返回值，说明未通过校验
+  var errorMsg = validataFunc() // 如果 errorMsg 有确切的返回值，说明未通过校验
   if (errorMsg) {
-    alert(errorMsg)
     return false  // 阻止表单提交
   }
 }
@@ -304,15 +253,15 @@ registerForm.onsubmit = function() {
 
 通过以上三个例子，总结策略模式优点：
 
-   -  策略模式利用组合、委托和多态等技术和思想，可以有效地避免多重条件选择语句。   
-   -  策略模式提供了对开放—封闭原则的完美支持，将算法封装在独立的 strategy 中，使得它们易于切换，易于理解，易于扩展。   
-   -  策略模式中的算法也可以复用在系统的其他地方，从而避免许多重复的复制粘贴工作。  
-   -  在策略模式中利用组合和委托来让 Context 拥有执行算法的能力，这也是继承的一种更轻便的替代方案。
+- 策略模式利用组合、委托和多态等技术和思想，可以有效地避免多重条件选择语句。
+- 策略模式提供了对开放—封闭原则的完美支持，将算法封装在独立的 strategy 中，使得它们易于切换，易于理解，易于扩展。
+- 策略模式中的算法也可以复用在系统的其他地方，从而避免许多重复的复制粘贴工作。  
+- 在策略模式中利用组合和委托来让 Context 拥有执行算法的能力，这也是继承的一种更轻便的替代方案。
 
 当然，策略模式也有一些缺点：
 
--  使用策略模式会在程序中增加许多策略类或者策略对象，但实际上这比把它们负责的逻辑堆砌在 Context 中要好。
--  要使用策略模式，必须了解所有的 strategy，必须了解各个 strategy 之间的不同点，这样才能选择一个合适的 strategy。此时 strategy 要向客户暴露它的所有实现，违反最少知识原则。
+- 使用策略模式会在程序中增加许多策略类或者策略对象，但实际上这比把它们负责的逻辑堆砌在 Context 中要好。
+- 要使用策略模式，必须了解所有的 strategy，必须了解各个 strategy 之间的不同点，这样才能选择一个合适的 strategy。此时 strategy 要向客户暴露它的所有实现，违反最少知识原则。
 
 ### 一等函数对象与策略模式
 
@@ -332,9 +281,9 @@ registerForm.onsubmit = function() {
 
 - 虚拟代理：把一些开销很大的对象，延迟到真正需要它的时候才去创建。
 - 缓存代理：缓存代理可以为一些开销大的运算结果提供暂时的存储。
-- 保护代理：用于对象应该有不同访问权限的情况。
-- 防火墙代理：控制网络资源的访问，保护主题不让“坏人”接近。   
-- 远程代理：为一个对象在不同的地址空间提供局部代表，在 Java 中，远程代理可以是另一个虚拟机中的对象。   
+- 保护代理：用于对象应该有不同访问权限的情况，过滤请求。
+- 防火墙代理：控制网络资源的访问，保护主题不让“坏人”接近。
+- 远程代理：为一个对象在不同的地址空间提供局部代表，在 Java 中，远程代理可以是另一个虚拟机中的对象。
 - 智能引用代理：取代了简单的指针，它在访问对象时执行一些附加操作，比如计算一个对象被引用的次数。
 
 在 JavaScript 开发中最常用的是虚拟代理和缓存代理。
@@ -370,18 +319,16 @@ var proxyImage = (function() {
 proxyImage.setSrc("avatar.jpg")
 ```
 
-图片预加载为什么需要引入代理模式？单一职责原则是其意义所在。
-
 单一职责原则指的是，就一个类（通常也包括对象和函数等）而言，应该仅有一个引起它变化的原因。如果一个对象承担了多项职责，就意味着这个对象将变得巨大，引起它变化的原因可能会有多个。面向对象设计鼓励将行为分布到细粒度的对象之中，如果一个对象承担的职责过多，等于把这些职责耦合到了一起，这种耦合会导致脆弱和低内聚的设计。当变化发生时，设计可能会遭到意外的破坏。
 
 同时在大多数情况下，若违反其他任何原则，同时将违反开放—封闭原则。
 
-上面的预加载代码中，给 img 节点设置 src 和图片预加载这两个功能，被隔离在两个对象里，它们可以各自变化而不影响对方。何况就算有一天我们不再需要预加载，那么只需要改成请求本体而不是请求代理对象即可。其中关键是代理对象和本体都对外提供了 setSrc 方法，在客户看来，代理对象和本体是一致的，代理接手请求的过程对于用户来说是透明的，用户并不清楚代理和本体的区别，这样做有两个好处：  
+上面的预加载代码中，给 img 节点设置 src 和图片预加载这两个功能，被隔离在两个对象里，它们可以各自变化而不影响对方。何况就算有一天不再需要预加载，那么只需要改成请求本体而不是请求代理对象即可。其中关键是代理对象和本体都对外提供了 setSrc 方法，在客户看来，代理对象和本体是一致的，代理接手请求的过程对于用户来说是透明的，用户并不清楚代理和本体的区别，这样做有两个好处：  
 
- - 用户可以放心地请求代理，他只关心是否能得到想要的结果。   
- - 在任何使用本体的地方都可以替换成使用代理。
+- 用户可以放心地请求代理，他只关心是否能得到想要的结果。
+- 在任何使用本体的地方都可以替换成使用代理。
 
-2. 合并 HTTP 请求
+1. 合并 HTTP 请求
 
 频繁触发的 HTTP 请求可以缓存起来一并发送，能大大减轻服务器的压力，通过代理模式实现如下：
 
@@ -433,7 +380,7 @@ var mult = function() {
 var plus = function() {
   var a =  0
   for (var i =  0, l =  arguments.length; i < l; i++) {
-    a = a +  arguments[i]
+    a = a + arguments[i]
   }
   return a
 }
@@ -451,7 +398,7 @@ var createProxyFactory = function(fn) {
 }
 
 var proxyMult = createProxyFactory(mult),
-proxyPlus = createProxyFactory(plus)
+    proxyPlus = createProxyFactory(plus)
 alert(proxyMult(1, 2, 3, 4)) // 输出：24
 alert(proxyPlus(1, 2, 3, 4)) // 输出：10
 ```
@@ -466,7 +413,7 @@ alert(proxyPlus(1, 2, 3, 4)) // 输出：10
 
 外部迭代器必须显式地请求迭代下一个元素。外部迭代器增加了一些调用的复杂度，但相对也增强了迭代器的灵活性，可以手工控制迭代的过程或者顺序。
 
-下面这个外部迭代器的实现来自《松本行弘的程序世界》第4章，原例用Ruby写成，这里翻译成JavaScript：
+下面这个外部迭代器的实现来自《松本行弘的程序世界》第4章，原例用 Ruby 写成，这里翻译成 JavaScript：
 
 ```javascript
 var Iterator = function(obj) {
@@ -491,9 +438,49 @@ var Iterator = function(obj) {
 
 迭代器模式是一种相对简单的模式，简单到很多时候都不认为它是一种设计模式，目前的绝大部分语言都内置了迭代器。
 
+### 迭代器模式的应用
+
+这里已文件上传为例，在不同的浏览器环境下，选择的上传方式是不一样的：
+
+```javascript
+var getActiveUploadObj = function() {
+  try {
+    return new ActiveXObject( "TXFTNActiveX.FTNUpload" ) // IE上传控件
+  } catch(e) {
+    return false
+  }
+}
+
+var getFlashUploadObj = function() {
+  if (supportFlash()) { // supportFlash 函数未提供
+  var str = '<object type="application/x-shockwave-flash"></object>'
+   return $(str).appendTo($('body'))
+  }
+  return false
+}
+  
+var getFormUpladObj = function() {
+  var str = '<input name="file" type="file" class="ui-file"/>' // 表单上传
+  return $(str).appendTo($('body'))
+}
+
+var iteratorUploadObj = function() {
+  for (var i = 0, fn; fn = arguments[ i++];){
+    var uploadObj = fn()
+    if (uploadObj !== false){
+      return uploadObj
+    }
+  }
+}
+
+var uploadObj = iteratorUploadObj(getActiveUploadObj, getFlashUploadObj, getFormUpladObj)
+```
+
+在 getActiveUploadObj、getFlashUploadObj、getFormUpladObj 这 3 个函数中都有同一个约定：如果该函数里面的 upload 对象是可用的，则让函数返回该对象，反之返回 false，提示迭代器继续往后面进行迭代。
+
 ## 发布-订阅模式
 
-发布—订阅模式又叫观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知。在 JavaScript 开发中，我们一般用事件模型来替代传统的发布—订阅模式。
+发布—订阅模式又叫观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知。在 JavaScript 开发中，一般用事件模型来替代传统的发布—订阅模式。
 
 ### 全局订阅与通信
 
@@ -524,7 +511,7 @@ var Event = (function() {
            }
            return ret
          }
- 
+
       _listen = function(key, fn, cache) {
          if (!cache[key]) {
            cache[key] = []
@@ -654,13 +641,13 @@ Event.create("namespace2").listen("click", function(a) {
 })
 ```
 
-JavaScript 中的发布—订阅模式，跟一些别的语言（比如 Java ）中的实现还是有区别的。在 Java 中实现一个自己的发布—订阅模式，通常会把订阅者对象自身当成引用传入发布者对象中，同时订阅者对象还需提供一个名为诸如 update 的方法，供发布者对象在适合的时候调用。而在 JavaScript 中，用注册回调函数的形式来代替传统的发布—订阅模式，显得更加优雅和简单。
+JavaScript 中的发布—订阅模式，跟一些别的语言（比如 Java）中的实现还是有区别的。在 Java 中通常会把订阅者对象自身当成引用传入发布者对象中，同时订阅者对象还需提供一个名为诸如 update 的方法，供发布者对象在适合的时候调用。而在 JavaScript 中，用注册回调函数的形式来代替传统的发布—订阅模式，显得更加优雅和简单。
 
 另外，在 JavaScript 中，无需去选择使用推模型还是拉模型。推模型是指在事件发生时，发布者一次性把所有更改的状态和数据都推送给订阅者。拉模型不同的地方是，发布者仅仅通知订阅者事件已经发生了，此外发布者要提供一些公开的接口供订阅者来主动拉取数据。
 
-拉模型的好处是可以让订阅者“按需获取”，但同时有可能让发布者变成一个“门户大开”的对象，同时增加了代码量和复杂度。刚好在 JavaScript 中，arguments 可以很方便地表示参数列表，所以我们一般都会选择推模型，使用 Function.prototype.apply 方法把所有参数都推送给订阅者。
+拉模型的好处是可以让订阅者“按需获取”，但同时有可能让发布者变成一个“门户大开”的对象，同时增加了代码量和复杂度。刚好在 JavaScript 中，arguments 可以很方便地表示参数列表，所以一般都会选择推模型，使用 Function.prototype.apply 方法把所有参数都推送给订阅者。
 
-发布—订阅模式的优点非常明显，一为时间上的解耦，二为对象之间的解耦。发布—订阅模式还可以用来帮助实现一些别的设计模式，比如中介者模式。从架构上来看，无论是 MVC 还是 MVVM，都少不了发布—订阅模式的参与，而且** JavaScript 本身也是一门基于事件驱动的语言**。
+发布—订阅模式的优点非常明显，一为时间上的解耦，二为对象之间的解耦。发布—订阅模式还可以用来帮助实现一些别的设计模式，比如中介者模式。从架构上来看，无论是 MVC 还是 MVVM，都少不了发布—订阅模式的参与，而且 **JavaScript 本身也是一门基于事件驱动的语言**。
 
 当然，发布—订阅模式也不是完全没有缺点。创建订阅者本身要消耗一定的时间和内存，而且订阅一个消息后，也许此消息最后都未发生，但这个订阅者会始终存在于内存中。另外发布—订阅模式虽然可以弱化对象之间的联系，但如果过度使用的话，对象和对象之间的必要联系也将被深埋在背后，会导致程序难以跟踪维护和理解。特别是有多个发布者和订阅者嵌套到一起的时候，要跟踪一个 bug 不是件轻松的事情。
 
@@ -694,17 +681,17 @@ RefreshMenuBarCommand.prototype.execute = function() {
 }
 
 var refreshMenuBarCommand = new RefreshMenuBarCommand(MenuBar)
-var button1 = document.getElementById("button1")
+var button = document.getElementById("button")
 
-var setCommand = function(button, command){    
-  button.onclick = function(){        
+var setCommand = function(button, command) {
+  button.onclick = function() {
     command.execute()
   }
 }
-setCommand(button1, refreshMenuBarCommand)
+setCommand(button, refreshMenuBarCommand)
 ```
 
-上面示例代码是模拟传统面向对象语言的命令模式实现。命令模式将过程式的请求调用封装在 command 对象的 execute 方法里，通过封装方法调用，我们可以把运算块包装成形。command 对象可以被四处传递，所以在调用命令的时候，客户（Client）不需要关心事情是如何进行的。
+上面示例代码是模拟传统面向对象语言的命令模式实现。命令模式将过程式的请求调用封装在 command 对象的 execute 方法里，通过封装方法调用，可以把运算块包装成形。command 对象可以被四处传递，所以在调用命令的时候，不需要关心事情是如何进行的。
 
 **命令模式的由来，其实是回调（callback）函数的一个面向对象的替代品**。
 
@@ -750,7 +737,7 @@ var MacroCommand = function() {
     },
 
     execute: function() {
-      for (var i = 0, command; (command = this.commandsList[i++]); ) {
+      for (var i = 0, command; (command = this.commandsList[i++]);) {
         command.execute()
       }
     }
@@ -785,24 +772,24 @@ var openPcCommand = {
 
 以宏命令为例，请求从树最顶端的对象往下传递，如果子节点是叶对象，叶对象自身会处理这个请求，而如果子节点还是组合对象，请求会继续往下传递。
 
-组合模式最大的优点在于可以一致地对待组合对象和基本对象。客户不需要知道当前处理的是宏命令还是普通命令，只要它是一个命令，并且有 execute 方法，这个命令就可以被添加到树中。这种透明性带来的便利，在静态类型语言中体现得尤为明显。比如在 Java 中，实现组合模式的关键是 Composite 类和 Leaf 类都必须继承自一个 Compenent 抽象类。这个Compenent 抽象类既代表组合对象，又代表叶对象，它也能够保证组合对象和叶对象拥有同样名字的方法，从而可以对同一消息都做出反馈。组合对象和叶对象的具体类型被隐藏在 Compenent 抽象类身后。
+组合模式最大的优点在于可以一致地对待组合对象和基本对象。客户不需要知道当前处理的是宏命令还是普通命令，只要它是一个命令，并且有 execute 方法，这个命令就可以被添加到树中。这种透明性带来的便利，在静态类型语言中体现得尤为明显。比如在 Java 中，实现组合模式的关键是 Composite 类和 Leaf 类都必须继承自一个 Compenent 抽象类。这个 Compenent 抽象类既代表组合对象，又代表叶对象，它也能够保证组合对象和叶对象拥有同样名字的方法，从而可以对同一消息都做出反馈。组合对象和叶对象的具体类型被隐藏在 Compenent 抽象类身后。
 
 然而在 JavaScript 这种动态类型语言中，对象的多态性是与生俱来的，JavaScript 中实现组合模式的难点在于要保证组合对象和叶对象对象拥有同样的方法，这通常需要用鸭子类型的思想对它们进行接口检查。
 
 ### 扫描文件夹
 
-以下以文件复制和文件夹扫描为例: 
+以下以文件复制和文件夹扫描为例:
 
 ```javascript
 /******** Folder **********/
 var Folder = function(name) {
   this.name = name
   this.files = []
-  this.parent = null  // 增加this.parent属性
+  this.parent = null // 增加 this.parent 属性
 }
 
 Folder.prototype.add = function(file) {
-  file.parent = this  // 设置父对象
+  file.parent = this // 设置父对象
   this.files.push(file)
 }
 
@@ -838,14 +825,14 @@ File.prototype.scan = function() {
   console.log("开始扫描文件: " + this.name)
 }
 
-File.prototype.remove = function(){
-  if (!this.parent){ // 根节点或者树外的游离节点
+File.prototype.remove = function() {
+  if (!this.parent) { // 根节点或者树外的游离节点
     return;
   }
 
   for (var files = this.parent.files, l = files.length - 1; l >=0; l--) {
-    var file = files[ l ];
-    if (file ===  this){
+    var file = files[l];
+    if (file === this){
       files.splice(l, 1);
     }
   }
@@ -858,7 +845,7 @@ var file2 = new File("重构与模式")
 folder1.add(file1)
 folder.add(folder1)
 folder.add(file2)
-folder1.remove() 
+folder1.remove()
 folder.scan()
 ```
 
@@ -868,7 +855,3 @@ folder.scan()
 - 客户希望统一对待树中的所有对象
 
 然而组合模式并不是完美的，它可能会产生一个这样的系统：系统中的每个对象看起来都与其他对象差不多。它们的区别只有在运行的时候会才会显现出来，这会使代码难以理解。此外，如果通过组合模式创建了太多的对象，那么这些对象可能会让系统负担不起。
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2Nzk5ODQxMF19
--->

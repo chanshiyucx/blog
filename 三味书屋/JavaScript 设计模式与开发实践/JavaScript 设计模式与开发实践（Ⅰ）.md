@@ -1,4 +1,4 @@
-《JavaScript 设计模式与开发实践》是去年在多看阅读上买的电子书，拖延症晚期患者在快一年后终于把这本书粗略读完，顺便做个笔记，加以总结，以便往后重新翻阅温习。
+《JavaScript 设计模式与开发实践》是去年在多看阅读上买的电子书，拖延症晚期患者在快一年后终于把这本书粗略读完，顺便做个笔记，加以总结，以便往后重新翻阅温习。<!-- more -->
 
 ## 设计模式
 
@@ -277,11 +277,11 @@ apply 接受两个参数，第一个参数指定了函数体内 this 对象的�
 
 call 传入的参数数量不固定，跟 apply 相同的是，第一个参数也是代表函数体内的 this 指向，从第二个参数开始往后，每个参数被依次传入函数。
 
-call 比 apply 效率更高，但基本可以忽略。
+性能上来说 call 的效率比 apply 更高。
 
-当使用 call 或者 apply 的时候，如果我们传入的第一个参数为 null，函数体内的 this 会指向默认的宿主对象，在浏览器中则是window，但如果是在严格模式下，函数体内的 this 还是为 null（**注意不是 undefined**）。
+当使用 call 或者 apply 的时候，如果我们传入的第一个参数为 null，函数体内的 this 会指向默认的宿主对象，在浏览器中则是 window，但如果是在严格模式下，函数体内的 this 还是为 null（**注意不是 undefined**）。
 
-有时候我们使用 call 或者 apply 的目的不在于指定 this 指向，而是另有用途，比如借用其他对象的方法。那么我们可以传入 null 来代替某个具体的对象：
+有时候使用 call 或者 apply 的目的不在于指定 this 指向，而是另有用途，比如借用其他对象的方法，那么可以传入 null 来代替某个具体的对象：
 
 ```javascript
 Math.max.apply(null, [1, 2, 5, 3, 4]) // 输出：5
@@ -317,13 +317,11 @@ Function.prototype.bind = function(context) {
 }
 
 var obj = { name: 'sven' }
-var func = function(){
+var func = function() {
   console.log(this.name) // 输出：sven
 }.bind(obj)
 func()
 ```
-
-在 Function.prototype.bind 的内部实现中，我们先把函数的引用保存起来，然后返回一个新的函数。当我们在将来执行函数时，实际上先执行的是这个刚刚返回的新函数。在新函数内部，`self.apply(context, arguments)` 这句代码才是执行原来的函数，并且指定 context 对象为函数体内的 this。
 
 这是一个简化版的 Function.prototype.bind 实现，通常我们还会把它实现得稍微复杂一点，使得可以往函数中预先填入一些参数：
 
@@ -394,7 +392,7 @@ var report = function(src) {
 report('http://xxx.com/getUserInfo')
 ```
 
-但是 report 函数并不是每一次都成功发起了 HTTP 请求。丢失数据的原因是 img 是 report 函数中的局部变量，当 report 函数的调用结束后，img 局部变量随即被销毁，而此时或许还没来得及发出 HTTP 请求，所以此次请求就会丢失掉。
+但是 report 函数并不是每一次都成功发起了 HTTP 请求，丢失数据的原因是 img 是 report 函数中的局部变量，当 report 函数的调用结束后，img 局部变量随即被销毁，而此时或许还没来得及发出 HTTP 请求，所以此次请求就会丢失掉。
 
 只要把 img 变量用闭包封闭起来，便能解决请求丢失的问题。
 
@@ -544,7 +542,7 @@ setCommand(createCommand(Tv))
 
 跟闭包和内存泄露有关系的地方是，使用闭包的同时比较容易形成循环引用，如果闭包的作用域链中保存着一些 DOM 节点，这时候就有可能造成内存泄露。但这本身并非闭包的问题，也并非 JavaScript 的问题。
 
-在基于引用计数策略的垃圾回收机制中，如果两个对象之间形成了循环引用，那么这两个对象都无法被回收，但循环引用造成的内存泄露在本质上也不是闭包造成的。如果要解决循环引用带来的内存泄露问题，我们只需要把循环引用中的变量设为 null 即可。将变量设置为 null 意味着切断变量与它此前引用的值之间的连接。当垃圾收集器下次运行时，就会删除这些值并回收它们占用的内存。
+在基于引用计数策略的垃圾回收机制中，如果两个对象之间形成了循环引用，那么这两个对象都无法被回收，但循环引用造成的内存泄露在本质上也不是闭包造成的。如果要解决循环引用带来的内存泄露问题，只需要把循环引用中的变量设为 null 即可。将变量设置为 null 意味着切断变量与它此前引用的值之间的连接。当垃圾收集器下次运行时，就会删除这些值并回收它们占用的内存。
 
 ### 高阶函数
 
@@ -555,7 +553,7 @@ setCommand(createCommand(Tv))
 
 #### AOP
 
-AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，这些跟业务逻辑无关的功能通常包括日志统计、安全控制、异常处理等。把这些功能抽离出来之后，再通过“动态织入”的方式掺入业务逻辑模块中。这样做的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用日志统计等功能模块。
+AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，通常包括日志统计、安全控制、异常处理等。把这些功能抽离出来之后，再通过“动态织入”的方式掺入业务逻辑模块中。这样做的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用功能模块。
 
 通常在 JavaScript 中实现 AOP，都是指把一个函数“动态织入”到另外一个函数之中，这种使用 AOP 的方式来给函数添加职责，也是 JavaScript 语言中一种非常特别和巧妙的装饰者模式实现。
 
@@ -607,7 +605,6 @@ var cost = function(money) {
 }
 cost(100) // 第1天开销
 cost(200) // 第2天开销
-cost(300) // 第3天开销
 ```
 
 这段代码每次都会计算当天为止的总开销，但这并不重要，柯里化之后：
@@ -628,7 +625,7 @@ var currying = function(fn) {
 var cost = (function() {
   var money = 0
   return function() {
-    for (var i =  0, l =  arguments.length; i < l; i++) {
+    for (var i = 0, l = arguments.length; i < l; i++) {
       money += arguments[i]
     }
     return money
@@ -638,14 +635,13 @@ var cost = (function() {
 var cost = currying(cost) // 转化成 currying 函数
 cost(100) // 未真正求值
 cost(200) // 未真正求值
-cost(300) // 未真正求值
 ```
 
 2. uncurrying
 
-通过 call 和 apply 我们可以借用其他对象的方法，用 call 和 apply 可以把任意对象当作 this 传入某个方法，这样一来，方法中用到 this 的地方就不再局限于原来规定的对象，而是加以泛化并得到更广的适用性。
+通过 call 和 apply 可以借用其他对象的方法，把任意对象当作 this 传入某个方法，方法中用到 this 的地方就不再局限于原来规定的对象，而是加以泛化并得到更广的适用性。
 
-那么有没有办法把泛化 this 的过程提取出来呢？uncurrying 就是用来解决这个问题的。
+uncurrying 可以把把泛化 this 的过程提取出来。
 
 ```javascript
 // 方式①
@@ -679,7 +675,7 @@ var push = Array.prototype.push.uncurrying()
 
 通过 uncurrying 的方式，`Array.prototype.push.call` 变成了一个通用的 push 函数。这样一来，push 函数的作用就跟Array.prototype.push 一样了，同样不仅仅局限于只能操作 array 对象。而对于使用者而言，调用 push 函数的方式也显得更加简洁和意图明了。
 
-3. 函数节流
+1. 函数节流
 
 ```javascript
 var throttle = function(fn, interval) {
@@ -737,7 +733,7 @@ var timeChunk = function(ary, fn, count = 1) {
 
 5. 惰性加载函数
 
-在 Web 开发中，因为浏览器之间的实现差异，一些嗅探工作总是不可避免。比如我们需要一个在各个浏览器中能够通用的事件绑定函数 addEvent，常见的写法如下：
+在 Web 开发中，因为浏览器之间的实现差异，一些嗅探工作总是不可避免。比如需要一个在各个浏览器中能够通用的事件绑定函数 addEvent，常见的写法如下：
 
 ```javascript
 var addEvent = function(elem, type, handler) {
@@ -770,7 +766,7 @@ var addEvent = (function() {
 })()
 ```
 
-目前的 addEvent 函数依然有个缺点，也许我们从头到尾都没有使用过 addEvent 函数，这样看来，前一次的浏览器嗅探就是完全多余的操作，而且这也会稍稍延长页面 ready 的时间。
+目前的 addEvent 函数依然有个缺点，也许我们从头到尾都没有使用过 addEvent 函数，这样前一次的浏览器嗅探就是完全多余的操作，而且也会稍稍延长页面 ready 的时间。
 
 第三种方案即是惰性载入函数方案。此时 addEvent 依然被声明为一个普通函数，在函数里依然有一些分支判断。但是在第一次进入条件分支之后，在函数内部会重写这个函数，重写之后的函数就是期望的 addEvent 函数，在下一次进入时函数里不再存在条件分支语句：
 
