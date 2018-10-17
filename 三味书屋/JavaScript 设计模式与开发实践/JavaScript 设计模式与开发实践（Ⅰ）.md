@@ -255,7 +255,7 @@ var getId = document.getElementById
 getId( 'div1' ) // error!
 ```
 
-在 Chrome、Firefox、IE10 中执行这段代码抛出了一个异常。这是因为许多引擎的 document.getElementById 方法的内部实现中需要用到 this。这个 this 本来被期望指向 document，当 getElementById 方法作为 document 对象的属性被调用时，方法内部的 this 确实是指向 document 的。但当用 getId 来引用调用时就成了普通函数调用，函数内部的 this 指向了 window，而不是原来的 document。
+在浏览器中执行这段代码抛出了一个异常，这是因为许多引擎的 document.getElementById 方法的内部实现中需要用到 this。这个 this 本来被期望指向 document，当 getElementById 方法作为 document 对象的属性被调用时，方法内部的 this 确实是指向 document 的。但当用 getId 来引用调用时就成了普通函数调用，函数内部的 this 指向了 window，而不是原来的 document。
 
 可以尝试利用 apply 把 document 当作 this 传入 getId 函数，帮助“修正” this：
 
@@ -273,11 +273,11 @@ var div = getId('div1')
 
 Function.prototype.call 和 Function.prototype.apply 作用一模一样，区别仅在于传入参数形式的不同。
 
-apply 接受两个参数，第一个参数指定了函数体内 this 对象的指向，第二个参数为一个带下标的集合，这个集合可以为数组，也可以为类数组，apply 方法把这个集合中的元素作为参数传递给被调用的函数。
+apply 接受两个参数，第一个参数指定了函数体内 this 对象的指向，第二个参数为一个带下标的集合，这个集合可以为数组或类数组，apply 方法把这个集合中的元素作为参数传递给被调用的函数。
 
 call 传入的参数数量不固定，跟 apply 相同的是，第一个参数也是代表函数体内的 this 指向，从第二个参数开始往后，每个参数被依次传入函数。
 
-call 是包装在 apply 上面的一颗语法糖，apply 比 call 的使用率更高，我们不必关心具体有多少参数被传入函数，只要用 apply 一股脑地推过去就可以了。如果我们明确地知道函数接受多少个参数，而且想一目了然地表达形参和实参的对应关系，那么也可以用 call 来传送参数。
+call 比 apply 效率更高，但基本可以忽略。
 
 当使用 call 或者 apply 的时候，如果我们传入的第一个参数为 null，函数体内的 this 会指向默认的宿主对象，在浏览器中则是window，但如果是在严格模式下，函数体内的 this 还是为 null（**注意不是 undefined**）。
 
