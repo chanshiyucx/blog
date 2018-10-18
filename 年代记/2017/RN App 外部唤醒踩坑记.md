@@ -5,7 +5,7 @@
 在 iOS 中，唤醒功能是通过 Universal Links 来实现。Universal Links 通用链接是 Apple 在 2015 推出的一个新功能，只有在 iOS9 以上才支持。如果你的 App
 支持 Universal Links，那就可以访问 HTTP/HTTPS 链接直接唤起 APP 进入具体页面，不需要其他额外判断；如果未安装 App，访问此通用链接时可以一个自定义网页。
 
-关于如何添加 Universal Links 来唤醒 App，Apple 官方文档  [Support Universal Links](//developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 中虽然有了说明，但是具体的细节操作却未交代清楚，致使我走了不少弯路。其实到最后发现具体实现其实很简单，大体来说分三步。
+关于如何添加 Universal Links 来唤醒 App，Apple 官方文档 [Support Universal Links](//developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 中虽然有了说明，但是具体的细节操作却未交代清楚，致使我走了不少弯路。其实到最后发现具体实现其实很简单，大体来说分三步。
 
 ### 添加验证域名
 
@@ -15,7 +15,7 @@
 
 ### 上传验证文件
 
-新建一个 json 格式的验证文件命名为 `apple-app-site-association` ，注意不要加 .json 后缀，然后编辑验证内容如下：  
+新建一个 json 格式的验证文件命名为 `apple-app-site-association` ，注意不要加 .json 后缀，然后编辑验证内容如下：
 
 ```json
 {
@@ -92,14 +92,18 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
 新建一个验证文件命名为 `assetlinks.json`，编辑 `assetlinks.json` 如下：
 
 ```json
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.had",
-    "sha256_cert_fingerprints": ["C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81"]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.had",
+      "sha256_cert_fingerprints": [
+        "C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81"
+      ]
+    }
   }
-}]
+]
 ```
 
 其中需要修改的只有包名 `package_name` 和 `sha256_cert_fingerprints`，其中包名在 `AndroidManifest.xml` 里可以找到，`sha256_cert_fingerprints` 需要在密钥里面获取。
@@ -142,6 +146,6 @@ navigate = url => {
 ```
 
 参考文章：  
-[唤醒APP的那些事](//www.jianshu.com/p/862885bd8ea2)  
+[唤醒 APP 的那些事](//www.jianshu.com/p/862885bd8ea2)  
 [Universal Linking For React-Native with Rails API, and Deep Linking Android](//github.com/parkerdan/React-Native-Rails-Universal-Linking)  
 [Universal Links, URI Schemes, App Links, and Deep Links: What’s the Difference?](//blog.branch.io/universal-links-uri-schemes-app-links-and-deep-links-whats-the-difference)

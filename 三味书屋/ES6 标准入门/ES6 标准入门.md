@@ -2,7 +2,7 @@
 
 阮一峰的《ES6 标准入门》第二版和第三版都有购入，第二版是去年买的实体书，当初大略翻了一遍，今年第三版又出世了，在原来的基础上新增了不少内容，是时候重拾书本学习了。
 
-> Any application that can be written in JavaScript will eventually be written in JavaScript.  --Jeff Atwood
+> Any application that can be written in JavaScript will eventually be written in JavaScript. --Jeff Atwood
 
 ## let 和 const
 
@@ -30,8 +30,8 @@ ES6 规定，如果区块中存在 let 和 const 命令，则这个区块对这�
 
 ```javascript
 var tmp = 123
-if (true) {  
-  tmp = 'abc' // ReferenceError  
+if (true) {
+  tmp = 'abc' // ReferenceError
   let tmp
 }
 ```
@@ -49,24 +49,24 @@ typeof undeclared_variable // "undefined"
 
 #### 不允许重复声明
 
-扩展1：const 实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。如果真的想将对象冻结，应该使用 `Object.freeze` 方法。
+扩展 1：const 实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。如果真的想将对象冻结，应该使用 `Object.freeze` 方法。
 
 ```javascript
-var constantize = (obj) => {  
+var constantize = obj => {
   Object.freeze(obj)
   Object.keys(obj).forEach((key, i) => {
     if (typeof obj[key] === 'object') {
       constantize(obj[key])
-    }  
+    }
   })
 }
 ```
 
-扩展2：ES5 只有两种声明变量的方法：使用 var 命令和 function 命令。ES6 除了添加了 let 和 const 命令，还有另外两种声明变量的方法：import 命令和 class 命令。所以，ES6 一共有 **6** 种声明变量的方法。
+扩展 2：ES5 只有两种声明变量的方法：使用 var 命令和 function 命令。ES6 除了添加了 let 和 const 命令，还有另外两种声明变量的方法：import 命令和 class 命令。所以，ES6 一共有 **6** 种声明变量的方法。
 
 ### 块级作用域
 
-ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，*在块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用*。
+ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，_在块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用_。
 
 块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了。
 
@@ -90,33 +90,39 @@ window.b // undefined
 
 ES5 的顶层对象在各种实现中是不统一的。
 
-* 在浏览器中，顶层对象是 window，但 Node 和 Web Worker 没有 window。
-* 在浏览器和 Web Worker 中，self 也指向顶层对象，但是 Node 没有 self。
-* 在 Node 中，顶层对象是 global，但其他环境都不支持。
+- 在浏览器中，顶层对象是 window，但 Node 和 Web Worker 没有 window。
+- 在浏览器和 Web Worker 中，self 也指向顶层对象，但是 Node 没有 self。
+- 在 Node 中，顶层对象是 global，但其他环境都不支持。
 
 同一段代码为了能够在各种环境中都取到顶层对象，目前一般是使用 this 变量，但是也有局限性。
 
-* 在全局环境中，this 会返回顶层对象。但是在 Node 模块和 ES6 模块中，this 返回的是当前模块。
-* 对于函数中的 this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this 会指向顶层对象。但是严格模式下，this 会返回 undefined。
-* 不管是严格模式，还是普通模式，`new Function('returnthis')()` 总会返回全局对象。但是，如果浏览器用了 CSP（Content Security Policy，内容安全政策），那么 eval、new Function 这些方法都可能无法使用。
+- 在全局环境中，this 会返回顶层对象。但是在 Node 模块和 ES6 模块中，this 返回的是当前模块。
+- 对于函数中的 this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this 会指向顶层对象。但是严格模式下，this 会返回 undefined。
+- 不管是严格模式，还是普通模式，`new Function('returnthis')()` 总会返回全局对象。但是，如果浏览器用了 CSP（Content Security Policy，内容安全政策），那么 eval、new Function 这些方法都可能无法使用。
 
 综上所述，很难找到一种方法可以在所有情况下都取到顶层对象。以下是两种勉强可以使用的方法。
 
 ```javascript
 // 方法一
-(typeof window !== 'undefined'
+typeof window !== 'undefined'
   ? window
-  : (typeof process === 'object' &&
-     typeof require === 'function' &&
-     typeof global === 'object')
+  : typeof process === 'object' &&
+    typeof require === 'function' &&
+    typeof global === 'object'
     ? global
-    : this)
+    : this
 
 // 方法二
-var getGlobal = function () {  
-  if (typeof self !== 'undefined') { return self }  
-  if (typeof window !== 'undefined') { return window }  
-  if (typeof global !== 'undefined') { return global }  
+var getGlobal = function() {
+  if (typeof self !== 'undefined') {
+    return self
+  }
+  if (typeof window !== 'undefined') {
+    return window
+  }
+  if (typeof global !== 'undefined') {
+    return global
+  }
   throw new Error('unable to locate global object')
 }
 ```
@@ -132,6 +138,11 @@ let [x, y, ...z] = ['a']
 x // "a"
 y // undefined
 z // []
+
+// 不完全解构
+let [a, b] = [1, 2, 3]
+a // 1
+b // 2
 ```
 
 对于 Set 结构，也可以使用数组的解构赋值。
@@ -145,12 +156,11 @@ x // "a"
 
 ```javascript
 function* fibs() {
- let a = 0
- let b = 1
- while (true) {
-   yield a  
-   [a, b] = [b, a + b]
- }
+  let a = 0
+  let b = 1
+  while (true) {
+    yield (a[(a, b)] = [b, a + b])
+  }
 }
 
 let [first, second, third, fourth, fifth, sixth] = fibs()
@@ -158,8 +168,6 @@ sixth // 5
 ```
 
 上面的代码中，fibs 是一个 Generator 函数，原生具有 Iterator 接口。解构赋值会依次从这个接口中获取值。
-
-### 默认值
 
 解构赋值允许指定默认值。ES6 内部使用严格相等运算符（===）判断一个位置是否有值。所以，**如果一个数组成员不严格等于 undefined，默认值是不会生效的**。
 
@@ -174,12 +182,41 @@ y // null
 如果默认值是一个表达式，那么这个表达式是惰性求值的，即只有在用到时才会求值。
 
 ```javascript
-function f() {  
+function f() {
   console.log('aaa')
 }
 let [x = f()] = [1]
 ```
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NDQ0NDcyN119
--->
+默认值可以引用解构赋值的其他变量，但该变量必须已经声明：
+
+```javascript
+let [x = 1, y = x] = [] // x=1; y=1
+```
+
+### 对象的解构赋值
+
+对象的解构赋值的内部机制是先找到同名属性，然后再赋值给对应的变量。真正被赋值的是后者，而不是前者。
+
+下面的代码中，foo 是匹配的模式，baz 才是变量。真正被赋值的是变量 baz，而不是模式 foo。
+
+```javascript
+let { foo: baz } = { foo: 'aaa', bar: 'bbb' }
+```
+
+与数组一样，解构也可以用于嵌套结构的对象：
+
+```javascript
+let obj = { p: ['Hello', { y: 'World' }] }
+let {
+  p: [x, { y }]
+} = obj
+```
+
+### 字符串的解构赋值
+
+### 数值和布尔值的解构赋值
+
+### 函数参数的解构赋值
+
+### 圆括号问题

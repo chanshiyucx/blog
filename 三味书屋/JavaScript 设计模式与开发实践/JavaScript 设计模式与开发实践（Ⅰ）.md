@@ -111,7 +111,7 @@ let renderMap = function(map) {
 }
 
 renderMap(googleMap) // 输出：开始渲染谷歌地图
-renderMap(baiduMap)  // 输出：开始渲染百度地图
+renderMap(baiduMap) // 输出：开始渲染百度地图
 ```
 
 在 JavaScript 函数本身也是对象，函数用来封装行为并且能够被四处传递。当对一些函数发出“调用”的消息时，这些函数会返回不同的执行结果，这是“多态性”的一种体现，也是很多设计模式在 JavaScript 中可以用高阶函数来代替实现的原因。
@@ -126,16 +126,17 @@ renderMap(baiduMap)  // 输出：开始渲染百度地图
 
 ```javascript
 let myObject = (function() {
-  let __name = 'sven'  // 私有（private）变量
+  let __name = 'sven' // 私有（private）变量
   return {
-    getName: function() { // 公开（public）方法
+    getName: function() {
+      // 公开（public）方法
       return __name
     }
   }
 })()
 
-console.log(myObject.getName())  // 输出：sven
-console.log(myObject.__name)     // 输出：undefined
+console.log(myObject.getName()) // 输出：sven
+console.log(myObject.__name) // 输出：undefined
 ```
 
 #### 封装实现
@@ -171,21 +172,23 @@ console.log(myObject.__name)     // 输出：undefined
 在不支持 `Object.create` 方法的浏览器中，则可以使用以下代码：
 
 ```javascript
-Object.create = Object.create || function(obj) {
-  var F = function() {}
-  F.prototype = obj
-  return new F()
-}
+Object.create =
+  Object.create ||
+  function(obj) {
+    var F = function() {}
+    F.prototype = obj
+    return new F()
+  }
 ```
 
 #### 原型编程泛型
 
 基于原型链的委托机制就是原型继承的本质。原型编程范型至少包括以下基本规则：
 
-* 所有的数据都是对象。
-* 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。
-* 对象会记住它的原型。  
-* 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
+- 所有的数据都是对象。
+- 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。
+- 对象会记住它的原型。
+- 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
 
 我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象，它是一个空的对象。JavaScript 所有对象实际上都是从这个对象克隆而来的，Object.prototype 对象就是它们的原型。
 
@@ -207,7 +210,7 @@ A.prototype = { name: 'sven' }
 var B = function() {}
 B.prototype = new A()
 var b = new B()
-console.log(b.name)  // 输出：sven
+console.log(b.name) // 输出：sven
 ```
 
 和把 B.prototype 直接指向一个字面量对象相比，通过 B.prototype = new A() 形成的原型链比之前多了一层。但二者之间没有本质上的区别，都是将对象构造器的原型指向另外一个对象，继承总是发生在对象和对象之间。
@@ -230,7 +233,7 @@ JavaScript 的 this 总是指向一个对象，而具体指向哪个对象是在
 
 除去不常用的 with 和 eval 的情况，具体到实际应用中，this 的指向大致可以分为以下 4 种。
 
-1. 作为对象的方法调用。  
+1. 作为对象的方法调用。
 2. 作为普通函数调用
 3. 构造器调用。
 4. Function.prototype.call 或 Function.prototype.apply 调用。
@@ -244,7 +247,7 @@ JavaScript 的 this 总是指向一个对象，而具体指向哪个对象是在
 ```javascript
 var getId = function(id) {
   return document.getElementById(id)
-};
+}
 getId('div1') // ok!
 ```
 
@@ -252,7 +255,7 @@ getId('div1') // ok!
 
 ```javascript
 var getId = document.getElementById
-getId( 'div1' ) // error!
+getId('div1') // error!
 ```
 
 在浏览器中执行这段代码抛出了一个异常，这是因为许多引擎的 document.getElementById 方法的内部实现中需要用到 this。这个 this 本来被期望指向 document，当 getElementById 方法作为 document 对象的属性被调用时，方法内部的 this 确实是指向 document 的。但当用 getId 来引用调用时就成了普通函数调用，函数内部的 this 指向了 window，而不是原来的 document。
@@ -311,7 +314,8 @@ document.getElementById('div1').onclick = function() {
 ```javascript
 Function.prototype.bind = function(context) {
   var self = this // 保存原函数
-  return function() { // 返回一个新的函数
+  return function() {
+    // 返回一个新的函数
     return self.apply(context, arguments) // 执行新的函数的时候，会把之前传入的 context 当作新函数体内的 this
   }
 }
@@ -327,17 +331,18 @@ func()
 
 ```javascript
 Function.prototype.bind = function() {
-  var self =  this, // 保存原函数
-      context = [].shift.call(arguments), // 需要绑定的 this 上下文
-      args = [].slice.call(arguments) // 剩余的参数转成数组
-  return function() { // 返回一个新的函数
+  var self = this, // 保存原函数
+    context = [].shift.call(arguments), // 需要绑定的 this 上下文
+    args = [].slice.call(arguments) // 剩余的参数转成数组
+  return function() {
+    // 返回一个新的函数
     // 执行新的函数的时候，会把之前传入的 context 当作新函数体内的 this
     // 并且组合两次分别传入的参数，作为新函数的参数
     return self.apply(context, [].concat.call(args, [].slice.call(arguments)))
   }
 }
 
-var obj = { name:  'sven' }
+var obj = { name: 'sven' }
 var func = function(a, b, c, d) {
   console.log(this.name) // 输出：sven
   console.log([a, b, c, d]) // 输出：[ 1, 2, 3, 4 ]
@@ -402,7 +407,7 @@ var report = (function() {
   return function(src) {
     var img = new Image()
     imgs.push(img)
-    img.src = src  
+    img.src = src
   }
 })()
 ```
@@ -548,8 +553,8 @@ setCommand(createCommand(Tv))
 
 高阶函数是指至少满足下列条件之一的函数：
 
-* 函数可以作为参数被传递
-* 函数可以作为返回值输出
+- 函数可以作为参数被传递
+- 函数可以作为返回值输出
 
 #### AOP
 
@@ -559,8 +564,9 @@ AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模�
 
 ```javascript
 Function.prototype.before = function(beforefn) {
-  var __self = this   // 保存原函数的引用
-  return function() { // 返回包含了原函数和新函数的"代理"函数
+  var __self = this // 保存原函数的引用
+  return function() {
+    // 返回包含了原函数和新函数的"代理"函数
     beforefn.apply(this, arguments) // 执行新函数，修正this
     return __self.apply(this, arguments) // 执行原函数
   }
@@ -579,11 +585,13 @@ var func = function() {
   console.log(2)
 }
 
-func = func.before(function() {
-  console.log(1)
-}).after(function() {
-  console.log(3)
-})
+func = func
+  .before(function() {
+    console.log(1)
+  })
+  .after(function() {
+    console.log(3)
+  })
 
 func()
 ```
@@ -599,7 +607,7 @@ func()
 一个计算月开销的示例如下，未柯里化之前：
 
 ```javascript
-var monthlyCost = 0;
+var monthlyCost = 0
 var cost = function(money) {
   monthlyCost += money
 }
@@ -616,7 +624,7 @@ var currying = function(fn) {
     if (arguments.length === 0) {
       return fn.apply(this, args)
     } else {
-      [].push.apply(args, arguments)
+      ;[].push.apply(args, arguments)
       return arguments.callee
     }
   }
@@ -665,31 +673,29 @@ Function.prototype.uncurrying = function() {
 使用方式：
 
 ```javascript
-var push = Array.prototype.push.uncurrying()
-
-(function() {
+var push = Array.prototype.push.uncurrying()(function() {
   push(arguments, 4)
   console.log(arguments) // 输出：[1, 2, 3, 4]
 })(1, 2, 3)
 ```
 
-通过 uncurrying 的方式，`Array.prototype.push.call` 变成了一个通用的 push 函数。这样一来，push 函数的作用就跟Array.prototype.push 一样了，同样不仅仅局限于只能操作 array 对象。而对于使用者而言，调用 push 函数的方式也显得更加简洁和意图明了。
+通过 uncurrying 的方式，`Array.prototype.push.call` 变成了一个通用的 push 函数。这样一来，push 函数的作用就跟 Array.prototype.push 一样了，同样不仅仅局限于只能操作 array 对象。而对于使用者而言，调用 push 函数的方式也显得更加简洁和意图明了。
 
 1. 函数节流
 
 ```javascript
 var throttle = function(fn, interval) {
   var __self = fn,
-      timer,
-      firstTime = true
+    timer,
+    firstTime = true
 
   return function() {
     var __me = this,
-        args = arguments
+      args = arguments
 
     if (firstTime) {
       __self.apply(__me, args)
-      return firstTime = false
+      return (firstTime = false)
     }
 
     if (timer) {
@@ -713,7 +719,8 @@ var throttle = function(fn, interval) {
 
 ```javascript
 var timeChunk = function(ary, fn, count = 1) {
-  var t, len = ary.length
+  var t,
+    len = ary.length
   var start = function() {
     for (var i = 0; i < Math.min(count, len); i++) {
       var obj = ary.shift()
@@ -722,7 +729,8 @@ var timeChunk = function(ary, fn, count = 1) {
   }
   return function() {
     t = setInterval(function() {
-      if (ary.length === 0) { // 如果全部节点都已经被创建好
+      if (ary.length === 0) {
+        // 如果全部节点都已经被创建好
         return clearInterval(t)
       }
       start()
@@ -741,7 +749,7 @@ var addEvent = function(elem, type, handler) {
     return elem.addEventListener(type, handler, false)
   }
   if (window.attachEvent) {
-    return elem.attachEvent("on" + type, handler)
+    return elem.attachEvent('on' + type, handler)
   }
 }
 ```
@@ -760,7 +768,7 @@ var addEvent = (function() {
 
   if (window.attachEvent) {
     return function(elem, type, handler) {
-      elem.attachEvent("on" + type, handler)
+      elem.attachEvent('on' + type, handler)
     }
   }
 })()
@@ -778,7 +786,7 @@ var addEvent = function(elem, type, handler) {
     }
   } else if (window.attachEvent) {
     addEvent = function(elem, type, handler) {
-      elem.attachEvent("on" + type, handler)
+      elem.attachEvent('on' + type, handler)
     }
   }
   addEvent(elem, type, handler)

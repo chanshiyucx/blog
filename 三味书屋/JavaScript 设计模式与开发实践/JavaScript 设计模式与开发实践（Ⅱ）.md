@@ -50,9 +50,9 @@ var getSingle = function(fn) {
 }
 
 var createLoginLayer = function() {
-  var div = document.createElement("div")
-  div.innerHTML = "我是登录浮窗"
-  div.style.display = "none"
+  var div = document.createElement('div')
+  div.innerHTML = '我是登录浮窗'
+  div.style.display = 'none'
   document.body.appendChild(div)
   return div
 }
@@ -121,25 +121,26 @@ var tween = {
 }
 
 var Animate = function(dom) {
-  this.dom = dom     // 进行运动的 dom 节点
+  this.dom = dom // 进行运动的 dom 节点
   this.startTime = 0 // 动画开始时间
-  this.startPos = 0  // 动画开始时，dom 的初始位置
-  this.endPos = 0    // 动画结束时，dom 的目标位置
-  this.propertyName = null  // dom 节点需要被改变的 css 属性名
-  this.easing = null    // 缓动算法
-  this.duration = null  // 动画持续时间
+  this.startPos = 0 // 动画开始时，dom 的初始位置
+  this.endPos = 0 // 动画结束时，dom 的目标位置
+  this.propertyName = null // dom 节点需要被改变的 css 属性名
+  this.easing = null // 缓动算法
+  this.duration = null // 动画持续时间
 }
 
 Animate.prototype.start = function(propertyName, endPos, duration, easing) {
   this.startTime = +new Date() // 动画启动时间
   this.startPos = this.dom.getBoundingClientRect()[propertyName] // dom 节点初始位置
   this.propertyName = propertyName // dom 节点需要被改变的CSS属性名
-  this.endPos = endPos        // dom 节点目标位置
-  this.duration = duration    // 动画持续时间
+  this.endPos = endPos // dom 节点目标位置
+  this.duration = duration // 动画持续时间
   this.easing = tween[easing] // 缓动算法
   var self = this
   var timeId = setInterval(function() {
-    if (self.step() === false) {  // 启动定时器，开始执行动画
+    if (self.step() === false) {
+      // 启动定时器，开始执行动画
       clearInterval(timeId) // 如果动画已结束，则清除定时器
     }
   }, 19)
@@ -151,7 +152,7 @@ Animate.prototype.step = function() {
     this.update(this.endPos)
     return false
   }
-  
+
   var pos = this.easing(
     t - this.startTime,
     this.startPos,
@@ -162,12 +163,12 @@ Animate.prototype.step = function() {
 }
 
 Animate.prototype.update = function(pos) {
-  this.dom.style[this.propertyName] = pos + "px"
+  this.dom.style[this.propertyName] = pos + 'px'
 }
 
-var div = document.getElementById("div")
+var div = document.getElementById('div')
 var animate = new Animate(div)
-animate.start("left", 500, 1000, "strongEaseOut")
+animate.start('left', 500, 1000, 'strongEaseOut')
 ```
 
 上面的缓动动画使用策略模式把算法传入动画类中，来达到各种不同的缓动效果，这些算法都可以轻易地被替换为另外一个算法，这是策略模式的经典运用之一。策略模式的实现并不复杂，关键是如何从策略模式的实现背后，找到封装变化、委托和多态性这些思想的价值。
@@ -177,7 +178,7 @@ animate.start("left", 500, 1000, "strongEaseOut")
 ```javascript
 var strategies = {
   isNonEmpty: function(value, errorMsg) {
-    if (value === "") {
+    if (value === '') {
       return errorMsg
     }
   },
@@ -199,12 +200,13 @@ var Validator = function() {
 
 Validator.prototype.add = function(dom, rules) {
   var self = this
-  for (var i = 0, rule; rule = rules[i++];) {
+  for (var i = 0, rule; (rule = rules[i++]); ) {
     // @蝉時雨：没有必要用立即执行函数表达式，用 forEach 是否更合适
-    (function(rule) {
-      var strategyAry = rule.strategy.split(":")
+    ;(function(rule) {
+      var strategyAry = rule.strategy.split(':')
       var errorMsg = rule.errorMsg
-      self.cache.push(function() { // 把校验的步骤用空函数包装起来，并且放入 cache
+      self.cache.push(function() {
+        // 把校验的步骤用空函数包装起来，并且放入 cache
         var strategy = strategyAry.shift()
         strategyAry.unshift(dom.value)
         strategyAry.push(errorMsg)
@@ -215,7 +217,7 @@ Validator.prototype.add = function(dom, rules) {
 }
 
 Validator.prototype.start = function() {
-  for (var i = 0, validatorFunc; validatorFunc = this.cache[i++];) {
+  for (var i = 0, validatorFunc; (validatorFunc = this.cache[i++]); ) {
     var msg = validatorFunc() // 开始校验，并取得校验后的返回信息
     if (msg) {
       return msg // 如果有确切的返回值，说明校验没有通过
@@ -227,24 +229,24 @@ var validataFunc = function() {
   var validator = new Validator() // 创建一个 validator 对象
   /*************** 添加一些校验规则 ****************/
   validator.add(registerForm.userName, [
-    { strategy: "isNonEmpty", errorMsg: "用户名不能为空" },
-    { strategy: "minLength:10", errorMsg: "用户名长度不能小于10位" }
+    { strategy: 'isNonEmpty', errorMsg: '用户名不能为空' },
+    { strategy: 'minLength:10', errorMsg: '用户名长度不能小于10位' }
   ])
   validator.add(registerForm.password, [
-    { strategy:  "minLength:6", errorMsg: "密码长度不能小于6位" }
+    { strategy: 'minLength:6', errorMsg: '密码长度不能小于6位' }
   ])
   validator.add(registerForm.phoneNumber, [
-    { strategy: "isMobile", errorMsg: "手机号码格式不正确" }
+    { strategy: 'isMobile', errorMsg: '手机号码格式不正确' }
   ])
   var errorMsg = validator.start()
   return errorMsg // 返回校验结果
 }
 
-var registerForm = document.getElementById("registerForm")
+var registerForm = document.getElementById('registerForm')
 registerForm.onsubmit = function() {
   var errorMsg = validataFunc() // 如果 errorMsg 有确切的返回值，说明未通过校验
   if (errorMsg) {
-    return false  // 阻止表单提交
+    return false // 阻止表单提交
   }
 }
 ```
@@ -255,7 +257,7 @@ registerForm.onsubmit = function() {
 
 - 策略模式利用组合、委托和多态等技术和思想，可以有效地避免多重条件选择语句。
 - 策略模式提供了对开放—封闭原则的完美支持，将算法封装在独立的 strategy 中，使得它们易于切换，易于理解，易于扩展。
-- 策略模式中的算法也可以复用在系统的其他地方，从而避免许多重复的复制粘贴工作。  
+- 策略模式中的算法也可以复用在系统的其他地方，从而避免许多重复的复制粘贴工作。
 - 在策略模式中利用组合和委托来让 Context 拥有执行算法的能力，这也是继承的一种更轻便的替代方案。
 
 当然，策略模式也有一些缺点：
@@ -294,7 +296,7 @@ registerForm.onsubmit = function() {
 
 ```javascript
 var myImage = (function() {
-  var imgNode = document.createElement("img")
+  var imgNode = document.createElement('img')
   document.body.appendChild(imgNode)
   return {
     setSrc: function(src) {
@@ -311,19 +313,19 @@ var proxyImage = (function() {
 
   return {
     setSrc: function(src) {
-      myImage.setSrc("loading.gif")
+      myImage.setSrc('loading.gif')
       img.src = src
     }
   }
 })()
-proxyImage.setSrc("avatar.jpg")
+proxyImage.setSrc('avatar.jpg')
 ```
 
 单一职责原则指的是，就一个类（通常也包括对象和函数等）而言，应该仅有一个引起它变化的原因。如果一个对象承担了多项职责，就意味着这个对象将变得巨大，引起它变化的原因可能会有多个。面向对象设计鼓励将行为分布到细粒度的对象之中，如果一个对象承担的职责过多，等于把这些职责耦合到了一起，这种耦合会导致脆弱和低内聚的设计。当变化发生时，设计可能会遭到意外的破坏。
 
 同时在大多数情况下，若违反其他任何原则，同时将违反开放—封闭原则。
 
-上面的预加载代码中，给 img 节点设置 src 和图片预加载这两个功能，被隔离在两个对象里，它们可以各自变化而不影响对方。何况就算有一天不再需要预加载，那么只需要改成请求本体而不是请求代理对象即可。其中关键是代理对象和本体都对外提供了 setSrc 方法，在客户看来，代理对象和本体是一致的，代理接手请求的过程对于用户来说是透明的，用户并不清楚代理和本体的区别，这样做有两个好处：  
+上面的预加载代码中，给 img 节点设置 src 和图片预加载这两个功能，被隔离在两个对象里，它们可以各自变化而不影响对方。何况就算有一天不再需要预加载，那么只需要改成请求本体而不是请求代理对象即可。其中关键是代理对象和本体都对外提供了 setSrc 方法，在客户看来，代理对象和本体是一致的，代理接手请求的过程对于用户来说是透明的，用户并不清楚代理和本体的区别，这样做有两个好处：
 
 - 用户可以放心地请求代理，他只关心是否能得到想要的结果。
 - 在任何使用本体的地方都可以替换成使用代理。
@@ -334,29 +336,30 @@ proxyImage.setSrc("avatar.jpg")
 
 ```javascript
 var synchronousFile = function(id) {
-  console.log("开始同步文件，id为: " + id)
+  console.log('开始同步文件，id为: ' + id)
 }
 
 var proxySynchronousFile = (function() {
   var cache = [], // 保存一段时间内需要同步的ID
-      timer // 定时器
+    timer // 定时器
   return function(id) {
     cache.push(id)
-    if (timer) { // 保证不会覆盖已经启动的定时器
+    if (timer) {
+      // 保证不会覆盖已经启动的定时器
       return
     }
     timer = setTimeout(function() {
-      synchronousFile(cache.join(",")) // 2秒后向本体发送需要同步的ID集合
+      synchronousFile(cache.join(',')) // 2秒后向本体发送需要同步的ID集合
       clearTimeout(timer) // 清空定时器
       timer = null
-      cache.length = 0  // 清空ID集合
+      cache.length = 0 // 清空ID集合
     }, 2000)
   }
 })()
 
-var checkbox = document.getElementsByTagName("input")
-  for (var i = 0, c; c = checkbox[i++];) {
-    c.onclick = function() {
+var checkbox = document.getElementsByTagName('input')
+for (var i = 0, c; (c = checkbox[i++]);) {
+  c.onclick = function() {
     if (this.checked === true) {
       proxySynchronousFile(this.id)
     }
@@ -378,8 +381,8 @@ var mult = function() {
 }
 
 var plus = function() {
-  var a =  0
-  for (var i =  0, l =  arguments.length; i < l; i++) {
+  var a = 0
+  for (var i = 0, l = arguments.length; i < l; i++) {
     a = a + arguments[i]
   }
   return a
@@ -389,7 +392,7 @@ var plus = function() {
 var createProxyFactory = function(fn) {
   var cache = {}
   return function() {
-    var args = Array.prototype.join.call(arguments, ",")
+    var args = Array.prototype.join.call(arguments, ',')
     if (args in cache) {
       return cache[args]
     }
@@ -398,7 +401,7 @@ var createProxyFactory = function(fn) {
 }
 
 var proxyMult = createProxyFactory(mult),
-    proxyPlus = createProxyFactory(plus)
+  proxyPlus = createProxyFactory(plus)
 alert(proxyMult(1, 2, 3, 4)) // 输出：24
 alert(proxyPlus(1, 2, 3, 4)) // 输出：10
 ```
@@ -413,7 +416,7 @@ alert(proxyPlus(1, 2, 3, 4)) // 输出：10
 
 外部迭代器必须显式地请求迭代下一个元素。外部迭代器增加了一些调用的复杂度，但相对也增强了迭代器的灵活性，可以手工控制迭代的过程或者顺序。
 
-下面这个外部迭代器的实现来自《松本行弘的程序世界》第4章，原例用 Ruby 写成，这里翻译成 JavaScript：
+下面这个外部迭代器的实现来自《松本行弘的程序世界》第 4 章，原例用 Ruby 写成，这里翻译成 JavaScript：
 
 ```javascript
 var Iterator = function(obj) {
@@ -445,35 +448,40 @@ var Iterator = function(obj) {
 ```javascript
 var getActiveUploadObj = function() {
   try {
-    return new ActiveXObject( "TXFTNActiveX.FTNUpload" ) // IE上传控件
-  } catch(e) {
+    return new ActiveXObject('TXFTNActiveX.FTNUpload') // IE上传控件
+  } catch (e) {
     return false
   }
 }
 
 var getFlashUploadObj = function() {
-  if (supportFlash()) { // supportFlash 函数未提供
-  var str = '<object type="application/x-shockwave-flash"></object>'
-   return $(str).appendTo($('body'))
+  if (supportFlash()) {
+    // supportFlash 函数未提供
+    var str = '<object type="application/x-shockwave-flash"></object>'
+    return $(str).appendTo($('body'))
   }
   return false
 }
-  
+
 var getFormUpladObj = function() {
   var str = '<input name="file" type="file" class="ui-file"/>' // 表单上传
   return $(str).appendTo($('body'))
 }
 
 var iteratorUploadObj = function() {
-  for (var i = 0, fn; fn = arguments[ i++];){
+  for (var i = 0, fn; (fn = arguments[i++]); ) {
     var uploadObj = fn()
-    if (uploadObj !== false){
+    if (uploadObj !== false) {
       return uploadObj
     }
   }
 }
 
-var uploadObj = iteratorUploadObj(getActiveUploadObj, getFlashUploadObj, getFormUpladObj)
+var uploadObj = iteratorUploadObj(
+  getActiveUploadObj,
+  getFlashUploadObj,
+  getFormUpladObj
+)
 ```
 
 在 getActiveUploadObj、getFlashUploadObj、getFormUpladObj 这 3 个函数中都有同一个约定：如果该函数里面的 upload 对象是可用的，则让函数返回该对象，反之返回 false，提示迭代器继续往后面进行迭代。
@@ -491,152 +499,152 @@ var uploadObj = iteratorUploadObj(getActiveUploadObj, getFlashUploadObj, getForm
 ```javascript
 var Event = (function() {
   var global = this,
-      Event,
-      _default = "default"
+    Event,
+    _default = 'default'
   Event = (function() {
     var _listen,
-        _trigger,
-        _remove,
-        _slice = Array.prototype.slice,
-        _shift = Array.prototype.shift,
-        _unshift = Array.prototype.unshift,
-        namespaceCache = {},
-        _create,
-        find,
-        each = function(ary, fn) {
-           var ret
-           for (var i =  0, l = ary.length; i < l; i++) {
-             var n = ary[i]
-             ret = fn.call(n, i, n)
-           }
-           return ret
-         }
+      _trigger,
+      _remove,
+      _slice = Array.prototype.slice,
+      _shift = Array.prototype.shift,
+      _unshift = Array.prototype.unshift,
+      namespaceCache = {},
+      _create,
+      find,
+      each = function(ary, fn) {
+        var ret
+        for (var i = 0, l = ary.length; i < l; i++) {
+          var n = ary[i]
+          ret = fn.call(n, i, n)
+        }
+        return ret
+      }
 
-      _listen = function(key, fn, cache) {
-         if (!cache[key]) {
-           cache[key] = []
-         }
-         cache[key].push(fn)
-       }
+    _listen = function(key, fn, cache) {
+      if (!cache[key]) {
+        cache[key] = []
+      }
+      cache[key].push(fn)
+    }
 
-      _remove = function(key, cache, fn) {
-          if (cache[key]) {
-            if (fn) {
-              for (var i = cache[key].length; i >=  0; i--) {
-                if (cache[key][i] === fn) {
-                  cache[key].splice(i, 1)
-                }
-              }
-            } else {
-              cache[key] = []
+    _remove = function(key, cache, fn) {
+      if (cache[key]) {
+        if (fn) {
+          for (var i = cache[key].length; i >= 0; i--) {
+            if (cache[key][i] === fn) {
+              cache[key].splice(i, 1)
             }
           }
+        } else {
+          cache[key] = []
         }
+      }
+    }
 
-        _trigger = function() {
-          var cache = _shift.call(arguments),
-              key = _shift.call(arguments),
-              args = arguments,
-              _self = this,
-              ret,
-              stack = cache[key]
-          if (!stack ||  !stack.length) {
-            return
+    _trigger = function() {
+      var cache = _shift.call(arguments),
+        key = _shift.call(arguments),
+        args = arguments,
+        _self = this,
+        ret,
+        stack = cache[key]
+      if (!stack || !stack.length) {
+        return
+      }
+      return each(stack, function() {
+        return this.apply(_self, args)
+      })
+    }
+
+    _create = function(namespace) {
+      var namespace = namespace || _default
+      var cache = {},
+        offlineStack = [], // 离线事件
+        ret = {
+          listen: function(key, fn, last) {
+            _listen(key, fn, cache)
+            if (offlineStack === null) {
+              return
+            }
+            if (last === 'last') {
+              offlineStack.length && offlineStack.pop()()
+            } else {
+              each(offlineStack, function() {
+                this()
+              })
+            }
+            offlineStack = null
+          },
+
+          one: function(key, fn, last) {
+            _remove(key, cache)
+            this.listen(key, fn, last)
+          },
+
+          remove: function(key, fn) {
+            _remove(key, cache, fn)
+          },
+
+          trigger: function() {
+            var fn,
+              args,
+              _self = this
+            _unshift.call(arguments, cache)
+            args = arguments
+            fn = function() {
+              return _trigger.apply(_self, args)
+            }
+            if (offlineStack) {
+              return offlineStack.push(fn)
+            }
+            return fn()
           }
-          return each(stack, function() {
-            return this.apply(_self, args)
-          })
         }
 
-      _create = function(namespace) {
-          var namespace = namespace || _default
-          var cache = {},
-              offlineStack = [], // 离线事件
-              ret = {
-                listen: function(key, fn, last) {
-                  _listen(key, fn, cache)
-                  if (offlineStack ===  null) {
-                    return
-                  }
-                 if (last === "last") {
-                   offlineStack.length && offlineStack.pop()()
-                } else {
-                  each(offlineStack, function() {
-                    this()
-                  })
-                }
-                offlineStack =  null
-              },
+      return namespace
+        ? namespaceCache[namespace]
+          ? namespaceCache[namespace]
+          : (namespaceCache[namespace] = ret)
+        : ret
+    }
 
-             one: function(key, fn, last) {
-               _remove(key, cache)
-               this.listen(key, fn, last)
-             },
+    return {
+      create: _create,
+      one: function(key, fn, last) {
+        var event = this.create()
+        event.one(key, fn, last)
+      },
 
-             remove: function(key, fn) {
-               _remove(key, cache, fn)
-             },
+      remove: function(key, fn) {
+        var event = this.create()
+        event.remove(key, fn)
+      },
 
-             trigger: function() {
-               var fn,
-                   args,
-                   _self = this
-               _unshift.call(arguments, cache)
-               args = arguments
-               fn = function() {
-                 return _trigger.apply(_self, args)
-               }
-               if (offlineStack) {
-                 return offlineStack.push(fn)
-               }
-               return fn()
-             }
-           }
+      listen: function(key, fn, last) {
+        var event = this.create()
+        event.listen(key, fn, last)
+      },
 
-       return namespace
-         ? namespaceCache[namespace]
-           ? namespaceCache[namespace]
-           : (namespaceCache[namespace] = ret)
-         : ret
-       }
-
-     return {
-       create: _create,
-       one: function(key, fn, last) {
-         var event = this.create()
-         event.one(key, fn, last)
-       },
-
-       remove: function(key, fn) {
-         var event = this.create()
-         event.remove(key, fn)
-       },
-
-       listen: function(key, fn, last) {
-         var event = this.create()
-         event.listen(key, fn, last)
-       },
-
-       trigger: function() {
-         var event = this.create()
-         event.trigger.apply(this, arguments)
-       }
+      trigger: function() {
+        var event = this.create()
+        event.trigger.apply(this, arguments)
+      }
     }
   })()
   return Event
 })()
 
 /************** 先发布后订阅 ********************/
-Event.trigger("click", 1)
-Event.listen("click", function(a) {
+Event.trigger('click', 1)
+Event.listen('click', function(a) {
   console.log(a) // 输出：1
 })
 /************** 使用命名空间 ********************/
-Event.create("namespace1").listen("click", function(a) {
+Event.create('namespace1').listen('click', function(a) {
   console.log(a) // 输出：1
 })
-Event.create("namespace1").trigger("click", 1)
-Event.create("namespace2").listen("click", function(a) {
+Event.create('namespace1').trigger('click', 1)
+Event.create('namespace2').listen('click', function(a) {
   console.log(a) // 输出：2
 })
 ```
@@ -668,7 +676,7 @@ JavaScript 中的发布—订阅模式，跟一些别的语言（比如 Java）�
 ```javascript
 var MenuBar = {
   refresh: function() {
-    console.log("刷新菜单目录")
+    console.log('刷新菜单目录')
   }
 }
 
@@ -681,7 +689,7 @@ RefreshMenuBarCommand.prototype.execute = function() {
 }
 
 var refreshMenuBarCommand = new RefreshMenuBarCommand(MenuBar)
-var button = document.getElementById("button")
+var button = document.getElementById('button')
 
 var setCommand = function(button, command) {
   button.onclick = function() {
@@ -719,13 +727,13 @@ var RefreshMenuBarCommand = function(receiver) {
 ```javascript
 var openPcCommand = {
   execute: function() {
-    console.log("开电脑")
+    console.log('开电脑')
   }
 }
 
 var openQQCommand = {
   execute: function() {
-    console.log("登录QQ")
+    console.log('登录QQ')
   }
 }
 
@@ -737,7 +745,7 @@ var MacroCommand = function() {
     },
 
     execute: function() {
-      for (var i = 0, command; (command = this.commandsList[i++]);) {
+      for (var i = 0, command; (command = this.commandsList[i++]); ) {
         command.execute()
       }
     }
@@ -757,7 +765,7 @@ macroCommand.execute()
 ```javascript
 var openPcCommand = {
   execute: function() {
-    console.log("开电脑")
+    console.log('开电脑')
   }
 }
 ```
@@ -794,13 +802,14 @@ Folder.prototype.add = function(file) {
 }
 
 Folder.prototype.scan = function() {
-  for (var i = 0, file, files = this.files; file = files[i++];) {
+  for (var i = 0, file, files = this.files; (file = files[i++]); ) {
     file.scan()
   }
 }
 
 Folder.prototype.remove = function() {
-  if (!this.parent) { // 根节点或者树外的游离节点
+  if (!this.parent) {
+    // 根节点或者树外的游离节点
     return
   }
   for (var files = this.parent.files, l = files.length - 1; l >= 0; l--) {
@@ -818,30 +827,31 @@ var File = function(name) {
 }
 
 File.prototype.add = function() {
-  throw new Error("文件下面不能再添加文件")
+  throw new Error('文件下面不能再添加文件')
 }
 
 File.prototype.scan = function() {
-  console.log("开始扫描文件: " + this.name)
+  console.log('开始扫描文件: ' + this.name)
 }
 
 File.prototype.remove = function() {
-  if (!this.parent) { // 根节点或者树外的游离节点
-    return;
+  if (!this.parent) {
+    // 根节点或者树外的游离节点
+    return
   }
 
-  for (var files = this.parent.files, l = files.length - 1; l >=0; l--) {
-    var file = files[l];
-    if (file === this){
-      files.splice(l, 1);
+  for (var files = this.parent.files, l = files.length - 1; l >= 0; l--) {
+    var file = files[l]
+    if (file === this) {
+      files.splice(l, 1)
     }
   }
 }
 
-var folder = new Folder("学习资料")
-var folder1 = new Folder("JavaScript")
-var file1 = new File("JavaScript设计模式与开发实践")
-var file2 = new File("重构与模式")
+var folder = new Folder('学习资料')
+var folder1 = new Folder('JavaScript')
+var file1 = new File('JavaScript设计模式与开发实践')
+var file2 = new File('重构与模式')
 folder1.add(file1)
 folder.add(folder1)
 folder.add(file2)

@@ -15,7 +15,7 @@ input 元素本身有个 oninput 事件，类似 onchange，每当输入框内�
 
 ### v-model 用在组件上
 
-v-model 不仅仅能在 input上用，在组件上也能使用：
+v-model 不仅仅能在 input 上用，在组件上也能使用：
 
 ```html
 <div id="demo">
@@ -99,7 +99,7 @@ Vue.component('my-checkbox', {
 <script src="https://cdn.bootcss.com/vue/2.3.0/vue.js"></script>
 <script>
 Vue.component('my-checkbox', {
-  tempalte: `<input 
+  tempalte: `<input
                type="checkbox"
                <!--这里就不用 input 了，而是 balabala-->
                @change="$emit('balabala', $event.target.checked)"

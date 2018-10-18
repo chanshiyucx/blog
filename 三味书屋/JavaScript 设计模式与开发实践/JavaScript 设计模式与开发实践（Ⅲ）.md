@@ -13,7 +13,7 @@
 ```javascript
 var Beverage = function() {}
 Beverage.prototype.boilWater = function() {
-  console.log("把水煮沸")
+  console.log('把水煮沸')
 }
 Beverage.prototype.brew = function() {} // 空方法，应该由子类重写
 Beverage.prototype.pourInCup = function() {} // 空方法，应该由子类重写
@@ -28,13 +28,13 @@ Beverage.prototype.init = function() {
 var Coffee = function() {}
 Coffee.prototype = new Beverage()
 Coffee.prototype.brew = function() {
-  console.log("用沸水冲泡咖啡")
+  console.log('用沸水冲泡咖啡')
 }
 Coffee.prototype.pourInCup = function() {
-  console.log("把咖啡倒进杯子")
+  console.log('把咖啡倒进杯子')
 }
 Coffee.prototype.addCondiments = function() {
-  console.log("加糖和牛奶")
+  console.log('加糖和牛奶')
 }
 var Coffee = new Coffee()
 Coffee.init()
@@ -42,13 +42,13 @@ Coffee.init()
 var Tea = function() {}
 Tea.prototype = new Beverage()
 Tea.prototype.brew = function() {
-  console.log("用沸水浸泡茶叶")
+  console.log('用沸水浸泡茶叶')
 }
 Tea.prototype.pourInCup = function() {
-  console.log("把茶倒进杯子")
+  console.log('把茶倒进杯子')
 }
 Tea.prototype.addCondiments = function() {
-  console.log("加柠檬")
+  console.log('加柠檬')
 }
 var tea = new Tea()
 tea.init()
@@ -95,8 +95,8 @@ Beverage.prototype.init = function() {
 }
 
 // 省略其他代码...
-Coffee.prototype.customerWantsCondiments= function() {
-   return window.confirm('请问需要调料吗？')
+Coffee.prototype.customerWantsCondiments = function() {
+  return window.confirm('请问需要调料吗？')
 }
 ```
 
@@ -121,17 +121,23 @@ Coffee.prototype.customerWantsCondiments= function() {
 ```javascript
 var Beverage = function(param) {
   var boilWater = function() {
-    console.log("把水煮沸")
+    console.log('把水煮沸')
   }
-  var brew = param.brew || function() {
-    throw new Error("必须传递brew方法")
-  }
-  var pourInCup = param.pourInCup || function() {
-    throw new Error("必须传递pourInCup方法")
-  }
-  var addCondiments = param.addCondiments || function() {
-    throw new Error("必须传递addCondiments方法")
-  }
+  var brew =
+    param.brew ||
+    function() {
+      throw new Error('必须传递brew方法')
+    }
+  var pourInCup =
+    param.pourInCup ||
+    function() {
+      throw new Error('必须传递pourInCup方法')
+    }
+  var addCondiments =
+    param.addCondiments ||
+    function() {
+      throw new Error('必须传递addCondiments方法')
+    }
 
   var F = function() {}
   F.prototype.init = function() {
@@ -145,13 +151,13 @@ var Beverage = function(param) {
 
 var Coffee = Beverage({
   brew: function() {
-    console.log("用沸水冲泡咖啡")
+    console.log('用沸水冲泡咖啡')
   },
   pourInCup: function() {
-    console.log("把咖啡倒进杯子")
+    console.log('把咖啡倒进杯子')
   },
   addCondiments: function() {
-    console.log("加糖和牛奶")
+    console.log('加糖和牛奶')
   }
 })
 
@@ -169,7 +175,7 @@ coffee.init()
 
 享元模式要求将对象的属性划分为内部状态与外部状态。享元模式的目标是尽量减少共享对象的数量，关于如何划分内部状态和外部状态，下面的几条经验提供了一些指引：
 
-- 内部状态存储于对象内部。  
+- 内部状态存储于对象内部。
 - 内部状态可以被一些对象共享。
 - 内部状态独立于具体的场景，通常不会改变。
 - 外部状态取决于具体的场景，并根据场景而变化，外部状态不能被共享。
@@ -186,7 +192,7 @@ var Upload = function(uploadType) {
 }
 Upload.prototype.delFile = function(id) {
   uploadManager.setExternalState(id, this) // 通过管理器设置外部状态
-  if (window.confirm("确定要删除该文件吗? " + this.fileName)) {
+  if (window.confirm('确定要删除该文件吗? ' + this.fileName)) {
     return this.dom.parentNode.removeChild(this.dom)
   }
 }
@@ -210,10 +216,15 @@ var uploadManager = (function() {
   return {
     add: function(id, uploadType, fileName, fileSize) {
       var flyWeightObj = UploadFactory.create(uploadType)
-      var dom = document.createElement("div")
-      dom.innerHTML = "<span>文件名称:" + fileName + ", 文件大小: " + fileSize + "</span>" +
+      var dom = document.createElement('div')
+      dom.innerHTML =
+        '<span>文件名称:' +
+        fileName +
+        ', 文件大小: ' +
+        fileSize +
+        '</span>' +
         '<button class="delFile">删除</button>'
-      dom.querySelector(".delFile").onclick = function() {
+      dom.querySelector('.delFile').onclick = function() {
         flyWeightObj.delFile(id)
       }
       document.body.appendChild(dom)
@@ -231,8 +242,13 @@ var uploadManager = (function() {
 
 var id = 0
 window.startUpload = function(uploadType, files) {
-  for (var i = 0, file; file = files[i++];) {
-    var uploadObj = uploadManager.add(++id, uploadType, file.fileName, file.fileSize)
+  for (var i = 0, file; (file = files[i++]); ) {
+    var uploadObj = uploadManager.add(
+      ++id,
+      uploadType,
+      file.fileName,
+      file.fileSize
+    )
   }
 }
 ```
@@ -242,7 +258,7 @@ window.startUpload = function(uploadType, files) {
 享元模式带来的好处很大程度上取决于如何使用以及何时使用，一般来说，以下情况发生时便可以使用享元模式。
 
 - 一个程序中使用了大量的相似对象。
-- 由于使用了大量对象，造成很大的内存开销。  
+- 由于使用了大量对象，造成很大的内存开销。
 - 对象的大多数状态都可以变为外部状态。
 - 剥离出对象的外部状态之后，可以用相对较少的共享对象取代大量对象。
 
@@ -259,23 +275,23 @@ window.startUpload = function(uploadType, files) {
 ```javascript
 var order500 = function(orderType, pay, stock) {
   if (orderType === 1 && pay === true) {
-    console.log("500元定金预购，得到100优惠券")
+    console.log('500元定金预购，得到100优惠券')
   } else {
-    return "nextSuccessor"
+    return 'nextSuccessor'
   }
 }
 var order200 = function(orderType, pay, stock) {
   if (orderType === 2 && pay === true) {
-    console.log("200元定金预购，得到50优惠券")
+    console.log('200元定金预购，得到50优惠券')
   } else {
-    return "nextSuccessor"
+    return 'nextSuccessor'
   }
 }
 var orderNormal = function(orderType, pay, stock) {
   if (stock > 0) {
-    console.log("普通购买，无优惠券")
+    console.log('普通购买，无优惠券')
   } else {
-    console.log("手机库存不足")
+    console.log('手机库存不足')
   }
 }
 
@@ -290,7 +306,7 @@ Chain.prototype.setNextSuccessor = function(successor) {
 // Chain.prototype.passRequest  传递请求给某个节点
 Chain.prototype.passRequest = function() {
   var ret = this.fn.apply(this, arguments)
-  if (ret === "nextSuccessor") {
+  if (ret === 'nextSuccessor') {
     return (
       this.successor &&
       this.successor.passRequest.apply(this.successor, arguments)
@@ -330,7 +346,7 @@ Chain.prototype.next = function() {
 ```javascript
 var fn1 = new Chain(function() {
   console.log(1)
-  return "nextSuccessor"
+  return 'nextSuccessor'
 })
 var fn2 = new Chain(function() {
   console.log(2)
@@ -371,7 +387,7 @@ Function.prototype.after = function(fn) {
   var self = this
   return function() {
     var ret = self.apply(this, arguments)
-    if (ret === "nextSuccessor") {
+    if (ret === 'nextSuccessor') {
       return fn.apply(this, arguments)
     }
     return ret
@@ -379,7 +395,7 @@ Function.prototype.after = function(fn) {
 }
 
 var order = order500yuan.after(order200yuan).after(orderNormal)
-order( 1, true, 500 ) // 输出：500元定金预购，得到100优惠券
+order(1, true, 500) // 输出：500元定金预购，得到100优惠券
 ```
 
 ## 中介者模式
@@ -394,36 +410,36 @@ order( 1, true, 500 ) // 输出：500元定金预购，得到100优惠券
 function Player(name, teamColor) {
   this.name = name // 角色名字
   this.teamColor = teamColor // 队伍颜色
-  this.state = "alive" // 玩家生存状态
+  this.state = 'alive' // 玩家生存状态
 }
 Player.prototype.win = function() {
-  console.log(this.name + " won ")
+  console.log(this.name + ' won ')
 }
 Player.prototype.lose = function() {
-  console.log(this.name + " lost")
+  console.log(this.name + ' lost')
 }
 Player.prototype.die = function() {
-  this.state = "dead"
-  playerDirector.ReceiveMessage("playerDead", this) // 给中介者发送消息，玩家死亡
+  this.state = 'dead'
+  playerDirector.ReceiveMessage('playerDead', this) // 给中介者发送消息，玩家死亡
 }
 Player.prototype.remove = function() {
-  playerDirector.ReceiveMessage("removePlayer", this) // 给中介者发送消息，移除一个玩家
+  playerDirector.ReceiveMessage('removePlayer', this) // 给中介者发送消息，移除一个玩家
 }
 Player.prototype.changeTeam = function(color) {
-  playerDirector.ReceiveMessage("changeTeam", this, color) // 给中介者发送消息，玩家换队
+  playerDirector.ReceiveMessage('changeTeam', this, color) // 给中介者发送消息，玩家换队
 }
 
 // 玩家创建工厂
 var playerFactory = function(name, teamColor) {
   var newPlayer = new Player(name, teamColor) // 创造一个新的玩家对象
-  playerDirector.ReceiveMessage("addPlayer", newPlayer) // 给中介者发送消息，新增玩家
+  playerDirector.ReceiveMessage('addPlayer', newPlayer) // 给中介者发送消息，新增玩家
   return newPlayer
 }
 
 // 中介者
 var playerDirector = (function() {
   var players = {}, // 保存所有玩家
-      operations = {} // 中介者可以执行的操作
+    operations = {} // 中介者可以执行的操作
   /****** 新增一个玩家 *********/
   operations.addPlayer = function(player) {
     var teamColor = player.teamColor // 玩家的队伍颜色
@@ -433,7 +449,7 @@ var playerDirector = (function() {
   /****** 移除一个玩家 *********/
   operations.removePlayer = function(player) {
     var teamColor = player.teamColor, // 玩家的队伍颜色
-        teamPlayers = players[teamColor] || [] //该队伍所有成员
+      teamPlayers = players[teamColor] || [] //该队伍所有成员
     for (var i = teamPlayers.length - 1; i >= 0; i--) {
       // 遍历删除
       if (teamPlayers[i] === player) {
@@ -451,23 +467,23 @@ var playerDirector = (function() {
   operations.playerDead = function(player) {
     // 玩家死亡
     var teamColor = player.teamColor,
-        teamPlayers = players[teamColor] // 玩家所在队伍
+      teamPlayers = players[teamColor] // 玩家所在队伍
     var all_dead = true
-    for (var i = 0, player; player = teamPlayers[i++];) {
-      if (player.state !== "dead") {
+    for (var i = 0, player; (player = teamPlayers[i++]); ) {
+      if (player.state !== 'dead') {
         all_dead = false
         break
       }
     }
     if (all_dead === true) {
       // 全部死亡
-      for (var i = 0, player; player = teamPlayers[i++]; ) {
+      for (var i = 0, player; (player = teamPlayers[i++]); ) {
         player.lose() // 本队所有玩家lose
       }
       for (var color in players) {
         if (color !== teamColor) {
           var teamPlayers = players[color] // 其他队伍的玩家
-          for (var i = 0, player; player = teamPlayers[i++];) {
+          for (var i = 0, player; (player = teamPlayers[i++]); ) {
             player.win() // 其他队伍所有玩家win
           }
         }
@@ -506,7 +522,7 @@ var playerDirector = (function() {
 ```javascript
 var Plane = function() {}
 Plane.prototype.fire = function() {
-  console.log("发射普通子弹")
+  console.log('发射普通子弹')
 }
 
 var MissileDecorator = function(plane) {
@@ -514,7 +530,7 @@ var MissileDecorator = function(plane) {
 }
 MissileDecorator.prototype.fire = function() {
   this.plane.fire()
-  console.log("发射导弹")
+  console.log('发射导弹')
 }
 
 var plane = new Plane()
@@ -533,11 +549,11 @@ JavaScript 语言动态改变对象相当容易，我们可以直接改写对象
 ```javascript
 var plane = {
   fire: function() {
-    console.log("发射普通子弹")
+    console.log('发射普通子弹')
   }
 }
 var missileDecorator = function() {
-  console.log("发射导弹")
+  console.log('发射导弹')
 }
 var fire1 = plane.fire
 plane.fire = function() {
@@ -549,7 +565,7 @@ plane.fire() // 分别输出：发射普通子弹、发射导弹
 
 ### 装饰者也是包装器
 
-在《设计模式》成书之前，GoF 原想把装饰者（decorator）模式称为包装器（wrapper）模式。从功能上而言，decorator 能很好地描述这个模式，但从结构上看，wrapper的说法更加贴切。装饰者模式将一个对象嵌入另一个对象之中，实际上相当于这个对象被另一个对象包装起来，形成一条包装链。请求随着这条链依次传递到所有的对象，每个对象都有处理这条请求的机会。
+在《设计模式》成书之前，GoF 原想把装饰者（decorator）模式称为包装器（wrapper）模式。从功能上而言，decorator 能很好地描述这个模式，但从结构上看，wrapper 的说法更加贴切。装饰者模式将一个对象嵌入另一个对象之中，实际上相当于这个对象被另一个对象包装起来，形成一条包装链。请求随着这条链依次传递到所有的对象，每个对象都有处理这条请求的机会。
 
 ### 装饰函数
 
@@ -578,7 +594,8 @@ window.onload = function() {
 ```javascript
 Function.prototype.before = function(beforefn) {
   var __self = this // 保存原函数的引用
-  return function() { // 返回包含了原函数和新函数的"代理"函数
+  return function() {
+    // 返回包含了原函数和新函数的"代理"函数
     beforefn.apply(this, arguments)
     return __self.apply(this, arguments) // 执行原函数并返回原函数的执行结果，并且保证 this 不被劫持
   }
@@ -601,7 +618,7 @@ Function.prototype.before 接受一个函数当作参数，这个函数即为新
 document.getElementById = document.getElementById.before(function() {
   alert(1)
 })
-var button = document.getElementById("button")
+var button = document.getElementById('button')
 
 window.onload = function() {
   alert(1)
@@ -618,7 +635,7 @@ window.onload = (window.onload || function() {})
   })
 ```
 
-上面的 AOP 实现是在 Function.prototype 上添加 before 和 after 方法，如果不喜欢这种污染原型的方式，那么可以做一些变通，把原函数和新函数都作为参数传入be-fore或者after方法：
+上面的 AOP 实现是在 Function.prototype 上添加 before 和 after 方法，如果不喜欢这种污染原型的方式，那么可以做一些变通，把原函数和新函数都作为参数传入 be-fore 或者 after 方法：
 
 ```javascript
 var before = function(fn, beforefn) {
@@ -645,28 +662,28 @@ a()
 
 用 AOP 装饰函数的技巧在实际开发中非常有用。不论是业务代码的编写，还是在框架层面，都可以把行为依照职责分成粒度更细的函数，随后通过装饰把它们合并到一起，这有助于我们编写一个松耦合和高复用性的系统。
 
-回顾上面 AOP 函数可以发现 beforefn 和原函数_self 共用一组参数列表 arguments，当在 beforefn 的函数体内改变 arguments 的时候，原函数_self 接收的参数列表自然也会变化。
+回顾上面 AOP 函数可以发现 beforefn 和原函数\_self 共用一组参数列表 arguments，当在 beforefn 的函数体内改变 arguments 的时候，原函数\_self 接收的参数列表自然也会变化。
 
 ```javascript
 var func = function(param) {
   console.log(param) // 输出：{a: "a", b: "b"}
 }
 func = func.before(function(param) {
-  param.b = "b"
+  param.b = 'b'
 })
-func({ a: "a" })
+func({ a: 'a' })
 ```
 
 借此启发，可以使用此特性为网络请求动态设置 token：
 
 ```javascript
 var getToken = function() {
-  return "Token"
+  return 'Token'
 }
 ajax = ajax.before(function(type, url, param) {
   param.Token = getToken()
 })
-ajax("get", "http:// xxx.com/userinfo", { name: "sven" })
+ajax('get', 'http:// xxx.com/userinfo', { name: 'sven' })
 ```
 
 用 AOP 的方式给 ajax 函数动态装饰上 Token 参数，保证了 ajax 函数是一个相对纯净的函数，提高了 ajax 函数的可复用性，它在被迁往其他项目的时候，不需要做任何修改。
@@ -685,12 +702,12 @@ Function.prototype.before = function(beforefn) {
   }
 }
 var validata = function() {
-  if (username.value === "") {
-    alert("用户名不能为空")
+  if (username.value === '') {
+    alert('用户名不能为空')
     return false
   }
-  if (password.value === "") {
-    alert("密码不能为空")
+  if (password.value === '') {
+    alert('密码不能为空')
     return false
   }
 }
@@ -699,7 +716,7 @@ var formSubmit = function() {
     username: username.value,
     password: password.value
   }
-  ajax("http:// xxx.com/login", param)
+  ajax('http:// xxx.com/login', param)
 }
 formSubmit = formSubmit.before(validata)
 submitBtn.onclick = function() {
@@ -713,7 +730,7 @@ submitBtn.onclick = function() {
 var func = function() {
   alert(1)
 }
-func.a = "a"
+func.a = 'a'
 func = func.after(function() {
   alert(2)
 })
@@ -740,9 +757,9 @@ alert(func.a) // 输出：undefined
 
 ```javascript
 Light.prototype.init = function() {
-  var button = document.createElement("button"),
-      self = this
-  button.innerHTML = "开关"
+  var button = document.createElement('button'),
+    self = this
+  button.innerHTML = '开关'
   this.button = document.body.appendChild(button)
   this.button.onclick = function() {
     self.buttonWasPressed()
@@ -750,15 +767,15 @@ Light.prototype.init = function() {
 }
 
 Light.prototype.buttonWasPressed = function() {
-  if (this.state === "off") {
-    console.log("弱光")
-    this.state = "weakLight"
-  } else if (this.state === "weakLight") {
-    console.log("强光")
-    this.state = "strongLight"
-  } else if (this.state === "strongLight") {
-    console.log("关灯")
-    this.state = "off"
+  if (this.state === 'off') {
+    console.log('弱光')
+    this.state = 'weakLight'
+  } else if (this.state === 'weakLight') {
+    console.log('强光')
+    this.state = 'strongLight'
+  } else if (this.state === 'strongLight') {
+    console.log('关灯')
+    this.state = 'off'
   }
 }
 
@@ -773,7 +790,7 @@ var OffLightState = function(light) {
   this.light = light
 }
 OffLightState.prototype.buttonWasPressed = function() {
-  console.log("弱光") // offLightState 对应的行为
+  console.log('弱光') // offLightState 对应的行为
   this.light.setState(this.light.weakLightState) // 切换状态到 weakLightState
 }
 
@@ -781,7 +798,7 @@ var WeakLightState = function(light) {
   this.light = light
 }
 WeakLightState.prototype.buttonWasPressed = function() {
-  console.log("强光") // weakLightState 对应的行为
+  console.log('强光') // weakLightState 对应的行为
   this.light.setState(this.light.strongLightState) // 切换状态到 strongLightState
 }
 
@@ -789,7 +806,7 @@ var StrongLightState = function(light) {
   this.light = light
 }
 StrongLightState.prototype.buttonWasPressed = function() {
-  console.log("关灯") // strongLightState 对应的行为
+  console.log('关灯') // strongLightState 对应的行为
   this.light.setState(this.light.offLightState) // 切换状态到 offLightState
 }
 
@@ -800,10 +817,10 @@ var Light = function() {
   this.button = null
 }
 Light.prototype.init = function() {
-  var button = document.createElement("button"),
-      self = this
+  var button = document.createElement('button'),
+    self = this
   this.button = document.body.appendChild(button)
-  this.button.innerHTML = "开关"
+  this.button.innerHTML = '开关'
   this.currState = this.offLightState
   this.button.onclick = function() {
     self.currState.buttonWasPressed()
@@ -827,7 +844,7 @@ light.init()
 
 状态模式的优点如下：
 
-- 状态模式定义了状态与行为之间的关系，并将它们封装在一个类里。通过增加新的状态类，很容易增加新的状态和转换。  
+- 状态模式定义了状态与行为之间的关系，并将它们封装在一个类里。通过增加新的状态类，很容易增加新的状态和转换。
 - 避免 Context 无限膨胀，状态切换的逻辑被分布在状态类中，也去掉了 Context 中原本过多的条件分支。
 - 用对象代替字符串来记录当前状态，使得状态的切换更加一目了然。
 - Context 中的请求动作和状态类中封装的行为可以非常容易地独立变化而互不影响。
@@ -852,9 +869,9 @@ var Light = function() {
   this.button = null
 }
 Light.prototype.init = function() {
-  var button = document.createElement("button"),
+  var button = document.createElement('button'),
     self = this
-  button.innerHTML = "已关灯"
+  button.innerHTML = '已关灯'
   this.button = document.body.appendChild(button)
   this.button.onclick = function() {
     self.currState.buttonWasPressed.call(self) // 把请求委托给 FSM 状态机
@@ -863,15 +880,15 @@ Light.prototype.init = function() {
 var FSM = {
   off: {
     buttonWasPressed: function() {
-      console.log("关灯")
-      this.button.innerHTML = "下一次按我是开灯"
+      console.log('关灯')
+      this.button.innerHTML = '下一次按我是开灯'
       this.currState = FSM.on
     }
   },
   on: {
     buttonWasPressed: function() {
-      console.log("开灯")
-      this.button.innerHTML = "下一次按我是关灯"
+      console.log('开灯')
+      this.button.innerHTML = '下一次按我是关灯'
       this.currState = FSM.off
     }
   }
@@ -894,15 +911,15 @@ var delegate = function(client, delegation) {
 var FSM = {
   off: {
     buttonWasPressed: function() {
-      console.log("关灯")
-      this.button.innerHTML = "下一次按我是开灯"
+      console.log('关灯')
+      this.button.innerHTML = '下一次按我是开灯'
       this.currState = this.onState
     }
   },
   on: {
     buttonWasPressed: function() {
-      console.log("开灯")
-      this.button.innerHTML = "下一次按我是关灯"
+      console.log('开灯')
+      this.button.innerHTML = '下一次按我是关灯'
       this.currState = this.offState
     }
   }
@@ -914,9 +931,9 @@ var Light = function() {
   this.button = null
 }
 Light.prototype.init = function() {
-  var button = document.createElement("button"),
-      self = this
-  button.innerHTML = "已关灯"
+  var button = document.createElement('button'),
+    self = this
+  button.innerHTML = '已关灯'
   this.button = document.body.appendChild(button)
   this.button.onclick = function() {
     self.currState.buttonWasPressed()
@@ -933,12 +950,12 @@ light.init()
 ```javascript
 var googleMap = {
   show: function() {
-    console.log("开始渲染谷歌地图")
+    console.log('开始渲染谷歌地图')
   }
 }
 var baiduMap = {
   display: function() {
-    console.log("开始渲染百度地图")
+    console.log('开始渲染百度地图')
   }
 }
 var baiduMapAdapter = {
