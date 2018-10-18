@@ -553,7 +553,7 @@ setCommand(createCommand(Tv))
 
 #### AOP
 
-AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，这些跟业务逻辑无关的功能通常包括日志统计、安全控制、异常处理等。把这些功能抽离出来之后，再通过“动态织入”的方式掺入业务逻辑模块中。这样做的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用日志统计等功能模块。
+AOP（面向切面编程）的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，通常包括日志统计、安全控制、异常处理等。把这些功能抽离出来之后，再通过“动态织入”的方式掺入业务逻辑模块中。这样做的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用功能模块。
 
 通常在 JavaScript 中实现 AOP，都是指把一个函数“动态织入”到另外一个函数之中，这种使用 AOP 的方式来给函数添加职责，也是 JavaScript 语言中一种非常特别和巧妙的装饰者模式实现。
 
@@ -625,7 +625,7 @@ var currying = function(fn) {
 var cost = (function() {
   var money = 0
   return function() {
-    for (var i =  0, l =  arguments.length; i < l; i++) {
+    for (var i = 0, l = arguments.length; i < l; i++) {
       money += arguments[i]
     }
     return money
