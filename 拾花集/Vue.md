@@ -9,7 +9,7 @@ v-model 虽然很像使用了双向数据绑定的 Angular 的 ng-model，但是
 <input :value="sth" @input="sth = $event.target.value" />
 ```
 
-input 元素本身有个 oninput 事件，这是 HTML5 新增加的，类似 onchange ，每当输入框内容发生变化，就会触发 oninput，把最新的 value 传递给 sth。
+input 元素本身有个 oninput 事件，类似 onchange，每当输入框内容发生变化，就会触发 oninput，把最新的 value 传递给 sth。
 
 在给 input 元素添加 v-model 属性时，默认会把 value 作为元素的属性，然后把 'input' 事件作为实时传递 value 的触发事件。
 
@@ -90,3 +90,30 @@ Vue.component('my-checkbox', {
 })
 </script>
 ```
+
+在 Vue 2.2 版本，可以在定义组件时通过 model 选项的方式来定制 prop/event：
+
+```html
+<my-checkbox v-model="foo"></my-checkbox>
+
+<script src="https://cdn.bootcss.com/vue/2.3.0/vue.js"></script>
+<script>
+Vue.component('my-checkbox', {
+  tempalte: `<input 
+               type="checkbox"
+               <!--这里就不用 input 了，而是 balabala-->
+               @change="$emit('balabala', $event.target.checked)"
+               :checked="checked"
+             />`
+  props: ['checked'], //这里就不用 value 了，而是 checked
+  model: {
+    prop: 'checked',
+    event: 'balabala'
+  },
+})
+</script>
+```
+
+参考原文：
+
+[Vue 进阶教程之：详解 v-model](https://www.jianshu.com/p/4147d3ed2e60)
