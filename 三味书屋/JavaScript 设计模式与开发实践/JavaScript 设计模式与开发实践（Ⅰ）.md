@@ -57,7 +57,7 @@ public class Chicken extends Animal {
   }
 }
 
-public class Duck extends Anima{
+public class Duck extends Animal {
   public void makeSound() {
     System.out.println( "嘎嘎嘎" );
   }

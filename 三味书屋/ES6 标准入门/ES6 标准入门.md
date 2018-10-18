@@ -1,9 +1,16 @@
+柏林已经来了命令，阿尔萨斯和洛林的学校只许教 ES6 了···他转身朝着黑板，拿起一支粉笔，使出全身的力量，写了两个大字：“ES6 万岁！”（《最后一课》）。<!-- more -->
+
+阮一峰的《ES6 标准入门》第二版和第三版都有购入，第二版是去年买的实体书，当初大略翻了一遍，今年第三版又出世了，在原来的基础上新增了不少内容，是时候重拾书本学习了。
+
+> Any application that can be written in JavaScript will eventually be written in JavaScript.  --Jeff Atwood
+
 ## let 和 const
 
 ### 基本用法
 
-1. 不存在变量提升
-var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为 undefined。这种现象有些奇怪，变量应该在声明语句之后才可以使用。为了纠正这种现象，let 命令改变了语法行为，它所声明的变量一定要在声明后使用，否则便会报错。
+#### 不存在变量提升
+
+var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为 undefined。let 命令改变了语法行为，它所声明的变量一定要在声明后使用，否则便会报错。
 
 ```javascript
 // var的情况
@@ -15,10 +22,11 @@ console.log(bar) // 报错 ReferenceError
 let bar = 2
 ```
 
-2.  暂时性死区:
+#### 暂时性死区
+
 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
 
-ES6 明确规定，如果区块中存在 let 和 const 命令，则这个区块对这些命令声明的变量从一开始就形成封闭作用域。这在语法上称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+ES6 规定，如果区块中存在 let 和 const 命令，则这个区块对这些命令声明的变量从一开始就形成封闭作用域。这在语法上称为“暂时性死区”（temporal dead zone，简称 TDZ）。
 
 ```javascript
 var tmp = 123
@@ -32,33 +40,37 @@ if (true) {
 
 ```javascript
 typeof x // ReferenceError
-let x
 
+let x
 typeof undeclared_variable // "undefined"
 ```
 
 总之，暂时性死区的本质就是，**只要进入当前作用域，所要使用的变量就已经存在，但是不可获取**，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。
 
-3. 不允许重复声明
+#### 不允许重复声明
 
 扩展1：const 实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。如果真的想将对象冻结，应该使用 `Object.freeze` 方法。
 
 ```javascript
 var constantize = (obj) => {  
   Object.freeze(obj)
-  Object.keys(obj).forEach((key, i) => {    
-    if (typeof obj[key] === 'object') {      
-      constantize( obj[key] ) 
+  Object.keys(obj).forEach((key, i) => {
+    if (typeof obj[key] === 'object') {
+      constantize(obj[key])
     }  
   })
 }
 ```
 
-扩展2：ES5 只有两种声明变量的方法：使用 var 命令和 function 命令。ES6 除了添加了 let 和 const 命令，后面的章节中还会介绍另外两种声明变量的方法：使用import 命令和 class 命令。所以，ES6 一共有 **6** 种声明变量的方法。
+扩展2：ES5 只有两种声明变量的方法：使用 var 命令和 function 命令。ES6 除了添加了 let 和 const 命令，还有另外两种声明变量的方法：import 命令和 class 命令。所以，ES6 一共有 **6** 种声明变量的方法。
 
 ### 块级作用域
 
-ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，在块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用。
+ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，*在块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用*。
+
+块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了。
+
+但是由于这条规则会对旧代码产生很大影响。为了减轻因此产生的不兼容问题，浏览器可以不遵守这条规则，所以尽量避免在块级作用域内声明函数。
 
 ### 顶层对象的属性
 
@@ -95,7 +107,7 @@ ES5 的顶层对象在各种实现中是不统一的。
 (typeof window !== 'undefined'
   ? window
   : (typeof process === 'object' &&
-	 typeof require === 'function' &&
+     typeof require === 'function' &&
      typeof global === 'object')
     ? global
     : this)
@@ -135,7 +147,7 @@ x // "a"
 function* fibs() {
  let a = 0
  let b = 1
- while (true) {    
+ while (true) {
    yield a  
    [a, b] = [b, a + b]
  }
