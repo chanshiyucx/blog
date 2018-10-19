@@ -681,7 +681,7 @@ var push = Array.prototype.push.uncurrying()(function() {
 
 通过 uncurrying 的方式，`Array.prototype.push.call` 变成了一个通用的 push 函数。这样一来，push 函数的作用就跟 Array.prototype.push 一样了，同样不仅仅局限于只能操作 array 对象。而对于使用者而言，调用 push 函数的方式也显得更加简洁和意图明了。
 
-1. 函数节流
+3. 函数节流
 
 ```javascript
 var throttle = function(fn, interval) {
