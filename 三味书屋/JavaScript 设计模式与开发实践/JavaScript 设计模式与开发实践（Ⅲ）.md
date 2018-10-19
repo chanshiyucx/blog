@@ -126,17 +126,17 @@ var Beverage = function(param) {
   var brew =
     param.brew ||
     function() {
-      throw new Error('必须传递brew方法')
+      throw new Error('必须传递 brew 方法')
     }
   var pourInCup =
     param.pourInCup ||
     function() {
-      throw new Error('必须传递pourInCup方法')
+      throw new Error('必须传递 pourInCup 方法')
     }
   var addCondiments =
     param.addCondiments ||
     function() {
-      throw new Error('必须传递addCondiments方法')
+      throw new Error('必须传递 addCondiments 方法')
     }
 
   var F = function() {}
