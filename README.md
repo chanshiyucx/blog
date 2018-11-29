@@ -17,6 +17,12 @@
 
 ## 花信風
 
+### 2018
+
+[图片加解密二三事](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E5%9B%BE%E7%89%87%E5%8A%A0%E8%A7%A3%E5%AF%86%E4%BA%8C%E4%B8%89%E4%BA%8B.md)
+
+### 2017
+
 [网站动态标题的两种方式](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2017/%E7%BD%91%E7%AB%99%E5%8A%A8%E6%80%81%E6%A0%87%E9%A2%98%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F.md)  
 [RN App 外部唤醒踩坑记](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2017/RN%20App%20%E5%A4%96%E9%83%A8%E5%94%A4%E9%86%92%E8%B8%A9%E5%9D%91%E8%AE%B0.md)  
 [JavaScript 秘密花园](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2017/JavaScript%20%E7%A7%98%E5%AF%86%E8%8A%B1%E5%9B%AD.md)
