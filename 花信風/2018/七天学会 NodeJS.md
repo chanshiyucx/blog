@@ -620,9 +620,108 @@ function main(argv) {
 main(process.argv.slice(2))
 ```
 
-## 异步编程
+### 退出程序
 
-## 项目示例
+通常一个程序执行完成正常退出，这时程序的退出状态码为 0。或者一个程序运行时发生了异常后就挂了，这时程序的退出状态码不等于 0。如果在代码中捕获了某个异常，但是觉得程序不应该继续运行下去，需要立即退出，并且需要把退出状态码设置为指定数字，就可以按照以下方式：
+
+```javascript
+try {
+  // ...
+} catch (err) {
+  // ...
+  process.exit(1)
+}
+```
+
+### 创建子进程
+
+以下是一个创建 NodeJS 子进程的例子：
+
+```javascript
+const child_process = require('child_process')
+
+let child = child_process.spawn('node', ['xxx.js'])
+
+child.stdout.on('data', function(data) {
+  console.log('stdout: ' + data)
+})
+
+child.stderr.on('data', function(data) {
+  console.log('stderr: ' + data)
+})
+
+child.on('close', function(code) {
+  console.log('child process exited with code ' + code)
+})
+```
+
+上例中使用了 `.spawn(exec, args, options)` 方法，该方法支持三个参数。第一个参数是执行文件路径，可以是执行文件的相对或绝对路径，也可以是根据 PATH 环境变量能找到的执行文件名。第二个参数中，数组中的每个成员都按顺序对应一个命令行参数。第三个参数可选，用于配置子进程的执行环境与行为。
+
+### 进程间通信
+
+进程间可以互相通信：
+
+```javascript
+const child_process = require('child_process')
+
+/* parent.js */
+let child = child_process.spawn('node', ['child.js'])
+
+child.kill('SIGTERM')
+
+/* child.js */
+process.on('SIGTERM', function() {
+  cleanUp()
+  process.exit(0)
+})
+```
+
+上面代码中，父进程通过 .kill 方法向子进程发送 SIGTERM 信号，子进程监听 process 对象的 SIGTERM 事件响应信号。.kill 方法本质上是用来给进程发送信号的，进程收到信号后具体要做啥，完全取决于信号的种类和进程自身的代码。
+
+另外，如果父子进程都是 NodeJS 进程，就可以通过 IPC（进程间通讯）双向传递数据。
+
+```javascript
+const child_process = require('child_process')
+
+/* parent.js */
+let child = child_process.spawn('node', ['child.js'], {
+  stdio: [0, 1, 2, 'ipc']
+})
+
+child.on('message', function(msg) {
+  console.log(msg)
+})
+
+child.send({ hello: 'hello' })
+
+/* child.js */
+process.on('message', function(msg) {
+  msg.hello = msg.hello.toUpperCase()
+  process.send(msg)
+})
+```
+
+可以看到，父进程在创建子进程时，在 `options.stdio` 字段中通过 ipc 开启了一条 IPC 通道，之后就可以监听子进程对象的 message 事件接收来自子进程的消息，并通过 .send 方法给子进程发送消息。在子进程这边，可以在 process 对象上监听 message 事件接收来自父进程的消息，并通过 .send 方法向父进程发送消息。数据在传递过程中，会先在发送端使用 JSON.stringify 方法序列化，再在接收端使用 JSON.parse 方法反序列化。
+
+### 守护子进程
+
+守护进程一般用于监控工作进程的运行状态，在工作进程不正常退出时重启工作进程，保障工作进程不间断运行：
+
+```javascript
+const child_process = require('child_process')
+
+function spawn(mainModule) {
+  let worker = child_process.spawn('node', [mainModule])
+
+  worker.on('exit', function(code) {
+    if (code !== 0) {
+      spawn(mainModule)
+    }
+  })
+}
+
+spawn('worker.js')
+```
 
 参考文章：  
 [七天学会 NodeJS](//nqdeng.github.io/7-days-nodejs/)
