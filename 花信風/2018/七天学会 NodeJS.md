@@ -273,7 +273,352 @@ NodeJS 操作文件小结如下：
 
 ## 网络操作
 
+### http 模块
+
+NodeJS 内置的 http 模块来处理网络操作。
+
+http 模块提供两种使用方式：
+
+- 作为服务端使用时，创建一个 HTTP 服务器，监听 HTTP 客户端请求并返回响应。
+- 作为客户端使用时，发起一个 HTTP 客户端请求，获取服务端响应。
+
+```javascript
+let http = require('http')
+
+http
+  .createServer(function(request, response) {
+    response.writeHead(200, { 'Content-Type': 'text-plain' })
+    response.end('Hello World\n')
+  })
+  .listen(
+    http
+      .createServer(function(request, response) {
+        response.writeHead(200, { 'Content-Type': 'text/plain' })
+
+        request.on('data', function(chunk) {
+          response.write(chunk)
+        })
+
+        request.on('end', function() {
+          response.end()
+        })
+      })
+      .listen(80)
+  )
+```
+
+以上代码用 http 模块简单实现一个 HTTP 服务器：首先需要使用 .createServer 方法创建一个服务器，然后调用 .listen 方法监听端口。之后，每当来了一个客户端请求，创建服务器时传入的回调函数就被调用一次。可以看出，这是一种事件机制。
+
+HTTP 请求本质上是一个数据流，由请求头（headers）和请求体（body）组成。例如以下是一个完整的 HTTP 请求数据内容。
+
+```txt
+POST / HTTP/1.1
+User-Agent: curl/7.26.0
+Host: localhost
+Accept: */*
+Content-Length: 11
+Content-Type: application/x-www-form-urlencoded
+
+Hello World
+```
+
+可以看到，空行之上是请求头，之下是请求体。HTTP 请求在发送给服务器时，可以认为是按照从头到尾的顺序一个字节一个字节地以数据流方式发送的。
+
+而 http 模块创建的 HTTP 服务器在接收到完整的请求头后，就会调用回调函数。在回调函数中，除了可以使用 request 对象访问请求头数据外，还能把 request 对象当作一个只读数据流来访问请求体数据。
+
+下面代码中服务端原样将客户端请求的请求体数据返回给客户端：
+
+```javascript
+const http = require('http')
+
+http
+  .createServer(function(request, response) {
+    response.writeHead(200, { 'Content-Type': 'text/plain' })
+
+    request.on('data', function(chunk) {
+      response.write(chunk)
+    })
+
+    request.on('end', function() {
+      response.end()
+    })
+  })
+  .listen(8124)
+```
+
+#### https 模块
+
+https 模块与 http 模块极为类似，区别在于 https 模块需要额外处理 SSL 证书。
+
+在服务端模式下，创建一个 HTTPS 服务器的示例如下：
+
+```javascript
+const http = require('http')
+
+const options = {
+  key: fs.readFileSync('./ssl/default.key'),
+  cert: fs.readFileSync('./ssl/default.cer')
+}
+
+const server = https.createServer(options, function(request, response) {
+  // ...
+})
+```
+
+可以看到，与创建 HTTP 服务器相比，多了一个 options 对象，通过 key 和 cert 字段指定了 HTTPS 服务器使用的私钥和公钥。
+
+另外，NodeJS 支持 SNI 技术，可以根据 HTTPS 客户端请求使用的域名动态使用不同的证书，因此同一个 HTTPS 服务器可以使用多个域名提供服务。
+
+```javascript
+server.addContext('foo.com', {
+  key: fs.readFileSync('./ssl/foo.com.key'),
+  cert: fs.readFileSync('./ssl/foo.com.cer')
+})
+
+server.addContext('bar.com', {
+  key: fs.readFileSync('./ssl/bar.com.key'),
+  cert: fs.readFileSync('./ssl/bar.com.cer')
+})
+```
+
+但如果目标服务器使用的 SSL 证书是自制的，不是从颁发机构购买的，默认情况下 https 模块会拒绝连接，提示说有证书安全问题。在 options 里加入 `rejectUnauthorized: false` 字段可以禁用对证书有效性的检查，从而允许 https 模块请求开发环境下使用自制证书的 HTTPS 服务器。
+
+### URL
+
+处理 HTTP 请求时 url 模块使用率超高，因为该模块允许解析、生成以及拼接 URL。首先来看看一个完整的 URL 的各组成部分。
+
+```txt
+                            href
+ -----------------------------------------------------------------
+                            host              path
+                      --------------- ----------------------------
+ http: // user:pass @ host.com : 8080 /p/a/t/h ?query=string #hash
+ -----    ---------   --------   ---- -------- ------------- -----
+protocol     auth     hostname   port pathname     search     hash
+                                                ------------
+                                                   query
+```
+
+可以使用 .parse 方法来将一个 URL 字符串转换为 URL 对象，示例如下：
+
+```javascript
+const url = require('url')
+
+const obj = url.parse(
+  'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'
+)
+console.log(obj)
+
+/*
+Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: 'user:pass',
+  host: 'host.com:8080',
+  port: '8080',
+  hostname: 'host.com',
+  hash: '#hash',
+  search: '?query=string',
+  query: 'query=string',
+  pathname: '/p/a/t/h',
+  path: '/p/a/t/h?query=string',
+  href: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash' }
+*/
+```
+
+传给 .parse 方法的不一定要是一个完整的 URL，例如在 HTTP 服务器回调函数中，request.url 不包含协议头和域名，但同样可以用 .parse 方法解析。
+
+.parse 方法还支持第二个和第三个布尔类型可选参数。第二个参数等于 true 时，该方法返回的 URL 对象中，query 字段不再是一个字符串，而是一个经过 querystring 模块转换后的参数对象。第三个参数等于 true 时，该方法可以正确解析不带协议头的 URL，例如 //www.example.com/foo/bar。
+
+反过来，format 方法允许将一个 URL 对象转换为 URL 字符串。
+
+另外，.resolve 方法可以用于拼接 URL：
+
+```javascript
+const url = require('url')
+
+url.resolve('http://www.example.com/foo/bar', '../baz')
+// http://www.example.com/baz
+```
+
+#### Query String
+
+querystring 模块用于实现 URL 参数字符串与参数对象的互相转换，示例如下：
+
+```javascript
+const querystring = require('querystring')
+
+querystring.parse('foo=bar&baz=qux&baz=quux&corge')
+// { foo: 'bar', baz: ['qux', 'quux'], corge: '' }
+
+querystring.stringify({ foo: 'bar', baz: ['qux', 'quux'], corge: '' })
+// 'foo=bar&baz=qux&baz=quux&corge='
+```
+
+#### Zlib
+
+zlib 模块提供通过 Gzip 和 Deflate/Inflate 实现压缩和解压功能。
+
+通过判断客户端是否支持 gzip，并在支持的情况下使用 zlib 模块返回 gzip 之后的响应体数据：
+
+```javascript
+const http = require('http')
+
+http
+  .createServer(function(request, response) {
+    let i = 1024,
+      data = ''
+
+    while (i--) {
+      data += '.'
+    }
+
+    if ((request.headers['accept-encoding'] || '').indexOf('gzip') !== -1) {
+      zlib.gzip(data, function(err, data) {
+        response.writeHead(200, {
+          'Content-Type': 'text/plain',
+          'Content-Encoding': 'gzip'
+        })
+        response.end(data)
+      })
+    } else {
+      response.writeHead(200, {
+        'Content-Type': 'text/plain'
+      })
+      response.end(data)
+    }
+  })
+  .listen(80)
+```
+
+同时，通过判断服务端响应是否使用 gzip 压缩，并在压缩的情况下使用 zlib 模块解压响应体数据：
+
+```javascript
+const http = require('http')
+
+const options = {
+  hostname: 'www.example.com',
+  port: 80,
+  path: '/',
+  method: 'GET',
+  headers: {
+    'Accept-Encoding': 'gzip, deflate'
+  }
+}
+
+http
+  .request(options, function(response) {
+    let body = []
+
+    response.on('data', function(chunk) {
+      body.push(chunk)
+    })
+
+    response.on('end', function() {
+      body = Buffer.concat(body)
+
+      if (response.headers['content-encoding'] === 'gzip') {
+        zlib.gunzip(body, function(err, data) {
+          console.log(data.toString())
+        })
+      } else {
+        console.log(data.toString())
+      }
+    })
+  })
+  .end()
+```
+
+### Net
+
+net 模块可用于创建 Socket 服务器或 Socket 客户端。
+
+下面使用 net 模块创建一个 HTTP 服务器：
+
+```javascript
+const net = require('net')
+
+net
+  .createServer(function(conn) {
+    conn.on('data', function(data) {
+      conn.write(
+        [
+          'HTTP/1.1 200 OK',
+          'Content-Type: text/plain',
+          'Content-Length: 11',
+          '',
+          'Hello World'
+        ].join('\n')
+      )
+    })
+  })
+  .listen(80)
+```
+
+再创建一个客户端：
+
+```javascript
+let options = {
+  port: 80,
+  host: 'www.example.com'
+}
+
+let client = net.connect(
+  options,
+  function() {
+    client.write(
+      [
+        'GET / HTTP/1.1',
+        'User-Agent: curl/7.26.0',
+        'Host: www.baidu.com',
+        'Accept: */*',
+        '',
+        ''
+      ].join('\n')
+    )
+  }
+)
+
+client.on('data', function(data) {
+  console.log(data.toString())
+  client.end()
+})
+```
+
+#### 小结
+
+本章介绍了使用 NodeJS 操作网络时需要的 API 以及一些坑回避技巧，总结起来有以下几点：
+
+- http 和 https 模块支持服务端模式和客户端模式两种使用方式；
+- request 和 response 对象除了用于读写头数据外，都可以当作数据流来操作；
+- url.parse 方法加上 request.url 属性是处理 HTTP 请求时的固定搭配；
+- 使用 zlib 模块可以减少使用 HTTP 协议时的数据传输量；
+- 通过 net 模块的 Socket 服务器与客户端可对 HTTP 协议做底层操作。
+
 ## 进程管理
+
+NodeJS 可以感知和控制自身进程的运行环境和状态，也可以创建子进程并与其协同工作，这使得 NodeJS 可以把多个程序组合在一起共同完成某项工作，并在其中充当胶水和调度器的作用。
+
+### 调用终端命令
+
+在第一章里实现了文件拷贝的功能，但终端下的 cp 命令比较好用，一条 `cp -r source/* target` 命令就能搞定目录拷贝：
+
+```javascript
+const child_process = require('child_process')
+const util = require('util')
+
+function copy(source, target, callback) {
+  child_process.exec(util.format('cp -r %s/* %s', source, target), callback)
+}
+
+function main(argv) {
+  copy(argv[0], argv[1], function(err) {
+    console.log(err)
+  })
+}
+
+main(process.argv.slice(2))
+```
 
 ## 异步编程
 
