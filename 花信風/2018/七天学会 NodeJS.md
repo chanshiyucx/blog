@@ -313,7 +313,7 @@ http
 
 HTTP 请求本质上是一个数据流，由请求头（headers）和请求体（body）组成。例如以下是一个完整的 HTTP 请求数据内容。
 
-```txt
+```text
 POST / HTTP/1.1
 User-Agent: curl/7.26.0
 Host: localhost
@@ -389,7 +389,7 @@ server.addContext('bar.com', {
 
 处理 HTTP 请求时 url 模块使用率超高，因为该模块允许解析、生成以及拼接 URL。首先来看看一个完整的 URL 的各组成部分。
 
-```txt
+```text
                             href
  -----------------------------------------------------------------
                             host              path
@@ -724,6 +724,260 @@ function spawn(mainModule) {
 
 spawn('worker.js')
 ```
+
+## 大项目
+
+最后以一个大项目作为总结，项目开发的是一个简单的静态文件合并服务器，该服务器需要支持类似以下格式的 JS 或 CSS 文件合并请求：
+
+```text
+http://assets.example.com/foo/??bar.js,baz.js
+```
+
+在以上 URL 中，?? 是一个分隔符，之前是需要合并的多个文件的 URL 的公共部分，之后是使用 , 分隔的差异部分。因此服务器处理这个 URL 时，返回的是以下两个文件按顺序合并后的内容：
+
+```text
+/foo/bar.js
+/foo/baz.js
+```
+
+此外，服务器也同时支持普通的 JS 或 CSS 文件请求：
+
+```text
+http://assets.example.com/foo/bar.js
+```
+
+### 第一次迭代
+
+设计方案：
+
+```text
+           +---------+   +-----------+   +----------+
+request -->|  parse  |-->|  combine  |-->|  output  |--> response
+           +---------+   +-----------+   +----------+
+```
+
+服务器会首先分析 URL，得到请求的文件的路径和类型（MIME）。然后，服务器会读取请求的文件，并按顺序合并文件内容。最后，服务器返回响应，完成对一次请求的处理。
+
+另外，服务器在读取文件时的根目录和服务器监听的 HTTP 端口可以配置。
+
+设计实现：
+
+```javascript
+const fs = require('fs')
+const path = require('path')
+const http = require('http')
+
+const MIME = {
+  '.css': 'text/css',
+  '.js': 'application/javascript'
+}
+
+function combineFiles(pathnames, callback) {
+  let output = []
+  ;(function next(i, len) {
+    if (i < len) {
+      fs.readFile(pathnames[i], (err, data) => {
+        if (err) {
+          callback(err)
+        } else {
+          output.push(data)
+          next(i + 1, len)
+        }
+      })
+    } else {
+      callback(null, Buffer.concat(output))
+    }
+  })(0, pathnames.length)
+}
+
+function parseURL(root, url) {
+  let base, parts, pathnames
+  if (!url.includes('??')) {
+    url = url.replace('/', '/??')
+  }
+  parts = url.split('??')
+  base = parts[0]
+  pathnames = parts[1].split(',').map(val => {
+    return path.join(root, base, val)
+  })
+  return {
+    mine: MIME[path.extname(pathnames[0])] || 'text/plain',
+    pathnames
+  }
+}
+
+function main(argv) {
+  // 读取配置文件 config.json
+  const config = JSON.parse(fs.readFileSync(argv[0], 'utf-8'))
+  // 根目录和端口号
+  const { root = '.', port = 80 } = config
+
+  http
+    .createServer((request, response) => {
+      let urlInfo = parseURL(root, request.url)
+
+      combineFiles(urlInfo.pathnames, (err, data) => {
+        if (err) {
+          response.writeHead(400)
+          response.end(err.message)
+        } else {
+          response.writeHead(200, {
+            'Content-Type': urlInfo.mine
+          })
+          response.end(data)
+        }
+      })
+    })
+    .listen(port)
+}
+
+main(process.argv.slice(2))
+```
+
+### 第二次迭代
+
+第一次迭代的请求分析：
+
+```text
+发送请求       等待服务端响应         接收响应
+---------+----------------------+------------->
+         --                                        解析请求
+           ------                                  读取a.js
+                 ------                            读取b.js
+                       ------                      读取c.js
+                             --                    合并数据
+                               --                  输出响应
+```
+
+可以看到，第一版代码依次把请求的文件读取到内存中之后，再合并数据和输出响应。这会导致以下两个问题：
+
+1. 当请求的文件比较多比较大时，串行读取文件会比较耗时，从而拉长了服务端响应等待时间。
+2. 由于每次响应输出的数据都需要先完整地缓存在内存里，当服务器请求并发数较大时，会有较大的内存开销。
+
+对于问题一，很容易想到把读取文件的方式从串行改为并行。但是别这样做，**因为对于机械磁盘而言，因为只有一个磁头，尝试并行读取文件只会造成磁头频繁抖动，反而降低 IO 效率。而对于固态硬盘，虽然的确存在多个并行 IO 通道，但是对于服务器并行处理的多个请求而言，硬盘已经在做并行 IO 了，对单个请求采用并行 IO 无异于拆东墙补西墙。**因此，正确的做法不是改用并行 IO，而是一边读取文件一边输出响应，把响应输出时机提前至读取第一个文件的时刻。
+
+这样调整后，整个请求处理过程变成下边这样：
+
+```text
+发送请求 等待服务端响应 接收响应
+---------+----+------------------------------->
+         --                                        解析请求
+           --                                      检查文件是否存在
+             --                                    输出响应头
+               ------                              读取和输出a.js
+                     ------                        读取和输出b.js
+                           ------                  读取和输出c.js
+```
+
+设计实现：
+
+```javascript
+function outputFiles(pathnames, write) {
+  ;(function next(i, len) {
+    if (i < len) {
+      let reader = fs.createReadStream(pathnames[i])
+      reader.pipe(
+        write,
+        { end: false }
+      )
+      reader.on('end', function() {
+        next(i + 1, len)
+      })
+    } else {
+      write.end()
+    }
+  })(0, pathnames.length)
+}
+
+function validateFiles(pathnames, callback) {
+  ;(function next(i, len) {
+    if (i < len) {
+      fs.stat(pathnames[i], (err, stat) => {
+        if (err) {
+          callback(err)
+        } else if (!stat.isFile()) {
+          callback(new Error())
+        } else {
+          next(i + 1, len)
+        }
+      })
+    } else {
+      callback(null, pathnames)
+    }
+  })(0, pathnames.length)
+}
+
+function main(argv) {
+  // 读取配置文件 config.json
+  const config = JSON.parse(fs.readFileSync(argv[0], 'utf-8'))
+  // 根目录和端口号
+  const { root = '.', port = 80 } = config
+
+  http
+    .createServer((request, response) => {
+      let urlInfo = parseURL(root, request.url)
+
+      validateFiles(urlInfo.pathnames, (err, pathnames) => {
+        if (err) {
+          response.writeHead(400)
+          response.end(err.message)
+        } else {
+          // 在检查完文件后立即输出请求头
+          response.writeHead(200, {
+            'Content-Type': urlInfo.mine
+          })
+          outputFiles(pathnames, response)
+        }
+      })
+    })
+    .listen(port)
+}
+```
+
+可以看到，第二版代码在检查了请求的所有文件是否有效之后，立即就输出了响应头，并接着一边按顺序读取文件一边输出响应内容。并且在读取文件时，使用了只读数据流来简化代码。
+
+### 第三次迭代
+
+从工程角度上讲，没有绝对可靠的系统。即使代码没有 BUG，也可能因为操作系统，甚至是硬件导致服务器程序在某一天挂掉。因此一般生产环境下的服务器程序都配有一个守护进程，在服务挂掉的时候立即重启服务。一般守护进程的代码会远比服务进程的代码简单，从概率上可以保证守护进程更难挂掉。甚至守护进程自身可以在自己挂掉时重启自己，从而实现双保险。
+
+可以利用 NodeJS 的进程管理机制，将守护进程作为父进程，将服务器程序作为子进程，并让父进程监控子进程的运行状态，在其异常退出时重启子进程。
+
+```javascript
+//daemon.js
+const cp = require('child_process')
+
+let worker
+
+function spawn(server, config) {
+  worker = cp.spawn('node', [server, config])
+  worker.on('exit', code => {
+    if (code !== 0) {
+      spawn(server, config)
+    }
+  })
+}
+
+function main(argv) {
+  spawn('server.js', argv[0])
+  process.on('SIGTERM', () => {
+    worker.kill()
+    process.exit(0)
+  })
+}
+
+main(process.argv.slice(2))
+
+//server.js
+process.on('SIGTERM', () => {
+  server.close(() => {
+    process.exit(0)
+  })
+})
+```
+
+可以把守护进程的代码保存为 daemon.js，之后可以通过 `node daemon.js config.json` 启动服务，而守护进程会进一步启动和监控服务器进程。
+
+此外，为了能够正常终止服务，让守护进程在接收到 SIGTERM 信号时终止服务器进程。而在服务器进程这一端，同样在收到 SIGTERM 信号时先停掉 HTTP 服务再正常退出。
 
 参考文章：  
 [七天学会 NodeJS](//nqdeng.github.io/7-days-nodejs/)
