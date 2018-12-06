@@ -66,16 +66,16 @@ obj.a // 42
 - **get(target, propKey, receiver)**：拦截对象属性的读取，最后一个参数 receiver 是一个可选对象。
 - **set(target, propKey, value, receiver)**：拦截对象属性的设置，返回一个布尔值。
 - **has(target, propKey)**：拦截 propKey in proxy 的操作，返回一个布尔值。
-- deleteProperty(target, propKey)：拦截 delete proxy[propKey]的操作，返回一个布尔值。
-- ownKeys(target)：拦截 Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols (proxy)、Object.keys(proxy)，返回一个数组。该方法返回目标对象所有自身属性的属性名，而 Object.keys() 的返回结果仅包括目标对象自身的可遍历属性。
-- getOwnPropertyDescriptor(target, propKey)：拦截 Object.getOwnPropertyDescriptor(proxy, prop-Key)，返回属性的描述对象。
-- defineProperty(target, propKey, propDesc)：拦截 Object.defineProperty(proxy, propKey, propDesc）、Object.define Properties(proxy, propDescs)，返回一个布尔值。
-- preventExtensions(target)：拦截 Object.preventExtensions(proxy)，返回一个布尔值。
-- getPrototypeOf(target)：拦截 Object.getPrototypeOf(proxy)，返回一个对象。
-- isExtensible(target)：拦截 Object.isExtensible(proxy)，返回一个布尔值。
-- setPrototypeOf(target, proto)：拦截 Object.setPrototypeOf(proxy, proto)，返回一个布尔值。如果目标对象是函数，那么还有两种额外操作可以拦截。
-- apply(target, object, args)：拦截 Proxy 实例，并将其作为函数调用的操作。
-- construct(target, args)：拦截 Proxy 实例作为构造函数调用的操作，比如 newproxy(...args)。
+- **deleteProperty(target, propKey)**：拦截 delete proxy[propKey]的操作，返回一个布尔值。
+- **ownKeys(target)**：拦截 Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols (proxy)、Object.keys(proxy)，返回一个数组。该方法返回目标对象所有自身属性的属性名，而 Object.keys() 的返回结果仅包括目标对象自身的可遍历属性。
+- **getOwnPropertyDescriptor(target, propKey)**：拦截 Object.getOwnPropertyDescriptor(proxy, prop-Key)，返回属性的描述对象。
+- **defineProperty(target, propKey, propDesc)**：拦截 Object.defineProperty(proxy, propKey, propDesc）、Object.define Properties(proxy, propDescs)，返回一个布尔值。
+- **preventExtensions(target)**：拦截 Object.preventExtensions(proxy)，返回一个布尔值。
+- **getPrototypeOf(target)**：拦截 Object.getPrototypeOf(proxy)，返回一个对象。
+- **isExtensible(target)**：拦截 Object.isExtensible(proxy)，返回一个布尔值。
+- **setPrototypeOf(target, proto)**：拦截 Object.setPrototypeOf(proxy, proto)，返回一个布尔值。如果目标对象是函数，那么还有两种额外操作可以拦截。
+- **apply(target, object, args)**：拦截 Proxy 实例，并将其作为函数调用的操作。
+- **construct(target, args)**：拦截 Proxy 实例作为构造函数调用的操作，比如 newproxy(...args)。
 
 具体方法介绍这里不在累述，详见《ES6 标准入门》。
 
