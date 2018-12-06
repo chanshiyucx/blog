@@ -313,7 +313,7 @@ http
 
 HTTP 请求本质上是一个数据流，由请求头（headers）和请求体（body）组成。例如以下是一个完整的 HTTP 请求数据内容。
 
-```text
+```markup
 POST / HTTP/1.1
 User-Agent: curl/7.26.0
 Host: localhost
@@ -389,7 +389,7 @@ server.addContext('bar.com', {
 
 处理 HTTP 请求时 url 模块使用率超高，因为该模块允许解析、生成以及拼接 URL。首先来看看一个完整的 URL 的各组成部分。
 
-```text
+```markup
                             href
  -----------------------------------------------------------------
                             host              path
@@ -729,20 +729,20 @@ spawn('worker.js')
 
 最后以一个大项目作为总结，项目开发的是一个简单的静态文件合并服务器，该服务器需要支持类似以下格式的 JS 或 CSS 文件合并请求：
 
-```text
+```markup
 http://assets.example.com/foo/??bar.js,baz.js
 ```
 
 在以上 URL 中，?? 是一个分隔符，之前是需要合并的多个文件的 URL 的公共部分，之后是使用 , 分隔的差异部分。因此服务器处理这个 URL 时，返回的是以下两个文件按顺序合并后的内容：
 
-```text
+```markup
 /foo/bar.js
 /foo/baz.js
 ```
 
 此外，服务器也同时支持普通的 JS 或 CSS 文件请求：
 
-```text
+```markup
 http://assets.example.com/foo/bar.js
 ```
 
@@ -750,7 +750,7 @@ http://assets.example.com/foo/bar.js
 
 设计方案：
 
-```text
+```markup
            +---------+   +-----------+   +----------+
 request -->|  parse  |-->|  combine  |-->|  output  |--> response
            +---------+   +-----------+   +----------+
@@ -838,7 +838,7 @@ main(process.argv.slice(2))
 
 第一次迭代的请求分析：
 
-```text
+```markup
 发送请求       等待服务端响应         接收响应
 ---------+----------------------+------------->
          --                                        解析请求
@@ -858,7 +858,7 @@ main(process.argv.slice(2))
 
 这样调整后，整个请求处理过程变成下边这样：
 
-```text
+```markup
 发送请求 等待服务端响应 接收响应
 ---------+----+------------------------------->
          --                                        解析请求
