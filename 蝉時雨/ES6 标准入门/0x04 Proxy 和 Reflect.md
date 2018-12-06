@@ -63,9 +63,9 @@ obj.a // 42
 
 下面是 Proxy 支持的所有拦截操作:
 
-- get(target, propKey, receiver)：拦截对象属性的读取，最后一个参数 receiver 是一个可选对象。
-- set(target, propKey, value, receiver)：拦截对象属性的设置，返回一个布尔值。
-- has(target, propKey)：拦截 propKey in proxy 的操作，返回一个布尔值。
+- **get(target, propKey, receiver)**：拦截对象属性的读取，最后一个参数 receiver 是一个可选对象。
+- **set(target, propKey, value, receiver)**：拦截对象属性的设置，返回一个布尔值。
+- **has(target, propKey)**：拦截 propKey in proxy 的操作，返回一个布尔值。
 - deleteProperty(target, propKey)：拦截 delete proxy[propKey]的操作，返回一个布尔值。
 - ownKeys(target)：拦截 Object.getOwnPropertyNames(proxy)、Object.getOwnPropertySymbols (proxy)、Object.keys(proxy)，返回一个数组。该方法返回目标对象所有自身属性的属性名，而 Object.keys() 的返回结果仅包括目标对象自身的可遍历属性。
 - getOwnPropertyDescriptor(target, propKey)：拦截 Object.getOwnPropertyDescriptor(proxy, prop-Key)，返回属性的描述对象。
