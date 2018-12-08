@@ -8,7 +8,8 @@
 [0x02 语法的扩展](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x02%20%E8%AF%AD%E6%B3%95%E7%9A%84%E6%89%A9%E5%B1%95.md)  
 [0x03 数据类型与数据结构](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x03%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)  
 [0x04 Proxy 和 Reflect](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x04%20Proxy%20%E5%92%8C%20Reflect.md)  
-[0x05 异步编程 Promise](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x05%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%20Promise.md)
+[0x05 异步编程 Promise](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x05%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%20Promise.md)  
+[0x06 Iterator 和 for of 循环](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x06%20Iterator%20%E5%92%8C%20for%20of%20%E5%BE%AA%E7%8E%AF.md)
 
 ### JavaScript 设计模式与开发实践 【2018-09-27】
 
