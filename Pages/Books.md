@@ -27,7 +27,7 @@ desc:设计模式的定义：在面向对象软件设计过程中针对特定问
 author: Kyle Simpson
 published: 2015-04-01
 progress: 正在阅读...
-rating: 0,
+rating: 5,
 postTitle:
 postLink:
 cover://i.loli.net/2018/12/09/5c0cf27a7f09c.jpg
