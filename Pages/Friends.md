@@ -13,8 +13,8 @@ avatar: //i.loli.net/2018/12/15/5c14f38ccd4fd.jpg
 ## ⊿ 叶之色 ☆ ～
 
 link: //leaful.com/
-cover: //i.loli.net/2018/12/15/5c14f3bcf1c55.jpg
-avatar: //i.loli.net/2018/12/15/5c14f3bcf3fab.png
+cover: //i.loli.net/2018/12/15/5c14f3bcf3fab.png
+avatar: //i.loli.net/2018/12/15/5c14f3bcf1c55.jpg
 
 ## 惶心
 
@@ -67,8 +67,8 @@ avatar: //i.loli.net/2018/12/15/5c14f4b74cc1b.png
 ## 维基萌
 
 link: //www.wikimoe.com/
-cover: //i.loli.net/2018/12/15/5c14f48735383.jpg
-avatar: //i.loli.net/2018/12/15/5c14f487371e6.png
+cover: //i.loli.net/2018/12/15/5c14f487371e6.png
+avatar: //i.loli.net/2018/12/15/5c14f48735383.jpg
 
 ## 岁月小筑
 
