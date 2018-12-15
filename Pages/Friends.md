@@ -61,8 +61,8 @@ avatar: //i.loli.net/2018/12/15/5c14f4e6dbfdd.jpg
 ## Makito's Notebook
 
 link: //blog.keep.moe
-cover: //i.loli.net/2018/12/15/5c14f4b745235.jpg
-avatar: //i.loli.net/2018/12/15/5c14f4b74cc1b.png
+cover://i.loli.net/2018/12/15/5c14f4b74cc1b.png
+avatar: //i.loli.net/2018/12/15/5c14f4b745235.jpg
 
 ## 维基萌
 
