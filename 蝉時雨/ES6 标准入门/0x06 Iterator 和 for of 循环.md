@@ -10,11 +10,11 @@ Iterator 的作用有 3 个：
 
 1. 为各种数据结构提供一个统一的、简便的访问接口；
 2. 使得数据结构的成员能够按某种次序排列；
-3. ES6 创造了一种新的遍历命令——for...of 循环，Iterator 接口主要供 for...of 消费。
+3. Iterator 接口主要供 for...of 消费。
 
 Iterator 的遍历过程如下：
 
-1. 创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上就是一个指针对象。
+1. 创建一个指针对象，指向当前数据结构的起始位置。
 2. 第一次调用指针对象的 next 方法，可以将指针指向数据结构的第一个成员。
 3. 第二次调用指针对象的 next 方法，指针就指向数据结构的第二个成员。
 4. 不断调用指针对象的 next 方法，直到它指向数据结构的结束位置。
@@ -33,9 +33,9 @@ let iter = arr[Symbol.iterator]()
 iter.next() // { value: 'a', done: false }
 ```
 
-对象（Object）之所以没有默认部署 Iterator 接口，是因为对象属性的遍历先后顺序是不确定的，需要开发者手动指定。**本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口就等于部署一种线性转换**。
+Object 之所以没有默认部署 Iterator 接口，是因为对象属性的遍历先后顺序是不确定的，需要开发者手动指定。**本质上，遍历器是一种线性处理，对于任何非线性的数据结构，部署遍历器接口就等于部署一种线性转换**。
 
-可以手动给对象部署遍历器接口：
+可以手动给 Object 部署遍历器接口：
 
 ```javascript
 class RangeIterator {
@@ -102,20 +102,19 @@ let str = 'hello'
 
 #### yield\*
 
-yield\*后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
+yield\* 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
 
 ```javascript
 let generator = function*() {
   yield 1
-  yield* [2, 3, 4]
-  yield 5
+  yield* [2, 3]
+  yield 4
 }
 let iterator = generator()
 iterator.next() // { value: 1, done: false }
 iterator.next() // { value: 2, done: false }
 iterator.next() // { value: 3, done: false }
 iterator.next() // { value: 4, done: false }
-iterator.next() // { value: 5, done: false }
 iterator.next() // { value: undefined, done: true }
 ```
 
@@ -152,6 +151,30 @@ for (let a of arr) {
 ```
 
 上面的代码中，for...of 循环不会返回数组 arr 的 foo 属性。
+
+#### Set 和 Map 结构
+
+Set 和 Map 结构原生具有 Iterator 接口，可以直接使用 for...of 循环。
+
+```javascript
+var engines = new Set(['Gecko', 'Trident'])
+for (var e of engines) {
+  console.log(e)
+}
+// Gecko
+// Trident
+
+var es6 = new Map()
+es6.set('edition', 6)
+es6.set('committee', 'TC39')
+for (var [name, value] of es6) {
+  console.log(name + ': ' + value)
+}
+// edition: 6
+// committee: TC39
+```
+
+值得注意是：首先，遍历的顺序是按照各个成员被添加进数据结构的顺序；其次，Set 结构遍历时返回的是一个值，而 Map 结构遍历时返回的是一个数组，该数组的两个成员分别为当前 Map 成员的键名和键值。
 
 #### 对象
 
