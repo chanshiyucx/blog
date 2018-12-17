@@ -14,9 +14,9 @@ Generator 函数的调用方法与普通函数一样。不同的是，调用 Gen
 
 ```javascript
 function* helloWorldGenerator() {
-  yield 'hello'
-  yield 'world'
-  return 'ending'
+  yield "hello"
+  yield "world"
+  return "ending"
 }
 let hw = helloWorldGenerator()
 
@@ -49,7 +49,7 @@ Generator 函数可以不用 yield 语句，这时就变成了一个单纯的暂
 
 ```javascript
 function* f() {
-  console.log('执行了！')
+  console.log("执行了！")
 }
 let generator = f()
 setTimeout(function() {
@@ -120,15 +120,15 @@ b.next(13) // { value:42, done:true }
 
 ```javascript
 function* dataConsumer() {
-  console.log('Started')
+  console.log("Started")
   console.log(`1. ${yield}`)
   console.log(`2. ${yield}`)
-  return 'result'
+  return "result"
 }
 let genObj = dataConsumer()
 genObj.next() // Started
-genObj.next('a') // 1. a
-genObj.next('b') // 2. b
+genObj.next("a") // 1. a
+genObj.next("b") // 2. b
 ```
 
 ### for...of 循环
@@ -196,13 +196,13 @@ y // 2
 
 ```javascript
 function* foo() {
-  yield 'a'
-  yield 'b'
+  yield "a"
+  yield "b"
 }
 function* bar() {
-  yield 'x'
+  yield "x"
   yield* foo()
-  yield 'y'
+  yield "y"
 }
 ```
 

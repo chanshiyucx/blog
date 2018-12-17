@@ -13,11 +13,11 @@ let obj = {}
 
 let proxy = new Proxy(obj, {
   get(target, key, receiver) {
-    console.log('get--> target:', target, 'key:', key, 'receiver:', receiver)
+    console.log("get--> target:", target, "key:", key, "receiver:", receiver)
     return Reflect.get(target, key, receiver)
   },
   set(target, key, value, receiver) {
-    console.log('set--> target:', target, 'key:', key, 'value:', value)
+    console.log("set--> target:", target, "key:", key, "value:", value)
     return Reflect.set(target, key, value, receiver)
   }
 })
@@ -157,10 +157,10 @@ function set(target, key, value, receiver) {
 }
 
 const person = observable({
-  name: '张三'
+  name: "张三"
 })
-observe(() => console.log('name:', person.name))
-person.name = '李四'
+observe(() => console.log("name:", person.name))
+person.name = "李四"
 ```
 
 上面的代码先定义了一个 Set 集合，所有观察者函数都放进这个集合中。然后，observable 函数返回原始对象的代理，拦截赋值操作。拦截函数 set 会自动执行所有观察者。
