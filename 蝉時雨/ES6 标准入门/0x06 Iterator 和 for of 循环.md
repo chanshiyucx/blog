@@ -28,7 +28,7 @@ ES6 规定，默认的 Iterator 接口部署在数据结构的 Symbol.iterator �
 原生具备 Iterator 接口的数据结构有：Array、Map、Set、String、TypedArray、函数的 arguments 对象、NodeList 对象。
 
 ```javascript
-let arr = ["a", "b", "c"]
+let arr = ['a', 'b', 'c']
 let iter = arr[Symbol.iterator]()
 iter.next() // { value: 'a', done: false }
 ```
@@ -67,9 +67,9 @@ for (let value of range(0, 3)) {
 
 ```javascript
 let iterable = {
-  0: "a",
-  1: "b",
-  2: "c",
+  0: 'a',
+  1: 'b',
+  2: 'c',
   length: 3,
   [Symbol.iterator]: Array.prototype[Symbol.iterator]
 }
@@ -85,9 +85,9 @@ let iterable = {
 
 ```javascript
 let set = new Set()
-  .add("a")
-  .add("b")
-  .add("c")
+  .add('a')
+  .add('b')
+  .add('c')
 let [x, y] = set // x='a'; y='b'
 ```
 
@@ -96,7 +96,7 @@ let [x, y] = set // x='a'; y='b'
 扩展运算符（...）也会调用默认的 Iterator 接口。
 
 ```javascript
-let str = "hello"
+let str = 'hello'
 ;[...str] //  ['h','e','l','l','o']
 ```
 
@@ -140,8 +140,8 @@ for...of 循环可以使用的范围包括数组、Set 和 Map 结构、某些�
 JavaScript 原有的 for...in 循环只能获得对象的键名，不能直接获取键值。ES6 提供的 for...of 循环允许遍历获得键值。
 
 ```javascript
-let arr = ["a", "b", "c", "d"]
-arr.foo = "hello"
+let arr = ['a', 'b', 'c', 'd']
+arr.foo = 'hello'
 
 for (let a in arr) {
   console.log(a) // 0 1 2 3 foo
@@ -161,7 +161,7 @@ for (let a of arr) {
 
 ```javascript
 for (var key of Object.keys(someObject)) {
-  console.log(key + ": " + someObject[key])
+  console.log(key + ': ' + someObject[key])
 }
 ```
 
@@ -174,9 +174,11 @@ function* entries(obj) {
   }
 }
 for (let [key, value] of entries(obj)) {
-  console.log(key, "->", value)
+  console.log(key, '->', value)
 }
 // a -> 1
 // b -> 2
 // c -> 3
 ```
+
+JavaScript 提供其它几种循环如 forEach、for...in 方式。对于 forEach，无法中途跳出循环，break 命令或 return 命令都不能奏效；对于 for...in，循环遍历数组得到的键名是数字，且会遍历原型链上的键。然而 for...of 循环没有以上缺点。
