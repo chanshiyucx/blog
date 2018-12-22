@@ -1,4 +1,4 @@
-BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，实现方法很多，Github 上也有许多优秀的三方库，如 HeartBeat 所使用的 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll)，但如何优雅实现也是一门学问。 <!-- more -->
+BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，实现方法很多，Github 上也有许多优秀的三方库，如 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll)，但如何优雅实现也是一门学问。 <!-- more -->
 
 ## 事件绑定和解绑
 
