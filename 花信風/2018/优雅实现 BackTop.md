@@ -123,6 +123,13 @@ function backTop() {
 }
 ```
 
+扩展：该 API 还提供 cancelAnimationFrame 方法用来取消重绘，参数是 requestAnimationFrame 返回的一个代表任务 ID 的整数值，使用如下：
+
+```javascript
+const requestID = window.requestAnimationFrame(() => scroll(d, end, step))
+window.cancelAnimationFrame(requestID)
+```
+
 ### 残缺之美
 
 如果不需要考虑浏览器兼容性，在 Chrome、Firefox 浏览器上，window.scrollTo 还支持第二种参数形式，传入参数 options 是一个包含三个属性的对象：
