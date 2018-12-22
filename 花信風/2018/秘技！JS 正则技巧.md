@@ -120,6 +120,36 @@ console.log(string.match(regex))
 
 可以通过更改子模式的顺序来改变匹配的结果。
 
+### 实例应用
+
+#### 匹配时间
+
+可以匹配 2-4 位时间格式：
+
+```javascript
+const regex = /^(0?[0-9]|1[0-9]|2[0-3]):(0?[0-9]|[1-5][0-9])$/
+console.log(regex.test('23:59')) // true
+console.log(regex.test('1:2')) // true
+```
+
+#### 匹配文件路径
+
+文件路径格式如 `盘符:\文件夹\文件夹\文件夹\`。
+
+匹配符盘：`[a-zA-Z]:\\`，文件名或文件夹名，不能包含一些特殊字符，需要排除字符组 [^\\:*<>|"?\r\n/] 来表示合法字符，且文件名或文件夹名不能为空，至少有一个字符，需要使用量词 `+`。文件夹可以出现任意次，最后可能是文件而不是文件夹，不需要带 `\\`。
+
+```javascript
+const regex = /^[a-zA-Z]:\\([^\\:*<>|"?\r\n/]+\\)*([^\\:*<>|"?\r\n/]+)?$/
+console.log(regex.test('F:\\study\\regular expression.pdf'))
+```
+
+#### 匹配 id
+
+```javascript
+const regex = //
+const string = '<div id="container" class="main"></div>'
+```
+
 ## 位置匹配
 
 ## 括号的作用
