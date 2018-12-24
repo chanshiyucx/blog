@@ -87,3 +87,15 @@ avatar: //i.loli.net/2018/12/15/5c14f263e2a2a.png
 link: //www.himiku.com
 cover: //i.loli.net/2018/12/15/5c14f2390c3bd.png
 avatar: //i.loli.net/2018/12/15/5c14f1bb58a6d.jpg
+
+## 禾雀飛翔
+
+link: //buncho.moe/
+cover: //i.loli.net/2018/12/23/5c1f7e7e2c9ba.jpg
+avatar: //i.loli.net/2018/12/23/5c1f7dc2938e8.jpeg
+
+## 阿硕の博客
+
+link: //www.sshuo.cc/
+cover: //i.loli.net/2018/12/23/5c1f82225e07d.jpg
+avatar: //i.loli.net/2018/12/23/5c1f82115bb6c.jpg
