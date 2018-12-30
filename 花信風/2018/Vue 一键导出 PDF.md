@@ -1,10 +1,10 @@
-最近上班有点闲，摸鱼摸出了个在线简历生成器 [Tamayura](https://github.com/chanshiyucx/tamayura)，提供在线编辑保存功能。后来寻思不够方便，便研究下如何一键保存 PDF。<!-- more -->
+最近上班有点闲，摸鱼码了个在线简历生成器 [Tamayura](https://github.com/chanshiyucx/tamayura)，提供在线编辑和主题设置等功能。一开始使用 chrome 自带 PDF 导出功能，后来寻思不够方便，便研究下如何一键导出 PDF。<!-- more -->
 
 ## 生成方案
 
-一键生成 PDF 看起来是广大群众的普遍需求，网上一通 Google 便有不少现成方案，前人栽树后人乘凉，既然有成熟的方案那便直接采用了。
+一键生成导出 PDF 看起来是广大群众的普遍需求，网上一通 Google 便有不少现成方案，前人栽树后人乘凉，既然有成熟的方案那便直接采用了。
 
-生成 PDF 基本思路大多一致，先用 [html2canvas](https://github.com/niklasvh/html2canvas) 将 DOM 元素转换为 canvas，再利用 canvas 的 toDataURL 方法输出为图片，最后使用 [JsPDF](https://github.com/MrRio/jsPDF) 将图片添加生成 PDF 实现一键下载。
+生成 PDF 基本思路大多一致，先用 [html2canvas](https://github.com/niklasvh/html2canvas) 将 DOM 元素转换为 canvas，再利用 canvas 的 toDataURL 方法输出为图片，最后使用 [jsPDF](https://github.com/MrRio/jsPDF) 添加图片生成 PDF 实现一键下载。
 
 html2canvas 是一个著名开源库，可将一个元素渲染为 canvas，只需要简单的调用 `html2canvas(element[, options])` 即可。该方法会返回一个包含有 canvas 元素的 promise。
 
@@ -12,14 +12,16 @@ jsPDF 是一个基于 HTML5 的客户端解决方案，用于在客户端 JavaSc
 
 ## 代码实现
 
+根据以上方案，实现一个 vue 插件，提供 PDF 一键导出功能：
+
 ```javascript
-// 导出页面为PDF格式
 import html2Canvas from 'html2canvas'
 import JsPDF from 'jspdf'
 
 export default {
   install(Vue) {
     Vue.prototype.getPdf = function(title) {
+      const element = document.getElementById('pdfDom')
       const opts = {
         scale: 4, // 缩放比例，提高生成图片清晰度
         useCORS: true, //允许加载跨域的图片
@@ -28,9 +30,7 @@ export default {
         logging: true //日志开关，发布的时候记得改成false
       }
 
-      html2Canvas(document.getElementById('pdfDom'), opts).then(function(
-        canvas
-      ) {
+      html2Canvas(element, opts).then(function(canvas) {
         let contentWidth = canvas.width
         let contentHeight = canvas.height
         let pageHeight = (contentWidth / 592.28) * 841.89
