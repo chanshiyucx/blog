@@ -4,7 +4,7 @@ JavaScript 有四种表示“集合”和数据结构，分别是 Array、Object
 
 ### Iterator 概念
 
-任何数据结构，只要部署 Iterator 接口，就可以完成遍历操作。
+遍历器对象本质上就是一个指针对象。任何数据结构，只要部署 Iterator 接口，就可以完成遍历操作。
 
 Iterator 的作用有 3 个：
 
@@ -23,9 +23,9 @@ Iterator 的遍历过程如下：
 
 数据结构只要部署了 Iterator 接口，就称这种数据结构为“可遍历”（iterable）的。
 
-ES6 规定，默认的 Iterator 接口部署在数据结构的 Symbol.iterator 属性，或者说，一个数据结构只要具有 Symbol.iterator 属性，就可以认为是“可遍历的”（iterable）。调用 Symbol.iterator 方法，会得到当前数据结构默认的遍历器生成函数。
+默认的 Iterator 接口部署在 Symbol.iterator 属性上，调用 Symbol.iterator 方法，会得到当前数据结构默认的遍历器生成函数。
 
-原生具备 Iterator 接口的数据结构有：Array、Map、Set、String、TypedArray、函数的 arguments 对象、NodeList 对象。
+原生具备 Iterator 接口的数据结构有：Array、Map、Set、String、TypedArray、arguments 对象、NodeList 对象。
 
 ```javascript
 let arr = ['a', 'b', 'c']

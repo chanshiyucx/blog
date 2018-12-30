@@ -9,7 +9,8 @@
 [0x03 数据类型与数据结构](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x03%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)  
 [0x04 Proxy 和 Reflect](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x04%20Proxy%20%E5%92%8C%20Reflect.md)  
 [0x05 异步编程 Promise](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x05%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%20Promise.md)  
-[0x06 Iterator 和 for of 循环](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x06%20Iterator%20%E5%92%8C%20for%20of%20%E5%BE%AA%E7%8E%AF.md)
+[0x06 Iterator 和 for of 循环](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x06%20Iterator%20%E5%92%8C%20for%20of%20%E5%BE%AA%E7%8E%AF.md)  
+[0x07 Generator 函数](https://github.com/chanshiyucx/Blog/blob/master/%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x07%20Generator%20%E5%87%BD%E6%95%B0.md)
 
 ### JavaScript 设计模式与开发实践 【2018-09-27】
 
@@ -22,6 +23,9 @@
 
 ### 2018
 
+[Vue 一键导出 PDF](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/Vue%20%E4%B8%80%E9%94%AE%E5%AF%BC%E5%87%BA%20PDF.md)  
+[函数节流与函数防抖](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%E4%B8%8E%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96.md)  
+[优雅实现 BackTop](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0%20BackTop.md)  
 [七天学会 NodeJS](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E4%B8%83%E5%A4%A9%E5%AD%A6%E4%BC%9A%20NodeJS.md)  
 [图片加解密二三事](https://github.com/chanshiyucx/Blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E5%9B%BE%E7%89%87%E5%8A%A0%E8%A7%A3%E5%AF%86%E4%BA%8C%E4%B8%89%E4%BA%8B.md)
 

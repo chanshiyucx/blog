@@ -99,3 +99,15 @@ avatar: //i.loli.net/2018/12/23/5c1f7dc2938e8.jpeg
 link: //www.sshuo.cc/
 cover: //i.loli.net/2018/12/23/5c1f82225e07d.jpg
 avatar: //i.loli.net/2018/12/23/5c1f82115bb6c.jpg
+
+## 陶心昊の数据存储系统
+
+link: //taoxinhao.cn/
+cover: //i.loli.net/2018/12/30/5c289d5e3248e.png
+avatar: //i.loli.net/2018/12/30/5c289c5e8aece.jpg
+
+## 风执行
+
+link: //gleehub.com/
+cover: //i.loli.net/2018/12/30/5c28b19fb7bb0.jpg
+avatar: //i.loli.net/2018/12/30/5c28b19f83b23.jpg
