@@ -65,9 +65,9 @@ export default {
 import htmlToPdf from './utils/htmlToPdf'
 
 Vue.use(htmlToPdf)
+```
 
 注意点：
 
 1. 如果引入外链图片，需要配置图片跨域，并给 img 标签设置 `crossOrigin='anonymous'`
 2. 尽量提高生成图片质量，可以适当放大 canvas 画布，通过设置 scale 缩放画布大小，或者设置 dpi 提高清晰度
-```
