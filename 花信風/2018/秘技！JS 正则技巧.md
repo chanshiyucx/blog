@@ -256,17 +256,27 @@ const regex = /this is (ab|cd)/g
 
 使用括号分组，可以进行数据提取和替换操作。
 
-以提取数据为例，提取日期年月日：
+以提取数据为例，提取形如 yyyy--mm--dd 日期年月日：
 
 ```javascript
 const regex = /(\d{4})-(\d{2})-(\d{2})/g
 const date = '2018-01-01'
+const regex = /(\d{4})-(\d{2})-(\d{2})/
+const date = '2018-01-01'
+console.log(regex.exec(date))
+// console.log(date.match(regex))
+// ["2018-01-01", "2018", "01", "01", index: 0, input: "2018-01-01", groups: undefined]
+
+console.log(RegExp.$1, RegExp.$2, RegExp.$3)
+// 2018 01 01
 ```
 
-扩展：在 JavaScript 里，`exec` 和 `match` 方法作用基本一直，主要有两点区别：
+扩展：在 JavaScript 里，`exec` 和 `match` 方法作用基本一致，主要有两点区别：
 
 1. `exec` 是 RegExp 类分方法，而 `match` 是 String 类的方法
 2. `exec` 只匹配第一个符合的字符串，而 `match` 行为跟是否配置 g 修饰符有关，在非全局匹配情况下，两者表现一致
+
+分组
 
 ## 回溯法原理
 
