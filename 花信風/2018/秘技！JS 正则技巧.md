@@ -256,7 +256,7 @@ const regex = /this is (ab|cd)/g
 
 使用括号分组，可以进行数据提取和替换操作。
 
-以提取数据为例，提取形如 yyyy--mm--dd 日期年月日：
+以提取数据为例，提取形如 yyyy-mm-dd 日期年月日：
 
 ```javascript
 const regex = /(\d{4})-(\d{2})-(\d{2})/g
@@ -276,7 +276,7 @@ console.log(RegExp.$1, RegExp.$2, RegExp.$3)
 1. `exec` 是 RegExp 类分方法，而 `match` 是 String 类的方法
 2. `exec` 只匹配第一个符合的字符串，而 `match` 行为跟是否配置 g 修饰符有关，在非全局匹配情况下，两者表现一致
 
-分组
+此外，括号分组还可方便进行替换操作，如将 yyyy-mm-dd 替换为 dd-mm-yyyy
 
 ## 回溯法原理
 
