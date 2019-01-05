@@ -252,7 +252,7 @@ const regex1 = /(ab)+/g
 const regex = /this is (ab|cd)/g
 ```
 
-#### 分组引用
+### 分组引用
 
 使用括号分组，可以进行数据提取和替换操作。
 
@@ -278,7 +278,58 @@ console.log(RegExp.$1, RegExp.$2, RegExp.$3)
 
 此外，括号分组还可方便进行替换操作，如将 yyyy-mm-dd 替换为 dd-mm-yyyy
 
+```javascript
+const date = '2018-01-31'
+const regex = /^(\d{4})-(\d{2})-(\d{2})$/
+const result = date.replace(regex, '$3-$2-$1')
+console.log(result) // 31-01-2018
+
+// 等价于
+const result2 = data.replace(regex, function() {
+  return RegExp.$3 + '-' + RegExp.$2 + '-' + RegExp.$1
+})
+
+// 等价于
+const result3 = data.replace(regex, function(match, year, month, day) {
+  return day + '-' + month + '-' + year
+})
+```
+
+### 反向引用
+
+除了在 JavaScript 里引用分组，还可以在正则里引用，即反向引用。
+
+举个栗子，以匹配日期为例：
+
+```javascript
+const date1 = '2018-01-31'
+const date2 = '2018-01.31'
+const regex = /\d{4}(-|\/|\.)\d{2}\1\d{2}/
+console.log(regex.test(date1)) // true
+console.log(regex.test(date2)) // false
+```
+
+如果出现括号嵌套，则以首次出现的左括号顺序为分组顺序。
+
+Tip1：如果出现类似 \10，则表示第 10 个分组而不是 \1 和 0，如果需要表示后者，需要使用非捕获括号，表示成 (?:\1)0 或 \1(?:0)。
+
+Tip2：如果引用不存在分组，则只匹配反向引用的字符本身，如 \2 只匹配 2，反斜杠表示转义。
+
+Tip3：如果分组后面有量词，则以最后一次捕获的数据为分组。
+
+### 非捕获括号
+
+之前的例子，括号里的分组或捕获数据，以便后续引用，称之为捕获型分组和捕获型分支。如果只想使用括号原始功能，可以使用非捕获型括号 `(?:p)` 和 `(?:p1|p2|p3)`。
+
 ## 回溯法原理
+
+回溯法本质上是深度优先算法。
+
+> 回溯法也称试探法，它的基本思想是：从问题的某一种状态（初始状态）出发，搜索从这种状态出发所能达到的所有“状态”，当一条路走到“尽头”的时候（不能再前进），再后退一步或若干步，从另一种可能“状态”出发，继续搜索，直到所有的“路径”（状态）都试探过。这种不断“前进”、不断“回溯”寻找解的方法，就称作“回溯法”。
+
+举个栗子，以正则 `/ab{1,3}/c` 来匹配字符串 'abbc'，其匹配流程如下：
+
+![正则回溯](https://i.loli.net/2019/01/05/5c30785814c24.png#full)
 
 ## 正则的拆分
 
