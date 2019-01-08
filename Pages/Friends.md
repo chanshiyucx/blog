@@ -111,3 +111,9 @@ avatar: //i.loli.net/2018/12/30/5c289c5e8aece.jpg
 link: //gleehub.com/
 cover: //i.loli.net/2018/12/30/5c28b19fb7bb0.jpg
 avatar: //i.loli.net/2018/12/30/5c28b19f83b23.jpg
+
+## Hans362
+
+link: //blog.hans362.cn
+cover: //i.loli.net/2019/01/08/5c34775058aa5.png
+avatar: //i.loli.net/2019/01/08/5c34769c98720.jpg
