@@ -1,6 +1,6 @@
 ## 蝉時雨
 
-[蝉鸣如雨，花宵道中](//chanshiyu.com)
+[![Author](https://img.shields.io/badge/author-chanshiyucx-blue.svg?style=flat-square)](https://chanshiyu.com) [![Email](https://img.shields.io/badge/Emali%20me-me@chanshiyu.com-green.svg?style=flat-square)](me@chanshiyu.com)
 
 ### ES6 标准入门
 
