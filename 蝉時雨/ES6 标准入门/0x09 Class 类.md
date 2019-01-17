@@ -384,6 +384,40 @@ B.__proto__ = A
 
 两条原型链理解如下：**作为一个对象，子类（B）的原型（`__proto__` 属性）是父类（A）；作为一个构造函数，子类（B）的原型（prototype 属性）是父类的实例**。
 
+#### extends 的继承目标
+
+下面讨论三种特殊的继承情况。
+
+第一种特殊情况，子类继承 Object 类：
+
+```javascript
+class A extends Object {}
+A.__proto__ === Object // true
+A.prototype.__proto__ === Object.prototype // true
+```
+
+这种情况下，A 其实就是构造函数 Object 的复制，A 的实例就是 Object 的实例。
+
+第二种特殊情况，不存在任何继承：
+
+```javascript
+class A {}
+A.__proto__ === Function.prototype // true
+A.prototype.__proto__ === Object.prototype // true
+```
+
+这种情况下，A 作为一个基类（即不存在任何继承）就是一个普通函数，所以直接继承 Function.prototype。但是，A 调用后返回一个空对象（即 Object 实例），所以 `A.prototype.__proto__` 指向构造函数（Object）的 prototype 属性。
+
+第三种特殊情况，子类继承 null：
+
+```javascript
+class A extends null {}
+A.__proto__ === Function.prototype // true
+A.prototype.__proto__ === undefined // true
+```
+
+这与第二种情况非常像。A 也是一个普通函数，所以直接继承 Function. prototype。但是，A 调用后返回的对象不继承任何方法，所以它的 \_\_proto\_\_ 指向 Function.prototype。
+
 #### 实例的 \_\_proto\_\_
 
 子类实例的 `__proto__` 属性的 `__proto__` 属性指向父类实例的 `__proto__` 属性。也就是说，子类的原型的原型是父类的原型。
