@@ -10,7 +10,8 @@
 [0x04 Proxy 和 Reflect](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x04%20Proxy%20%E5%92%8C%20Reflect.md)  
 [0x05 异步编程 Promise](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x05%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%20Promise.md)  
 [0x06 Iterator 和 for of 循环](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x06%20Iterator%20%E5%92%8C%20for%20of%20%E5%BE%AA%E7%8E%AF.md)  
-[0x07 Generator 函数](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x07%20Generator%20%E5%87%BD%E6%95%B0.md)
+[0x07 Generator 函数](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x07%20Generator%20%E5%87%BD%E6%95%B0.md)  
+[0x08 Async 函数](./%E8%9D%89%E6%99%82%E9%9B%A8/ES6%20%E6%A0%87%E5%87%86%E5%85%A5%E9%97%A8/0x08%20Async%20%E5%87%BD%E6%95%B0.md)
 
 ### JavaScript 设计模式与开发实践 【2018-09-27】
 
@@ -23,8 +24,8 @@
 
 ### 2018
 
-[排序算法初探](//github.com/chanshiyucx/blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2.md)  
-[不一样の烟火](//github.com/chanshiyucx/blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E4%B8%8D%E4%B8%80%E6%A0%B7%E3%81%AE%E7%83%9F%E7%81%AB.md)  
+[排序算法初探](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2.md)  
+[不一样の烟火](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E4%B8%8D%E4%B8%80%E6%A0%B7%E3%81%AE%E7%83%9F%E7%81%AB.md)  
 [秘技！JS 正则技巧](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E7%A7%98%E6%8A%80%EF%BC%81JS%20%E6%AD%A3%E5%88%99%E6%8A%80%E5%B7%A7.md)  
 [Vue 一键导出 PDF](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/Vue%20%E4%B8%80%E9%94%AE%E5%AF%BC%E5%87%BA%20PDF.md)  
 [函数节流与函数防抖](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%E4%B8%8E%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96.md)  
