@@ -52,7 +52,7 @@ Bar.prototype.constructor = Bar
  *           { method: ... }
  *           Object.prototype
  *               { toString:... }
- */
+ **/
 ```
 
 ![继承与原型链](https://i.loli.net/2018/12/09/5c0cc5b61e149.png#full)
@@ -177,7 +177,7 @@ foo(1, 2, 3)
   }
 })() // 立即执行此匿名函数, 也就是函数对象
 // 另外两种方式
-;+function() {}()
+;+(function() {})()
 ;(function() {})()
 ```
 
@@ -229,23 +229,23 @@ typeof foo !== 'undefined'
 
 ### JavaScript 类型表格
 
-| Value              | Class    | Type     |
+|       Value        |  Class   |   Type   |
 | :----------------: | :------: | :------: |
-| 'foo'              | String   | string   |
-| new String('foo')  | String   | object   |
-| 1.2                | Number   | number   |
-| new Number(1.2)    | Number   | object   |
-| true               | Boolean  | boolean  |
-| new Boolean(true)  | Boolean  | object   |
-| new Date()         | Date     | object   |
-| new Error()        | Error    | object   |
-| [1,2,3]            | Array    | object   |
-| new Array(1, 2, 3) | Array    | object   |
-| new Function('')   | Function | function |
-| /abc/g             | RegExp   | object   |
-| new RegExp('meow') | RegExp   | object   |
-| {}                 | Object   | object   |
-| new Object()       | Object   | object   |
+|       'foo'        |  String  |  string  |
+| new String('foo')  |  String  |  object  |
+|        1.2         |  Number  |  number  |
+|  new Number(1.2)   |  Number  |  object  |
+|        true        | Boolean  | boolean  |
+| new Boolean(true)  | Boolean  |  object  |
+|     new Date()     |   Date   |  object  |
+|    new Error()     |  Error   |  object  |
+|      [1,2,3]       |  Array   |  object  |
+| new Array(1, 2, 3) |  Array   |  object  |
+|  new Function('')  | Function | function |
+|       /abc/g       |  RegExp  |  object  |
+| new RegExp('meow') |  RegExp  |  object  |
+|         {}         |  Object  |  object  |
+|    new Object()    |  Object  |  object  |
 
 上面表格中，**Type** 一列表示 typeof 操作符的运算结果。可以看到，这个值在大多数情况下都返回 **object**。
 
