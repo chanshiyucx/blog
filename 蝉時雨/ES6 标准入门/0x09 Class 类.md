@@ -105,3 +105,107 @@ const MyClass = class {}
 // 立即执行 Class
 const p = new class {}()
 ```
+
+### 不存在变量提升
+
+类不存在变量提升（hoist），这点与 ES5 完全不同。这与类的继承有关，因为要确保父类在子类之前定义，如果出现变量提升，则会出错。
+
+```javascript
+// 确保父类在子类之前定义
+const Foo = class {}
+class Bar extends Foo {}
+```
+
+### 私有方法
+
+利用 Symbol 值的唯一性将私有方法的名字命名为一个 Symbol 值，从而实现私有方法。
+
+```javascript
+const bar = Symbol('bar')
+
+class Point {
+  foo() {
+    this[bar]()
+  }
+
+  [bar]() {}
+}
+```
+
+### this 指向
+
+类的方法内部如果含有 this，它将默认指向类的实例。但是，必须非常小心，一旦单独使用该方法，很可能会报错。
+
+```javascript
+class Logger {
+  printName() {
+    this.print()
+  }
+  print() {
+    console.log('Hello')
+  }
+}
+const logger = new Logger()
+const { printName } = logger
+printName() // TypeError: Cannot read property 'print' of undefined
+```
+
+一种解决办法是在 constructor 里绑定 this。
+
+```javascript
+class Logger {
+  constructor {
+    this.printName = this.printName.bind(this)
+  }
+}
+```
+
+更巧妙的方式是使用 Proxy，在获取方法时自动绑定 this。
+
+```javascript
+function selfish(target) {
+  const cache = new WeakMap()
+  const handler = {
+    get(target, key) {
+      const value = Reflect.get(target, key)
+      if (typeof value !== 'function') return value
+      if (!cache.has(value)) cache.set(value, value.bind(target))
+      return cache.get(value)
+    }
+  }
+  return new Proxy(target, handler)
+}
+const logger = selfish(new Logger())
+```
+
+### new.target
+
+ES6 为 new 命令引入了 new.target 属性，返回 new 命令所作用的构造函数。
+
+```javascript
+function Person(name) {
+  if (new.target === Person) {
+    this.name = name
+  } else {
+    throw new Error('必须使用 new 生成实例')
+  }
+}
+```
+
+需要注意：子类继承父类时 new.target 会返回子类。利用这个特点，可以写出不能独立独立使用而必须继承后才能使用的类。
+
+```javascript
+class Shape {
+  constructor() {
+    if (new.target === Shape) {
+      throw new Error('本类不能实例化')
+    }
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(length, width) {
+    super()
+  }
+}
+```
