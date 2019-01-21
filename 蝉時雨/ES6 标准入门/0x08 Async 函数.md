@@ -1,4 +1,4 @@
-[pixiv=29166434]: # 'https://i.loli.net/2018/12/17/5c17b11680a7c.jpg'
+[pixiv:29166434]: # 'https://i.loli.net/2018/12/17/5c17b11680a7c.jpg'
 
 Async 函数是 ES2017 标准提供的改进版异步编程解决方案，它比 Generator 函数更加优雅方便。Async 函数就是隧道尽头的亮光，很多人认为它是异步操作的终极解决方案。
 
