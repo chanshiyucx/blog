@@ -1,4 +1,6 @@
-JavaScript 有四种表示“集合”和数据结构，分别是 Array、Object 和 ES6 新增的 Set、Map，遍历器（Iterator）就是为各种不同的数据结构提供统一访问机制的接口。<!-- more -->
+[author=ke-ta]: # 'https://i.loli.net/2018/12/09/5c0cc2487465c.jpg'
+
+JavaScript 有四种表示“集合”和数据结构，分别是 Array、Object 和 ES6 新增的 Set、Map，遍历器（Iterator）就是为各种不同的数据结构提供统一访问机制的接口。
 
 ## Iterator
 

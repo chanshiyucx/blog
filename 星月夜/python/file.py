@@ -18,17 +18,18 @@ def get_or_create_folder():
     return full_path
 
 
-# 打开文件夹
+# 打开文件或文件夹
 def open_folder(folder):
     print('Displaying cats in OS window.')
-    if platform.system() == 'Darwin':
+    os_name = platform.system()
+    if os_name == 'Darwin':
         subprocess.call(['open', folder])
-    elif platform.system() == 'Windows':
+    elif os_name == 'Windows':
         subprocess.call(['explorer', folder])
-    elif platform.system() == 'Linux':
+    elif os_name == 'Linux':
         subprocess.call(['xdg-open', folder])
     else:
-        print("We don't support your os: " + platform.system())
+        print("We don't support your os: " + os_name)
 
 
 # 保存图片
