@@ -315,7 +315,7 @@ http
 
 HTTP 请求本质上是一个数据流，由请求头（headers）和请求体（body）组成。例如以下是一个完整的 HTTP 请求数据内容。
 
-```markup
+```http
 POST / HTTP/1.1
 User-Agent: curl/7.26.0
 Host: localhost
@@ -391,7 +391,7 @@ server.addContext('bar.com', {
 
 处理 HTTP 请求时 url 模块使用率超高，因为该模块允许解析、生成以及拼接 URL。首先来看看一个完整的 URL 的各组成部分。
 
-```markup
+```
                             href
  -----------------------------------------------------------------
                             host              path
@@ -413,21 +413,22 @@ const obj = url.parse(
 )
 console.log(obj)
 
-/*
-Url {
-  protocol: 'http:',
-  slashes: true,
-  auth: 'user:pass',
-  host: 'host.com:8080',
-  port: '8080',
-  hostname: 'host.com',
-  hash: '#hash',
-  search: '?query=string',
-  query: 'query=string',
-  pathname: '/p/a/t/h',
-  path: '/p/a/t/h?query=string',
-  href: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash' }
-*/
+/**
+ * Url {
+ *   protocol: 'http:',
+ *   slashes: true,
+ *   auth: 'user:pass',
+ *   host: 'host.com:8080',
+ *   port: '8080',
+ *   hostname: 'host.com',
+ *   hash: '#hash',
+ *   search: '?query=string',
+ *   query: 'query=string',
+ *   pathname: '/p/a/t/h',
+ *   path: '/p/a/t/h?query=string',
+ *   href: 'http://user:pass@host.com:8080/p/a/t/h?query=string#hash'
+ * }
+ **/
 ```
 
 传给 .parse 方法的不一定要是一个完整的 URL，例如在 HTTP 服务器回调函数中，request.url 不包含协议头和域名，但同样可以用 .parse 方法解析。
@@ -731,20 +732,20 @@ spawn('worker.js')
 
 最后以一个大项目作为总结，项目开发的是一个简单的静态文件合并服务器，该服务器需要支持类似以下格式的 JS 或 CSS 文件合并请求：
 
-```markup
+```
 http://assets.example.com/foo/??bar.js,baz.js
 ```
 
 在以上 URL 中，?? 是一个分隔符，之前是需要合并的多个文件的 URL 的公共部分，之后是使用 , 分隔的差异部分。因此服务器处理这个 URL 时，返回的是以下两个文件按顺序合并后的内容：
 
-```markup
+```
 /foo/bar.js
 /foo/baz.js
 ```
 
 此外，服务器也同时支持普通的 JS 或 CSS 文件请求：
 
-```markup
+```
 http://assets.example.com/foo/bar.js
 ```
 
@@ -752,7 +753,7 @@ http://assets.example.com/foo/bar.js
 
 设计方案：
 
-```markup
+```
            +---------+   +-----------+   +----------+
 request -->|  parse  |-->|  combine  |-->|  output  |--> response
            +---------+   +-----------+   +----------+
@@ -840,7 +841,7 @@ main(process.argv.slice(2))
 
 第一次迭代的请求分析：
 
-```markup
+```
 发送请求       等待服务端响应         接收响应
 ---------+----------------------+------------->
          --                                        解析请求
@@ -860,7 +861,7 @@ main(process.argv.slice(2))
 
 这样调整后，整个请求处理过程变成下边这样：
 
-```markup
+```
 发送请求 等待服务端响应 接收响应
 ---------+----+------------------------------->
          --                                        解析请求

@@ -82,7 +82,7 @@ p2.then(result => console.log(result)).catch(error => console.log(error)) // Err
 
 上面的代码中，p1 和 p2 都是 Promise 的实例，但是 p2 的 resolve 方法将 p1 作为参数，此时 p1 的状态就会传递给 p2。也就是说，**p1 的状态决定了 p2 的状态**。如果 p1 的状态是 Pending，那么 p2 的回调函数就会等待 p1 的状态改变；如果 p1 的状态已经是 Resolved 或 Rejected，那么 p2 的回调函数将会立刻执行。
 
-需要注意的是：**调用 resolve 或 reject 并不会终结 Promise 的参数函数的执行**。
+需要注意：**调用 resolve 或 reject 并不会终结 Promise 的参数函数的执行**。
 
 ```javascript
 new Promise((resolve, reject) => {
@@ -111,7 +111,7 @@ Promise 实例 then 方法是定义在原型对象 Promise.prototype 上。then 
 
 ### Promise.prototype.catch()
 
-Promise.prototype.catch 方法是 .then(null, rejection) 的别名，用于指定发生错误时的回调函数。
+`Promise.prototype.catch` 方法是 .then(null, rejection) 的别名，用于指定发生错误时的回调函数。
 
 异步操作 reject 抛出的错误和 then 方法回调函数在运行中抛出的错误，都会被 catch 方法捕获。
 
@@ -180,13 +180,11 @@ promise.then(function(value) {
 
 上面的代码中，Promise 指定在下一轮“事件循环”再抛出错误。那时，Promise 的运行已经结束，所以这个错误是在 Promise 函数体外抛出的，会冒泡到最外层，成了未捕获的错误。
 
-需要注意的是，catch 方法返回的还是一个 Promise 对象，因此后面还可以接着调用 then 方法。此时要是后面的 then 方法里面报错，就与前面的 catch 无关了。
+需要注意：catch 方法返回的还是一个 Promise 对象，因此后面还可以接着调用 then 方法。此时要是后面的 then 方法里面报错，就与前面的 catch 无关了。
 
 ### Promise.all()
 
-Promise.all 方法用于将多个 Promise 实例包装成一个新的 Promise 实例。
-
-Promise.all 方法接受一个数组（或者具有 Iterator 接口结构）作为参数，数组成员都是 Promise 对象的实例；如果不是，就会先调用 Promise.resolve 方法，将参数转为 Promise 实例。
+`Promise.all` 方法用于将多个 Promise 实例包装成一个新的 Promise 实例。方法接受一个数组（或者具有 Iterator 接口结构）作为参数，数组成员都是 Promise 对象的实例；如果不是，就会先调用 Promise.resolve 方法，将参数转为 Promise 实例。
 
 ```javascript
 const p = Promise.all([p1, p2, p3])
@@ -197,7 +195,7 @@ p 的状态由成员决定，分成两种情况：
 1. 只有所有成员的状态都变成 Fulfilled，p 的状态才会变成 Fulfilled，此时返回值组成一个数组，传递给 p 的回调函数。
 2. 只要成员中有一个被 Rejected，p 的状态就变成 Rejected，此时第一个被 Rejected 的实例的返回值会传递给 p 的回调函数。
 
-需要注意的是：**如果作为参数的 Promise 实例自身定义了 catch 方法，那么它被 rejected 时并不会触发 Promise.all()的 catch 方法**。
+需要注意：**如果作为参数的 Promise 实例自身定义了 catch 方法，那么它被 rejected 时并不会触发 Promise.all()的 catch 方法**。
 
 ```javascript
 const p1 = new Promise((resolve, reject) => {
@@ -221,7 +219,7 @@ Promise.all([p1, p2])
 
 ### Promise.race()
 
-Promise.race 方法同样是将多个 Promise 实例包装成一个新的 Promise 实例。
+`Promise.race` 方法同样是将多个 Promise 实例包装成一个新的 Promise 实例。
 
 不同的是只要成员中有一个实例率先改变状态，p 的状态就跟着改变。那个率先改变的 Promise 实例的返回值就传递给 p 的回调函数。
 
@@ -244,9 +242,7 @@ p.catch(error => console.log(error))
 
 ### Promise.resolve()
 
-Promise.resolve 方法将现有对象转为 Promise 对象。
-
-Promise.resolve 等价于下面的写法：
+Promise.resolve 方法将现有对象转为 Promise 对象。Promise.resolve 等价于下面的写法：
 
 ```javascript
 Promise.resolve('foo')
@@ -256,13 +252,9 @@ new Promise(resolve => resolve('foo'))
 
 Promise.resolve 方法的参数分成以下 4 种情况：
 
-_1.参数是一个 Promise 实例_
+1. 参数是一个 Promise 实例。如果参数是 Promise 实例，那么 Promise.resolve 将不做任何修改，原封不动地返回这个实例。
 
-如果参数是 Promise 实例，那么 Promise.resolve 将不做任何修改，原封不动地返回这个实例。
-
-_2.参数是一个 thenable 对象_
-
-thenable 对象指的是具有 then 方法的对象。
+2. 参数是一个 thenable 对象。thenable 对象指的是具有 then 方法的对象。
 
 ```javascript
 let thenable = {
@@ -274,15 +266,11 @@ let thenable = {
 
 Promise.resolve 方法会将这个对象转为 Promise 对象，然后立即执行 thenable 对象的 then 方法。
 
-_3.参数不是具有 then 方法的对象或根本不是对象_
+3. 参数不是具有 then 方法的对象或根本不是对象。如果参数是一个原始值，或者是一个不具有 then 方法的对象，那么 Promise.resolve 方法返回一个新的 Promise 对象，状态为 Resolved。
 
-如果参数是一个原始值，或者是一个不具有 then 方法的对象，那么 Promise.resolve 方法返回一个新的 Promise 对象，状态为 Resolved。
+4. 不带有任何参数。Promise.resolve 方法允许在调用时不带有参数，而直接返回一个 Resolved 状态的 Promise 对象。
 
-_4.不带有任何参数_
-
-Promise.resolve 方法允许在调用时不带有参数，而直接返回一个 Resolved 状态的 Promise 对象。
-
-需要注意的：**立即 resolve 的 Promise 对象是在本轮“事件循环”（event loop）结束时，而不是在下一轮“事件循环”开始时**。
+需要注意：**立即 resolve 的 Promise 对象是在本轮“事件循环”（event loop）结束时，而不是在下一轮“事件循环”开始时**。
 
 ```javascript
 setTimeout(function() {
@@ -301,9 +289,9 @@ console.log('one')
 
 ### Promise.reject()
 
-Promise.reject(reason) 方法也会返回一个新的 Promise 实例，状态为 Rejected。
+`Promise.reject(reason)` 方法也会返回一个新的 Promise 实例，状态为 Rejected。
 
-需要注意的是：**Promise.reject() 方法的参数会原封不动地作为 reject 的理由变成后续方法的参数。这一点与 Promise.resolve 方法不一致**。
+需要注意：**Promise.reject() 方法的参数会原封不动地作为 reject 的理由变成后续方法的参数。这一点与 Promise.resolve 方法不一致**。
 
 ```javascript
 const thenable = {
@@ -447,7 +435,7 @@ console.log('next')
 // next
 ```
 
-上面的代码中，第二行是一个立即执行的匿名函数，会立即执行里面的 async 函数，因此如果 f 是同步的，就会得到同步的结果；如果 f 是异步的，就可以用 then 指定下一步。同时需要注意的是，`async ()=>f()` 会吃掉 f() 抛出的错误。所以，如果想捕获错误，要使用 promise.catch 方法：
+上面的代码中，第二行是一个立即执行的匿名函数，会立即执行里面的 async 函数，因此如果 f 是同步的，就会得到同步的结果；如果 f 是异步的，就可以用 then 指定下一步。同时需要注意：`async ()=>f()` 会吃掉 f() 抛出的错误。所以，如果想捕获错误，要使用 promise.catch 方法：
 
 ```javascript
 ;(async () => f())().then(...).catch(...)
