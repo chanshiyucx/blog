@@ -25,9 +25,7 @@ async 函数可以看作由多个异步操作包装成的一个 Promise 对象�
 
 async 函数返回一个 Promise 对象。async 函数内部 return 语句返回的值，会成为 then 方法回调函数的参数。
 
-正常情况下，await 命令后面是一个 Promise 对象。如果不是，会被转成一个立即 resolve 的 Promise 对象。
-
-await 命令后面的 Promise 对象如果变为 reject 状态，则 reject 的参数会被 catch 方法的回调函数接收到。此时加不加 return 效果一样。
+正常情况下，await 命令后面是一个 Promise 对象。如果不是，会被转成一个立即 resolve 的 Promise 对象。await 命令后面的 Promise 对象如果变为 reject 状态，则 reject 的参数会被 catch 方法的回调函数接收到。此时加不加 return 效果一样。
 
 ```javascript
 async function f() {
@@ -40,9 +38,7 @@ f()
   .catch(e => console.log(e)) // 出错了
 ```
 
-注意：**只要一个 await 语句后面的 Promise 变为 reject，那么整个 async 函数都会中断执行。**
-
-如果希望异步操作失败也不会中断后面的异步操作，有两种解决办法：
+需要注意：**只要一个 await 语句后面的 Promise 变为 reject，那么整个 async 函数都会中断执行**。如果希望异步操作失败也不会中断后面的异步操作，有两种解决办法：
 
 1. 将 await 放在 try...catch 结构里面。
 2. 在 await 后面的 Promise 对象后面添加一个 catch 方法。
@@ -57,11 +53,10 @@ async function f() {
 
 #### 错误处理
 
-如果 await 后面的异步操作出错，那么等同于 async 函数返回的 Promise 对象被 reject。
-
-如果有多个 await 命令，则可以统一放在 try...catch 结构中。这里有个小技巧，使用 try...catch 结构，可以实现多次重复尝试。
+如果 await 后面的异步操作出错，那么等同于 async 函数返回的 Promise 对象被 reject。如果有多个 await 命令，则可以统一放在 try...catch 结构中。
 
 ```javascript
+// 使用 try...catch 实现多次重复尝试
 const NUM_RETRIES = 3
 async function test() {
   for (let i = 0; i < NUM_RETRIES; ++i) {
@@ -76,9 +71,10 @@ async function test() {
 
 #### 注意点
 
-第一点，最好将 await 命令放在 try...catch 代码块中。
+在使用 await 命令时，有几个注意点：
 
-第二点，多个 await 命令如果不存在继发关系，最好同时触发。
+1. 最好将 await 命令放在 try...catch 代码块中。
+2. 多个 await 命令如果不存在继发关系，最好同时触发。
 
 ```javascript
 // 写法一
@@ -115,9 +111,7 @@ async function func() {
 }
 ```
 
-扩展：为什么使用 forEach 和 for 循环执行多个异步操作会有不同表现，翻阅一些网上资料后总结如下：
-
-forEach 的 polyfill 实现如下：
+为什么使用 forEach 和 for 循环执行多个异步操作会有不同表现，翻阅一些网上资料，找到 forEach 的 polyfill 实现如下：
 
 ```javascript
 Array.prototype.forEach = function(callback) {
@@ -139,7 +133,7 @@ async function asyncForEach(array, callback) {
 }
 ```
 
-改造上面的 forEach 异步操作代码如下：
+则可以改造上面的 forEach 异步操作代码：
 
 ```javascript
 asyncForEach(list, async url => {
@@ -147,11 +141,10 @@ asyncForEach(list, async url => {
 })
 ```
 
-实际开发中经常遇到一组异步操作，需要按照顺序完成。比如，依次远程读取一组 URL，然后按照读取的顺序输出结果。
-
-Promise 实现如下：
+实际开发中经常遇到一组异步操作，需要按照顺序完成。比如，依次远程读取一组 URL，然后按照读取的顺序输出结果。分别使用 Promise 和 async 实现如下：
 
 ```javascript
+// Promise 实现
 function logInOrder(urls) {
   // 远程读取所有 URL
   const textPromises = urls.map(url => {
@@ -163,11 +156,8 @@ function logInOrder(urls) {
     return chain.then(() => textPromise).then(text => console.log(text))
   }, Promise.resolve())
 }
-```
 
-async 实现如下：
-
-```javascript
+// async 实现
 function logInOrder(urls) {
   // 并发读取所有 URL
   const textPromises = urls.map(async url => {

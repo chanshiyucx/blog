@@ -6,24 +6,16 @@
 
 ### 简介
 
-ES6 的类完全可以看作构造函数的另一种写法。
-
-```javascript
-class Point {}
-
-typeof Point // function
-Point === Point.prototype.constructor // true
-```
-
-上面代码表明：**类的数据类型就是函数，类本身就指向构造函数**。
-
-类的所有方法都定义在类的 prototype 属性上：
+ES6 的类完全可以看作构造函数的另一种写法，类的所有方法都定义在类的 prototype 属性上，**类的数据类型就是函数，类本身就指向构造函数**。
 
 ```javascript
 class Point {
   constructor() {}
   toString() {}
 }
+
+typeof Point // function
+Point === Point.prototype.constructor // true
 
 // 等同于
 Point.prorotype = {
@@ -32,27 +24,21 @@ Point.prorotype = {
 }
 ```
 
-在类的实例上调用方法，其实就是调用原型上的方法。
+在类的实例上调用方法，其实就是调用原型上的方法。使用 `Object.assign` 方法可以方便向类添加多个方法。**类的内部定义的方法都是不可枚举的（non-enumerable）**，这点与 ES5 表现不一致。
 
 ```javascript
 class Point {}
 let p = new Point()
 p.constructor === Point.prototype.constructor // true
-```
 
-使用 `Object.assign` 方法可以方便向类添加多个方法：
-
-```javascript
 Object.assign(Point.prototype, {
   toString()
 })
 ```
 
-需要注意：**类的内部定义的方法都是不可枚举的（non-enumerable）**，这点与 ES5 表现不一致。
-
 ### constructor
 
-constructor 方法默认返回实例对象（即 this），不过完全可以指定返回另外一个对象。
+constructor 方法默认返回实例对象（即 this），不过完全可以指定返回另外一个对象。**实例的属性除非显式定义在其本身（即 this 对象）上，否则都是定义在原型上**。
 
 ```javascript
 class Foo {
@@ -61,11 +47,7 @@ class Foo {
   }
 }
 new Foo() instanceof Foo // false
-```
 
-需要注意：**实例的属性除非显式定义在其本身（即 this 对象）上，否则都是定义在原型上。**
-
-```javascript
 class Point {
   constructor(x) {
     this.x = x
@@ -78,7 +60,7 @@ p.hasOwnProperty('toString') // false
 p.__proto__.hasOwnProperty('toString') // true
 ```
 
-> **proto** 是浏览器厂商添加的私有属性，应避免使用，在生产环境中，可以使用 Object.getPrototypeOf 方法来获取实例对象的原型。
+> **proto** 是浏览器厂商添加的私有属性，应避免使用，在生产环境中，可以使用 `Object.getPrototypeOf` 方法来获取实例对象的原型。
 
 ### Class 表达式
 
@@ -96,9 +78,7 @@ inst.getClassName() // Me
 Me.name // ReferenceError: Me is not defined
 ```
 
-需要注意：**上面定义的类的名字是 MyClass 而不是 Me，Me 只在 Class 的内部代码可用，指代当前类**。
-
-如果 Class 内部没有用到 Me，则可以省略。同时，也可以写出立即执行 Class。
+需要注意：**上面定义的类的名字是 MyClass 而不是 Me，Me 只在 Class 的内部代码可用，指代当前类**。如果 Class 内部没有用到 Me，则可以省略。同时，也可以写出立即执行 Class。
 
 ```javascript
 // 省略 Me
@@ -216,7 +196,7 @@ class Rectangle extends Shape {
 
 ### 简介
 
-Class 可以通过 extends 关键字实现继承，**子类必须在 constructor 方法中调用 super 方法，否则新建实例时会报错。这是因为子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。如果不调用 super 方法，子类就得不到 this 对象。**
+Class 可以通过 extends 关键字实现继承，子类必须在 constructor 方法中调用 super 方法，否则新建实例时会报错。**这是因为子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工**。如果不调用 super 方法，子类就得不到 this 对象。
 
 ```javascript
 class Point {}
@@ -226,9 +206,9 @@ class ColorPoint extends Point {
 const cp = new ColorPoint() // ReferenceError
 ```
 
-ES5 的继承实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面（`Parent.apply(this)`）。ES6 的继承机制完全不同，实质是先创造父类的实例对象 this（所以必须先调用 super 方法），然后再用子类的构造函数修改 this。
+ES5 的继承实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面（`Parent.apply(this)`）。
 
-如果子类没有定义 constructor 方法，则会被默认添加。
+ES6 的继承机制完全不同，实质是先创造父类的实例对象 this（所以必须先调用 super 方法），然后再用子类的构造函数修改 this。如果子类没有定义 constructor 方法，则会被默认添加。**且只有调用 super 之后才能使用 this 关键字**。
 
 ```javascript
 class ColorPoint extends Point {}
@@ -240,8 +220,6 @@ class ColorPoint extends Point {
   }
 }
 ```
-
-需要注意：**只有调用 super 之后才能使用 this 关键字**。
 
 ### Object.getPrototypeOf()
 
@@ -255,9 +233,7 @@ Object.getPrototypeOf(ColorPoint) === Ponit // true
 
 super 这个关键字既可以当作函数使用，也可以当作对象使用。在这两种情况下，它的用法完全不同。
 
-第一种情况，super 作为函数调用时代表父类的构造函数。
-
-需要注意：super 虽然代表了父类的构造函数，但返回的是子类的实例，即 super 内部的 this 指向的是 ColorPoint，此时 super() 相当与 `Point.prototype.constructor.call(this)`。
+第一种情况，super 作为函数调用时代表父类的构造函数。需要注意，super 虽然代表了父类的构造函数，但返回的是子类的实例，即 super 内部的 this 指向的是 ColorPoint，此时 super() 相当与 `Point.prototype.constructor.call(this)`。
 
 ```javascript
 class A {
@@ -278,7 +254,7 @@ new B() // B
 
 上面的代码中，`new.target` 指向当前正在执行的函数，在 super 函数执行时，它指向的是子类的构造函数，即 super() 内部的 this 指向的是 B。
 
-第二种情况，**super 作为对象时在普通方法中指向父类的原型对象，在静态方法中指向父类**。
+第二种情况，super 作为对象时在普通方法中指向父类的原型对象，在静态方法中指向父类。需要注意，**由于普通方法中 super 指向父类的原型对象，所以定义在父类实例上的方法或属性是无法通过 super 调用的**。
 
 ```javascript
 class Parent {
@@ -302,11 +278,7 @@ class Child extends Parent {
 Child.myMethod(1) // static 1
 const child = new Child()
 child.myMethod(2) // instance 2
-```
 
-需要注意：**由于普通方法中 super 指向父类的原型对象，所以定义在父类实例上的方法或属性是无法通过 super 调用的**。
-
-```javascript
 class A {
   constructor() {
     // 无法获得
@@ -354,7 +326,7 @@ B.__proto__ === A // true
 B.prototype.__proto__ === A.prototype // true
 ```
 
-造成这样的结果是因为类的继承是按照下面的模式实现的。
+造成这样的结果是因为类的继承是按照下面的模式实现的：
 
 ```javascript
 // B 的实例继承 A 的实例
