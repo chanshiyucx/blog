@@ -6,7 +6,7 @@ BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，
 
 滚动到页面顶部的按钮一般位于页面角落，并且只有在需要的时候才显示出来。所以首先需要监听页面滚动事件，直到滚动到一定距离后显示 BackTop 按钮。
 
-监听页面滚动最简单的实现方式是使用 addEventListener 监听 scroll 事件，并在页面卸载时解除监听，代码如下：
+监听页面滚动最简单的实现方式是使用 `addEventListener` 监听 scroll 事件，并在页面卸载时解除监听，代码如下：
 
 ```javascript
 window.addEventListener('scroll', handleScroll, false)
@@ -68,16 +68,11 @@ function handleScroll() {
 
 ## 回到顶部动画
 
-window.requestAnimationFrame() 方法请求浏览器在下一次重绘之前调用指定的函数来更新动画。
-
-该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。
-回调的次数通常是每秒 60 次。
-
-由于兼容问题，在不同浏览器需要带上前缀，并且在浏览器不支持时使用 setTimeout 模拟。
+`window.requestAnimationFrame()` 方法请求浏览器在下一次重绘之前调用指定的函数来更新动画。该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。回调的次数通常是每秒 60 次。由于兼容问题，在不同浏览器需要带上前缀，并且在浏览器不支持时使用 setTimeout 模拟。
 
 > requestAnimationFrame 目的是为了让各种网页动画效果（DOM 动画、Canvas 动画、SVG 动画、WebGL 动画）能够有一个统一的刷新机制，从而节省系统资源，提高系统性能，改善视觉效果。
 
-使用 requestAnimationFrame 来实现滚动到页面顶部的动画，核心是按帧来滚动小段距离来实现平滑滚动的效果，代码如下：
+使用 `requestAnimationFrame` 来实现滚动到页面顶部的动画，核心是按帧来滚动小段距离来实现平滑滚动的效果，代码如下：
 
 ```javascript
 // scrollTop animation
@@ -125,16 +120,14 @@ function backTop() {
 }
 ```
 
-扩展：该 API 还提供 cancelAnimationFrame 方法用来取消重绘，参数是 requestAnimationFrame 返回的一个代表任务 ID 的整数值，使用如下：
+扩展：该 API 还提供 `cancelAnimationFrame` 方法用来取消重绘，参数是 `requestAnimationFrame` 返回的一个代表任务 ID 的整数值，使用如下：
 
 ```javascript
 const requestID = window.requestAnimationFrame(() => scroll(d, end, step))
 window.cancelAnimationFrame(requestID)
 ```
 
-### 残缺之美
-
-如果不需要考虑浏览器兼容性，在 Chrome、Firefox 浏览器上，window.scrollTo 还支持第二种参数形式，传入参数 options 是一个包含三个属性的对象：
+如果不需要考虑浏览器兼容性，在 Chrome、Firefox 浏览器上，`window.scrollTo` 还支持第二种参数形式，传入参数 `options` 是一个包含三个属性的对象：
 
 - top 等同于 y-coord，代表纵轴坐标
 - left 等同于 x-coord，代表横轴坐标
@@ -147,4 +140,4 @@ window.scrollTo({
 })
 ```
 
-此方法简单高效，可惜 Edge、IE、Safari 皆不支持，残缺之美。
+此方法简单高效，可惜 Edge、IE、Safari 皆不支持。
