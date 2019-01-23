@@ -33,7 +33,7 @@
 }
 ```
 
-上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles ---> App IDs`，查阅便可获得：
+上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
 ![Apple Developer 获取 ID](https://i.loli.net/2018/12/09/5c0cc596a71a5.png#full)
 
@@ -63,7 +63,7 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
 
 ### 激活 App Links
 
-在使用 App Links 之前，需要先激活，修改 `AndroidManifest.xml`，增加一个 `intent-filter`，设置自动验证 `android:autoVerify="true"`，然后填写验证域名和需要唤醒的路径。
+在使用 App Links 之前，需要先激活，修改 `AndroidManifest.xml`，增加一个 `intent-filter`，设置自动验证 `android:autoVerify="true"`，然后填写验证域名和需要唤醒的路径。这样 APP 就会自动在所列的 host 中去验证，如果验证成功，APP 将成为匹配 URI 默认打开方式。
 
 ```xml
 <activity
@@ -86,8 +86,6 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
   </intent-filter>
 </activity>
 ```
-
-`android:autoVerify="true"` 这句会让 APP 自动在所列的 host 中去验证，如果验证成功，APP 将成为匹配 URI 默认打开方式。
 
 ### 上传验证文件
 

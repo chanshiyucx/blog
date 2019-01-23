@@ -1,6 +1,6 @@
 [pixiv: 41652582]: # 'https://i.loli.net/2018/12/09/5c0cc1c2ea2e4.jpg'
 
-avaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
+JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 
 ## 对象
 
@@ -61,13 +61,13 @@ Bar.prototype.constructor = Bar
 
 > 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
-**someObject.[[Prototype]]** 符号是用于指向 someObject 的原型。从 ECMAScript6 开始，`[[Prototype]]` 可以通过 `Object.getPrototypeOf()` 和 `Object.setPrototypeOf()` 访问器来访问。这个等同于 JavaScript 的非标准但许多浏览器实现的属性 `__proto__`。
+`someObject.[[Prototype]]` 符号是用于指向 someObject 的原型。从 ECMAScript6 开始，`[[Prototype]]` 可以通过 `Object.getPrototypeOf()` 和 `Object.setPrototypeOf()` 访问器来访问。这个等同于 JavaScript 的非标准但许多浏览器实现的属性 `__proto__`。
 
-但它不应该与构造函数 func 的 `prototype` 属性相混淆。被构造函数创建的实例对象的 `[[prototype]]` 指向 func 的 `prototype` 属性。 **Object.prototype** 属性表示 object 的原型对象。
+但它不应该与构造函数 func 的 `prototype` 属性相混淆。被构造函数创建的实例对象的 `[[prototype]]` 指向 func 的 `prototype` 属性。 `Object.prototype` 属性表示 object 的原型对象。
 
 ### hasOwnProperty 函数
 
-`hasOwnProperty` 是 JavaScript 中处理属性并且不会遍历原型链的方法之一(另一种方法: `Object.keys()`)。当检查对象某个属性是否存在时，hasOwnProperty 是唯一可用的方法。同时在使用 for in loop 遍历对象时，推荐总使用 hasOwnProperty 方法。
+`hasOwnProperty` 是 JavaScript 中处理属性并且不会遍历原型链的方法之一(另一种方法: `Object.keys()`)。当检查对象某个属性是否存在时，`hasOwnProperty` 是唯一可用的方法。同时在使用 for in loop 遍历对象时，推荐总使用 `hasOwnProperty` 方法。
 
 ## 函数
 
@@ -97,11 +97,11 @@ const foo = function bar() {
 bar() // 出错：ReferenceError
 ```
 
-bar 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo； 然而在 bar 内部依然可见。这是由于 JavaScript 的命名处理所致，函数名在函数内总是可见的。
+上面代码中，bar 函数声明外是不可见的，这是因为已经把函数赋值给了 foo；然而在 bar 内部依然可见。这是由于 JavaScript 的命名处理所致，函数名在函数内总是可见的。
 
 ### this 的工作原理
 
-JavaScript 有一套完全不同于其它语言的对 this 的处理机制。在**五**种不同的情况下，this 指向的各不相同。
+JavaScript 有一套完全不同于其它语言的对 this 的处理机制。在 5 种不同的情况下，this 指向的各不相同。
 
 - 全局范围内：this 指向全局对象。但在严格模式下，不存在全局变量，this 将会是 undefined。
 - 函数调用：this 指向全局对象。
@@ -124,8 +124,6 @@ new foo() // this 指向返回的新对象
 
 - 显示设置 this：调用 call 或者 apply 方法时，函数内 this 将会被显式设置为函数调用的第一个参数。
 
-注：第 2 条规则，即直接调用函数时，this 指向全局对象被认为是 JavaScript 语言另一个错误设计的地方，因为它从来就没有实际的用途。
-
 ```javascript
 Foo.method = function() {
   function test() {
@@ -135,7 +133,7 @@ Foo.method = function() {
 }
 ```
 
-为了在 test 中获取对 Foo 对象的引用，我们需要在 method 函数内部创建一个局部变量指向 Foo 对象。因为 JavaScript 中不可以对作用域进行引用或赋值，所以不可以在外部访问私有变量。
+为了在 test 中获取对 Foo 对象的引用，需要在 method 函数内部创建一个局部变量指向 Foo 对象。因为 JavaScript 中不可以对作用域进行引用或赋值，所以不可以在外部访问私有变量。
 
 ```javascript
 Foo.method = function() {
@@ -178,6 +176,7 @@ foo(1, 2, 3)
     // 对外公开的函数，创建了闭包
   }
 })() // 立即执行此匿名函数, 也就是函数对象
+
 // 另外两种方式
 ;+(function() {})()
 ;(function() {})()
@@ -227,7 +226,7 @@ typeof 操作符（和 instanceof 一起）或许是 JavaScript 中最大的设�
 typeof foo !== 'undefined'
 ```
 
-上面代码会检测 foo 是否已经定义；如果没有定义而直接使用会导致 ReferenceError 的异常。 这是 typeof 唯一有用的地方。除非为了检测一个变量是否已经定义，我们应尽量避免使用 typeof 操作符。
+上面代码会检测 foo 是否已经定义，如果没有定义而直接使用会导致 ReferenceError 的异常。 这是 typeof 唯一有用的地方。除非为了检测一个变量是否已经定义，应尽量避免使用 typeof 操作符。
 
 ### JavaScript 类型表格
 
@@ -290,6 +289,6 @@ new String('foo') instanceof Object // true
 'foo' instanceof Object // false
 ```
 
-有一点需要注意，instanceof 用来比较属于不同 JavaScript 上下文的对象（比如，浏览器中不同的文档结构）时将会出错，因为它们的构造函数不会是同一个对象。
+有一点需要注意，instanceof 用来比较属于不同 JavaScript 上下文的对象（比如浏览器中不同的文档结构）时将会出错，因为它们的构造函数不会是同一个对象。
 
 instanceof 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。正如 typeof 操作符一样，任何其它的用法都应该是避免的。

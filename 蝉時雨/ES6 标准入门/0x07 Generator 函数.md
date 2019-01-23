@@ -39,15 +39,15 @@ hw.next() // { value: undefined, done: true }
 
 > 只有调用 next 方法且内部指针指向该语句时才会执行 yield 语句后面的表达式，因此等于为 JavaScript 提供了手动的“惰性求值”（Lazy Evaluation）的语法功能。
 
+下面的代码中，yield 后面的表达式不会立即求值，只会在 next 方法将指针移到这一句时才求值。
+
 ```javascript
 function* gen() {
   yield 123 + 456
 }
 ```
 
-上面的代码中，yield 后面的表达式不会立即求值，只会在 next 方法将指针移到这一句时才求值。
-
-Generator 函数可以不用 yield 语句，这时就变成了一个单纯的暂缓执行函数。
+Generator 函数可以不用 yield 语句，这时就变成了一个单纯的暂缓执行函数。下面的代码中，函数 f 如果是普通函数，在为变量 generator 赋值时就会执行。但是函数 f 是一个 Generator 函数，于是就变成只有调用 next 方法时才会执行。
 
 ```javascript
 function* f() {
@@ -58,8 +58,6 @@ setTimeout(function() {
   generator.next()
 }, 2000)
 ```
-
-上面的代码中，函数 f 如果是普通函数，在为变量 generator 赋值时就会执行。但是函数 f 是一个 Generator 函数，于是就变成只有调用 next 方法时才会执行。
 
 yield 表达式如果用在另一个表达式之中，必须放在圆括号里面。
 
@@ -310,7 +308,7 @@ function* bar() {
 
 yield\* 后面的 Generator 函数（没有 return 语句时）不过是 for...of 的一种简写形式，完全可以用后者替代。反之，在有 return 语句时则需要用 `var value = yield* iterator` 的形式获取 return 语句的值。
 
-任何数据结构只要有 Iterator 接口，就可以被 yield\* 遍历。
+任何数据结构只要有 Iterator 接口，就可以被 yield\* 遍历。下面的代码中，yield 命令后面如果不加星号，返回的是整个数组，加了星号就表示返回的是数组的遍历器对象。
 
 ```javascript
 function* gen() {
@@ -318,8 +316,6 @@ function* gen() {
 }
 gen().next() // { value:"a", done:false }
 ```
-
-上面的代码中，yield 命令后面如果不加星号，返回的是整个数组，加了星号就表示返回的是数组的遍历器对象。
 
 ### Generator 函数 this
 
