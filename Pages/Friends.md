@@ -129,3 +129,9 @@ avatar: //i.loli.net/2019/01/10/5c36a3674a810.jpeg
 link: //cokewithice.com/links.html
 cover: //i.loli.net/2019/01/25/5c4ae1c80a9d3.jpg
 avatar: //i.loli.net/2019/01/25/5c4ae13c35033.jpg
+
+## 椎咲良田
+
+link: //sanshiliuxiao.top
+cover: //i.loli.net/2019/01/28/5c4ed2421e164.jpg
+avatar: //i.loli.net/2019/01/28/5c4eca46c1d0b.png
