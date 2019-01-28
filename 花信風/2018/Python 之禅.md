@@ -16,7 +16,7 @@
 
 ## Python 之禅
 
-最后在此敬上 Tim Peters 的 The Zen of python，希冀自己以后恪守规范，写出优雅简洁的代码：
+最后在此敬上 Tim Peters 的 The Zen of python，希冀自己以后恪守规范，写出优雅简洁的代码。
 
 > Beautiful is better than ugly.  
 > 优美胜于丑陋（Python 以编写优美的代码为目标）
