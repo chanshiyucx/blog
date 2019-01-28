@@ -10,9 +10,9 @@
 
 ## Theme
 
-个人建站已有好几年历史了，虽然内容产出甚少~~（黑历史都被删干净了）~~，期间也食用过不少博客主题，从最初的 Wordpress，到后来的 Hexo，都运行过一段时间。但最终发现这些主题都不让人中意，Wordpress 太过臃肿，还要折腾服务器，Hexo 文章发布不便，每次都要手动构建。而自己想要的是那种随时发布与删改的一款博客主题架构，巡视一圈并发现中意的一款，既然如此，如不自己撸一个！
+个人建站已有好几年历史了，虽然内容产出甚少~~（黑历史都被删干净了）~~，期间也食用过不少博客主题，从最初的 Wordpress，以及后来的 Hexo，都运行过一段时间。但最终发现这些主题都不让人中意，Wordpress 太过臃肿，还要折腾服务器，Hexo 文章发布不便，每次都要手动构建。而自己想要的是那种随时发布与删改的一款博客主题架构，巡视一圈并发现中意的一款，既然如此，如不自己撸一个！
 
-第一次尝试用 [Umijs](https://umijs.org/zh/) 设计了第一款 SPA 单页面博客主题 [HeartBeat](https://github.com/chanshiyucx/heart-beat)，该主题基于 Preact，后台数据源依托于 [Github Issues](https://developer.github.com/v3/issues/)，使用开源项目 [Gitalk](https://github.com/gitalk/gitalk) 作为博客评论系统。该主题充分利用 Github 开源的免费服务，脱离服务器与数据库，关注内容本身，免费食用。
+第一次尝试用 [Umijs](https://umijs.org/zh/) 设计了第一款 SPA 单页面博客主题 [HeartBeat](https://github.com/chanshiyucx/heart-beat)，该主题基于 Preact 开发，后台数据源依托于 [Github Issues](https://developer.github.com/v3/issues/)，使用开源项目 [Gitalk](https://github.com/gitalk/gitalk) 作为博客评论系统。该主题充分利用 Github 开源的免费服务，脱离服务器与数据库，关注内容本身，免费食用。
 
 HeartBeat 作为蝉時雨の博客主题坎坷运行了一年，并在不断的更新优化后趋于稳定。但在运行过程中逐渐发现一些难以忍受的问题，受制于最初设计遗留的缺陷和对动效的盲目追求，HeartBeat 的用户体验让人不甚满意，甚至有点糟糕。作为强迫症晚期患者，是时候考虑回炉重构主题了，于是便有了第二次尝试。
 
