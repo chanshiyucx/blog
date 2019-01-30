@@ -70,6 +70,7 @@ ctx.strokeRect(90, 90, 120, 120)
 4. `fill()`：通过填充路径的内容区域生成实心图形
 5. `moveTo(x, y)`：移动笔触到指定坐标
 6. `lineTo(x, y)`：绘制一条从当前位置到指定坐标的直线
+7. `arc(x, y, radius, startAngle, endAngle, anticlockwise)`：绘制圆弧，`anticlockwise` 为 true 时逆时针，默认为顺时针。
 
 当 canvas 初始化或者 `beginPath()` 调用后，通常会使用 `moveTo()` 函数设置起点。或者使用该方法绘制不连续的路径。
 
@@ -95,3 +96,20 @@ ctx.stroke()
 注意到填充三角形和描边三角形有些不同，当路径使用填充 `fill()` 时会自动闭合，而使用描边 `stroke()` 时则不会闭合路径，所以需要调用 `closePath()` 方法。
 
 ![绘制三角形](https://i.loli.net/2019/01/30/5c5122354e536.png)
+
+示例 2：绘制笑脸
+
+```javascript
+ctx.beginPath()
+ctx.moveTo(260, 150)
+ctx.arc(150, 150, 110, 0, Math.PI * 2, true) // 脸
+ctx.moveTo(220, 150)
+ctx.arc(150, 150, 70, 0, Math.PI, false) // 嘴
+ctx.moveTo(120, 110)
+ctx.arc(110, 110, 10, 0, Math.PI * 2, false) // 左眼
+ctx.moveTo(200, 110)
+ctx.arc(190, 110, 10, 0, Math.PI * 2, false) // 右眼
+ctx.stroke()
+```
+
+![笑脸](https://i.loli.net/2019/01/30/5c514b3b4739c.png)
