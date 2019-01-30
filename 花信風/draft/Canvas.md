@@ -1,0 +1,97 @@
+## 基础用法
+
+### 属性介绍
+
+`<canvas>` 标签只有两个可选的属性 `width` 和 `height`。当没有设置宽度和高度的时候，canvas 会初始化宽度为 300 像素和高度为 150 像素。宽高属性会自动忽略单位，以像素展示，所以使用 em 或 rem 等单位无效。
+
+在视觉表现上，CSS 的宽高属性权重要高于 `<canvas>` 标签的宽高权重。可以将 `<canvas>` 看作 `<img>` 元素，主要区别是 `<canvas>` 的等比例特性是强制的，会忽略 HTML 属性的设置，但 `<img>` 不会。
+
+```html
+<img src="1.jpg" width="300" height="150" style="height:100px;" />
+<canvas width="300" height="150" style="height:100px;"></canvas>
+```
+
+如上代码所示，此时 `<img>` 宽度不会随高度缩放，最终以 `300x100` 尺寸显示，而 `<canvas>` 宽度会按高度等比例缩放，以 `200x100` 尺寸显示。
+
+需要注意：在使用 Canvas API 绘制图像时，是以 HTML 的宽高属性为原点，与 CSS 属性无关。
+
+可以在 `<canvas>` 标签中提供替换内容。不支持的浏览器将会忽略容器并在其中渲染后备内容。
+
+```html
+<canvas width="150" height="150">
+  你的浏览器不支持 canvas，请升级你的浏览器
+</canvas>
+```
+
+### 渲染上下文
+
+`<canvas>` 标签创建画布，并公开渲染上下文（The rendering context），用来绘制内容。使用方法 `getContext()` 可以获取渲染上下文对象，该方法接受一个参数表示上下文格式，一般传入 `2d`，当然还有 `3d` 模式，这里不细谈。
+
+```javascript
+const canvas = document.getElementById('yoo')
+const ctx = canvas.getContext('2d')
+```
+
+### 绘制图形
+
+#### 绘制矩形
+
+原生 canvas 只支持一种图形绘制：矩形。所有其他的图形的绘制都至少需要生成一条路径。canvas 提供了三种方法绘制矩形：
+
+- `fillRect(x, y, width, height)`： 绘制一个填充矩形
+- `strokeRect(x, y, width, height)`： 绘制一个矩形边框
+- `clearRect(x, y, width, height)`： 清除指定矩形区域，使之变透明
+
+三种方式示例如下：
+
+```javascript
+ctx.fillStyle = '#fb618d'
+ctx.fillRect(50, 50, 200, 200)
+ctx.clearRect(70, 70, 160, 160)
+ctx.strokeRect(90, 90, 120, 120)
+```
+
+![三种方式绘制矩形](https://i.loli.net/2019/01/30/5c512235591d6.png)
+
+#### 绘制路径
+
+图形的基本元素是路径，使用路径绘制图形的步骤如下：
+
+1. 创建路径起始点
+2. 画出路径
+3. 将路径封闭
+4. 描边或填充路径区域
+
+整个步骤需要使用一下函数：
+
+1. `beginPath()`：新建一条新路径
+2. `closePath()`：闭合路径
+3. `stroke()`：通过线条来绘制图形轮廓
+4. `fill()`：通过填充路径的内容区域生成实心图形
+5. `moveTo(x, y)`：移动笔触到指定坐标
+6. `lineTo(x, y)`：绘制一条从当前位置到指定坐标的直线
+
+当 canvas 初始化或者 `beginPath()` 调用后，通常会使用 `moveTo()` 函数设置起点。或者使用该方法绘制不连续的路径。
+
+示例 1：绘制三角形
+
+```javascript
+// 填充三角形
+ctx.beginPath()
+ctx.moveTo(40, 40)
+ctx.lineTo(220, 40)
+ctx.lineTo(40, 220)
+ctx.fill()
+
+// 描边三角形
+ctx.beginPath()
+ctx.moveTo(260, 260)
+ctx.lineTo(260, 80)
+ctx.lineTo(80, 260)
+ctx.closePath()
+ctx.stroke()
+```
+
+注意到填充三角形和描边三角形有些不同，当路径使用填充 `fill()` 时会自动闭合，而使用描边 `stroke()` 时则不会闭合路径，所以需要调用 `closePath()` 方法。
+
+![绘制三角形](https://i.loli.net/2019/01/30/5c5122354e536.png)
