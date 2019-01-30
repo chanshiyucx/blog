@@ -113,3 +113,43 @@ ctx.stroke()
 ```
 
 ![笑脸](https://i.loli.net/2019/01/30/5c514b3b4739c.png)
+
+### 贝塞尔曲线
+
+canvas 里使用二次贝塞尔曲线和三次贝塞尔曲线可以用来绘制复杂的图形。
+
+canvas API `quadraticCurveTo(cp1x, cp1y, x, y)`，用来绘制二次贝塞尔曲线，`cp1x,cp1y` 为控制点，`x,y` 为结束点。
+
+![二次贝塞尔曲线](https://i.loli.net/2019/01/30/5c51506831898.gif)
+
+canvas API `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`，用来绘制三次贝塞尔曲线，`cp1x,cp1y` 为控制点一，`cp2x,cp2y` 为控制点二，`x,y` 为结束点。
+
+![三次贝塞尔曲线](https://i.loli.net/2019/01/30/5c51506f112e2.gif)
+
+关于贝塞尔曲线的使用，这里不再细研究~~（看得头痛）~~，下次如有机会再说。
+
+### Path2D
+
+之前所介绍的 canvas API 都是使用路径和绘画命令来把对象“画”在画布上，不能复用命令。较新的浏览器支持 Path2D 对象，用来缓存或记录绘画命令，这样可以复用路径，简化代码和优化性能。
+
+`Path2D()` 会返回一个新初始化的 Path2D 对象，可能将某一个路径作为变量——创建一个它的副本，或者将一个包含 SVG path 数据的字符串作为变量。
+
+```javascript
+new Path2D() // 空的Path对象
+new Path2D(path) // 克隆Path对象
+new Path2D('M10 10 h 80 v 80 h -80 Z') // 从SVG建立Path对象
+```
+
+之前介绍的所有 canvas API 都可以在生成的 Path2D 对象上使用。
+
+```javascript
+const rectangle = new Path2D()
+rectangle.rect(10, 10, 50, 50)
+
+const circle = new Path2D()
+circle.moveTo(125, 35)
+circle.arc(100, 35, 25, 0, 2 * Math.PI)
+
+ctx.stroke(rectangle)
+ctx.fill(circle)
+```
