@@ -70,7 +70,7 @@ link: //www.wikimoe.com/
 cover: //i.loli.net/2018/12/15/5c14f487371e6.png
 avatar: //i.loli.net/2018/12/15/5c14f48735383.jpg
 
-## 岁月小筑
+## 忘忧唯雨
 
 link: //www.iamlzh.com/
 cover: //i.loli.net/2018/12/15/5c14f2e81d82b.png
