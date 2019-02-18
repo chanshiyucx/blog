@@ -49,21 +49,21 @@ Code gists!
 
 ### Javascript
 
-[01 数组乱序]()  
-[02 数字分位格式化]()  
-[03 获取 url 链接参数]()  
-[04 日期格式化]()  
-[05 数组对象深拷贝]()  
-[06 获取视频时长]()  
-[07 浮点数操作]()  
-[08 事件绑定与解绑]()  
-[09 滚动到顶部]()  
-[10 获取上月、上周、昨日时间戳]()  
-[11 判断是否重复操作]()
+[001 数组乱序](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/001%20shuffle.js)  
+[002 数字分位格式化](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/002%20numFormat.js)  
+[003 获取 url 链接参数](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/003%20getUrlParams.js)  
+[004 日期格式化](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/004%20dateFormat.js)  
+[005 数组对象深拷贝](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/005%20deepCopy.js)  
+[006 获取视频时长](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/006%20videoDuration.js)  
+[007 浮点数操作](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/007%20formatMath.js)  
+[008 事件绑定与解绑](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/008%20domEvent.js)  
+[009 滚动到顶部](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/009%20scrollTop.js)  
+[010 获取上月、上周、昨日时间戳](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/010%20handleDate.js)  
+[011 判断是否重复操作](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/javascript/011%20isRepeat.js)
 
 ### Python
 
-[001 文件操作]()
+[001 文件操作](https://github.com/chanshiyucx/blog/blob/master/%E6%98%9F%E6%9C%88%E5%A4%9C/python/001%20file.py)
 
 ## 遠花火
 
