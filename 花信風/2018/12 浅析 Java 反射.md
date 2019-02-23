@@ -309,4 +309,4 @@ public class Demo2 {
 ```
 
 参考文章：  
-[深入解析 Java 反射（1） - 基础](//www.sczyh30.com/posts/Java/java-reflection-1/)
+[深入解析 Java 反射](//www.sczyh30.com/posts/Java/java-reflection-1/)
