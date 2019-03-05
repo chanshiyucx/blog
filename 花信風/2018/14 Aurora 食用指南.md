@@ -64,7 +64,7 @@ creator: 'chanshiyucx',
 
 Aurora 文章的热度，即阅读次数使用的是 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。
 
-![Leancloud 应用 Key](https://i.loli.net/2019/03/05/5c7df5acc92a7.png)
+![Leancloud 应用 Key](https://i.loli.net/2019/03/05/5c7e26e25047f.png)
 
 ```javascript
 /**
@@ -84,7 +84,7 @@ Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理
 
 ![申请 GitHub Application](https://i.loli.net/2019/03/05/5c7df5accea95.png)
 
-![生成 clientID 和 clientSecret](https://i.loli.net/2019/03/05/5c7df5acc7755.png)
+![生成 clientID 和 clientSecret](https://i.loli.net/2019/03/05/5c7e26e246cf9.png)
 
 ```javascript
 /**
