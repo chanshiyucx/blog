@@ -79,3 +79,37 @@ Linux 常用压缩格式：`.zip、.gz、bz2、.tar.gz、.tar.bz2`。
 `shutdown [选项] 时间`：选项 `-c 取消前一个关机命令，-h 关机，-r 重启`。
 
 `shutdown -r 05:00 &` 表示凌晨五点重启，`&` 表示后台执行。`shutdown -r now` 立即重启。需要注意服务器一般不能远程关机，只能重启。
+
+## 其他常见命令
+
+1、停止、屏蔽、启动防火墙服务
+
+```bash
+systemctl stop firewalld
+systemctl mask firewalld
+systemctl start iptables
+```
+
+## JavaEE 工具
+
+### Tomcat
+
+```bash
+./startup.sh  # 启动
+./shutdown.sh # 关闭
+```
+
+### vsftpd
+
+```bash
+systemctl start vsftpd.service # 启动
+systemctl stop vsftpd.service # 关闭
+systemctl restart vsftpd.service # 重启
+systemctl status vsftpd.service # 查看状态
+```
+
+### Nginx
+
+```bash
+/nginx/sbin/nginx -s reload
+```
