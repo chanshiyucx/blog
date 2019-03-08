@@ -62,7 +62,7 @@ creator: 'chanshiyucx',
 
 ### 配置 Leancloud
 
-Aurora 文章的热度，即阅读次数使用的是 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。
+Aurora 文章的热度，即阅读次数使用的是 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项，同时创建一个 Class 取名 Counter 用来存储热度。
 
 ![Leancloud 应用 Key](https://i.loli.net/2019/03/05/5c7e26e25047f.png)
 
@@ -101,6 +101,10 @@ gitalk: {
 ```
 
 到此为止，所有主要的配置项皆已完成，剩下的几个配置项非常简单，相信你自己可以配置完善。
+
+### Valine
+
+由于 Gitalk 评论需要登录 Github 账号，不少小伙伴反应非常不方便，所以新增了 Valine 评论系统，其原理同文章热度一样存储在 LeanCloud 上，需要自行前往配置，详见[官方文档](https://github.com/DesertsP/Valine-Admin)。
 
 ## 页面模板
 
