@@ -14,7 +14,7 @@ avatar: //i.loli.net/2018/12/15/5c14f38ccd4fd.jpg
 
 link: //leaful.com/
 cover: //i.loli.net/2018/12/15/5c14f3bcf3fab.png
-avatar: //i.loli.net/2018/12/15/5c14f3bcf1c55.jpg
+avatar: //i.loli.net/2019/03/13/5c88b7f97d8c9.jpg
 
 ## 惶心
 
@@ -135,3 +135,9 @@ avatar: //i.loli.net/2019/01/25/5c4ae13c35033.jpg
 link: //sanshiliuxiao.top
 cover: //i.loli.net/2019/01/28/5c4ed2421e164.jpg
 avatar: //i.loli.net/2019/01/28/5c4eca46c1d0b.png
+
+## 小代理の记事薄
+
+link: //lolioi.moe/
+cover: //i.loli.net/2019/03/13/5c88b6b4c4fa5.jpg
+avatar: //cdn.v2ex.com/gravatar/3c3e8f988034ee9541774c7865c1c103?s=256
