@@ -1,4 +1,4 @@
-[## 蝉時雨
+## 蝉時雨
 
 [![Author](https://img.shields.io/badge/author-chanshiyucx-blue.svg?style=flat-square)](https://chanshiyu.com) [![Email](https://img.shields.io/badge/Emali%20me-me@chanshiyu.com-green.svg?style=flat-square)](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=tNnR9Nfc1drH3N3NwZrX29k)
 
@@ -110,7 +110,11 @@ Code gists!
 [10 Python 文件操作](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/10%20Python%20%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.md)  
 [11 Canvas 图案绘制](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/11%20Canvas%20%E5%9B%BE%E6%A1%88%E7%BB%98%E5%88%B6.md)  
 [12 浅析 Java 反射](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/12%20%E6%B5%85%E6%9E%90%20Java%20%E5%8F%8D%E5%B0%84.md)  
-[13 Linux 常见命令](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/13%20Linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4.md)
+[13 Linux 常见命令](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/13%20Linux%20%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4.md)  
+[14 Aurora 食用指南](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/14%20Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97.md)  
+[15 Java 服务端分层模型](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/15%20Java%20%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B.md)  
+[16 Godaddy 域名找回记事](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/16%20Godaddy%20%E5%9F%9F%E5%90%8D%E6%89%BE%E5%9B%9E%E8%AE%B0%E4%BA%8B.md)  
+[17 一个接口的诞生](./%E8%8A%B1%E4%BF%A1%E9%A2%A8/2018/17%20%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%AF%9E%E7%94%9F.md)
 
 ### 2017
 
