@@ -112,7 +112,9 @@ public ServerResponse<User> login(HttpSession session, String username, String p
 { "username": "shiyu", "password": "654321" }
 ```
 
-在上述的 Java 代码中接受参数是从 url 解析，所以使用 Get 请求可以正常拿到参数。在后端代码不变的情况下，可以修改前端传参方式，使用 `URLSearchParams` 传参并修改请求头 `'Content-Type': 'application/x-www-form-urlencoded'`。
+后端无法接收参数原因很简单，因为 axios post 一个对象到后端的时候，是直接把 json 放到请求体中的，提交到后端的，而后端是怎么取参数的，是用的 `@RequestParam`，这种方式只能从请求的地址中取出参数，也就是只能从 `username=shiyu&password=654321` 这种字符串中解析出参数，而不能提取出请求体中的参数的。
+
+在后端代码不变的情况下，可以修改前端传参方式，使用 `URLSearchParams` 传参并修改请求头 `'Content-Type': 'application/x-www-form-urlencoded'`。
 
 ```javascript
 // 用户登录
@@ -131,7 +133,7 @@ async ['user/handleLogin'](context, { username, password }) {
 
 ### 方案二 后端修改
 
-如果觉得前端使用 `URLSearchParams` 传参不方便，毕竟 json 传参还是主流，可以修改后端代码，使之支持从 json 对象中提取参数：
+如果觉得前端使用 `URLSearchParams` 传参不方便，毕竟 json 传参还是主流，可以修改后端代码，直接去请求体中取参数。通过 `@RequestBody` 注解，SpringMVC 可以把 json 中的数据绑定到 Map 中，这样就可以取出参数了。
 
 ```java
 // 用户登录
