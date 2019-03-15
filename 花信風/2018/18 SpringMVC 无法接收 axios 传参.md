@@ -106,7 +106,7 @@ public ServerResponse<User> login(HttpSession session, String username, String p
 
 ### 方案一 前端修改
 
-前端主流传参格式使用 json 格式，会设置 `'Content-Type': 'application/json'`，查看 `Request Payload` 可查参数格式如下：
+前端主流传参格式使用 json 格式，并设置请求头 `'Content-Type': 'application/json'`，查看 `Request Payload` 可查参数格式如下：
 
 ```json
 { "username": "shiyu", "password": "654321" }
@@ -114,7 +114,7 @@ public ServerResponse<User> login(HttpSession session, String username, String p
 
 后端无法接收参数原因很简单，因为 axios post 一个对象到后端的时候，是直接把 json 放到请求体中的，提交到后端的，而后端是怎么取参数的，是用的 `@RequestParam`，这种方式只能从请求的地址中取出参数，也就是只能从 `username=shiyu&password=654321` 这种字符串中解析出参数，而不能提取出请求体中的参数的。
 
-在后端代码不变的情况下，可以修改前端传参方式，使用 `URLSearchParams` 传参并修改请求头 `'Content-Type': 'application/x-www-form-urlencoded'`。
+在后端代码不变的情况下，可以修改前端传参方式，使用 `URLSearchParams` 传参并修改请求头 `'Content-Type': 'application/x-www-form-urlencoded'`，将 json 对象传参转换为字符串格式。
 
 ```javascript
 // 用户登录
