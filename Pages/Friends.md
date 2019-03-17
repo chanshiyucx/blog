@@ -12,9 +12,9 @@ avatar: //i.loli.net/2018/12/15/5c14f38ccd4fd.jpg
 
 ## ⊿ 叶之色 ☆ ～
 
-link: //leaful.com/
+link: http://leaful.com/
 cover: //i.loli.net/2018/12/15/5c14f3bcf3fab.png
-avatar: //i.loli.net/2019/03/13/5c88b7f97d8c9.jpg
+avatar: //cn.gravatar.com/avatar/e583fd49db419a074831924d221adc1b?s=40&d=mm&r=g
 
 ## 惶心
 
@@ -153,3 +153,9 @@ avatar: //i.loli.net/2019/03/17/5c8dc57407550.jpg
 link: //233.host/
 cover: //i.loli.net/2019/03/17/5c8dcd23da60e.jpg
 avatar: //i.loli.net/2019/03/17/5c8dcd37b3e7b.jpg
+
+## Broca-Phenol
+
+link: //phenol-phthalein.info/
+cover: //i.loli.net/2019/03/17/5c8e0b0e536c9.jpg
+avatar: //i.loli.net/2019/03/17/5c8e0b0e49e9b.jpg
