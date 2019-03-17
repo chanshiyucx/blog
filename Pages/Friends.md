@@ -141,3 +141,9 @@ avatar: //i.loli.net/2019/01/28/5c4eca46c1d0b.png
 link: //lolioi.moe/
 cover: //i.loli.net/2019/03/13/5c88b6b4c4fa5.jpg
 avatar: //cdn.v2ex.com/gravatar/3c3e8f988034ee9541774c7865c1c103?s=256
+
+## 东方幻梦
+
+link: //lolioi.moe/
+cover: //i.loli.net/2019/03/17/5c8dc57411680.jpg
+avatar: //i.loli.net/2019/03/17/5c8dc57407550.jpg
