@@ -159,3 +159,9 @@ avatar: //i.loli.net/2019/03/17/5c8dcd37b3e7b.jpg
 link: //phenol-phthalein.info/
 cover: //i.loli.net/2019/03/17/5c8e0b0e536c9.jpg
 avatar: //i.loli.net/2019/03/17/5c8e0b0e49e9b.jpg
+
+## ~ 魔法使之家 ~
+
+link: //blog.ero.ink
+cover: //i.loli.net/2019/03/17/5c8e5954cebb9.jpg
+avatar: //i.loli.net/2019/03/17/5c8e5954b8c5f.jpeg
