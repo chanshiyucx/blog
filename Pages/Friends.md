@@ -183,3 +183,9 @@ avatar: //i.loli.net/2019/03/19/5c904e4fda66b.jpg
 link: //www.eendtech.com
 cover: //i.loli.net/2019/03/19/5c905cf9695d8.jpg
 avatar: //i.loli.net/2019/03/19/5c905cf94da79.jpg
+
+## 亿林
+
+link: //minemine.cc
+cover: //i.loli.net/2019/03/19/5c90c217b0e6d.jpg
+avatar: //i.loli.net/2019/03/19/5c90c2179db40.jpeg
