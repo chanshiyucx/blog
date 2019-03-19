@@ -165,3 +165,15 @@ avatar: //i.loli.net/2019/03/17/5c8e0b0e49e9b.jpg
 link: //blog.ero.ink
 cover: //i.loli.net/2019/03/17/5c8e5954cebb9.jpg
 avatar: //i.loli.net/2019/03/17/5c8e5954b8c5f.jpeg
+
+## 恶魔菌の记事簿
+
+link: //meowqvq.wordpress.com
+cover: //i.loli.net/2019/03/18/5c8f6a8403b8a.jpg
+avatar: //i.loli.net/2019/03/18/5c8f6a83ed7c4.png
+
+## SimonKing
+
+link: //kurumi.ink
+cover: //i.loli.net/2019/03/19/5c904e4fef87b.jpg
+avatar: //i.loli.net/2019/03/19/5c904e4fda66b.jpg
