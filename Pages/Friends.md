@@ -140,7 +140,7 @@ avatar: //i.loli.net/2019/01/28/5c4eca46c1d0b.png
 
 link: //lolioi.moe/
 cover: //i.loli.net/2019/03/13/5c88b6b4c4fa5.jpg
-avatar: //cdn.v2ex.com/gravatar/3c3e8f988034ee9541774c7865c1c103?s=256
+avatar: //i.loli.net/2019/03/19/5c905d3c5b2e9.jpg
 
 ## 东方幻梦
 
@@ -165,3 +165,27 @@ avatar: //i.loli.net/2019/03/17/5c8e0b0e49e9b.jpg
 link: //blog.ero.ink
 cover: //i.loli.net/2019/03/17/5c8e5954cebb9.jpg
 avatar: //i.loli.net/2019/03/17/5c8e5954b8c5f.jpeg
+
+## 恶魔菌の记事簿
+
+link: //meowqvq.wordpress.com
+cover: //i.loli.net/2019/03/18/5c8f6a8403b8a.jpg
+avatar: //i.loli.net/2019/03/18/5c8f6a83ed7c4.png
+
+## SimonKing
+
+link: //kurumi.ink
+cover: //i.loli.net/2019/03/19/5c904e4fef87b.jpg
+avatar: //i.loli.net/2019/03/19/5c904e4fda66b.jpg
+
+## 极束梦想
+
+link: //www.eendtech.com
+cover: //i.loli.net/2019/03/19/5c905cf9695d8.jpg
+avatar: //i.loli.net/2019/03/19/5c905cf94da79.jpg
+
+## 亿林
+
+link: //minemine.cc
+cover: //i.loli.net/2019/03/19/5c90c217b0e6d.jpg
+avatar: //i.loli.net/2019/03/19/5c90c2179db40.jpeg
