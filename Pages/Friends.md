@@ -189,3 +189,9 @@ avatar: //i.loli.net/2019/03/19/5c905cf94da79.jpg
 link: //minemine.cc
 cover: //i.loli.net/2019/03/19/5c90c217b0e6d.jpg
 avatar: //i.loli.net/2019/03/19/5c90c2179db40.jpeg
+
+## 青花鱼
+
+link: //zankyo.cc
+cover: //i.loli.net/2019/03/26/5c9a06443c6c8.jpg
+avatar: //i.loli.net/2019/03/26/5c9a06445fa16.jpg
