@@ -62,7 +62,7 @@ creator: 'chanshiyucx',
 
 ### 配置 Leancloud
 
-Aurora 文章的热度，即阅读次数使用的是 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项，同时创建一个 Class 取名 Counter 用来存储热度。
+Aurora 文章的热度，即阅读次数使用的是 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项， **同时创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数。**
 
 ![Leancloud 应用 Key](https://i.loli.net/2019/03/05/5c7e26e25047f.png)
 
