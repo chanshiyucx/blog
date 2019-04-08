@@ -144,7 +144,7 @@ avatar: //i.loli.net/2019/03/19/5c905d3c5b2e9.jpg
 
 ## 东方幻梦
 
-link: //lolioi.moe/
+link: //blog.dfhm.me/
 cover: //i.loli.net/2019/03/17/5c8dc57411680.jpg
 avatar: //i.loli.net/2019/03/17/5c8dc57407550.jpg
 
