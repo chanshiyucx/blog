@@ -2,22 +2,31 @@
 
 最近在写 Gitlife 博客主题的时候需要用到大量 svg 图标，故参考 element-admin，
 
+## 安装依赖
+
+首先安装依赖包 [svgo](https://github.com/svg/svgo) 和 [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)，这两个工具包都是给 webpack 打包 svg 图标资源使用。
+
+- svgo: Node.js tool for optimizing SVG files.
+- svg-sprite-loader: Webpack loader for creating SVG sprites.
+
 ```json
 "devDependencies": {
-  "svg-sprite-loader": "^4.1.3",
   "svgo": "^1.2.1",
+  "svg-sprite-loader": "^4.1.3"
 }
 ```
+
+然后配置 webpack 对于 svg 文件的 loader，修改 `vue.config.js` 文件，引入刚刚安装的 svg loader，详情如下：
 
 ```javascript
 // vue.config.js
 module.exports = {
   chainWebpack: config => {
     // svg rule loader
-    const svgRule = config.module.rule('svg')
-    svgRule.uses.clear()
-    svgRule.exclude.add(/node_modules/)
-    svgRule
+    const svgRule = config.module.rule('svg') // 找到 svg-loader
+    svgRule.uses.clear() // 清除已有 loader
+    svgRule.exclude.add(/node_modules/) ) // 排除 node_modules 目录
+    svgRule // 添加新的 svg loader
       .test(/\.svg$/)
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
@@ -28,6 +37,10 @@ module.exports = {
 }
 ```
 
+## 引入资源
+
+这里举个栗子，新建 `src/assets/icons` 文件夹，在此文件夹下新建 `svg` 子文件夹用于存放 svg 图标文件，并新增 svgo 配置文件 `svgo.yml`，详见官方文档，添加简要配置如下：
+
 ```yml
 # svgo.yml
 plugins:
@@ -36,6 +49,8 @@ plugins:
         - 'fill'
         - 'fill-rule'
 ```
+
+在此文件夹下新增 index.js 引入 svg 资源并全局注册 vue 组件，代码如下：
 
 ```javascript
 import Vue from 'vue'
@@ -48,6 +63,8 @@ const req = require.context('./svg', false, /\.svg$/)
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 requireAll(req)
 ```
+
+SvgIcon 组件如下：
 
 ```html
 <template>
