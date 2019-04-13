@@ -195,3 +195,9 @@ avatar: //i.loli.net/2019/03/19/5c90c2179db40.jpeg
 link: //zankyo.cc
 cover: //i.loli.net/2019/03/26/5c9a06443c6c8.jpg
 avatar: //i.loli.net/2019/03/26/5c9a06445fa16.jpg
+
+## Rin404°
+
+link: //www.rin404.com
+cover: //i.loli.net/2019/04/13/5cb1ccfd3e1f2.jpg
+avatar: //i.loli.net/2019/04/13/5cb1ccfd333aa.jpeg
