@@ -16,11 +16,11 @@ link: http://leaful.com/
 cover: //i.loli.net/2018/12/15/5c14f3bcf3fab.png
 avatar: //cn.gravatar.com/avatar/e583fd49db419a074831924d221adc1b?s=40&d=mm&r=g
 
-## 惶心
+## 惶心博客
 
-link: //tech.hxco.de/
-cover: //i.loli.net/2018/12/15/5c14f3fb8ed7b.jpg
-avatar: //i.loli.net/2018/12/15/5c14f3fb8bbd0.jpg
+link: //www.justhx.com/
+cover: //i.loli.net/2019/04/14/5cb2b2ee30647.jpg
+avatar: //i.loli.net/2019/04/14/5cb2b2ee2ed2a.jpg
 
 ## Blessing Studio
 
