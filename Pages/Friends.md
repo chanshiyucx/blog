@@ -20,7 +20,7 @@ avatar: //cn.gravatar.com/avatar/e583fd49db419a074831924d221adc1b?s=40&d=mm&r=g
 
 link: //www.justhx.com/
 cover: //i.loli.net/2019/04/14/5cb2b2ee30647.jpg
-avatar: //i.loli.net/2019/04/14/5cb2b2ee2ed2a.jpg
+avatar: //i.loli.net/2019/04/15/5cb4663545c28.jpg
 
 ## Blessing Studio
 
