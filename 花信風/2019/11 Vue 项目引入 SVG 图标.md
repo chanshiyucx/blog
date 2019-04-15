@@ -1,10 +1,22 @@
 [pixiv: 66213177]: # 'https://i.loli.net/2019/04/12/5caf6a4a9a7bf.jpg'
 
-最近在写 Gitlife 博客主题的时候需要用到大量 svg 图标，故参考 element-admin，
+最近摸鱼 Github Style 博客主题 Gitlife 的时候需要用到大量 svg 图标，故参考 element-admin 的资源引入方式，尝试在 vue 项目里引入 svg 图标，尽量取代字体图标。
+
+## 关于 SVG
+
+SVG 是一种可缩放矢量图形（Scalable Vector Graphics，SVG）是基于可扩展标记语言（XML），用于描述二维矢量图形的图形格式。SVG 由 W3C 制定，是一个开放标准。
+
+SVG 在既能满足现有图片的功能的前提下，又是矢量图，在可访问性上面也非常不错，并且有利于 SEO 和无障碍，在性能和维护性方面也比 icon font 要出色许多。
+
+SVG 与 icon font 的区别：
+
+1. icon font 是字体渲染，而 svg 是图形渲染，icon font 在一倍屏幕下渲染效果不好，细节部分锯齿明显
+2. icon font 因为是字体只能支持单色
+3. icon font 可读性不够好，icon font 主要在页面用 Unicode 符号调用对应的图标，对浏览器和搜索引擎不友好
 
 ## 安装依赖
 
-首先安装依赖包 [svgo](https://github.com/svg/svgo) 和 [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)，这两个工具包都是给 webpack 打包 svg 图标资源使用。
+在 vue 项目中引入 svg，首要工作是安装依赖包 [svgo](https://github.com/svg/svgo) 和 [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)，这两个工具包都是给 webpack 打包 svg 图标资源使用。
 
 - svgo: Node.js tool for optimizing SVG files.
 - svg-sprite-loader: Webpack loader for creating SVG sprites.
@@ -64,7 +76,13 @@ const requireAll = requireContext => requireContext.keys().map(requireContext)
 requireAll(req)
 ```
 
-SvgIcon 组件如下：
+`require.context()` 方法来创建自己的（模块）上下文，这个方法有 3 个参数：
+
+- 要搜索的文件夹目录
+- 是否还应该搜索它的子目录
+- 以及一个匹配文件的正则表达式
+
+创建一个通用的引入图标的 SvgIcon 组件如下：
 
 ```html
 <template>
