@@ -12,7 +12,7 @@ Flex 容器有两根轴线：水平的主轴（main axis）和垂直的交叉轴
 
 当前主流浏览器对 Flex 布局都能良好兼容，可以放心使用：
 
-![Can I Use Flex](https://i.loli.net/2019/04/15/5cb438c5d6aa6.png#full#full)
+![Can I Use Flex](https://i.loli.net/2019/04/15/5cb438c5d6aa6.png#full)
 
 ## 容器的属性
 
@@ -35,7 +35,7 @@ flex-direction 属性决定主轴的方向，可选值：`row | row-reverse | co
 }
 ```
 
-![flex-direction](https://i.loli.net/2019/04/15/5cb4403922a4c.png#full)
+![flex-direction](https://i.loli.net/2019/04/15/5cb4403922a4c.png)
 
 ### flex-wrap
 
@@ -47,7 +47,7 @@ flex-wrap 属性定义子项目是否可换行，可选值：`nowrap | wrap | wr
 }
 ```
 
-![flex-wrap](https://i.loli.net/2019/04/15/5cb442b1d7968.png#full)
+![flex-wrap](https://i.loli.net/2019/04/15/5cb442b1d7968.png)
 
 ### flex-flow
 
@@ -63,7 +63,7 @@ justify-content：属性定义了项目在主轴上的对齐方式，可选值�
 }
 ```
 
-![justify-content](https://i.loli.net/2019/04/15/5cb44453ac410.png#full)
+![justify-content](https://i.loli.net/2019/04/15/5cb44453ac410.png)
 
 ### align-items
 
@@ -75,7 +75,7 @@ align-items 属性定义项目在交叉轴上如何对齐，可选值 `flex-star
 }
 ```
 
-![align-items](https://i.loli.net/2019/04/15/5cb448435ee43.png#full)
+![align-items](https://i.loli.net/2019/04/15/5cb448435ee43.png)
 
 ### align-content
 
@@ -87,7 +87,7 @@ align-content 属性定义多根轴线的对齐方式，如果项目只有一根
 }
 ```
 
-![align-content](https://i.loli.net/2019/04/15/5cb44abfa7ed7.png#full)
+![align-content](https://i.loli.net/2019/04/15/5cb44abfa7ed7.png)
 
 ## 项目的属性
 
@@ -110,7 +110,7 @@ order 属性定义项目的排列顺序，数值越小，排列越靠前，默�
 }
 ```
 
-![order](https://i.loli.net/2019/04/15/5cb44ebb8a326.png#full)
+![order](https://i.loli.net/2019/04/15/5cb44ebb8a326.png)
 
 ### flex-grow
 
@@ -122,7 +122,7 @@ flex-grow 属性定义项目的放大比例，默认为 0，即如果存在剩�
 }
 ```
 
-![flex-grow](https://i.loli.net/2019/04/15/5cb451095aa9a.png#full)
+![flex-grow](https://i.loli.net/2019/04/15/5cb451095aa9a.png)
 
 ### flex-shrink
 
@@ -134,7 +134,7 @@ flex-shrink 属性定义了项目的缩小比例，默认为 1，即如果空间
 }
 ```
 
-![flex-shrink](https://i.loli.net/2019/04/15/5cb4531429fa9.png#full)
+![flex-shrink](https://i.loli.net/2019/04/15/5cb4531429fa9.png)
 
 ### flex-basis
 
@@ -160,4 +160,4 @@ flex 属性是 flex-grow, flex-shrink 和 flex-basis 的简写，默认值为 `0
 
 align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。
 
-![align-self](https://i.loli.net/2019/04/15/5cb45663a64e3.png#full)
+![align-self](https://i.loli.net/2019/04/15/5cb45663a64e3.png)
