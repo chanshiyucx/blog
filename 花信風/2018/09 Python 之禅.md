@@ -1,4 +1,4 @@
-[author: sanntouhei]: # 'https://i.loli.net/2019/04/23/5cbf0d53ced93.jpg'
+[author: sanntouhei]: # "https://i.loli.net/2019/04/23/5cbf0d53ced93.jpg"
 
 作为一个前端攻城狮，工作中用到最多的是 JavaScript，但我接触的第一门编程语言却是 Python，大学时期只是略作了解，而现在，是时候重启 Python 之路，开启新的篇章。
 

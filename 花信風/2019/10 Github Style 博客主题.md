@@ -1,4 +1,4 @@
-[pixiv: 68232005]: # 'https://i.loli.net/2019/04/14/5cb2a99f51bba.jpg'
+[pixiv: 68232005]: # "https://i.loli.net/2019/04/23/5cbf0f33efc6b.jpg"
 
 前不久闲逛发现了个 Github Style 的 Hexo 博客主题 [小白妹妹写代码](https://sabrinaluo.github.io/tech/)，突然感觉这种简约风格主题莫名好看，故摸鱼摸了一周也仿了个 Github Style 的单页面主题 Gitleaf。
 

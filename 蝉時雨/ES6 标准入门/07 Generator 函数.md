@@ -1,4 +1,4 @@
-[pixiv: 60095408]: # 'https://i.loli.net/2019/04/23/5cbf0ba7363b2.jpg'
+[pixiv: 60095408]: # "https://i.loli.net/2019/04/23/5cbf0ba7363b2.jpg"
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。此前，只在 dva（内部封装 redux-saga）里使用过，此次深入了解之。
 

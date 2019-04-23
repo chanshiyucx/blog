@@ -1,4 +1,4 @@
-[pixiv: 41652582]: # 'https://i.loli.net/2019/04/23/5cbf0902ba4bf.jpg'
+[pixiv: 41652582]: # "https://i.loli.net/2019/04/23/5cbf0902ba4bf.jpg"
 
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 

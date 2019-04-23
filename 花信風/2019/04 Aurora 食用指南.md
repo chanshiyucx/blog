@@ -1,4 +1,4 @@
-[author: kieta]: # 'https://i.loli.net/2019/04/23/5cbf0e0d65fa1.jpg'
+[author: kieta]: # "https://i.loli.net/2019/04/23/5cbf0e0d65fa1.jpg"
 
 距离 Aurora 主题发布有一段时间了，懒癌发作也没有好好写一篇使用文档，一直以为主题无人问津。近来有人问起如何食用该主题，忙里偷闲摸一篇简单食用文档。
 
