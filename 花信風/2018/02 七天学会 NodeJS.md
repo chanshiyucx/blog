@@ -1,4 +1,4 @@
-[pixiv: 39695030]: # "https://i.loli.net/2018/12/09/5c0cc23a8d17c.jpg"
+[pixiv: 39695030]: # "https://i.loli.net/2019/04/23/5cbf0aea33106.jpg"
 
 就如《21 天学会 C++》一样，《七天学会 NodeJS》取名好似噱头，此书是阿里内部手册，书中没有太大篇幅的累述 API，精要介绍了 NodeJS 核心运用，颇为受用，故记之。
 
