@@ -16,7 +16,7 @@ npm install -g @vue/cli-service-global
 
 ```bash
 # clone 主题
-git@github.com:chanshiyucx/aurora.git
+git clone git@github.com:chanshiyucx/aurora.git
 
 # 进入主题目录
 cd aurora
