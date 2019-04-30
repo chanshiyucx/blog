@@ -120,6 +120,7 @@ class WebsocketHB {
     this.reconnectTimer = null // 重连定时器
     this.reconnectCount = 0 // 当前的重连次数
     this.lockReconnect = false // 锁定重连
+    this.lockReconnectTask = false // 锁定重连任务队列
 
     this.createWebSocket()
   }
@@ -129,11 +130,11 @@ class WebsocketHB {
     this.ws = new WebSocket(this.url)
     this.ws.onclose = () => {
       this.onclose()
-      this.reconnect()
+      this.readyReconnect()
     }
     this.ws.onerror = () => {
       this.onerror()
-      this.reconnect()
+      this.readyReconnect()
     }
     this.ws.onopen = () => {
       this.onopen()
@@ -150,7 +151,7 @@ class WebsocketHB {
       // 超时定时器
       clearTimeout(this.pongTimer)
       this.pongTimer = setTimeout(() => {
-        this.reconnect()
+        this.readyReconnect()
       }, this.pongTimeout)
     }
   }
@@ -161,6 +162,15 @@ class WebsocketHB {
       this.send(this.pingMsg)
       this.heartBeat()
     }, this.pingTimeout)
+  }
+
+  // 准备重连
+  readyReconnect() {
+    // 避免循环重连，当一个重连任务进行时，不进行重连
+    if (this.lockReconnectTask) return
+    this.lockReconnectTask = true
+    this.clearAllTimer()
+    this.reconnect()
   }
 
   // 重连
@@ -181,8 +191,8 @@ class WebsocketHB {
 
   // 清空所有定时器
   clearAllTimer() {
-    clearTimeout(this.pingTimeout)
-    clearTimeout(this.pongTimeout)
+    clearTimeout(this.pingTimer)
+    clearTimeout(this.pongTimer)
     clearTimeout(this.reconnectTimer)
   }
 }
