@@ -1,4 +1,4 @@
-[author: kieta]: # 'https://i.loli.net/2019/04/23/5cbf0e0d65fa1.jpg'
+[author: kieta]: # "https://i.loli.net/2019/04/23/5cbf0e0d65fa1.jpg"
 
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
@@ -107,7 +107,7 @@ gitalk: {
 为了更好地定制各个页面的展示效果，这里约定一些页面内容的格式，主要分`文章、书单、友链、关于` 四个内容模板。对于文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染。
 
 ```markdown
-[pixiv: 63093148]: # 'https://i.loli.net/2019/04/23/5cbf08e49500b.jpg'
+[pixiv: 63093148]: # "https://i.loli.net/2019/04/23/5cbf08e49500b.jpg"
 ```
 
 其余三个页面模板参考如下：
@@ -125,14 +125,18 @@ gitalk: {
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
 ```markdown
-[pixiv: 63093148]: # 'https://i.loli.net/2019/04/23/5cbf08e49500b.jpg'
+[pixiv: 63093148]: # "https://i.loli.net/2019/04/23/5cbf08e49500b.jpg"
 
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 ```
 
+![文章模板](https://i.loli.net/2019/05/02/5cca699ed1ce0.png)
+
 ### 心情模板
 
 注意心情 issues 状态是 `closed` 的，且需要打上 `Mood` 的 Labels，其他不做约束。
+
+![书单、友链、关于标签](https://i.loli.net/2019/05/02/5cca6a34693a1.png)
 
 ### 友链模板
 
