@@ -30,7 +30,7 @@ progress: 正在阅读...
 rating: 5,
 postTitle:
 postLink:
-cover: //chanshiyu.com/poi/2019/你不知道的-JavaScript(上卷).jpg
+cover: //chanshiyu.com/poi/2019/You_Dont_Know_JavaScript(上卷).jpg
 link: //www.duokan.com/book/102758
 desc: You-Dont-Know-JS 系列目前在 Github 上已获得近 7.5 万 star，说是 2017 年最火的一个项目也不为过，学而不思则殆，重新温故知新。
 
