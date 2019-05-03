@@ -1,4 +1,4 @@
-[pixiv: 63986081]: # "https://i.loli.net/2019/04/23/5cbf08f58647d.jpg"
+[pixiv: 63986081]: # "https://chanshiyu.com/poi/2019/2.jpg"
 
 公司新企划的 RN 项目需要实现链接分享功能，用户直接通过分享链接唤醒 App 并跳转相应页面，同时该功能要求在 iOS 和 Android 双端兼容，在此记录下拥抱新技术的踩坑历程。
 
@@ -13,7 +13,7 @@
 
 激活 Xcode 工程中的 `Associated Domains` ，需要填入想要支持的域名，必须以 `applinks:` 为前缀，Apple 将会在合适的时候，从这个域名请求验证文件。
 
-![添加验证域名](https://i.loli.net/2018/12/09/5c0cc59786779.jpg#full)
+![添加验证域名](https://chanshiyu.com/poi/2019/添加验证域名.jpg#full)
 
 ### 上传验证文件
 
@@ -35,7 +35,7 @@
 
 上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
-![Apple Developer 获取 ID](https://i.loli.net/2018/12/09/5c0cc596a71a5.png#full)
+![Apple Developer 获取 ID](https://chanshiyu.com/poi/2019/Apple_Developer.jpg#full)
 
 如果上传成功后，可以进行先行[在线验证](//branch.io/resources/aasa-validator/)。
 
@@ -98,9 +98,7 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
     "target": {
       "namespace": "android_app",
       "package_name": "com.had",
-      "sha256_cert_fingerprints": [
-        "C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81"
-      ]
+      "sha256_cert_fingerprints": ["C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81"]
     }
   }
 ]

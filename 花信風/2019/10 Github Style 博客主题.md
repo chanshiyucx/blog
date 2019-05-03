@@ -1,10 +1,10 @@
-[pixiv: 68232005]: # "https://i.loli.net/2019/04/23/5cbf0f33efc6b.jpg"
+[pixiv: 68232005]: # "https://chanshiyu.com/poi/2019/36.jpg"
 
 前不久闲逛发现了个 Github Style 的 Hexo 博客主题 [小白妹妹写代码](https://sabrinaluo.github.io/tech/)，突然感觉这种简约风格主题莫名好看，故摸鱼摸了一周也仿了个 Github Style 的单页面主题 Gitleaf。
 
 ## About Gitleaf
 
-![Gitleaf](https://i.loli.net/2019/04/14/5cb2a383d0915.png#full)
+![Gitleaf](https://chanshiyu.com/poi/2019/Github_Style_博客主题.png#full)
 
 [Gitleaf](https://github.com/chanshiyucx/gitleaf) 是一个 Github Style 的单页面博客应用程序，同博主当前所使用的 [Aurora](https://github.com/chanshiyucx/aurora) 主题类似，基于 Vue 开发。主题后台数据源依托于 [Github Issues](https://developer.github.com/v3/issues/)，配合使用 [Github REST API v3](https://developer.github.com/v3/) 与 [GraphQL API v4](https://developer.github.com/v4/) 提供的接口支持，无需数据库与服务器。
 

@@ -1,4 +1,4 @@
-[pixiv: 71303816]: # "https://i.loli.net/2019/04/23/5cbf0bb74875c.jpg"
+[pixiv: 71303816]: # "https://chanshiyu.com/poi/2019/19.jpg"
 
 最近上班有点闲，摸鱼码了个在线简历生成器 [Tamayura](https://github.com/chanshiyucx/tamayura)，提供在线编辑和主题设置等功能。一开始使用 chrome 自带 PDF 导出功能，后来寻思不够方便，便研究下如何一键导出 PDF。
 
@@ -17,13 +17,13 @@ jsPDF 是一个基于 HTML5 的客户端解决方案，用于在客户端 JavaSc
 根据以上方案，实现一个 vue 插件，提供 PDF 一键导出功能：
 
 ```javascript
-import html2Canvas from 'html2canvas'
-import JsPDF from 'jspdf'
+import html2Canvas from "html2canvas"
+import JsPDF from "jspdf"
 
 export default {
   install(Vue) {
     Vue.prototype.getPdf = function(title) {
-      const element = document.getElementById('pdfDom')
+      const element = document.getElementById("pdfDom")
       const opts = {
         scale: 4, // 缩放比例，提高生成图片清晰度
         useCORS: true, // 允许加载跨域的图片
@@ -40,13 +40,13 @@ export default {
         let position = 0
         let imgWidth = 595.28
         let imgHeight = (592.28 / contentWidth) * contentHeight
-        let pageData = canvas.toDataURL('image/jpeg', 1.0)
-        let PDF = new JsPDF('', 'pt', 'a4')
+        let pageData = canvas.toDataURL("image/jpeg", 1.0)
+        let PDF = new JsPDF("", "pt", "a4")
         if (leftHeight < pageHeight) {
-          PDF.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight)
+          PDF.addImage(pageData, "JPEG", 0, 0, imgWidth, imgHeight)
         } else {
           while (leftHeight > 0) {
-            PDF.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+            PDF.addImage(pageData, "JPEG", 0, position, imgWidth, imgHeight)
             leftHeight -= pageHeight
             position -= 841.89
             if (leftHeight > 0) {
@@ -54,7 +54,7 @@ export default {
             }
           }
         }
-        PDF.save(title + '.pdf')
+        PDF.save(title + ".pdf")
       })
     }
   }
@@ -64,7 +64,7 @@ export default {
 食用方式：
 
 ```javascript
-import htmlToPdf from './utils/htmlToPdf'
+import htmlToPdf from "./utils/htmlToPdf"
 
 Vue.use(htmlToPdf)
 ```

@@ -1,4 +1,4 @@
-[pixiv: 39695030]: # "https://i.loli.net/2019/04/23/5cbf0aea33106.jpg"
+[pixiv: 39695030]: # "https://chanshiyu.com/poi/2019/11.jpg"
 
 就如《21 天学会 C++》一样，《七天学会 NodeJS》取名好似噱头，此书是阿里内部手册，书中没有太大篇幅的累述 API，精要介绍了 NodeJS 核心运用，颇为受用，故记之。
 
@@ -11,17 +11,17 @@ NodeJS 提供了基本的文件操作 API，却没有提供文件拷贝的高级
 #### 小文件拷贝
 
 ```javascript
-const fs = require("fs");
+const fs = require("fs")
 
 function copy(src, dst) {
-  fs.writeFileSync(dst, fs.readFileSync(src));
+  fs.writeFileSync(dst, fs.readFileSync(src))
 }
 
 function main(argv) {
-  copy(argv[0], argv[1]);
+  copy(argv[0], argv[1])
 }
 
-main(process.argv.slice(2));
+main(process.argv.slice(2))
 ```
 
 以上程序使用 fs.readFileSync 从源路径读取文件内容，并使用 fs.writeFileSync 将文件内容写入目标路径。
@@ -33,17 +33,17 @@ main(process.argv.slice(2));
 对于大文件拷贝，如果一次性把所有文件内容都读取到内存中后再一次性写入磁盘的方式可能会造成内存爆仓。所以对于大文件，只能读一点写一点，直到完成拷贝。
 
 ```javascript
-const fs = require("fs");
+const fs = require("fs")
 
 function copy(src, dst) {
-  fs.createReadStream(src).pipe(fs.createWriteStream(dst));
+  fs.createReadStream(src).pipe(fs.createWriteStream(dst))
 }
 
 function main(argv) {
-  copy(argv[0], argv[1]);
+  copy(argv[0], argv[1])
 }
 
-main(process.argv.slice(2));
+main(process.argv.slice(2))
 ```
 
 以上程序使用 fs.createReadStream 创建了一个源文件的只读数据流，并使用 fs.createWriteStream 创建了一个目标文件的只写数据流，并且用 pipe 方法把两个数据流连接了起来。抽象类比的话类似水顺着水管从一个桶流到了另一个桶。
@@ -61,12 +61,12 @@ Buffer 与字符串类似，除了可以用 .length 属性得到字节长度外�
 Buffer 与字符串能够互相转化，例如可以使用指定编码将二进制数据转化为字符串，或者将字符串转换为指定编码下的二进制数据：
 
 ```javascript
-let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f]);
-console.log("bin.length:", bin.length); // 5
-let str = bin.toString("utf-8");
-console.log("str:", str); // hello
+let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f])
+console.log("bin.length:", bin.length) // 5
+let str = bin.toString("utf-8")
+console.log("str:", str) // hello
 
-let bin2 = new Buffer("hello", "utf-8");
+let bin2 = new Buffer("hello", "utf-8")
 //<Buffer 68 65 6c 6c 6f>
 ```
 
@@ -75,22 +75,22 @@ Buffer 与字符串有一个重要区别。字符串是只读的，并且对字�
 而 .slice 方法也不是返回一个新的 Buffer，而更像是返回了指向原 Buffer 中间的某个位置的指针，因此对 .slice 方法返回的 Buffer 的修改会作用于原 Buffer。
 
 ```javascript
-let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f]);
-let sub = bin.slice(2);
+let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f])
+let sub = bin.slice(2)
 
-sub[0] = 0x65;
-console.log("bin", bin); // <Buffer 68 65 65 6c 6f>
+sub[0] = 0x65
+console.log("bin", bin) // <Buffer 68 65 65 6c 6f>
 ```
 
 因此拷贝 Buffer 得首先创建一个新的 Buffer，并通过 .copy 方法把原 Buffer 中的数据复制过去。类似于申请一块新的内存，并把已有内存中的数据复制过去。
 
 ```javascript
-let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f]);
-let dup = new Buffer.alloc(bin.length);
-bin.copy(dup);
-dup[0] = 0x48;
-console.log(bin); // => <Buffer 68 65 6c 6c 6f>
-console.log(dup); // => <Buffer 48 65 65 6c 6f>
+let bin = new Buffer.from([0x68, 0x65, 0x6c, 0x6c, 0x6f])
+let dup = new Buffer.alloc(bin.length)
+bin.copy(dup)
+dup[0] = 0x48
+console.log(bin) // => <Buffer 68 65 6c 6c 6f>
+console.log(dup) // => <Buffer 48 65 65 6c 6f>
 ```
 
 #### Stream 数据流
@@ -102,18 +102,18 @@ console.log(dup); // => <Buffer 48 65 65 6c 6f>
 这里已文件拷贝为例，创建一个只读数据流：
 
 ```javascript
-let rs = fs.createReadStream(src);
+let rs = fs.createReadStream(src)
 
 rs.on("data", function(chunk) {
-  rs.pause();
+  rs.pause()
   doSomething(chunk, function() {
-    rs.resume();
-  });
-});
+    rs.resume()
+  })
+})
 
 rs.on("end", function() {
-  cleanUp();
-});
+  cleanUp()
+})
 ```
 
 代码中 data 事件会源源不断地被触发，为了避免 doSomething 函数无法及时处理，处理数据前暂停数据读取，并在处理数据后通过回调函数继续读取数据。
@@ -121,22 +121,22 @@ rs.on("end", function() {
 此外，也可以为数据目标创建一个只写数据流：
 
 ```javascript
-let rs = fs.createReadStream(src);
-let ws = fs.createWriteStream(dst);
+let rs = fs.createReadStream(src)
+let ws = fs.createWriteStream(dst)
 
 rs.on("data", function(chunk) {
   if (ws.write(chunk) === false) {
-    rs.pause();
+    rs.pause()
   }
-});
+})
 
 rs.on("end", function() {
-  ws.end();
-});
+  ws.end()
+})
 
 ws.on("drain", function() {
-  rs.resume();
-});
+  rs.resume()
+})
 ```
 
 以上代码实现了数据从只读数据流到只写数据流的搬运，并包括了防爆仓控制。因为这种使用场景很多，例如上边的大文件拷贝程序，NodeJS 直接提供了 .pipe 方法来做这件事情，其内部实现方式与上边的代码类似。
@@ -172,18 +172,18 @@ path 模块用于处理文件与目录的路径，常用 API 如下：
 实现同步遍历算法如下：
 
 ```javascript
-const fs = require("fs");
-const path = require("path");
+const fs = require("fs")
+const path = require("path")
 
 function travel(dir, callback) {
   fs.readdirSync(dir).forEach(file => {
-    let pathname = path.join(dir, file);
+    let pathname = path.join(dir, file)
     if (fs.statSync(pathname).isDirectory()) {
-      travel(pathname, callback);
+      travel(pathname, callback)
     } else {
-      callback(file);
+      callback(file)
     }
-  });
+  })
 }
 ```
 
@@ -209,13 +209,13 @@ BOM 用于标记一个文本文件使用 Unicode 编码，其本身是一个 Uni
 
 ```javascript
 function readText(pathname) {
-  let bin = fs.readFileSync(pathname);
+  let bin = fs.readFileSync(pathname)
 
   if (bin[0] === 0xef && bin[1] === 0xbb && bin[2] === 0xbf) {
-    bin = bin.slice(3);
+    bin = bin.slice(3)
   }
 
-  return bin.toString("utf-8");
+  return bin.toString("utf-8")
 }
 ```
 
@@ -224,11 +224,11 @@ function readText(pathname) {
 NodeJS 支持在读取文本文件时，或者在 Buffer 转换为字符串时指定文本编码，但 GBK 编码不在 NodeJS 自身支持范围内。因此，一般借助[iconv-lite](https://github.com/ashtuchkin/iconv-lite)这个三方包来转换编码。使用它可以按下边方式编写一个读取 GBK 文本文件的函数：
 
 ```javascript
-const iconv = require("iconv-lite");
+const iconv = require("iconv-lite")
 
 function readGBKText(pathname) {
-  let bin = fs.readFileSync(pathname);
-  return iconv.decode(bin, "gbk");
+  let bin = fs.readFileSync(pathname)
+  return iconv.decode(bin, "gbk")
 }
 ```
 
@@ -271,21 +271,21 @@ Hello World
 下面代码中服务端原样将客户端请求的请求体数据返回给客户端：
 
 ```javascript
-const http = require("http");
+const http = require("http")
 
 http
   .createServer(function(request, response) {
-    response.writeHead(200, { "Content-Type": "text/plain" });
+    response.writeHead(200, { "Content-Type": "text/plain" })
 
     request.on("data", function(chunk) {
-      response.write(chunk);
-    });
+      response.write(chunk)
+    })
 
     request.on("end", function() {
-      response.end();
-    });
+      response.end()
+    })
   })
-  .listen(8124);
+  .listen(8124)
 ```
 
 #### https 模块
@@ -295,16 +295,16 @@ https 模块与 http 模块极为类似，区别在于 https 模块需要额外�
 在服务端模式下，创建一个 HTTPS 服务器的示例如下：
 
 ```javascript
-const http = require("http");
+const http = require("http")
 
 const options = {
   key: fs.readFileSync("./ssl/default.key"),
   cert: fs.readFileSync("./ssl/default.cer")
-};
+}
 
 const server = https.createServer(options, function(request, response) {
   // ...
-});
+})
 ```
 
 可以看到，与创建 HTTP 服务器相比，多了一个 options 对象，通过 key 和 cert 字段指定了 HTTPS 服务器使用的私钥和公钥。
@@ -315,12 +315,12 @@ const server = https.createServer(options, function(request, response) {
 server.addContext("foo.com", {
   key: fs.readFileSync("./ssl/foo.com.key"),
   cert: fs.readFileSync("./ssl/foo.com.cer")
-});
+})
 
 server.addContext("bar.com", {
   key: fs.readFileSync("./ssl/bar.com.key"),
   cert: fs.readFileSync("./ssl/bar.com.cer")
-});
+})
 ```
 
 但如果目标服务器使用的 SSL 证书是自制的，不是从颁发机构购买的，默认情况下 https 模块会拒绝连接，提示说有证书安全问题。在 options 里加入 `rejectUnauthorized: false` 字段可以禁用对证书有效性的检查，从而允许 https 模块请求开发环境下使用自制证书的 HTTPS 服务器。
@@ -344,12 +344,10 @@ protocol     auth     hostname   port pathname     search     hash
 可以使用 `.parse` 方法来将一个 URL 字符串转换为 URL 对象，示例如下：
 
 ```javascript
-const url = require("url");
+const url = require("url")
 
-const obj = url.parse(
-  "http://user:pass@host.com:8080/p/a/t/h?query=string#hash"
-);
-console.log(obj);
+const obj = url.parse("http://user:pass@host.com:8080/p/a/t/h?query=string#hash")
+console.log(obj)
 
 /**
  * Url {
@@ -376,9 +374,9 @@ console.log(obj);
 反过来，`.format` 方法允许将一个 URL 对象转换为 URL 字符串。另外，`.resolve` 方法可以用于拼接 URL。
 
 ```javascript
-const url = require("url");
+const url = require("url")
 
-url.resolve("http://www.example.com/foo/bar", "../baz");
+url.resolve("http://www.example.com/foo/bar", "../baz")
 // http://www.example.com/baz
 ```
 
@@ -387,12 +385,12 @@ url.resolve("http://www.example.com/foo/bar", "../baz");
 querystring 模块用于实现 URL 参数字符串与参数对象的互相转换，示例如下：
 
 ```javascript
-const querystring = require("querystring");
+const querystring = require("querystring")
 
-querystring.parse("foo=bar&baz=qux&baz=quux&corge");
+querystring.parse("foo=bar&baz=qux&baz=quux&corge")
 // { foo: 'bar', baz: ['qux', 'quux'], corge: '' }
 
-querystring.stringify({ foo: "bar", baz: ["qux", "quux"], corge: "" });
+querystring.stringify({ foo: "bar", baz: ["qux", "quux"], corge: "" })
 // 'foo=bar&baz=qux&baz=quux&corge='
 ```
 
@@ -403,15 +401,15 @@ zlib 模块提供通过 Gzip 和 Deflate/Inflate 实现压缩和解压功能。
 通过判断客户端是否支持 gzip，并在支持的情况下使用 zlib 模块返回 gzip 之后的响应体数据：
 
 ```javascript
-const http = require("http");
+const http = require("http")
 
 http
   .createServer(function(request, response) {
     let i = 1024,
-      data = "";
+      data = ""
 
     while (i--) {
-      data += ".";
+      data += "."
     }
 
     if ((request.headers["accept-encoding"] || "").indexOf("gzip") !== -1) {
@@ -419,23 +417,23 @@ http
         response.writeHead(200, {
           "Content-Type": "text/plain",
           "Content-Encoding": "gzip"
-        });
-        response.end(data);
-      });
+        })
+        response.end(data)
+      })
     } else {
       response.writeHead(200, {
         "Content-Type": "text/plain"
-      });
-      response.end(data);
+      })
+      response.end(data)
     }
   })
-  .listen(80);
+  .listen(80)
 ```
 
 同时，通过判断服务端响应是否使用 gzip 压缩，并在压缩的情况下使用 zlib 模块解压响应体数据：
 
 ```javascript
-const http = require("http");
+const http = require("http")
 
 const options = {
   hostname: "www.example.com",
@@ -445,29 +443,29 @@ const options = {
   headers: {
     "Accept-Encoding": "gzip, deflate"
   }
-};
+}
 
 http
   .request(options, function(response) {
-    let body = [];
+    let body = []
 
     response.on("data", function(chunk) {
-      body.push(chunk);
-    });
+      body.push(chunk)
+    })
 
     response.on("end", function() {
-      body = Buffer.concat(body);
+      body = Buffer.concat(body)
 
       if (response.headers["content-encoding"] === "gzip") {
         zlib.gunzip(body, function(err, data) {
-          console.log(data.toString());
-        });
+          console.log(data.toString())
+        })
       } else {
-        console.log(data.toString());
+        console.log(data.toString())
       }
-    });
+    })
   })
-  .end();
+  .end()
 ```
 
 ### Net
@@ -477,23 +475,17 @@ net 模块可用于创建 Socket 服务器或 Socket 客户端。
 下面使用 net 模块创建一个 HTTP 服务器：
 
 ```javascript
-const net = require("net");
+const net = require("net")
 
 net
   .createServer(function(conn) {
     conn.on("data", function(data) {
       conn.write(
-        [
-          "HTTP/1.1 200 OK",
-          "Content-Type: text/plain",
-          "Content-Length: 11",
-          "",
-          "Hello World"
-        ].join("\n")
-      );
-    });
+        ["HTTP/1.1 200 OK", "Content-Type: text/plain", "Content-Length: 11", "", "Hello World"].join("\n")
+      )
+    })
   })
-  .listen(80);
+  .listen(80)
 ```
 
 再创建一个客户端：
@@ -502,25 +494,18 @@ net
 let options = {
   port: 80,
   host: "www.example.com"
-};
+}
 
 let client = net.connect(options, function() {
   client.write(
-    [
-      "GET / HTTP/1.1",
-      "User-Agent: curl/7.26.0",
-      "Host: www.baidu.com",
-      "Accept: */*",
-      "",
-      ""
-    ].join("\n")
-  );
-});
+    ["GET / HTTP/1.1", "User-Agent: curl/7.26.0", "Host: www.baidu.com", "Accept: */*", "", ""].join("\n")
+  )
+})
 
 client.on("data", function(data) {
-  console.log(data.toString());
-  client.end();
-});
+  console.log(data.toString())
+  client.end()
+})
 ```
 
 #### 小结
@@ -542,20 +527,20 @@ NodeJS 可以感知和控制自身进程的运行环境和状态，也可以创�
 在第一章里实现了文件拷贝的功能，但终端下的 cp 命令比较好用，一条 `cp -r source/* target` 命令就能搞定目录拷贝：
 
 ```javascript
-const child_process = require("child_process");
-const util = require("util");
+const child_process = require("child_process")
+const util = require("util")
 
 function copy(source, target, callback) {
-  child_process.exec(util.format("cp -r %s/* %s", source, target), callback);
+  child_process.exec(util.format("cp -r %s/* %s", source, target), callback)
 }
 
 function main(argv) {
   copy(argv[0], argv[1], function(err) {
-    console.log(err);
-  });
+    console.log(err)
+  })
 }
 
-main(process.argv.slice(2));
+main(process.argv.slice(2))
 ```
 
 ### 退出程序
@@ -567,7 +552,7 @@ try {
   // ...
 } catch (err) {
   // ...
-  process.exit(1);
+  process.exit(1)
 }
 ```
 
@@ -576,21 +561,21 @@ try {
 以下是一个创建 NodeJS 子进程的例子：
 
 ```javascript
-const child_process = require("child_process");
+const child_process = require("child_process")
 
-let child = child_process.spawn("node", ["xxx.js"]);
+let child = child_process.spawn("node", ["xxx.js"])
 
 child.stdout.on("data", function(data) {
-  console.log("stdout: " + data);
-});
+  console.log("stdout: " + data)
+})
 
 child.stderr.on("data", function(data) {
-  console.log("stderr: " + data);
-});
+  console.log("stderr: " + data)
+})
 
 child.on("close", function(code) {
-  console.log("child process exited with code " + code);
-});
+  console.log("child process exited with code " + code)
+})
 ```
 
 上例中使用了 `.spawn(exec, args, options)` 方法，该方法支持三个参数。第一个参数是执行文件路径，可以是执行文件的相对或绝对路径，也可以是根据 PATH 环境变量能找到的执行文件名。第二个参数中，数组中的每个成员都按顺序对应一个命令行参数。第三个参数可选，用于配置子进程的执行环境与行为。
@@ -600,18 +585,18 @@ child.on("close", function(code) {
 进程间可以互相通信：
 
 ```javascript
-const child_process = require("child_process");
+const child_process = require("child_process")
 
 /* parent.js */
-let child = child_process.spawn("node", ["child.js"]);
+let child = child_process.spawn("node", ["child.js"])
 
-child.kill("SIGTERM");
+child.kill("SIGTERM")
 
 /* child.js */
 process.on("SIGTERM", function() {
-  cleanUp();
-  process.exit(0);
-});
+  cleanUp()
+  process.exit(0)
+})
 ```
 
 上面代码中，父进程通过 `.kill` 方法向子进程发送 SIGTERM 信号，子进程监听 process 对象的 SIGTERM 事件响应信号。`.kill` 方法本质上是用来给进程发送信号的，进程收到信号后具体要做啥，完全取决于信号的种类和进程自身的代码。
@@ -619,24 +604,24 @@ process.on("SIGTERM", function() {
 另外，如果父子进程都是 NodeJS 进程，就可以通过 IPC（进程间通讯）双向传递数据。
 
 ```javascript
-const child_process = require("child_process");
+const child_process = require("child_process")
 
 /* parent.js */
 let child = child_process.spawn("node", ["child.js"], {
   stdio: [0, 1, 2, "ipc"]
-});
+})
 
 child.on("message", function(msg) {
-  console.log(msg);
-});
+  console.log(msg)
+})
 
-child.send({ hello: "hello" });
+child.send({ hello: "hello" })
 
 /* child.js */
 process.on("message", function(msg) {
-  msg.hello = msg.hello.toUpperCase();
-  process.send(msg);
-});
+  msg.hello = msg.hello.toUpperCase()
+  process.send(msg)
+})
 ```
 
 可以看到，父进程在创建子进程时，在 `options.stdio` 字段中通过 ipc 开启了一条 IPC 通道，之后就可以监听子进程对象的 message 事件接收来自子进程的消息，并通过 .send 方法给子进程发送消息。在子进程这边，可以在 process 对象上监听 message 事件接收来自父进程的消息，并通过 .send 方法向父进程发送消息。数据在传递过程中，会先在发送端使用 JSON.stringify 方法序列化，再在接收端使用 JSON.parse 方法反序列化。
@@ -646,19 +631,19 @@ process.on("message", function(msg) {
 守护进程一般用于监控工作进程的运行状态，在工作进程不正常退出时重启工作进程，保障工作进程不间断运行：
 
 ```javascript
-const child_process = require("child_process");
+const child_process = require("child_process")
 
 function spawn(mainModule) {
-  let worker = child_process.spawn("node", [mainModule]);
+  let worker = child_process.spawn("node", [mainModule])
 
   worker.on("exit", function(code) {
     if (code !== 0) {
-      spawn(mainModule);
+      spawn(mainModule)
     }
-  });
+  })
 }
 
-spawn("worker.js");
+spawn("worker.js")
 ```
 
 ## 大项目
@@ -699,75 +684,75 @@ request -->|  parse  |-->|  combine  |-->|  output  |--> response
 设计实现：
 
 ```javascript
-const fs = require("fs");
-const path = require("path");
-const http = require("http");
+const fs = require("fs")
+const path = require("path")
+const http = require("http")
 
 const MIME = {
   ".css": "text/css",
   ".js": "application/javascript"
-};
+}
 
 function combineFiles(pathnames, callback) {
-  let output = [];
-  (function next(i, len) {
+  let output = []
+  ;(function next(i, len) {
     if (i < len) {
       fs.readFile(pathnames[i], (err, data) => {
         if (err) {
-          callback(err);
+          callback(err)
         } else {
-          output.push(data);
-          next(i + 1, len);
+          output.push(data)
+          next(i + 1, len)
         }
-      });
+      })
     } else {
-      callback(null, Buffer.concat(output));
+      callback(null, Buffer.concat(output))
     }
-  })(0, pathnames.length);
+  })(0, pathnames.length)
 }
 
 function parseURL(root, url) {
-  let base, parts, pathnames;
+  let base, parts, pathnames
   if (!url.includes("??")) {
-    url = url.replace("/", "/??");
+    url = url.replace("/", "/??")
   }
-  parts = url.split("??");
-  base = parts[0];
+  parts = url.split("??")
+  base = parts[0]
   pathnames = parts[1].split(",").map(val => {
-    return path.join(root, base, val);
-  });
+    return path.join(root, base, val)
+  })
   return {
     mine: MIME[path.extname(pathnames[0])] || "text/plain",
     pathnames
-  };
+  }
 }
 
 function main(argv) {
   // 读取配置文件 config.json
-  const config = JSON.parse(fs.readFileSync(argv[0], "utf-8"));
+  const config = JSON.parse(fs.readFileSync(argv[0], "utf-8"))
   // 根目录和端口号
-  const { root = ".", port = 80 } = config;
+  const { root = ".", port = 80 } = config
 
   http
     .createServer((request, response) => {
-      let urlInfo = parseURL(root, request.url);
+      let urlInfo = parseURL(root, request.url)
 
       combineFiles(urlInfo.pathnames, (err, data) => {
         if (err) {
-          response.writeHead(400);
-          response.end(err.message);
+          response.writeHead(400)
+          response.end(err.message)
         } else {
           response.writeHead(200, {
             "Content-Type": urlInfo.mine
-          });
-          response.end(data);
+          })
+          response.end(data)
         }
-      });
+      })
     })
-    .listen(port);
+    .listen(port)
 }
 
-main(process.argv.slice(2));
+main(process.argv.slice(2))
 ```
 
 ### 第二次迭代
@@ -809,64 +794,64 @@ main(process.argv.slice(2));
 
 ```javascript
 function outputFiles(pathnames, write) {
-  (function next(i, len) {
+  ;(function next(i, len) {
     if (i < len) {
-      let reader = fs.createReadStream(pathnames[i]);
+      let reader = fs.createReadStream(pathnames[i])
       reader.pipe(
         write,
         { end: false }
-      );
+      )
       reader.on("end", function() {
-        next(i + 1, len);
-      });
+        next(i + 1, len)
+      })
     } else {
-      write.end();
+      write.end()
     }
-  })(0, pathnames.length);
+  })(0, pathnames.length)
 }
 
 function validateFiles(pathnames, callback) {
-  (function next(i, len) {
+  ;(function next(i, len) {
     if (i < len) {
       fs.stat(pathnames[i], (err, stat) => {
         if (err) {
-          callback(err);
+          callback(err)
         } else if (!stat.isFile()) {
-          callback(new Error());
+          callback(new Error())
         } else {
-          next(i + 1, len);
+          next(i + 1, len)
         }
-      });
+      })
     } else {
-      callback(null, pathnames);
+      callback(null, pathnames)
     }
-  })(0, pathnames.length);
+  })(0, pathnames.length)
 }
 
 function main(argv) {
   // 读取配置文件 config.json
-  const config = JSON.parse(fs.readFileSync(argv[0], "utf-8"));
+  const config = JSON.parse(fs.readFileSync(argv[0], "utf-8"))
   // 根目录和端口号
-  const { root = ".", port = 80 } = config;
+  const { root = ".", port = 80 } = config
 
   http
     .createServer((request, response) => {
-      let urlInfo = parseURL(root, request.url);
+      let urlInfo = parseURL(root, request.url)
 
       validateFiles(urlInfo.pathnames, (err, pathnames) => {
         if (err) {
-          response.writeHead(400);
-          response.end(err.message);
+          response.writeHead(400)
+          response.end(err.message)
         } else {
           // 在检查完文件后立即输出请求头
           response.writeHead(200, {
             "Content-Type": urlInfo.mine
-          });
-          outputFiles(pathnames, response);
+          })
+          outputFiles(pathnames, response)
         }
-      });
+      })
     })
-    .listen(port);
+    .listen(port)
 }
 ```
 
@@ -880,35 +865,35 @@ function main(argv) {
 
 ```javascript
 //daemon.js
-const cp = require("child_process");
+const cp = require("child_process")
 
-let worker;
+let worker
 
 function spawn(server, config) {
-  worker = cp.spawn("node", [server, config]);
+  worker = cp.spawn("node", [server, config])
   worker.on("exit", code => {
     if (code !== 0) {
-      spawn(server, config);
+      spawn(server, config)
     }
-  });
+  })
 }
 
 function main(argv) {
-  spawn("server.js", argv[0]);
+  spawn("server.js", argv[0])
   process.on("SIGTERM", () => {
-    worker.kill();
-    process.exit(0);
-  });
+    worker.kill()
+    process.exit(0)
+  })
 }
 
-main(process.argv.slice(2));
+main(process.argv.slice(2))
 
 //server.js
 process.on("SIGTERM", () => {
   server.close(() => {
-    process.exit(0);
-  });
-});
+    process.exit(0)
+  })
+})
 ```
 
 可以把守护进程的代码保存为 daemon.js，之后可以通过 `node daemon.js config.json` 启动服务，而守护进程会进一步启动和监控服务器进程。

@@ -1,4 +1,4 @@
-[author: kieta]: # "https://i.loli.net/2019/04/23/5cbf0e0d65fa1.jpg"
+[author: kieta]: # "https://chanshiyu.com/poi/2019/30.jpg"
 
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
@@ -49,7 +49,7 @@ Aurora 使用 Github api 做后台数据托管。所以需要新建一个仓库�
 
 由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
 
-![Github Token](https://i.loli.net/2019/03/05/5c7df5acb52c9.png)
+![Github Token](https://chanshiyu.com/poi/2019/github_token.png)
 
 ```javascript
 // github 用户名
@@ -64,7 +64,7 @@ token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
 
 Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。 **然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。**
 
-![Leancloud 应用 Key](https://i.loli.net/2019/03/05/5c7e26e25047f.png)
+![Leancloud 应用 Key](https://chanshiyu.com/poi/2019/Leancloud_应用_Key.png)
 
 ```javascript
 /**
@@ -82,9 +82,9 @@ Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理
 
 首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 `https://chanshiyucx.github.io` 域名。最后将生成的 `Client ID` 和 `Client Secret` 填入相应配置项。
 
-![申请 GitHub Application](https://i.loli.net/2019/03/05/5c7df5accea95.png)
+![申请 GitHub Application](https://chanshiyu.com/poi/2019/申请_GitHub_Application.png)
 
-![生成 clientID 和 clientSecret](https://i.loli.net/2019/03/05/5c7e26e246cf9.png)
+![生成 clientID 和 clientSecret](https://chanshiyu.com/poi/2019/生成_clientID_和_clientSecret.png)
 
 ```javascript
 /**
@@ -107,7 +107,7 @@ gitalk: {
 为了更好地定制各个页面的展示效果，这里约定一些页面内容的格式，主要分`文章、书单、友链、关于` 四个内容模板。对于文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染。
 
 ```markdown
-[pixiv: 63093148]: # "https://i.loli.net/2019/04/23/5cbf08e49500b.jpg"
+[pixiv: 41652582]: # "https://chanshiyu.com/poi/2019/3.jpg"
 ```
 
 其余三个页面模板参考如下：
@@ -125,18 +125,18 @@ gitalk: {
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
 ```markdown
-[pixiv: 63093148]: # "https://i.loli.net/2019/04/23/5cbf08e49500b.jpg"
+[pixiv: 41652582]: # "https://chanshiyu.com/poi/2019/3.jpg"
 
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 ```
 
-![文章模板](https://i.loli.net/2019/05/02/5cca699ed1ce0.png)
+![文章模板](https://chanshiyu.com/poi/2019/文章模板.png)
 
 ### 心情模板
 
 注意心情 issues 状态是 `closed` 的，且需要打上 `Mood` 的 Labels，其他不做约束。
 
-![书单、友链、关于标签](https://i.loli.net/2019/05/02/5cca6a34693a1.png)
+![书单、友链、关于标签](https://chanshiyu.com/poi/2019/页面模板.png)
 
 ### 友链模板
 
