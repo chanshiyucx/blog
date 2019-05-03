@@ -150,7 +150,7 @@ avatar: //i.loli.net/2019/03/17/5c8dc57407550.jpg
 
 ## 時雨
 
-link: //233.host/
+link: //shiyu.host/
 cover: //i.loli.net/2019/03/17/5c8dcd23da60e.jpg
 avatar: //i.loli.net/2019/03/17/5c8dcd37b3e7b.jpg
 
