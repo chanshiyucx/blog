@@ -157,15 +157,15 @@ avatar: //i.loli.net/2018/12/15/5c14f3299c639.jpg
 ```markdown
 ## ES6 标准入门
 
-author:阮一峰
-published:2017-09-01
-progress:正在阅读...
-rating:5,
+author: 阮一峰
+published: 2017-09-01
+progress: 正在阅读...
+rating: 5,
 postTitle: ES6 标准入门
 postLink: //chanshiyu.com/#/post/12
-cover://i.loli.net/2018/12/10/5c0dcb80d3615.jpg
-link://www.duokan.com/book/169714
-desc:柏林已经来了命令，阿尔萨斯和洛林的学校只许教 ES6 了...他转身朝着黑板，拿起一支粉笔，使出全身的力量，写了两个大字：“ES6 万岁！”（《最后一课》）。
+cover: //chanshiyu.com/poi/2019/ES6-标准入门.jpg
+link: //www.duokan.com/book/169714
+description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 ES6 了...他转身朝着黑板，拿起一支粉笔，使出全身的力量，写了两个大字：“ES6 万岁！”（《最后一课》）。
 ```
 
 ### 关于模板
