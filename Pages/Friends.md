@@ -201,3 +201,9 @@ avatar: //i.loli.net/2019/03/26/5c9a06445fa16.jpg
 link: //www.rin404.com
 cover: //i.loli.net/2019/04/13/5cb1ccfd3e1f2.jpg
 avatar: //i.loli.net/2019/04/13/5cb1ccfd333aa.jpeg
+
+## 宅日记
+
+link: //crosschannel.cc
+cover: //i.loli.net/2019/05/07/5cd1405264986.jpg
+avatar: //crosschannel.cc/images/me.png
