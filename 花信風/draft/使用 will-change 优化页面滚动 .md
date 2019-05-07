@@ -1,4 +1,4 @@
-建站之初为了美化博客主题，采用了大量背景图片，由于动态背景图片渲染占用大量资源，导致页面快速滚动时总感觉一丝卡顿，故网上查阅解决方案对此加以优化，提升用户浏览体验。<!-- more -->
+建站之初为了美化博客主题，采用了大量背景图片，由于动态背景图片渲染占用大量资源，导致页面快速滚动时总感觉一丝卡顿，故网上查阅解决方案对此加以优化，提升用户浏览体验。
 
 ## 调整背景图片
 
@@ -7,19 +7,19 @@
 
 ```css
 body {
-  background-image: url('...');
+  background-image: url("...");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
   background-attachment: fixed;
 }
-```  
+```
 
 调整后：
 
 ```css
 body::before {
-  content: '';
+  content: "";
   position: fixed; /* 代替 background-attachment */
   width: 100%;
   height: 100%;
@@ -27,12 +27,12 @@ body::before {
   left: 0;
   will-change: transform; /* 加入 will-change */
   z-index: -1;
-  background-image: url('...');
+  background-image: url("...");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
 }
-```  
+```
 
 对比会发现只做了三点调整：
 
@@ -51,7 +51,8 @@ body::before {
 
 ## background-attachment
 
-CSS 属性 `background-attachment` 会导致页面重绘，在 Safari 浏览器上已被禁用。至于原因 [Stack Overflow]((//stackoverflow.com/questions/19045364/fixed-body-background-scrolls-with-the-page-on-ios7)) 上有提到：
+CSS 属性 `background-attachment` 会导致页面重绘，在 Safari 浏览器上已被禁用。至于原因 [Stack Overflow](<(//stackoverflow.com/questions/19045364/fixed-body-background-scrolls-with-the-page-on-ios7)>) 上有提到：
+
 > Fixed-backgrounds have huge repaint cost and decimate scrolling performance, which is, I believe, why it was disabled.
 
 所以使用 `position: fixed` 代替 `background-attachment: fixed` 避免了重绘。
@@ -71,6 +72,3 @@ Just enjoy it ฅ●ω●ฅ
 参考文章：  
 [使用 CSS3 will-change 提高页面滚动、动画等渲染性能](//www.zhangxinxu.com/wordpress/2015/11/css3-will-change-improve-paint/)  
 [Fix scrolling performance with CSS will-change property](//www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTA1NTQ3MDZdfQ==
--->
