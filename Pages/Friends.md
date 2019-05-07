@@ -206,4 +206,4 @@ avatar: //i.loli.net/2019/04/13/5cb1ccfd333aa.jpeg
 
 link: //crosschannel.cc
 cover: //i.loli.net/2019/05/07/5cd1405264986.jpg
-avatar: //crosschannel.cc/images/me.png
+avatar: //i.loli.net/2019/05/07/5cd1410469b58.jpg
