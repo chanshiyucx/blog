@@ -67,6 +67,18 @@ function useFormInput(initialValue) {
 }
 ```
 
+如果计算初始值代价昂贵，可以传入函数，这样只会执行一次：
+
+```javascript
+function Table(props) {
+  // ⚠️ createRows() 每次渲染都会被调用
+  const [rows, setRows] = useState(createRows(props.count))
+
+  // ✅ createRows() 只会被调用一次
+  const [rows, setRows] = useState(() => createRows(props.count))
+}
+```
+
 ## Effect Hook
 
 Effect Hook 可以让你在函数组件中执行副作用操作。**数据获取，设置订阅以及手动更改 React 组件中的 DOM 都属于副作用**。React 组件中常见副作用一般分不需要清除和需要清除两种类型。
@@ -186,6 +198,36 @@ useEffect(() => {
 
 > React 会等待浏览器完成画面渲染之后才会延迟调用 useEffect。
 
+还有一点是 effect 的依赖频繁变化时，在 effect 内使用 setValue，可以传入函数而不是传入值：
+
+```javascript
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(count + 1) // 这个 effect 依赖于 `count` state
+    }, 1000)
+    return () => clearInterval(id)
+  }, []) // 🔴 Bug: `count` 没有被指定为依赖
+
+  return <h1>{count}</h1>
+}
+
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(c => c + 1) // ✅ 在这不依赖于外部的 `count` 变量
+    }, 1000)
+    return () => clearInterval(id)
+  }, []) // ✅ 我们的 effect 不适用组件作用域中的任何变量
+
+  return <h1>{count}</h1>
+}
+```
+
 ## Context Hook
 
 `useContext` 接收一个 context 对象（React.createContext 的返回值）并返回该 context 的当前值。`useContext` 的参数必须是 context 对象本身。
@@ -285,6 +327,52 @@ const memoizedCallback = useCallback(() => {
 
 > 依赖项数组不会作为参数传给回调函数。虽然从概念上来说它表现为：所有回调函数中引用的值都应该出现在依赖项数组中。
 
+使用 `callback ref` 可以获取 DOM：
+
+```javascript
+function MeasureExample() {
+  const [height, setHeight] = useState(0)
+
+  const measuredRef = useCallback(node => {
+    if (node !== null) {
+      setHeight(node.getBoundingClientRect().height)
+    }
+  }, []) // [] 作为 useCallback 的依赖列表，这确保了 ref callback 不会在再次渲染时改变
+
+  return (
+    <>
+      <h1 ref={measuredRef}>Hello, world</h1>
+      <h2>The above header is {Math.round(height)}px tall</h2>
+    </>
+  )
+}
+```
+
+或者可以单独提取出可复用得 Hook：
+
+```javascript
+function MeasureExample() {
+  const [rect, ref] = useClientRect()
+  return (
+    <>
+      <h1 ref={ref}>Hello, world</h1>
+      {/* 这里使用短路运算 */}
+      {rect !== null && <h2>The above header is {Math.round(rect.height)}px tall</h2>}
+    </>
+  )
+}
+
+function useClientRect() {
+  const [rect, setRect] = useState(null)
+  const ref = useCallback(node => {
+    if (node !== null) {
+      setRect(node.getBoundingClientRect())
+    }
+  }, [])
+  return [rect, ref]
+}
+```
+
 ## Memo Hook
 
 `useMemo` 返回一个 memoized 值，把“创建”函数和依赖项数组作为参数传入 `useMemo`，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销的计算。如果没有提供依赖项数组，`useMemo` 在每次渲染时都会计算新的值。
@@ -323,6 +411,56 @@ function TextInputWithFocusButton() {
 ```
 
 `useRef()` 和自建一个 `{current: ...}` 对象的唯一区别是，**`useRef` 会在每次渲染时返回同一个 ref 对象**。
+
+**`Ref Hook` 不仅可以用于 DOM refs。「ref」对象是一个 current 属性可变且可以容纳任意值的通用容器，类似于一个 class 的实例属性。**
+
+```javascript
+function Timer() {
+  const intervalRef = useRef()
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      console.log("tick")
+    })
+    // 通过 .current 属性来记录定时器 id
+    intervalRef.current = id
+
+    // 回调在组件销毁时清除
+    return () => {
+      clearInterval(intervalRef.current)
+    }
+  })
+
+  // 或者可以手动清除
+  function handleCancelClick() {
+    clearInterval(intervalRef.current)
+  }
+}
+```
+
+甚至可以用它来保存上一轮得 props 或 state：
+
+```javascript
+function Counter() {
+  const [count, setCount] = useState(0)
+  const prevCount = usePrevious(count)
+  return (
+    <h1>
+      Now: {count}, before: {prevCount}
+    </h1>
+  )
+}
+
+function usePrevious(value) {
+  const ref = useRef()
+  useEffect(() => {
+    ref.current = value
+  })
+  return ref.current
+}
+```
+
+从概念上讲，可以认为 refs 就像是一个 class 的实例变量。除非你正在做懒加载，否则避免在渲染期间设置 refs —— 这可能会导致意外的行为。相反的，通常你应该在事件处理器和 effects 中修改 refs。
 
 ## ImperativeHandle Hook
 
