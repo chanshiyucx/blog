@@ -1,10 +1,10 @@
 [pixiv: 62668066]: # "https://chanshiyu.com/poi/2019/43.jpg"
 
-React 代码复用经历从 `Mixins` 到 `HOC`，然后到 `render props` 的演变，这里梳理下。
+在 Vue 中，可以使用 `mixins` 混入的方式实现代码复用，而在 React 中，代码复用经历从 `mixins` 到 `HOC`，然后到 `render props` 的演变，对于这几种方案的曲折这里梳理下。
 
 ## Mixins
 
-在 React 早期版本中可以使用 `React.createClass` 来创建组件，通过 `mixins` 来复用代码
+在 React 早期版本中可以使用 `React.createClass` 来创建组件，通过 `mixins` 来复用代码：
 
 ```javascript
 import React from "react"
