@@ -16,7 +16,7 @@ Hook 是一些可以让你在函数组件里“钩入” React state 及生命�
 
 ## State Hook
 
-State Hook 是允许你在 React 函数组件中添加 state 的 Hook。在 class 中，可以通过在构造函数中设置 this.state 来初始化 state，但是在函数组件中，我们没有 this，所以不能分配或读取 this.state，我们直接在组件中调用 useState Hook，举个栗子：
+State Hook 是允许你在 React 函数组件中添加 state 的 Hook。在 class 中，可以通过在构造函数中设置 this.state 来初始化 state，但是在函数组件中，我们没有 this，所以不能分配或读取 this.state，我们直接在组件中调用 `useState`，举个栗子：
 
 ```javascript
 import React, { useState } from 'react'
@@ -35,7 +35,7 @@ export default function Hello(prop) {
 
 `useState` 是 react 提供的新方法，这是一种在函数调用时保存变量的方式，它与 class 里面的 this.state 提供的功能完全相同。一般来说，在函数退出后变量就就会”消失”，而 state 中的变量会被 React 保留。
 
-`useState` 方法里面唯一的参数就是初始 state。不同于 class 初始 state 必须是对象类型，`useState` 的参数可以是数字或者字符串等类型而不一定是对象。
+`useState` 方法里面唯一的参数就是初始 state。不同于 class 初始 state 必须是对象类型，`useState` 的参数可以是数字或者字符串等类型而不一定是对象。如果初始 state 需要通过复杂计算获得，则可以传入一个函数，在函数中计算并返回初始的 state，此函数只在初始渲染时被调用。
 
 `useState` 调用后会返回当前 state 以及更新 state 的函数，可以通过数组的解构赋值来获取。**不像 class 中的 this.setState，更新 state 变量总是替换它而不是合并它**。
 
