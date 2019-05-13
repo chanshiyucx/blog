@@ -19,10 +19,10 @@ Hook 是一些可以让你在函数组件里“钩入” React state 及生命�
 State Hook 是允许你在 React 函数组件中添加 state 的 Hook。在 class 中，可以通过在构造函数中设置 this.state 来初始化 state，但是在函数组件中，我们没有 this，所以不能分配或读取 this.state，我们直接在组件中调用 `useState`，举个栗子：
 
 ```javascript
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
 export default function Hello(prop) {
-  const [name, setName] = useState('chanshiyu)
+  const [name, setName] = useState("chanshiyu")
   const handleChange = e => setName(e.target.value)
 
   return (
