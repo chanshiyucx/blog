@@ -1,5 +1,3 @@
-[author: oizumi]: # "https://chanshiyu.com/poi/2019/14.jpg"
-
 Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。，ES6 将其写进了语言标准，并原生提供了 Promise 对象。
 
 ## Promise 对象
