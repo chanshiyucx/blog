@@ -1,5 +1,3 @@
-[pixiv: 67109373]: # "https://chanshiyu.com/poi/2019/44.jpg"
-
 作为 React 入坑的前端，至今快有一年没有用 React 写过项目了，自从上了 Vue 这条船就一直停不下来。一年来 React 已经更新了多个版本，新增了许多新特性，是时候重新上船了。
 
 React Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。

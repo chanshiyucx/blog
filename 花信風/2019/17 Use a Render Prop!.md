@@ -1,5 +1,3 @@
-[pixiv: 62668066]: # "https://chanshiyu.com/poi/2019/43.jpg"
-
 在 Vue 中，可以使用 mixins 混入的方式实现代码复用，而在 React 中，代码复用经历从 mixins 到 HOC，然后到 render props 的演变，对于这几种方案的曲折这里梳理下。
 
 ## Mixins

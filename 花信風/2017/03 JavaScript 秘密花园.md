@@ -1,5 +1,3 @@
-[pixiv: 41652582]: # "https://chanshiyu.com/poi/2019/3.jpg"
-
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 
 ## 对象

@@ -1,5 +1,3 @@
-[pixiv: 66213177]: # "https://chanshiyu.com/poi/2019/37.jpg"
-
 最近摸鱼 Github Style 博客主题 Gitlife 的时候需要用到大量 svg 图标，故参考 element-admin 的资源引入方式，尝试在 vue 项目里引入 svg 图标，尽量取代字体图标。
 
 ## 关于 SVG

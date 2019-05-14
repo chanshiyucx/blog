@@ -1,5 +1,3 @@
-[pixiv: 32670273]: # "https://chanshiyu.com/poi/2019/40.jpg"
-
 WebSocket 是一种网络通信协议，它使得客户端和服务器之间的数据交换变得更加简单。最近在项目中使用 WebSocket 实现了一个简单在线聊天室功能，在此探究下心跳重连的机制。
 
 ## WebSocket
