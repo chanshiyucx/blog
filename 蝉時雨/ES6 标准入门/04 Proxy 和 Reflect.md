@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 [pixiv: 49208981]: # 'https://chanshiyu.com/poi/2019/13.jpg'
 
+=======
+>>>>>>> 311574c61168de4368fcf5de1198635c3db016d0
 ES6 新增 Proxy 和 Reflect，两者相辅相成，功能颇为强大，但工作中基本未被提及，这里略微学习一下，不求甚解，待到 coding 时遇到再温故知新。
 
 ## Proxy
