@@ -1,4 +1,4 @@
-[pixiv: 66213177]: # "https://chanshiyu.com/poi/2019/37.jpg"
+[pixiv: 66213177]: # 'https://chanshiyu.com/poi/2019/37.jpg'
 
 最近摸鱼 Github Style 博客主题 Gitlife 的时候需要用到大量 svg 图标，故参考 element-admin 的资源引入方式，尝试在 vue 项目里引入 svg 图标，尽量取代字体图标。
 
@@ -58,20 +58,20 @@ module.exports = {
 plugins:
   - removeAttrs:
       attrs:
-        - "fill"
-        - "fill-rule"
+        - 'fill'
+        - 'fill-rule'
 ```
 
 在此文件夹下新增 index.js 引入 svg 资源并全局注册 vue 组件，代码如下：
 
 ```javascript
-import Vue from "vue"
-import SvgIcon from "@/components/SvgIcon" // svg组件
+import Vue from 'vue'
+import SvgIcon from '@/components/SvgIcon' // svg组件
 
 // register globally
-Vue.component("svg-icon", SvgIcon)
+Vue.component('svg-icon', SvgIcon)
 
-const req = require.context("./svg", false, /\.svg$/)
+const req = require.context('./svg', false, /\.svg$/)
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 requireAll(req)
 ```
@@ -93,7 +93,7 @@ requireAll(req)
 
 <script>
   export default {
-    name: "SvgIcon",
+    name: 'SvgIcon',
     props: {
       iconClass: {
         type: String,
@@ -101,7 +101,7 @@ requireAll(req)
       },
       className: {
         type: String,
-        default: ""
+        default: ''
       }
     },
     computed: {
@@ -110,9 +110,9 @@ requireAll(req)
       },
       svgClass() {
         if (this.className) {
-          return "svg-icon " + this.className
+          return 'svg-icon ' + this.className
         } else {
-          return "svg-icon"
+          return 'svg-icon'
         }
       }
     }
@@ -133,7 +133,7 @@ requireAll(req)
 最后不要忘记在 `main.js` 里引入 icons:
 
 ```javascript
-import "./assets/icons"
+import './assets/icons'
 ```
 
 食用方式，添加 svg 文件到 `/assets/icons/svg` 文件夹下即可，如添加 `github.svg` 后在 vue 文件里引入：

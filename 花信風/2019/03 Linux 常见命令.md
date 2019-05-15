@@ -1,4 +1,4 @@
-[pixiv: 70937229]: # "https://chanshiyu.com/poi/2019/29.jpg"
+[pixiv: 70937229]: # 'https://chanshiyu.com/poi/2019/29.jpg'
 
 最近开始学习 Java 服务端开发，便使用 win10 自带的 Hyper-v 虚拟机管理器安装了 CentOS7 虚拟机，学习 Linux 基本使用同时进行代码部署，这里记录一些常用 Linux 命令。
 

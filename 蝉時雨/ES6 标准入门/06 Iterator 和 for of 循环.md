@@ -1,4 +1,4 @@
-[author: ke-ta]: # "https://chanshiyu.com/poi/2019/15.jpg"
+[author: ke-ta]: # 'https://chanshiyu.com/poi/2019/15.jpg'
 
 JavaScript 有四种表示“集合”和数据结构，分别是 Array、Object 和 ES6 新增的 Set、Map，遍历器（Iterator）就是为各种不同的数据结构提供统一访问机制的接口。
 
@@ -30,7 +30,7 @@ Iterator 的遍历过程如下：
 原生具备 Iterator 接口的数据结构有：Array、Map、Set、String、TypedArray、arguments 对象、NodeList 对象。
 
 ```javascript
-let arr = ["a", "b", "c"]
+let arr = ['a', 'b', 'c']
 let iter = arr[Symbol.iterator]()
 iter.next() // { value: 'a', done: false }
 ```
@@ -69,9 +69,9 @@ for (let value of range(0, 3)) {
 
 ```javascript
 let iterable = {
-  0: "a",
-  1: "b",
-  2: "c",
+  0: 'a',
+  1: 'b',
+  2: 'c',
   length: 3,
   [Symbol.iterator]: Array.prototype[Symbol.iterator]
 }
@@ -87,9 +87,9 @@ let iterable = {
 
 ```javascript
 let set = new Set()
-  .add("a")
-  .add("b")
-  .add("c")
+  .add('a')
+  .add('b')
+  .add('c')
 let [x, y] = set // x='a'; y='b'
 ```
 
@@ -98,7 +98,7 @@ let [x, y] = set // x='a'; y='b'
 扩展运算符（...）也会调用默认的 Iterator 接口。
 
 ```javascript
-let str = "hello"
+let str = 'hello'
 ;[...str] //  ['h','e','l','l','o']
 ```
 
@@ -141,8 +141,8 @@ for...of 循环可以使用的范围包括数组、Set 和 Map 结构、某些�
 JavaScript 原有的 for...in 循环只能获得对象的键名，不能直接获取键值。ES6 提供的 for...of 循环允许遍历获得键值。
 
 ```javascript
-let arr = ["a", "b", "c", "d"]
-arr.foo = "hello"
+let arr = ['a', 'b', 'c', 'd']
+arr.foo = 'hello'
 
 for (let a in arr) {
   console.log(a) // 0 1 2 3 foo
@@ -159,7 +159,7 @@ for (let a of arr) {
 Set 和 Map 结构原生具有 Iterator 接口，可以直接使用 for...of 循环。
 
 ```javascript
-var engines = new Set(["Gecko", "Trident"])
+var engines = new Set(['Gecko', 'Trident'])
 for (var e of engines) {
   console.log(e)
 }
@@ -167,10 +167,10 @@ for (var e of engines) {
 // Trident
 
 var es6 = new Map()
-es6.set("edition", 6)
-es6.set("committee", "TC39")
+es6.set('edition', 6)
+es6.set('committee', 'TC39')
 for (var [name, value] of es6) {
-  console.log(name + ": " + value)
+  console.log(name + ': ' + value)
 }
 // edition: 6
 // committee: TC39
@@ -186,7 +186,7 @@ for (var [name, value] of es6) {
 
 ```javascript
 for (var key of Object.keys(someObject)) {
-  console.log(key + ": " + someObject[key])
+  console.log(key + ': ' + someObject[key])
 }
 ```
 
@@ -199,7 +199,7 @@ function* entries(obj) {
   }
 }
 for (let [key, value] of entries(obj)) {
-  console.log(key, "->", value)
+  console.log(key, '->', value)
 }
 // a -> 1
 // b -> 2

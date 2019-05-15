@@ -1,4 +1,4 @@
-[pixiv: 67109373]: # "https://chanshiyu.com/poi/2019/44.jpg"
+[pixiv: 67109373]: # 'https://chanshiyu.com/poi/2019/44.jpg'
 
 作为 React 入坑的前端，至今快有一年没有用 React 写过项目了，自从上了 Vue 这条船就一直停不下来。一年来 React 已经更新了多个版本，新增了许多新特性，是时候重新上船了。
 
@@ -19,10 +19,10 @@ Hook 是一些可以让你在函数组件里“钩入” React state 及生命�
 State Hook 是允许你在 React 函数组件中添加 state 的 Hook。在 class 中，可以通过在构造函数中设置 this.state 来初始化 state，但是在函数组件中，我们没有 this，所以不能分配或读取 this.state，我们直接在组件中调用 `useState`，举个栗子：
 
 ```javascript
-import React, { useState } from "react"
+import React, { useState } from 'react'
 
 export default function Hello(prop) {
-  const [name, setName] = useState("chanshiyu")
+  const [name, setName] = useState('chanshiyu')
   const handleChange = e => setName(e.target.value)
 
   return (
@@ -42,11 +42,11 @@ export default function Hello(prop) {
 当然，如果存在多个表单域，最好的实现方式是将 Hook 提取出复用的函数：
 
 ```javascript
-import React, { useState } from "react"
+import React, { useState } from 'react'
 
 export default function Hello(prop) {
-  const name = useFormInput("chanshiyu")
-  const age = useFormInput("24")
+  const name = useFormInput('chanshiyu')
+  const age = useFormInput('24')
 
   return (
     <div>
@@ -88,10 +88,10 @@ Effect Hook 可以让你在函数组件中执行副作用操作。**数据获取
 这里先举个不需要清除副作用的栗子，我们根据表单输入内容来动态改变页面标签标题：
 
 ```javascript
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
 export default function Hello(prop) {
-  const name = useFormInput("chanshiyu")
+  const name = useFormInput('chanshiyu')
 
   const title = `Hello, ${name.value}`
   useDocumentTitle(title)
@@ -138,7 +138,7 @@ function useDocumentTitle(title) {
 而在函数组件中 `useEffect` 的处理方式就高明许多，`useEffect` 设计是让属于同一副作用的代码在同一个地方执行。**如果你的 effect 返回一个函数，React 将会在执行清除操作时调用它**。这里再举个栗子说明，现在我们要让组件加载时设置监听窗口缩放的事件，组件销毁时移除：
 
 ```javascript
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
 export default function Hello(prop) {
   const width = useWindowWidth()
@@ -155,9 +155,9 @@ function useWindowWidth() {
   const handleWindowResize = () => setWidth(window.innerWidth)
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowResize, false)
+    window.addEventListener('resize', handleWindowResize, false)
     // 这里返回一个函数，React 将会在执行清除操作时调用它
-    return () => window.removeEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener('resize', handleWindowResize)
   })
 
   return width
@@ -237,8 +237,8 @@ function Counter() {
 当前的 context 值由上层组件中距离当前组件最近的 `<MyContext.Provider>` 的 value prop 决定。调用了 `useContext` 的组件总会在 context 值变化时重新渲染。
 
 ```javascript
-import React, { useContext } from "react"
-import GlobalContext from "../../context"
+import React, { useContext } from 'react'
+import GlobalContext from '../../context'
 
 export default function Hello(prop) {
   const local = useContext(GlobalContext)
@@ -289,7 +289,7 @@ function useReducer(reducer, initialState) {
 ```javascript
 function todosReducer(state, action) {
   switch (action.type) {
-    case "add":
+    case 'add':
       return [
         ...state,
         {
@@ -307,7 +307,7 @@ function Todos() {
   const [todos, dispatch] = useReducer(todosReducer, [])
 
   function handleAddClick(text) {
-    dispatch({ type: "add", text })
+    dispatch({ type: 'add', text })
   }
   // ...
 }
@@ -420,7 +420,7 @@ function Timer() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      console.log("tick")
+      console.log('tick')
     })
     // 通过 .current 属性来记录定时器 id
     intervalRef.current = id
@@ -490,7 +490,7 @@ FancyInput = forwardRef(FancyInput)
 ```javascript
 // 在开发者工具中的这个 Hook 旁边显示标签
 // e.g. "FriendStatus: Online"
-useDebugValue(isOnline ? "Online" : "Offline")
+useDebugValue(isOnline ? 'Online' : 'Offline')
 ```
 
 ## Hook 规则

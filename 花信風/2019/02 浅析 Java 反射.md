@@ -1,4 +1,4 @@
-[pixiv: 53671536]: # "https://chanshiyu.com/poi/2019/28.jpg"
+[pixiv: 53671536]: # 'https://chanshiyu.com/poi/2019/28.jpg'
 
 这是自己第一篇关于 Java 的学习笔记，终于还是走上了 Java 这条路（哈）。之前学习的基础内容都快忘了，有机会再总结下。此篇是关于 Java 反射的一些浅显了解（和一些脑补）。
 

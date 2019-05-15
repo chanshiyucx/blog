@@ -1,4 +1,4 @@
-[pixiv: 44873217]: # "https://chanshiyu.com/poi/2019/34.jpg"
+[pixiv: 44873217]: # 'https://chanshiyu.com/poi/2019/34.jpg'
 
 话接上次练手 JavaWeb 实现了第一个后端接口，在 Postman 上测试可正常食用。寻思搭建个后台方便测试，却意外发生而后端无法接收参数的问题，花了点时间找下问题根源所在。
 
@@ -9,9 +9,9 @@
 前端接口请求使用的 HTTP 库是知名的 [axios](https://github.com/axios/axios)，之前工作中项目一直使用都能顺利工作，故将其从原来的项目中 CV 过来。
 
 ```javascript
-import axios from "axios"
+import axios from 'axios'
 
-const baseUrl = "http://localhost:8088"
+const baseUrl = 'http://localhost:8088'
 
 class HttpRequest {
   constructor(baseUrl) {
@@ -22,7 +22,7 @@ class HttpRequest {
     const config = {
       baseURL: this.baseUrl,
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       }
     }
     return config

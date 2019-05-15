@@ -1,4 +1,4 @@
-[pixiv: 63986081]: # "https://chanshiyu.com/poi/2019/2.jpg"
+[pixiv: 63986081]: # 'https://chanshiyu.com/poi/2019/2.jpg'
 
 公司新企划的 RN 项目需要实现链接分享功能，用户直接通过分享链接唤醒 App 并跳转相应页面，同时该功能要求在 iOS 和 Android 双端兼容，在此记录下拥抱新技术的踩坑历程。
 
