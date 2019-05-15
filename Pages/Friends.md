@@ -76,12 +76,6 @@ link: //cily.cc/
 cover: //i.loli.net/2018/12/15/5c14f2e81d82b.png
 avatar: //i.loli.net/2018/12/15/5c14f2e81bb17.jpg
 
-## 下午茶的轻音部
-
-link: //www.haibara.top/
-cover: //i.loli.net/2018/12/15/5c14f263eec88.png
-avatar: //i.loli.net/2018/12/15/5c14f263e2a2a.png
-
 ## MIKUSA の小站
 
 link: //www.himiku.com
