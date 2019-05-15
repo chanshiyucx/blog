@@ -1,3 +1,5 @@
+[pixiv: 47707282]: # 'https://chanshiyu.com/poi/2019/27.jpg'
+
 canvas 是一个可以使用脚本来绘制图形的 HTML 元素。它可以用于绘制图表、制作图片构图或者制作简单的（以及不那么简单的）动画。此篇是学习 canvas 基础用法所作摘要。
 
 ## 基础用法
@@ -30,8 +32,8 @@ canvas 是一个可以使用脚本来绘制图形的 HTML 元素。它可以用�
 `<canvas>` 标签创建画布，并公开渲染上下文（The rendering context），用来绘制内容。使用方法 `getContext()` 可以获取渲染上下文对象，该方法接受一个参数表示上下文格式，一般传入 `2d`，当然还有 `3d` 模式，这里不细谈。
 
 ```javascript
-const canvas = document.getElementById("yoo")
-const ctx = canvas.getContext("2d")
+const canvas = document.getElementById('yoo')
+const ctx = canvas.getContext('2d')
 ```
 
 ### 绘制图形
@@ -47,7 +49,7 @@ const ctx = canvas.getContext("2d")
 三种方式示例如下：
 
 ```javascript
-ctx.fillStyle = "#fb618d"
+ctx.fillStyle = '#fb618d'
 ctx.fillRect(50, 50, 200, 200)
 ctx.clearRect(70, 70, 160, 160)
 ctx.strokeRect(90, 90, 120, 120)
@@ -139,7 +141,7 @@ canvas API `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`，用来绘制三次贝
 ```javascript
 new Path2D() // 空的Path对象
 new Path2D(path) // 克隆Path对象
-new Path2D("M10 10 h 80 v 80 h -80 Z") // 从SVG建立Path对象
+new Path2D('M10 10 h 80 v 80 h -80 Z') // 从SVG建立Path对象
 ```
 
 之前介绍的所有 canvas API 都可以在生成的 Path2D 对象上使用。

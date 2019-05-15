@@ -1,3 +1,5 @@
+[author: oizumi]: # 'https://chanshiyu.com/poi/2019/14.jpg'
+
 Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理且更强大。，ES6 将其写进了语言标准，并原生提供了 Promise 对象。
 
 ## Promise 对象
@@ -51,13 +53,13 @@ then 方法可以接受两个回调函数作为参数。第一个回调函数是
 
 ```javascript
 let promise = new Promise(function(resolve, reject) {
-  console.log("Promise")
+  console.log('Promise')
   resolve()
 })
 promise.then(function() {
-  console.log("Resolved.")
+  console.log('Resolved.')
 })
-console.log("Hi!")
+console.log('Hi!')
 // Promise
 // Hi!
 // Resolved
@@ -69,7 +71,7 @@ resolve 函数的参数除了正常的值外，还可能是另一个 Promise 实
 
 ```javascript
 const p1 = new Promise(function(resolve, reject) {
-  setTimeout(() => reject(new Error("fail")), 3000)
+  setTimeout(() => reject(new Error('fail')), 3000)
 })
 const p2 = new Promise(function(resolve, reject) {
   setTimeout(() => resolve(p1), 1000)
@@ -114,18 +116,18 @@ Promise 实例 then 方法是定义在原型对象 Promise.prototype 上。then 
 异步操作 reject 抛出的错误和 then 方法回调函数在运行中抛出的错误，都会被 catch 方法捕获。
 
 ```javascript
-p.then(val => console.log("fulfilled:", val)).catch(err => console.log("rejected", err))
+p.then(val => console.log('fulfilled:', val)).catch(err => console.log('rejected', err))
 
 // 等同于
-p.then(val => console.log("fulfilled:", val)).then(null, err => console.log("rejected:", err))
+p.then(val => console.log('fulfilled:', val)).then(null, err => console.log('rejected:', err))
 ```
 
 **如果 Promise 状态已经变成 Resolved，再抛出错误是无效的**：
 
 ```javascript
 const promise = new Promise(function(resolve, reject) {
-  resolve("ok")
-  throw new Error("test")
+  resolve('ok')
+  throw new Error('test')
 })
 promise
   .then(function(value) {
@@ -152,7 +154,7 @@ const someAsyncThing = function() {
   })
 }
 someAsyncThing().then(function() {
-  console.log("everything is great")
+  console.log('everything is great')
 })
 ```
 
@@ -160,9 +162,9 @@ someAsyncThing().then(function() {
 
 ```javascript
 const promise = new Promise(function(resolve, reject) {
-  resolve("ok")
+  resolve('ok')
   setTimeout(function() {
-    throw new Error("test")
+    throw new Error('test')
   }, 0)
 })
 promise.then(function(value) {
@@ -193,13 +195,13 @@ p 的状态由成员决定，分成两种情况：
 
 ```javascript
 const p1 = new Promise((resolve, reject) => {
-  resolve("hello")
+  resolve('hello')
 })
   .then(result => result)
   .catch(e => e)
 
 const p2 = new Promise((resolve, reject) => {
-  throw new Error("报错了")
+  throw new Error('报错了')
 })
   .then(result => result)
   .catch(e => e)
@@ -225,9 +227,9 @@ const p = Promise.race([p1, p2, p3])
 
 ```javascript
 const p = Promise.race([
-  fetch("/resource-that-may-take-a-while"),
+  fetch('/resource-that-may-take-a-while'),
   new Promise(function(resolve, reject) {
-    setTimeout(() => reject(new Error("request timeout")), 5000)
+    setTimeout(() => reject(new Error('request timeout')), 5000)
   })
 ])
 p.then(response => console.log(response))
@@ -239,9 +241,9 @@ p.catch(error => console.log(error))
 Promise.resolve 方法将现有对象转为 Promise 对象。Promise.resolve 等价于下面的写法：
 
 ```javascript
-Promise.resolve("foo")
+Promise.resolve('foo')
 // 等价于
-new Promise(resolve => resolve("foo"))
+new Promise(resolve => resolve('foo'))
 ```
 
 Promise.resolve 方法的参数分成以下 4 种情况：
@@ -268,12 +270,12 @@ Promise.resolve 方法会将这个对象转为 Promise 对象，然后立即执�
 
 ```javascript
 setTimeout(function() {
-  console.log("three")
+  console.log('three')
 }, 0)
 Promise.resolve().then(function() {
-  console.log("two")
+  console.log('two')
 })
-console.log("one")
+console.log('one')
 // one
 // two
 // three
@@ -290,7 +292,7 @@ console.log("one")
 ```javascript
 const thenable = {
   then(resolve, reject) {
-    reject("出错了")
+    reject('出错了')
   }
 }
 Promise.reject(thenable).catch(e => {
@@ -370,7 +372,7 @@ Promise.prototype.finally = function(callback) {
 ```javascript
 function getFoo() {
   return new Promise(function(resolve, reject) {
-    resolve("foo")
+    resolve('foo')
   })
 }
 let g = function*() {
@@ -410,9 +412,9 @@ Promise.resolve().then(f)
 上面的写法有一个缺点：如果 f 是同步函数，那么它会在本轮事件循环的末尾执行：
 
 ```javascript
-const f = () => console.log("now")
+const f = () => console.log('now')
 Promise.resolve().then(f)
-console.log("next")
+console.log('next')
 // next
 // now
 ```
@@ -422,9 +424,9 @@ console.log("next")
 第一种方法是用 async 函数：
 
 ```javascript
-const f = () => console.log("now")
+const f = () => console.log('now')
 ;(async () => f())()
-console.log("next")
+console.log('next')
 // now
 // next
 ```
@@ -438,9 +440,9 @@ console.log("next")
 第二种方式是使用 new Promise()：
 
 ```javascript
-const f = () => console.log("now")
+const f = () => console.log('now')
 ;(() => new Promise(resolve => resolve(f())))()
-console.log("next")
+console.log('next')
 // now
 // next
 ```

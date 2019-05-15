@@ -1,3 +1,5 @@
+[pixiv: 58332075]: # 'https://chanshiyu.com/poi/2019/17.jpg'
+
 BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，实现方法很多，Github 上也有许多优秀的三方库，如 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll)，但如何优雅实现也是一门学问。
 
 ## 事件绑定和解绑
@@ -7,8 +9,8 @@ BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，
 监听页面滚动最简单的实现方式是使用 `addEventListener` 监听 scroll 事件，并在页面卸载时解除监听，代码如下：
 
 ```javascript
-window.addEventListener("scroll", handleScroll, false)
-window.removeEventListener("scroll", handleScroll, false)
+window.addEventListener('scroll', handleScroll, false)
+window.removeEventListener('scroll', handleScroll, false)
 ```
 
 但既然称为最优雅的实现方式，为了兼任各种浏览器，可以将绑定和解绑事件提取出公共方法，并作兼容优化，代码如下：
@@ -27,7 +29,7 @@ export const on = (function() {
   } else {
     return function(element, event, handler) {
       if (element && event && handler) {
-        element.attachEvent("on" + event, handler)
+        element.attachEvent('on' + event, handler)
       }
     }
   }
@@ -46,7 +48,7 @@ export const off = (function() {
   } else {
     return function(element, event, handler) {
       if (element && event) {
-        element.detachEvent("on" + event, handler)
+        element.detachEvent('on' + event, handler)
       }
     }
   }
@@ -56,8 +58,8 @@ export const off = (function() {
 调用方式：
 
 ```javascript
-on(window, "scroll", handleScroll)
-off(window, "scroll", handleScroll)
+on(window, 'scroll', handleScroll)
+off(window, 'scroll', handleScroll)
 
 function handleScroll() {
   console.log(window.pageYOffset)
@@ -134,7 +136,7 @@ window.cancelAnimationFrame(requestID)
 ```javascript
 window.scrollTo({
   top: 0,
-  behavior: "smooth"
+  behavior: 'smooth'
 })
 ```
 

@@ -1,3 +1,5 @@
+[pixiv: 29166434]: # 'https://chanshiyu.com/poi/2019/23.jpg'
+
 Async 函数是 ES2017 标准提供的改进版异步编程解决方案，它比 Generator 函数更加优雅方便。Async 函数就是隧道尽头的亮光，很多人认为它是异步操作的终极解决方案。
 
 异步操作是 JavaScript 编程的麻烦事，从最早的回调函数，到 Promise 对象，再到 Generator 函数，每次都有所改进，但又让人觉得不彻底。它们都有额外的复杂性，都需要理解抽象的底层运行机制。
@@ -28,7 +30,7 @@ async 函数返回一个 Promise 对象。async 函数内部 return 语句返回
 ```javascript
 async function f() {
   // 加不加 return 效果一样
-  await Promise.reject("出错了")
+  await Promise.reject('出错了')
 }
 
 f()
@@ -44,8 +46,8 @@ f()
 ```javascript
 async function f() {
   // 失败也能继续执行后面的异步操作
-  await Promise.reject("出错了").catch(e => console.log(e))
-  return await Promise.resolve("hello world")
+  await Promise.reject('出错了').catch(e => console.log(e))
+  return await Promise.resolve('hello world')
 }
 ```
 
@@ -59,7 +61,7 @@ const NUM_RETRIES = 3
 async function test() {
   for (let i = 0; i < NUM_RETRIES; ++i) {
     try {
-      await fetch("http://google.com/this-throws-an-error")
+      await fetch('http://google.com/this-throws-an-error')
       // 如果请求成功，则跳出循环，否则继续重试直至三次
       break
     } catch (err) {}

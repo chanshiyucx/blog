@@ -1,3 +1,5 @@
+[pixiv: 32670273]: # 'https://chanshiyu.com/poi/2019/40.jpg'
+
 WebSocket 是一种网络通信协议，它使得客户端和服务器之间的数据交换变得更加简单。最近在项目中使用 WebSocket 实现了一个简单在线聊天室功能，在此探究下心跳重连的机制。
 
 ## WebSocket
@@ -69,7 +71,7 @@ class WebsocketHB {
         this.onmessage(event)
       }
     } catch (error) {
-      console.error("websocket 连接失败!", error)
+      console.error('websocket 连接失败!', error)
       throw error
     }
   }
@@ -85,22 +87,22 @@ class WebsocketHB {
 
 ```javascript
 const ws = new WebsocketHB({
-  url: "ws://xxx"
+  url: 'ws://xxx'
 })
 
 ws.onopen = () => {
-  console.log("connect success")
+  console.log('connect success')
 }
 ws.onmessage = e => {
   console.log(`onmessage: ${e.data}`)
 }
 ws.onerror = () => {
-  console.log("connect onerror")
+  console.log('connect onerror')
 }
 ws.onclose = () => {
-  console.log("connect onclose")
+  console.log('connect onclose')
 }
-ws.send("Hello, chanshiyu!")
+ws.send('Hello, chanshiyu!')
 ```
 
 ### 0x02 发送心跳包与重连
@@ -232,23 +234,23 @@ npm install websockethb
 ### 引入与使用
 
 ```javascript
-import WebsocketHB from "websockethb"
+import WebsocketHB from 'websockethb'
 
 const ws = new WebsocketHB({
-  url: "ws://xxx"
+  url: 'ws://xxx'
 })
 
 ws.onopen = () => {
-  console.log("connect success")
+  console.log('connect success')
 }
 ws.onmessage = e => {
   console.log(`onmessage: ${e.data}`)
 }
 ws.onerror = () => {
-  console.log("connect onerror")
+  console.log('connect onerror')
 }
 ws.onclose = () => {
-  console.log("connect onclose")
+  console.log('connect onclose')
 }
 ```
 
@@ -265,12 +267,12 @@ ws.onclose = () => {
 
 ```javascript
 const opts = {
-  url: "ws://xxx",
+  url: 'ws://xxx',
   pingTimeout: 8000, // 发送心跳包间隔，默认 8000 毫秒
   pongTimeout: 15000, // 最长未接收消息的间隔，默认 15000 毫秒
   reconnectTimeout: 4000, // 每次重连间隔
   reconnectLimit: 15, // 最大重连次数
-  pingMsg: "heartbeat" // 心跳包的消息内容
+  pingMsg: 'heartbeat' // 心跳包的消息内容
 }
 const ws = new WebsocketHB(opts)
 ```
@@ -278,7 +280,7 @@ const ws = new WebsocketHB(opts)
 ### 发送消息
 
 ```javascript
-ws.send("Hello World")
+ws.send('Hello World')
 ```
 
 ### 断开连接

@@ -1,3 +1,5 @@
+[pixiv: 62668066]: # 'https://chanshiyu.com/poi/2019/43.jpg'
+
 在 Vue 中，可以使用 mixins 混入的方式实现代码复用，而在 React 中，代码复用经历从 mixins 到 HOC，然后到 render props 的演变，对于这几种方案的曲折这里梳理下。
 
 ## Mixins
@@ -5,7 +7,7 @@
 在 React 早期版本中可以使用 `React.createClass` 来创建组件，通过 `mixins` 来复用代码：
 
 ```javascript
-import React from "react"
+import React from 'react'
 
 // 可以将样板代码放入到一个 mixin 中，让其他组件共享这些代码
 const MouseMixin = {
@@ -56,7 +58,7 @@ const App = React.createClass({
 通过高阶组件可以改写上面的代码如下：
 
 ```javascript
-import React from "react"
+import React from 'react'
 
 // 接收组件返回包装后的组件
 const withMouse = Component => {
@@ -132,8 +134,8 @@ Render Props 是指一种在 React 组件之间使用一个值为函数的 prop 
 我们通过 render prop 再改写上面获取鼠标坐标的例子：
 
 ```javascript
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 // 与 HOC 不同，我们可以使用具有 render prop 的普通组件来共享代码
 class Mouse extends React.Component {

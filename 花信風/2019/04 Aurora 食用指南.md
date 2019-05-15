@@ -1,3 +1,5 @@
+[author: kieta]: # 'https://chanshiyu.com/poi/2019/30.jpg'
+
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
 相较于 Wordpress 和 Typecho 等博客框架，Aurora 主题最大的优势就是简单轻量与免费，全部使用现有开源免费服务，相对稳定，也不怕 Github 跑路（笑），文章发布与更新也是相当简单，不需要操作服务器与数据库，对新人来说非常友好。
@@ -105,7 +107,7 @@ gitalk: {
 为了更好地定制各个页面的展示效果，这里约定一些页面内容的格式，主要分`文章、书单、友链、关于` 四个内容模板。对于文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染。
 
 ```markdown
-[pixiv: 41652582]: # "https://chanshiyu.com/poi/2019/3.jpg"
+[pixiv: 41652582]: # 'https://chanshiyu.com/poi/2019/3.jpg'
 ```
 
 其余三个页面模板参考如下：
@@ -123,7 +125,7 @@ gitalk: {
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
 ```markdown
-[pixiv: 41652582]: # "https://chanshiyu.com/poi/2019/3.jpg"
+[pixiv: 41652582]: # 'https://chanshiyu.com/poi/2019/3.jpg'
 
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 ```

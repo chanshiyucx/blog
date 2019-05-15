@@ -1,3 +1,5 @@
+[pixiv: 60095408]: # 'https://chanshiyu.com/poi/2019/16.jpg'
+
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。此前，只在 dva（内部封装 redux-saga）里使用过，此次深入了解之。
 
 ## Generator 函数
@@ -14,9 +16,9 @@ Generator 函数的调用方法与普通函数一样。不同的是，调用 Gen
 
 ```javascript
 function* helloWorldGenerator() {
-  yield "hello"
-  yield "world"
-  return "ending"
+  yield 'hello'
+  yield 'world'
+  return 'ending'
 }
 let hw = helloWorldGenerator()
 
@@ -49,7 +51,7 @@ Generator 函数可以不用 yield 语句，这时就变成了一个单纯的暂
 
 ```javascript
 function* f() {
-  console.log("执行了！")
+  console.log('执行了！')
 }
 let generator = f()
 setTimeout(function() {
@@ -127,15 +129,15 @@ b.next(13) // { value:42, done:true }
 
 ```javascript
 function* dataConsumer() {
-  console.log("Started")
+  console.log('Started')
   console.log(`1. ${yield}`)
   console.log(`2. ${yield}`)
-  return "result"
+  return 'result'
 }
 let genObj = dataConsumer()
 genObj.next() // Started
-genObj.next("a") // 1. a
-genObj.next("b") // 2. b
+genObj.next('a') // 1. a
+genObj.next('b') // 2. b
 ```
 
 ### for...of 循环
@@ -181,7 +183,7 @@ function* objectEntries(obj) {
     yield [propKey, obj[propKey]]
   }
 }
-let jane = { first: "Jane", last: "Doe" }
+let jane = { first: 'Jane', last: 'Doe' }
 for (let [key, value] of objectEntries(jane)) {
   console.log(`${key}: ${value}`)
 }
@@ -231,16 +233,16 @@ var g = function*() {
   try {
     yield
   } catch (e) {
-    console.log("内部捕获", e)
+    console.log('内部捕获', e)
   }
 }
 var i = g()
 i.next()
 try {
-  i.throw("a")
-  i.throw("b")
+  i.throw('a')
+  i.throw('b')
 } catch (e) {
-  console.log("外部捕获", e)
+  console.log('外部捕获', e)
 }
 // 内部捕获a
 // 外部捕获b
@@ -260,7 +262,7 @@ function* gen() {
 }
 var g = gen()
 g.next() // { value: 1, done: false }
-g.return("foo") // { value: "foo", done: true }
+g.return('foo') // { value: "foo", done: true }
 g.next() // { value: undefined, done: true }
 ```
 
@@ -294,13 +296,13 @@ g.next() // { value: 7, done: true }
 
 ```javascript
 function* foo() {
-  yield "a"
-  yield "b"
+  yield 'a'
+  yield 'b'
 }
 function* bar() {
-  yield "x"
+  yield 'x'
   yield* foo()
-  yield "y"
+  yield 'y'
 }
 ```
 
@@ -310,7 +312,7 @@ yield\* 后面的 Generator 函数（没有 return 语句时）不过是 for...o
 
 ```javascript
 function* gen() {
-  yield* ["a", "b", "c"]
+  yield* ['a', 'b', 'c']
 }
 gen().next() // { value:"a", done:false }
 ```
@@ -322,7 +324,7 @@ Generator 函数总是返回一个遍历器，这个遍历器是 Generator 函�
 ```javascript
 function* g() {}
 g.prototype.hello = function() {
-  return "hi!"
+  return 'hi!'
 }
 let obj = g()
 obj instanceof g // true

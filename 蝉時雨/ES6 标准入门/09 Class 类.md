@@ -1,3 +1,5 @@
+[pixiv: 68489306]: # 'https://chanshiyu.com/poi/2019/24.jpg'
+
 直至 ES6，JavaScript 终于有了“类”的概念，它简化了之前直接操作原型的语法，也是我最喜欢的新特性之一，但此类非彼类，它不同于熟知的如 Java 中的类，它本质上只是一颗语法糖。
 
 ## Class 的基本语法
@@ -53,9 +55,9 @@ class Point {
   toString() {}
 }
 const p = new Point(1)
-p.hasOwnProperty("x") // true
-p.hasOwnProperty("toString") // false
-p.__proto__.hasOwnProperty("toString") // true
+p.hasOwnProperty('x') // true
+p.hasOwnProperty('toString') // false
+p.__proto__.hasOwnProperty('toString') // true
 ```
 
 > **proto** 是浏览器厂商添加的私有属性，应避免使用，在生产环境中，可以使用 `Object.getPrototypeOf` 方法来获取实例对象的原型。
@@ -101,7 +103,7 @@ class Bar extends Foo {}
 利用 Symbol 值的唯一性将私有方法的名字命名为一个 Symbol 值，从而实现私有方法。
 
 ```javascript
-const bar = Symbol("bar")
+const bar = Symbol('bar')
 
 class Point {
   foo() {
@@ -122,7 +124,7 @@ class Logger {
     this.print()
   }
   print() {
-    console.log("Hello")
+    console.log('Hello')
   }
 }
 const logger = new Logger()
@@ -148,7 +150,7 @@ function selfish(target) {
   const handler = {
     get(target, key) {
       const value = Reflect.get(target, key)
-      if (typeof value !== "function") return value
+      if (typeof value !== 'function') return value
       if (!cache.has(value)) cache.set(value, value.bind(target))
       return cache.get(value)
     }
@@ -167,7 +169,7 @@ function Person(name) {
   if (new.target === Person) {
     this.name = name
   } else {
-    throw new Error("必须使用 new 生成实例")
+    throw new Error('必须使用 new 生成实例')
   }
 }
 ```
@@ -178,7 +180,7 @@ function Person(name) {
 class Shape {
   constructor() {
     if (new.target === Shape) {
-      throw new Error("本类不能实例化")
+      throw new Error('本类不能实例化')
     }
   }
 }
@@ -257,10 +259,10 @@ new B() // B
 ```javascript
 class Parent {
   static myMethod(msg) {
-    console.log("static", msg)
+    console.log('static', msg)
   }
   myMethod(msg) {
-    console.log("instance", msg)
+    console.log('instance', msg)
   }
 }
 
@@ -396,7 +398,7 @@ A.prototype.__proto__ === undefined // true
 
 ```javascript
 const p1 = new Point(2, 3)
-const p2 = new ColorPoint(2, 3, "red")
+const p2 = new ColorPoint(2, 3, 'red')
 p2.__proto__ === p1.__proto__ // false
 p2.__proto__.__proto__ === p1.__proto__ // true
 ```
@@ -416,7 +418,7 @@ function mix(...mixins) {
 }
 function copyProperties(target, source) {
   for (let key of Reflect.ownKeys(source)) {
-    if (key !== "constructor" && key !== "prototype" && key !== "name") {
+    if (key !== 'constructor' && key !== 'prototype' && key !== 'name') {
       let desc = Object.getOwnPropertyDescriptor(source, key)
       Object.defineProperty(target, key, desc)
     }
