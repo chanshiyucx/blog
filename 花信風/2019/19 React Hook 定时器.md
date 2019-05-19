@@ -1,4 +1,6 @@
-花了一天时间学习了 React 在 16.8 版本发布的 Hook 新功能，学完立马就爱上了这个新 API，用起来感觉比 class 组件爽多了。但 hook 虽然看似简单，但是要能熟练运用还是得花上一段时间。
+[pixiv: 60141148]: # 'https://chanshiyu.com/poi/2019/45.jpg'
+
+前段时间学习了 React 新发布的 Hook 新功能，学完立马就爱上了这个新 API，用起来感觉比 class 组件爽多了。但 hook 虽然看似简单，但是要能熟练运用还是得花上一段时间。
 
 ## 随机间隔计数器
 
@@ -12,7 +14,7 @@
 2. 同一个功能逻辑代码却分布在不同地方，比如创建定时器和清除定时器放在两个不同的生命周期
 
 ```javascript
-import React from "react"
+import React from 'react'
 
 class ClassVersion extends React.Component {
   constructor(props) {
@@ -71,7 +73,7 @@ class ClassVersion extends React.Component {
 通过 Hook 实现计数器，代码更加已读，而且功能逻辑代码集中，创建计数器和清空计数器的代码集中一起。
 
 ```javascript
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 
 function HookVersion() {
   const [count, setCount] = useState(0)
@@ -119,7 +121,7 @@ useEffect() Hook 同样会“遗忘”之前的结果。它清理上一个 effec
 3. 第二次渲染，设置回调为 cb2
 
 ```javascript
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef } from 'react'
 
 function HookVersion() {
   const [count, setCount] = useState(0)
