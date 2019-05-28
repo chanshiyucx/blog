@@ -172,8 +172,8 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 
 关于页面以 `## 段落` 拆分，其他不做约束。
 
-至此，一个新的博客便诞生了，之后便可执行 `npm run build` 进行打包，打包完成之后，将 Aurora 根目录 `dist/` 文件夹下的为所有文件复制到一个新文件夹，然后提交托管到 `Github pages` 上，当然也可以绑定自有域名。
+## 部署
 
-如果需要绑定自有域名，需要编辑 Aurora 根目录下 `public/CHNAME` 内容为你的域名，**并且到修改你的域名 DNS 解析到 Github ip**。然后重新打包，发布到 Github 上。
+修改根目录下 `deploy.sh`，配置自定义域名与推送仓库，然后执行 `deploy.sh` 自动打包发布到 github-pages。相关文档参考[自动部署](https://cli.vuejs.org/zh/guide/deployment.html#now)。
 
 Just enjoy it! 😃
