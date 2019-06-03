@@ -1,4 +1,12 @@
-[【WSL+Docker】新手 Win10 下的 WSL Ubuntu18 并安装使用 Docker](https://zhuanlan.zhihu.com/p/61542198)
+[pixiv: 73464412]: # 'https://chanshiyu.com/poi/2019/51.jpg'
+
+WSL（Windows Subsystem for Linux）是 win10 自带的适用于 Linux 的子系统。相比于虚拟机更为轻巧。启用 WSL 后配合 Win10 Microsoft Store 里自带的 Ubuntu，Debian 等 Linux 发行版，便可在 Win10 上运行 Linux 系统。
+
+Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。
+
+Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。
+
+本文是在自己在 Win10 WSL 环境下安装 Docker 的实录。
 
 ## WSL 环境安装
 
@@ -224,7 +232,7 @@ echo "export DOCKER_HOST='tcp://0.0.0.0:2375'" >> ~/.bashrc
 source ~/.bashrc # 更新环境变量
 ```
 
-## docker 操作
+## Docker 操作
 
 Docker 命令分管理命令 `Management Commands` 和命令 `Commands`。Docker 1.13+ 引入了管理命令来帮助组织一堆 Docker 命令。两个命令都做同样的事情。管理命令有助于对所有命令进行分类，并使命令本身更加一致。
 
