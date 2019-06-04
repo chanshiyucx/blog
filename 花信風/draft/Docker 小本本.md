@@ -1,6 +1,9 @@
 ## 关于 Docker
 
-Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。容器有点像轻量级的虚拟机，能够提供虚拟化的环境，但是成本开销小得多。
+> Build, Ship and Run.
+> Build once，Run anywhere.
+
+Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。容器有点像轻量级的虚拟机，能够提供虚拟化的环境，但是成本开销小得多。Docker 本身并不是容器，它是创建容器的工具，是应用容器引擎。
 
 Docker 的主要用途，目前有三大类：
 
@@ -114,6 +117,7 @@ docker container kill [containID]   # 手动杀死终止容器运行
 docker container rm [containerID]   # 删除容器
 docker container logs [containerID] # 查看 docker 容器的输出
 docker container exec [containerID] # 进入容器内部
+docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
 ```
 
 需要注意：
