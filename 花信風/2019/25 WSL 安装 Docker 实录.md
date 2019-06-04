@@ -1,4 +1,4 @@
-[pixiv: 73464412]: # 'https://chanshiyu.com/poi/2019/51.jpg'
+[pixiv: 73641386]: # 'https://chanshiyu.com/poi/2019/52.jpg'
 
 WSL（Windows Subsystem for Linux）是 win10 自带的适用于 Linux 的子系统。相比于虚拟机更为轻巧。启用 WSL 后配合 Win10 Microsoft Store 里自带的 Ubuntu，Debian 等 Linux 发行版，便可在 Win10 上运行 Linux 系统。
 
