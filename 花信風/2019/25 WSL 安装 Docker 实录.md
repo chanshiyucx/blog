@@ -32,7 +32,7 @@ uname -r
 cat /etc/lsb-release
 
 # 查看本地磁盘内存情况
-uname -r
+df -h
 ```
 
 ### 更新软件源（阿里云源）并更新软件
