@@ -80,7 +80,7 @@ leancloud: {
 
 Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理的文章存储是一样的，详细介绍见[官方文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)。
 
-首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 `https://chanshiyucx.github.io` 域名。最后将生成的 `Client ID` 和 `Client Secret` 填入相应配置项。
+首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 `https://chanshiyucx.github.io` 域名。最后将生成的 `Client ID` 和 `Client Secret` 填入相应配置项。**在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。**
 
 ![申请 GitHub Application](https://chanshiyu.com/poi/2019/申请_GitHub_Application.png)
 
@@ -104,25 +104,20 @@ gitalk: {
 
 ## 页面模板
 
-为了更好地定制各个页面的展示效果，这里约定一些页面内容的格式，主要分`文章、书单、友链、关于` 四个内容模板。对于文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染。
+为了更好地定制各个页面的展示效果，Aurora 约定一些页面格式以便内容能够正确解析。主要约定 `文章、书单、友链、关于` 四个页面内容模板。
 
-```markdown
-[pixiv: 41652582]: # 'https://chanshiyu.com/poi/2019/3.jpg'
-```
+四个页面模板参考如下：
 
-其余三个页面模板参考如下：
-
+- [文章模板](https://github.com/chanshiyucx/blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2019/04%20Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97.md)
 - [友链](https://github.com/chanshiyucx/blog/blob/master/Pages/Friends.md)
 - [书单](https://github.com/chanshiyucx/blog/blob/master/Pages/Books.md)
 - [关于](https://github.com/chanshiyucx/blog/blob/master/Pages/About.md)
 
+亦或是参考 [蝉時雨の Issues](https://github.com/chanshiyucx/blog/issues)。
+
 ### 文章模板
 
-由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 `issues 状态`与 `Labels` 进行分类。
-
-首先需要规定的是**文章的 issues 状态都是 `open` 的，友链、书单、关于、心情页面的 issues 内容都是 `closed` 状态的**。
-
-新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
+文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染，以后即使你更换博客主题，也不会影响内容的展示。
 
 ```markdown
 [pixiv: 41652582]: # 'https://chanshiyu.com/poi/2019/3.jpg'
@@ -130,11 +125,17 @@ gitalk: {
 JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
 ```
 
+由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 `issues 状态`与 `Labels` 进行分类。
+
+首先需要规定的是**文章的 issues 状态都是 `open` 的，友链、书单、关于、心情页面的 issues 内容都是 `closed` 状态的**。
+
+新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
+
 ![文章模板](https://chanshiyu.com/poi/2019/文章模板.png)
 
 ### 心情模板
 
-注意心情 issues 状态是 `closed` 的，且需要打上 `Mood` 的 Labels，其他不做约束。
+注意心情 issues 状态是 `closed` 的，且需要打上 `Inspiration` 的 Labels，其他不做约束。
 
 ![书单、友链、关于标签](https://chanshiyu.com/poi/2019/页面模板.png)
 
@@ -171,6 +172,10 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 ### 关于模板
 
 关于页面以 `## 段落` 拆分，其他不做约束。
+
+### 添加分类
+
+![添加分类](https://chanshiyu.com/poi/master/2019/Aurora%E5%88%86%E7%B1%BB.png)
 
 ## 部署
 
