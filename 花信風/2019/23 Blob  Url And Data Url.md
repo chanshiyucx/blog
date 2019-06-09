@@ -133,9 +133,7 @@ x2[0] = 2
 
 ## Data Url
 
-Data URLs，即前缀为 `data:` 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀（data:）、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：
-
-> data:[<mediatype>][;base64],<data>
+Data URLs，即前缀为 `data:` 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀（data:）、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：`data:[<mediatype>][;base64],<data>`。
 
 `mediatype` 是个 MIME 类型的字符串，例如 `image/jpeg` 表示 JPEG 图像文件。如果被省略，则默认值为 `text/plain;charset=US-ASCII`。
 
