@@ -104,16 +104,7 @@ gitalk: {
 
 ## 页面模板
 
-为了更好地定制各个页面的展示效果，Aurora 约定一些页面格式以便内容能够正确解析。主要约定 `文章、书单、友链、关于` 四个页面内容模板。
-
-四个页面模板参考如下：
-
-- [文章模板](https://github.com/chanshiyucx/blog/blob/master/%E8%8A%B1%E4%BF%A1%E9%A2%A8/2019/04%20Aurora%20%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97.md)
-- [友链](https://github.com/chanshiyucx/blog/blob/master/Pages/Friends.md)
-- [书单](https://github.com/chanshiyucx/blog/blob/master/Pages/Books.md)
-- [关于](https://github.com/chanshiyucx/blog/blob/master/Pages/About.md)
-
-亦或是参考 [蝉時雨の Issues](https://github.com/chanshiyucx/blog/issues)。
+为了更好地定制各个页面的展示效果，Aurora 约定一些页面格式以便内容能够正确解析。主要约定 `文章、书单、友链、关于` 四个页面内容模板。模板参考 [蝉時雨の Issues](https://github.com/chanshiyucx/blog/issues)。
 
 ### 文章模板
 
