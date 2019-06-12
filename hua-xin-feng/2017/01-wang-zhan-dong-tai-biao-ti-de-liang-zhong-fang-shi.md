@@ -1,0 +1,56 @@
+# 01 网站动态标题的两种方式
+
+现今不少个人博客喜欢用动态网站标题来卖萌，为小站增添几分生趣，如友邻[梓喵出没](https://www.azimiao.com/)，甚至一些商业网站如[饿了么](https://www.ele.me/home/)也借此效果来提高用户粘性，故此探究下网站的动态标题的几种实现方式。
+
+## Window 对象
+
+浏览器 Window 对象有 `onblur` 和 `onfocus` 两个方法，分别表示焦点从当前窗口移开和选中，通过这两个方法可以简单设置动态标题。代码如下：
+
+```javascript
+const title = {
+  focus: '蝉鸣如雨',
+  blur: '花宵道中'
+}
+
+window.onblur = () => (document.title = title.blur)
+window.onfocus = () => (document.title = title.focus)
+```
+
+通过判断当前窗口的焦点状态来设置标题，多数网站的动态标题都是用的这个方法。
+
+## Page Visibility API
+
+`Page Visibility API` 可以获取一个网页是可见或点击选中的状态，用户使用切换标签的方式来浏览网页时，API 会发送一个关于当前页面的可见信息的事件 `visibilitychange`，可以通过监听页面可见状态来实现动态标题，目前主流浏览器都支持此 API。
+
+![Can I use Page Visibility API](https://chanshiyu.com/poi/2019/Can_I_use_Page_Visibility_API.png#full)
+
+`Page Visibility API` 有如下两个属性:
+
+* `document.hidden`：如果页面处于被认为是对用户隐藏状态时返回 true，否则返回 false。
+* `document.visibilityState`：一个用来展示文档可见性状态的字符串。可能的值有：
+  * `visible`：页面内容至少部分可见。
+  * `hidden`：页面内容对用户不可见。
+  * `prerender`：页面内容正在被预渲染且对用户是不可见的。
+  * `unloaded`：页面正在从内存中卸载。
+
+所以使用 `Page Visibility API` 可以简单实现网站动态标题：
+
+```javascript
+const title = {
+  focus: '蝉鸣如雨',
+  blur: '花宵道中'
+}
+
+handleVisibilityChange = () => {
+  if (document.hidden) {
+    document.title = title.blur
+  } else {
+    document.title = title.focus
+  }
+}
+
+document.addEventListener('visibilitychange', handleVisibilityChange, false)
+```
+
+应当注意的是当浏览器最小化时，不会触发 `visibilitychange` 事件，也不会设置 hidden 为 true。
+

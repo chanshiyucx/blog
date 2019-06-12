@@ -1,0 +1,82 @@
+# 13 动态加载 JS 文件
+
+对于 Vue、React 等框架开发的单页面应用，在某些页面开发特殊功能时经常需要依赖第三方 JS 文件，如果在全局引入 CDN 资源可能会加载冗余文件，此时最好使用动态加载方式。
+
+动态加载 JS 脚本指仅在某些特殊页面引入依赖文件，而非全局引入，这样可以避免在这些页面并未打开时造成加载无用的资源，提高页面加载速度的同时，也让整个项目更加模块化。
+
+文档对象模型（DOM）允许使用 JavaScript 动态创建 HTML。`<script>` 元素也是如此，它与页面其他元素没有什么不同，所以可以手动创建 `<script>` 来加载 JS 文件。
+
+## defer 与 async
+
+`<script>` 元素有两个属性 `defer` 与 `async` 分别代表两种 JS 脚本的加载执行模式。
+
+> defer：此布尔属性被设置为向浏览器指示脚本在文档被解析后执行。  
+> async：设置此布尔属性，以指示浏览器如果可能的话，应异步执行脚本。
+
+对于 `defer`，可以认为是将外链的 js 放在了页面底部。js 的加载不会阻塞页面的渲染和资源的加载。`defer` 会按照原本的 js 的顺序执行。
+
+对于 `async`，它的作用是能够异步的加载和执行脚本，同样不会阻塞页面的渲染和资源的加载，一旦加载到就会立刻执行。在有 `async` 的情况下，js 一旦下载好了就会执行，所以很有可能不是按照原本的顺序来执行的。如果多个脚本文件前后具有相互依赖性，用 `async` 就很有可能出错。
+
+所以通俗来讲，浏览器首先会请求 HTML 文档，然后对其中的各种资源调用相应的资源加载器进行异步网络请求，同时进行 DOM 渲染，直到遇 `<script>` 到标签的时候，主进程才会停止渲染等待此资源加载完毕然后执行，继而继续进行 DOM 解析。如果加了 `async` 属性就相当于单独开了一个进程去独立加载和执行，而`defer`是和将 `<script>` 放到 `<body>` 底部一样的效果。
+
+![defer &#x4E0E; async](https://chanshiyu.com/poi/2019/defer_与_async.jpeg#full)
+
+上图蓝色线代表网络读取，红色线代表执行时间，绿色线代表 HTML 解析。
+
+```javascript
+const loadJS = (url, defer) => {
+  const recaptchaScript = document.createElement('script')
+  recaptchaScript.setAttribute('src', url)
+  if (defer) {
+    recaptchaScript.defer = true
+  } else {
+    recaptchaScript.async = true
+  }
+  recaptchaScript.onload = () => {
+    console.log('加载完成', url)
+  }
+  document.head.appendChild(recaptchaScript)
+}
+```
+
+下面举个栗子，这里加载五个 JS 脚本，其中 `jquery-ui` 与 `fullcalendar` 都依赖 `jquery`，而 `locale` 依赖 `fullcalendar`，这种情况需要让 JS 文件按照一定的依赖关系按次序加载资源。
+
+```javascript
+const assets = [
+  'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale/zh-cn.js'
+]
+
+assets.forEach(url => loadJS(url, true))
+```
+
+## 现实很骨感
+
+然而在现实环境当中，浏览器对于延迟脚本并不一定会按照顺序执行，也不一定会在 DOMContentLoaded 事件触发前执行，因此仅使用 `defer` 来控制脚本文件的执行顺序有很大的风险，但可以通过监听 `onload` 事件来判断文件是否加载完成，配合 `Promise` 等待上一个脚本文件加载完成后再加载下一个文件，从而实现按次序加载执行脚本。
+
+```javascript
+const loadJS = url => {
+  return new Promise(resolve => {
+    const recaptchaScript = document.createElement('script')
+    recaptchaScript.setAttribute('src', url)
+    recaptchaScript.defer = true
+    recaptchaScript.onload = () => {
+      resolve()
+    }
+    document.head.appendChild(recaptchaScript)
+  }).catch(console.error)
+}
+
+// 按次序加载 JS 文件
+const loadAssets = async () => {
+  for (const url of assets) {
+    await loadJS(url, true)
+  }
+}
+```
+
+Just enjoy it ฅ●ω●ฅ
+
