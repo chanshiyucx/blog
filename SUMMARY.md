@@ -73,4 +73,4 @@
   - [Node](xing-yue-ye/node/README.md)
     - [Node Tips](xing-yue-ye/node/node-tips.md)
   - [Tool](xing-yue-ye/tool/README.md)
-    - [Git](xing-yue-ye/Tool/git.md)
+    - [Git](xing-yue-ye/tool/git.md)
