@@ -1,54 +1,6 @@
-# Life is Long
+# Snippets
 
-## 001 获取 Node 命令行执行参数列表
-
-```javascript
-module.exports = function getArgList() {
-  let argvs
-  const res = {}
-  try {
-    argvs = JSON.parse(process.env.npm_config_argv).original
-  } catch (ex) {
-    // process 是一个全局变量，可通过 process.argv 获得命令行参数
-    argvs = process.argv
-  }
-  // argv[0] 固定等于 NodeJS 执行程序的绝对路径，argv[1] 固定等于主模块的绝对路径
-  const argv = argvs.slice(2)
-  for (const i in argv) {
-    const key = argv[i].match(/--(\S*)=/)[1]
-    const value = argv[i].split('=')[1]
-    res[key] = value
-  }
-  return res
-}
-```
-
-## 002 动态加载 JS 文件
-
-```javascript
-const loadJS = url => {
-  return new Promise(resolve => {
-    const recaptchaScript = document.createElement('script')
-    recaptchaScript.setAttribute('src', url)
-    recaptchaScript.async = true
-    recaptchaScript.onload = () => resolve()
-    document.head.appendChild(recaptchaScript)
-  })
-}
-
-const loadAssets = async () => {
-  const assets = [
-    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
-  ]
-
-  for (const url of assets) {
-    await loadJS(url)
-  }
-}
-```
-
-## 003 Fisher–Yates Shuffle 洗牌算法
+## 001 Fisher–Yates Shuffle 洗牌算法
 
 ```javascript
 export const shuffle = arr => {
@@ -62,42 +14,7 @@ export const shuffle = arr => {
 }
 ```
 
-## 004 动态下载文件
-
-```javascript
-export const downloadFile = file => {
-  fetch(file.url).then(res =>
-    res.blob().then(blob => {
-      const a = document.createElement('a')
-      const url = window.URL.createObjectURL(blob)
-      a.href = url
-      a.download = file.name
-      a.click()
-      window.URL.revokeObjectURL(url)
-    })
-  )
-}
-```
-
-## 005 获取文件扩展名
-
-```javascript
-export const getFileExt = filename => {
-  return filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2)
-}
-```
-
-## 006 创建独一无二字符串
-
-```javascript
-export const createUniqueString = () => {
-  const timestamp = +new Date() + ''
-  const randomNum = parseInt((1 + Math.random()) * 65536) + ''
-  return (+(randomNum + timestamp)).toString(32)
-}
-```
-
-## 007 数字千分位格式化
+## 002 数字千分位格式化
 
 ```javascript
 export const toThousandFilter = num => {
@@ -105,7 +22,7 @@ export const toThousandFilter = num => {
 }
 ```
 
-## 008 日期格式化
+## 003 日期格式化
 
 ```javascript
 export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
@@ -146,7 +63,67 @@ export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
 }
 ```
 
-## 009 事件绑定与解绑
+## 004 动态加载 JS 文件
+
+```javascript
+const loadJS = url => {
+  return new Promise(resolve => {
+    const recaptchaScript = document.createElement('script')
+    recaptchaScript.setAttribute('src', url)
+    recaptchaScript.async = true
+    recaptchaScript.onload = () => resolve()
+    document.head.appendChild(recaptchaScript)
+  })
+}
+
+const loadAssets = async () => {
+  const assets = [
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
+  ]
+
+  for (const url of assets) {
+    await loadJS(url)
+  }
+}
+```
+
+## 005 动态下载文件
+
+```javascript
+export const downloadFile = file => {
+  fetch(file.url).then(res =>
+    res.blob().then(blob => {
+      const a = document.createElement('a')
+      const url = window.URL.createObjectURL(blob)
+      a.href = url
+      a.download = file.name
+      a.click()
+      window.URL.revokeObjectURL(url)
+    })
+  )
+}
+```
+
+## 006 获取文件扩展名
+
+```javascript
+export const getFileExt = filename => {
+  return filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2)
+}
+```
+
+## 007 创建独一无二字符串
+
+```javascript
+export const createUniqueString = () => {
+  const timestamp = +new Date() + ''
+  const randomNum = parseInt((1 + Math.random()) * 65536) + ''
+  return (+(randomNum + timestamp)).toString(32)
+}
+```
+
+## 008 事件绑定与解绑
 
 ```javascript
 /**
@@ -188,7 +165,7 @@ export const off = (function() {
 })()
 ```
 
-## 010 获取视频时长
+## 009 获取视频时长
 
 ```javascript
 export const getVideoDuration = () => {
@@ -203,7 +180,7 @@ export const getVideoDuration = () => {
 }
 ```
 
-## 011 判断是否重复操作
+## 010 判断是否重复操作
 
 ```javascript
 export const isRepeat = (function() {

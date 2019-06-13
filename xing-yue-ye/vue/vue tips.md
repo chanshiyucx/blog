@@ -1,4 +1,4 @@
-# Code is Short
+# Vue Tips
 
 ## 001 redirect 刷新页面
 
