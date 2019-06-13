@@ -1,6 +1,6 @@
 # Life is Long
 
-## 0x01 获取 Node 命令行执行参数列表
+## 001 获取 Node 命令行执行参数列表
 
 ```javascript
 module.exports = function getArgList() {
@@ -23,7 +23,7 @@ module.exports = function getArgList() {
 }
 ```
 
-## 0x02 动态加载 JS 文件
+## 002 动态加载 JS 文件
 
 ```javascript
 const loadJS = url => {
@@ -48,7 +48,7 @@ const loadAssets = async () => {
 }
 ```
 
-## 0x03 Fisher–Yates Shuffle 洗牌算法
+## 003 Fisher–Yates Shuffle 洗牌算法
 
 ```javascript
 export const shuffle = arr => {
@@ -62,7 +62,7 @@ export const shuffle = arr => {
 }
 ```
 
-## 0x04 动态下载文件
+## 004 动态下载文件
 
 ```javascript
 export const downloadFile = file => {
@@ -79,7 +79,7 @@ export const downloadFile = file => {
 }
 ```
 
-## 0x05 获取文件扩展名
+## 005 获取文件扩展名
 
 ```javascript
 export const getFileExt = filename => {
@@ -87,7 +87,7 @@ export const getFileExt = filename => {
 }
 ```
 
-## 0x06 创建独一无二字符串
+## 006 创建独一无二字符串
 
 ```javascript
 export const createUniqueString = () => {
@@ -97,7 +97,7 @@ export const createUniqueString = () => {
 }
 ```
 
-## 0x07 数字千分位格式化
+## 007 数字千分位格式化
 
 ```javascript
 export const toThousandFilter = num => {
@@ -105,7 +105,7 @@ export const toThousandFilter = num => {
 }
 ```
 
-## 0x08 日期格式化
+## 008 日期格式化
 
 ```javascript
 export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
@@ -146,7 +146,7 @@ export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
 }
 ```
 
-## 0x09 事件绑定与解绑
+## 009 事件绑定与解绑
 
 ```javascript
 /**
@@ -188,7 +188,7 @@ export const off = (function() {
 })()
 ```
 
-## 0x10 获取视频时长
+## 010 获取视频时长
 
 ```javascript
 export const getVideoDuration = () => {
@@ -203,7 +203,7 @@ export const getVideoDuration = () => {
 }
 ```
 
-## 0x11 判断是否重复操作
+## 011 判断是否重复操作
 
 ```javascript
 export const isRepeat = (function() {

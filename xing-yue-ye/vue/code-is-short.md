@@ -1,6 +1,6 @@
 # Code is Short
 
-## 0x01 redirect 刷新页面
+## 001 redirect 刷新页面
 
 目的是在不刷新页面的情况下更新路由，实现类似 `location.reload()` 的功能，区别是只更新路由而不是刷新整个页面。关于这个问题的讨论可以查看 Github Issues [\[Feature\] A reload method like location.reload\(\)](https://github.com/vuejs/vue-router/issues/296)。
 
@@ -31,7 +31,7 @@ this.$router.replace({
 })
 ```
 
-## 0x02 removeRoutes
+## 002 removeRoutes
 
 Vue Router 可以通过 `addRoutes` 来添加动态路由，却没有方法来移除路由。这就是导致一个问题，当用户权限发生变化的时候，或者说用户登出的时候，只能通过刷新页面的方式，才能清空之前注册的路由。作为一个 SPA 应用，刷新页面其实是一种很糟糕的用户体验。
 
@@ -58,7 +58,7 @@ export function resetRouter() {
 export default router
 ```
 
-## 0x03 引入 CDN 文件
+## 003 引入 CDN 文件
 
 对于项目中用到的一些第三方库，可以通过 CDN 的方式来引入，这样可以增加项目构建的速度，而且如 jsdelivr、unpkg 等 CDN 源提供免费的资源加速与缓存优化。一般的 CDN 资源引入方式是在 `index.html` 里直接引入外链，但是这种方式不够优雅，通过 webpack 可以用更 Geek 的方式实现。
 
@@ -102,7 +102,7 @@ module.exports = {
 </html>
 ```
 
-## 0x04 Watch immediate
+## 004 Watch immediate
 
 Vue watch 数据时在实例初始化时并不会执行，只有初始化后更新才会触发。如何让 watch 在初始化时候也执行呢？
 
@@ -120,7 +120,7 @@ watch: {
 }
 ```
 
-## 0x05 Attrs 和 Listeners
+## 005 Attrs 和 Listeners
 
 如果有 react 使用经验的同学会知道，在 react 中可以通过扩展运算符来一次性传递多个 props，但是在 Vue 中如何实现呢？
 
