@@ -1,11 +1,6 @@
 # Table of contents
 
 - [README](README.md)
-- [星月夜](xing-yue-ye/README.md)
-  - [Vue](xing-yue-ye/vue/README.md)
-    - [Tips](xing-yue-ye/vue/001-code-is-short.md)
-  - [JavaScript](xing-yue-ye/javascript/README.md)
-    - [获取 Node 命令行执行参数列表](xing-yue-ye/javascript/001-life-is-long.md)
 - [花信風](hua-xin-feng/README.md)
   - [2017](hua-xin-feng/2017/README.md)
     - [01 网站动态标题的两种方式](hua-xin-feng/2017/01-wang-zhan-dong-tai-biao-ti-de-liang-zhong-fang-shi.md)
@@ -70,3 +65,8 @@
     - [02 设计模式（上）](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/02-she-ji-mo-shi-shang.md)
     - [03 设计模式（下）](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/03-she-ji-mo-shi-xia.md)
     - [04 设计原则和编程技巧](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/04-she-ji-yuan-ze-he-bian-cheng-ji-qiao.md)
+- [星月夜](xing-yue-ye/README.md)
+  - [Vue](xing-yue-ye/vue/README.md)
+    - [Code is Short](xing-yue-ye/vue/001-code-is-short.md)
+  - [JavaScript](xing-yue-ye/javascript/README.md)
+    - [获取 Node 命令行执行参数列表](xing-yue-ye/javascript/001-life-is-long.md)
