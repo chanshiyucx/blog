@@ -83,7 +83,7 @@ module.exports = {
 
 然后在 `public/index.html` 中依次注入 css 与 js：
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -136,3 +136,4 @@ watch: {
 ```javascript
 <Hello v-bind="$attrs" v-on="$listeners" />
 ```
+

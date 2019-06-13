@@ -1,4 +1,4 @@
-# 23 Blob  Url And Data Url
+# 23 Blob Url And Data Url
 
 一直搞不清楚 JavaScript 底层的文件数据操作原理，对于经常涉及到文本格式转换或者文本文件加解密时经常无限采坑，Blob Url 和 Data Url，对于它们可真是最熟悉的陌生人。
 
