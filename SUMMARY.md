@@ -71,6 +71,6 @@
   - [Vue](xing-yue-ye/vue/README.md)
     - [Vue Tips](xing-yue-ye/vue/vue-tips.md)
   - [Node](xing-yue-ye/Node/README.md)
-    - [Node Tips](xing-yue-ye/node/node-tips.md)
+    - [Node Tips](xing-yue-ye/Node/node-tips.md)
   - [Tool](xing-yue-ye/tool/README.md)
     - [Git](xing-yue-ye/Tool/git.md)
