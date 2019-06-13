@@ -70,3 +70,5 @@
     - [Code is Short](xing-yue-ye/vue/code-is-short.md)
   - [JavaScript](xing-yue-ye/javascript/README.md)
     - [Life is Long](xing-yue-ye/javascript/life-is-long.md)
+  - [Tool](xing-yue-ye/tool/README.md)
+    - [Git](xing-yue-ye/tool/git.md)
