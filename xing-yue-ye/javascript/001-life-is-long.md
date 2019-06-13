@@ -1,4 +1,6 @@
-# 获取 Node 命令行执行参数列表
+# 001 Life is Long
+
+## 0x01 获取 Node 命令行执行参数列表
 
 ```javascript
 module.exports = function getArgList() {
@@ -20,4 +22,3 @@ module.exports = function getArgList() {
   return res
 }
 ```
-
