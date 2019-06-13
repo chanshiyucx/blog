@@ -67,6 +67,6 @@
     - [04 设计原则和编程技巧](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/04-she-ji-yuan-ze-he-bian-cheng-ji-qiao.md)
 - [星月夜](xing-yue-ye/README.md)
   - [Vue](xing-yue-ye/vue/README.md)
-    - [001 Code is Short](xing-yue-ye/vue/001-code-is-short.md)
+    - [Code is Short](xing-yue-ye/vue/code-is-short.md)
   - [JavaScript](xing-yue-ye/javascript/README.md)
-    - [001 Life is Long](xing-yue-ye/javascript/001-life-is-long.md)
+    - [Life is Long](xing-yue-ye/javascript/life-is-long.md)

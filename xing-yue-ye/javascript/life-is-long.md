@@ -1,4 +1,4 @@
-# 001 Life is Long
+# Life is Long
 
 ## 0x01 获取 Node 命令行执行参数列表
 
@@ -201,4 +201,18 @@ export const getVideoDuration = () => {
   }
   video.src = URL.createObjectURL(fileObj)
 }
+```
+
+## 0x11 判断是否重复操作
+
+```javascript
+export const isRepeat = (function() {
+  const reData = {}
+  return function(name = 'default', time = 300) {
+    const i = new Date()
+    const re = i - (isNaN(reData[name]) ? 0 : reData[name])
+    reData[name] = i
+    return re <= time
+  }
+})()
 ```

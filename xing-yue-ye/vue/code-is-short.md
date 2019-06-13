@@ -1,4 +1,4 @@
-# 001 Code is Short
+# Code is Short
 
 ## 0x01 redirect 刷新页面
 
