@@ -1,6 +1,6 @@
 # 25 WSL 安装 Docker 实录
 
-WSL（Windows Subsystem for Linux）是 win10 自带的适用于 Linux 的子系统。相比于虚拟机更为轻巧。启用 WSL 后配合 Win10 Microsoft Store 里自带的 Ubuntu，Debian 等 Linux 发行版，便可在 Win10 上运行 Linux 系统。
+WSL（Windows Subsystem for Linux）是 win10 自带的适用于 Linux 的子系统。相比于虚拟机更为轻巧。启用 WSL 后配合 Win10 商店自带的 Ubuntu，便可在 Win10 上运行 Linux 系统。
 
 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。它是目前最流行的 Linux 容器解决方案。
 

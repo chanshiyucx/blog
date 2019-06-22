@@ -3,7 +3,7 @@
 ## 001 Fisher–Yates Shuffle 洗牌算法
 
 ```javascript
-export const shuffle = arr => {
+const shuffle = arr => {
   let i = arr.length
   let j
   while (i) {
@@ -17,7 +17,7 @@ export const shuffle = arr => {
 ## 002 数字千分位格式化
 
 ```javascript
-export const toThousandFilter = num => {
+const toThousandFilter = num => {
   return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
@@ -25,7 +25,7 @@ export const toThousandFilter = num => {
 ## 003 日期格式化
 
 ```javascript
-export const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
+const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
   if (arguments.length === 0) return null
   let date
   if (typeof time === 'object') {
@@ -91,7 +91,7 @@ const loadAssets = async () => {
 ## 005 动态下载文件
 
 ```javascript
-export const downloadFile = file => {
+const downloadFile = file => {
   fetch(file.url).then(res =>
     res.blob().then(blob => {
       const a = document.createElement('a')
@@ -108,7 +108,7 @@ export const downloadFile = file => {
 ## 006 获取文件扩展名
 
 ```javascript
-export const getFileExt = filename => {
+const getFileExt = filename => {
   return filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2)
 }
 ```
@@ -116,7 +116,7 @@ export const getFileExt = filename => {
 ## 007 创建独一无二字符串
 
 ```javascript
-export const createUniqueString = () => {
+const createUniqueString = () => {
   const timestamp = +new Date() + ''
   const randomNum = parseInt((1 + Math.random()) * 65536) + ''
   return (+(randomNum + timestamp)).toString(32)
@@ -129,7 +129,7 @@ export const createUniqueString = () => {
 /**
  * @description 绑定事件 on(element, event, handler)
  */
-export const on = (function() {
+const on = (function() {
   if (document.addEventListener) {
     return function(element, event, handler) {
       if (element && event && handler) {
@@ -148,7 +148,7 @@ export const on = (function() {
 /**
  * @description 解绑事件 off(element, event, handler)
  */
-export const off = (function() {
+const off = (function() {
   if (document.removeEventListener) {
     return function(element, event, handler) {
       if (element && event) {
@@ -168,7 +168,7 @@ export const off = (function() {
 ## 009 获取视频时长
 
 ```javascript
-export const getVideoDuration = () => {
+const getVideoDuration = () => {
   const fileObj = this.$refs.file.files[0]
   const video = document.createElement('video')
   video.preload = 'metadata'
@@ -183,7 +183,7 @@ export const getVideoDuration = () => {
 ## 010 判断是否重复操作
 
 ```javascript
-export const isRepeat = (function() {
+const isRepeat = (function() {
   const reData = {}
   return function(name = 'default', time = 300) {
     const i = new Date()
@@ -192,4 +192,23 @@ export const isRepeat = (function() {
     return re <= time
   }
 })()
+```
+
+## 011 Chunk array
+
+长数组按指定长度拆分为嵌套子数组：
+
+```javascript
+const chunk = (arr, size) =>
+  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(size * i, size * i + size))
+chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
+```
+
+## 012 DeepFlatten
+
+多层嵌套数组展开：
+
+```javascript
+const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)))
+deepFlatten([1, [2, 3], [[4, 5], 6]]) // [1, 2, 3, 4, 5, 6]
 ```
