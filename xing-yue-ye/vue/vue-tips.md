@@ -182,3 +182,19 @@ this.$notification('提示', {
   icon: 'static/icon.png'
 })
 ```
+
+## 007 获取路由参数
+
+如果项目有使用 vue-router 的话，最简单的方式是取 `this.$route.query`。但是有些项目并没有使用 vue-router，这时可以使用 `URLSearchParams`。
+
+```javascript
+//  url = "https://xxxx.com?a=1&b=2"
+const searchParams = new URLSearchParams(window.location.search)
+searchParams.has('a') === true // true
+searchParams.get('a') === '1' // true
+searchParams.getAll('a') // ["1"]
+searchParams.append('c', '3') // "a=1&b=2&c=3"
+searchParams.toString() // "a=1&b=2&c=3"
+searchParams.set('a', '0') // "a=0&b=2&c=3"
+searchParams.delete('a') // "b=2&c=3"
+```
