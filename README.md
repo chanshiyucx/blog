@@ -49,7 +49,7 @@
 [20 Fetch data with React Hooks](hua-xin-feng/2019/20-fetch-data-with-react-hooks.md)  
 [21 React Props Children 传值](hua-xin-feng/2019/21-react-props-children-chuan-zhi.md)  
 [22 字符编码の小常识](hua-xin-feng/2019/22-no.md)  
-[23 Blob 与 Base64](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/花信風/2019/23%20Blob%20与%20Base64.md)  
+[23 Blob 与 Base64](hua-xin-feng/2019/23%20Blob%20与%20Base64.md)  
 [24 React 和 Vue 中 key 的作用](hua-xin-feng/2019/24-react-he-vue-zhong-key-de-zuo-yong.md)  
 [25 WSL 安装 Docker 实录](hua-xin-feng/2019/25-wsl-an-zhuang-docker-shi-lu.md)  
 [26 Docker 小本本](hua-xin-feng/2019/26-docker-xiao-ben-ben.md)
