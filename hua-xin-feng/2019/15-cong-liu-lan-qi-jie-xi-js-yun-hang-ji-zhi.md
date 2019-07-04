@@ -83,7 +83,7 @@
   * 最后 Renderer 进程将结果传递给 Browser 进程
 * Browser 进程接收到结果并将结果绘制出来
 
-![Browser &#x8FDB;&#x7A0B;&#x548C; Renderer &#x8FDB;&#x7A0B;&#x901A;&#x4FE1;](https://chanshiyu.com/poi/2019/Browser进程和%20Renderer进程通信.png)
+![Browser &#x8FDB;&#x7A0B;&#x548C; Renderer &#x8FDB;&#x7A0B;&#x901A;&#x4FE1;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Browser进程和%20Renderer进程通信.png)
 
 ## Renderer 进程的多线程
 
@@ -119,7 +119,7 @@ Worker 线程一旦新建成功，就会始终运行，不会被主线程上的�
 
 渲染完毕后执行 load 事件，其流程图如下所示：
 
-![&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;](https://chanshiyu.com/poi/2019/浏览器渲染流程.png#full)
+![&#x6D4F;&#x89C8;&#x5668;&#x6E32;&#x67D3;&#x6D41;&#x7A0B;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/浏览器渲染流程.png#full)
 
 ### load 事件与 DOMContentLoaded 事件
 
@@ -174,7 +174,7 @@ Worker 线程一旦新建成功，就会始终运行，不会被主线程上的�
 * 主线程之外，事件触发线程管理着一个`任务队列`，只要异步任务有了运行结果，就在任务队列之中放置一个事件
 * 一旦执行栈中的所有同步任务执行完毕，系统就会读取任务队列，将可运行的异步任务添加到可执行栈中，开始执行
 
-![&#x6267;&#x884C;&#x6808;&#x4E0E;&#x4EFB;&#x52A1;&#x961F;&#x5217;](https://chanshiyu.com/poi/2019/执行栈与任务队列.png)
+![&#x6267;&#x884C;&#x6808;&#x4E0E;&#x4EFB;&#x52A1;&#x961F;&#x5217;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/执行栈与任务队列.png)
 
 可以解释如下：
 
@@ -199,7 +199,7 @@ macrotask 与 microtask 各有哪些？
 
 最后总结下 macrotask 与 microtask 的运行机制：
 
-![macrotask &#x4E0E; microtask &#x7684;&#x8FD0;&#x884C;&#x673A;&#x5236;](https://chanshiyu.com/poi/2019/macrotask与microtask的运行机制.png)
+![macrotask &#x4E0E; microtask &#x7684;&#x8FD0;&#x884C;&#x673A;&#x5236;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/macrotask与microtask的运行机制.png)
 
 * 执行一个宏任务（栈中没有就从事件队列中获取）
 * 执行过程中如果遇到微任务，就将它添加到微任务的任务队列中

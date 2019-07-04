@@ -6,7 +6,7 @@
 
 Java 服务端也是采用分层架构，针对每一层，对应对象的职责是不同的，以及层与层之间也需要通信，故而有着不同的“概念”对象。
 
-![Java &#x6570;&#x636E;&#x6A21;&#x578B;](https://chanshiyu.com/poi/2019/Java_数据模型.jpg)
+![Java &#x6570;&#x636E;&#x6A21;&#x578B;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java_数据模型.jpg)
 
 ## PO 和 VO
 

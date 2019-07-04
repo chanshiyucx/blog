@@ -55,7 +55,7 @@ ctx.clearRect(70, 70, 160, 160)
 ctx.strokeRect(90, 90, 120, 120)
 ```
 
-![&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x7ED8;&#x5236;&#x77E9;&#x5F62;](https://chanshiyu.com/poi/2019/三种方式绘制矩形.png)
+![&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x7ED8;&#x5236;&#x77E9;&#x5F62;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/三种方式绘制矩形.png)
 
 #### 绘制路径
 
@@ -99,7 +99,7 @@ ctx.stroke()
 
 注意到填充三角形和描边三角形有些不同，当路径使用填充 `fill()` 时会自动闭合，而使用描边 `stroke()` 时则不会闭合路径，所以需要调用 `closePath()` 方法。
 
-![&#x7ED8;&#x5236;&#x4E09;&#x89D2;&#x5F62;](https://chanshiyu.com/poi/2019/绘制三角形.png)
+![&#x7ED8;&#x5236;&#x4E09;&#x89D2;&#x5F62;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/绘制三角形.png)
 
 示例 2：绘制笑脸
 
@@ -116,7 +116,7 @@ ctx.arc(190, 110, 10, 0, Math.PI * 2, false) // 右眼
 ctx.stroke()
 ```
 
-![&#x7B11;&#x8138;](https://chanshiyu.com/poi/2019/笑脸.png)
+![&#x7B11;&#x8138;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/笑脸.png)
 
 ### 贝塞尔曲线
 
@@ -124,11 +124,11 @@ canvas 里使用二次贝塞尔曲线和三次贝塞尔曲线可以用来绘制�
 
 canvas API `quadraticCurveTo(cp1x, cp1y, x, y)`，用来绘制二次贝塞尔曲线，`cp1x,cp1y` 为控制点，`x,y` 为结束点。
 
-![&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;](https://chanshiyu.com/poi/2019/二次贝塞尔曲线.gif)
+![&#x4E8C;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/二次贝塞尔曲线.gif)
 
 canvas API `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`，用来绘制三次贝塞尔曲线，`cp1x,cp1y` 为控制点一，`cp2x,cp2y` 为控制点二，`x,y` 为结束点。
 
-![&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;](https://chanshiyu.com/poi/2019/三次贝塞尔曲线.gif)
+![&#x4E09;&#x6B21;&#x8D1D;&#x585E;&#x5C14;&#x66F2;&#x7EBF;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/三次贝塞尔曲线.gif)
 
 关于贝塞尔曲线的使用，这里不再细研究~~（看得头痛）~~，下次如有机会再说。
 

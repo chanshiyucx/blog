@@ -37,7 +37,7 @@ virtual dom 另一个重大意义就是提供一个中间层，通过 js 去写 
 
 **比较只会在同层级进行, 不会跨层级比较**，以下图为例，了解下 diff 过程中的 dom 比较流程：
 
-![DOM\_&#x6811;&#x7684;&#x6BD4;&#x8F83;](https://chanshiyu.com/poi/2019/DOM_树的比较.jpg)
+![DOM\_&#x6811;&#x7684;&#x6BD4;&#x8F83;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/DOM_树的比较.jpg)
 
 ```markup
 <!-- 层级1 -->
@@ -179,7 +179,7 @@ function patchVnode(oldVnode, vnode) {
 
 上面第 3 步进行子节点比较 `updateChildren` 采用的是 `头尾交叉对比`，大致就是 `oldCh` 和 `newCh` 各有两个头尾的变量 `StartIdx` 和 `EndIdx`，它们的 2 个变量相互比较，一共有 4 种比较方式。如果 4 种比较都没匹配，如果设置了 key，就会用 key 进行比较，在比较的过程中，变量会往中间靠，一旦 `StartIdx>EndIdx` 表明 `oldCh` 和 `newCh` 至少有一个已经遍历完了，就会结束比较。交叉对比源码参考 [Vue/patch.js](https://github.com/vuejs/vue/blob/dev/src/core/vdom/patch.js#L424)。
 
-![&#x5934;&#x5C3E;&#x4EA4;&#x53C9;&#x6BD4;&#x8F83;](https://chanshiyu.com/poi/2019/diff2.png)
+![&#x5934;&#x5C3E;&#x4EA4;&#x53C9;&#x6BD4;&#x8F83;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/diff2.png)
 
 ## key 的作用
 
