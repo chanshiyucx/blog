@@ -18,10 +18,10 @@
 
 ### JavaScript 设计模式与开发实践
 
-[01 基础知识](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/01-ji-chu-zhi-shi.md)  
-[02 设计模式（上）](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/02-she-ji-mo-shi-shang.md)  
-[03 设计模式（下）](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/03-she-ji-mo-shi-xia.md)  
-[04 设计原则和编程技巧](chan-shi-yu/javascript-she-ji-mo-shi-yu-kai-fa-shi-jian/04-she-ji-yuan-ze-he-bian-cheng-ji-qiao.md)
+[01 基础知识](chan-shi-yu/javascript-she-ji-mo-shi/01-ji-chu-zhi-shi.md)  
+[02 设计模式（上）](chan-shi-yu/javascript-she-ji-mo-shi/02-she-ji-mo-shi-shang.md)  
+[03 设计模式（下）](chan-shi-yu/javascript-she-ji-mo-shi/03-she-ji-mo-shi-xia.md)  
+[04 设计原则和编程技巧](chan-shi-yu/javascript-she-ji-mo-shi/04-she-ji-yuan-ze-he-bian-cheng-ji-qiao.md)
 
 ## 花信風
 
@@ -72,4 +72,3 @@
 [01 网站动态标题的两种方式](hua-xin-feng/2017/01-wang-zhan-dong-tai-biao-ti-de-liang-zhong-fang-shi.md)  
 [02 RN App 外部唤醒踩坑记](hua-xin-feng/2017/02-rn-app-wai-bu-huan-xing-cai-keng-ji.md)  
 [03 JavaScript 秘密花园](hua-xin-feng/2017/03-javascript-mi-mi-hua-yuan.md)
-
