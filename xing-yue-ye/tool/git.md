@@ -19,3 +19,4 @@ git config core.ignorecase false
 ```bash
 ssh-keygen -t rsa -C [email]
 ```
+

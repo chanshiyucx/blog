@@ -83,7 +83,7 @@ module.exports = {
 
 然后在 `public/index.html` 中依次注入 css 与 js：
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -198,3 +198,4 @@ searchParams.toString() // "a=1&b=2&c=3"
 searchParams.set('a', '0') // "a=0&b=2&c=3"
 searchParams.delete('a') // "b=2&c=3"
 ```
+
