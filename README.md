@@ -16,7 +16,7 @@
 [08 Async 函数](chan-shi-yu/es6-biao-zhun-ru-men/08-async-han-shu.md)  
 [09 Class 类](chan-shi-yu/es6-biao-zhun-ru-men/09-class-lei.md)
 
-### JavaScript 设计模式与开发实践
+### JavaScript 设计模式
 
 [01 基础知识](chan-shi-yu/javascript-she-ji-mo-shi/01-ji-chu-zhi-shi.md)  
 [02 设计模式（上）](chan-shi-yu/javascript-she-ji-mo-shi/02-she-ji-mo-shi-shang.md)  

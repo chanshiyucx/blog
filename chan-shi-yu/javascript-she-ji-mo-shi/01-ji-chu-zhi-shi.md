@@ -187,10 +187,10 @@ Object.create =
 
 基于原型链的委托机制就是原型继承的本质。原型编程范型至少包括以下基本规则：
 
-* 所有的数据都是对象。
-* 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。
-* 对象会记住它的原型。
-* 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
+- 所有的数据都是对象。
+- 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它。
+- 对象会记住它的原型。
+- 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型。
 
 我们不能说在 JavaScript 中所有的数据都是对象，但可以说绝大部分数据都是对象。JavaScript 中的根对象是 Object.prototype 对象，它是一个空的对象。JavaScript 所有对象实际上都是从这个对象克隆而来的，Object.prototype 对象就是它们的原型。
 
@@ -360,7 +360,7 @@ func(3, 4)
 
 闭包常见的作用有封装变量和延续局部变量的寿命。举两个栗子：
 
-* 封装变量：通过闭包加入缓存机制来提高函数的性能
+- 封装变量：通过闭包加入缓存机制来提高函数的性能
 
 ```javascript
 var mult = (function() {
@@ -385,7 +385,7 @@ console.log(mult(1, 2, 3)) // 输出：6
 console.log(mult(1, 2, 3)) // 输出：6
 ```
 
-* 延续局部变量的寿命：img 对象经常用于进行数据上报
+- 延续局部变量的寿命：img 对象经常用于进行数据上报
 
 ```javascript
 var report = function(src) {
@@ -461,7 +461,7 @@ extent.call()
 
 通过上节比较，这里分别使用闭包和面向对象来实现命令模式。
 
-* 面向对象版本
+- 面向对象版本
 
 ```javascript
 var Tv = {
@@ -495,7 +495,7 @@ var setCommand = function(command) {
 setCommand(new OpenTvCommand(Tv))
 ```
 
-* 闭包版本
+- 闭包版本
 
 ```javascript
 var Tv = {
@@ -551,8 +551,8 @@ setCommand(createCommand(Tv))
 
 高阶函数是指至少满足下列条件之一的函数：
 
-* 函数可以作为参数被传递
-* 函数可以作为返回值输出
+- 函数可以作为参数被传递
+- 函数可以作为返回值输出
 
 #### AOP
 
@@ -598,7 +598,7 @@ func()
 
 高阶函数常见的应用包括：currying、uncurrying、函数节流、分时函数、惰性加载函数等。
 
-* currying
+- currying
 
 函数柯里化（function currying）又称部分求值，一个 currying 的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚才传入的参数在函数形成的闭包中被保存起来。待到函数被真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。
 
@@ -643,7 +643,7 @@ cost(100) // 未真正求值
 cost(200) // 未真正求值
 ```
 
-* uncurrying
+- uncurrying
 
 通过 call 和 apply 可以借用其他对象的方法，把任意对象当作 this 传入某个方法，方法中用到 this 的地方就不再局限于原来规定的对象，而是加以泛化并得到更广的适用性。
 
@@ -679,7 +679,7 @@ var push = Array.prototype.push.uncurrying()(function() {
 
 通过 uncurrying 的方式，`Array.prototype.push.call` 变成了一个通用的 push 函数。这样一来，push 函数的作用就跟 Array.prototype.push 一样了，同样不仅仅局限于只能操作 array 对象。而对于使用者而言，调用 push 函数的方式也显得更加简洁和意图明了。
 
-* 函数节流
+- 函数节流
 
 ```javascript
 var throttle = function(fn, interval) {
@@ -711,7 +711,7 @@ var throttle = function(fn, interval) {
 // 注：除了使用 timer 定时器，还可以使用 Date 比较
 ```
 
-* 分时函数
+- 分时函数
 
 通过函数节流限制函数被频繁调用，但是在一些情况下，某些函数确实通过用户主动调用，但会严重影响页面性能，如用户主动创建一个大列表，在短时间内往页面中大量添加 DOM 节点显然也会让浏览器吃不消，结果往往就是浏览器的卡顿甚至假死。这个问题的解决方案之一是下面的 timeChunk 分时函数，分时函数让创建节点的工作分批进行，比如把 1 秒钟创建 1000 个节点，改为每隔 200 毫秒创建 8 个节点。
 
@@ -737,7 +737,7 @@ var timeChunk = function(ary, fn, count = 1) {
 }
 ```
 
-* 惰性加载函数
+- 惰性加载函数
 
 在 Web 开发中，因为浏览器之间的实现差异，一些嗅探工作总是不可避免。比如需要一个在各个浏览器中能够通用的事件绑定函数 addEvent，常见的写法如下：
 
@@ -792,4 +792,3 @@ var addEvent = function(elem, type, handler) {
 ```
 
 以上便是《JavaScript 常用设计模式》第一部分总结，在 JavaScript 中，闭包和高阶函数的应用极多，很多设计模式都是通过闭包和高阶函数实现的。
-
