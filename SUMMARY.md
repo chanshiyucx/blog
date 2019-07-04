@@ -39,7 +39,7 @@
     - [19 React Hook 定时器](hua-xin-feng/2019/19-react-hook-ding-shi-qi.md)
     - [20 How to fetch data with React Hooks](hua-xin-feng/2019/20-fetch-data-with-react-hooks.md)
     - [21 React Props Children 传值](hua-xin-feng/2019/21-react-props-children-chuan-zhi.md)
-    - [22 字符编码の小常识](hua-xin-feng/2019/22-no.md)
+    - [22 字符编码の小常识](hua-xin-feng/2019/22-zhi-fu-bian-ma-xiao-chang-shi.md)
     - [23 Blob Url And Data Url](hua-xin-feng/2019/23-blob-url-and-data-url.md)
     - [24 React 和 Vue 中 key 的作用](hua-xin-feng/2019/24-react-he-vue-zhong-key-de-zuo-yong.md)
     - [25 WSL 安装 Docker 实录](hua-xin-feng/2019/25-wsl-an-zhuang-docker-shi-lu.md)
