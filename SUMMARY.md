@@ -44,7 +44,6 @@
     - [24 React 和 Vue 中 key 的作用](hua-xin-feng/2019/24-react-he-vue-zhong-key-de-zuo-yong.md)
     - [25 WSL 安装 Docker 实录](hua-xin-feng/2019/25-wsl-an-zhuang-docker-shi-lu.md)
     - [26 Docker 小本本](hua-xin-feng/2019/26-docker-xiao-ben-ben.md)
-  - [draft](hua-xin-feng/draft.md)
 - [蝉時雨](chan-shi-yu/README.md)
   - [ES6 标准入门](chan-shi-yu/es6-biao-zhun-ru-men/README.md)
     - [01 变量声明与解构赋值](chan-shi-yu/es6-biao-zhun-ru-men/01-bian-liang-sheng-ming-yu-jie-gou-fu-zhi.md)
