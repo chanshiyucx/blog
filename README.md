@@ -46,7 +46,7 @@
 [17 Use a Render Prop!](hua-xin-feng/2019/17-use-a-render-prop.md)  
 [18 React Hook](hua-xin-feng/2019/18-react-hook.md)  
 [19 React Hook 定时器](hua-xin-feng/2019/19-react-hook-ding-shi-qi.md)  
-[20 How to fetch data with React Hooks](hua-xin-feng/2019/20-how-to-fetch-data-with-react-hooks.md)  
+[20 How to fetch data with React Hooks](hua-xin-feng/2019/20-fetch-data-with-react-hooks.md)  
 [21 React Props Children 传值](hua-xin-feng/2019/21-react-props-children-chuan-zhi.md)  
 [22 字符编码の小常识](hua-xin-feng/2019/22-no.md)  
 [23 Blob 与 Base64](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/花信風/2019/23%20Blob%20与%20Base64.md)  
