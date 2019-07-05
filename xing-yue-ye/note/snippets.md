@@ -248,3 +248,15 @@ const param2Obj = url => {
   )
 }
 ```
+
+## 015 构建 FormData 表单
+
+```javascript
+const formBuilder = obj => {
+  const formData = new FormData()
+  Object.keys(obj).forEach(k => {
+    formData.append(k, obj[k])
+  })
+  return formData
+}
+```

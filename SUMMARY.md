@@ -69,3 +69,4 @@
     - [Snippets](xing-yue-ye/note/snippets.md)
     - [Note](xing-yue-ye/note/note.md)
     - [Git](xing-yue-ye/note/git.md)
+    - [Interview](xing-yue-ye/note/interview.md)
