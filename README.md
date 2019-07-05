@@ -62,7 +62,7 @@
 [04 函数节流与函数防抖](hua-xin-feng/2018/04-han-shu-jie-liu-yu-han-shu-fang-dou.md)  
 [05 Vue 一键导出 PDF](hua-xin-feng/2018/05-vue-yi-jian-dao-chu-pdf.md)  
 [06 秘技！JS 正则技巧](hua-xin-feng/2018/06-mi-ji-js-zheng-ze-ji-qiao.md)  
-[07 不一样の烟火](hua-xin-feng/2018/07-no.md)  
+[07 不一样の烟火](hua-xin-feng/2018/07-bu-yi-yang-de-yan-huo.md)  
 [08 排序算法初探](hua-xin-feng/2018/08-pai-xu-suan-fa-chu-tan.md)  
 [09 Python 之禅](hua-xin-feng/2018/09-python-zhi-chan.md)  
 [10 Python 文件操作](hua-xin-feng/2018/10-python-wen-jian-cao-zuo.md)
