@@ -68,3 +68,14 @@ function trim(str, position = POSITION.both) {
 const str = ' s t r '
 const result = trim(str, POSITION.left)
 ```
+
+## 004 去除字符串中最后一个指定的字符
+
+```javascript
+function delLast(str, char) {
+  if (!str) return false
+  if (!char) return str
+  const index = str.lastIndexOf(char)
+  return str.substring(0, index) + str.substring(index + 1)
+}
+```
