@@ -63,6 +63,7 @@
 - [星月夜](xing-yue-ye/README.md)
   - [Vue](xing-yue-ye/vue/README.md)
     - [Vue Tips](xing-yue-ye/vue/vue-tips.md)
+    - [Vue 构建项目写入配置文件](xing-yue-ye/vue/xie-ru-pei-zhi-wen-jian.md)
   - [Node](xing-yue-ye/node/README.md)
     - [Node Tips](xing-yue-ye/node/node-tips.md)
   - [Note](xing-yue-ye/note/README.md)
