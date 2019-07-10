@@ -39,10 +39,10 @@ const site_url = argList.site_url || 'chanshiyu.com'
 const site_id = argList.site_id || '500'
 
 module.exports = {
-  setStart: function() {
+  setStart() {
     this.setSetting()
   },
-  setSetting: function() {
+  setSetting() {
     console.log('argList==>', argList)
     const setting = {
       site_url,
