@@ -241,3 +241,48 @@ logging:
     </root>
 </configuration>
 ```
+
+## 数据库
+
+引入依赖：
+
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
+配置 `application.yml`：
+
+```yml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1124chanshiyu
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  jpa:
+    show-sql: true
+```
+
+## 买家端
+
+DAO -> Service -> Controller
+
+## Error
+
+### 001 Table 'sell.hibernate_sequence' doesn't exist. could not read a hi value.
+
+将主键生成策略修改为：
+
+```java
+/* 类目 id */
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Integer categoryId;
+```
