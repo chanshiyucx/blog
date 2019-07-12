@@ -1,8 +1,8 @@
 ## 项目设计
 
-![部署架构](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-1%2B%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1.wmv_20190711_170438.189.jpg)
+![部署架构](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-1%2B%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1.jpg)
 
-![数据库设计](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-3%2B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.wmv_20190711_151847.968.jpg)
+![数据库设计](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-3%2B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.jpg)
 
 ```sql
 create table `product_info` (
