@@ -286,3 +286,30 @@ DAO -> Service -> Controller
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Integer categoryId;
 ```
+
+### 002 No default constructor for entity
+
+进行列表查询，需要给 dataobject 添加无参的构造方法：
+
+```java
+/* 列表查询时需要增加一个默认的构造器 */
+public ProductCategory() {}
+```
+
+### 003 Could not autowire. No beans of 'ProductInfoServiceImpl' type found.
+
+忘记给 service 实现类添加 `@Service` 注解。
+
+```java
+@Service
+public class ProductCategoryServiceImpl implements ProductCategoryService {}
+```
+
+### 004 Error creating bean with name 'entityManagerFactory' defined in class path resource.
+
+没有给 dataobject 主键添加 `@Id` 注解：
+
+```java
+@Id
+private String productId;
+```
