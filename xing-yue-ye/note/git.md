@@ -19,3 +19,22 @@ git config core.ignorecase false
 ```bash
 ssh-keygen -t rsa -C [email]
 ```
+
+## 004 解决"修改文件名大小写"造成的 git 上传文件丢失
+
+```bash
+# 1. 让 git 区分大小写
+git config core.ignorecase false
+
+# 2. 删除缓存
+git rm -r --cached
+
+# 3. 添加当前目录的所有文件
+git add .
+
+# 4. 添加提交信息
+git commit -m "fix: 修复 git 大小写不敏感造成文件未上传"
+
+# 5. 提交
+git push
+```
