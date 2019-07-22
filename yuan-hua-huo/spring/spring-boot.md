@@ -1,10 +1,10 @@
 # Spring Boot
 
-- SSM：Spring MVC + spring + MyBatis
+* SSM：Spring MVC + spring + MyBatis
 
 ## 初遇 Spring Boot
 
-Spring Boot 的角色：Spring Framework -> Spring Boot -> Spring Cloud
+Spring Boot 的角色：Spring Framework -&gt; Spring Boot -&gt; Spring Cloud
 
 Spring Boot 的三大特性：
 
@@ -46,21 +46,22 @@ Spring Boot 的三大特性：
 
 分层领域模型规约：
 
-- DO（Data Object）：与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
-- DTO（Data Transfer Object）：数据传输对象，Service 或 Manager 向外传输的对象。
-- BO（Business Object）：业务对象，由 Service 层输出的封装业务逻辑的对象。
-- AO（Application Object）：应用对象，在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。
-- VO（View Object）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
-- POJO（Plain Ordinary Java Object）：POJO 专指只有 setter/getter/toString 的简单类，包括 DO/DTO/BO/VO 等。
-- Query：数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装，禁止使用 Map 类来传输。
+* DO（Data Object）：与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
+* DTO（Data Transfer Object）：数据传输对象，Service 或 Manager 向外传输的对象。
+* BO（Business Object）：业务对象，由 Service 层输出的封装业务逻辑的对象。
+* AO（Application Object）：应用对象，在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。
+* VO（View Object）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
+* POJO（Plain Ordinary Java Object）：POJO 专指只有 setter/getter/toString 的简单类，包括 DO/DTO/BO/VO 等。
+* Query：数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装，禁止使用 Map 类来传输。
 
 领域模型命名规约：
 
-- 数据对象：xxxDO，xxx 即为数据表名。
-- 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
-- 展示对象：xxxVO，xxx 一般为网页名称。
-- POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
+* 数据对象：xxxDO，xxx 即为数据表名。
+* 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
+* 展示对象：xxxVO，xxx 一般为网页名称。
+* POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
 
 ## 注解
 
 `@Transactional` 在 service 层如果操作失败则回退。
+

@@ -12,7 +12,7 @@
 
 激活 Xcode 工程中的 `Associated Domains` ，需要填入想要支持的域名，必须以 `applinks:` 为前缀，Apple 将会在合适的时候，从这个域名请求验证文件。
 
-![添加验证域名](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/添加验证域名.jpg#full)
+![&#x6DFB;&#x52A0;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/添加验证域名.jpg#full)
 
 ### 上传验证文件
 
@@ -34,7 +34,7 @@
 
 上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
-![Apple Developer 获取 ID](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Apple_Developer.jpg#full)
+![Apple Developer &#x83B7;&#x53D6; ID](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Apple_Developer.jpg#full)
 
 如果上传成功后，可以进行先行[在线验证](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/branch.io/resources/aasa-validator/README.md)。
 
@@ -146,3 +146,4 @@ navigate = url => {
 [唤醒 APP 的那些事](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/www.jianshu.com/p/862885bd8ea2/README.md)  
 [Universal Linking For React-Native with Rails API, and Deep Linking Android](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/github.com/parkerdan/React-Native-Rails-Universal-Linking/README.md)  
 [Universal Links, URI Schemes, App Links, and Deep Links: What’s the Difference?](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/blog.branch.io/universal-links-uri-schemes-app-links-and-deep-links-whats-the-difference/README.md)
+

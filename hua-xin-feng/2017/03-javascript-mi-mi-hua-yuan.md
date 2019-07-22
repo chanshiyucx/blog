@@ -57,7 +57,7 @@ Bar.prototype.constructor = Bar
  **/
 ```
 
-![继承与原型链](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/prototype.png#full)
+![&#x7EE7;&#x627F;&#x4E0E;&#x539F;&#x578B;&#x94FE;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/prototype.png#full)
 
 > 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
@@ -103,26 +103,26 @@ bar() // 出错：ReferenceError
 
 JavaScript 有一套完全不同于其它语言的对 this 的处理机制。在 5 种不同的情况下，this 指向的各不相同。
 
-- 全局范围内：this 指向全局对象。但在严格模式下，不存在全局变量，this 将会是 undefined。
-- 函数调用：this 指向全局对象。
+* 全局范围内：this 指向全局对象。但在严格模式下，不存在全局变量，this 将会是 undefined。
+* 函数调用：this 指向全局对象。
 
 ```javascript
 foo() // this 指向全局对象
 ```
 
-- 方法调用：this 指向调用方法的对象。
+* 方法调用：this 指向调用方法的对象。
 
 ```javascript
 test.foo() // this 指向 test 对象
 ```
 
-- 调用构造函数：在构造函数内部，this 指向新创建的对象。
+* 调用构造函数：在构造函数内部，this 指向新创建的对象。
 
 ```javascript
 new foo() // this 指向返回的新对象
 ```
 
-- 显示设置 this：调用 call 或者 apply 方法时，函数内 this 将会被显式设置为函数调用的第一个参数。
+* 显示设置 this：调用 call 或者 apply 方法时，函数内 this 将会被显式设置为函数调用的第一个参数。
 
 ```javascript
 Foo.method = function() {
@@ -230,23 +230,23 @@ typeof foo !== 'undefined'
 
 ### JavaScript 类型表格
 
-|        Value         |  Class   |   Type   |
-| :------------------: | :------: | :------: |
-|        'foo'         |  String  |  string  |
-| new String\('foo'\)  |  String  |  object  |
-|         1.2          |  Number  |  number  |
-|  new Number\(1.2\)   |  Number  |  object  |
-|         true         | Boolean  | boolean  |
-| new Boolean\(true\)  | Boolean  |  object  |
-|     new Date\(\)     |   Date   |  object  |
-|    new Error\(\)     |  Error   |  object  |
-|      \[1,2,3\]       |  Array   |  object  |
-| new Array\(1, 2, 3\) |  Array   |  object  |
-|  new Function\(''\)  | Function | function |
-|        /abc/g        |  RegExp  |  object  |
-| new RegExp\('meow'\) |  RegExp  |  object  |
-|          {}          |  Object  |  object  |
-|    new Object\(\)    |  Object  |  object  |
+| Value | Class | Type |
+| :---: | :---: | :---: |
+| 'foo' | String | string |
+| new String\('foo'\) | String | object |
+| 1.2 | Number | number |
+| new Number\(1.2\) | Number | object |
+| true | Boolean | boolean |
+| new Boolean\(true\) | Boolean | object |
+| new Date\(\) | Date | object |
+| new Error\(\) | Error | object |
+| \[1,2,3\] | Array | object |
+| new Array\(1, 2, 3\) | Array | object |
+| new Function\(''\) | Function | function |
+| /abc/g | RegExp | object |
+| new RegExp\('meow'\) | RegExp | object |
+| {} | Object | object |
+| new Object\(\) | Object | object |
 
 上面表格中，**Type** 一列表示 typeof 操作符的运算结果。可以看到，这个值在大多数情况下都返回 **object**。
 
@@ -292,3 +292,4 @@ new String('foo') instanceof Object // true
 需要注意：instanceof 用来比较属于不同 JavaScript 上下文的对象（比如浏览器中不同的文档结构）时将会出错，因为它们的构造函数不会是同一个对象。
 
 instanceof 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。正如 typeof 操作符一样，任何其它的用法都应该是避免的。
+

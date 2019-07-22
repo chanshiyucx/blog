@@ -1,8 +1,10 @@
+# 微信点餐系统
+
 ## 项目设计
 
-![部署架构](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-1%2B%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1.jpg)
+![&#x90E8;&#x7F72;&#x67B6;&#x6784;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-1%2B%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1.jpg)
 
-![数据库设计](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-3%2B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.jpg)
+![&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/2-3%2B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.jpg)
 
 ```sql
 create table `product_info` (
@@ -59,10 +61,10 @@ create table `order_master` (
 
 ## 环境搭建
 
-- jdk
-- nginx
-- mysql
-- redis
+* jdk
+* nginx
+* mysql
+* redis
 
 ### 安装 jdk
 
@@ -106,7 +108,7 @@ sudo /etc/init.d/nginx start
 
 启动后访问 `http://localhost/` 检测是否正常。安装完成后各个文件存放位置：
 
-```
+```text
 配置文件：/etc/nginx
 主程序：/usr/sbin/nginx
 静态文件：/usr/share/nginx
@@ -127,7 +129,7 @@ mysql -u root -pYourNewPassword
 
 安装完成后各个文件存放位置：
 
-```
+```text
 启动脚本：/etc/init.d/mysql
 数据库目录：/var/lib/mysql
 配置文件：/usr/share/mysql（命令及配置文件），/etc/mysql（如：my.cnf）
@@ -156,7 +158,7 @@ public class LoggerTest {
 
 首先引入依赖：
 
-```xml
+```markup
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
@@ -179,7 +181,7 @@ public class LoggerTest {
 
 可以在 `application.yml` 中进行简单配置：
 
-```yml
+```text
 logging:
   pattern:
     console: '%d - %msg%n'
@@ -190,7 +192,7 @@ logging:
 
 但更推荐在 `logback-spring.xml` 中配置，可以更加细致地控制日志输出：
 
-```xml
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 
 <configuration>
@@ -246,7 +248,7 @@ logging:
 
 引入依赖：
 
-```xml
+```markup
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
@@ -259,7 +261,7 @@ logging:
 
 配置 `application.yml`：
 
-```yml
+```text
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -272,11 +274,11 @@ spring:
 
 ## 买家端
 
-DAO -> Service -> Controller
+DAO -&gt; Service -&gt; Controller
 
 ## Error
 
-### 001 Table 'sell.hibernate_sequence' doesn't exist. could not read a hi value.
+### 001 Table 'sell.hibernate\_sequence' doesn't exist. could not read a hi value.
 
 将主键生成策略修改为：
 
@@ -313,3 +315,4 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {}
 @Id
 private String productId;
 ```
+
