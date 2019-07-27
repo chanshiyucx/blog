@@ -77,5 +77,5 @@
     - [Note](后端/Note/note.md)
   - [Spring](后端/Spring/README.md)
     - [Spring Boot](后端/Spring/Spring-Boot.md)
-  - [Project](后端/Project/README.md)
-    - [微信点餐系统](后端/Project/微信点餐系统.md)
+  - [Project](后端/project/README.md)
+    - [微信点餐系统](后端/project/微信点餐系统.md)
