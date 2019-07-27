@@ -1,6 +1,4 @@
-# 02 七天学会 NodeJS
-
-就如《21 天学会 C++》一样，《七天学会 NodeJS》取名好似噱头，此书是阿里内部手册，书中没有太大篇幅的累述 API，精要介绍了 NodeJS 核心运用，颇为受用，故记之。
+# 七天学会 NodeJS
 
 ## 文件操作
 
@@ -145,9 +143,9 @@ ws.on('drain', function() {
 
 NodeJS 通过 fs 内置模块提供对文件的操作。fs 模块提供的 API 基本上可以分为以下三类：
 
-* 文件属性读写：其中常用的有 fs.stat、fs.chmod、fs.chown 等；
-* 文件内容读写：其中常用的有 fs.readFile、fs.readdir、fs.writeFile、fs.mkdir 等；
-* 底层文件操作：其中常用的有 fs.open、fs.read、fs.write、fs.close 等。
+- 文件属性读写：其中常用的有 fs.stat、fs.chmod、fs.chown 等；
+- 文件内容读写：其中常用的有 fs.readFile、fs.readdir、fs.writeFile、fs.mkdir 等；
+- 底层文件操作：其中常用的有 fs.open、fs.read、fs.write、fs.close 等。
 
 所有的文件系统操作都有同步和异步两种形式。异步形式的最后一个参数是完成时的回调函数。传给回调函数的参数取决于具体方法，但第一个参数会保留给异常。如果操作成功完成，则第一个参数会是 null 或 undefined。
 
@@ -155,9 +153,9 @@ NodeJS 通过 fs 内置模块提供对文件的操作。fs 模块提供的 API �
 
 path 模块用于处理文件与目录的路径，常用 API 如下：
 
-* path.normalize：将传入的路径转换为标准路径，能去掉多余的斜杠；
-* path.join：将传入的多个路径拼接为标准路径，能在不同系统下正确使用相应的路径分隔符；
-* path.extname：获取文件扩展名。
+- path.normalize：将传入的路径转换为标准路径，能去掉多余的斜杠；
+- path.join：将传入的多个路径拼接为标准路径，能在不同系统下正确使用相应的路径分隔符；
+- path.extname：获取文件扩展名。
 
 > 标准化之后的路径里的斜杠在 Windows 系统下是 \，而在 Linux 系统下是 /。如果想保证任何系统下都使用 / 作为路径分隔符的话，需要用 `.replace(/\\/g, '/')` 再替换一下标准路径。
 
@@ -197,11 +195,11 @@ NodeJS 操作文本时需要处理文件编码问题，常用的文本编码有 
 
 BOM 用于标记一个文本文件使用 Unicode 编码，其本身是一个 Unicode 字符 "\uFEFF"，位于文本文件头部。在不同的 Unicode 编码下，BOM 字符对应的二进制字节如下：
 
-| Bytes | Encoding |
-| :---: | :---: |
-| FE FF | UTF16BE |
-| FF FE | UTF16LE |
-| EF BB BF | UTF8 |
+|  Bytes   | Encoding |
+| :------: | :------: |
+|  FE FF   | UTF16BE  |
+|  FF FE   | UTF16LE  |
+| EF BB BF |   UTF8   |
 
 因此，可以根据文本文件头几个字节来判断文件是否包含 BOM，以及使用哪种 Unicode 编码。但是，BOM 字符虽然起到了标记文件编码的作用，其本身却不属于文件内容的一部分，如果读取文本文件时不去掉 BOM，在某些使用场景下就会有问题。
 
@@ -236,9 +234,9 @@ function readGBKText(pathname) {
 
 NodeJS 操作文件小结如下：
 
-* 如果不是很在意性能，尽量使用同步 API；
-* 需要对文件读写做到字节级别的精细控制时，请使用 fs 模块的文件底层操作 API；
-* 不要使用拼接字符串的方式来处理路径，使用 path 模块。
+- 如果不是很在意性能，尽量使用同步 API；
+- 需要对文件读写做到字节级别的精细控制时，请使用 fs 模块的文件底层操作 API；
+- 不要使用拼接字符串的方式来处理路径，使用 path 模块。
 
 ## 网络操作
 
@@ -248,8 +246,8 @@ NodeJS 内置的 http 模块来处理网络操作。
 
 http 模块提供两种使用方式：
 
-* 作为服务端使用时，创建一个 HTTP 服务器，监听 HTTP 客户端请求并返回响应。
-* 作为客户端使用时，发起一个 HTTP 客户端请求，获取服务端响应。
+- 作为服务端使用时，创建一个 HTTP 服务器，监听 HTTP 客户端请求并返回响应。
+- 作为客户端使用时，发起一个 HTTP 客户端请求，获取服务端响应。
 
 HTTP 请求本质上是一个数据流，由请求头（headers）和请求体（body）组成。例如以下是一个完整的 HTTP 请求数据内容。
 
@@ -512,11 +510,11 @@ client.on('data', function(data) {
 
 本章介绍了使用 NodeJS 操作网络时需要的 API 以及一些坑回避技巧，总结起来有以下几点：
 
-* http 和 https 模块支持服务端模式和客户端模式两种使用方式；
-* request 和 response 对象除了用于读写头数据外，都可以当作数据流来操作；
-* url.parse 方法加上 request.url 属性是处理 HTTP 请求时的固定搭配；
-* 使用 zlib 模块可以减少使用 HTTP 协议时的数据传输量；
-* 通过 net 模块的 Socket 服务器与客户端可对 HTTP 协议做底层操作。
+- http 和 https 模块支持服务端模式和客户端模式两种使用方式；
+- request 和 response 对象除了用于读写头数据外，都可以当作数据流来操作；
+- url.parse 方法加上 request.url 属性是处理 HTTP 请求时的固定搭配；
+- 使用 zlib 模块可以减少使用 HTTP 协议时的数据传输量；
+- 通过 net 模块的 Socket 服务器与客户端可对 HTTP 协议做底层操作。
 
 ## 进程管理
 
@@ -864,7 +862,7 @@ function main(argv) {
 可以利用 NodeJS 的进程管理机制，将守护进程作为父进程，将服务器程序作为子进程，并让父进程监控子进程的运行状态，在其异常退出时重启子进程。
 
 ```javascript
-//daemon.js
+// daemon.js
 const cp = require('child_process')
 
 let worker
@@ -888,7 +886,7 @@ function main(argv) {
 
 main(process.argv.slice(2))
 
-//server.js
+// server.js
 process.on('SIGTERM', () => {
   server.close(() => {
     process.exit(0)
@@ -899,7 +897,3 @@ process.on('SIGTERM', () => {
 可以把守护进程的代码保存为 daemon.js，之后可以通过 `node daemon.js config.json` 启动服务，而守护进程会进一步启动和监控服务器进程。
 
 此外，为了能够正常终止服务，让守护进程在接收到 SIGTERM 信号时终止服务器进程。而在服务器进程这一端，同样在收到 SIGTERM 信号时先停掉 HTTP 服务再正常退出。
-
-参考文章：  
-[七天学会 NodeJS](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/nqdeng.github.io/7-days-nodejs/README.md)
-

@@ -18,12 +18,12 @@ Flex 容器有两根轴线：水平的主轴（main axis）和垂直的交叉轴
 
 Flex 容器可设置 6 个属性:
 
-* flex-direction：决定主轴的方向
-* flex-wrap：子项目是否可换行
-* flex-flow：属于 flex-direction 属性和 flex-wrap 属性的简写形式
-* justify-content：定义了项目在主轴上的对齐方式
-* align-items：定义项目在交叉轴上如何对齐
-* align-content：定义了多根轴线的对齐方式
+- flex-direction：决定主轴的方向
+- flex-wrap：子项目是否可换行
+- flex-flow：属于 flex-direction 属性和 flex-wrap 属性的简写形式
+- justify-content：定义了项目在主轴上的对齐方式
+- align-items：定义项目在交叉轴上如何对齐
+- align-content：定义了多根轴线的对齐方式
 
 ### flex-direction
 
@@ -93,12 +93,12 @@ align-content 属性定义多根轴线的对齐方式，如果项目只有一根
 
 Flex 项目可设置 6 个属性:
 
-* order：定义项目的排列顺序
-* flex-grow：定义项目的放大比例
-* flex-shrink：定义了项目的缩小比例
-* flex-basis：定义了在分配多余空间之前，项目占据的主轴空间
-* flex：属于 flex-grow, flex-shrink 和 flex-basis 的简写形式
-* align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性
+- order：定义项目的排列顺序
+- flex-grow：定义项目的放大比例
+- flex-shrink：定义了项目的缩小比例
+- flex-basis：定义了在分配多余空间之前，项目占据的主轴空间
+- flex：属于 flex-grow, flex-shrink 和 flex-basis 的简写形式
+- align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性
 
 ### order
 
@@ -161,4 +161,3 @@ flex 属性是 flex-grow, flex-shrink 和 flex-basis 的简写，默认值为 `0
 align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。
 
 ![align-self](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/align-self.png)
-
