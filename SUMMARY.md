@@ -58,7 +58,7 @@
   - [JavaScript](前端/JavaScript/README.md)
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
     - [02 从浏览器解析 JS 运行机制](前端/JavaScript/02-从浏览器解析-JS-运行机制.md)
-    - [03 JS 正则技巧](時雨/JavaScript/03-秘技-JS-正则技巧.md)
+    - [03 JS 正则技巧](前端/JavaScript/03-秘技-JS-正则技巧.md)
   - [Note](前端/Note/README.md)
     - [Note](前端/Note/01-Note.md)
     - [Snippets](前端/Note/02-Snippets.md)
