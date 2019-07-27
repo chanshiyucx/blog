@@ -1,4 +1,4 @@
-# 06 Iterator 和 for of 循环
+# Iterator 和 for of 循环
 
 JavaScript 有四种表示“集合”和数据结构，分别是 Array、Object 和 ES6 新增的 Set、Map，遍历器（Iterator）就是为各种不同的数据结构提供统一访问机制的接口。
 
@@ -72,7 +72,7 @@ let iterable = {
   0: 'a',
   1: 'b',
   2: 'c',
-  length: 3,
+  length: 3
 }
 ```
 
@@ -103,7 +103,7 @@ let str = 'hello'
 
 #### yield\*
 
-yield\* 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
+`yield*` 后面跟的是一个可遍历的结构，它会调用该结构的遍历器接口。
 
 ```javascript
 let generator = function*() {
@@ -123,11 +123,11 @@ iterator.next() // { value: undefined, done: true }
 
 由于数组的遍历会调用遍历器接口，所以任何接受数组作为参数的场合其实都调用了遍历器接口：
 
-* for...of
-* Array.from\(\)
-* Map\(\)、Set\(\)、WeakMap\(\) 和 WeakSet\(\)
-* Promise.all\(\)
-* Promise.race\(\)
+- for...of
+- Array.from()
+- Map()、Set()、WeakMap() 和 WeakSet()
+- Promise.all()
+- Promise.race()
 
 ### for of 循环
 
@@ -206,4 +206,3 @@ for (let [key, value] of entries(obj)) {
 ```
 
 JavaScript 提供其它几种循环如 forEach、for...in 方式。对于 forEach，无法中途跳出循环，break 命令或 return 命令都不能奏效；对于 for...in，循环遍历数组得到的键名是数字，且会遍历原型链上的键。然而 for...of 循环没有以上缺点。
-

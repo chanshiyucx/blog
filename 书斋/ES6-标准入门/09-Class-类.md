@@ -1,4 +1,4 @@
-# 09 Class 类
+# Class 类
 
 直至 ES6，JavaScript 终于有了“类”的概念，它简化了之前直接操作原型的语法，也是我最喜欢的新特性之一，但此类非彼类，它不同于熟知的如 Java 中的类，它本质上只是一颗语法糖。
 
@@ -221,7 +221,7 @@ class ColorPoint extends Point {
 }
 ```
 
-### Object.getPrototypeOf\(\)
+### Object.getPrototypeOf()
 
 `Object.getPrototypeOf` 方法可以用来从子类上获取父类。因此，可以使用这个方法来判断一个类是否继承了另一个类。
 
@@ -233,7 +233,7 @@ Object.getPrototypeOf(ColorPoint) === Ponit // true
 
 super 这个关键字既可以当作函数使用，也可以当作对象使用。在这两种情况下，它的用法完全不同。
 
-第一种情况，super 作为函数调用时代表父类的构造函数。需要注意，super 虽然代表了父类的构造函数，但返回的是子类的实例，即 super 内部的 this 指向的是 ColorPoint，此时 super\(\) 相当与 `Point.prototype.constructor.call(this)`。
+第一种情况，super 作为函数调用时代表父类的构造函数。需要注意，super 虽然代表了父类的构造函数，但返回的是子类的实例，即 super 内部的 this 指向的是 ColorPoint，此时 super() 相当与 `Point.prototype.constructor.call(this)`。
 
 ```javascript
 class A {
@@ -252,7 +252,7 @@ new A() // A
 new B() // B
 ```
 
-上面的代码中，`new.target` 指向当前正在执行的函数，在 super 函数执行时，它指向的是子类的构造函数，即 super\(\) 内部的 this 指向的是 B。
+上面的代码中，`new.target` 指向当前正在执行的函数，在 super 函数执行时，它指向的是子类的构造函数，即 super() 内部的 this 指向的是 B。
 
 第二种情况，super 作为对象时在普通方法中指向父类的原型对象，在静态方法中指向父类。需要注意，**由于普通方法中 super 指向父类的原型对象，所以定义在父类实例上的方法或属性是无法通过 super 调用的**。
 
@@ -312,12 +312,12 @@ class B extends A {
 
 上面的代码中，super.x 被赋值为 3，等同于对 this.x 赋值为 3。当读取 `super.x` 时，相当于读取的是 `A.prototype.x`，所以返回 undefined。
 
-### prototype 和 \_\_proto\_\_
+### prototype 和 **proto**
 
 在 ES5 中，每一个对象都有 `__proto__` 属性，指向对应的构造函数的 prototype 属性。Class 作为构造函数的语法糖，同时有 prototype 属性和 `__proto__` 属性，因此同时存在两条继承链。
 
-* 子类的 `__proto__` 属性表示构造函数的继承，总是指向父类。
-* 子类的 prototype 属性的 `__proto__` 属性表示方法的继承，总是指向父类的 prototype 属性。
+- 子类的 `__proto__` 属性表示构造函数的继承，总是指向父类。
+- 子类的 prototype 属性的 `__proto__` 属性表示方法的继承，总是指向父类的 prototype 属性。
 
 ```javascript
 class A {}
@@ -433,4 +433,3 @@ class DistributedEdit extends mix(Loggable, Serializable) {
   // ...
 }
 ```
-

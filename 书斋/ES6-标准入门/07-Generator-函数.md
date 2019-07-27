@@ -1,4 +1,4 @@
-# 07 Generator 函数
+# Generator 函数
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。此前，只在 dva（内部封装 redux-saga）里使用过，此次深入了解之。
 
@@ -224,7 +224,7 @@ x // 1
 y // 2
 ```
 
-### Generator.prototype.throw\(\)
+### Generator.prototype.throw()
 
 Generator 函数返回的遍历器对象都有一个 throw 方法，可以在函数体外抛出错误，然后在 Generator 函数体内捕获。
 
@@ -250,7 +250,7 @@ try {
 
 上面的代码中，遍历器对象 i 连续抛出两个错误。第一个错误被 Generator 函数体内的 catch 语句捕获。第二个错误由于 Generator 函数内部的 catch 语句已经执行过了，不会再捕捉到这个错误，所以就被抛出了 Generator 函数体，被函数体外的 catch 语句捕获。
 
-### Generator.prototype.return\(\)
+### Generator.prototype.return()
 
 Generator 函数返回的遍历器对象有一个 return 方法，可以返回给定的值，并终结 Generator 函数的遍历。
 
@@ -292,7 +292,7 @@ g.next() // { value: 7, done: true }
 
 ### yield\* 表达式
 
-如果在 Generator 函数内部调用另一个 Generator 函数，需要用到 yield\* 语句。
+如果在 Generator 函数内部调用另一个 Generator 函数，需要用到 `yield*` 语句。
 
 ```javascript
 function* foo() {
@@ -306,9 +306,9 @@ function* bar() {
 }
 ```
 
-yield\* 后面的 Generator 函数（没有 return 语句时）不过是 for...of 的一种简写形式，完全可以用后者替代。反之，在有 return 语句时则需要用 `var value = yield* iterator` 的形式获取 return 语句的值。
+`yield*` 后面的 Generator 函数（没有 return 语句时）不过是 for...of 的一种简写形式，完全可以用后者替代。反之，在有 return 语句时则需要用 `var value = yield* iterator` 的形式获取 return 语句的值。
 
-任何数据结构只要有 Iterator 接口，就可以被 yield\* 遍历。下面的代码中，yield 命令后面如果不加星号，返回的是整个数组，加了星号就表示返回的是数组的遍历器对象。
+任何数据结构只要有 Iterator 接口，就可以被 `yield*` 遍历。下面的代码中，yield 命令后面如果不加星号，返回的是整个数组，加了星号就表示返回的是数组的遍历器对象。
 
 ```javascript
 function* gen() {
@@ -364,4 +364,3 @@ f.c // 3
 ```
 
 上面代码中，使用 call 方法绑定 Generator 函数内部的 this 到原型 prototype 上，调用 next 方法完成 gen 内部所有代码的运行。这时，所有内部属性都绑定在原型对象上了，因此原型对象也就成了 gen 的实例。
-
