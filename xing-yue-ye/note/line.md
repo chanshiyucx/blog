@@ -16,3 +16,7 @@ The reasonable man adapts himself to the world；the unreasonable one persists i
 > conquer /ˈkɑŋkə(r)/
 > vt. 征服;攻克;打败（敌人）;克服;
 > vi. 得胜，胜利;
+
+## 003
+
+The present is a gift. And I just wanna be…

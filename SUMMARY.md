@@ -78,4 +78,4 @@
   - [Spring](yuan-hua-huo/spring/README.md)
     - [Spring Boot](yuan-hua-huo/spring/spring-boot.md)
   - [Project](yuan-hua-huo/project/README.md)
-    - [微信点餐系统](yuan-hua-huo/project/wei-xin-dian-chan-xi-tong.md)
+    - [微信点餐系统](yuan-hua-huo/project/微信点餐系统.md)
