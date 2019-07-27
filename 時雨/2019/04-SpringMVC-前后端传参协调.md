@@ -1,4 +1,4 @@
-# 08 SpringMVC 前后端传参协调
+# SpringMVC 前后端传参协调
 
 话接上次练手 JavaWeb 实现了第一个后端接口，在 Postman 上测试可正常食用。寻思搭建个后台方便测试，却意外发生而后端无法接收参数的问题，花了点时间找下问题根源所在。
 
@@ -153,4 +153,3 @@ public ServerResponse<User> login(HttpSession session, @RequestBody Map map) {
 
 参考文章：  
 [axios 发送 post 请求，springMVC 接收不到数据问题](https://www.jianshu.com/p/042632dec9fb)
-

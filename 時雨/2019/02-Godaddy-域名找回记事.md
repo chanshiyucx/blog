@@ -1,4 +1,4 @@
-# 06 Godaddy 域名找回记事
+# Godaddy 域名找回记事
 
 现在博客使用的域名是在国外注册商 Godaddy 上购买，至今陪伴这个小站已有近三年。年前收到邮件通知说是域名即将到期，需尽快续费，然后经过自己一通操作，成功将域名搞丢。
 
@@ -24,19 +24,18 @@
 
 进入帮助中心，填表找回域名，需要上传证件证明域名注册人信息是本人，网上说护照即可，便直接传护照照片等待回应。两天后收到邮件说是需要手持照片。
 
-![&#x7B2C;&#x4E00;&#x5C01;&#x90AE;&#x4EF6;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件1.png)
+![第一封邮件](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件1.png)
 
 然后又重新上传手持护照的照片，等待回应，三天后收到邮件回复说是护照不包含地址！但是域名注册时是需要填写居住地址的，所以需要能够提供有效住址的证件！说好的用护照就可以找回域名的呢，心累 😭。
 
-![&#x7B2C;&#x4E8C;&#x5C01;&#x90AE;&#x4EF6;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件2.png)
+![第二封邮件](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件2.png)
 
 身份证上包含住址信息，看来只能用身份证找回了，由于老外不懂中文，所以需要翻译证件。需要注意的是翻译文件要盖章认证，必须要找老外认可的正规翻译机构。上淘宝花 50 找了个看起来靠谱的翻译服务，隔天拿到盖章的身份证翻译文件，重新填表找回域名。忐忑等待了三天，本已做好了最坏的打算，如果域名不能找回，只好重新注册个域名，欸~好麻烦的样子。直至第三天收到邮件回应。
 
-![&#x7B2C;&#x4E09;&#x5C01;&#x90AE;&#x4EF6;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件3.png)
+![第三封邮件](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Godaddy_邮件3.png)
 
 看来我好事没少做，域名找回终于看到了曙光。邮件大意是说我不是域名的所有者，但是是域名的注册人。Godaddy 会给我发一封包含交易 ID 和安全代码的邮件提供域名转移。果不其然，几个小时后收到了邮件，按上面的操作登录 Godaddy 进行域名接受，输入交易 ID 和安全代码成功将域名找回，而此时离 3 月 17 号域名过期仅有一周的时间。
 
 ## 域名续费
 
 域名找回后查看域名状态发现还处于锁定状态，可能处于安全考虑，需要 10 天后方才解锁，看来是不能用淘宝的续费服务，只能自己在线续费了，上 Godaddy 一看续费一年 115，好像比之前便宜了点但还是贵得离谱！难怪不少人纷纷逃离 Godaddy 将域名转移到更便宜的 NameSilo，但现在域名无法转移别无选择，只好硬着续费。等待域名解锁后也需要考虑将域名转移，这续费也太贵了。
-

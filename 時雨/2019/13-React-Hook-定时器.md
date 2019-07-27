@@ -1,4 +1,4 @@
-# 19 React Hook 定时器
+# React Hook 定时器
 
 前段时间学习了 React 新发布的 Hook 新功能，学完立马就爱上了这个新 API，用起来感觉比 class 组件爽多了。但 hook 虽然看似简单，但是要能熟练运用还是得花上一段时间。
 
@@ -106,13 +106,13 @@ function HookVersion() {
 
 虽然通过传入函数而不是固定值可以解决 `count` 被固定的问题，但是却无法读取每次渲染时期的 `props`。如何解决呢？可以通过在每次计数的时候不改变定时器，但是动态指向定时器的回调。
 
-**useRef\(\) 返回了一个字面量，持有一个可变的 current 属性，在每一次渲染之间共享**。可以将 Ref Hook 看作是一个容器，`.current` 属性可以指向任何值，类似于 class 组件的 `this`。通过使用 ref 来保存每次定时器回调函数。
+**useRef() 返回了一个字面量，持有一个可变的 current 属性，在每一次渲染之间共享**。可以将 Ref Hook 看作是一个容器，`.current` 属性可以指向任何值，类似于 class 组件的 `this`。通过使用 ref 来保存每次定时器回调函数。
 
 React 组件的 props 和 state 会变化时，都会被重新渲染，并且把之前的渲染结果“忘记”的一干二净。两次渲染之间，是互不相干的。
 
-useEffect\(\) Hook 同样会“遗忘”之前的结果。它清理上一个 effect 并且设置新的 effect。新的 effect 获取到了新的 props 和 state。
+useEffect() Hook 同样会“遗忘”之前的结果。它清理上一个 effect 并且设置新的 effect。新的 effect 获取到了新的 props 和 state。
 
-但是 setInterval\(\) 不会 “忘记”。 它会一直引用着旧的 props 和 state，除非把它换了。但是只要把它换了，就不得不重新设置时间。
+但是 setInterval() 不会 “忘记”。 它会一直引用着旧的 props 和 state，除非把它换了。但是只要把它换了，就不得不重新设置时间。
 
 但是通过 ref 我们可以做到只更换定时器的回调而不改变定时器的时间：
 
@@ -167,4 +167,3 @@ setInterval(fn, delay)
 
 useInterval(fn, delay)
 ```
-

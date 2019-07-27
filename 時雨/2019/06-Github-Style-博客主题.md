@@ -1,4 +1,4 @@
-# 10 Github Style 博客主题
+# Github Style 博客主题
 
 前不久闲逛发现了个 Github Style 的 Hexo 博客主题 [小白妹妹写代码](https://sabrinaluo.github.io/tech/)，突然感觉这种简约风格主题莫名好看，故摸鱼摸了一周也仿了个 Github Style 的单页面主题 Gitleaf。
 
@@ -48,5 +48,5 @@ npm run build
 
 Just enjoy it ฅ●ω●ฅ
 
-主题参考： [小白妹妹写代码](https://sabrinaluo.github.io/tech/)
-
+主题参考：
+[小白妹妹写代码](https://sabrinaluo.github.io/tech/)

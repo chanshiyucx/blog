@@ -1,4 +1,4 @@
-# 03 优雅实现 BackTop
+# 优雅实现 BackTop
 
 BackTop 即滚动到页面顶部，是很多网站都会用到的基础功能，实现方法很多，Github 上也有许多优秀的三方库，如 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll)，但如何优雅实现也是一门学问。
 
@@ -129,9 +129,9 @@ window.cancelAnimationFrame(requestID)
 
 如果不需要考虑浏览器兼容性，在 Chrome、Firefox 浏览器上，`window.scrollTo` 还支持第二种参数形式，传入参数 `options` 是一个包含三个属性的对象：
 
-* top 等同于 y-coord，代表纵轴坐标
-* left 等同于 x-coord，代表横轴坐标
-* behavior 类型 String，表示滚动行为，支持参数 smooth\(平滑滚动\)，instant\(瞬间滚动\)，默认值 auto，效果等同于 instant
+- top 等同于 y-coord，代表纵轴坐标
+- left 等同于 x-coord，代表横轴坐标
+- behavior 类型 String，表示滚动行为，支持参数 smooth\(平滑滚动\)，instant\(瞬间滚动\)，默认值 auto，效果等同于 instant
 
 ```javascript
 window.scrollTo({
@@ -141,4 +141,3 @@ window.scrollTo({
 ```
 
 此方法简单高效，可惜 Edge、IE、Safari 皆不支持。
-

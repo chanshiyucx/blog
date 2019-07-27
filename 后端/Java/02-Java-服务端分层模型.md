@@ -1,4 +1,4 @@
-# 05 Java 服务端分层模型
+# Java 服务端分层模型
 
 复杂的软件系统都会采用分层的架构设计，分层之后，每一层职责鲜明，整体上降低了系统的耦合性，提高了健壮性。比如常见的：展示层、业务层等，Java 服务端开发亦是如此。
 
@@ -6,7 +6,26 @@
 
 Java 服务端也是采用分层架构，针对每一层，对应对象的职责是不同的，以及层与层之间也需要通信，故而有着不同的“概念”对象。
 
-![Java &#x6570;&#x636E;&#x6A21;&#x578B;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java_数据模型.jpg)
+![Java_数据模型](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java_数据模型.jpg)
+
+## 分层领域模型
+
+分层领域模型规约：
+
+- DO（Data Object）：与数据库表结构一一对应，通过 DAO 层向上传输数据源对象。
+- DTO（Data Transfer Object）：数据传输对象，Service 或 Manager 向外传输的对象。
+- BO（Business Object）：业务对象，由 Service 层输出的封装业务逻辑的对象。
+- AO（Application Object）：应用对象，在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。
+- VO（View Object）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
+- POJO（Plain Ordinary Java Object）：POJO 专指只有 setter/getter/toString 的简单类，包括 DO/DTO/BO/VO 等。
+- Query：数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装，禁止使用 Map 类来传输。
+
+领域模型命名规约：
+
+- 数据对象：xxxDO，xxx 即为数据表名。
+- 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
+- 展示对象：xxxVO，xxx 一般为网页名称。
+- POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
 
 ## PO 和 VO
 
@@ -14,15 +33,15 @@ Java 服务端也是采用分层架构，针对每一层，对应对象的职责
 
 以前插入一条记录书写形式为：
 
-* 建立连接
-* 建立操作对象
-* 执行 sql
+- 建立连接
+- 建立操作对象
+- 执行 sql
 
 现在可以如下书写：
 
-* 读取映射配置
-* javabean 值对象 set 字段名
-* save 操作即可
+- 读取映射配置
+- javabean 值对象 set 字段名
+- save 操作即可
 
 这么做最基本的好处就是：关系发生改变直接改动映射配置文件即可，不需要到源文件里面去一条条修改语句（主要是 sql 语句）。
 
@@ -53,4 +72,3 @@ Java 服务端也是采用分层架构，针对每一层，对应对象的职责
 ## CRUD
 
 CRUD 是指在做计算处理时的增加（Create）、读取查询（Read）、更新（Update）和删除（Delete）几个单词的首字母简写。CRUD 主要被用在描述软件系统中数据库或者持久层的基本操作功能。
-

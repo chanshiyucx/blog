@@ -1,4 +1,4 @@
-# 26 Docker 小本本
+# Docker 小本本
 
 Docker 属于 Linux 容器的一种封装，它是目前最流行的容器解决方案。容器有点像虚拟机，提供虚拟化的环境。Docker 本身并不是容器，它是创建容器的工具，是应用容器引擎。
 
@@ -60,11 +60,11 @@ docker container run --rm -p 8000:3000 -it koa-demo:0.0.1 /bin/bash
 
 参数详解：
 
-* `--rm 参数`：容器停止运行时自动删除容器文件
-* `-p 参数`：容器的 3000 端口映射到本机的 8000 端口。
-* `-it 参数`：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。
-* `koa-demo:0.0.1`：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。
-* `/bin/bash`：附加命令，容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。
+- `--rm 参数`：容器停止运行时自动删除容器文件
+- `-p 参数`：容器的 3000 端口映射到本机的 8000 端口。
+- `-it 参数`：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。
+- `koa-demo:0.0.1`：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。
+- `/bin/bash`：附加命令，容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。
 
 ### CMD 命令
 
@@ -84,8 +84,8 @@ CMD node demos/01.js  // 容器启动后自动执行
 
 `RUN 命令` 与 `CMD 命令` 的区别：
 
-* `RUN 命令` 在 image 文件的构建阶段执行，执行结果都会打包进入 image 文件；`CMD 命令`则是在容器启动后执行。
-* 一个 Dockerfile 可以包含多个 `RUN 命令`，但是只能有一个 `CMD 命令`。
+- `RUN 命令` 在 image 文件的构建阶段执行，执行结果都会打包进入 image 文件；`CMD 命令`则是在容器启动后执行。
+- 一个 Dockerfile 可以包含多个 `RUN 命令`，但是只能有一个 `CMD 命令`。
 
 ### 发布 image 镜像
 
@@ -128,4 +128,3 @@ docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker �
 3. `docker container kill` 向容器内主进程发出 SIGKILL 信号来终止容器运行。`docker container stop` 先向主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。
 4. `docker container logs` 查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令查看输出。
 5. `docker container exec` 进入容器内部。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令进入容器内部。
-

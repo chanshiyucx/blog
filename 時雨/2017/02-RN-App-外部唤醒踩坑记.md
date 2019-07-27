@@ -1,4 +1,4 @@
-# 02 RN App 外部唤醒踩坑记
+# RN App 外部唤醒踩坑记
 
 公司新企划的 RN 项目需要实现链接分享功能，用户直接通过分享链接唤醒 App 并跳转相应页面，同时该功能要求在 iOS 和 Android 双端兼容，在此记录下拥抱新技术的踩坑历程。
 
@@ -6,13 +6,13 @@
 
 在 iOS 中，唤醒功能是通过 Universal Links 来实现。Universal Links 通用链接是 Apple 在 2015 推出的一个新功能，只有在 iOS9 以上才支持。如果你的 App 支持 Universal Links，那就可以访问 HTTP/HTTPS 链接直接唤起 APP 进入具体页面，不需要其他额外判断；如果未安装 App，访问此通用链接时可以一个自定义网页。
 
-关于如何添加 Universal Links 来唤醒 App，Apple 官方文档 [Support Universal Links](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 中虽然有了说明，但是具体的细节操作却未交代清楚，致使我走了不少弯路。其实到最后发现具体实现其实很简单，大体来说分三步。
+关于如何添加 Universal Links 来唤醒 App，Apple 官方文档 [Support Universal Links](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html) 中虽然有了说明，但是具体的细节操作却未交代清楚，致使我走了不少弯路。其实到最后发现具体实现其实很简单，大体来说分三步。
 
 ### 添加验证域名
 
 激活 Xcode 工程中的 `Associated Domains` ，需要填入想要支持的域名，必须以 `applinks:` 为前缀，Apple 将会在合适的时候，从这个域名请求验证文件。
 
-![&#x6DFB;&#x52A0;&#x9A8C;&#x8BC1;&#x57DF;&#x540D;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/添加验证域名.jpg#full)
+![添加验证域名](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/添加验证域名.jpg#full)
 
 ### 上传验证文件
 
@@ -34,9 +34,9 @@
 
 上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
-![Apple Developer &#x83B7;&#x53D6; ID](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Apple_Developer.jpg#full)
+![Apple Developer 获取 ID](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Apple_Developer.jpg#full)
 
-如果上传成功后，可以进行先行[在线验证](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/branch.io/resources/aasa-validator/README.md)。
+如果上传成功后，可以进行先行[在线验证](https://branch.io/resources/aasa-validator/)。
 
 ### 处理 URL 跳转
 
@@ -111,7 +111,7 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
 keytool -list -v -keystore  had.jks
 ```
 
-验证文件编辑上传完成后，可以先行[在线验证](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=/airi.me)。
+验证文件编辑上传完成后，可以先行[在线验证](https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=/airi.me)。
 
 ## RN Linking 模块
 
@@ -141,9 +141,3 @@ navigate = url => {
   // dosomething
 }
 ```
-
-参考文章：  
-[唤醒 APP 的那些事](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/www.jianshu.com/p/862885bd8ea2/README.md)  
-[Universal Linking For React-Native with Rails API, and Deep Linking Android](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/github.com/parkerdan/React-Native-Rails-Universal-Linking/README.md)  
-[Universal Links, URI Schemes, App Links, and Deep Links: What’s the Difference?](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/blog.branch.io/universal-links-uri-schemes-app-links-and-deep-links-whats-the-difference/README.md)
-

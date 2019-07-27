@@ -1,4 +1,4 @@
-# 23 Blob Url And Data Url
+# Blob Url And Data Url
 
 一直搞不清楚 JavaScript 底层的文件数据操作原理，对于经常涉及到文本格式转换或者文本文件加解密时经常无限采坑，Blob Url 和 Data Url，对于它们可真是最熟悉的陌生人。
 
@@ -12,9 +12,9 @@ Blob 对象表示一个不可变、原始数据的类文件对象。File 接口�
 
 ```markup
 <input type="file" id="avatar" accept="image/png" @change="readFile" />
-<!-- 
+<!--
 File {
-  lastModified: 1557995456923 
+  lastModified: 1557995456923
   lastModifiedDate: Thu May 16 2019 15:30:56 GMT+0700 (GMT+07:00) {}
   name: "5c14f38ccd4fd.jpg"
   size: 7958
@@ -26,10 +26,10 @@ File {
 
 Blob 的一些方式与属性：
 
-* `Blob(blobParts[, options])`：构造函数，返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
-* `Blob.size`：Blob 对象中所包含数据的大小（字节）。
-* `Blob.type`：一个字符串，表明该 Blob 对象所包含数据的 MIME 类型。如果类型未知，则该值为空字符串。
-* `Blob.slice([start,[ end ,[contentType]]])`：返回一个新的 Blob 对象，包含了源 Blob 对象中指定范围内的数据，类似于数组的 `slice` 方法。
+- `Blob(blobParts[, options])`：构造函数，返回一个新创建的 Blob 对象，其内容由参数中给定的数组串联组成。
+- `Blob.size`：Blob 对象中所包含数据的大小（字节）。
+- `Blob.type`：一个字符串，表明该 Blob 对象所包含数据的 MIME 类型。如果类型未知，则该值为空字符串。
+- `Blob.slice([start,[ end ,[contentType]]])`：返回一个新的 Blob 对象，包含了源 Blob 对象中指定范围内的数据，类似于数组的 `slice` 方法。
 
 ```javascript
 const obj = { hello: 'world' }
@@ -97,17 +97,17 @@ ArrayBuffer 的设计之初与 WebGL 有关，所谓 WebGL，就是指浏览器�
 
 `TypedArray` 视图支持的数据类型一共有 9 种，`DataView` 视图支持除 Uint8C 以外的其他 8 种。
 
-| 数据类型 | 字节长度 | 含义 |
-| :---: | :---: | :---: |
-| Int8 | 1 | 8 位带符号整数 |
-| Uint8 | 1 | 8 位不带符号整数 |
-| Uint8C | 1 | 8 位不带符号整数（自动过滤溢出） |
-| Int16 | 2 | 16 位带符号整数 |
-| Uint16 | 2 | 16 位不带符号整数 |
-| Int32 | 4 | 32 位带符号整数 |
-| Uint32 | 4 | 32 位不带符号的整数 |
-| Float32 | 4 | 32 位不带符号的整数 |
-| Float64 | 8 | 64 位浮点数 double |
+| 数据类型 | 字节长度 |               含义               |
+| :------: | :------: | :------------------------------: |
+|   Int8   |    1     |          8 位带符号整数          |
+|  Uint8   |    1     |         8 位不带符号整数         |
+|  Uint8C  |    1     | 8 位不带符号整数（自动过滤溢出） |
+|  Int16   |    2     |         16 位带符号整数          |
+|  Uint16  |    2     |        16 位不带符号整数         |
+|  Int32   |    4     |         32 位带符号整数          |
+|  Uint32  |    4     |       32 位不带符号的整数        |
+| Float32  |    4     |       32 位不带符号的整数        |
+| Float64  |    8     |        64 位浮点数 double        |
 
 `ArrayBuffer` 对象代表储存二进制数据的一段内存，它不能直接读写，只能通过视图（`TypedArray`视图和`DataView`视图）来读写，视图的作用是以指定格式解读二进制数据。
 
@@ -139,10 +139,10 @@ Data URLs，即前缀为 `data:` 协议的的 URL，其允许内容创建者向�
 
 如果数据是文本类型，你可以直接将文本嵌入，如果是二进制数据，你可以将数据进行 base64 编码之后再进行嵌入。以下是一些示例：
 
-* `data:,Hello%2C%20World!`：简单的 text/plain 类型数据
-* `data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D`：上一条示例的 base64 编码版本
-* `data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E`：一个 HTML 文档源代码 `<h1>Hello, World</h1>`
-* `data:text/html,<script>alert('hi');</script>`：一个会执行 JavaScript alert 的 HTML 文档
+- `data:,Hello%2C%20World!`：简单的 text/plain 类型数据
+- `data:text/plain;base64,SGVsbG8sIFdvcmxkIQ%3D%3D`：上一条示例的 base64 编码版本
+- `data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E`：一个 HTML 文档源代码 `<h1>Hello, World</h1>`
+- `data:text/html,<script>alert('hi');</script>`：一个会执行 JavaScript alert 的 HTML 文档
 
 ### base64
 
@@ -173,14 +173,13 @@ reader.readAsDataURL(blob)
 
 Blob url：
 
-* 不需要做编码，省了运算资源
-* 大小也不会改变
-* 在不使用时需要手动删除引用
-* 关闭页面链接自动废弃
+- 不需要做编码，省了运算资源
+- 大小也不会改变
+- 在不使用时需要手动删除引用
+- 关闭页面链接自动废弃
 
 Data Url：
 
-* 需要编码，且体积变大 4/3 倍
-* 容易删除
-* 链接不变，保存了可以以后使用
-
+- 需要编码，且体积变大 4/3 倍
+- 容易删除
+- 链接不变，保存了可以以后使用

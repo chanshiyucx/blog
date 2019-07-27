@@ -1,4 +1,4 @@
-# 20 Fetch data with React Hooks
+# Fetch data with React Hooks
 
 在 Reack Hook 中处理网络请求似乎要比 class 组件麻烦一点，毕竟没有 `this` 实例对象可以在上面封装方法。不要拘束于之前的思维，Hook 的数据请求也许会有更好的方式。
 
@@ -55,7 +55,7 @@ useEffect(async () => {
 }, [page])
 ```
 
-> useEffect function must return a cleanup function or nothing. Promises and useEffect\(async \(\) =&gt; …\) are not supported, but you can call an async function inside an effect.
+> useEffect function must return a cleanup function or nothing. Promises and useEffect(async () =&gt; …) are not supported, but you can call an async function inside an effect.
 
 ## Add Loading and Error
 
@@ -213,4 +213,3 @@ const useDataApi = (initialUrl, initialData) => {
 
 参考文章：  
 [React-hooks-fetch-data](https://www.robinwieruch.de/react-hooks-fetch-data/)
-

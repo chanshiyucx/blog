@@ -1,4 +1,4 @@
-# 05 Vue 一键导出 PDF
+# Vue 一键导出 PDF
 
 最近上班有点闲，摸鱼码了个在线简历生成器 [Tamayura](https://github.com/chanshiyucx/tamayura)，提供在线编辑和主题设置等功能。一开始使用 chrome 自带 PDF 导出功能，后来寻思不够方便，便研究下如何一键导出 PDF。
 

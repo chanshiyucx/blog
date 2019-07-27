@@ -1,4 +1,4 @@
-# 24 React 和 Vue 中 key 的作用
+# React 和 Vue 中 key 的作用
 
 在 React/Vue 项目中使用使用 `map` 或 `v-for` 遍历生成节点时必须绑定一个 key 值，否则控制台会报出警告。虽然知道 key 值是元素节点的身份标识，但对其底层的作用却知之甚少。
 
@@ -37,7 +37,7 @@ virtual dom 另一个重大意义就是提供一个中间层，通过 js 去写 
 
 **比较只会在同层级进行, 不会跨层级比较**，以下图为例，了解下 diff 过程中的 dom 比较流程：
 
-![DOM\_&#x6811;&#x7684;&#x6BD4;&#x8F83;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/DOM_树的比较.jpg)
+![DOM_树的比较](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/DOM_树的比较.jpg)
 
 ```markup
 <!-- 层级1 -->
@@ -133,9 +133,9 @@ return vnode
 
 过程如下：
 
-* 取得 `oldvnode.el` 的父节点，`parentEle` 是真实 dom
-* `createEle(vnode)` 会为 vnode 创建它的真实 dom，令 `vnode.el` 对应真实 dom
-* `parentEle` 将新的 dom 插入，移除旧的 dom，**当不值得比较时，新节点直接把老节点整个替换了**
+- 取得 `oldvnode.el` 的父节点，`parentEle` 是真实 dom
+- `createEle(vnode)` 会为 vnode 创建它的真实 dom，令 `vnode.el` 对应真实 dom
+- `parentEle` 将新的 dom 插入，移除旧的 dom，**当不值得比较时，新节点直接把老节点整个替换了**
 
 在 `patch` 之后，会返回 `vnode`，此时 `vnode` 得 `el` 属性已经绑定上了真实 dom 了，而在 `patch` 之前其值为 null。
 
@@ -179,7 +179,7 @@ function patchVnode(oldVnode, vnode) {
 
 上面第 3 步进行子节点比较 `updateChildren` 采用的是 `头尾交叉对比`，大致就是 `oldCh` 和 `newCh` 各有两个头尾的变量 `StartIdx` 和 `EndIdx`，它们的 2 个变量相互比较，一共有 4 种比较方式。如果 4 种比较都没匹配，如果设置了 key，就会用 key 进行比较，在比较的过程中，变量会往中间靠，一旦 `StartIdx>EndIdx` 表明 `oldCh` 和 `newCh` 至少有一个已经遍历完了，就会结束比较。交叉对比源码参考 [Vue/patch.js](https://github.com/vuejs/vue/blob/dev/src/core/vdom/patch.js#L424)。
 
-![&#x5934;&#x5C3E;&#x4EA4;&#x53C9;&#x6BD4;&#x8F83;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/diff2.png)
+![头尾交叉比较](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/diff2.png)
 
 ## key 的作用
 
@@ -190,4 +190,3 @@ function patchVnode(oldVnode, vnode) {
 参考文章：  
 [解析 vue2.0 的 diff 算法](https://github.com/aooy/blog/issues/2)  
 [写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/1)
-

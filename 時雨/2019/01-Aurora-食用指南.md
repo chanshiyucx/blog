@@ -1,4 +1,4 @@
-# 04 Aurora 食用指南
+# Aurora 食用指南
 
 Aurora 是一款动漫风格博客主题，基于 Vue 开发，使用开源的 Github Api 服务，开发至今一直以为主题无人问津，近来有人问起如何食用，故忙里偷闲摸一篇简单食用文档。
 
@@ -64,7 +64,7 @@ token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
 
 Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。 **然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。**
 
-![Leancloud &#x5E94;&#x7528; Key](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Leancloud_应用_Key.png)
+![Leancloud_应用_Key](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Leancloud_应用_Key.png)
 
 ```javascript
 /**
@@ -82,9 +82,9 @@ Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理
 
 首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 `https://chanshiyucx.github.io` 域名。最后将生成的 `Client ID` 和 `Client Secret` 填入相应配置项。**在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。**
 
-![&#x7533;&#x8BF7; GitHub Application](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/申请_GitHub_Application.png)
+![申请 GitHub Application](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/申请_GitHub_Application.png)
 
-![&#x751F;&#x6210; clientID &#x548C; clientSecret](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/生成_clientID_和_clientSecret.png)
+![生成 clientID 和 clientSecret](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/生成_clientID_和_clientSecret.png)
 
 ```javascript
 /**
@@ -120,13 +120,13 @@ JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写
 
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
-![&#x6587;&#x7AE0;&#x6A21;&#x677F;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/文章模板.png)
+![文章模板](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/文章模板.png)
 
 ### 心情模板
 
 注意心情 issues 状态是 `closed` 的，且需要打上 `Inspiration` 的 Labels，其他不做约束。
 
-![&#x4E66;&#x5355;&#x3001;&#x53CB;&#x94FE;&#x3001;&#x5173;&#x4E8E;&#x6807;&#x7B7E;](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/页面模板.png)
+![书单、友链、关于标签](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/页面模板.png)
 
 ### 友链模板
 
@@ -164,11 +164,10 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 
 ### 添加分类
 
-![&#x6DFB;&#x52A0;&#x5206;&#x7C7B;](https://chanshiyu.com/poi/master/2019/Aurora分类.png)
+![添加分类](https://chanshiyu.com/poi/master/2019/Aurora分类.png)
 
 ## 部署
 
 修改根目录下 `deploy.sh`，配置自定义域名与推送仓库，然后执行 `deploy.sh` 自动打包发布到 github-pages。相关文档参考[自动部署](https://cli.vuejs.org/zh/guide/deployment.html#now)。
 
 Just enjoy it! 😃
-

@@ -1,10 +1,10 @@
-# 09 Python 之禅
+# Python 之禅
 
 作为一个前端攻城狮，工作中用到最多的是 JavaScript，但我接触的第一门编程语言却是 Python，大学时期只是略作了解，而现在，是时候重启 Python 之路，开启新的篇章。
 
 ## 缘起
 
-在知乎上看到过一个话题：[如果每人最多只能学习 5 门编程语言，你会选择哪 5 门，为什么？](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/www.zhihu.com/question/39615525/README.md)。
+在知乎上看到过一个话题：[如果每人最多只能学习 5 门编程语言，你会选择哪 5 门，为什么？](https://www.zhihu.com/question/39615525/README.md)。
 
 之后我便在思考，在未来漫长的时间里，自己的选择是什么。在几经思量之后，谨慎得到了答案：JavaScript、Java 和 Python，并没有选择五种，因为我不确定其他选择是否正确，也不希望到最后自不量力。
 
@@ -66,7 +66,3 @@
 >
 > Namespaces are one honking great idea -- let's do more of those!  
 > 命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
-
-参考文章：  
-[Python 之禅](https://github.com/chanshiyucx/blog/tree/f7a1ae4cd2dbc2cee0437a8369ac53ec6cfb2c49/www.jianshu.com/p/0e1f38c2c122/README.md)
-
