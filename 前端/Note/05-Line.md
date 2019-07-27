@@ -12,7 +12,6 @@ The reasonable man adapts himself to the world；the unreasonable one persists i
 
 分而治之（divide and conquer，D&C）
 
-<<<<<<< HEAD
 > conquer /ˈkɑŋkə(r)/
 > vt. 征服;攻克;打败（敌人）;克服;
 > vi. 得胜，胜利;
@@ -20,7 +19,3 @@ The reasonable man adapts himself to the world；the unreasonable one persists i
 ## 003
 
 The present is a gift. And I just wanna be…
-=======
-> conquer /ˈkɑŋkə\(r\)/ vt. 征服;攻克;打败（敌人）;克服; vi. 得胜，胜利;
-
->>>>>>> dbacb8cb1e1fc5d589ce75ed519d6f252dbe2bbc
