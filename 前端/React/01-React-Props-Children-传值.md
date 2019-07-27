@@ -1,6 +1,6 @@
 # React Props Children 传值
 
-今天在折腾 React 时遇到了一个难点。背景是在使用 umijs 框架时，它提供一个根节点 layout。我想在根节点传值到 Route 组件中却不得其法，后来查阅 issues 得到解答。
+背景是在使用 umijs 框架时，它提供一个根节点 layout。我想在根节点传值到 Route 组件中却不得其法，后来查阅 issues 得到解答。
 
 ## props.children 属性
 

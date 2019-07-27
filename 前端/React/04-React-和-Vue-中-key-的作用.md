@@ -1,7 +1,5 @@
 # React 和 Vue 中 key 的作用
 
-在 React/Vue 项目中使用使用 `map` 或 `v-for` 遍历生成节点时必须绑定一个 key 值，否则控制台会报出警告。虽然知道 key 值是元素节点的身份标识，但对其底层的作用却知之甚少。
-
 ## virtual dom
 
 virtual dom，即虚拟 dom，虚拟 dom 对应的是真实 dom，使用 `document.CreateElement` 和 `document.CreateTextNode` 创建的就是真实节点。
