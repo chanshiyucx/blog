@@ -1,6 +1,4 @@
-# 11 Vue 项目引入 SVG 图标
-
-最近摸鱼 Github Style 博客主题 Gitlife 的时候需要用到大量 svg 图标，故参考 element-admin 的资源引入方式，尝试在 vue 项目里引入 svg 图标，尽量取代字体图标。
+# Vue 项目引入 SVG 图标
 
 ## 关于 SVG
 
@@ -18,8 +16,8 @@ SVG 与 icon font 的区别：
 
 在 vue 项目中引入 svg，首要工作是安装依赖包 [svgo](https://github.com/svg/svgo) 和 [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)，这两个工具包都是给 webpack 打包 svg 图标资源使用。
 
-* svgo: Node.js tool for optimizing SVG files.
-* svg-sprite-loader: Webpack loader for creating SVG sprites.
+- svgo: Node.js tool for optimizing SVG files.
+- svg-sprite-loader: Webpack loader for creating SVG sprites.
 
 ```javascript
 "devDependencies": {
@@ -78,13 +76,13 @@ requireAll(req)
 
 `require.context()` 方法来创建自己的（模块）上下文，这个方法有 3 个参数：
 
-* 要搜索的文件夹目录
-* 是否还应该搜索它的子目录
-* 以及一个匹配文件的正则表达式
+- 要搜索的文件夹目录
+- 是否还应该搜索它的子目录
+- 以及一个匹配文件的正则表达式
 
 创建一个通用的引入图标的 SvgIcon 组件如下：
 
-```markup
+```html
 <template>
   <svg :class="svgClass" aria-hidden="true" v-on="$listeners">
     <use :xlink:href="iconName" />
@@ -138,9 +136,8 @@ import './assets/icons'
 
 食用方式，添加 svg 文件到 `/assets/icons/svg` 文件夹下即可，如添加 `github.svg` 后在 vue 文件里引入：
 
-```markup
+```html
 <svg-icon icon-class="github" />
 ```
 
 参考文章： [在 vue 项目中优雅的使用 Svg](https://juejin.im/post/5bcfdad4e51d457a8254e9d6)
-
