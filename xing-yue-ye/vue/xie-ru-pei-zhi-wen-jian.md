@@ -69,6 +69,7 @@ client.setStart()
 
 最后在 `index.html` 中引入生成的配置文件：
 
-```html
+```markup
 <script src="<%= BASE_URL %>setting.js?<%=Date.now()%>"></script>
 ```
+

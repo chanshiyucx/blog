@@ -79,3 +79,4 @@ function delLast(str, char) {
   return str.substring(0, index) + str.substring(index + 1)
 }
 ```
+

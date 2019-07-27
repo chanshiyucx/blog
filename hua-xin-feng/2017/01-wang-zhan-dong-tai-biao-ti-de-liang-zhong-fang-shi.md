@@ -26,12 +26,12 @@ window.onfocus = () => (document.title = title.focus)
 
 `Page Visibility API` 有如下两个属性:
 
-- `document.hidden`：如果页面处于被认为是对用户隐藏状态时返回 true，否则返回 false。
-- `document.visibilityState`：一个用来展示文档可见性状态的字符串。可能的值有：
-  - `visible`：页面内容至少部分可见。
-  - `hidden`：页面内容对用户不可见。
-  - `prerender`：页面内容正在被预渲染且对用户是不可见的。
-  - `unloaded`：页面正在从内存中卸载。
+* `document.hidden`：如果页面处于被认为是对用户隐藏状态时返回 true，否则返回 false。
+* `document.visibilityState`：一个用来展示文档可见性状态的字符串。可能的值有：
+  * `visible`：页面内容至少部分可见。
+  * `hidden`：页面内容对用户不可见。
+  * `prerender`：页面内容正在被预渲染且对用户是不可见的。
+  * `unloaded`：页面正在从内存中卸载。
 
 所以使用 `Page Visibility API` 可以简单实现网站动态标题：
 
@@ -53,3 +53,4 @@ document.addEventListener('visibilitychange', handleVisibilityChange, false)
 ```
 
 应当注意的是当浏览器最小化时，不会触发 `visibilitychange` 事件，也不会设置 hidden 为 true。
+
