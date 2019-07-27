@@ -1,10 +1,8 @@
 # Spring Boot
 
-- SSM：Spring MVC + spring + MyBatis
-
 ## 初遇 Spring Boot
 
-Spring Boot 的角色：Spring Framework -&gt; Spring Boot -&gt; Spring Cloud
+Spring Boot 的角色：Spring Framework -> Spring Boot -> Spring Cloud
 
 Spring Boot 的三大特性：
 
@@ -29,19 +27,6 @@ Spring Boot 的三大特性：
 2. 健康检查：/actuator/health
 3. 外部化配置：/actuator/configprops
 
-## Jackson
-
-```java
-// 忽视字段
-@JsonIgnore
-
-// 日期格式化
-@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss a", locale = "zh", timezone = "GMT+8")
-
-// 忽略空值
-@JsonInclude(JsonInclude.Include.NON_NULL)
-```
-
 ## 分层领域模型
 
 分层领域模型规约：
@@ -60,7 +45,3 @@ Spring Boot 的三大特性：
 - 数据传输对象：xxxDTO，xxx 为业务领域相关的名称。
 - 展示对象：xxxVO，xxx 一般为网页名称。
 - POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。
-
-## 注解
-
-`@Transactional` 在 service 层如果操作失败则回退。
