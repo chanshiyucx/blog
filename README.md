@@ -4,19 +4,12 @@
 
 [![Author](https://img.shields.io/badge/author-chanshiyucx-blue.svg?style=flat-square)](https://chanshiyu.com) [![Email](https://img.shields.io/badge/Emali%20me-me@chanshiyu.com-green.svg?style=flat-square)](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=tNnR9Nfc1drH3N3NwZrX29k)
 
-目录介绍：
-
-| left |                               center                               |
-| :--- | :----------------------------------------------------------------: |
-| 時雨 |                     一些博文，无法归入下列类目                     |
-| 书斋 |              读书笔记，摘要阅读过程中的要点知识和感悟              |
-| 前端 | 前端知识库，包括且不限于 JavaScript、Nodejs、React、Vue 等知识总结 |
-| 后端 |      后端知识库，包括且不限于 Java、Spring、Linux 等知识总结       |
-
-<!-- - 時雨：一些博文，无法归入下列类目。
-- 书斋：读书笔记，摘要阅读过程中的要点知识和感悟。
-- 前端：前端知识库，包括且不限于 JavaScript、Nodejs、React、Vue 等知识总结。
-- 后端：后端知识库，包括且不限于 Java、Spring、Linux 等知识总结。 -->
+| 目录           |                                描述                                |
+| :------------- | :----------------------------------------------------------------: |
+| :pencil2:時雨  |                     一些博文，无法归入下列类目                     |
+| :pencil:书斋   |              读书笔记，摘要阅读过程中的要点知识和感悟              |
+| :computer:前端 | 前端知识库，包括且不限于 JavaScript、Nodejs、React、Vue 等知识总结 |
+| :coffee:后端   |      后端知识库，包括且不限于 Java、Spring、Linux 等知识总结       |
 
 - [時雨](時雨/README.md)
   - [2017](時雨/2017/README.md)
