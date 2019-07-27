@@ -1,12 +1,10 @@
 # 重温 Flex 弹性布局
 
-Flex 弹性布局是我项目中使用频率最多的布局方式，基本任何涉及到布局时采用的方案就是 Flex，虽说弹性布局用得多，但是对一些不常用的属性还是知之甚少，故在此温故知新。
-
 Flex（Flexible Box）即为“弹性布局” ，它是一种一维的布局模型。采用 Flex 布局的元素，称为 Flex 容器（flex container）。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item）。
 
 Flex 容器有两根轴线：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的起终点分别为 `main start`和`main end`；交叉轴的起终点分别为`cross start`和`cross end`。项目沿主轴排列，单个项目占据的主轴空间为`main size`，占据的交叉轴空间为`cross size`。
 
-这里借用阮一峰博文的一张图说明 Flex Box 模型：
+一张图说明 Flex Box 模型：
 
 ![Flex Box](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/flex_box.png)
 
