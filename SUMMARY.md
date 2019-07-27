@@ -1,18 +1,18 @@
 # Table of contents
 
 - [README](README.md)
-- [時雨](時雨/README.md)
-  - [2017](時雨/2017/README.md)
+- [時雨]
+  - [2017]
     - [01 网站动态标题的两种方式](時雨/2017/01-网站动态标题的两种方式.md)
     - [02 RN App 外部唤醒踩坑记](時雨/2017/02-RN-App-外部唤醒踩坑记.md)
-  - [2018](時雨/2018/README.md)
+  - [2018]
     - [01 图片加解密二三事](時雨/2018/01-图片加解密二三事.md)
     - [02 优雅实现 BackTop](時雨/2018/02-优雅实现-BackTop.md)
     - [03 Vue 一键导出 PDF](時雨/2018/03-Vue-一键导出-PDF.md)
     - [04 不一样の烟火](時雨/2018/04-不一样の烟火.md)
     - [05 Python 之禅](時雨/2018/05-Python-之禅.md)
     - [06 Python 文件操作](時雨/2018/06-Python-文件操作.md)
-  - [2019](時雨/2019/README.md)
+  - [2019]
     - [01 Aurora 食用指南](時雨/2019/01-Aurora-食用指南.md)
     - [02 Godaddy 域名找回记事](時雨/2019/02-Godaddy-域名找回记事.md)
     - [03 一个接口的诞生](時雨/2019/03-一个接口的诞生.md)
@@ -26,7 +26,7 @@
     - [11 Fetch data with React Hooks](時雨/2019/11-Fetch-data-with-React-Hooks.md)
     - [12 字符编码の小常识](時雨/2019/12-字符编码の小常识.md)
     - [13 WSL 安装 Docker 实录](時雨/2019/13-WSL-安装-Docker-实录.md)
-- [书斋](书斋/README.md)
+- 书斋
   - [ES6 标准入门](书斋/ES6-标准入门/README.md)
     - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
     - [02 语法的扩展](书斋/ES6-标准入门/02-语法的扩展.md)
@@ -42,7 +42,7 @@
     - [02 设计模式（上）](书斋/JavaScript-设计模式/02-设计模式（上）.md)
     - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
-- [前端](前端/README.md)
+- 前端
   - [JavaScript](前端/JavaScript/README.md)
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
     - [02 JavaScript 正则技巧](前端/JavaScript/02-JavaScript-正则技巧.md)
