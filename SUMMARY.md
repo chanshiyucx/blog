@@ -78,6 +78,7 @@
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Linux](后端/Note/02-Linux.md)
+    - [03 MySQL](后端/Note/03-MySQL.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
     - [02 SSM](后端/Spring/02-SSM.md)

@@ -121,7 +121,7 @@ public class Person {
 
 上面示例：限制这个字符串长度为 100 个字符；该列不能包含空值（null）；不必是唯一的。如果试图将空值（null）作为 first name 插入数据库表的话，就会触发数据库约束冲突，进而导致当前事务回滚。
 
-有两种方式使类属性与数据表字段建立映射关系：一是在属性的 getter 方法上添加 `@Column` 注解（如上所示）；二是直接在类属性上添加注解。但在同一个实体层次结构中必须保持同一种使用注解的方式，即一个实体及其子类中必须保证注解方式的一致性。
+有两种方式使类属性与数据表字段建立映射关系：一是在属性的 getter 方法上添加 `@Column` 注解（如上所示）；二是直接在类属性上添加注解。
 
 ```java
 @Entity
@@ -140,6 +140,77 @@ public class Person {
 ```
 
 两种方式基本是等价的，唯一的不同是当需要在子类中覆写父类某些字段的注解时有区别。由于实体类可以继承，同时扩展其字段。如果在字段级别定义了 JPA 注解的话，就不能通过覆写它的对应 getter 方法来达到覆写它的目的。
+
+在同一个实体层次结构中必须保持同一种使用注解的方式，即一个实体及其子类中必须保证注解方式的一致性。但可以使用注解 `@Access` 来指明这一个特定的子类使用了另一种不同的注解方式来注解其字段和方法。
+
+```java
+@Entity
+@Table(name = "T_GEEK")
+@Access(AccessType.PROPERTY)
+public class Geek extends Person {}
+```
+
+上面示例告诉 JPA 这个类在方法层面使用注解，即使它的父类有可能在字段层面使用了注解。
+
+## 继承（Inheritance）
+
+实体类可以继承，这里新建子类 Geek 继承上例的 Person，并添加一个新字段：
+
+```java
+@Entity
+@Table(name = "T_GEEK")
+public class Geek extends Person {
+    private String favouriteProgrammingLanguage;
+    private List<Project> projects = new ArrayList<Project>();
+
+    @Column(name = "FAV_PROG_LANG")
+    public String getFavouriteProgrammingLanguage() {
+            return favouriteProgrammingLanguage;
+    }
+
+    public void setFavouriteProgrammingLanguage(String favouriteProgrammingLanguage) {
+        this.favouriteProgrammingLanguage = favouriteProgrammingLanguage;
+    }
+}
+```
+
+这样会让两个实体共用一张表，并新增名为 DTYPE 的列用于存储标志位，标识存储的是 Person 还是 Geek，示例如下：
+
+```
+DTYPE  | ID | FIRST_NAME | LAST_NAME | FAV_PROG_LANG
+Person | 1  | Homer      | Simpson   | null
+Geek   | 2  | Gavin      | Coffee    | Java
+Geek   | 3  | Thomas     | Micro     | C#
+Geek   | 4  | Christian  | Cup       | Java
+```
+
+当然也可以通过注解更改名字和类型，如下：
+
+```java
+@DiscriminatorColumn(name="PERSON_TYPE", discriminatorType = DiscriminatorType.INTEGER)
+```
+
+之后数据表结构更新为：
+
+```
+PERSON_TYPE | ID | FIRST_NAME | LAST_NAME | FAV_PROG_LANG
+-1907849355 | 1  | Homer      | Simpson   | null
+2215460     | 2  | Gavin      | Coffee    | Java
+2215460     | 3  | Thomas     | Micro     | C#
+2215460     | 4  | Christian  | Cup       | Java
+```
+
+并不是在所有情况下你都会想在同一张表中存储所有不同类型的实体数据，特别是当不同的实体类型含有很多的不同列时。因此 JPA 允许指定如何布局不同的列，有三种选项可供选择：
+
+- **SINGLE_TABLE**：这种策略映射所有的类到一个单一的表。其结果是，每一行都含有所有类型的所有列；如果有空列的话，数据库就需要额外的存储空间。另一方面来看这种策略所带来的优点是：所有的查询都不需要使用连接，从而可以更快的运行。
+- **JOINED**：这种策略为每种类型创建一个单独的表。因此每个表只包含它所映射的实体的状态。加载实体时，JPA 需要从当前实体映射的所有表中加载相应的数据。这种方法减少了存储空间，但从另一方面来看它引入了连接查询，这会显著降低查询速度。
+- **TABLE_PER_CLASS**: 和 JOINED 策略类似，这个策略为每种实体类型创建单独的表。但与 JOINED 策略相反的是，这些表包含了所有与当前实体相关的信息。因此加载这些实体时不需要引入连接查询，但它带来的新问题是：在不知道具体的子类时，需要使用另外的 SQL 查询来确定它的信息。
+
+要更改实现类使用策略，只需要在**基类**中添加注解：
+
+```java
+@Inheritance(strategy = InheritanceType.JOINED)
+```
 
 ## 序列（Sequences）
 
