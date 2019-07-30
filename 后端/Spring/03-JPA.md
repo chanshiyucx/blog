@@ -224,7 +224,7 @@ PERSON_TYPE | ID | FIRST_NAME | LAST_NAME | FAV_PROG_LANG
 
 ### 一对一（OneToOne）
 
-还是以上例 Person 实体为例，现在新添加一个实体 IdCard：
+以上例 Person 实体为例，每个 Person 都有一个身份卡，现在新添加一个实体 IdCard：
 
 ```java
 @Entity
@@ -275,7 +275,7 @@ Tips：**可以使用注解 `@Temporal` 告诉 JPA 如何序列化 Date 信息�
 public class Person {
     private IdCard idCard;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_CARD_ID")
     public IdCard getIdCard() {
         return idCard;
@@ -292,6 +292,71 @@ public class Person {
 
 - `FetchType.EAGER` 是默认值，它表示每次加载一个 Person 时也要同时加载 IdCard。
 - `FetchType.LAZY` 设置其加载方式为当通过 person.getIdCard() 访问时才加载它。
+
+必须谨慎使用懒加载，因为在加载很多 person 数据时它会导致数以百计的额外的查询请求，而且要牢记需要单独加载每个 IDCard。
+
+### 一对多（OneToMany）
+
+以上例 Person 实体为例，每个 Person 都有一个或多个手机，现在新添加一个实体 Phone：
+
+```java
+@Entity
+@Table(name = "T_PHONE")
+public class Phone {
+    private Long id;
+    private String number;
+    private Person person;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "NUMBER")
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PERSON_ID")
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+}
+```
+
+Phone 上指明一个 `@ManyToOne` 的关系，因为一个 Person 可能拥有多个 Phone。注解 `@JoinColumn` 用于指明表 T_PHONE 中用来存储对应 Person 表外键的列。
+
+此外，需要在 Person 中添加一个 Phone 对象的集合（List），并且在它的 getter 方法上加上注解 `@OneToMany`，因为一个 Person 可能拥有多个 Phone：
+
+```java
+
+@Entity
+@Table(name = "T_PERSON")
+public class Person {
+    private List<Phone> phones = new ArrayList<>();
+
+    @OneToMany(mappedBy = "person", fetch = FetchType.LAZY)
+    public List<Phone> getPhones() {
+        return phones;
+    }
+}
+```
+
+属性 mappedBy 的值告诉 JPA 这个注解在关系的另一端（这里是 Phone.person）所引用的集合。在 OneToMany 的模式下，`FetchType.LAZY` 是默认值。
 
 ## 序列（Sequences）
 
