@@ -500,6 +500,21 @@ public void setBillingPeriods(List<Period> billingPeriods) {
 }
 ```
 
+## 数据类型和转换器（Converters）
+
+下表展示了 Java 类型是如何映射到不同的数据库类型的：
+
+| Java type                                                                            | Database type                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------ |
+| String (char, char[])                                                                | VARCHAR (CHAR, VARCHAR2, CLOB, TEXT)       |
+| Number (BigDecimal, BigInteger, Integer, Double, Long, Float, Short, Byte)           | NUMERIC (NUMBER, INT, LONG, FLOAT, DOUBLE) |
+| int, long, float, double, short, byte                                                | NUMERIC (NUMBER, INT, LONG, FLOAT, DOUBLE) |
+| byte[]                                                                               | VARBINARY (BINARY, BLOB)                   |
+| boolean (Boolean)                                                                    | BOOLEAN (BIT, SMALLINT, INT, NUMBER)       |
+| java.util.Date, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.Calendar | TIMESTAMP (DATE, DATETIME)                 |
+| java.lang.Enum                                                                       | NUMERIC (VARCHAR, CHAR)                    |
+| java.util.Serializable                                                               | VARBINARY (BINARY, BLOB)                   |
+
 ## 序列（Sequences）
 
 注解 `@GeneratedValue` 可以设置这个唯一值将会如何分配给每个实体。JPA 提供了如下三种不同的方法：
