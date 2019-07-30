@@ -8,6 +8,73 @@ JPA 的三个组件：
 - **对象-关系型元数据（Object-relational metadata）**：开发者需要设定 Java 类和它们的属性与数据库中的表和列的映射关系。有两种设定方式：通过特定的配置文件建立映射；或者使用注解。
 - **Java 持久化查询语句（Java Persistence Query Language - JPQL）**：JPA 旨在建立不依赖于特定的数据库的抽象层，所以它提供了一种专有查询语言来代替 SQL，即 JPQL。它提供了支持不同数据库方言的特性，使开发者实现查询逻辑时不需要考虑特定的数据库类型。
 
+## 基础知识
+
+### EntityManager 和持久化单元（Persistence Unit）
+
+几乎所有与 JPA 交互的操作都是通过 EntityManager 完成的。要获得一个 EntityManager 的实例，首先需要创建一个 EntityManagerFactory 的实例。通常情况下在每个应用中的“持久化单元”只需要一个 EntityManagerFactory。持久化单元是通过数据库配置文件归集到一起的一组 JPA 类（不求甚解）。
+
+```java
+public class Main {
+    private static final Logger LOGGER = Logger.getLogger("JPA");
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        main.run();
+    }
+
+    public void run() {
+        EntityManagerFactory factory = null;
+        EntityManager entityManager = null;
+        try {
+            factory = Persistence.createEntityManagerFactory("PersistenceUnit");
+            entityManager = factory.createEntityManager();
+            persistPerson(entityManager);
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, e.getMessage(), e);
+            e.printStackTrace();
+        } finally {
+            if (entityManager != null) {
+                entityManager.close();
+            }
+            if (factory != null) {
+                factory.close();
+            }
+        }
+    }
+}
+```
+
+### 事务（Transactions）
+
+EntityManager 代表一个持久化单元，一个持久化单元就是一个缓存，用于存储那些数据库中所存储的各实体的状态。存储数据至数据库时，将它传递给 EntityManager，随后传递给下层的缓存。如果想在数据库中插入一条新数据，可以调用 EntityManager 的 `persist()` 方法。
+
+```java
+private void persistPerson(EntityManager entityManager) {
+    EntityTransaction transaction = entityManager.getTransaction();
+    try {
+        transaction.begin();
+        Person person = new Person();
+        person.setFirstName("Homer");
+        person.setLastName("Simpson");
+        entityManager.persist(person);
+        transaction.commit();
+    } catch (Exception e) {
+        if (transaction.isActive()) {
+            transaction.rollback();
+        }
+    }
+}
+```
+
+需要注意：调用 `persist()` 方法之前，需要调用 Transaction 对象的 `transaction.begin()` 方法开启一个新事务。调用`persist()` 方法后，需要提交事务，即发送数据到数据库并存储。如果有异常抛出，必须回滚之前开启的事务。由于只能回滚活动的事务，所以在回滚前需要检查当前事务是否已在运行，因为所发生的异常有可能是在调用 `transaction.begin()` 时发生的。
+
+通过注解 `@Transactional` 实现事物回滚会更方便。在测试环境下，该注解不会向数据库插入测试数据，在生产环境下，则按照正常的逻辑回滚。
+
+### 数据库表（Tables）
+
+通过注解 `@Entity`，将类映射到数据库表：
+
 ## 序列（Sequences）
 
 注解 `@GeneratedValue` 可以设置这个唯一值将会如何分配给每个实体。JPA 提供了如下三种不同的方法：
@@ -69,3 +136,6 @@ create table T_ID_CARD (
     primary key (id)
 )
 ```
+
+参考文章：  
+[JPA 入门教程 – 终极指南](https://www.javacodegeeks.com/2015/04/jpa%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html#relationships_onetoone)
