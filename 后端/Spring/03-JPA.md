@@ -10,7 +10,7 @@ JPA 的三个组件：
 
 ## 基础知识
 
-### EntityManager 和持久化单元（Persistence Unit）
+### 持久化单元（Persistence Unit）
 
 几乎所有与 JPA 交互的操作都是通过 EntityManager 完成的。要获得一个 EntityManager 的实例，首先需要创建一个 EntityManagerFactory 的实例。通常情况下在每个应用中的“持久化单元”只需要一个 EntityManagerFactory。持久化单元是通过数据库配置文件归集到一起的一组 JPA 类（不求甚解）。
 
@@ -74,6 +74,72 @@ private void persistPerson(EntityManager entityManager) {
 ### 数据库表（Tables）
 
 通过注解 `@Entity`，将类映射到数据库表：
+
+```java
+@Entity
+@Table(name = "T_PERSON")
+public class Person {
+    private Long id;
+    private String firstName;
+    private String lastName;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "FIRST_NAME")
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    @Column(name = "LAST_NAME")
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
+```
+
+注解 `@Table` 是可选的，如果类名和数据表名不一致的情况下使用来指定表名。JPA 会为 Java 类中所有具有 setter 和 getter 方法的属性创建数据库列，唯一的例外是具有显式 `@Transient` 注解声明的属性。另外可以使用 `@Column` 注解提供的其它属性为每个列指定更多的信息：
+
+```java
+@Column(name = "FIRST_NAME", length = 100, nullable = false, unique = false)
+```
+
+上面示例：限制这个字符串长度为 100 个字符；该列不能包含空值（null）；不必是唯一的。如果试图将空值（null）作为 first name 插入数据库表的话，就会触发数据库约束冲突，进而导致当前事务回滚。
+
+有两种方式使类属性与数据表字段建立映射关系：一是在属性的 getter 方法上添加 `@Column` 注解（如上所示）；二是直接在类属性上添加注解。但在同一个实体层次结构中必须保持同一种使用注解的方式，即一个实体及其子类中必须保证注解方式的一致性。
+
+```java
+@Entity
+@Table(name = "T_PERSON")
+public class Person {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+}
+```
+
+两种方式基本是等价的，唯一的不同是当需要在子类中覆写父类某些字段的注解时有区别。由于实体类可以继承，同时扩展其字段。如果在字段级别定义了 JPA 注解的话，就不能通过覆写它的对应 getter 方法来达到覆写它的目的。
 
 ## 序列（Sequences）
 
