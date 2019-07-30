@@ -212,6 +212,87 @@ PERSON_TYPE | ID | FIRST_NAME | LAST_NAME | FAV_PROG_LANG
 @Inheritance(strategy = InheritanceType.JOINED)
 ```
 
+## 实体关系（Relationships）
+
+除了子类和其父类之间的扩展关系（extends）外，不同实体间也存在各种模型关系，JPA 为建模中涉及到的实体/表提供了多种关系：
+
+- `OneToOne`：在这种关系中每个实体只含有一个明确的对其它实体的引用；反之亦然。
+- `OneToMany/ManyToOne`：在这种关系中，一个实体可以有多个子实体，每个子实体只属于一个父实体。
+- `ManyToMany`：在这种关系中，一种类型的多个实体，可以含有其它类型实体的多个引用。
+- `Embedded`：在这种关系中，其它实体是和其父实体存储在同一个表中（即，每一个表都有两个实体）。
+- `ElementCollection`：这种关系类似于 OneToMany 关系，但不同的是，它的引用实体是 Embedded 实体。这样就可以在简单对象上定义 OneToMany 关系，而不必定义在另外的表中使用的“普通” Embedded 关系。
+
+### 一对一（OneToOne）
+
+还是以上例 Person 实体为例，现在新添加一个实体 IdCard：
+
+```java
+@Entity
+@Table(name = "T_ID_CARD")
+public class IdCard {
+    private Long id;
+    private String idNumber;
+    private Date issueDate;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "ID_NUMBER")
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
+    }
+
+    @Column(name = "ISSUE_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(Date issueDate) {
+        this.issueDate = issueDate;
+    }
+}
+```
+
+Tips：**可以使用注解 `@Temporal` 告诉 JPA 如何序列化 Date 信息到数据库中。根据底层数据库产品的不同，这个列映射为一个相应的日期/时间戳类型。这个注解的可能值是：TIMESTAMP, TIME 和 DATE**。
+
+然后在 Person 实体中添加新字段引用 IdCard：
+
+```java
+@Entity
+@Table(name = "T_PERSON")
+public class Person {
+    private IdCard idCard;
+
+    @OneToOne
+    @JoinColumn(name = "ID_CARD_ID")
+    public IdCard getIdCard() {
+        return idCard;
+    }
+}
+```
+
+可以定义何时加载 IDCard 的实体，在注解 `@OneToOne` 中增加属性 fetch：
+
+```java
+@OneToOne(fetch = FetchType.EAGER)
+@OneToOne(fetch = FetchType.LAZY)
+```
+
+- `FetchType.EAGER` 是默认值，它表示每次加载一个 Person 时也要同时加载 IdCard。
+- `FetchType.LAZY` 设置其加载方式为当通过 person.getIdCard() 访问时才加载它。
+
 ## 序列（Sequences）
 
 注解 `@GeneratedValue` 可以设置这个唯一值将会如何分配给每个实体。JPA 提供了如下三种不同的方法：
