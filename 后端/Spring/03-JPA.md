@@ -358,6 +358,69 @@ public class Person {
 
 属性 mappedBy 的值告诉 JPA 这个注解在关系的另一端（这里是 Phone.person）所引用的集合。在 OneToMany 的模式下，`FetchType.LAZY` 是默认值。
 
+### 多对多（ManyToMany）
+
+一个 Geek 可以加入很多项目（Project）而且一个 Project 包含着很多 Geek，所以建模 Project 和 Geek 之间关系时设定为 `@ManyToMany`。
+
+```java
+@Entity
+@Table(name = "T_PROJECT")
+public class Project {
+    private Long id;
+    private String title;
+    private List<Geek> geeks = new ArrayList<Geek>();
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Column(name = "TITLE")
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @ManyToMany(mappedBy="projects")
+    public List<Geek> getGeeks() {
+        return geeks;
+    }
+
+    public void setGeeks(List<Geek> geeks) {
+        this.geeks = geeks;
+    }
+}
+```
+
+属性 mappedBy 的值告诉 JPA 这个关系的另一端关联的类的成员。类 Geek 如下获取 Project 集合：
+
+```java
+private List<Project> projects = new ArrayList<>();
+
+@ManyToMany
+@JoinTable(
+        name="T_GEEK_PROJECT",
+        joinColumns={@JoinColumn(name="GEEK_ID", referencedColumnName="ID")},
+        inverseJoinColumns={@JoinColumn(name="PROJECT_ID", referencedColumnName="ID")})
+public List<Project> getProjects() {
+    return projects;
+}
+```
+
+每个 ManyToMany 关系都需要一个额外的表。这个额外的表需要注解为 `@JoinTable`，其内容在于描述用来存储 Geek 和不同 Project 的关联的表的具体信息。此处表名为 GEEK_PROJECT，其列 GEEK_ID 用于存储 geek 的 id，其列 PROJECT_ID 用于存储 project 的 id。Geek 和 Project 的关联引用列都是 ID。
+
+关系 `@ManyToMany` 通常也是按照默认方式进行懒加载，因为在大部分情况下，不希望在加载某个单独 Geek 时同时加载它对应的所有 Project 信息。
+
+`@ManyToMany` 关系在两边的设置是对等的，需要在两个类中进行对调的对集合引用的注解。
+
 ## 序列（Sequences）
 
 注解 `@GeneratedValue` 可以设置这个唯一值将会如何分配给每个实体。JPA 提供了如下三种不同的方法：
