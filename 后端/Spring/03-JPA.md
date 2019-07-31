@@ -343,7 +343,6 @@ Phone 上指明一个 `@ManyToOne` 的关系，因为一个 Person 可能拥有�
 此外，需要在 Person 中添加一个 Phone 对象的集合（List），并且在它的 getter 方法上加上注解 `@OneToMany`，因为一个 Person 可能拥有多个 Phone：
 
 ```java
-
 @Entity
 @Table(name = "T_PERSON")
 public class Person {

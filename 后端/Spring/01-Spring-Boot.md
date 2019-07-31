@@ -2,7 +2,9 @@
 
 ## 初遇 Spring Boot
 
-Spring Boot 的角色：Spring Framework -> Spring Boot -> Spring Cloud
+Spring Boot 是 Spring MVC 的升级版，两者没有必然联系。
+
+Spring Boot 的角色：Spring Framework -> Spring Boot -> Spring Cloud。
 
 Spring Boot 的三大特性：
 
@@ -26,3 +28,111 @@ Spring Boot 的三大特性：
 1. 指标：/actuator/metrics
 2. 健康检查：/actuator/health
 3. 外部化配置：/actuator/configprops
+
+## 启动方式
+
+1. mvn 启动：
+
+```bash
+mvn spring-boot:run
+```
+
+2. 打成 jar 包启动：
+
+```bash
+# 打包
+mvn clean package
+
+# 启动
+java -jar target/luckymoney-0.0.1-SNAPSHOT.jar
+```
+
+## 配置
+
+```yml
+# 启动端口和路径
+server:
+  port: 3000
+  servlet:
+    context-path: /luckymoney
+```
+
+### 自定义配置
+
+#### 单个引入
+
+```yml
+# 自定义配置
+minMoney: 1
+description: 最少金额${minMoney}元
+```
+
+在程序中引用自定义的配置参数：
+
+```java
+@RestController
+public class HelloController {
+
+    @Value("${minMoney}")
+    private BigDecimal minMoney;
+
+    @Value("${description}")
+    private String description;
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return description;
+    }
+}
+```
+
+#### 多个引入
+
+```yml
+limit:
+  minMoney: 1
+  maxMoney: 10
+  description: 最少金额${limit.minMoney}元，最大金额${limit.maxMoney}元
+```
+
+提取配置：
+
+```java
+@Data
+@Component
+@ConfigurationProperties(prefix = "limit")
+public class LimitConfig {
+
+    private BigDecimal minMoney;
+
+    private BigDecimal maxMoney;
+
+    private String description;
+}
+```
+
+引入配置：
+
+```java
+@RestController
+public class HelloController {
+
+    @Autowired
+    private LimitConfig limitConfig;
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return limitConfig.getDescription();
+    }
+}
+```
+
+#### 区分开发与生产环境
+
+将 `application.yml` 复制两份文件 `application-dev.yml` 和 `application-prod.yml`，然后再在 `application-dev.yml` 中引入：
+
+```yml
+spring:
+  profiles:
+    active: prod
+```
