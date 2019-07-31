@@ -49,12 +49,24 @@ java -jar target/luckymoney-0.0.1-SNAPSHOT.jar
 
 ## 配置
 
+### 基本配置
+
 ```yml
 # 启动端口和路径
 server:
   port: 3000
   servlet:
     context-path: /luckymoney
+
+# 数据库和JPA
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1124chanshiyu
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  jpa:
+    show-sql: true
 ```
 
 ### 自定义配置
@@ -129,7 +141,7 @@ public class HelloController {
 
 3. 区分开发与生产环境
 
-将 `application.yml` 复制两份文件 `application-dev.yml` 和 `application-prod.yml`，然后再在 `application-dev.yml` 中引入：
+将 `application.yml` 复制两份文件 `application-dev.yml` 和 `application-prod.yml`，然后再在 `application.yml` 中引入：
 
 ```yml
 spring:
