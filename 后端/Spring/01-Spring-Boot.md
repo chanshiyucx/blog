@@ -59,7 +59,7 @@ server:
 
 ### 自定义配置
 
-#### 单个引入
+1. 单个引入
 
 ```yml
 # 自定义配置
@@ -86,7 +86,7 @@ public class HelloController {
 }
 ```
 
-#### 多个引入
+2. 多个引入
 
 ```yml
 limit:
@@ -127,12 +127,18 @@ public class HelloController {
 }
 ```
 
-#### 区分开发与生产环境
+3. 区分开发与生产环境
 
 将 `application.yml` 复制两份文件 `application-dev.yml` 和 `application-prod.yml`，然后再在 `application-dev.yml` 中引入：
 
 ```yml
 spring:
   profiles:
-    active: prod
+    active: dev
+```
+
+开发环境使用 dev，发布到线上时不需要更改，只需启动时加入参数启动：
+
+```bash
+java -jar -Dspring.profiles.active=prod target\luckymoney-0.0.1-SNAPSHOT.jar
 ```
