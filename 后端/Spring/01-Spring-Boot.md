@@ -154,3 +154,18 @@ spring:
 ```bash
 java -jar -Dspring.profiles.active=prod target\luckymoney-0.0.1-SNAPSHOT.jar
 ```
+
+## 注解
+
+> @RestController = @Controller + @ResponseBody
+
+`@RestController` 注解相当于 `@Controller` 与 `@ResponseBody` 这两个注解的结合。
+
+在使用 SpringMVC 框架的时候，在处理 json 的时候需要注解 `@ResponseBody` 或者 `@RestController`，这两个注解都会处理返回的数据格式，使用了该类型注解后返回的不再是视图，不会进行转跳，而是返回 json 或 xml 数据格式，输出在页面上。
+
+所以在定义 Controller 的时候如果需要返回 jsp 界面就用 `@Controller` 注解，只需要返回 string 或 json 的时候就用 `@RestController` 注解。
+
+两者区别：
+
+`@ResponseBody`： 一般是使用在单独的方法上的，需要哪个方法返回 json 数据格式，就在哪个方法上使用，具有针对性。
+`@RestController`：一般是使用在类上的，它相当于 `@Controller` 与 `@ResponseBody` 这两个注解的结合，本质相当于在该类的所有方法上都统一使用了 `@ResponseBody` 注解。
