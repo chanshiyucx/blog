@@ -578,4 +578,4 @@ create table T_ID_CARD (
 ```
 
 参考文章：  
-[JPA 入门教程 – 终极指南](https://www.javacodegeeks.com/2015/04/jpa%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html#relationships_onetoone)
+[JPA 入门教程 – 终极指南](https://www.javacodegeeks.com/2015/04/jpa%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B.html)
