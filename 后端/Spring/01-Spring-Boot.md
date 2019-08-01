@@ -157,6 +157,8 @@ java -jar -Dspring.profiles.active=prod target\luckymoney-0.0.1-SNAPSHOT.jar
 
 ## 注解
 
+### @RestController
+
 > @RestController = @Controller + @ResponseBody
 
 `@RestController` 注解相当于 `@Controller` 与 `@ResponseBody` 这两个注解的结合。
@@ -169,3 +171,45 @@ java -jar -Dspring.profiles.active=prod target\luckymoney-0.0.1-SNAPSHOT.jar
 
 `@ResponseBody`： 一般是使用在单独的方法上的，需要哪个方法返回 json 数据格式，就在哪个方法上使用，具有针对性。
 `@RestController`：一般是使用在类上的，它相当于 `@Controller` 与 `@ResponseBody` 这两个注解的结合，本质相当于在该类的所有方法上都统一使用了 `@ResponseBody` 注解。
+
+### @GetMapping
+
+注解 `@GetMapping` 支持数组，多个路径可以访问同一个接口：
+
+```java
+@GetMapping({"/hello", "/hi"})
+```
+
+获取路由参数有两种方式，一种是 `/hello/200` 路径，另外一种是 `/hello?id=200` 路径，方式分别如下：
+
+```java
+// /hello/200
+@GetMapping("/hello/{id}")
+public String sayHello(@PathVariable("id") Integer id) {
+    return "id:" + id;
+}
+
+// /hello?id=200
+@GetMapping("/hello")
+public String sayHello(@RequestParam("id") Integer id) {
+    return "id:" + id;
+}
+```
+
+更细致控制非必传和默认值：
+
+```java
+@GetMapping("/hello")
+public String sayHello(@RequestParam(value = "id", required = false, defaultValue = "o") Integer id) {
+    return "id:" + id;
+}
+```
+
+`@RequestParam` 注解可以兼容 `@PostMapping`
+
+```java
+@PostMapping("/hello")
+public String sayHello(@RequestParam(value = "id", required = false, defaultValue = "0") Integer id) {
+    return "id:" + id;
+}
+```
