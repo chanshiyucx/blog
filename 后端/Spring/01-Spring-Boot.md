@@ -213,11 +213,3 @@ public String sayHello(@RequestParam(value = "id", required = false, defaultValu
     return "id:" + id;
 }
 ```
-
-## AOP
-
-AOP 是一种编程范式，与语言无关，是一种程序设计思想。
-
-- AOP，Aspect Oriented Programing，面向切面
-- OOP，Object Oriented Programing，面向对象
-- POP，Procedure Oriented Programming，面向过程

@@ -116,9 +116,10 @@ public class SwaggerConfig {
 | @ApiParam          | 描述一个方法的参数     |
 | @ApiResponse       | 描述一个请求响应       |
 | @ApiResponses      | 描述一组请求响应       |
+| @ApiIgnore         | 表示忽略               |
 
 ```java
-@Api(description = "买家订单")
+@Api(tags = "买家商品", description = "买家商品相关 Rest API")
 public class BuyerOrderController {
     @ApiOperation(value="订单详情")
     @ApiImplicitParams({
@@ -133,3 +134,30 @@ public class BuyerOrderController {
     }
 }
 ```
+
+```java
+/**
+ * 商品信息
+ */
+@Data
+@ApiModel("商品类目详情")
+public class ProductVO {
+
+    @ApiModelProperty("类目名称")
+    @JsonProperty("name")
+    private String categoryName;
+
+    @ApiModelProperty("类目类型")
+    @JsonProperty("type")
+    private Integer categoryType;
+
+    @ApiModelProperty("商品列表")
+    @JsonProperty("list")
+    private List<ProductInfoVO> productInfoVOList;
+}
+```
+
+启动项目访问路径查看文档：`http://192.168.51.242:8080/swagger-ui.html#/`。
+
+参考文章：  
+[在 Spring Boot 项目中使用 Swagger 文档](https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html)
