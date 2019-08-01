@@ -200,7 +200,7 @@ public String sayHello(@RequestParam("id") Integer id) {
 
 ```java
 @GetMapping("/hello")
-public String sayHello(@RequestParam(value = "id", required = false, defaultValue = "o") Integer id) {
+public String sayHello(@RequestParam(value = "id", required = false, defaultValue = "0") Integer id) {
     return "id:" + id;
 }
 ```
@@ -213,3 +213,11 @@ public String sayHello(@RequestParam(value = "id", required = false, defaultValu
     return "id:" + id;
 }
 ```
+
+## AOP
+
+AOP 是一种编程范式，与语言无关，是一种程序设计思想。
+
+- AOP，Aspect Oriented Programing，面向切面
+- OOP，Object Oriented Programing，面向对象
+- POP，Procedure Oriented Programming，面向过程
