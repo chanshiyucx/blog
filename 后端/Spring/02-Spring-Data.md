@@ -475,8 +475,53 @@ public class EmployeeRepositoryTest {
 }
 ```
 
-### Repository Hierarchy
+### Repository
 
-- CrudRepository
-- PagingAndSortingRepository
-- JpaRepository
+Repository 类的定义：
+
+```java
+public interface Repository<T, ID extends Serializable> {}
+```
+
+Repository 是一个空接口，也是标记接口，即没有任何方法声明的接口。继承这个接口后就会被纳入 spring 管理。
+
+除了使用继承方式外，还可以使用注解：
+
+```java
+@RepositoryDefinition(domainClass = Employee.class, idClass = Integer.class)
+public interface EmployeeRepository {
+
+    public Employee findByName(String name);
+}
+```
+
+Repository 子接口：
+
+- CrudRepository：继承 Repository，实现 CRUD 相关方法
+- PagingAndSortingRepository：继承 CrudRepository，实现分页排序相关方法
+- JpaRepository：继承 CrudRepository，实现 JPA 相关方法
+
+Repository 查询方法定义规则：
+
+![Spring Data 查询方法定义规则](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/spring_data_jpa.jpg)
+
+示例：
+
+```java
+public interface EmployeeRepository extends Repository<Employee, Integer> {
+
+    // where name like ?% and age <?
+    public List<Employee> findByNameStartingWithAndAgeLessThan(String name, Integer age);
+
+    // where name like %? and age <?
+    public List<Employee> findByNameEndingWithAndAgeLessThan(String name, Integer age);
+
+    // where name in (?, ?...) or age <?
+    public List<Employee> findByNameInOrAgeLessThan(List<String> names, Integer age);
+}
+```
+
+对于按照方法命名规则来使用的话，有弊端：
+
+1. 方法名会比较长：约定大于配置
+2. 对于一些复杂的查询，很难实现
