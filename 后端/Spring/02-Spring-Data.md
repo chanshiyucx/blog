@@ -412,7 +412,7 @@ public class StudentDAOSpringJdbcImplTest {
 </beans>
 ```
 
-### 创建实体类
+### 创建实体类和仓储
 
 上面传统方式是先建数据表，这里是创建实体类后自动生成数据表，注意对比这里使用的是包装类型 `Integer` 而之前是基本类型 `int`。
 
@@ -435,8 +435,6 @@ public class Employee {
     private Integer age;
 }
 ```
-
-### Repository
 
 创建 `EmployeeRepository`：
 
