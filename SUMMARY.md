@@ -81,7 +81,7 @@
     - [03 MySQL](后端/Note/03-MySQL.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
-    - [02 Spring Data](后端/Spring/02-Spring-Data.md.md)
+    - [02 Spring Data](后端/Spring/02-Spring-Data.md)
     - [03 JPA](后端/Spring/03-JPA.md)
     - [04 Swagger](后端/Spring/04-Swagger.md)
     - [05 AOP](后端/Spring/05-AOP.md)
