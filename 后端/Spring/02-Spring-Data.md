@@ -21,9 +21,9 @@
 ### 创建数据库
 
 ```sql
-create database spring_boot;
+create database spring_data;
 
-use spring_boot;
+use spring_data;
 
 create table student (
   id int not null auto_increment,
@@ -74,7 +74,7 @@ public interface StudentDAO {
 配置文件 `db.properties`：
 
 ```properties
-jdbc.url = jdbc:mysql:///spring_boot
+jdbc.url = jdbc:mysql:///spring_data
 jdbc.user = root
 jdbc.password = 1124chanshiyu
 jdbc.dirverClass = com.mysql.jdbc.Driver
@@ -97,7 +97,6 @@ public class JDBCUtil {
      * @return 所获得的 JDBC 的 Connection
      */
     public static Connection getConnection() throws Exception {
-
         InputStream inputStream =JDBCUtil.class.getClassLoader().getResourceAsStream("db.properties");
         Properties properties = new Properties();
         properties.load(inputStream);
@@ -119,7 +118,6 @@ public class JDBCUtil {
      * @param connection
      */
     public static void release(ResultSet resultSet, Statement statement, Connection connection) {
-
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -156,7 +154,6 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public List<Student> query() {
-
         List<Student> students = new ArrayList<Student>();
 
         Connection connection = null;
@@ -193,7 +190,6 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public void save(Student student) {
-
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -245,11 +241,12 @@ public class StudentDAOImpl implements StudentDAO {
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 配置数据源 -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="username" value="root"/>
         <property name="password" value="1124chanshiyu"/>
-        <property name="url" value="jdbc:mysql:///spring_boot"/>
+        <property name="url" value="jdbc:mysql:///spring_data"/>
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
@@ -274,7 +271,6 @@ public class StudentDAOSpringJdbcImpl implements StudentDAO {
 
     @Override
     public List<Student> query() {
-
         List<Student> students = new ArrayList<Student>();
         String sql = "select id, name, age from student";
 
@@ -300,7 +296,6 @@ public class StudentDAOSpringJdbcImpl implements StudentDAO {
     @Override
     public void save(Student student) {
         String sql ="insert into student(name, age) values(?,?)";
-
         jdbcTemplate.update(sql, new Object[]{student.getName(), student.getAge()});
     }
 }
@@ -341,3 +336,147 @@ public class StudentDAOSpringJdbcImplTest {
     }
 }
 ```
+
+## Spring Data
+
+### 引入依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-jpa</artifactId>
+    <version>1.8.0.RELEASE</version>
+</dependency>
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-entitymanager</artifactId>
+    <version>4.3.6.Final</version>
+</dependency>
+```
+
+### 配置文件 beans.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="root"/>
+        <property name="password" value="1124chanshiyu"/>
+        <property name="url" value="jdbc:mysql:///spring_boot"/>
+    </bean>
+
+    <!-- 配置EntityManagerFactory -->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="packagesToScan" value="com.chanshiyu"/>
+
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- 配置支持注解的事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- 配置spring data -->
+    <jpa:repositories base-package="com.chanshiyu" entity-manager-factory-ref="entityManagerFactory"/>
+
+    <context:component-scan base-package="com.chanshiyu"/>
+</beans>
+```
+
+### 创建实体类
+
+上面传统方式是先建数据表，这里是创建实体类后自动生成数据表，注意对比这里使用的是包装类型 `Integer` 而之前是基本类型 `int`。
+
+```java
+/**
+ * 先创建实体类，再自动生成数据表
+ */
+@Entity
+@Data
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(length = 20, nullable = false)
+    private String name;
+
+    @Column(length = 20, nullable = false)
+    private Integer age;
+}
+```
+
+### Repository
+
+创建 `EmployeeRepository`：
+
+```java
+public interface EmployeeRepository extends Repository<Employee, Integer> {
+
+    public Employee findByName(String name);
+}
+```
+
+### 测试用例
+
+```java
+public class EmployeeRepositoryTest {
+
+    private ApplicationContext ctx;
+
+    private EmployeeRepository employeeRepository;
+
+    @Before
+    public void setup() {
+        ctx = new ClassPathXmlApplicationContext("beans-new.xml");
+        employeeRepository = ctx.getBean(EmployeeRepository.class);
+    }
+
+    @After
+    public void tearDown() {
+        ctx = null;
+    }
+
+    @Test
+    public void findByNameTest() {
+        Employee employee = employeeRepository.findByName("shiyu");
+        Assert.assertNotNull(employee);
+    }
+}
+```
+
+### Repository Hierarchy
+
+- CrudRepository
+- PagingAndSortingRepository
+- JpaRepository
