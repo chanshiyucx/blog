@@ -26,6 +26,7 @@
     - [11 Fetch data with React Hooks](時雨/2019/11-Fetch-data-with-React-Hooks.md)
     - [12 字符编码の小常识](時雨/2019/12-字符编码の小常识.md)
     - [13 WSL 安装 Docker 实录](時雨/2019/13-WSL-安装-Docker-实录.md)
+    - [14 Eriri-An awesome comic reader](時雨/2019/14-Eriri-An-awesome-comic-reader.md)
 - 书斋
   - ES6 标准入门
     - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
