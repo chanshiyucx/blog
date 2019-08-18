@@ -1,4 +1,4 @@
-# Eriri - An awesome comic reader
+# Eriri comic reader
 
 Eriri 是一款基于 electron 开发的本地漫画阅读器，缘起于自己在当前 Win10 系统上找不到一款完美的漫画（图片）阅读器，故自己开发了一个，自用了一段时间，目前感觉良好。
 
