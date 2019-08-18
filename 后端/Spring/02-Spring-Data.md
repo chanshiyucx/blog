@@ -473,7 +473,7 @@ public class EmployeeRepositoryTest {
 }
 ```
 
-### Repository
+### Repository 查询方法定义规则
 
 Repository 类的定义：
 
@@ -523,3 +523,5 @@ public interface EmployeeRepository extends Repository<Employee, Integer> {
 
 1. 方法名会比较长：约定大于配置
 2. 对于一些复杂的查询，很难实现
+
+### Query 注解
