@@ -560,3 +560,12 @@ public interface EmployeeRepository extends Repository<Employee, Integer> {
     public void updateAgeById(@Param("id")Integer id,@Param("age")Integer age);
 }
 ```
+
+排序：
+
+```java
+Sort.Order order = new Sort.Order(Sort.Direction.DESC, "id");
+Sort sort = new Sort(order);
+PageRequest pageRequest = new PageRequest(0, 10, sort);
+Page<Employee> employeePage = employeeJpaRepository.findAll(pageRequest);
+```
