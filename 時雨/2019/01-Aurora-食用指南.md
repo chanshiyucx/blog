@@ -164,7 +164,7 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 
 ### 添加分类
 
-![添加分类](https://chanshiyu.com/poi/master/2019/Aurora分类.png)
+![添加分类](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Aurora%E5%88%86%E7%B1%BB.png)
 
 ## 部署
 
