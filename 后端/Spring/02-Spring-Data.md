@@ -525,3 +525,38 @@ public interface EmployeeRepository extends Repository<Employee, Integer> {
 2. 对于一些复杂的查询，很难实现
 
 ### Query 注解
+
+不需要遵循查询方法命名规则。
+
+```java
+public interface EmployeeRepository extends Repository<Employee, Integer> {
+
+    // 找出 id 最大的员工
+    @Query("select o from Employee o where id=(select max(id) from Employee t1)")
+    public Employee getEmployeeByMaxId();
+
+    // 查询参数占位符
+    @Query("select o from Employee o where o.name=?1 and o.age=?2")
+    public List<Employee> getEmployeeByNameAndAge1(String name, Integer age);
+
+    // 查询参数命名参数
+    @Query("select o from Employee o where o.name=:name and o.age=:age")
+    public List<Employee> getEmployeeByNameAndAge2(@Param("name")String name, @Param("age")Integer age);
+
+    // 模糊查询
+    @Query("select o from Employee o where o.name like %?1%")
+    public List<Employee> getEmployeeByNameLike(String name);
+
+    @Query("select o from Employee o where o.name like %:name%")
+    public List<Employee> getEmployeeByNameLike1(@Param("name")String name);
+
+    // 查询记录总数，这里 employee 是表名
+    @Query(nativeQuery = true, value = "select count(1) from employee")
+    public long getCount();
+
+    // 更新 age，注解 @Modifying 需要和 @Transactional 配合使用
+    @Modifying
+    @Query("update Employee o set o.age = :age where o.id = :id")
+    public void updateAgeById(@Param("id")Integer id,@Param("age")Integer age);
+}
+```
