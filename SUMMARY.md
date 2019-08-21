@@ -87,5 +87,6 @@
     - [04 Swagger](后端/Spring/04-Swagger.md)
     - [05 AOP](后端/Spring/05-AOP.md)
     - [06 SSM](后端/Spring/06-SSM.md)
+    - [07 Apache Shiro](后端/Spring/07-Apache-Shiro.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)

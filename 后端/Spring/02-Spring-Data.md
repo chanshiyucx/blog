@@ -569,3 +569,31 @@ Sort sort = new Sort(order);
 PageRequest pageRequest = new PageRequest(0, 10, sort);
 Page<Employee> employeePage = employeeJpaRepository.findAll(pageRequest);
 ```
+
+### JpaSpecificationExecutor
+
+Srping Data 中 Repository 可以多继承，实现更复杂的查询：
+
+```java
+public interface EmployeeJpaRepository extends JpaRepository<Employee, Integer>, JpaSpecificationExecutor<Employee> {}
+```
+
+示例，找出 age > 22 的员工分页列表，且按 id 降序排序：
+
+```java
+@Test
+public void sortTest() {
+    Specification<Employee> specification = new Specification<Employee>() {
+        @Override
+        public Predicate toPredicate(Root<Employee> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+            Path path = root.get("age");
+            return criteriaBuilder.gt(path, 22);
+        }
+    };
+
+    Sort.Order order = new Sort.Order(Sort.Direction.DESC, "id");
+    Sort sort = new Sort(order);
+    PageRequest pageRequest = new PageRequest(0, 10, sort);
+    Page<Employee> employeePage = employeeJpaRepository.findAll(specification, pageRequest);
+}
+```
