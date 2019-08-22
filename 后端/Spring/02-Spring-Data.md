@@ -67,7 +67,6 @@ public interface StudentDAO {
 - Connection
 - Statement
 - ResultSet
-- Test Case
 
 ### 配置文件 db.properties
 
