@@ -462,3 +462,223 @@ info.setCredentialsSalt(ByteSource.Util.bytes("shiro"));
 ```
 
 ## 集成 Spring
+
+添加依赖：
+
+```xml
+<dependencies>
+    <!-- shiro 相关 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.5.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>4.3.5.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>1.4.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-spring</artifactId>
+        <version>1.4.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-web</artifactId>
+        <version>1.4.0</version>
+    </dependency>
+
+    <!-- mysql 与 jdbc -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.1.38</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.1.6</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>4.3.5.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.5.RELEASE</version>
+    </dependency>
+</dependencies>
+```
+
+关于配置 SpringWeb 这部分掠过，可以查看源码 [Spring Shiro Resource](https://github.com/chanshiyucx/hello-java/tree/master/shiro/shiro-spring/src/main/resources)。
+
+我们将上面的 JDBCUtil 工具类访问数据库改造成使用 JdbcTemplate 访问：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="root"/>
+        <property name="password" value="1124chanshiyu"/>
+        <property name="url" value="jdbc:mysql:///shiro"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+</beans>
+```
+
+修改 CustomRealm：
+
+```java
+public class CustomRealm extends AuthorizingRealm {
+
+    private final String customRealmName = "customRealm";
+
+    @Resource
+    private UserService userService;
+
+    {
+        super.setName(customRealmName);
+    }
+
+    /**
+     * 认证
+     */
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+        // 1.从主体传过来的认证信息获取用户名
+        UsernamePasswordToken upToken = (UsernamePasswordToken)authenticationToken;
+        String username = upToken.getUsername();
+        if (username == null) {
+            throw new AccountException("Null usernames are not allowed by this realm.");
+        }
+
+        // 2.通过用户名从数据库中获取凭证
+        User user = userService.getUserByUsername(username);
+        if (user == null) {
+            return null;
+        }
+
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(username, user.getPassword(), customRealmName);
+        info.setCredentialsSalt(ByteSource.Util.bytes("shiro"));
+        return info;
+    }
+
+    /**
+     * 授权
+     */
+    @Override
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        // 1.获取用户名
+        String username = (String) principalCollection.getPrimaryPrincipal();
+
+        SimpleAuthorizationInfo info = null;
+        try {
+            // 2.通过用户名获取角色
+            Set<String> roleNames = getRoleNamesForUser(username);
+
+            // 3. 通过角色获取权限
+            Set<String> permissions = getPermissions(roleNames);
+
+            info = new SimpleAuthorizationInfo(roleNames);
+            info.setStringPermissions(permissions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return info;
+    }
+
+    /**
+     * 获取角色
+     */
+    private Set<String> getRoleNamesForUser(String username) throws SQLException {
+        List<String> roles = userService.getRoleByUsername(username);
+        LinkedHashSet sets = new LinkedHashSet(roles);
+        return sets;
+    }
+
+    /**
+     * 获取权限
+     */
+    private Set<String> getPermissions(Set<String> roles) throws SQLException {
+        List<String> permissions = userService.getPermissionByRole(roles);
+        LinkedHashSet sets = new LinkedHashSet(permissions);
+        return sets;
+    }
+}
+```
+
+Service 实现类：
+
+```java
+@Component
+public class UserServiceImpl implements UserService {
+
+    @Resource
+    private JdbcTemplate jdbcTemplate;
+
+    public User getUserByUsername(String username) {
+        String sql = "select id, username, password from users where username = ?";
+
+        List<User> users = jdbcTemplate.query(sql, new String[]{username}, new RowMapper<User>() {
+            public User mapRow(ResultSet resultSet, int i) throws SQLException {
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                User user = new User();
+                user.setUsername(username);
+                user.setPassword(password);
+                return user;
+            }
+        });
+
+        if (CollectionUtils.isEmpty(users)) {
+            return null;
+        }
+
+        return users.get(0);
+    }
+
+    public List<String> getRoleByUsername(String username) {
+        String sql ="select role_name from user_roles where username = ?";
+        List<String> roles = jdbcTemplate.query(sql, new String[]{username}, new RowMapper<String>() {
+            public String mapRow(ResultSet resultSet, int i) throws SQLException {
+                String role = resultSet.getString("role_name");
+                return role;
+            }
+        });
+        return roles;
+    }
+
+    public List<String> getPermissionByRole(Set<String> roles) {
+        NamedParameterJdbcTemplate jdbc = new NamedParameterJdbcTemplate(jdbcTemplate);
+
+        MapSqlParameterSource parameters = new MapSqlParameterSource();
+        parameters.addValue("roles", roles);
+
+        String sql ="select permission from roles_permissions where role_name in (:roles)";
+        List<String> permissions = jdbc.query(sql, parameters, new RowMapper<String>() {
+            public String mapRow(ResultSet resultSet, int i) throws SQLException {
+                String permission = resultSet.getString("permission");
+                return permission;
+            }
+        });
+        return permissions;
+    }
+}
+```
