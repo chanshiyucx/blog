@@ -682,3 +682,147 @@ public class UserServiceImpl implements UserService {
     }
 }
 ```
+
+### 通过注解方式鉴权
+
+添加依赖：
+
+```xml
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.8.9</version>
+</dependency>
+```
+
+修改 spring-mvc.xml：
+
+```xml
+<!-- 开启AoP -->
+<aop:config proxy-target-class="true"/>
+
+<!-- 保证 Shiro内部生命周期 -->
+<bean class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+
+<!-- 开启Shiro授权生效 -->
+<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"></bean>
+```
+
+在 Controller 注解鉴权：
+
+```java
+// 验证角色
+@RequiresRoles("admin")
+@RequestMapping(value="/testRoles", method=RequestMethod.GET)
+@ResponseBody
+public String testRole() {
+    return "test roles success";
+}
+
+// 验证权限
+@RequiresPermissions(("user:delete"))
+@RequestMapping(value="/testPerms", method=RequestMethod.GET)
+@ResponseBody
+public String testPerms() {
+    return "test permissions success";
+}
+```
+
+### 过滤器
+
+除了通过注解，还可以通过过滤器来鉴权：
+
+```xml
+<property name="filterChainDefinitions">
+    <value>
+        /login.html = anon
+        /subLogin = anon
+        /testRoles = roles["admin"]
+        /testRoles1 = roles["admin","admin1"]
+        /testPerms = perms["user:delete"]
+        /testPerms1 = perms["user:delete","user:update"]
+        /* = authc
+    </value>
+</property>
+```
+
+Controller 实现：
+
+```java
+@RequestMapping(value="/testRoles", method=RequestMethod.GET)
+@ResponseBody
+public String testRole() {
+    return "test roles success";
+}
+
+@RequestMapping(value="/testRoles1", method=RequestMethod.GET)
+@ResponseBody
+public String testRole1() {
+    return "test roles success";
+}
+
+@RequestMapping(value="/testPerms", method=RequestMethod.GET)
+@ResponseBody
+public String testPerms() {
+    return "test permissions success";
+}
+
+@RequestMapping(value="/testPerms1", method=RequestMethod.GET)
+@ResponseBody
+public String testPerms1() {
+    return "test permissions1 success";
+}
+```
+
+也可以自定义过滤器：
+
+```java
+public class RolesOrFilter extends AuthorizationFilter {
+
+    @Override
+    protected boolean isAccessAllowed(ServletRequest req,
+                                      ServletResponse resp, Object object) throws Exception {
+
+        Subject subject = getSubject(req, resp);
+
+        String[] roles = (String[]) object;
+
+        if (roles == null || roles.length == 0) {
+            return true;
+        }
+
+        for (String role : roles) {
+            if (subject.hasRole(role)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+```
+
+依旧引入：
+
+```xml
+<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    <property name="securityManager" ref="securityManager" />
+    <property name="loginUrl" value="login.html" />
+    <property name="unauthorizedUrl" value="403.html" />
+    <property name="filterChainDefinitions">
+        <value>
+            /login.html = anon
+            /subLogin = anon
+            /testRolesOr = rolesOr["admin", "user"]
+            /* = authc
+        </value>
+    </property>
+    <property name="filters">
+        <util:map>
+            <entry key="rolesOr" value-ref="rolesOrFilter" />
+        </util:map>
+    </property>
+</bean>
+
+<bean class="com.chanshiyu.filter.RolesOrFilter" id="rolesOrFilter" />
+```
