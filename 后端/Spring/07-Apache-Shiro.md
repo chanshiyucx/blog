@@ -826,3 +826,338 @@ public class RolesOrFilter extends AuthorizationFilter {
 
 <bean class="com.chanshiyu.filter.RolesOrFilter" id="rolesOrFilter" />
 ```
+
+## 会话与缓存管理
+
+添加 redis 的管理工具依赖 jedis:
+
+```xml
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>2.8.0</version>
+</dependency>
+```
+
+jedis 配置 spring-redis.xml：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="redis.clients.jedis.JedisPool" id="jedisPool">
+        <constructor-arg name="poolConfig" ref="jedisPoolConfig"/>
+        <constructor-arg name="host" value="127.0.0.1"/>
+        <constructor-arg name="port" value="6379"/>
+    </bean>
+
+    <bean class="redis.clients.jedis.JedisPoolConfig" id="jedisPoolConfig"/>
+</beans>
+```
+
+新建 jedis 工具类：
+
+```java
+@Component
+public class JedisUtil {
+
+    // 通过 Jedis 连接池来获取 redis 连接
+    @Autowired
+    private JedisPool jedisPool;
+
+    private Jedis getResource() {
+        return jedisPool.getResource();
+    }
+
+    public byte[] set(byte[] key, byte[] value) {
+        Jedis jedis = getResource();
+        try {
+            jedis.set(key, value);
+            return value;
+        } finally {
+            jedis.close();
+        }
+    }
+
+    public void expire(byte[] key, int i) {
+        Jedis jedis = getResource();
+        try {
+            jedis.expire(key, i);
+        } finally {
+            jedis.close();
+        }
+    }
+
+    public byte[] get(byte[] key) {
+        Jedis jedis = getResource();
+        try {
+            return jedis.get(key);
+        } finally {
+            jedis.close();
+        }
+    }
+
+    public void del(byte[] key) {
+        Jedis jedis = getResource();
+        try {
+            jedis.del(key);
+        } finally {
+            jedis.close();
+        }
+    }
+
+    public Set<byte[]> keys(String SHIRO_SESSION_PREFIX) {
+        Jedis jedis = getResource();
+        try {
+            return jedis.keys((SHIRO_SESSION_PREFIX + "*").getBytes());
+        } finally {
+            jedis.close();
+        }
+    }
+}
+```
+
+### 会话管理
+
+session 管理类：
+
+```java
+public class RedisSessionDao extends AbstractSessionDAO {
+
+    @Resource
+    private JedisUtil jedisUtil;
+
+    private final String SHIRO_SESSION_PREFIX = "shiro-session";
+
+    private byte[] getKey(String key) {
+        return (SHIRO_SESSION_PREFIX + key).getBytes();
+    }
+
+    /**
+     * 保存Session
+     * @param session
+     */
+    private void saveSession(Session session) {
+        if (session != null && session.getId() != null) {
+            byte[] key = getKey(session.getId().toString());
+            byte[] value = SerializationUtils.serialize(session);
+            jedisUtil.set(key, value);
+            jedisUtil.expire(key, 600);
+        }
+    }
+
+    @Override
+    protected Serializable doCreate(Session session) {
+        Serializable sessionId = generateSessionId(session);
+        assignSessionId(session, sessionId);
+        saveSession(session);
+        return sessionId;
+    }
+
+    @Override
+    protected Session doReadSession(Serializable sessionId) {
+        if (sessionId == null) {
+            return null;
+        }
+        byte[] key = getKey(sessionId.toString());
+        byte[] value = jedisUtil.get(key);
+        return (Session) SerializationUtils.deserialize(value);
+    }
+
+    public void update(Session session) throws UnknownSessionException {
+        saveSession(session);
+    }
+
+    public void delete(Session session) {
+        if (session == null || session.getId() == null) {
+            return;
+        }
+        byte[] key = getKey(session.getId().toString());
+        jedisUtil.del(key);
+    }
+
+    public Collection<Session> getActiveSessions() {
+        Set<byte[]> keys = jedisUtil.keys(SHIRO_SESSION_PREFIX);
+        Set<Session> sessions = new HashSet<Session>();
+        if (CollectionUtils.isEmpty(keys)) {
+            return sessions;
+        }
+        for (byte[] key : keys) {
+            Session session = (Session) SerializationUtils.deserialize(jedisUtil.get(key));
+            sessions.add(session);
+        }
+        return sessions;
+    }
+}
+```
+
+由于默认的 sessionManager 会每次都访问 redis 中缓存的 session，所以需要自定义 session 访问 manager：
+
+```java
+public class CustomSessionManage extends DefaultWebSessionManager {
+
+    @Override
+    protected Session retrieveSession(SessionKey sessionKey) throws UnknownSessionException {
+        Serializable sessionId = getSessionId(sessionKey);
+        ServletRequest request = null;
+        if (sessionKey instanceof WebSessionKey) {
+            request = ((WebSessionKey) sessionKey).getServletRequest();
+        }
+
+        // 从 request 中获取 session
+        if (request != null && sessionId != null) {
+            Session session = (Session) request.getAttribute(sessionId.toString());
+            if (session != null) {
+                return session;
+            }
+        }
+
+        // 从 redis 中获取 session
+        Session session = super.retrieveSession(sessionKey);
+        if (request != null && sessionId != null) {
+            request.setAttribute(sessionId.toString(), session);
+        }
+        return session;
+    }
+}
+```
+
+然后在 spring.xml 中引入：
+
+```xml
+<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    <!-- ... -->
+    <property name="sessionManager" ref="sessionManager"/>
+</bean>
+
+<bean class="com.chanshiyu.session.CustomSessionManage" id="sessionManager" >
+    <property name="sessionDAO" ref="redisSessionDao" />
+</bean>
+<bean class="com.chanshiyu.session.RedisSessionDao" id="redisSessionDao"/>
+```
+
+### 缓存管理
+
+主要缓存角色数据和权限数据，不用每次从数据库中读取角色和权限信息，提升程序性能。
+
+cache 管理类 RedisCacheManager：
+
+```java
+public class RedisCacheManager implements CacheManager {
+
+    @Resource
+    private RedisCache redisCache;
+
+    @Override
+    public <K, V> Cache<K, V> getCache(String s) throws CacheException {
+        return redisCache;
+    }
+}
+```
+
+具体实现：
+
+```java
+@SuppressWarnings("unchecked")
+@Component
+public class RedisCache<K, V> implements Cache<K, V> {
+
+    @Autowired
+    private JedisUtil jedisUtil;
+
+    private final String CACHE_PREFIX = "shiro-cache";
+
+    private byte[] getKey(K k) {
+        if (k instanceof String) {
+            return (CACHE_PREFIX + k).getBytes();
+        }
+        return SerializationUtils.serialize(k);
+    }
+
+    @Override
+    public V get(K k) throws CacheException {
+        byte[] value = jedisUtil.get(getKey(k));
+        if (value != null) {
+            return (V) SerializationUtils.deserialize(value);
+        }
+        return null;
+    }
+
+    @Override
+    public V put(K k, V v) throws CacheException {
+        byte[] key = getKey(k);
+        byte[] value = SerializationUtils.serialize(v);
+        jedisUtil.set(key, value);
+        jedisUtil.expire(key, 600);
+        return v;
+    }
+
+    @Override
+    public V remove(K k) throws CacheException {
+        byte[] key = getKey(k);
+        byte[] value = SerializationUtils.serialize(key);
+        jedisUtil.del(key);
+        if (value != null) {
+            return (V) SerializationUtils.deserialize(value);
+        }
+        return null;
+    }
+
+    @Override
+    public void clear() throws CacheException {}
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public Set<K> keys() {
+        return null;
+    }
+
+    @Override
+    public Collection<V> values() {
+        return null;
+    }
+}
+```
+
+然后在 spring.xml 中引入：
+
+```xml
+<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    <!-- ... -->
+    <property name="cacheManager" ref="cacheManager"/>
+</bean>
+
+<bean class="com.chanshiyu.cache.RedisCacheManager" id="cacheManager"/>
+```
+
+### 记住登录
+
+修改 spring.xml：
+
+```xml
+<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+    <!-- ... -->
+    <property name="rememberMeManager" ref="cookieRememberMeManager"/>
+</bean>
+
+<bean class="org.apache.shiro.web.mgt.CookieRememberMeManager" id="cookieRememberMeManager">
+    <property name="cookie" ref="cookie"/>
+</bean>
+<bean class="org.apache.shiro.web.servlet.SimpleCookie" id="cookie">
+    <constructor-arg name="name" value="rememberMe"/>
+    <property name="maxAge" value="20000000"/>
+</bean>
+```
+
+生成 token 时设置是否记住：
+
+```java
+token.setRememberMe(true);
+```
