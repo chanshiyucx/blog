@@ -1,10 +1,8 @@
-# Annotation
+# Lombok
 
-记录项目中常见的一些注解。
+记录 Lombok 中常见的一些注解。
 
-## Lombok
-
-### @Builder
+## @Builder
 
 Java 建造者模式：
 
@@ -84,7 +82,7 @@ User user = User.builder().id(1).name("shiyu").address("chan").build();
 private String name = "shiyu1";
 ```
 
-### @AllArgsConstructor、@NoArgsConstructor、@RequiredArgsConstructor(staticName = "of")
+## @AllArgsConstructor、@NoArgsConstructor、@RequiredArgsConstructor(staticName = "of")
 
 如果要给实体类生成构造方法：
 
@@ -96,6 +94,7 @@ private String name = "shiyu1";
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor(staticName = "of")
 public class User {
     private Integer id;
     private String name;
@@ -111,7 +110,9 @@ User user2 =new User(1, "shiyu", "chan"); // 全参构造器
 User user3 = User.of("chan"); // `@NonNull` 和 `final` 参数构造器
 ```
 
-### @Accessors
+使用 `@RequiredArgsConstructor(onConstructor = @__(@Autowired))` 注解可以给所有 `private final` 字段提供自动注入。
+
+## @Accessors
 
 使用 `@Accessors(chain = true)` 注解实现链式调用：
 
@@ -150,7 +151,7 @@ public class User {
 User user = User.of("chan").setId(2).setName("shiyu");
 ```
 
-### @Data
+## @Data
 
 `@Data` 注解是 `@ToString`、`@EqualsAndHashCode`、`@Getter`、`@Setter` 和 `@RequiredArgsConstructor` 注解的集合。代替 `RequiredArgsConstructor` 使用时：
 
@@ -164,11 +165,11 @@ public class User {
 }
 ```
 
-### @NonNull
+## @NonNull
 
 注解在属性上，会自动产生一个关于此参数的非空检查，如果参数为空，则抛出一个空指针异常。
 
-### @Cleanup
+## @Cleanup
 
 这个注解用在变量前面，可以保证此变量代表的资源会被自动关闭，默认是调用资源的 `close()` 方法，如果该资源有其它关闭方法，可使用 `@Cleanup(“methodName”)` 来指定要调用的方法，也会生成默认的构造方法
 

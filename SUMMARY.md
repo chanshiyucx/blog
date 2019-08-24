@@ -88,6 +88,6 @@
     - [05 AOP](后端/Spring/05-AOP.md)
     - [06 SSM](后端/Spring/06-SSM.md)
     - [07 Apache Shiro](后端/Spring/07-Apache-Shiro.md)
-    - [08 Annotation](后端/Spring/08-Annotation.md)
+    - [08 Lombok](后端/Spring/08-Lombok.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
