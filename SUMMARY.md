@@ -89,5 +89,6 @@
     - [06 SSM](后端/Spring/06-SSM.md)
     - [07 Apache Shiro](后端/Spring/07-Apache-Shiro.md)
     - [08 Lombok](后端/Spring/08-Lombok.md)
+    - [09 Spring Validation](后端/Spring/09-Spring-Validation.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
