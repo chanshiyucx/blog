@@ -30,7 +30,7 @@ swagger:
   terms-of-service-url: https://chanshiyu.com/
   base-package: com.chanshiyu
   contact:
-    name: Chanshiyu
+    name: 蝉時雨
     url: https://chanshiyu.com/
     email: me@chanshiyu.com
 ```
@@ -38,11 +38,6 @@ swagger:
 ## 配置类
 
 ```java
-/**
- * conf.SwaggerConfig.java
- * @Configuration 告诉 Spring Boot 需要加载这个配置类
- * @EnableSwagger2 启用 Swagger2
- */
 @Configuration
 @EnableSwagger2
 @ConditionalOnClass(EnableSwagger2.class)
@@ -51,34 +46,22 @@ swagger:
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerConfig {
 
-    /**
-     * API页面标题
-     */
+    /** API页面标题 */
     private String title;
 
-    /**
-     * API描述
-     */
+    /** API描述 */
     private String description;
 
-    /**
-     * API版本号
-     */
+    /** API版本号 */
     private String version;
 
-    /**
-     * API接口包路径
-     */
+    /** API接口包路径 */
     private String basePackage;
 
-    /**
-     * 服务条款地址
-     */
+    /** 服务条款地址 */
     private String termsOfServiceUrl;
 
-    /**
-     * 联系人
-     */
+    /** 联系人 */
     private Contact contact;
 
     @Bean
@@ -119,41 +102,45 @@ public class SwaggerConfig {
 | @ApiIgnore         | 表示忽略               |
 
 ```java
-@Api(tags = "买家商品", description = "买家商品相关 Rest API")
-public class BuyerOrderController {
-    @ApiOperation(value="订单详情")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "openid", value = "买家 openid", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "orderId", value = "订单 ID", required = true, dataType = "String")
-    })
-    @GetMapping("/detail")
-    public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
-                                     @RequestParam("orderId") String orderId) {
-        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
-        return ResultVOUtil.success(orderDTO);
+@Api(value = "商品类目管理", tags = {"商品类目管理Controller"})
+public class ProductCategoryController {
+
+    @ApiOperation(value = "类目列表", notes = "类目列表")
+    @GetMapping("/list")
+    public ResultVO<List<ProductCategory>> list(@ApiParam(value = "页码", defaultValue = "1") Integer pageNum,
+                                                @ApiParam(value = "每页大小", defaultValue = "10") Integer pageSize) {
+        PageRequest pageRequest = PageRequest.of(pageNum - 1, pageSize);
+        Page<ProductCategory> page = productCategoryService.findList(pageRequest);
+        ResultAttributesVO resultAttributesVO = new ResultAttributesVO(page.getPageable().getPageNumber() + 1, page.getSize(), page.getTotalElements());
+        return ResultVO.ok(page.getContent(), resultAttributesVO);
     }
+
 }
 ```
 
 ```java
-/**
- * 商品信息
- */
-@Data
-@ApiModel("商品类目详情")
-public class ProductVO {
+@ApiModel(value = "商品类目")
+public class ProductCategory {
 
-    @ApiModelProperty("类目名称")
-    @JsonProperty("name")
-    private String categoryName;
+    @ApiModelProperty(value = "类目ID", dataType = "Integer")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
+    private Integer id;
 
-    @ApiModelProperty("类目类型")
-    @JsonProperty("type")
-    private Integer categoryType;
+    @ApiModelProperty(value = "类目名称", dataType = "String")
+    @Column(name = "category_name")
+    @NotBlank(message = "类目名称不能为空")
+    private String name;
 
-    @ApiModelProperty("商品列表")
-    @JsonProperty("list")
-    private List<ProductInfoVO> productInfoVOList;
+    @ApiModelProperty(value = "创建时间", dataType = "String")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    private Date createTime;
+
+    @ApiModelProperty(value = "更新时间", dataType = "String")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    private Date updateTime;
+
 }
 ```
 

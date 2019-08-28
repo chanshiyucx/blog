@@ -90,7 +90,7 @@
     - [07 Apache Shiro](后端/Spring/07-Apache-Shiro.md)
     - [08 Lombok](后端/Spring/08-Lombok.md)
     - [09 Spring Validation](后端/Spring/09-Spring-Validation.md)
-    - [10 Spring Boot 技术整合](后端/Spring/10-Spring-Boot-技术整合.md)
-    - [11 Task 定时任务](后端/Spring/11-Task-定时任务.md)
+    - [10 Mysql and Redis](后端/Spring/10-Mysql-and-Redis.md)
+    - [11 Task 定时任务](后端/Spring/11-定时和异步任务.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
