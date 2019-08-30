@@ -1,4 +1,4 @@
-# Docker 小本本
+# Docker
 
 Docker 属于 Linux 容器的一种封装，它是目前最流行的容器解决方案。容器有点像虚拟机，提供虚拟化的环境。Docker 本身并不是容器，它是创建容器的工具，是应用容器引擎。
 
@@ -105,12 +105,12 @@ docker image push [username]/[repository]:[tag]
 Docker 命令分管理命令 `Management Commands` 和命令 `Commands`。Docker 1.13+ 引入了管理命令来帮助组织一堆 Docker 命令。两个命令都做同样的事情，管理命令有助于对所有命令进行分类，并使命令本身更加一致。所以推荐使用管理命令，虽然多敲了几个字符，但是语义更清晰。
 
 ```bash
-docker images ls                    # 查看现有镜像
+docker images                       # 查看现有镜像
 docker image pull [imageName]       # 拉取镜像
 docker image rm [imageName]         # 删除镜像
 
 docker container ls                 # 列出正在运行的容器 等同于 docker ps
-docker container ls --al            # 列出本机所有容器，包括终止运行的容器
+docker container ls -a              # 列出本机所有容器，包括终止运行的容器
 docker container run [hello-world]  # 运行容器
 docker container start              # 启动已经生成、已经停止运行的容器文件
 docker container stop [containerID] # 终止容器运行
@@ -119,6 +119,9 @@ docker container rm [containerID]   # 删除容器
 docker container logs [containerID] # 查看 docker 容器的输出
 docker container exec [containerID] # 进入容器内部
 docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
+
+docker ps                           # 查看所有正在运行的容器
+docker stop [containerID]           # 终止容器运行
 ```
 
 需要注意：

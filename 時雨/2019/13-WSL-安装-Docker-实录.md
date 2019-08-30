@@ -251,4 +251,5 @@ docker container rm [containerID] # 删除容器
 以上就是自己在 WSL 里安装启用 Docker 的全流程。Just enjoy it.
 
 参考文章：  
-[【WSL+Docker】新手 Win10 下的 WSL Ubuntu18 并安装使用 Docker](https://zhuanlan.zhihu.com/p/61542198) [Windows 10 bash & Windows docker 問題處理](https://blog.caesarchi.com/2017/05/15/windows-10-bash-windows-docker-intergrate_problem_solve/)
+[【WSL+Docker】新手 Win10 下的 WSL Ubuntu18 并安装使用 Docker](https://zhuanlan.zhihu.com/p/61542198)  
+[Windows 10 bash & Windows docker 問題處理](https://blog.caesarchi.com/2017/05/15/windows-10-bash-windows-docker-intergrate_problem_solve/)
