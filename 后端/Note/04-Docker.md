@@ -131,3 +131,11 @@ docker stop [containerID]           # 终止容器运行
 3. `docker container kill` 向容器内主进程发出 SIGKILL 信号来终止容器运行。`docker container stop` 先向主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。
 4. `docker container logs` 查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令查看输出。
 5. `docker container exec` 进入容器内部。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令进入容器内部。
+
+## ENTRYPOINT 与 CMD
+
+ENTRYPOINT 与 CMD 的关系：
+
+- 如果没有定义 ENTRYPOINT，CMD 将作为它的 ENTRYPOINT
+- 定义了 ENTRYPOINT 的话，CMD 只为 ENTRYPOINT 提供参数
+- CMD 可由 docker run [imageName] 后的命令覆盖，同时覆盖参数
