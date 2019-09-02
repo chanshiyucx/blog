@@ -117,3 +117,13 @@ sudo systemctl start docker
 
 rm -rf get-docker.sh
 ```
+
+## 问题
+
+### docker 未启动
+
+```bash
+systemctl daemon-reload
+service docker restart
+service docker status
+```
