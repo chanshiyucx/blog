@@ -95,4 +95,3 @@
     - [11 Spring Boot 技术整合](后端/Spring/11-Spring-Boot-技术整合.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
-    - [02 Java 开发企业级权限管理系统](后端/Project/02-Java-开发企业级权限管理系统.md)
