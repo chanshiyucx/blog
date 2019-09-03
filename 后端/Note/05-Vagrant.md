@@ -1,4 +1,4 @@
-# Windows 下配置 Linux 开发环境
+# Vagrant
 
 ## 安装虚拟机
 
@@ -116,67 +116,4 @@ sudo usermod -aG docker vagrant
 sudo systemctl start docker
 
 rm -rf get-docker.sh
-```
-
-## 问题
-
-### docker 未启动
-
-```bash
-systemctl daemon-reload
-service docker restart
-service docker status
-```
-
-### docker-compose 无法启动 mysql
-
-报错：
-
-```
-shiyu-mysql | 2019-09-02T08:07:06.346042Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
-shiyu-mysql | 2019-09-02T08:07:06.350661Z 0 [Warning] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
-shiyu-mysql | 2019-09-02T08:07:06.467170Z 0 [ERROR] InnoDB: Operating system error number 95 in a file operation.
-shiyu-mysql | 2019-09-02T08:07:06.467192Z 0 [ERROR] InnoDB: Error number 95 means 'Operation not supported'
-shiyu-mysql | 2019-09-02T08:07:06.467201Z 0 [ERROR] InnoDB: File ./ib_logfile101: 'Linux aio' returned OS error 195. Cannot continue operation
-shiyu-mysql | 2019-09-02T08:07:06.467206Z 0 [ERROR] InnoDB: Cannot continue operation.
-```
-
-首先在 `docker-compose.yml` 添加配置文件：
-
-```yml
-volumes:
-  - ./mysql/conf:/etc/mysql/conf.d
-```
-
-在 `./mysql/conf` 文件夹下添加一个本地配置文件 `local.cnf`：
-
-```cnf
-[mysqld]
-innodb_use_native_aio=0
-```
-
-给文件授权：
-
-```bash
-sudo chmod 400 local.cnf
-```
-
-重新启动，问题解决！
-
-### docker push 无法推送
-
-报错：
-
-```
-denied: requested access to the resource is denied
-```
-
-需要修改 tag，然后再推送：
-
-```bash
-# 修改 tag
-docker tag spring-mybatis:0.0.1 chanshiyu/spring-mybatis:0.0.1
-
-# 推送镜像
-docker push chanshiyu/spring-mybatis:0.0.1
 ```
