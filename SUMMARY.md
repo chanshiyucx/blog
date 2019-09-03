@@ -92,6 +92,7 @@
     - [08 Lombok](后端/Spring/08-Lombok.md)
     - [09 Spring Validation](后端/Spring/09-Spring-Validation.md)
     - [10 Mysql and Redis](后端/Spring/10-Mysql-and-Redis.md)
-    - [11 Spring Boot 技术整合](后端/Spring/11-Spring-Boot-技术整合.md)
+    - [11 Mybatis](后端/Spring/11-Mybatis.md)
+    - [12 Spring Boot 技术整合](后端/Spring/12-Spring-Boot-技术整合.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)

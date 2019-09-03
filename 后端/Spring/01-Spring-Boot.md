@@ -152,7 +152,7 @@ spring:
 开发环境使用 dev，发布到线上时不需要更改，只需启动时加入参数启动：
 
 ```bash
-java -jar -Dspring.profiles.active=prod target\luckymoney-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=prod target/luckymoney-0.0.1-SNAPSHOT.jar
 ```
 
 ## 注解
