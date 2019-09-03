@@ -1,0 +1,341 @@
+# Mybatis
+
+## resultMap
+
+resultMap 中的标签如下：
+
+| 元素名称    | 描述                             |
+| ----------- | -------------------------------- |
+| result      | 字段映射                         |
+| constructor | 实例化类时，注入结果到构造方法中 |
+| association | 关联一个对象                     |
+| collection  | 关联多个对象                     |
+
+### result
+
+result 用于字段映射,给定一个实体类：
+
+```java
+@Data
+public class User {
+    private String id;
+    private String username;
+    private String password;
+    private String address;
+    private String email;
+}
+```
+
+假若数据库别名为 `uid`，则查询语句：
+
+```xml
+<resultMap id="getUserByIdMap" type="User">
+  <result property="id" column="uid"></result>
+</resultMap>
+
+<select id="getUsers" resultType="User">
+  SELECT
+    u.id as uid,
+    u.username,
+    u.password,
+    u.address,
+    u.email
+  FROM USER u
+  WHERE u.id=#{id}
+</select>
+```
+
+### constructor
+
+使用 `constructor` 元素将结果注入构造方法里,先给 User 添加构造方法：
+
+```java
+public User(String id, String name) {
+  this.id = id + "--------";
+  this.username = name + "--------";
+}
+```
+
+```xml
+<resultMap id="getUserByIdMap" type="User">
+  <constructor>
+    <idArg column="id" name="id" javaType="string"></idArg>
+    <arg column="username" name="name" javaType="string"></arg>
+  </constructor>
+</resultMap>
+```
+
+其中 column 代表数据库字段名称或者别名；name 则是构造方法中的参数名称；javaType 指定了参数的类型。
+
+这样之后，结果集中的 id 和 username 属性都会发生变化：
+
+```json
+{
+  "id": "1001--------",
+  "username": "后羿--------",
+  "password": "123456",
+  "address": "北京市海淀区",
+  "email": "510273027@qq.com"
+}
+```
+
+### association
+
+给 User 类添加角色：
+
+```java
+@Data
+public class User {
+    private Role role;
+}
+```
+
+查询用户时查询角色：
+
+```xml
+<resultMap id="userMap" type="User">
+  <id property="id" column="id"></id>
+  <result property="username" column="username"></result>
+  <result property="password" column="password"></result>
+  <result property="address" column="address"></result>
+  <result property="email" column="email"></result>
+
+  <association property="role" javaType="Role">
+    <id property="id" column="role_id"></id>
+    <result property="name" column="role_name"></result>
+  </association>
+</resultMap>
+
+<select id="getUserById" resultType="User">
+    SELECT
+        u.id,
+        u.username,
+        u.password,
+        u.address,
+        u.email,
+        r.id as 'role_id',
+        r.name as 'role_name'
+    FROM
+        USER u
+            LEFT JOIN user_roles ur ON u.id = ur.user_id
+            LEFT JOIN role r ON r.id = ur.role_id
+    where u.id=#{id}
+</select>
+```
+
+最后展示信息：
+
+```
+{
+    "id": "1001",
+    "username": "后羿",
+    "password": "123456",
+    "address": "北京市海淀区",
+    "email": "510273027@qq.com",
+    "role": {
+        "id": "3",
+        "name": "射手"
+    }
+}
+```
+
+### collection
+
+#### 嵌套结果映射
+
+如果用户有多个角色，可以使用 `collection` 来返回角色列表：
+
+```java
+@Data
+public class User {
+    private List<Role> roles;
+}
+```
+
+修改 `resultMap` 返回结果：
+
+```xml
+<resultMap id="userMap" type="User">
+  <id property="id" column="id"></id>
+  <result property="username" column="username"></result>
+  <result property="password" column="password"></result>
+  <result property="address" column="address"></result>
+  <result property="email" column="email"></result>
+
+  <collection property="roles" ofType="Role">
+    <id property="id" column="role_id"></id>
+    <result property="name" column="role_name"></result>
+  </collection>
+</resultMap>
+```
+
+最后展示信息：
+
+```
+{
+    "id": "1003",
+    "username": "貂蝉",
+    "password": "123456",
+    "address": "北京市东城区",
+    "email": "510273027@qq.com",
+    "roles": [
+        {
+            "id": "1",
+            "name": "中单"
+        },
+        {
+            "id": "2",
+            "name": "打野"
+        }
+    ]
+}
+```
+
+#### 嵌套 Select 查询
+
+假设这么一张表：
+
+| id   | name     | url             | parent_id |
+| ---- | -------- | --------------- | --------- |
+| 1    | 系统管理 |                 | 0         |
+| 1001 | 用户管理 | /user           | 1         |
+| 1002 | 角色管理 | /role           | 1         |
+| 1003 | 单位管理 | /employer       | 1         |
+| 2    | 系统管理 |                 | 0         |
+| 2001 | 系统管理 | /system/monitor | 2         |
+| 2002 | 数据管理 | /data/monitor   | 2         |
+
+需要将表的数据分成两级菜单返回，而不是平铺展示，新建 `Menu` 实体类：
+
+```java
+@Data
+public class Menu {
+    private String id;
+    private String name;
+    private String url;
+    private String parent_id;
+    private List<Menu> childMenu;
+}
+```
+
+这里使用 `childMenu` 来展示二级菜单。然后来写 SQL 语句，如果没有传入 `parent_id` 字段，则查询一级菜单：
+
+```xml
+<select id="getMenus" resultMap="menusMap">
+  SELECT
+    m.id,
+    m.name,
+    m.url,
+    m.parent_id
+  FROM
+    m_menu m
+  where 1=1
+  <choose>
+    <when test="parent_id!=null">
+      and m.parent_id = #{parent_id}
+    </when>
+    <otherwise>
+      and m.parent_id = '0'
+    </otherwise>
+  </choose>
+</select>
+```
+
+然后定义返回结果：
+
+```xml
+<resultMap id="menusMap" type="Menu">
+  <id property="id" column="id"></id>
+  <result property="name" column="name"></result>
+  <result property="url" column="url"></result>
+  <result property="m_desc" column="m_desc"></result>
+  <result property="parent_id" column="parent_id"></result>
+
+  <collection property="childMenu" ofType="Menu" select="getMenus"  column="{parent_id=id}"></collection>
+</resultMap>
+```
+
+`collection` 元素含义：
+
+- `property="childMenu"` 对应的是菜单中的子级菜单列表
+- `ofType="Menu"` 对应返回数据的类型
+- `select="getMenus"` 指定了 SELECT 语句的 id
+- `column="{parent_id=id}"` 则是参数的表达式
+
+整体含义为：通过 getMenus 这个 SELECT 语句来获取一级菜单中的 childMenu 属性结果；在上面的 SELECT 语句中，需要传递一个 parent_id 参数；这个参数的值就是一级菜单中的 id。
+
+最终结果展示信息：
+
+```
+[
+    {
+        "id": "1",
+        "name": "系统管理",
+        "parent_id": "0",
+        "childMenu": [
+            {
+                "id": "1001",
+                "name": "用户管理",
+                "url": "/user",
+                "parent_id": "1"
+            },
+            {
+                "id": "1002",
+                "name": "角色管理",
+                "url": "/role",
+                "parent_id": "1"
+            },
+            {
+                "id": "1003",
+                "name": "单位管理",
+                "url": "/employer",
+                "parent_id": "1"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "平台监控",
+        "parent_id": "0",
+        "childMenu": [
+            {
+                "id": "2001",
+                "name": "系统监控",
+                "url": "/system/monitor",
+                "parent_id": "2"
+            },
+            {
+                "id": "2002",
+                "name": "数据监控",
+                "url": "/data/monitor",
+                "parent_id": "2"
+            }
+        ]
+    }
+]
+```
+
+### 自动填充关联对象
+
+在 Mybatis 解析返回值的时候，第一步是获取返回值类型，拿到 Class 对象，然后获取构造器，设置可访问并返回实例，然后又把它包装成 MetaObject 对象。
+
+从数据库 rs 中拿到结果之后，会调用 `MetaObject.setValue(String name, Object value)` 来填充对象。在这过程中，它会以 `.` 来分隔这个 name 属性。如果 name 属性中包含 `.` 符号，就找到 `.` 符号之前的属性名称，把它当做一个实体对象来。
+
+还是以上面获取用户角色为例，在该 SQL 语句：
+
+```xml
+<select id="getUserList" resultType="User">
+  SELECT
+    u.id,
+    u.username,
+    u.password,
+    u.address,
+    u.email,
+    r.id as 'role.id',
+    r.name as 'role.name'
+  FROM
+    USER u
+      LEFT JOIN user_roles ur ON u.id = ur.user_id
+      LEFT JOIN role r ON r.id = ur.role_id
+</select>
+```

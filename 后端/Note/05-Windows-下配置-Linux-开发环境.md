@@ -162,3 +162,21 @@ sudo chmod 400 local.cnf
 ```
 
 重新启动，问题解决！
+
+### docker push 无法推送
+
+报错：
+
+```
+denied: requested access to the resource is denied
+```
+
+需要修改 tag，然后再推送：
+
+```bash
+# 修改 tag
+docker tag spring-mybatis:0.0.1 chanshiyu/spring-mybatis:0.0.1
+
+# 推送镜像
+docker push chanshiyu/spring-mybatis:0.0.1
+```
