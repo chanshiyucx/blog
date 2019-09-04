@@ -98,7 +98,7 @@ public class JDBCUtil {
      * @return 所获得的 JDBC 的 Connection
      */
     public static Connection getConnection() throws Exception {
-        InputStream inputStream =JDBCUtil.class.getClassLoader().getResourceAsStream("db.properties");
+        InputStream inputStream = JDBCUtil.class.getClassLoader().getResourceAsStream("db.properties");
         Properties properties = new Properties();
         properties.load(inputStream);
 
@@ -457,7 +457,7 @@ public class EmployeeRepositoryTest {
 
     @Before
     public void setup() {
-        ctx = new ClassPathXmlApplicationContext("beans-new.xml");
+        ctx = new ClassPathXmlApplicationContext("beans.xml");
         employeeRepository = ctx.getBean(EmployeeRepository.class);
     }
 
