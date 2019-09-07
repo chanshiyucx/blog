@@ -8,6 +8,7 @@
 | Ctrl+Alt+O       | 移除未使用包 |
 | Ctrl+Shift+Enter | 换行         |
 | Ctrl+Shift+U     | 大小写转换   |
+| Ctrl+Alt+T       | 语句快捷键   |
 
 ## SSM 概念
 
