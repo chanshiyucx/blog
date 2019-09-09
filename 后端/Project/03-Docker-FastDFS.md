@@ -24,7 +24,7 @@ FastDFS 服务端有两个角色：跟踪器（tracker）和存储节点（stora
 - tracker 返回一台可用的 storage
 - client 直接和 storage 通讯完成文件下载
 
-![fastdfs](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/12_fastdfs.jpg)
+![fastdfs](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/12_fastdfs_%E6%B5%81%E7%A8%8B.jpg#full)
 
 ## 准备依赖
 
@@ -39,12 +39,12 @@ FastDFS 服务端有两个角色：跟踪器（tracker）和存储节点（stora
 
 ## 配置文件
 
-![fastdfs_文件上传](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/fastdfs_%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png)
+![fastdfs_文件上传](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/fastdfs_%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png#full)
 
 ### docker-compose.yml
 
-```
-version: "3.1"
+```yml
+version: '3.1'
 
 services:
   fastdfs:
@@ -58,7 +58,7 @@ services:
 
 ### Dockerfile
 
-```
+```conf
 FROM ubuntu:xenial
 MAINTAINER me@chanshiyu.com
 
@@ -243,7 +243,7 @@ CMD ["/bin/bash"]
 
 Shell 创建后是无法直接使用的，需要赋予执行的权限，使用 `chmod +x entrypoint.sh` 命令。
 
-```
+```shell
 #!/bin/sh
 /etc/init.d/fdfs_trackerd start
 /etc/init.d/fdfs_storaged start
@@ -254,7 +254,7 @@ Shell 创建后是无法直接使用的，需要赋予执行的权限，使用 `
 
 FastDFS 跟踪器配置，容器中路径为：/etc/fdfs，修改为：
 
-```
+```conf
 base_path=/fastdfs/tracker
 ```
 
@@ -262,7 +262,7 @@ base_path=/fastdfs/tracker
 
 FastDFS 存储配置，容器中路径为：/etc/fdfs，修改为：
 
-```
+```conf
 base_path=/fastdfs/storage
 store_path0=/fastdfs/storage
 tracker_server=192.168.205.10:22122
@@ -273,7 +273,7 @@ http.server_port=8888
 
 FastDFS 客户端配置，容器中路径为：/etc/fdfs，修改为：
 
-```
+```conf
 base_path=/fastdfs/tracker
 tracker_server=192.168.205.10:22122
 ```
@@ -282,7 +282,7 @@ tracker_server=192.168.205.10:22122
 
 fastdfs-nginx-module 配置文件，容器中路径为：/usr/local/src/fastdfs-nginx-module/src，修改为：
 
-```
+```conf
 CORE_INCS="$CORE_INCS /usr/include/fastdfs /usr/include/fastcommon/"
 CORE_LIBS="$CORE_LIBS -L/usr/lib -lfastcommon -lfdfsclient"
 ```
@@ -291,7 +291,7 @@ CORE_LIBS="$CORE_LIBS -L/usr/lib -lfastcommon -lfdfsclient"
 
 fastdfs-nginx-module 配置文件，容器中路径为：/usr/local/src/fastdfs-nginx-module/src，修改为：
 
-```
+```conf
 connect_timeout=10
 tracker_server=192.168.205.10:22122
 url_have_group_name = true
@@ -302,7 +302,7 @@ store_path0=/fastdfs/storage
 
 Nginx 配置文件，容器中路径为：/usr/local/src/nginx-1.13.6/conf，修改为：
 
-```
+```conf
 user  root;
 worker_processes  1;
 
