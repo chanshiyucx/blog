@@ -1,17 +1,15 @@
-# Java 仿微信全栈
-
-## Netty 介绍
+# Netty
 
 Netty 是一个提供了易于使用的 API 客户端/服务器框架。特性：
 
 - 高并发 - NIO（非阻塞 IO）
 - 传输快 - 零拷贝
 
+## BIO、NIO、AIO
+
 阻塞与非阻塞：线程访问资源，该资源是否准备就绪的一种处理方式。阻塞会一直等待资源就绪，而非阻塞会立即响应结果，先处理其他资源。
 
 同步和异步：访问数据的一种机制。
-
-### BIO、NIO、AIO
 
 ![阻塞与非阻塞](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/01_%E9%98%BB%E5%A1%9E%E4%B8%8E%E9%9D%9E%E9%98%BB%E5%A1%9E.png)
 

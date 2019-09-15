@@ -28,8 +28,16 @@ Spring Boot 项目的启动注解是：`@SpringBootApplication`，其实它就�
 
 其中 `@EnableAutoConfiguration` 是实现自动配置的入口，该注解又通过 `@Import` 注解导入了`AutoConfigurationImportSelector`，在该类中加载 `META-INF/spring.factories` 的配置信息。然后筛选出以 `EnableAutoConfiguration` 为 key 的数据，加载到 IOC 容器中，实现自动配置功能。
 
-## JPA 和 Hibernate 有哪些区别？JPA 可以支持动态 SQL 吗？
+## 005 JPA 和 Hibernate 有哪些区别？JPA 可以支持动态 SQL 吗？
 
 JPA 本身是一种规范，它的本质是一种 ORM 规范（不是 ORM 框架，因为 JPA 并未提供 ORM 实现，只是制定了规范），因为 JPA 是一种规范，所以只是提供了一些相关的接口，但是接口并不能直接使用，JPA 底层需要某种 JPA 实现，Hibernate 是 JPA 的一个实现集。
 
 JPA 是根据实体类的注解来创建对应的表和字段，如果需要动态创建表或者字段，需要动态构建对应的实体类，再重新调用 Jpa 刷新整个 Entity。动态 SQL，mybatis 支持的最好，jpa 也可以支持，但是没有 Mybatis 那么灵活。
+
+## 006 SSM 概念
+
+SSM：Spring + Spring MVC + MyBatis
+
+- Spring 是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。
+- SpringMVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。
+- MyBatis 是一个支持普通 SQL 查询，存储过程和高级映射的优秀持久层框架。

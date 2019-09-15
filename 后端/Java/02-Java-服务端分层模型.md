@@ -1,10 +1,8 @@
 # Java 服务端分层模型
 
-复杂的软件系统都会采用分层的架构设计，分层之后，每一层职责鲜明，整体上降低了系统的耦合性，提高了健壮性。比如常见的：展示层、业务层等，Java 服务端开发亦是如此。
+复杂的软件系统都会采用分层的架构设计，分层之后，每一层职责鲜明，整体上降低了系统的耦合性，提高了健壮性。比如常见的：展示层、业务层等。
 
-作为刚入门 Java 服务端开发的萌新，开始练习尝试开发一个简易的商场后端，尚未上手便接触不少技术名词，先摸清一个大概脉络框架，再着手实践。
-
-Java 服务端也是采用分层架构，针对每一层，对应对象的职责是不同的，以及层与层之间也需要通信，故而有着不同的“概念”对象。
+Java 服务端开发亦是如此，采用分层架构，针对每一层，对应对象的职责是不同的，以及层与层之间也需要通信，故而有着不同的“概念”对象。
 
 ![Java_数据模型](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Java_数据模型.jpg)
 
@@ -18,7 +16,6 @@ Java 服务端也是采用分层架构，针对每一层，对应对象的职责
 - AO（Application Object）：应用对象，在 Web 层与 Service 层之间抽象的复用对象模型，极为贴近展示层，复用度不高。
 - VO（View Object）：显示层对象，通常是 Web 向模板渲染引擎层传输的对象。
 - POJO（Plain Ordinary Java Object）：POJO 专指只有 setter/getter/toString 的简单类，包括 DO/DTO/BO/VO 等。
-- Query：数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装，禁止使用 Map 类来传输。
 
 领域模型命名规约：
 
@@ -67,4 +64,4 @@ Java 服务端也是采用分层架构，针对每一层，对应对象的职责
 
 **BO（Business Object 业务对象）**封装业务逻辑的 java 对象，通过调用 DAO 方法，结合 PO，VO 进行业务操作。主要作用是把业务逻辑封装为一个对象。这个对象可以包括一个或多个其它的对象。比如一个简历，有教育经历、工作经历、社会关系等等。可以把教育经历对应一个 PO，工作经历对应一个 PO，社会关系对应一个 PO。建立一个对应简历的 BO 对象处理简历，每个 BO 包含这些 PO。这样处理业务逻辑时，我们就可以针对 BO 去处理。
 
-**POJO（Plain Ordinary Java Object）**简单无规则 java 对象，纯的传统意义的 java 对象。就是说在一些 Object/Relation Mapping 工具中，能够做到维护数据库表记录的 persisent object 完全是一个符合 Java Bean 规范的纯 Java 对象，没有增加别的属性和方法。就是最基本的 Java Bean，只有属性字段及 setter 和 getter 方法！
+**POJO（Plain Ordinary Java Object）**简单无规则 java 对象，纯的传统意义的 java 对象。就是说在一些 Object/Relation Mapping 工具中，能够做到维护数据库表记录的 persisent object 完全是一个符合 Java Bean 规范的纯 Java 对象，没有增加别的属性和方法。就是最基本的 Java Bean，只有属性字段及 setter 和 getter 方法。
