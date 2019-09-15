@@ -57,10 +57,9 @@
     - [02 七天学会 NodeJS](前端/Node/02-七天学会-NodeJS.md)
   - Note
     - [01 Note](前端/Note/01-Note.md)
-    - [02 Snippets](前端/Note/02-Snippets.md)
-    - [03 Interview](前端/Note/03-Interview.md)
+    - [02 Interview](前端/Note/02-Interview.md)
+    - [03 Snippets](前端/Note/03-Snippets.md)
     - [04 Git](前端/Note/04-Git.md)
-    - [06 Line](前端/Note/06-Line.md)
   - React
     - [01 React Props Children 传值](前端/React/01-React-Props-Children-传值.md)
     - [02 Use a Render Prop!](前端/React/02-Use-a-Render-Prop!.md)
