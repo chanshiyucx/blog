@@ -59,7 +59,7 @@ Linux 命令格式：`命令 [选项] [参数]`，需要注意：个别命令不
 
 ## 压缩和解压缩命令
 
-Linux 常用压缩格式：`.zip、.gz、bz2、.tar.gz、.tar.bz2`。
+Linux 常用压缩格式：`.zip、.gz、.bz2、.tar.gz、.tar.bz2`。
 
 - `.zip`：`zip 压缩文件名 源文件` 压缩文件；`zip -r 压缩文件名 源目录` 压缩目录；`unzip 压缩文件` 解压缩
 - `.gz`：`gzip 源文件` 压缩文件，源文件不保留；`gzip -c 源文件 > 压缩文件` 压缩文件，源文件保留；`gzip -r 目录` 压缩目录下所有子文件，但不能压缩目录；`gzip -d 压缩文件` 和 `gunzip 压缩文件` 都可以解压缩文件
@@ -86,22 +86,4 @@ Linux 常用压缩格式：`.zip、.gz、bz2、.tar.gz、.tar.bz2`。
 systemctl stop firewalld
 systemctl mask firewalld
 systemctl start iptables
-```
-
-## JavaEE 工具
-
-### Tomcat
-
-```bash
-./startup.sh  # 启动
-./shutdown.sh # 关闭
-```
-
-### vsftpd
-
-```bash
-systemctl start vsftpd.service # 启动
-systemctl stop vsftpd.service # 关闭
-systemctl restart vsftpd.service # 重启
-systemctl status vsftpd.service # 查看状态
 ```

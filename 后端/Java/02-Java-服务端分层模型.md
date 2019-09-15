@@ -68,7 +68,3 @@ Java 服务端也是采用分层架构，针对每一层，对应对象的职责
 **BO（Business Object 业务对象）**封装业务逻辑的 java 对象，通过调用 DAO 方法，结合 PO，VO 进行业务操作。主要作用是把业务逻辑封装为一个对象。这个对象可以包括一个或多个其它的对象。比如一个简历，有教育经历、工作经历、社会关系等等。可以把教育经历对应一个 PO，工作经历对应一个 PO，社会关系对应一个 PO。建立一个对应简历的 BO 对象处理简历，每个 BO 包含这些 PO。这样处理业务逻辑时，我们就可以针对 BO 去处理。
 
 **POJO（Plain Ordinary Java Object）**简单无规则 java 对象，纯的传统意义的 java 对象。就是说在一些 Object/Relation Mapping 工具中，能够做到维护数据库表记录的 persisent object 完全是一个符合 Java Bean 规范的纯 Java 对象，没有增加别的属性和方法。就是最基本的 Java Bean，只有属性字段及 setter 和 getter 方法！
-
-## CRUD
-
-CRUD 是指在做计算处理时的增加（Create）、读取查询（Read）、更新（Update）和删除（Delete）几个单词的首字母简写。CRUD 主要被用在描述软件系统中数据库或者持久层的基本操作功能。
