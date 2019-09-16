@@ -625,5 +625,130 @@ List<Country> selectByWeekendSql = mapper.selectByExample(new Example.Builder(Co
 
 在代码中的 `Country::getCountryname` 就是方法引用，通过该方法可以自动转换对应的列名。
 
+## Tips
+
+### 打印 SQL 日志
+
+格式：`logging.level.Mapper 类的包=debug`。
+
+```yml
+logging:
+  level:
+    com.chanshiyu.mapper: debug
+```
+
+### 插入数据并返回自增 ID
+
+修改 Mapper 文件：
+
+```java
+import tk.mybatis.mapper.common.special.InsertUseGeneratedKeysMapper;
+import tk.mybatis.mapper.provider.SpecialProvider;
+
+public interface ChatMsgMapper extends InsertUseGeneratedKeysMapper<ChatMsg> {
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @InsertProvider(type = SpecialProvider.class, method = "dynamicSQL")
+    int insertUseGeneratedKeys(ChatMsg chatMsg);
+
+}
+```
+
+示例：
+
+```java
+@Transactional(propagation = Propagation.REQUIRED)
+@Override
+public int createChatMsg(ChatMsg chatMsg) {
+    chatMsgMapper.insertUseGeneratedKeys(chatMsg);
+    return chatMsg.getId();
+}
+```
+
+### in() 查询排序
+
+查询结果按 `in()` 中的 ID 排序：
+
+```xml
+<select id="queryTestList" resultMap="TestResult">
+  select * from test
+  <where>
+    id in
+    <foreach item="item" index="index" collection="ids" open="(" close=")" separator=",">
+      #{item}
+    </foreach>
+    order by field
+    <foreach item="item" index="index" collection="ids" open="(id," close=")" separator=",">
+      #{item}
+    </foreach>
+  </where>
+</select>
+```
+
+示例：
+
+```java
+List<Test> queryTestList(@Param("ids") List<String> ids);
+
+// select * FROM test where id in (1,3,2,5)  order by field (id,1,3,2,5);
+```
+
+### find_in_set()
+
+举例：有个文章表里面有个 type 字段，它存储的是文章类型，有 1 头条、2 推荐、3 热点、4 图文等等。现在有篇文章他既是头条，又是热点，还是图文，type 中以 1,3,4 的格式存储。那我们如何用 sql 查找所有 type 中有 4 的图文类型的文章呢？
+
+这里就需要用到 mysql 的 `Find_IN_SET()` 函数：
+
+```java
+select * from article where FIND_IN_SET('4', type);
+```
+
+`FIND_IN_SET(str,strlist)` 参数说明：
+
+- str 要查询的字符串
+- strlist 字段名，参数以`,`分隔，如 (1,2,6,8)
+
+查询字段 strlist 中包含 str 的结果，返回结果为 null 或记录：
+
+```sql
+SELECT FIND_IN_SET('b', 'a,b,c,d'); --  2
+SELECT FIND_IN_SET('e', 'a,b,c,d'); -- 0
+```
+
+示例：
+
+```xml
+<select id="queryTest" resultMap="TestResult">
+  select * from test
+  <where>
+    <if test="myIds != null">
+      FIND_IN_SET(#{myIds,jdbcType=VARCHAR},test_ids)
+    </if>
+  </where>
+</select>
+```
+
+```java
+List<TestResult> queryTest(@Param("myIds") String myIds);
+
+// select * from app_models where FIND_IN_SET('3',type_ids)
+```
+
+`Find_IN_SET` 和 `like` 的区别：`like` 是广泛的模糊匹配，字符串中没有分隔符，`Find_IN_SET` 是精确匹配，字段值以英文`,`分隔，`Find_IN_SET` 查询的结果要小于 `like` 查询的结果。
+
+### 批量更新多个不同值的字段
+
+```xml
+<update id="updateBatch"  parameterType="java.util.List">
+  <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+    update course
+    <set>
+      name=${item.name}
+    </set>
+    where id = ${item.id}
+  </foreach>
+</update>
+```
+
 参考文章：  
 [MyBatis 通用 Mapper4](https://github.com/abel533/Mapper/wiki)
