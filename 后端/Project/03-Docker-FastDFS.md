@@ -349,6 +349,283 @@ docker exec -it fastdfs /bin/bash
 
 上传成功返回文件路径 `group1/M00/00/00/wKjNCl1zlSCAF-5lAAAeS70IE2U2766292`，加上主机 ip 即可访问 `http://192.168.205.10:8888/group1/M00/00/00/wKjNCl1zlSCAF-5lAAAeS70IE2U2766292`。
 
+## 整合 spring boot
+
+添加依赖：
+
+```xml
+<dependency>
+    <groupId>com.github.tobato</groupId>
+    <artifactId>fastdfs-client</artifactId>
+    <version>1.26.2</version>
+</dependency>
+```
+
+配置文件：
+
+```yml
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+    - 192.168.205.10:22122
+```
+
+导入 FastDFS-Client 组件：
+
+```java
+@Configuration
+@Import(FdfsClientConfig.class)
+@EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
+public class FastdfsImport {}
+```
+
+可以访问 [FastDFS-Client 项目地址](https://github.com/tobato/FastDFS_Client) 查看具体配置。
+
+最后添加两个工具类文件，方便文件上传：
+
+```java
+@Component
+public class FastDFSClient {
+
+    @Autowired
+    private FastFileStorageClient storageClient;
+
+    /**
+        * 上传文件
+        * @param file 文件对象
+        * @return 文件访问地址
+        * @throws IOException
+        */
+    public String uploadFile(MultipartFile file) throws IOException {
+        StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(),
+                FilenameUtils.getExtension(file.getOriginalFilename()), null);
+
+        return storePath.getPath();
+    }
+
+    public String uploadFile2(MultipartFile file) throws IOException {
+        StorePath storePath = storageClient.uploadImageAndCrtThumbImage(file.getInputStream(), file.getSize(),
+                FilenameUtils.getExtension(file.getOriginalFilename()), null);
+
+        return storePath.getPath();
+    }
+
+    public String uploadQRCode(MultipartFile file) throws IOException {
+        StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(),
+                "png", null);
+
+        return storePath.getPath();
+    }
+
+    public String uploadFace(MultipartFile file) throws IOException {
+        StorePath storePath = storageClient.uploadImageAndCrtThumbImage(file.getInputStream(), file.getSize(),
+                "png", null);
+
+        return storePath.getPath();
+    }
+
+    public String uploadBase64(MultipartFile file) throws IOException {
+        StorePath storePath = storageClient.uploadImageAndCrtThumbImage(file.getInputStream(), file.getSize(),
+                "png", null);
+
+        return storePath.getPath();
+    }
+
+    /**
+        * 将一段字符串生成一个文件上传
+        * @param content 文件内容
+        * @param fileExtension
+        * @return
+        */
+    public String uploadFile(String content, String fileExtension) {
+        byte[] buff = content.getBytes(Charset.forName("UTF-8"));
+        ByteArrayInputStream stream = new ByteArrayInputStream(buff);
+        StorePath storePath = storageClient.uploadFile(stream, buff.length, fileExtension, null);
+        return storePath.getPath();
+    }
+
+    /**
+        * 删除文件
+        * @param fileUrl 文件访问地址
+        * @return
+        */
+    public void deleteFile(String fileUrl) {
+        if (StringUtils.isEmpty(fileUrl)) {
+            return;
+        }
+        try {
+            StorePath storePath = StorePath.praseFromUrl(fileUrl);
+            storageClient.deleteFile(storePath.getGroup(), storePath.getPath());
+        } catch (FdfsUnsupportStorePathException e) {
+            e.getMessage();
+        }
+    }
+}
+```
+
+```java
+@Service
+public class FileUtils {
+    /**
+     * 根据url拿取file
+     * @param url
+     * @param suffix 文件后缀名
+     */
+    public static File createFileByUrl(String url, String suffix) {
+        byte[] byteFile = getImageFromNetByUrl(url);
+        if (byteFile != null) {
+            File file = getFileFromBytes(byteFile, suffix);
+            return file;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+        * 根据地址获得数据的字节流
+        * @param strUrl 网络连接地址
+        * @return
+        */
+    private static byte[] getImageFromNetByUrl(String strUrl) {
+        try {
+            URL url = new URL(strUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(5 * 1000);
+            InputStream inStream = conn.getInputStream();// 通过输入流获取图片数据
+            byte[] btImg = readInputStream(inStream);// 得到图片的二进制数据
+            return btImg;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+        * 从输入流中获取数据
+        * @param inStream 输入流
+        * @return
+        * @throws Exception
+        */
+    private static byte[] readInputStream(InputStream inStream) throws Exception {
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = 0;
+        while ((len = inStream.read(buffer)) != -1) {
+            outStream.write(buffer, 0, len);
+        }
+        inStream.close();
+        return outStream.toByteArray();
+    }
+
+    // 创建临时文件
+    private static File getFileFromBytes(byte[] b, String suffix) {
+        BufferedOutputStream stream = null;
+        File file = null;
+        try {
+            file = File.createTempFile("pattern", "." + suffix);
+            System.out.println("临时文件位置：" + file.getCanonicalPath());
+            FileOutputStream fstream = new FileOutputStream(file);
+            stream = new BufferedOutputStream(fstream);
+            stream.write(b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return file;
+    }
+
+    public static MultipartFile createImg(String url) {
+        try {
+            // File转换成MutipartFile
+            File file = FileUtils.createFileByUrl(url, "jpg");
+            FileInputStream inputStream = new FileInputStream(file);
+            MultipartFile multipartFile = new MockMultipartFile(file.getName(), inputStream);
+            return multipartFile;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static MultipartFile fileToMultipart(String filePath) {
+        try {
+            // File转换成MutipartFile
+            File file = new File(filePath);
+            FileInputStream inputStream = new FileInputStream(file);
+            MultipartFile multipartFile = new MockMultipartFile(file.getName(), "png", "image/png", inputStream);
+            return multipartFile;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static boolean base64ToFile(String filePath, String base64Data)  throws Exception {
+        String dataPrix = "";
+        String data = "";
+
+        if(base64Data == null || "".equals(base64Data)){
+            return false;
+        }else{
+            String [] d = base64Data.split("base64,");
+            if(d != null && d.length == 2){
+                dataPrix = d[0];
+                data = d[1];
+            }else{
+                return false;
+            }
+        }
+
+        // 因为BASE64Decoder的jar问题，此处使用spring框架提供的工具包
+        byte[] bs = Base64Utils.decodeFromString(data);
+        // 使用apache提供的工具类操作流
+        org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(filePath), bs);
+
+        return true;
+    }
+
+}
+```
+
+文件上传示例：
+
+```java
+@RestController
+@RequestMapping("/tool")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Slf4j
+public class ToolController {
+
+    private final FastDFSClient fastDFSClient;
+
+    private final String AVATARHOST = "http://192.168.205.10:8888/group1/";
+
+    @PostMapping("/upload")
+    public CommJSONResult<String> upload(@RequestParam("file") MultipartFile file) throws Exception {
+        if (file.isEmpty()) {
+            return CommJSONResult.errorMsg(ApiStatusEnums.FILE_NOT_EMPTY.getMsg());
+        }
+        String url = fastDFSClient.uploadBase64(file);
+        String avatar = AVATARHOST + url;
+        return CommJSONResult.ok(avatar);
+    }
+
+}
+```
+
 参考文章：  
 [fastdfs wiki](https://github.com/happyfish100/fastdfs/wiki)  
 [基于 Docker 安装 FastDFS](https://www.funtl.com/zh/apache-dubbo-codeing/FastDFS-安装.html)
