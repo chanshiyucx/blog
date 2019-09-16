@@ -526,32 +526,104 @@ outer join 产生左表（A）和右表（B）的并集。
 方法：`int deleteByExample(Object example);`
 说明：根据 Example 条件删除数据。
 
-## Example 查询
+## Example 的使用
 
-### 基本使用
+### 查询
 
 ```java
-@Transactional(propagation = Propagation.SUPPORTS)
-@Override
-public Users queryUserByUsername(String username) {
-    Example example = new Example(Users.class);
-    Example.Criteria criteria = example.createCriteria();
-    criteria.andEqualTo("username", username);
-    return usersMapper.selectOneByExample(example);
-}
+Example example = new Example(Country.class);
+example.setForUpdate(true);
+example.createCriteria().andGreaterThan("id", 100).andLessThan("id",151);
+example.or().andLessThan("id", 41);
+List<Country> countries = mapper.selectByExample(example);
+
+// DEBUG [main] - ==> Preparing: SELECT id,countryname,countrycode FROM country WHERE ( id > ? and id < ? ) or ( id < ? ) ORDER BY id desc FOR UPDATE
+// DEBUG [main] - ==> Parameters: 100(Integer), 151(Integer), 41(Integer)
 ```
 
-### 更多用例
+### 动态 SQL
 
 ```java
-Example example = new Example(Users.class);
+Example example = new Example(Country.class);
 Example.Criteria criteria = example.createCriteria();
+if(query.getCountryname() != null){
+    criteria.andLike("countryname", query.getCountryname() + "%");
+}
+if(query.getId() != null){
+    criteria.andGreaterThan("id", query.getId());
+}
+List<Country> countries = mapper.selectByExample(example);
 
-// example 条件
-example.setOrderByClause("age DESC");  // 排序
-example.setDistinct(false);            // 不去重
-
-// criteria 条件
-criteria.andEqualTo("name", "时雨");    // 相等
-criteria.andNameEqualTo("时雨");
+// DEBUG [main] - ==> Preparing: SELECT id,countryname,countrycode FROM country WHERE ( countryname like ? ) ORDER BY id desc
+// DEBUG [main] - ==> Parameters: China%(String)
 ```
+
+### 排序
+
+```java
+Example example = new Example(Country.class);
+example.orderBy("id").desc().orderBy("countryname").orderBy("countrycode").asc();
+List<Country> countries = mapper.selectByExample(example);
+
+// DEBUG [main] - ==> Preparing: SELECT id,countryname,countrycode FROM country order by id DESC,countryname,countrycode ASC
+// DEBUG [main] - ==> Parameters:
+```
+
+### 去重
+
+```java
+CountryExample example = new CountryExample();
+//设置 distinct
+example.setDistinct(true);
+example.createCriteria().andCountrynameLike("A%");
+example.or().andIdGreaterThan(100);
+List<Country> countries = mapper.selectByExample(example);
+
+// DEBUG [main] - ==> Preparing: SELECT distinct id,countryname,countrycode FROM country WHERE ( countryname like ? ) or ( Id > ? ) ORDER BY id desc
+// DEBUG [main] - ==> Parameters: A%(String), 100(Integer)
+```
+
+### 设置查询列
+
+```java
+Example example = new Example(Country.class);
+example.selectProperties("id", "countryname");
+List<Country> countries = mapper.selectByExample(example);
+
+// DEBUG [main] - ==> Preparing: SELECT id , countryname FROM country ORDER BY id desc
+// DEBUG [main] - ==> Parameters:
+```
+
+### Example.builder 方式
+
+```java
+Example example = Example.builder(Country.class)
+        .select("countryname")
+        .where(Sqls.custom().andGreaterThan("id", 100))
+        .orderByAsc("countrycode")
+        .forUpdate()
+        .build();
+List<Country> countries = mapper.selectByExample(example);
+
+// DEBUG [main] - ==> Preparing: SELECT countryname FROM country WHERE ( id > ? ) order by countrycode Asc FOR UPDATE
+// DEBUG [main] - ==> Parameters: 100(Integer)
+```
+
+### Weekend
+
+> 使用 6.2 和 6.3 中的 Example 时，需要自己输入属性名，例如 "countryname"，假设输入错误，或者数据库有变化，这里很可能就会出错，因此基于 Java 8 的方法引用是一种更安全的用法，如果你使用 Java 8，你可以试试 Weekend。
+
+```java
+List<Country> selectByWeekendSql = mapper.selectByExample(new Example.Builder(Country.class)
+        .where(WeekendSqls.<Country>custom().andLike(Country::getCountryname, "%a%")
+                .andGreaterThan(Country::getCountrycode, "123"))
+        .build());
+
+// DEBUG [main] - ==> Preparing: SELECT id,countryname,countrycode FROM country WHERE ( countryname like ? and countrycode > ? )
+// DEBUG [main] - ==> Parameters: %a%(String), 123(String)
+```
+
+在代码中的 `Country::getCountryname` 就是方法引用，通过该方法可以自动转换对应的列名。
+
+参考文章：  
+[MyBatis 通用 Mapper4](https://github.com/abel533/Mapper/wiki)
