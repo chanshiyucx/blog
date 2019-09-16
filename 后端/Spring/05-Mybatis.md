@@ -463,48 +463,70 @@ outer join 产生左表（A）和右表（B）的并集。
 </select>
 ```
 
-## Select
+## 通用 Mapper
 
-| 方法                                | 说明                                                                               |
-| ----------------------------------- | ---------------------------------------------------------------------------------- |
-| `List<T> select(T record);`         | 根据实体中的属性值进行查询，查询条件使用等号                                       |
-| `T selectByPrimaryKey(Object key);` | 根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号             |
-| `List<T> selectAll();`              | 查询全部结果，select(null)方法能达到同样的效果                                     |
-| `T selectOne(T record);`            | 根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号 |
-| `int selectCount(T record);`        | 根据实体中的属性查询总数，查询条件使用等号                                         |
+通用 Mapper 就是为了解决单表增删改查，基于 Mybatis 的插件。开发人员不需要编写 SQL，不需要在 DAO 中增加方法，只要写好实体类，就能支持相应的增删改查方法。
 
-方法：`List<T> select(T record);`
-说明：根据实体中的属性值进行查询，查询条件使用等号
+### Select
 
-方法：`T selectByPrimaryKey(Object key);`
-说明：根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号
+方法：`List<T> select(T record);`  
+说明：根据实体中的属性值进行查询，查询条件使用等号。
 
-方法：`List<T> selectAll();`
-说明：查询全部结果，select(null)方法能达到同样的效果
+方法：`T selectByPrimaryKey(Object key);`  
+说明：根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号。
 
-方法：`T selectOne(T record);`
-说明：根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号
+方法：`List<T> selectAll();`  
+说明：查询全部结果，`select(null)` 方法能达到同样的效果。
 
-方法：`int selectCount(T record);`
-说明：根据实体中的属性查询总数，查询条件使用等号
+方法：`T selectOne(T record);`  
+说明：根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号。
 
-## Insert
+方法：`int selectCount(T record);`  
+说明：根据实体中的属性查询总数，查询条件使用等号。
 
-方法：`int insert(T record);`
-说明：保存一个实体，null 的属性也会保存，不会使用数据库默认值
+### Insert
 
-方法：`int insertSelective(T record);`
-说明：保存一个实体，null 的属性不会保存，会使用数据库默认值
+方法：`int insert(T record);`  
+说明：保存一个实体，null 的属性也会保存，不会使用数据库默认值。
 
-## Update
+方法：`int insertSelective(T record);`  
+说明：保存一个实体，null 的属性不会保存，会使用数据库默认值。
 
-方法：`int updateByPrimaryKey(T record);`
-说明：根据主键更新实体全部字段，null 值会被更新
+### Update
 
-方法：`int updateByPrimaryKeySelective(T record);`
-说明：根据主键更新属性不为 null 的值
+方法：`int updateByPrimaryKey(T record);`  
+说明：根据主键更新实体全部字段，null 值会被更新。
 
-## Example 的使用
+方法：`int updateByPrimaryKeySelective(T record);`  
+说明：根据主键更新属性不为 null 的值。
+
+### Delete
+
+方法：`int delete(T record);`
+说明：根据实体属性作为条件进行删除，查询条件使用等号。
+
+方法：`int deleteByPrimaryKey(Object key);`
+说明：根据主键字段进行删除，方法参数必须包含完整的主键属性。
+
+### Example
+
+方法：`List<T> selectByExample(Object example);`
+说明：根据 Example 条件进行查询
+重点：这个查询支持通过 Example 类指定查询列，通过 selectProperties 方法指定查询列。
+
+方法：`int selectCountByExample(Object example);`
+说明：根据 Example 条件进行查询总数。
+
+方法：`int updateByExample(@Param("record") T record, @Param("example") Object example);`
+说明：根据 Example 条件更新实体 record 包含的全部属性，null 值会被更新。
+
+方法：`int updateByExampleSelective(@Param("record") T record, @Param("example") Object example);`
+说明：根据 Example 条件更新实体 record 包含的不是 null 的属性值。
+
+方法：`int deleteByExample(Object example);`
+说明：根据 Example 条件删除数据。
+
+## Example 查询
 
 ### 基本使用
 
