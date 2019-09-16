@@ -114,7 +114,6 @@ public class WSServerInitializer extends ChannelInitializer<NioSocketChannel> {
         /**
          * ============================================================================
          *                            websocket 服务器处理协议
-         * 处理握手动作：handshaking(close, ping, pong) ping + pong = 心跳
          * 对于 websokcet 来讲，都是以 frames 进行传输的，不同的数据类型对应不同的 frames 也不同
          * ============================================================================
          */
@@ -139,7 +138,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         String content = textWebSocketFrame.text();
         System.out.println("接受数据消息：" + content);
 
-        // 此方法给全部 channel 刷入消息，和上面循环一致
+        // 此方法给全部 channel 刷入消息
         clients.writeAndFlush(new TextWebSocketFrame("[接收消息" + LocalDateTime.now() + "] " + content));
     }
 
