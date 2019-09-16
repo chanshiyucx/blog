@@ -440,3 +440,96 @@ outer join B on A.aID = B.bID
 | NULL |   NULL    |   8    | 2006032408 |
 
 outer join 产生左表（A）和右表（B）的并集。
+
+### 实际用例
+
+已之前写过的 Netty 聊天系统为例，用户查询好友添加请求和自己的好友列表，查询语句如下：
+
+```xml
+<select id="queryFriendRequestList" parameterType="String" resultType="com.chanshiyu.pojo.vo.UsersVO">
+  select u.id, u.username, u.nickname, u.avatar
+  from friends_request f
+  left join users u
+  on f.send_user_id = u.id
+  where f.accept_user_id = #{acceptUserId}
+</select>
+
+<select id="queryFriendList" parameterType="String" resultType="com.chanshiyu.pojo.vo.UsersVO">
+  select u.id, u.username, u.nickname, u.avatar
+  from my_friends m
+  left join users u
+  on m.my_friend_user_id = u.id
+  where m.my_user_id = #{myUserId}
+</select>
+```
+
+## Select
+
+| 方法                                | 说明                                                                               |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| `List<T> select(T record);`         | 根据实体中的属性值进行查询，查询条件使用等号                                       |
+| `T selectByPrimaryKey(Object key);` | 根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号             |
+| `List<T> selectAll();`              | 查询全部结果，select(null)方法能达到同样的效果                                     |
+| `T selectOne(T record);`            | 根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号 |
+| `int selectCount(T record);`        | 根据实体中的属性查询总数，查询条件使用等号                                         |
+
+方法：`List<T> select(T record);`
+说明：根据实体中的属性值进行查询，查询条件使用等号
+
+方法：`T selectByPrimaryKey(Object key);`
+说明：根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号
+
+方法：`List<T> selectAll();`
+说明：查询全部结果，select(null)方法能达到同样的效果
+
+方法：`T selectOne(T record);`
+说明：根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号
+
+方法：`int selectCount(T record);`
+说明：根据实体中的属性查询总数，查询条件使用等号
+
+## Insert
+
+方法：`int insert(T record);`
+说明：保存一个实体，null 的属性也会保存，不会使用数据库默认值
+
+方法：`int insertSelective(T record);`
+说明：保存一个实体，null 的属性不会保存，会使用数据库默认值
+
+## Update
+
+方法：`int updateByPrimaryKey(T record);`
+说明：根据主键更新实体全部字段，null 值会被更新
+
+方法：`int updateByPrimaryKeySelective(T record);`
+说明：根据主键更新属性不为 null 的值
+
+## Example 的使用
+
+### 基本使用
+
+```java
+@Transactional(propagation = Propagation.SUPPORTS)
+@Override
+public Users queryUserByUsername(String username) {
+    Example example = new Example(Users.class);
+    Example.Criteria criteria = example.createCriteria();
+    criteria.andEqualTo("username", username);
+    return usersMapper.selectOneByExample(example);
+}
+```
+
+### 更多用例
+
+```java
+Example example = new Example(Users.class);
+Example.Criteria criteria = example.createCriteria();
+
+// example 条件
+example.setOrderByClause("age DESC");  // 排序
+example.setDistinct(false);            // 不去重
+
+// criteria 条件
+criteria.andEqualTo("name", "时雨");    // 相等
+criteria.andNameEqualTo("时雨");
+```
