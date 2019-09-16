@@ -334,7 +334,7 @@ http {
 }
 ```
 
-## 启动容器并测试
+## 启动测试
 
 ```bash
 # 启动容器
@@ -351,7 +351,7 @@ docker exec -it fastdfs /bin/bash
 
 ## 整合 spring boot
 
-添加依赖：
+### 添加依赖
 
 ```xml
 <dependency>
@@ -361,7 +361,7 @@ docker exec -it fastdfs /bin/bash
 </dependency>
 ```
 
-配置文件：
+### 配置文件
 
 ```yml
 fdfs:
@@ -374,7 +374,9 @@ fdfs:
     - 192.168.205.10:22122
 ```
 
-导入 FastDFS-Client 组件：
+### FastDFS-Client
+
+导入 [FastDFS-Client 项目地址](https://github.com/tobato/FastDFS_Client) 组件：
 
 ```java
 @Configuration
@@ -383,7 +385,7 @@ fdfs:
 public class FastdfsImport {}
 ```
 
-可以访问 [FastDFS-Client 项目地址](https://github.com/tobato/FastDFS_Client) 查看具体配置。
+### FastDFSClient 和 FileUtils
 
 最后添加两个工具类文件，方便文件上传：
 
@@ -599,6 +601,8 @@ public class FileUtils {
 
 }
 ```
+
+### 上传示例
 
 文件上传示例：
 
