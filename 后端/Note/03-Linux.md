@@ -106,3 +106,85 @@ Linux 命令格式：`命令 [选项] [参数]`，需要注意：个别命令不
 - `whereis`：搜索系统命令所在位置
 - `which`：搜索命令所在路径及别名
 - `find`：搜索文件或文件夹
+
+## 用户和组
+
+**Linux 操作系统是一个多用户操作系统，它允许多用户同时登录到系统上并使用资源**。系统会根据账户来区分每个用户的文件，进程，任务和工作环境，使得每个用户工作都不受干扰。
+
+### Root 账户
+
+```bash
+# 设置 Root 账户密码
+sudo passwd root
+
+# 切换到 Root
+su
+```
+
+### 允许远程登录 Root
+
+需要编辑 ssh 配置文件并重启服务：
+
+```bash
+vi /etc/ssh/sshd_config
+```
+
+```conf
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+```
+
+最后重启服务：
+
+```bash
+service ssh restart
+```
+
+### 账户管理
+
+```bash
+# 增加用户
+useradd 用户名
+useradd -u (UID号)
+useradd -p (口令)
+useradd -g (分组)
+useradd -s (SHELL)
+useradd -d (用户目录)
+
+# 修改用户
+usermod -u (新UID)
+usermod -d (用户目录)
+usermod -g (组名)
+usermod -s (SHELL)
+usermod -p (新口令)
+usermod -l (新登录名)
+usermod -L (锁定用户账号密码)
+usermod -U (解锁用户账号)
+
+# 删除用户
+userdel 用户名 (删除用户账号)
+userdel -r 删除账号时同时删除目录
+
+# 口令维护
+passwd 用户账户名 (设置用户口令)
+passwd -l 用户账户名 (锁定用户账户)
+passwd -u 用户账户名 (解锁用户账户)
+passwd -d 用户账户名 (删除账户口令)
+gpasswd -a 用户账户名 组账户名 (将指定用户添加到指定组)
+gpasswd -d 用户账户名 组账户名 (将用户从指定组中删除)
+gpasswd -A 用户账户名 组账户名 (将用户指定为组的管理员)
+
+# 组账户维护
+groupadd 组账户名 (创建新组)
+groupadd -g 指定组GID
+groupmod -g 更改组的GID
+groupmod -n 更改组账户名
+groupdel 组账户名 (删除指定组账户)
+
+# 用户和组状态
+su 用户名(切换用户账户)
+id 用户名(显示用户的UID，GID)
+whoami (显示当前用户名称)
+groups (显示用户所属组)
+```
