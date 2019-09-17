@@ -20,6 +20,8 @@ Stream 不是集合元素，它不是数据结构并不保存数据，它是有�
 
 流的操作是以管道的方式串起来的。流管道包含一个数据源，接着包含零到 N 个中间操作，最后以一个终点操作结束。
 
+**简单说，对 Stream 的使用就是实现一个 `filter-map-reduce` 过程，产生一个最终结果，或者导致一个副作用（side effect）。**
+
 ### 并行 Parallelism
 
 所有的流操作都可以串行执行或者并行执行。除非显示地创建并行流，否则 Java 库中创建的都是串行流。`Collection.stream()` 为集合创建串行流而 `Collection.parallelStream()` 为集合创建并行流。`IntStream.range(int, int)` 创建的是串行流。通过 `parallel()` 方法可以将串行流转换成并行流，`sequential()` 方法将流转换成串行流。
@@ -96,8 +98,8 @@ stream = list.stream();
 
 ```java
 List<String> l = Stream.of("a","b","c","b")
-              .distinct()
-              .collect(Collectors.toList());
+                .distinct()
+                .collect(Collectors.toList());
 System.out.println(l); //[a, b, c]
 ```
 
@@ -107,9 +109,9 @@ System.out.println(l); //[a, b, c]
 
 ```java
 List<Integer> l = IntStream.range(1,10)
-              .filter( i -> i % 2 == 0)
-              .boxed()
-              .collect(Collectors.toList());
+                .filter( i -> i % 2 == 0)
+                .boxed()
+                .collect(Collectors.toList());
 System.out.println(l); // [2, 4, 6, 8]
 ```
 
@@ -118,7 +120,7 @@ System.out.println(l); // [2, 4, 6, 8]
 `map` 方法将流中的元素映射成另外的值，新的值类型可以和原来的元素的类型不同。
 
 ```java
- List<Integer> l = Stream.of('a','b','c')
+List<Integer> l = Stream.of('a','b','c')
                 .map(Object::hashCode)
                 .collect(Collectors.toList());
 System.out.println(l); // [97, 98, 99]
@@ -193,6 +195,125 @@ List<String> l  = Arrays.stream(arr)
         })
         .collect(Collectors.toList());
 System.out.println(l); // [b_123, b#632, c+342, d_123]
+```
+
+## 终点操作 terminal operations
+
+### Match
+
+一组方法用来检查流中的元素是否满足断言：
+
+- `allMatch` 只有在所有的元素都满足断言时才返回 true，否则 flase，流为空时总是返回 true
+- `anyMatch` 只有在任意一个元素满足断言时就返回 true，否则 flase
+- `noneMatch` 只有在所有的元素都不满足断言时才返回 true，否则 flase
+
+```java
+System.out.println(Stream.of(1,2,3,4,5).allMatch(i -> i > 0)); //true
+System.out.println(Stream.of(1,2,3,4,5).anyMatch(i -> i > 0)); //true
+System.out.println(Stream.of(1,2,3,4,5).noneMatch(i -> i > 0)); //false
+
+System.out.println(Stream.<Integer>empty().allMatch(i -> i > 0)); //true
+System.out.println(Stream.<Integer>empty().anyMatch(i -> i > 0)); //false
+System.out.println(Stream.<Integer>empty().noneMatch(i -> i > 0)); //true
+```
+
+### count
+
+`count` 方法返回流中的元素的数量。
+
+```java
+System.out.println(Stream.of(1,2,3,4,5).count());
+
+// 等价于
+System.out.println(Stream.of(1,2,3,4,5).mapToLong(e -> 1L).sum());
+```
+
+### find
+
+- `findAny()` 返回任意一个元素，如果流为空，返回空的 Optional，对于并行流来说，它只需要返回任意一个元素即可，所以性能可能要好于 findFirst()，但是有可能多次执行的时候返回的结果不一样。
+- `findFirst()` 返回第一个元素，如果流为空，返回空的 Optional。
+
+```java
+System.out.println(Stream.of(1,2,3,4,5).findAny());
+System.out.println(Stream.of(1,2,3,4,5).findFirst());
+```
+
+这里需要注意返回值类型：`Optional`。它作为一个容器，可能含有某值，或者不包含。使用它的目的是尽可能避免 `NullPointerException`。
+
+### forEach、forEachOrdered
+
+`forEach` 遍历流的每一个元素，执行指定的 action。它是一个终点操作，和 `peek` 方法不同。这个方法不担保按照流的`encounter order` 顺序执行，如果对于有序流按照它的 `encounter order` 顺序执行，可以使用 `forEachOrdered` 方法。
+
+```java
+Stream.of(1,2,3,4,5).forEach(System.out::println); // 1,2,3,4,5
+```
+
+### max、min
+
+`max` 返回流中的最大值，`min` 返回流中的最小值。
+
+```java
+System.out.println(IntStream.of(1, 2, 3, 4, 5).min().getAsInt()); // 1
+System.out.println(IntStream.of(1, 2, 3, 4, 5).max().getAsInt()); // 5
+```
+
+### reduce
+
+`reduce` 使用流中的第一个值作为初始值，后面两个方法则使用一个提供的初始值。
+
+```java
+System.out.println(Stream.of(1,2,3,4,5).reduce(0, Integer::sum)); // 15
+```
+
+## 基本类型
+
+Java 8 提供了一些专门针对基本类型优化的 API，如 `IntStream, LongStream, DoubleStream`，当然也可以用 `Stream<Integer>、Stream<Long>、Stream<Double>`，但是 boxing 和 unboxing 会很耗时，所以特别为这三种基本数值型提供了对应的 Stream， 应该优先使用它们。
+
+以 `IntStream` 为例：
+
+```java
+// 创建一个空的 IntStream
+IntStream empty = IntStream.empty();
+
+// 创建包含基本类型 1，2，3 的 IntStream
+IntStream intStream = IntStream.of(1, 2, 3);
+
+// 创建一个包含 1 到 9 的 IntStream
+IntStream range = IntStream.range(1, 10);
+
+// 创建一个包含 1 到 10 的 IntStream
+IntStream rangeClosed = IntStream.rangeClosed(1, 10);
+
+// 创建一个包含 3 的 IntStream
+IntStream generated = IntStream.generate(() -> 3);
+
+// 得到一个无限循环的 IntStream, 值为 1, 3, 5, 7 ...
+IntStream infinite = IntStream.iterate(1, operand -> operand + 2);
+```
+
+### mapToObj、mapToLong
+
+- `mapToObj` 方法主要是将 Stream 中的元素进行装箱操作，转换成一个引用类型的值
+- `mapToLong` 方法是将 Stream 中的 元素转换成基本类型 long
+- `mapToDouble` 方法是将 Stream 中的 元素转换成基本类型 double
+
+```java
+IntStream.of(1, 2, 3, 4, 5).mapToObj(elem -> "a" + elem).forEach(System.out::println); // a1,a2,a3,a4,a5
+IntStream.of(1, 2, 3, 4, 5).mapToLong(elem -> elem * 100L).forEach(System.out::println); // 100,200,300,400,500
+IntStream.of(1, 2, 3, 4, 5).mapToDouble(elem -> elem + 0.1).forEach(System.out::println); // 1.1,2.1,3.1,4.1,5.1
+```
+
+### summaryStatistics
+
+`summaryStatistics` 方法主要是获取 Stream 中元素的统计信息。
+
+```java
+IntSummaryStatistics summary = IntStream.of(1, 2, 3, 4, 5).summaryStatistics();
+System.out.println(summary.getMin()); // 1
+System.out.println(summary.getMax()); // 5
+System.out.println(summary.getSum()); // 15
+System.out.println(summary.getCount()); // 5
+System.out.println(summary.getAverage()); // 3.0
 ```
 
 参考文章：  
