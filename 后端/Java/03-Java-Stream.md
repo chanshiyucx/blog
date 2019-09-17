@@ -20,6 +20,16 @@ Stream 不是集合元素，它不是数据结构并不保存数据，它是有�
 
 流的操作是以管道的方式串起来的。流管道包含一个数据源，接着包含零到 N 个中间操作，最后以一个终点操作结束。
 
+流的操作类型分为两种：
+
+- `Intermediate`：一个流可以后面跟随零个或多个 `intermediate` 操作。其目的主要是打开流，做出某种程度的数据映射/过滤，然后返回一个新的流，交给下一个操作使用。这类操作都是惰性化的（lazy），就是说，仅仅调用到这类方法，并没有真正开始流的遍历。
+- `Terminal`：一个流只能有一个 `terminal` 操作，当这个操作执行后，流就被使用“光”了，无法再被操作。所以这必定是流的最后一个操作。Terminal 操作的执行，才会真正开始流的遍历，并且会生成一个结果，或者一个 side effect。
+
+还有一种操作被称为 `short-circuiting`，用以指：
+
+- 对于一个 `intermediate` 操作，如果它接受的是一个无限大的 Stream，但返回一个有限的新 Stream。
+- 对于一个 `terminal` 操作，如果它接受的是一个无限大的 Stream，但能在有限的时间计算出结果。
+
 **简单说，对 Stream 的使用就是实现一个 `filter-map-reduce` 过程，产生一个最终结果，或者导致一个副作用（side effect）。**
 
 ### 并行 Parallelism
@@ -66,9 +76,11 @@ List<String>results = stream.filter(s -> pattern.matcher(s).matches())
           .collect(Collectors.toList());
 ```
 
-## 创建 Stream
+## 流构造与转换
 
-常用的创建流的几种方式：
+### 流的构造
+
+常用的构造流的几种方式：
 
 1. 使用流的静态方法，如 `Stream.of(Object[])`
 2. 通过 `Arrays.stream(Object[])` 方法
@@ -87,6 +99,24 @@ stream = Arrays.stream(strArray);
 List<String> list = Arrays.asList(strArray);
 stream = list.stream();
 ```
+
+### 流的转换
+
+```java
+// 1. Array
+String[] strArray = stream.toArray(String[]::new);
+
+// 2. Collection
+List<String> list1 = stream.collect(Collectors.toList());
+List<String> list2 = stream.collect(Collectors.toCollection(ArrayList::new));
+Set set = stream.collect(Collectors.toSet());
+Stack stack = stream.collect(Collectors.toCollection(Stack::new));
+
+// 3. String
+String str = stream.collect(Collectors.joining()).toString();
+```
+
+需要注意：**一个 Stream 只可以使用一次，上面的代码为了简洁而重复使用了数次**。
 
 ## 中间操作 intermediate operations
 
@@ -124,11 +154,13 @@ List<Integer> l = Stream.of('a','b','c')
                 .map(Object::hashCode)
                 .collect(Collectors.toList());
 System.out.println(l); // [97, 98, 99]
+
+
 ```
 
 ### flatmap
 
-`flatmap` 方法混合了 `map + flattern` 的功能，**它将映射后的流的元素全部放入到一个新的流中**。
+`flatmap` 方法混合了 `map + flattern` 的功能，**它将映射后的流的元素全部放入到一个新的流中**。flatMap 把 Stream 中的层级结构扁平化。
 
 ```java
 String poetry = "Where, before me, are the ages that have gone?\n" +
@@ -240,9 +272,9 @@ System.out.println(Stream.of(1,2,3,4,5).findFirst());
 
 这里需要注意返回值类型：`Optional`。它作为一个容器，可能含有某值，或者不包含。使用它的目的是尽可能避免 `NullPointerException`。
 
-### forEach、forEachOrdered
+### forEach
 
-`forEach` 遍历流的每一个元素，执行指定的 action。它是一个终点操作，和 `peek` 方法不同。这个方法不担保按照流的`encounter order` 顺序执行，如果对于有序流按照它的 `encounter order` 顺序执行，可以使用 `forEachOrdered` 方法。
+`forEach` 遍历流的每一个元素，执行指定的 action。**它是一个终点操作，因此它执行后，Stream 的元素就被“消费”掉了，你无法对一个 Stream 进行两次 terminal 运算，这和 `peek` 方法不同**。这个方法不担保按照流的`encounter order` 顺序执行，如果对于有序流按照它的 `encounter order` 顺序执行，可以使用 `forEachOrdered` 方法。
 
 ```java
 Stream.of(1,2,3,4,5).forEach(System.out::println); // 1,2,3,4,5
@@ -263,6 +295,7 @@ System.out.println(IntStream.of(1, 2, 3, 4, 5).max().getAsInt()); // 5
 
 ```java
 System.out.println(Stream.of(1,2,3,4,5).reduce(0, Integer::sum)); // 15
+System.out.println(Stream.of("A", "B", "C", "D").reduce("", String::concat)); // ABCD
 ```
 
 ## 基本类型
