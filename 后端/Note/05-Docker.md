@@ -4,13 +4,15 @@ Docker 属于 Linux 容器的一种封装，它是目前最流行的容器解决
 
 ## 关于 Docker
 
+### Docker 概念
+
 > Build, Ship and Run. Build once，Run anywhere.
 
 Docker 的主要用途，目前有三大类：
 
-1. `提供一次性的环境`：比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境。
-2. `提供弹性的云服务`：因为 Docker 容器可以随开随关，很适合动态扩容和缩容。
-3. `组建微服务架构`：通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。
+1. **提供一次性的环境**：比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境。
+2. **提供弹性的云服务**：因为 Docker 容器可以随开随关，很适合动态扩容和缩容。
+3. **组建微服务架构**：通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。
 
 在 Docker 中，有两大核心概念 image（镜像）和 container（容器）。Docker 把应用程序及其依赖打包在 image 文件里面。只有通过这个文件，才能生成 container。
 
@@ -18,7 +20,102 @@ Docker 的主要用途，目前有三大类：
 
 image 镜像生成的 conatiner 实例，本身也是一个文件，称为容器文件。所以一旦容器生成，就会同时存在两个文件：image 文件和 container 文件。关闭容器并不会删除容器文件，只是容器停止运行而已。
 
+### 传统虚拟化方式区别
+
 Docker 和传统虚拟化方式区别：传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。
+
+Docker 跟传统的虚拟化方式相比具有众多的优势：
+
+- **更高效的利用系统资源**：容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，Docker 对系统资源的利用率更高。
+- **更快速的启动时间**：Docker 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。
+- **一致的运行环境**：Docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性。
+- **持续交付和部署**：Docker 可以通过定制应用镜像来实现持续集成、持续交付、部署。
+- **更轻松的迁移**：Docker 确保了执行环境的一致性，使得应用的迁移更加容易。
+- **更轻松的维护和扩展**：Docker 使用的分层存储以及镜像的技术，使得应用重复部分的复用更为容易，也使得应用的维护更新更加简单。
+
+### Docker 引擎
+
+Docker 使用客户端-服务器 (C/S) 架构模式，使用远程 API 来管理和创建 Docker 容器。通过 `docker version` 命令查看可以看到 docker 包含一个客户端和服务端的程序：
+
+```
+Client: Docker Engine - Community
+ Version:           19.03.1
+ API version:       1.40
+ Go version:        go1.12.5
+ Git commit:        74b1e89
+ Built:             Thu Jul 25 21:21:07 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.1
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.12.5
+  Git commit:       74b1e89
+  Built:            Thu Jul 25 21:19:36 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.2.6
+  GitCommit:        894b81a4b802e4eb2a91d1ce216b8817763c29fb
+ runc:
+  Version:          1.0.0-rc8
+  GitCommit:        425e105d5a03fabd737a126ad93d62a9eeede87f
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
+```
+
+Docker 引擎是一个包含以下主要组件的客户端服务器应用程序：
+
+- 一种服务器，它是一种称为守护进程并且长时间运行的程序
+- REST API 用于指定程序可以用来与守护进程通信的接口，并指示它做什么
+- 一个有命令行界面 (CLI) 工具的客户端
+
+![Docker_引擎](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Docker_%E5%BC%95%E6%93%8E.png)
+
+## Docker 命令
+
+Docker 命令分管理命令 `Management Commands` 和命令 `Commands`。Docker 1.13+ 引入了管理命令来帮助组织一堆 Docker 命令。两个命令都做同样的事情，管理命令有助于对所有命令进行分类，并使命令本身更加一致。所以推荐使用管理命令，虽然多敲了几个字符，但是语义更清晰。
+
+```bash
+docker images                       # 查看现有镜像
+docker image ls                     # 查看现有镜像，和上面等同
+# docker image ls -f dangling=true  # 查看虚悬镜像，-f 即 --filter，过滤镜像
+docker image pull [imageName]       # 拉取镜像
+docker image rm [imageName]         # 删除镜像，等同 docker rmi
+docker image prune                  # 删除虚悬镜像
+
+docker container ls [-a]            # 列出正在运行的容器，等同于 docker ps，-a 可查看所有容器
+docker container run [hello-world]  # 运行容器
+docker container exec [containerID] # 进入容器内部
+docker container start              # 启动已经生成、已经停止运行的容器文件
+docker container stop [containerID] # 终止容器运行
+docker container kill [containID]   # 手动杀死终止容器运行
+docker container rm [containerID]   # 删除容器，等同 docker rm
+docker container logs [containerID] # 查看 docker 容器的输出
+docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
+
+docker ps [-a]                      # 查看所有正在运行的容器，-a 可查看所有容器
+docker stop [containerID]           # 终止容器运行
+docker system df                    # 查看镜像、容器、数据卷所占用的空间
+```
+
+示例：
+
+```bash
+docker rum -it --rm [imageName] bash  # 以交互方式启动容器，停止后自动移除
+docker exec -it [containerID] bash    # 以交互方式进入容器
+```
+
+需要注意：
+
+1. `docker container run` 命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从仓库自动抓取。因此，前面的 `docker image pull` 命令并不是必需的步骤。
+2. `docker container run` 是新建容器，每运行一次生成一个容器文件，注意要避免重复执行。可以使用 `docker container start` 启动已生成的容器。
+3. `docker container kill` 向容器内主进程发出 SIGKILL 信号来终止容器运行。`docker container stop` 先向主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。
+4. `docker container logs` 查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令查看输出。
+5. `docker container exec` 进入容器内部。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令进入容器内部。
 
 ## Docker 容器制作
 
@@ -101,38 +198,6 @@ docker image push [username]/[repository]:[tag]
 ```
 
 可以在创建 image 镜像或者发布 image 镜像时标注用户名。
-
-## Docker 命令
-
-Docker 命令分管理命令 `Management Commands` 和命令 `Commands`。Docker 1.13+ 引入了管理命令来帮助组织一堆 Docker 命令。两个命令都做同样的事情，管理命令有助于对所有命令进行分类，并使命令本身更加一致。所以推荐使用管理命令，虽然多敲了几个字符，但是语义更清晰。
-
-```bash
-docker images                       # 查看现有镜像
-docker image pull [imageName]       # 拉取镜像
-docker image rm [imageName]         # 删除镜像
-
-docker container ls                 # 列出正在运行的容器 等同于 docker ps
-docker container ls -a              # 列出本机所有容器，包括终止运行的容器
-docker container run [hello-world]  # 运行容器
-docker container start              # 启动已经生成、已经停止运行的容器文件
-docker container stop [containerID] # 终止容器运行
-docker container kill [containID]   # 手动杀死终止容器运行
-docker container rm [containerID]   # 删除容器
-docker container logs [containerID] # 查看 docker 容器的输出
-docker container exec [containerID] # 进入容器内部
-docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
-
-docker ps                           # 查看所有正在运行的容器
-docker stop [containerID]           # 终止容器运行
-```
-
-需要注意：
-
-1. `docker container run` 命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从仓库自动抓取。因此，前面的 `docker image pull` 命令并不是必需的步骤。
-2. `docker container run` 是新建容器，每运行一次生成一个容器文件，注意要避免重复执行。可以使用 `docker container start` 启动已生成的容器。
-3. `docker container kill` 向容器内主进程发出 SIGKILL 信号来终止容器运行。`docker container stop` 先向主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。
-4. `docker container logs` 查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令查看输出。
-5. `docker container exec` 进入容器内部。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令进入容器内部。
 
 ## ENTRYPOINT 与 CMD
 
