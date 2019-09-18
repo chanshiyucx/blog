@@ -76,7 +76,8 @@
     - [01 浅析 Java 反射](后端/Java/01-浅析-Java-反射.md)
     - [02 Java 服务端分层模型](后端/Java/02-Java-服务端分层模型.md)
     - [03 Java Stream](后端/Java/03-Java-Stream.md)
-    - [04 传统 for 循环的函数式替代方案](后端/Java/04-传统-for-循环的函数式替代方案.md)
+    - [04 函数式替代 for 循环](后端/Java/04-函数式替代-for-循环.md)
+    - [05 30 seconds of java8](后端/Java/05-30-seconds-of-java8.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)

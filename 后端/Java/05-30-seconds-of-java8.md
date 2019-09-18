@@ -151,6 +151,19 @@ public static int[] initializeArrayWithValues(int n, int value) {
 }
 ```
 
+### intersection
+
+返回两个数组的交集，`difference` 微调，和 `similarity` 作用大同小异：
+
+```java
+public static int[] intersection(int[] first, int[] second) {
+    Set<Integer> set = Arrays.stream(second).boxed().collect(Collectors.toSet());
+    return Arrays.stream(first)
+            .filter(set::contains)
+            .toArray();
+}
+```
+
 ### nthElement
 
 返回数组的第 n 个元素：
@@ -225,19 +238,6 @@ public static <T> T[] similarity(T[] first, T[] second) {
     return Arrays.stream(first)
             .filter(a -> Arrays.stream(second).anyMatch(b -> Objects.equals(a, b)))
             .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, first.getClass()));
-}
-```
-
-### intersection
-
-返回两个数组中存在的元素列表，和 `similarity` 大同小异：
-
-```java
-public static int[] intersection(int[] first, int[] second) {
-    Set<Integer> set = Arrays.stream(second).boxed().collect(Collectors.toSet());
-    return Arrays.stream(first)
-            .filter(set::contains)
-            .toArray();
 }
 ```
 
