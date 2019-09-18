@@ -69,7 +69,7 @@ public static int[] difference(int[] first, int[] second) {
 
 ### distinctValuesOfArray
 
-求两个数组的并集并去重：
+求两个数组的并集并去重，见 [union](###union) ：
 
 ```java
 public static int[] distinctValuesOfArray(int[] first, int[] second) {
@@ -153,7 +153,7 @@ public static int[] initializeArrayWithValues(int n, int value) {
 
 ### intersection
 
-返回两个数组的交集，`difference` 微调，和 `similarity` 作用大同小异：
+返回两个数组的交集，[difference](###difference) 微调，和 [similarity](###similarity) 作用大同小异：
 
 ```java
 public static int[] intersection(int[] first, int[] second) {
@@ -231,7 +231,7 @@ public static <T> T[] sampleSize(T[] input, int n) {
 
 ### similarity
 
-返回出现在两个数组中的元素数组：
+返回出现在两个数组中的元素数组，见 [intersection](###intersection)：
 
 ```java
 public static <T> T[] similarity(T[] first, T[] second) {
@@ -241,5 +241,191 @@ public static <T> T[] similarity(T[] first, T[] second) {
 }
 ```
 
+### symmetricDifference
+
+返回两个数组之间的差集：
+
+```java
+public static <T> T[] symmetricDifference(T[] first, T[] second) {
+    Set<T> sA = new HashSet<>(Arrays.asList(first));
+    Set<T> sB = new HashSet<>(Arrays.asList(second));
+
+    return Stream.concat(
+            Arrays.stream(first).filter(a -> !sB.contains(a)),
+            Arrays.stream(second).filter(b -> !sA.contains(b))
+    ).toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, first.getClass()));
+}
+```
+
+### union
+
+返回两个数组的并集，见 [distinctValuesOfArray](###distinctValuesOfArray) ：
+
+```java
+public static <T> T[] union(T[] first, T[] second) {
+    Set<T> set = new HashSet<>(Arrays.asList(first));
+    set.addAll(Arrays.asList(second));
+    return set.toArray((T[]) Arrays.copyOf(new Object[0], 0, first.getClass()));
+}
+```
+
+### without
+
+筛选出具有指定值之一的数组的元素：
+
+```java
+public static <T> T[] without(T[] arr, T... elements) {
+    List<T> excludeElements = Arrays.asList(elements);
+    return Arrays.stream(arr)
+            .filter(el -> !excludeElements.contains(el))
+            .toArray(i -> (T[]) Arrays.copyOf(new Object[0], i, arr.getClass()));
+}
+```
+
+## Maths
+
+### average
+
+求数组平均值：
+
+```java
+public static double average(int[] arr) {
+    return IntStream.of(arr)
+            .average()
+            .orElseThrow(() -> new IllegalArgumentException("Array is empty"));
+}
+```
+
+### isEven
+
+检查数字是否是偶数。这个方法使用按位运算符，`0b1` 是 1 的二进制表示。数字为偶数时，`＆` 运算符将返回 0。例如，`IsEven(4)` 会转换成 `100 & 001`，结果将是 000。
+
+```java
+public static boolean isEven(final int value) {
+    return (value & 0b1) == 0;
+}
+```
+
+### generateRandomInt
+
+生成一个介于 `Integer.MIN_VALUE` 和 `Integer.MAX_VALUE` 之间的随机数：
+
+```java
+public static int generateRandomInt() {
+    return ThreadLocalRandom.current().nextInt();
+}
+```
+
+## String
+
+### anagrams
+
+一个字符串的所有可能排列组合：
+
+```java
+public static List<String> anagrams(String input) {
+    if (input.length() <= 2) {
+        return input.length() == 2
+                ? Arrays.asList(input, input.substring(1) + input.substring(0, 1))
+                : Collections.singletonList(input);
+    }
+    return IntStream.range(0, input.length())
+            .mapToObj(i -> new AbstractMap.SimpleEntry<>(i, input.substring(i, i + 1)))
+            .flatMap(entry ->
+                    anagrams(input.substring(0, entry.getKey()) + input.substring(entry.getKey() + 1))
+                            .stream()
+                            .map(s -> entry.getValue() + s))
+            .collect(Collectors.toList());
+}
+```
+
+### isNumeric
+
+检查字符串是否为数字：
+
+```java
+public static boolean isNumeric(final String input) {
+    return IntStream.range(0, input.length())
+            .allMatch(i -> Character.isDigit(input.charAt(i)));
+}
+```
+
+### reverseString
+
+反转字符串：
+
+```java
+public static String reverseString(String input) {
+    return new StringBuilder(input).reverse().toString();
+}
+```
+
+### splitLines
+
+将多行字符串拆分为行数组：
+
+```java
+public static String[] splitLines(String input) {
+    return input.split("\\r?\\n");
+}
+```
+
+### stringToIntegers
+
+将由空格分隔的数字字符串转换为 int 数组：
+
+```java
+public static int[] stringToIntegers(String numbers) {
+    return Arrays.stream(numbers.split(" ")).mapToInt(Integer::parseInt).toArray();
+}
+```
+
+## Enum
+
+### getEnumMap
+
+将枚举转换为 Map，其中 key 是枚举名，value 是枚举本身：
+
+```java
+public static <E extends Enum<E>> Map<String, E> getEnumMap(final Class<E> enumClass) {
+    return Arrays.stream(enumClass.getEnumConstants())
+            .collect(Collectors.toMap(Enum::name, Function.identity()));
+}
+```
+
+## IO
+
+### readFileAsString
+
+将文件内容读入字符串：
+
+```java
+public String readFileAsString(Path path) throws IOException {
+    return new String(Files.readAllBytes(path));
+}
+```
+
+### getCurrentWorkingDirectoryPath
+
+获取当前工作目录：
+
+```java
+public static String getCurrentWorkingDirectoryPath() {
+    return FileSystems.getDefault().getPath("").toAbsolutePath().toString();
+}
+```
+
+### stackTraceAsString
+
+将异常堆栈跟踪转换为字符串：
+
+```java
+public static String stackTraceAsString(final Throwable throwable) {
+    final StringWriter sw = new StringWriter();
+    throwable.printStackTrace(new PrintWriter(sw));
+    return sw.toString();
+}
+```
+
 参考文章：  
-![30 seconds of java8](https://github.com/biezhi/30-seconds-of-java8)
+[30 seconds of java8](https://github.com/biezhi/30-seconds-of-java8)
