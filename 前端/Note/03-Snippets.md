@@ -260,3 +260,44 @@ const formBuilder = obj => {
   return formData
 }
 ```
+
+## AES 加解密
+
+```javascript
+const CryptoJS = require('crypto-js')
+
+const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF') // 密钥
+const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412') // 密钥偏移量
+
+/**
+ * 消息加密
+ * @param {*} msg
+ */
+export const encodeMsg = msg => {
+  const msgStr = JSON.stringify(msg)
+  const srcs = CryptoJS.enc.Utf8.parse(msgStr)
+  const encrypted = CryptoJS.AES.encrypt(srcs, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  })
+  const encryptedStr = encrypted.ciphertext.toString()
+  return encryptedStr
+}
+
+/**
+ * 消息解密
+ * @param {*} msgStr
+ */
+export const decodeMsg = msgStr => {
+  const encryptedHexStr = CryptoJS.enc.Hex.parse(msgStr)
+  const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
+  const decrypt = CryptoJS.AES.decrypt(srcs, key, {
+    iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  })
+  const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
+  return decryptedStr.toString()
+}
+```

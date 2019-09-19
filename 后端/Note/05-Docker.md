@@ -109,10 +109,14 @@ docker container kill [containID]   # 手动杀死终止容器运行
 docker container rm [containerID]   # 删除容器，等同 docker rm
 docker container logs [containerID] # 查看 docker 容器的输出
 docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
+docker container prune              # 删除所有停止运行的容器
 
 docker ps [-a]                      # 查看所有正在运行的容器，-a 可查看所有容器
 docker stop [containerID]           # 终止容器运行
 docker system df                    # 查看镜像、容器、数据卷所占用的空间
+
+docker volume ls                    # 查看数据卷
+docker volume prune                 # 删除无主数据卷
 ```
 
 示例：
