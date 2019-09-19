@@ -77,4 +77,4 @@ IntStream.iterate(1, e -> e + 3)
 与 `takeWhile` 方法相反的是 `dropWhile`，它跳过满足给定条件前的值。`takeWhile` 方法类似于 `break`，而 `dropWhile` 则类似于 `continue`。
 
 参考文章：  
-![传统 for 循环的函数式替代方案](https://www.ibm.com/developerworks/cn/java/j-java8idioms3/index.html)
+[传统 for 循环的函数式替代方案](https://www.ibm.com/developerworks/cn/java/j-java8idioms3/index.html)

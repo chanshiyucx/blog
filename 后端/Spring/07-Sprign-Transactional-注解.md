@@ -1,4 +1,4 @@
-# Sprign Transactional 注解的使用
+# Sprign Transactional 注解
 
 事务管理是应用系统开发中必不可少的一部分。Spring 为事务管理提供了丰富的功能支持。
 
