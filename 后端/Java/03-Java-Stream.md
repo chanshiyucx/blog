@@ -350,5 +350,5 @@ System.out.println(summary.getAverage()); // 3.0
 ```
 
 参考文章：  
-[Java Stream 详解](https://colobu.com/2016/03/02/Java-Stream/#%E4%BB%8B%E7%BB%8D)
+[Java Stream 详解](https://colobu.com/2016/03/02/Java-Stream/#%E4%BB%8B%E7%BB%8D)  
 [Java 8 之基本类型优化](https://irusist.github.io/2016/01/02/Java-8%E4%B9%8B%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96/)
