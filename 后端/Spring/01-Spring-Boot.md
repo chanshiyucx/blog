@@ -213,3 +213,9 @@ public String sayHello(@RequestParam(value = "id", required = false, defaultValu
     return "id:" + id;
 }
 ```
+
+### Spring WebFlux
+
+Spring5.x 是 Java 界首个支持响应式的 Web 框架，新增 `Spring WebFlux` 模块。
+
+`Spring WebFlux` 同时支持使用旧的 `Spring MVC` 注解声明 `Reactive Controller`。和传统的 `MVC Controller` 不同，`Reactive Controller` 操作的是**非阻塞**的 `ServerHttpRequest` 和 `ServerHttpResponse`，而不再是 Spring MVC 里的 `HttpServletRequest` 和 `HttpServletResponse`。
