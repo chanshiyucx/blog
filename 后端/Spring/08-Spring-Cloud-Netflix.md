@@ -207,3 +207,110 @@ Spring Cloud 项目都是基于 Spring Boot 进行开发，并且都是使用 Ma
 - `repositories`：配置项目下载依赖时的第三方库
 
 在实际开发中，所有的项目都会依赖这个 dependencies 项目，整个项目周期中的所有第三方依赖的版本也都由该项目进行管理。
+
+## 服务注册与发现
+
+服务注册与发现使用的是 Spring Cloud Netflix 的 Eureka 模块。
+
+### 创建服务注册中心
+
+创建一个工程名为 `spring-cloud-eureka` 的项目，pom.xml 配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-dependencies/pom.xml</relativePath>
+    </parent>
+    <groupId>com.chanshiyu</groupId>
+    <artifactId>spring-cloud-eureka</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-eureka</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 配置启动入口 -->
+                <configuration>
+                    <mainClass>com.chanshiyu.springcloudeureka.EurekaApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+### Application
+
+启动一个服务注册中心，只需要一个注解 `@EnableEurekaServer`：
+
+```java
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaApplication.class, args);
+    }
+
+}
+```
+
+### application.yml
+
+Eureka 是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成），在默认情况下 Erureka Server 也是一个 Eureka Client，必须要指定一个 Server。
+
+```yml
+spring:
+  application:
+    name: spring-cloud-eureka
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+```
+
+通过 `eureka.client.registerWithEureka:false` 和 `fetchRegistry:false` 来表明自己是一个 Eureka Server。
+
+### 启动
+
+和普通 Spring Boot 项目一样启动后，界面如下：
+
+![spring cloud eureka](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/spring-cloud-eureka.png)
