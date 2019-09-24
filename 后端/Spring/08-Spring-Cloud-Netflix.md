@@ -271,7 +271,7 @@ Spring Cloud 项目都是基于 Spring Boot 进行开发，并且都是使用 Ma
 
 ### Application
 
-启动一个服务注册中心，只需要一个注解 `@EnableEurekaServer`：
+通过注解 `@EnableEurekaServer` 启动一个服务注册中心：
 
 ```java
 @SpringBootApplication
@@ -314,3 +314,126 @@ eureka:
 和普通 Spring Boot 项目一样启动后，界面如下：
 
 ![spring cloud eureka](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/spring-cloud-eureka.png)
+
+## 服务提供者
+
+当 Client 向 Server 注册时，它会提供一些元数据，例如主机和端口，URL，主页等。Eureka Server 从每个 Client 实例接收心跳消息。 如果心跳超时，则通常将该实例从注册 Server 中删除。
+
+### 创建服务提供者
+
+创建一个工程名为 `spring-cloud-service-hello` 的项目，pom.xml 配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-dependencies/pom.xml</relativePath>
+    </parent>
+    <groupId>com.chanshiyu</groupId>
+    <artifactId>spring-cloud-service-hello</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-service-hello</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 配置启动入口 -->
+                <configuration>
+                    <mainClass>com.chanshiyu.springcloudservicehello.ServiceHelloApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+### Application
+
+通过注解 `@EnableEurekaClient` 表明自己是一个 Eureka Client：
+
+```java
+@SpringBootApplication
+@EnableEurekaClient
+public class ServiceHelloApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceHelloApplication.class, args);
+    }
+
+}
+```
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: spring-cloud-service-hello
+
+server:
+  port: 8762
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+```
+
+需要注意必须指明 `spring.application.name`，这个很重要，以后的服务与服务之间通过这个 name 来相互调用。
+
+### 添加服务
+
+服务提供者需要提供服务，这里举个简单栗子：
+
+```java
+@RestController
+public class HelloController {
+
+    @Value("${server.port}")
+    private String port;
+
+    @GetMapping("say")
+    public String hello(String message) {
+        return String.format("Your message is: %s , port: %s", message, port);
+    }
+
+}
+```
+
+访问结果：
+
+```
+# http://localhost:8762/say?message=11
+Your message is: 11, port: 8762
+```
+
+## 服务消费者
