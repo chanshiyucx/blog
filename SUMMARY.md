@@ -98,6 +98,7 @@
     - [05 Apache Shiro](后端/Spring/05-Apache-Shiro.md)
     - [06 Spring Boot 技术整合](后端/Spring/06-Spring-Boot-技术整合.md)
     - [07 Spring Transactional 注解](后端/Spring/07-Spring-Transactional-注解.md)
+    - [08 Spring Cloud Netflix](后端/Spring/08-Spring-Cloud-Netflix.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)
