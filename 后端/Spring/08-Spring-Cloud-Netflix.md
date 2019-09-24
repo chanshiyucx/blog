@@ -429,11 +429,193 @@ public class HelloController {
 }
 ```
 
-访问结果：
+访问 `http://localhost:8762/say?message=11` 结果：
 
 ```
-# http://localhost:8762/say?message=11
 Your message is: 11, port: 8762
 ```
 
-## 服务消费者
+## 服务消费者（Ribbon）
+
+在微服务架构中，业务都会被拆分成一个独立的服务，服务与服务的通讯是基于 `http restful` 的。Spring cloud 有两种服务调用方式，一种是 `ribbon + restTemplate`，另一种是 `feign`。
+
+Ribbon 是一个负载均衡客户端，可以很好的控制 http 和 tcp 的一些行为。
+
+### 创建服务提供者
+
+创建一个工程名为 `spring-cloud-web-hello-ribbon` 的项目，pom.xml 配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-dependencies/pom.xml</relativePath>
+    </parent>
+    <groupId>com.chanshiyu</groupId>
+    <artifactId>spring-cloud-web-hello</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-web-hello-ribbon</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 配置启动入口 -->
+                <configuration>
+                    <mainClass>com.chanshiyu.springcloudwebhello.WebHelloRibbonApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+主要是增加了 Ribbon 的依赖：
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+</dependency>
+```
+
+### Application
+
+通过注解 `@EnableDiscoveryClient` 注册到服务中心：
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class WebHelloRibbonApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebHelloRibbonApplication.class, args);
+    }
+
+}
+```
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: spring-cloud-web-hello-ribbon
+
+server:
+  port: 8764
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+```
+
+### Configuration
+
+添加一个配置文件，配置注入 `RestTemplate` 的 Bean，并通过 `@LoadBalanced` 注解表明开启负载均衡功能：
+
+```java
+@Configuration
+public class RestTemplateConfiguration {
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+}
+```
+
+### 测试服务
+
+之后进行调用服务提供者的服务进行测试。
+
+创建一个 `HelloService`：
+
+```java
+@Service
+public class HelloService {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    public String sayHi(String message) {
+        return restTemplate.getForObject("http://spring-cloud-service-hello/say?message=" + message, String.class);
+    }
+
+}
+```
+
+创建一个 `HelloController`：
+
+```java
+@RestController
+public class HelloController {
+
+    @Autowired
+    private HelloService helloService;
+
+    @GetMapping("/say")
+    public String sayHi(@RequestParam String message) {
+        return helloService.sayHi(message);
+    }
+
+}
+```
+
+先启动服务提供者 `spring-cloud-service-hello` 两个实例，端口分别为 8762 和 8763。再启动服务消费者，访问 `http://localhost:8764/say?message=11` 结果会在两个端口之间交替显示，表示已经成功实现了负载均衡功能来访问不同端口的实例：
+
+```
+Your message is: 11, port: 8762
+Your message is: 11, port: 8763
+```
+
+此时架构图（service-admin 对应 service-hello，web-admin 对应 web-hello）：
+
+![服务注册发现](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%8F%91%E7%8E%B0.png)
+
+- Eureka Server：服务注册与发现中心，端口号为：8761
+- service-hello：服务提供者，工程运行了两个实例，端口号分别为：8762，8763
+- web-hello-ribbon：服务消费者，工程端口号为：8764
+
+web-hello-ribbon 通过 RestTemplate 调用 service-hello 接口时因为启用了负载均衡功能故会轮流调用它的 8762 和 8763 端口。
+
+## 服务消费者（Feign）
