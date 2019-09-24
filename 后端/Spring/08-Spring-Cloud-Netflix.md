@@ -619,3 +619,152 @@ Your message is: 11, port: 8763
 web-hello-ribbon 通过 RestTemplate 调用 service-hello 接口时因为启用了负载均衡功能故会轮流调用它的 8762 和 8763 端口。
 
 ## 服务消费者（Feign）
+
+Feign 是一个声明式的伪 Http 客户端，它使得写 Http 客户端变得更简单。Feign 默认集成了 Ribbon，并和 Eureka 结合，默认实现了负载均衡的效果。
+
+- Feign 采用的是基于接口的注解
+- Feign 整合了 ribbon
+
+### 创建服务消费者
+
+创建一个工程名为 `spring-cloud-web-hello-feign` 的项目，pom.xml 配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-dependencies/pom.xml</relativePath>
+    </parent>
+    <groupId>com.chanshiyu</groupId>
+    <artifactId>spring-cloud-web-hello-feign</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-web-hello</name>
+    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Cloud Begin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 配置启动入口 -->
+                <configuration>
+                    <mainClass>com.chanshiyu.springcloudwebhellofeign.WebHelloFeignApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+主要是增加了 Feign 的依赖：
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+```
+
+### Application
+
+通过注解 `@EnableFeignClients` 开启 Feign 功能：
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+public class WebHelloFeignApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(WebHelloFeignApplication.class, args);
+    }
+
+}
+```
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: spring-cloud-web-hello-feign
+
+server:
+  port: 8765
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+```
+
+### 测试服务
+
+不同于 Ribbon 直接创建 `class service`，Feign 创建 `interface service`，通过 `@FeignClient("服务名")` 注解来指定调用哪个服务：
+
+```java
+@FeignClient(value = "spring-cloud-service-hello")
+public interface HelloService {
+
+    @GetMapping("say")
+    public String sayHi(@RequestParam(value = "message") String message);
+
+}
+```
+
+创建一个 `HelloController`：
+
+```java
+@RestController
+public class HelloController {
+
+    @Autowired
+    private HelloService helloService;
+
+    @GetMapping("/say")
+    public String sayHi(@RequestParam String message) {
+        return helloService.sayHi(message);
+    }
+
+}
+```
+
+启动后访问结果和 Ribbon 一致。
