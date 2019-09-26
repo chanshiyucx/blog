@@ -469,3 +469,263 @@ public class NacosProviderController {
 
 }
 ```
+
+## 熔断器
+
+阿里巴巴开源了 Sentinel 组件，实现了熔断器模式，Spring Cloud 对这一组件进行了整合。
+
+### 添加依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+```
+
+### application.yml
+
+```yml
+feign:
+  sentinel:
+    enabled: true
+```
+
+### fallback
+
+```java
+@Component
+public class NacosProviderFallback implements NacosProviderService {
+
+    @Override
+    public String echo(String message) {
+        return "请求失败！";
+    }
+}
+```
+
+### service
+
+```java
+@FeignClient(value = "nacos-provider", fallback = NacosProviderFallback.class)
+public interface NacosProviderService {
+
+    @GetMapping("/echo/{message}")
+    public String echo(@PathVariable String message);
+
+}
+```
+
+## 熔断器仪表盘监控
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: nacos-consumer-feign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        port: 8720
+        dashboard: localhost:8080
+```
+
+## 路由网关
+
+### 创建路由网关
+
+创建一个工程名为 `spring-cloud-alibaba-nacos-gateway` 的项目，pom.xml 配置文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-alibaba-dependencies/pom.xml</relativePath>
+    </parent>
+    <artifactId>spring-cloud-alibaba-gateway</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-alibaba-gateway</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.chanshiyu.gateway.GatewayApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+需要注意：
+
+- Spring Cloud Gateway 不使用 `Web` 作为服务器，而是 使用 `WebFlux` 作为服务器，Gateway 项目已经依赖了 `starter-webflux`，所以这里 千万不要依赖 `starter-web`
+- 由于过滤器等功能依然需要 Servlet 支持，故这里还需要依赖 `javax.servlet:javax.servlet-api`
+
+### Application
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+public class GatewayApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
+
+}
+```
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: spring-gateway
+  cloud:
+    # 使用 Naoos 作为服务注册发现
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    # 使用 Sentinel 作为熔断器
+    sentinel:
+      transport:
+        port: 8721
+        dashboard: localhost:8080
+    # 路由网关配置
+    gateway:
+      # 设置与服务注册发现组件结合，这样可以采用服务名的路由策略
+      discovery:
+        locator:
+          enabled: true
+      # 配置路由规则
+      routes:
+        # 采用自定义路由 ID（有固定用法，不同的 id 有不同的功能，详见：https://cloud.spring.io/spring-cloud-gateway/2.0.x/single/spring-cloud-gateway.html#gateway-route-filters）
+        - id: NACOS-CONSUMER
+          # 采用 LoadBalanceClient 方式请求，以 lb:// 开头，后面的是注册在 Nacos 上的服务名
+          uri: lb://nacos-consumer
+          # Predicate 翻译过来是“谓词”的意思，必须，主要作用是匹配用户的请求，有很多种用法
+          predicates:
+            # Method 方法谓词，这里是匹配 GET 和 POST 请求
+            - Method=GET,POST
+        - id: NACOS-CONSUMER-FEIGN
+          uri: lb://nacos-consumer-feign
+          predicates:
+            - Method=GET,POST
+
+server:
+  port: 9000
+
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+```
+
+### 过滤器
+
+```java
+@Component
+public class AuthFilter implements GlobalFilter, Ordered {
+
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        String token = exchange.getRequest().getQueryParams().getFirst("token");
+
+        if (token == null || token.isEmpty()) {
+            ServerHttpResponse response = exchange.getResponse();
+
+            // 封装错误信息
+            Map<String, Object> responseData = Maps.newHashMap();
+            responseData.put("code", 401);
+            responseData.put("message", "非法请求");
+            responseData.put("cause", "Token is empty");
+
+            try {
+                // 将信息转换为 JSON
+                ObjectMapper objectMapper = new ObjectMapper();
+                byte[] data = objectMapper.writeValueAsBytes(responseData);
+
+                // 输出错误信息到页面
+                DataBuffer buffer = response.bufferFactory().wrap(data);
+                response.setStatusCode(HttpStatus.UNAUTHORIZED);
+                response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
+                return response.writeWith(Mono.just(buffer));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // 传递给下一个过滤器
+        return chain.filter(exchange);
+    }
+
+    @Override
+    public int getOrder() {
+        return Ordered.LOWEST_PRECEDENCE;
+    }
+}
+```
