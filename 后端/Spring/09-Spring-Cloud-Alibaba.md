@@ -516,9 +516,9 @@ public interface NacosProviderService {
 }
 ```
 
-## 熔断器仪表盘监控
+### 仪表盘监控
 
-### application.yml
+启动 `sentinel` 控制台。修改 `application.yml`，添加 `sentinel` 配置：
 
 ```yml
 spring:

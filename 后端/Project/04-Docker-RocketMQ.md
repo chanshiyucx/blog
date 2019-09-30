@@ -1,0 +1,354 @@
+# Docker RocketMQ
+
+## RocketMQ 简介
+
+Message Queue（MQ，消息队列中间件）作为高并发系统的核心组件之一，能够帮助业务系统解构提升开发效率和系统稳定性。主要具有以下优势：
+
+- 削峰填谷：主要解决瞬时写压力大于应用服务能力导致消息丢失、系统奔溃等问题
+- 系统解耦：解决不同重要程度、不同能力级别系统之间依赖导致一死全死
+- 提升性能：当存在一对多调用时，可以发一条消息给消息系统，让消息系统通知相关系统
+- 蓄流压测：线上有些链路不好压测，可以通过堆积一定量消息再放开来压测
+
+消息中间件中有两个角色：消息生产者和消息消费者。RocketMQ 里同样有这两个概念，消息生产者负责创建消息并发送到 RocketMQ 服务器，RocketMQ 服务器会将消息持久化到磁盘，消息消费者从 RocketMQ 服务器拉取消息并提交给应用消费。
+
+RocketMQ 是一款分布式、队列模型的消息中间件，具有以下特点：
+
+- 支持严格的消息顺序
+- 支持 Topic 与 Queue 两种模式
+- 亿级消息堆积能力
+- 比较友好的分布式特性
+- 同时支持 Push 与 Pull 方式消费消息
+
+RocketMQ 优势：
+
+- 支持事务型消息（消息发送和 DB 操作保持两方的最终一致性，RabbitMQ 和 Kafka 不支持）
+- 支持结合 RocketMQ 的多个系统之间数据最终一致性（多方事务，二方事务是前提）
+- 支持 18 个级别的延迟消息（RabbitMQ 和 Kafka 不支持）
+- 支持指定次数和时间间隔的失败消息重发（Kafka 不支持，RabbitMQ 需要手动确认）
+- 支持 Consumer 端 Tag 过滤，减少不必要的网络传输（RabbitMQ 和 Kafka 不支持）
+- 支持重复消费（RabbitMQ 不支持，Kafka 支持）
+
+## Docker 安装 RocketMQ
+
+### docker-compose.yml
+
+```yml
+version: '3.5'
+services:
+  rmqnamesrv:
+    image: foxiswho/rocketmq:server
+    container_name: rmqnamesrv
+    ports:
+      - 9876:9876
+    volumes:
+      - ./data/logs:/opt/logs
+      - ./data/store:/opt/store
+    networks:
+      rmq:
+        aliases:
+          - rmqnamesrv
+
+  rmqbroker:
+    image: foxiswho/rocketmq:broker
+    container_name: rmqbroker
+    ports:
+      - 10909:10909
+      - 10911:10911
+    volumes:
+      - ./data/logs:/opt/logs
+      - ./data/store:/opt/store
+      - ./data/brokerconf/broker.conf:/etc/rocketmq/broker.conf
+    environment:
+      NAMESRV_ADDR: 'rmqnamesrv:9876'
+      JAVA_OPTS: ' -Duser.home=/opt'
+      JAVA_OPT_EXT: '-server -Xms128m -Xmx128m -Xmn128m'
+    command: mqbroker -c /etc/rocketmq/broker.conf
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqbroker
+
+  rmqconsole:
+    image: styletang/rocketmq-console-ng
+    container_name: rmqconsole
+    ports:
+      - 8080:8080
+    environment:
+      JAVA_OPTS: '-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false'
+    depends_on:
+      - rmqnamesrv
+    networks:
+      rmq:
+        aliases:
+          - rmqconsole
+
+networks:
+  rmq:
+    name: rmq
+    driver: bridge
+```
+
+### broker.conf
+
+RocketMQ Broker 需要一个配置文件，按照上面的 Compose 配置，在 `./data/brokerconf/` 目录下创建一个名为 `broker.conf` 的配置文件，内容如下：
+
+```conf
+censed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+
+# 所属集群名字
+brokerClusterName=DefaultCluster
+
+# broker 名字，注意此处不同的配置文件填写的不一样，如果在 broker-a.properties 使用: broker-a,
+# 在 broker-b.properties 使用: broker-b
+brokerName=broker-a
+
+# 0 表示 Master，> 0 表示 Slave
+brokerId=0
+
+# nameServer地址，分号分割
+# namesrvAddr=rocketmq-nameserver1:9876;rocketmq-nameserver2:9876
+
+# 启动IP,如果 docker 报 com.alibaba.rocketmq.remoting.exception.RemotingConnectException: connect to <192.168.0.120:10909> failed
+# 解决方式1 加上一句 producer.setVipChannelEnabled(false);，解决方式2 brokerIP1 设置宿主机IP，不要使用docker 内部IP
+brokerIP1=192.168.205.10
+
+# 在发送消息时，自动创建服务器不存在的topic，默认创建的队列数
+defaultTopicQueueNums=4
+
+# 是否允许 Broker 自动创建 Topic，建议线下开启，线上关闭 ！！！这里仔细看是 false，false，false
+autoCreateTopicEnable=true
+
+# 是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭
+autoCreateSubscriptionGroup=true
+
+# Broker 对外服务的监听端口
+listenPort=10911
+
+# 删除文件时间点，默认凌晨4点
+deleteWhen=04
+
+# 文件保留时间，默认48小时
+fileReservedTime=120
+
+# commitLog 每个文件的大小默认1G
+mapedFileSizeCommitLog=1073741824
+
+# ConsumeQueue 每个文件默认存 30W 条，根据业务情况调整
+mapedFileSizeConsumeQueue=300000
+
+# destroyMapedFileIntervalForcibly=120000
+# redeleteHangedFileInterval=120000
+# 检测物理文件磁盘空间
+diskMaxUsedSpaceRatio=88
+# 存储路径
+# storePathRootDir=/home/ztztdata/rocketmq-all-4.1.0-incubating/store
+# commitLog 存储路径
+# storePathCommitLog=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/commitlog
+# 消费队列存储
+# storePathConsumeQueue=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/consumequeue
+# 消息索引存储路径
+# storePathIndex=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/index
+# checkpoint 文件存储路径
+# storeCheckpoint=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/checkpoint
+# abort 文件存储路径
+# abortFile=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/abort
+# 限制的消息大小
+maxMessageSize=65536
+
+# flushCommitLogLeastPages=4
+# flushConsumeQueueLeastPages=2
+# flushCommitLogThoroughInterval=10000
+# flushConsumeQueueThoroughInterval=60000
+
+# Broker 的角色
+# - ASYNC_MASTER 异步复制Master
+# - SYNC_MASTER 同步双写Master
+# - SLAVE
+brokerRole=ASYNC_MASTER
+
+# 刷盘方式
+# - ASYNC_FLUSH 异步刷盘
+# - SYNC_FLUSH 同步刷盘
+flushDiskType=ASYNC_FLUSH
+
+# 发消息线程池数量
+# sendMessageThreadPoolNums=128
+# 拉消息线程池数量
+# pullMessageThreadPoolNums=128
+```
+
+配置完成，启动：
+
+```bash
+docker-compose up -d
+```
+
+访问 `http://rmqIP:8080` 进入控制台。
+
+![RocketMQ控制台](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/RocketMQ%E6%8E%A7%E5%88%B6%E5%8F%B0.png)
+
+## 消息生产者
+
+### pom.xml
+
+新建工程名 `spring-cloud-alibaba-rocketmq` 的项目，pom.xml 文件如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chanshiyu</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../spring-cloud-alibaba-dependencies/pom.xml</relativePath>
+    </parent>
+    <artifactId>spring-cloud-alibaba-rocketmq</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>spring-cloud-alibaba-rocketmq</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.chanshiyu.rocketmq.RocketmqApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+主要新增依赖：
+
+```xml
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+</dependency>
+```
+
+### application.yml
+
+```yml
+spring:
+  application:
+    name: rocketmq-provider
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.205.10:9876
+      bindings:
+        output: { destination: test-topic, content-type: application/json }
+
+server:
+  port: 9093
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+```
+
+### 发送消息
+
+```java
+@SpringBootApplication
+@EnableBinding({ Source.class })
+public class RocketmqApplication implements CommandLineRunner {
+
+    @Autowired
+    private MessageChannel output;
+
+    public static void main(String[] args) {
+        SpringApplication.run(RocketmqApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        output.send(MessageBuilder.withPayload("Hello chanshiyu").build());
+    }
+}
+```
+
+## 消息消费者
+
+pom.xml 文件如上，只需在 `application.yml` 中新增 input：
+
+```yml
+input: { destination: test-topic, content-type: text/plain, group: test-group }
+```
+
+修改 `RocketmqApplication`，注解添加 `Sink.class`，然后通过 `@StreamListener` 注解获取消息：
+
+```java
+@SpringBootApplication
+@EnableBinding({ Source.class, Sink.class })
+public class RocketmqApplication implements CommandLineRunner {
+
+    @Autowired
+    private MessageChannel output; // 获取name为output的binding
+
+    public static void main(String[] args) {
+        SpringApplication.run(RocketmqApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        output.send(MessageBuilder.withPayload("Hello chanshiyu").build());
+    }
+
+    @StreamListener("input")
+    public void receiveInput(String message) {
+        System.out.println("Receive input: " + message);
+    }
+
+}
+```

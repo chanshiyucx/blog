@@ -43,3 +43,10 @@ wget -c -r -np -k -L -p https://chanshiyu.com/
    <!-- ... -->
   </component>
 ```
+
+## Window10 端口占用
+
+```bash
+netstat -ano | findstr <端口号>
+taskkill -PID <进程号> -F
+```
