@@ -92,7 +92,7 @@ Vagrant.configure(2) do |config|
       end
   end
 
-  config.vm.synced_folder "./labs", "/home/vagrant/labs"
+  config.vm.synced_folder "./labs", "/home/vagrant/labs", type:"virtualbox"
   config.vm.provision "shell", privileged: true, path: "./setup.sh"
 
 end
@@ -117,3 +117,12 @@ sudo systemctl start docker
 
 rm -rf get-docker.sh
 ```
+
+## 共享目录
+
+vagrant 有四种共享目录的方式：
+
+1. **NFS** 共享方式，windows 平台无法使用此配置，且用此方式时不能修改文件的所有者和所有组。
+2. **RSync** 共享方式，所有平台都可以使用，但这种方式貌似有个缺点就是主机的改动可以同步到虚拟机中，但虚拟机中的改动无法同步到主机中，如果要实现双向同步可能还需做其它设置。
+3. **SMB** 共享方式，只有 windows 平台可以使用。
+4. **VirtualBox** 共享方式，这是 VirtualBox 提供的也是 vagrant 默认的共享方式。当文件数量小时用着不错，当文件数量大的时候打开网页会卡到超时。
