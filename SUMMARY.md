@@ -79,6 +79,7 @@
     - [04 函数式替代 for 循环](后端/Java/04-函数式替代-for-循环.md)
     - [05 30 seconds of java8](后端/Java/05-30-seconds-of-java8.md)
     - [06 AES CBC 加解密](后端/Java/06-AES-CBC-加解密.md)
+    - [07 单例模式的几种实现](后端/Java/07-单例模式的几种实现.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
