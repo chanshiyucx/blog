@@ -40,9 +40,7 @@ swagger:
 ```java
 @Configuration
 @EnableSwagger2
-@ConditionalOnClass(EnableSwagger2.class)
 @Data
-@Component
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerConfig {
 

@@ -71,28 +71,85 @@ private final ConfigurableApplicationContext applicationContext;
 applicationContext.getEnvironment().getProperty("user");
 ```
 
-## 双重锁机制
-
-双重锁机制保证单例模式：
+## 获取泛型 class
 
 ```java
-public class BaseResultFactory {
+private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+```
 
-  private static BaseResultFactory baseResultFactory;
+## 全局时钟
 
-  private BaseResultFactory() {}
+在微服务中，不同服务部署在不同机器上，获取时间戳不能使用 Date，因为不统一，需要一个专门的服务 `service-date` 来获取时间。时间可以不准但是必须统一。
 
-  public static BaseResultFactory getInstance() {
-      if (baseResultFactory == null) {
-          synchronized (BaseResultFactory.class) {
-              if (baseResultFactory == null) {
-                  baseResultFactory = new BaseResultFactory();
-              }
-          }
-      }
+## Cannot resolve configuration property "swagger.title"
 
-      return baseResultFactory;
-  }
+配置文件：
 
+```yml
+swagger:
+  title: 萌购后台Api
+  description: 萌购后台Api
+  version: 1.0.0
+  terms-of-service-url: https://chanshiyu.com/
+  base-package: com.chanshiyu.moemall.admin
+  contact:
+    name: 蝉時雨
+    url: https://chanshiyu.com/
+    email: me@chanshiyu.com
+```
+
+解决步骤：
+
+- 添加依赖 `spring-boot-configuration-processor` 依赖
+- 添加 `src/main/resources/META-INF/spring-configuration-metadata.json` 文件
+
+首先添加 `spring-boot-configuration-processor` 依赖：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+
+之后添加 `src/main/resources/META-INF/spring-configuration-metadata.json` 文件：
+
+```json
+{
+  "properties": [
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.terms-of-service-url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.base-package",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.name",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.email",
+      "type": "java.lang.String"
+    }
+  ]
 }
 ```
