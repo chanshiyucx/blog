@@ -89,6 +89,7 @@
     - [04 函数式替代 for 循环](后端/Java/04-函数式替代-for-循环.md)
     - [05 30 seconds of java8](后端/Java/05-30-seconds-of-java8.md)
     - [06 AES CBC 加解密](后端/Java/06-AES-CBC-加解密.md)
+    - [07 单例模式的几种实现](后端/Java/07-单例模式的几种实现.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
@@ -110,6 +111,7 @@
     - [07 Spring Transactional 注解](后端/Spring/07-Spring-Transactional-注解.md)
     - [08 Spring Cloud Netflix](后端/Spring/08-Spring-Cloud-Netflix.md)
     - [09 Spring Cloud Alibaba](后端/Spring/09-Spring-Cloud-Alibaba.md)
+    - [10 Mybatis 逆向代码生成](后端/Spring/10-Mybatis-逆向代码生成.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)
