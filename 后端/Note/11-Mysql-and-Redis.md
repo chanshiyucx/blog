@@ -153,7 +153,7 @@ public class RedisConfig {
 - `@Configuration` 代表这个类是一个配置类
 - `@AutoConfigureAfter(RedisAutoConfiguration.class)` 是让这个配置类在内置的配置类之后在配置，这样就保证我们的配置类生效，并且不会被覆盖配置。
 
-Redis 工具类：
+[RedisUtil](https://github.com/whvcse/RedisUtil/blob/master/RedisUtil.java) 工具类：
 
 ```java
 @SuppressWarnings("unchecked")
