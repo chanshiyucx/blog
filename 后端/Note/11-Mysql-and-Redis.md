@@ -52,7 +52,7 @@ spring:
 
 ```yml
 spring:
-  lettuce:
+  redis:
     database: 0 # 数据库索引（默认为 0）
     host: 127.0.0.1 # 服务器地址
     port: 6379 # 服务器连接端口

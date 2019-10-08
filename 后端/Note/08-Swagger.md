@@ -144,5 +144,63 @@ public class ProductCategory {
 
 启动项目访问路径查看文档：`http://192.168.51.242:8080/swagger-ui.html#/`。
 
+## Cannot resolve configuration property
+
+解决步骤：
+
+- 添加依赖 `spring-boot-configuration-processor` 依赖
+- 添加 `src/main/resources/META-INF/spring-configuration-metadata.json` 文件
+
+首先添加 `spring-boot-configuration-processor` 依赖：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+</dependency>
+```
+
+之后添加 `src/main/resources/META-INF/spring-configuration-metadata.json` 文件：
+
+```json
+{
+  "properties": [
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.terms-of-service-url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.base-package",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.name",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.url",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "swagger.contact.email",
+      "type": "java.lang.String"
+    }
+  ]
+}
+```
+
 参考文章：  
 [在 Spring Boot 项目中使用 Swagger 文档](https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html)
