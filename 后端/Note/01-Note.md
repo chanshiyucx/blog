@@ -88,3 +88,12 @@ private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGen
 ```java
 System.out.println(ReflectionToStringBuilder.toString(umsAdmin, ToStringStyle.MULTI_LINE_STYLE));
 ```
+
+## 编程范式
+
+编程范式主要以下几大类：
+
+- AOP（Aspect Oriented Programming）面向切面编程
+- OOP（Object Oriented Programming）面向对象编程
+- POP（Procedure Oriented Programming）面向过程编程
+- FP（Functional Programming）面向函数编程
