@@ -6,6 +6,10 @@
 - 拦截器（Interceptor）
 - 切片（Aspect）
 
+三种方式的请求拦截顺序：
+
+![请求拦截模型](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E6%A8%A1%E5%9E%8B.png)
+
 ## AOP
 
 AOP（面向切面编程）不是一种具体的技术，而是一种编程思想。在面向对象编程的过程中，我们很容易通过继承、多态来解决纵向扩展。但是对于横向的功能，比如，在所有的 service 方法中开启事务，或者统一记录日志等功能，面向对象的是无法解决的。所以 AOP 其实是面向对象编程思想的一个补充。而过滤器和拦截器都属于面向切面编程的具体实现。
@@ -21,6 +25,7 @@ AOP（面向切面编程）不是一种具体的技术，而是一种编程思�
 ```java
 @Component
 public class TimeFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         System.out.println("Timer Filter Init");
@@ -37,6 +42,7 @@ public class TimeFilter implements Filter {
     public void destroy() {
         System.out.println("Timer Filter Destroy");
     }
+
 }
 ```
 
@@ -79,3 +85,87 @@ public class TimeFilter implements Filter {
     /* ... */
 }
 ```
+
+需要注意：`@WebFilter` 这个注解并没有指定执行顺序的属性，其执行顺序依赖于 Filter 的名称，是根据 Filter 类名（注意不是配置的 filter 的名字）的字母顺序倒序排列。
+
+## 拦截器
+
+拦截器需要实现 `HandlerInterceptor` 这个接口，该接口包含三个方法：
+
+- `preHandle` 是请求执行前执行
+- `postHandler` 是请求成功执行，如果接口方法抛出异常不会执行，且只有 `preHandle` 方法返回 true 的时候才会执行，
+- `afterCompletion` 是请求结束才执行，无论请求成功或失败都会执行，同样需要 `preHandle` 返回 true，该方法通常用于清理资源等工作
+
+```java
+@Component
+public class TimeInterceptor implements HandlerInterceptor {
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("请求执行之前");
+        System.out.println(((HandlerMethod) handler).getBean().getClass().getName()); // com.chanshiyu.moemall.admin.controller.TestController
+        System.out.println(((HandlerMethod) handler).getMethod().getName()); // test
+        request.setAttribute("startTime", new Date().getTime());
+        return true;
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        System.out.println("请求执行成功");
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        Long start = (Long) request.getAttribute("startTime");
+        System.out.println("请求执行完毕，总耗时：" + (new Date().getTime() - start));
+    }
+
+}
+```
+
+拦截器除了使用 `@Component` 注解外还需要引入：
+
+```java
+@Configuration
+public class WebConfig extends WebMvcConfigurationSupport {
+
+    @Autowired TimeInterceptor timeInterceptor;
+
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(timeInterceptor).addPathPatterns("/**");
+        super.addInterceptors(registry);
+    }
+
+}
+```
+
+拦截器相比过滤器，能拿到控制器类和方法，但是依旧无法拿到请求参数。
+
+## 切片
+
+```java
+@Aspect
+@Component
+public class TimeAspect {
+
+    @Around("execution(* com.chanshiyu.moemall.admin.controller.*.*(..))")
+    public Object handleControllerMethod(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("Time Aspect Start");
+        Object[] args = pjp.getArgs();
+        for (Object arg : args) {
+            System.out.println("arg: " + arg);
+        }
+
+        TimeInterval timer = DateUtil.timer();
+        Object object = pjp.proceed();
+
+        System.out.println("总耗时：" + timer.interval());
+        return object;
+    }
+
+}
+```
+
+参考文章：  
+[Spring Boot 实战：拦截器与过滤器](https://www.cnblogs.com/paddix/p/8365558.html)
