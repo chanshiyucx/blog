@@ -80,3 +80,11 @@ private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGen
 ## 全局时钟
 
 在微服务中，不同服务部署在不同机器上，获取时间戳不能使用 Date，因为不统一，需要一个专门的服务 `service-date` 来获取时间。时间可以不准但是必须统一。
+
+## ReflectionToStringBuilder
+
+通过反射打印对象：
+
+```java
+System.out.println(ReflectionToStringBuilder.toString(umsAdmin, ToStringStyle.MULTI_LINE_STYLE));
+```
