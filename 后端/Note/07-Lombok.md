@@ -179,3 +179,11 @@ public static void main(String[] args) throws IOException {
     @Cleanup InputStream in = new FileInputStream(args[0]);
 }
 ```
+
+## @ToString(callSuper = true)
+
+解决子类 `toString` 方法不打印父类属性：
+
+```java
+@ToString(callSuper = true)
+```

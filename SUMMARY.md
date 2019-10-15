@@ -90,6 +90,7 @@
     - [06 MySQL](后端/Note/06-MySQL.md)
     - [07 Lombok](后端/Note/07-Lombok.md)
     - [08 Swagger](后端/Note/08-Swagger.md)
+    - [09 Mybatis](后端/Note/09-Mybatis.md)
     - [10 Linux 常用软件安装](后端/Note/10-Linux-常用软件安装.md)
     - [11 Mysql and Redis](后端/Note/11-Mysql-and-Redis.md)
   - Spring
