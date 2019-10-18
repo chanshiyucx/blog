@@ -27,7 +27,29 @@ private UmsPermissionNode covert(UmsPermission permission, List<UmsPermission> p
 }
 ```
 
-## 002 自定义查询分页
+## 002 查询所有一级分类及子分类
+
+```xml
+<mapper namespace="com.macro.mall.dao.PmsProductCategoryDao">
+    <resultMap id="listWithChildrenMap" type="com.macro.mall.dto.PmsProductCategoryWithChildrenItem"
+               extends="com.macro.mall.mapper.PmsProductCategoryMapper.BaseResultMap">
+        <collection property="children" resultMap="com.macro.mall.mapper.PmsProductCategoryMapper.BaseResultMap"
+                    columnPrefix="child_"></collection>
+    </resultMap>
+
+    <select id="listWithChildren" resultMap="listWithChildrenMap">
+        select
+            c1.id,
+            c1.name,
+            c2.id   child_id,
+            c2.name child_name
+        from pms_product_category c1 left join pms_product_category c2 on c1.id = c2.parent_id
+        where c1.parent_id = 0
+    </select>
+</mapper>
+```
+
+## 003 自定义查询分页
 
 ```java
 @Override
@@ -39,7 +61,7 @@ public CommonListResult<UmsAdminVO> list(Integer pageNum, Integer pageSize) {
 }
 ```
 
-## 003 添加登录日志
+## 004 添加登录日志
 
 ```java
 private void insertLoginLog(String username) {
@@ -59,7 +81,7 @@ private void insertLoginLog(String username) {
 }
 ```
 
-## 004 Mybatis 排序和模糊查询
+## 005 Mybatis 排序和模糊查询
 
 ```java
 @Override
@@ -79,7 +101,7 @@ public CommonListResult<PmsBrand> list(Integer pageNum, Integer pageSize, String
 }
 ```
 
-## 005 Mybatis 批量更新
+## 006 Mybatis 批量更新
 
 ```java
 private void updateRole(Long adminId, List<Long> roleIds) {
@@ -100,7 +122,7 @@ private void updateRole(Long adminId, List<Long> roleIds) {
 }
 ```
 
-## 006 自定义验证注解
+## 007 自定义验证注解
 
 主要实现：
 
@@ -158,7 +180,7 @@ public class FlagValidatorClass implements ConstraintValidator<FlagValidator, In
 private Integer showStatus;
 ```
 
-## 007 简单的文件上传
+## 008 简单的文件上传
 
 ```java
 @RestController
