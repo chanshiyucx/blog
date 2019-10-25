@@ -34,7 +34,7 @@ String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(pay
 eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE1NzA1MDEwMTQwOTUsImV4cCI6MTU3MTEwNTgxNH0.Tq9LIqSu8cet6ToqpTxS-sdY6bsCm0mWUFwKSgy5d0EovH4DYLxxqfswJpmibBNG0Ds2W0hM5D8BjVHHFeTTrg
 ```
 
-![jwt token 解析](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/token%E8%A7%A3%E6%9E%90.png)
+![jwt token 解析](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/token%E8%A7%A3%E6%9E%90.png)
 
 ## JWT 的使用方式
 

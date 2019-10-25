@@ -14,13 +14,13 @@ Docker 将应用程序与该程序的依赖，打包在一个文件里面。运�
 
 **控制面板&gt;程序和功能&gt;启用或关闭 window 功能&gt;勾选“适用于 Linux 的 Windows 子系统”**，之后重启系统。
 
-![启用 WSL](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/启用WSL.png)
+![启用 WSL](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/启用WSL.png)
 
 ### 安装 Ubuntu
 
 在 Microsoft Store 搜索 Ubuntu 并安装：
 
-![安装 Ubuntu](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/安装Ubuntu.png#full)
+![安装 Ubuntu](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/安装Ubuntu.png#full)
 
 安装完成查看基本信息：
 
@@ -125,7 +125,7 @@ PermitRootLogin yes           # 如果你需要用 root 直接登录系统则此
 PasswordAuthentication yes    # 将 no 改为 yes 表示使用帐号密码方式登录
 ```
 
-![SSH配置](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/SSH配置.png)
+![SSH配置](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/SSH配置.png)
 
 之后启动 SSH 并检查状态，输出 running 即正确：
 

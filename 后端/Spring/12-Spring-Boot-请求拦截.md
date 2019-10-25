@@ -8,7 +8,7 @@
 
 三种方式的请求拦截顺序：
 
-![请求拦截模型](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E6%A8%A1%E5%9E%8B.png)
+![请求拦截模型](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E6%A8%A1%E5%9E%8B.png)
 
 ## AOP
 

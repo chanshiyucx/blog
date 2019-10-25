@@ -2,7 +2,7 @@
 
 ## 文件系统
 
-![Linux的目录结构](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png)
+![Linux的目录结构](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png)
 
 | 目录 | 说明                                                                     |
 | ---- | ------------------------------------------------------------------------ |

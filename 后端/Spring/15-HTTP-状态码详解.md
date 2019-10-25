@@ -1,6 +1,6 @@
 # HTTP 状态码详解
 
-![HTTP 状态码详解](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/HTTP%20%E7%8A%B6%E6%80%81%E7%A0%81%E8%AF%A6%E8%A7%A3.jpg)
+![HTTP 状态码详解](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/HTTP%20%E7%8A%B6%E6%80%81%E7%A0%81%E8%AF%A6%E8%A7%A3.jpg)
 
 ## 状态码的分类
 

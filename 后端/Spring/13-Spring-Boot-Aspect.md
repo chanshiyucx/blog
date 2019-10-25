@@ -118,7 +118,7 @@ public class LogAspect {
 }
 ```
 
-![LogAspect](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/LogAspect.png)
+![LogAspect](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LogAspect.png)
 
 参考文章：  
 [Spring Boot 实战系列 AOP 面向切面编程](https://juejin.im/post/5be0dd17e51d45304c3c7a75)

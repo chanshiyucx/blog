@@ -201,7 +201,7 @@ docker-compose up -d
 
 访问 `http://rmqIP:8080` 进入控制台。
 
-![RocketMQ控制台](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/RocketMQ%E6%8E%A7%E5%88%B6%E5%8F%B0.png)
+![RocketMQ控制台](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/RocketMQ%E6%8E%A7%E5%88%B6%E5%8F%B0.png)
 
 ## 消息生产者
 

@@ -29,7 +29,7 @@ Spring 事务管理分为编码式和声明式的两种方式。编程式事务�
 
 在应用系统调用声明 `@Transactional` 的目标方法时，Spring Framework 默认使用 AOP 代理，在代码运行时生成一个代理对象，根据 `@Transactional` 的属性配置信息，这个代理对象决定该声明 `@Transactional` 的目标方法是否由拦截器 `TransactionInterceptor` 来使用拦截，在 `TransactionInterceptor` 拦截时，会在在目标方法开始执行之前创建并加入事务，并执行目标方法的逻辑， 最后根据执行情况是否出现异常，利用抽象事务管理器 `AbstractPlatformTransactionManager` 操作数据源 DataSource 提交或回滚事务。
 
-![事务实现机制](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/%E4%BA%8B%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.jpg)
+![事务实现机制](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/%E4%BA%8B%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.jpg)
 
 ## 注意事项
 
