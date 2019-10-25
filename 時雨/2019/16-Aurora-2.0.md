@@ -25,6 +25,6 @@ Aurora 设计之初（~~并没有什么设计~~），本打算作为一款自用
 
 ![细节优化](https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/Aurora-2.0-%E7%BB%86%E8%8A%82%E4%BC%98%E5%8C%96.jpg#full)
 
-当然上面只是新版本众多细节优化的一个点，但足以窥全貌，更多变化还请自己发现~(￣ ▽ ￣)~
+当然上面只是新版本众多细节优化的一个点，但足以窥全貌，更多变化还请自己发现( •̀ ω •́ )✧
 
 Just enjoy it! 😃
