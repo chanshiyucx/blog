@@ -48,7 +48,7 @@ https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/1.jpg
 
 ## 全站 jsDelivr 托管
 
-根据上述方式将博客图片子资源进行 jsDelivr 托管之后，琢磨了一下，除了图片资源外，为什么不把全站资源包括 js、css 等文件都进行 CDN 加速呢，于是手动改造了 Aurora，除了 index.html 外，其他全部引用资源文件走 CDN 加速。
+根据上述方式将博客图片资源进行 jsDelivr 托管之后，琢磨了一下，除了图片资源外，为什么不把全站资源包括 js、css 等文件都进行 CDN 加速呢，于是手动改造了 Aurora，除了 index.html 外，其他全部引用资源文件走 CDN 加速。
 
 博客文件托管只需将修改 `vue.config.js` 中静态资源路径配置即可，将其修改为你的博客 pages 仓库，然后重新打包部署，全站 CDN 加速岂不美哉。
 
