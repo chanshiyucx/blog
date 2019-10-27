@@ -1,6 +1,6 @@
 # jsDelivr 全站托管
 
-可能是自己消息闭塞，近日才从小伙伴那里知道 jsDelivr 可以访问 github 仓库资源，并通过 CDN 缓存方式加速国内的访问。于是查阅资料略加研究，便将全站进行 jsDelivr 托管。
+可能是自己消息闭塞，近日才知道 jsDelivr 可以访问 github 仓库资源，并通过 CDN 缓存方式加速国内的访问。于是查阅资料略加研究，便将全站进行 jsDelivr 托管。
 
 ## github 图床
 
@@ -16,7 +16,7 @@
 
 ## jsDelivr 加速
 
-通过开源 CDN 服务 jsDelivr 引用一些资源文件本很常见，但近日才道原来 jsDelivr 还可以直接访问 github 上的资源，犹如久旱逢甘霖。查阅资料后，立马着手将整个博客进行 jsDelivr CDN 加速。
+通过开源 CDN 服务 jsDelivr 引用一些资源文件本很常见，此外 jsDelivr 还可以直接访问 github 上的资源。查阅资料后，犹如久旱逢甘霖，立马着手将整个博客进行 jsDelivr CDN 加速。
 
 jsDelivr 提供 npm，GitHub，WordPress 等项目的镜像。由于我只使用 Github 来托管文件，所以只对这种方式做说明。
 
