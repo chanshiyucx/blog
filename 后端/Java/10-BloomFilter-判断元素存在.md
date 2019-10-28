@@ -1,4 +1,4 @@
-# BloomFilter 判断元素是否存在
+# BloomFilter 判断元素存在
 
 > 本文为个人学习摘要笔记。  
 > 原文地址：[到底是存在还是不存在之 BloomFilter](http://www.justdojava.com/2019/10/22/bloomfilter/)
