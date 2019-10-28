@@ -82,6 +82,8 @@
     - [07 单例模式的几种实现](后端/Java/07-单例模式的几种实现.md)
     - [08 Java HashMap](后端/Java/08-Java-HashMap.md)
     - [09 Magic 魔数获取文件类型](后端/Java/09-Magic-魔数获取文件类型.md)
+    - [10 BloomFilter 判断元素是否存在](后端/Java/10-BloomFilter-判断元素是否存在.md)
+    - [11 LRU 缓存淘汰算法](后端/Java/11-LRU-缓存淘汰算法.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
