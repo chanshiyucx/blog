@@ -89,6 +89,8 @@
     - [14 Cookie 和 Session](后端/Java/14-Cookie-和-Session.md)
     - [15 HashMap 面试大全](后端/Java/15-HashMap-面试大全.md)
     - [16 Java ClassLoader](后端/Java/16-Java-ClassLoader.md)
+    - [17 ArrayList 和 LinkedList](后端/Java/17-ArrayList-和-LinkedList.md)
+    - [18 Java fail fast](后端/Java/18-Java-fail-fast.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
