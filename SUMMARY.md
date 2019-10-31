@@ -92,6 +92,9 @@
     - [17 ArrayList 和 LinkedList](后端/Java/17-ArrayList-和-LinkedList.md)
     - [18 Java fail fast](后端/Java/18-Java-fail-fast.md)
     - [19 Java 中 == 和 equals](后端/Java/19-Java-中-==-和-equals.md)
+    - [20 面向对象基本特征与原则](后端/Java/20-面向对象基本特征与原则.md)
+    - [21 Java 只有值传递](后端/Java/21-Java-只有值传递.md)
+    - [22 Java 重写与重载](后端/Java/22-Java-重写与重载.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
