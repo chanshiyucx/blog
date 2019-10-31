@@ -10,16 +10,16 @@ Java 中有 8 种基本数据类型，分为三大类：
   - 整型：byte、short、int、long
   - 浮点型：float、double
 
-| 数据类型 | 默认值  | 位数 |
-| -------- | ------- | ---- |
-| char     | 'u0000' | 16   |
-| boolean  | false   | ~    |
-| byte     | 0       | 8    |
-| short    | 0       | 16   |
-| int      | 0       | 32   |
-| long     | 0L      | 64   |
-| float    | 0.0f    | 32   |
-| double   | 0.0d    | 64   |
+| 数据类型 | 默认值  | 位数 | 包装类型  |
+| -------- | ------- | ---- | --------- |
+| char     | 'u0000' | 16   | Character |
+| boolean  | false   | ~    | Boolean   |
+| byte     | 0       | 8    | Byte      |
+| short    | 0       | 16   | Short     |
+| int      | 0       | 32   | Integer   |
+| long     | 0L      | 64   | Long      |
+| float    | 0.0f    | 32   | Float     |
+| double   | 0.0d    | 64   | Double    |
 
 boolean 只有两个值：true、false，可以使用 1 bit 来存储，但是具体大小没有明确规定。JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。
 
@@ -34,10 +34,10 @@ int y = x;         // 拆箱 调用了 X.intValue()
 
 ## 缓存池
 
-new Integer(123) 与 Integer.valueOf(123) 的区别在于：
+`new Integer(123)` 与 `Integer.valueOf(123)` 的区别在于：
 
-- new Integer(123) 每次都会新建一个对象；
-- Integer.valueOf(123) 会使用缓存池中的对象，多次调用会取得同一个对象的引用。
+- `new Integer(123)` 每次都会新建一个对象；
+- `Integer.valueOf(123)` 会使用缓存池中的对象，多次调用会取得同一个对象的引用。
 
 ```java
 Integer x = new Integer(123);
@@ -60,7 +60,7 @@ public static Integer valueOf(int i) {
 
 在 Java 8 中，Integer 缓存池的大小默认为 -128~127。
 
-编译器会在自动装箱过程调用 valueOf() 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
+编译器会在自动装箱过程调用 `valueOf()` 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
 
 ```java
 Integer m = 123;
