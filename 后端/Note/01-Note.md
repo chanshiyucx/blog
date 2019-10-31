@@ -16,13 +16,6 @@
 
 ![Vim 键盘图](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/vim%E9%94%AE%E7%9B%98%E5%9B%BE.jpg)
 
-## REST 和 RPC
-
-- REST（representational state transfer，表现层状态转移）：使用 HTTP 协议，应用层，可以跨防火墙，在不同局域网之间通信
-- RPC（remote procedure call，远程过程调用）：使用 TCP 协议，传输层，速度快，但不可跨防火墙，仅支持局域网通信
-
-结论：**对内 RPC，对外 REST**。
-
 ## 整站下载资源
 
 ```bash
@@ -71,23 +64,9 @@ private final ConfigurableApplicationContext applicationContext;
 applicationContext.getEnvironment().getProperty("user");
 ```
 
-## 获取泛型 class
-
-```java
-private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-```
-
 ## 全局时钟
 
 在微服务中，不同服务部署在不同机器上，获取时间戳不能使用 Date，因为不统一，需要一个专门的服务 `service-date` 来获取时间。时间可以不准但是必须统一。
-
-## ReflectionToStringBuilder
-
-通过反射打印对象：
-
-```java
-System.out.println(ReflectionToStringBuilder.toString(umsAdmin, ToStringStyle.MULTI_LINE_STYLE));
-```
 
 ## 编程范式
 

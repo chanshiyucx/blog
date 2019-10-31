@@ -27,3 +27,17 @@ public class CorsConfig {
 
 }
 ```
+
+## 002 获取泛型 class
+
+```java
+private Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+```
+
+## 003 ReflectionToStringBuilder
+
+通过反射打印对象：
+
+```java
+System.out.println(ReflectionToStringBuilder.toString(umsAdmin, ToStringStyle.MULTI_LINE_STYLE));
+```

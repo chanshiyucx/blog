@@ -41,3 +41,37 @@ SSM：Spring + Spring MVC + MyBatis
 - Spring 是一个轻量级的控制反转（IoC）和面向切面（AOP）的容器框架。
 - SpringMVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制。
 - MyBatis 是一个支持普通 SQL 查询，存储过程和高级映射的优秀持久层框架。
+
+## 007 Java 变量
+
+Java 中共有三种变量，分别是类变量、成员变量和局部变量。他们分别存放在 JVM 的方法区、堆内存和栈内存中。
+
+```java
+public class Variables {
+    /**
+      * 类变量
+      */
+    private static int a;
+
+    /**
+      * 成员变量
+      */
+    private int b;
+
+    /**
+      * 局部变量
+      */
+    public void test(int c){
+        int d;
+    }
+}
+```
+
+上面定义的三个变量中，变量 a 就是类变量，变量 b 就是成员变量，而变量 c 和 d 是局部变量。
+
+## 008 REST 和 RPC
+
+- REST（representational state transfer，表现层状态转移）：使用 HTTP 协议，应用层，可以跨防火墙，在不同局域网之间通信
+- RPC（remote procedure call，远程过程调用）：使用 TCP 协议，传输层，速度快，但不可跨防火墙，仅支持局域网通信
+
+结论：**对内 RPC，对外 REST**。
