@@ -10,6 +10,7 @@
 | 书斋 | 读书笔记，摘要读书过程中的知识要点和想法感悟                          |
 | 前端 | 前端知识库，包括且不限于 JavaScript、Nodejs、React、Vue 等知识总结    |
 | 后端 | 后端知识库，包括且不限于 Java、Spring、Linux、MySQL、Nginx 等知识总结 |
+| 采集 | 优秀的博客文章或资料，采集以备之后学习                                |
 
 - 時雨
   - 2017
@@ -139,3 +140,6 @@
     - [03 Docker FastDFS](后端/Project/03-Docker-FastDFS.md)
     - [04 Docker RocketMQ](后端/Project/04-Docker-RocketMQ.md)
     - [05 Moemall Admin Snippets](后端/Project/05-Moemall-Admin-Snippets.md)
+- 采集
+  - 后端
+    - [001 Java 的继承与组合](//github.com/hollischuang/toBeTopJavaer/blob/master/basics/java-basic/inheritance-composition.md)
