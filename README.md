@@ -142,4 +142,4 @@
     - [05 Moemall Admin Snippets](后端/Project/05-Moemall-Admin-Snippets.md)
 - 采集
   - 后端
-    - [001 Java 的继承与组合](//github.com/hollischuang/toBeTopJavaer/blob/master/basics/java-basic/inheritance-composition.md)
+    - [001 Java 的继承与组合](https://github.com/hollischuang/toBeTopJavaer/blob/master/basics/java-basic/inheritance-composition.md)
