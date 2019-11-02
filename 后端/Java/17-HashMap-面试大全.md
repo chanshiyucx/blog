@@ -1,6 +1,6 @@
 # HashMap 面试大全
 
-关于 HashMap 参考前文 [Java HashMap](https://chanshiyu.gitbook.io/blog/hou-duan/java/14-java-hashmap)
+关于 HashMap 参考前文 [Java HashMap](https://chanshiyu.gitbook.io/blog/hou-duan/java/16-java-hashmap)
 
 ## 001 HashMap 的结构
 
