@@ -101,7 +101,7 @@ static int indexFor(int h, int length) {
 
 对于任意给定的对象，只要它的 `hashCode()` 返回值相同，那么程序调用方法一所计算得到的 Hash 码值总是相同的。我们首先想到的就是把 hash 值对数组长度取模运算，这样一来，元素的分布相对来说是比较均匀的。但是，模运算的消耗还是比较大的，在 HashMap 中是这样做的：调用方法二来计算该对象应该保存在 table 数组的哪个索引处。
 
-这个方法非常巧妙，它通过 `h & (table.length - 1)` 来得到该对象的保存位，而 HashMap 底层数组的长度总是 2 的 n 次方，这是 HashMap 在速度上的优化。当 length 总是 2 的 n 次方时，`h & (table.length - 1)` 运算等价于对 length 取模，也就是 `h % length`，但是 & 比 % 具有更高的效率。
+这个方法非常巧妙，它通过 `h & (table.length - 1)` 来得到该对象的保存位，而 HashMap 底层数组的长度总是 2 的 n 次方，这是 HashMap 在速度上的优化。**当 length 总是 2 的 n 次方时，`h & (table.length - 1)` 运算等价于对 length 取模，也就是 `h % length`，但是 & 比 % 具有更高的效率。**
 
 在 JDK1.8 的实现中，优化了高位运算的算法，通过 `hashCode()` 的高 16 位异或低 16 位实现的：`(h = k.hashCode()) ^ (h >>> 16)`，主要是从速度、功效、质量来考虑的，这么做可以在数组 table 的 length 比较小的时候，也能保证考虑到高低 Bit 都参与到 Hash 的计算中，同时不会有太大的开销。
 

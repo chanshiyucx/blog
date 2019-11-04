@@ -338,7 +338,7 @@ public Vector() {
 - Vector 是同步的，因此开销就比 ArrayList 要大，访问速度更慢。最好使用 ArrayList 而不是 Vector，因为同步操作完全可以由程序员自己来控制；
 - Vector 每次扩容请求其大小的 2 倍（也可以通过构造函数设置增长的容量），而 ArrayList 是 1.5 倍。
 
-### 4. 替代方案
+#### 4. 替代方案
 
 可以使用 `Collections.synchronizedList();` 得到一个线程安全的 ArrayList。
 
@@ -552,7 +552,7 @@ public V put(K key, V value) {
 }
 ```
 
-HashMap 允许插入键为 null 的键值对。但是因为无法调用 null 的 `hashCode()` 方法，也就无法确定该键值对的桶下标，只能通过强制指定一个桶下标来存放。**HashMap 使用第 0 个桶存放键为 null 的键值对**。
+HashMap 允许插入键为 null 的键值对。但是因为无法调用 null 的 `hashCode()` 方法，也就无法确定该键值对的桶下标，只能通过强制指定一个桶下标来存放。**HashMap 使用第 0 个桶存放键为 null 的键值对**（HashMap 最多只允许一条记录的键为 null，允许多条记录的值为 null）。
 
 ```java
 private V putForNullKey(V value) {
@@ -677,12 +677,12 @@ static int indexFor(int h, int length) {
 
 和扩容相关的参数主要有：capacity、size、threshold 和 load_factor。
 
-|    参数    | 含义                                                                           |
-| :--------: | :----------------------------------------------------------------------------- |
-|  capacity  | table 的容量大小，默认为 16。需要注意的是 capacity 必须保证为 2 的 n 次方。    |
-|    size    | 键值对数量。                                                                   |
-| threshold  | size 的临界值，当 size 大于等于 threshold 就必须进行扩容操作。                 |
-| loadFactor | 装载因子，table 能够使用的比例，threshold = (int)(newCapacity \* loadFactor)。 |
+|    参数    | 含义                                                                            |
+| :--------: | :------------------------------------------------------------------------------ |
+|  capacity  | table 的容量大小，默认为 16。需要注意的是 capacity 必须保证为 2 的 n 次方。     |
+|    size    | 键值对数量。                                                                    |
+| threshold  | size 的临界值，当 size 大于等于 threshold 就必须进行扩容操作。                  |
+| loadFactor | 装载因子，table 能够使用的比例，`threshold = (int)(newCapacity * loadFactor)`。 |
 
 ```java
 static final int DEFAULT_INITIAL_CAPACITY = 16;
@@ -713,7 +713,7 @@ void addEntry(int hash, K key, V value, int bucketIndex) {
 }
 ```
 
-扩容使用 resize() 实现，需要注意的是，扩容操作同样需要把 oldTable 的所有键值对重新插入 newTable 中，因此这一步是很费时的。
+扩容使用 `resize()` 实现，需要注意的是，扩容操作同样需要把 oldTable 的所有键值对重新插入 newTable 中，因此这一步是很费时的。
 
 ```java
 void resize(int newCapacity) {
@@ -750,7 +750,7 @@ void transfer(Entry[] newTable) {
 
 #### 6. 扩容-重新计算桶下标
 
-在进行扩容时，需要把键值对重新计算桶下标，从而放到对应的桶上。在前面提到，HashMap 使用 hash%capacity 来确定桶下标。HashMap capacity 为 2 的 n 次方这一特点能够极大降低重新计算桶下标操作的复杂度。
+在进行扩容时，需要把键值对重新计算桶下标，从而放到对应的桶上。在前面提到，HashMap 使用 hash%capacity 来确定桶下标。**HashMap capacity 为 2 的 n 次方这一特点能够极大降低重新计算桶下标操作的复杂度。**
 
 假设原数组长度 capacity 为 16，扩容之后 new capacity 为 32：
 
