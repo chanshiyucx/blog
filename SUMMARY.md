@@ -91,6 +91,7 @@
     - [16 ArrayList 和 LinkedList](后端/Java/16-ArrayList-和-LinkedList.md)
     - [17 Java fail fast](后端/Java/17-Java-fail-fast.md)
     - [18 Java 并发](后端/Java/18-Java-并发.md)
+    - [19 Java 内存模型](后端/Java/19-Java-内存模型.md)
     - [21 Java ClassLoader](后端/Java/21-Java-ClassLoader.md)
     - [22 Java Stream](后端/Java/22-Java-Stream.md)
     - [23 30 seconds of java8](后端/Java/23-30-seconds-of-java8.md)
