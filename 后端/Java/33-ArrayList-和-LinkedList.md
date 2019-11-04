@@ -44,9 +44,9 @@ transient Object[] elementData; // non-private to simplify nested class access
 private int size;
 ```
 
-`DEFAULT_CAPACITY` 是默认的初始容量，容量是 10，`EMPTY_ELEMENTDATA` 这代表的是一个空的初始化数组。 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA` 区别上边，他是自定义容量为 0 的时候的空数组。
+`DEFAULT_CAPACITY` 是默认的初始容量，容量是 10，`EMPTY_ELEMENTDATA` 这代表的是一个空的初始化数组（自定义容量为 0）。 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA` 区别上边，他是未自定义容量的空数组。
 
-空的初始化数组 `EMPTY_ELEMENTDATA` 与自定义容量为 0 的时候的空数组 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA` 区别在哪？通过他的构造函数了解下。
+`EMPTY_ELEMENTDATA` 与 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA` 区别在哪？通过他的构造函数了解下。
 
 ### 构造
 
