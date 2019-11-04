@@ -89,7 +89,7 @@
     - [13 Java Stream](后端/Java/13-Java-Stream.md)
     - [14 30 seconds of java8](后端/Java/14-30-seconds-of-java8.md)
     - [15 Java ClassLoader](后端/Java/15-Java-ClassLoader.md)
-    - [16 Java HashMap](后端/Java/16-java-hashmap.md)
+    - [16 Java HashMap](后端/Java/16-Java-HashMap.md)
     - [17 HashMap 面试大全](后端/Java/17-HashMap-面试大全.md)
     - [18 Java fail fast](后端/Java/18-Java-fail-fast.md)
     - [22 函数式替代 for 循环](后端/Java/22-函数式替代-for-循环.md)
