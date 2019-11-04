@@ -820,6 +820,8 @@ ConcurrentHashMap 和 HashMap 实现上类似，最主要的差别是 Concurrent
 
 Segment 继承自 ReentrantLock。
 
+> Java 提供了两种锁机制来控制多个线程对共享资源的互斥访问，第一个是 JVM 实现的 synchronized，而另一个是 JDK 实现的 ReentrantLock。
+
 ```java
 static final class Segment<K,V> extends ReentrantLock implements Serializable {
 
