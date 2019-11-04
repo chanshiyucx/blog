@@ -4,7 +4,7 @@
 
 ## 001 HashMap 的结构
 
-二维结构，第一维是数组，第二维是链表。
+哈希表结构（链表散列：数组+链表）实现，结合数组和链表的优点。当链表长度超过 8 时，链表转换为红黑树。
 
 ## 002 Get 方法的流程
 
@@ -25,3 +25,16 @@ loadFactor 表示 HashMap 的拥挤程度，影响 hash 操作到同一个数组
 ## 006 HashMap 是否线程安全
 
 当然不是，线程安全的 HashMap 是 ConcurrentHashMap。
+
+## 007 ConcurrentHashMap 的并发度
+
+程序运行时能够同时更新 ConccurentHashMap 且不产生锁竞争的最大线程数。默认为 16，且可以在构造函数中设置。当用户设置并发度时，ConcurrentHashMap 会使用大于等于该值的最小 2 幂指数作为实际并发度（假如用户设置并发度为 17，实际并发度则为 32）。
+
+## 008 ConcurrentHashMap 比 HashTable 效率要高
+
+HashTable 使用一把锁（锁住整个链表结构）处理并发问题，多个线程竞争一把锁，容易阻塞；
+
+ConcurrentHashMap：
+
+- JDK 1.7 中使用分段锁（ReentrantLock + Segment + HashEntry），相当于把一个 HashMap 分成多个段，每段分配一把锁，这样支持多线程访问。锁粒度：基于 Segment，包含多个 HashEntry。
+- JDK 1.8 中使用 CAS + synchronized + Node + 红黑树。锁粒度：Node（首结点）（实现 Map.Entry<K,V>）。锁粒度降低了。
