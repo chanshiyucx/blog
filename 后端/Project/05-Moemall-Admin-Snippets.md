@@ -29,6 +29,8 @@ private UmsPermissionNode covert(UmsPermission permission, List<UmsPermission> p
 
 ## 002 查询所有一级分类及子分类
 
+属于上面的变种方式，重点关注 `columnPrefix`，他将 `child_id` 和 `child_name` 归纳到 children 字段里去。
+
 ```xml
 <mapper namespace="com.macro.mall.dao.PmsProductCategoryDao">
     <resultMap id="listWithChildrenMap" type="com.macro.mall.dto.PmsProductCategoryWithChildrenItem"
@@ -61,6 +63,25 @@ public CommonListResult<UmsAdminVO> list(Integer pageNum, Integer pageSize) {
 }
 ```
 
+```xml
+<mapper namespace="com.chanshiyu.moemall.admin.dao.UmsAdminDao">
+    <resultMap id="AdminResultMap" type="com.chanshiyu.moemall.admin.model.vo.UmsAdminVO" extends="com.chanshiyu.moemall.mbg.mapper.UmsAdminMapper.BaseResultMap">
+        <collection property="roleIds" ofType="LONG">
+            <result column="role_id"/>
+        </collection>
+    </resultMap>
+
+    <select id="getAdminList" resultMap="AdminResultMap">
+        SELECT
+            a.*, ar.role_id role_id
+        FROM
+            ums_admin a
+            LEFT JOIN ums_admin_role_relation ar ON a.id = ar.admin_id
+        ORDER BY a.id ASC
+    </select>
+</mapper>
+```
+
 ## 004 添加登录日志
 
 ```java
@@ -76,7 +97,6 @@ private void insertLoginLog(String username) {
     UserAgent ua = UserAgentUtil.parse(request.getHeader("user-agent"));
     String userAgent = ua.getBrowser().toString() + "/" + ua.getVersion() + ", " + ua.getOs().toString();
     loginLog.setUserAgent(userAgent);
-    log.info("loginLog: {}", loginLog);
     loginLogMapper.insert(loginLog);
 }
 ```
