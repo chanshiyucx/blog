@@ -1,12 +1,12 @@
 # jsDelivr 全站托管
 
-可能是自己消息闭塞，近日才知道 jsDelivr 可以访问 github 仓库资源，并通过 CDN 缓存方式加速国内的访问。于是查阅资料略加研究，便将全站进行 jsDelivr 托管。
+可能是自己消息闭塞，近日才知道 jsDelivr 可以访问 github 仓库资源，并通过 CDN 缓存方式加速国内的访问。于是查阅资料略加研究，决定将全站进行 jsDelivr 托管。
 
 ## github 图床
 
-现在使用 github pages 服务来托管静态博客已是屡见不鲜，更甚者可以使用 github 仓库来搭建图床存储博客图片资源。之前自己用过的几款外链图床如 coding 图床、SMMS 图床都有些许问题。coding 图床启用了防盗链后无法访问，SMMS 图床上传的图片间歇性莫名其妙 404。
+现在使用 github pages 服务来托管静态博客已是屡见不鲜，更甚者使用 github 仓库来搭建图床也是可行。之前自己用过的几款外链图床如 coding 图床、SMMS 图床都有些许问题。coding 图床启用了防盗链后无法访问且无法方便上传图片，SMMS 图床上传的图片间歇性莫名其妙 404。
 
-综于以上原因，迫于对稳定的考量，后来使用 github 仓库作为外链图床，既然已经博客用上了 github 全家桶，一条龙服务不也挺好的嘛。
+综于以上原因，迫于对稳定的考量，后来使用 github 仓库作为外链图床，本着 github 全家桶的思想，一条龙服务不也挺好的嘛。
 
 当然 github 图床也面临两个问题，一是仓库大小容量有 1G 限制；二是国内访问速度堪忧。
 
@@ -61,5 +61,5 @@ module.exports = {
 
 Just enjoy it! 😃
 
-参考文档：
+参考文档：  
 [Jsdelivr Features](https://www.jsdelivr.com/features)
