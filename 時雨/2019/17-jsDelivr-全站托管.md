@@ -4,7 +4,7 @@
 
 ## github 图床
 
-现在使用 github pages 服务来托管静态博客已是屡见不鲜，更甚者使用 github 仓库来搭建图床也是可行。之前自己用过的几款外链图床如 coding 图床、SMMS 图床都有些许问题。coding 图床启用了防盗链后无法访问且无法方便上传图片，SMMS 图床上传的图片间歇性莫名其妙 404。
+现在使用 github pages 服务来托管静态博客已是屡见不鲜，更甚者使用 github 仓库来搭建图床也是可行。之前自己用过的几款外链图床如 coding 图床、SMMS 图床都有些许问题。coding 图床启用了防盗链后无法访问且无法快捷上传图片，SMMS 图床上传的图片间歇性莫名其妙 404。
 
 综于以上原因，迫于对稳定的考量，后来使用 github 仓库作为外链图床，本着 github 全家桶的思想，一条龙服务不也挺好的嘛。
 
@@ -12,15 +12,15 @@
 
 第一个问题很好解决，虽然一个仓库大小有限制，但是可以通过创建多个仓库的方式来解决容量问题，而且即使一个仓库 1G 容量对于小博客其实也足够使用了。
 
-第二个问题就比较难办，由于种种原因，github 在国内访问速度受限，速度本就不快，用作图床更是细流难以解渴。
+第二个问题就比较难办，由于种种原因，github 在国内访问速度受限，加载速度堪忧，用作图床更是细流难以解渴。
 
 ## jsDelivr 加速
 
-通过开源 CDN 服务 jsDelivr 引用一些资源文件本很常见，此外 jsDelivr 还可以直接访问 github 上的资源。查阅资料后，犹如久旱逢甘霖，立马着手将整个博客进行 jsDelivr CDN 加速。
+通过开源 CDN 服务 jsDelivr 引用一些静态资源可以加快网站加载速度，但鲜有人知的是，jsDelivr 还可以直接访问 github 上的资源。自听闻这种技巧之后，便查阅官方资料，犹如久旱逢甘霖，立马着手将整个博客进行 jsDelivr CDN 加速。
 
 jsDelivr 提供 npm，GitHub，WordPress 等项目的镜像。由于我只使用 Github 来托管文件，所以只对这种方式做说明。
 
-使用 github 做图床，我们可以通过 [PicGo](https://github.com/Molunerfinn/PicGo) 或者 chrome 插件 [Picee](https://chrome.google.com/webstore/detail/picee/nmeeieecbmdnilkkaliknhkkakonobbc) 来上传图片到图片仓库。举个栗子，这里我上传图片到名为 poi 的图片仓库中，上传成功后图片访问地址类似如下格式：
+使用 github 做图床，我们可以通过 [PicGo](https://github.com/Molunerfinn/PicGo) 或者 chrome 插件 [Picee](https://chrome.google.com/webstore/detail/picee/nmeeieecbmdnilkkaliknhkkakonobbc) 来上传图片到图片仓库。举个栗子，这里我上传图片到名为 poi 的 github 仓库中，上传成功后图片访问地址类似如下格式：
 
 ```
 https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/1.jpg

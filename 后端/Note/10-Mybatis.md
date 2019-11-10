@@ -752,3 +752,12 @@ List<TestResult> queryTest(@Param("myIds") String myIds);
 
 参考文章：  
 [MyBatis 通用 Mapper4](https://github.com/abel533/Mapper/wiki)
+
+### 字符串替换
+
+通过任何一列从表中 select 数据时：
+
+```java
+@Select("select * from user where ${column} = #{value}")
+User findByColumn(@Param("column") String column, @Param("value") String value);
+```
