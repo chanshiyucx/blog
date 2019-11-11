@@ -226,6 +226,17 @@ ENTRYPOINT 与 CMD 的关系：
 
 ## 问题
 
+### 打包推送脚本
+
+```shell
+#!/usr/bin/env bash
+
+./mvnw clean package -Dmaven.test.skip=true
+
+docker build -t docker.tgnb.cc/live/api-service:2.8.4 .
+docker push docker.tgnb.cc/live/api-service:2.8.4
+```
+
 ### docker 未启动
 
 ```bash
@@ -286,3 +297,19 @@ docker tag spring-mybatis:0.0.1 chanshiyu/spring-mybatis:0.0.1
 # 推送镜像
 docker push chanshiyu/spring-mybatis:0.0.1
 ```
+
+### docker push 无权限
+
+docker push 时报错：
+
+```
+denied: requested access to the resource is denied
+```
+
+解决方式：删除客户端配置文件 `~/.docker/config.json`，然后在登录 docker 后即可推送成功。
+
+### sh 脚本无法运行
+
+Linux 执行.sh 文件，提示 `No such file or directory` 的问题，可能是平台之间权限兼容的问题：
+
+首先用 vim 打开该 sh 文件，输入 `:set ff`，回车显示文件编码 `fileformat=dos`。所以需要重新设置下脚本文件格式，vim 输入 `:set ff=unix`，保存后退出再执行即可。

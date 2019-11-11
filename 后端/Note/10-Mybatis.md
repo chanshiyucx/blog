@@ -761,3 +761,15 @@ List<TestResult> queryTest(@Param("myIds") String myIds);
 @Select("select * from user where ${column} = #{value}")
 User findByColumn(@Param("column") String column, @Param("value") String value);
 ```
+
+### 多行插入
+
+```xml
+<insert id="insertAuthor" useGeneratedKeys="true"
+    keyProperty="id">
+  insert into Author (username, password, email, bio) values
+  <foreach item="item" collection="list" separator=",">
+    (#{item.username}, #{item.password}, #{item.email}, #{item.bio})
+  </foreach>
+</insert>
+```
