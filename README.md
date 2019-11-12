@@ -149,6 +149,7 @@
     - [13 Spring Boot Aspect](后端/Spring/13-Spring-Boot-Aspect.md)
     - [14 JWT](后端/Spring/14-JWT.md)
     - [15 HTTP 状态码详解](后端/Spring/15-HTTP-状态码详解.md)
+    - [16 枚举参数验证](后端/Spring/16-枚举参数验证.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)

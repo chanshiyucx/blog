@@ -37,6 +37,12 @@ wget -c -r -np -k -L -p https://chanshiyu.com/
   </component>
 ```
 
+## IDEA could not autowire
+
+无法解决，只能降低提示等级：
+
+![idea autowired error](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/idea-autowired-error.png)
+
 ## Window10 端口占用
 
 ```bash
