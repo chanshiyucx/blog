@@ -35,85 +35,85 @@ try {
 实际代码例子：
 
 ```java
+@Slf4j
 @Aspect
 @Component
-@Slf4j
-public class LogAspect {
+@Order(1)
+public class WebLogAspect {
 
-    /**
-     * 切入点
-     */
-    @Pointcut("execution(* com.chanshiyu.moemall.admin.controller.*.*(..))")
-    public void log() {}
+    @Pointcut("execution(public * com.chanshiyu.moemall.admin.controller.*.*(..))")
+    public void webLog() {}
 
-    /**
-     * 前置通知
-     * @param joinPoint
-     * @throws Throwable
-     */
-    @Before("log()")
-    public void doBefore(JoinPoint joinPoint) throws Throwable {
-        // 开始打印请求日志
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
+    @Before("webLog()")
+    public void doBefore(JoinPoint joinPoint) throws Throwable {}
 
-        // 打印请求相关参数
-        log.info("========================================== Start ==========================================");
-        // 打印请求 url
-        log.info("URL            : {}", request.getRequestURL().toString());
-        // 打印 Http method
-        log.info("HTTP Method    : {}", request.getMethod());
-        // 打印调用 controller 的全路径以及执行方法
-        log.info("Class Method   : {}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
-        // 打印请求的 IP
-        log.info("IP             : {}", request.getRemoteAddr());
-        // 打印请求入参
-        log.info("Request Args   : {}", JSONUtil.parse(joinPoint.getArgs()));
-    }
+    @AfterReturning(value = "webLog()", returning = "ret")
+    public void doAfterReturning(Object ret) throws Throwable {}
 
-    /**
-     * 后置通知
-     * @throws Throwable
-     */
-    @After("log()")
-    public void doAfter() throws Throwable {
-        log.info("=========================================== End ===========================================");
-    }
-
-    /**
-     * 环绕通知
-     * @param proceedingJoinPoint
-     * @return
-     * @throws Throwable
-     */
-    @Around("log()")
-    public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    @Around("webLog()")
+    public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
-        Object result = proceedingJoinPoint.proceed();
-        // 打印出参
-        log.info("Response Args  : {}", JSONUtil.parse(result));
-        // 执行耗时
-        log.info("Time-Consuming : {} ms", System.currentTimeMillis() - startTime);
+        // 获取当前请求对象
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        assert attributes != null;
+        HttpServletRequest request = attributes.getRequest();
+        // 记录请求信息
+        WebLog webLog = new WebLog();
+        Object result = joinPoint.proceed();
+        Signature signature = joinPoint.getSignature();
+        MethodSignature methodSignature = (MethodSignature) signature;
+        Method method = methodSignature.getMethod();
+        if (method.isAnnotationPresent(ApiOperation.class)) {
+            ApiOperation log = method.getAnnotation(ApiOperation.class);
+            webLog.setDescription(log.value());
+        }
+        long endTime = System.currentTimeMillis();
+        String urlStr = request.getRequestURL().toString();
+        webLog.setBasePath(StrUtil.removeSuffix(urlStr, URLUtil.url(urlStr).getPath()));
+        webLog.setIp(request.getRemoteAddr());
+        webLog.setMethod(request.getMethod());
+        webLog.setParameter(getParameter(method, joinPoint.getArgs()));
+        webLog.setResult(result);
+        webLog.setStartTime(DateUtil.date(startTime).toString());
+        webLog.setSpendTime((int) (endTime - startTime));
+        webLog.setUri(request.getRequestURI());
+        webLog.setUrl(request.getRequestURL().toString());
+        log.info("请求日志: {}", JSONUtil.parse(webLog).toString());
         return result;
     }
 
     /**
-     * 返回后通知
-     * @param object
+     * 根据方法和传入的参数获取请求参数
      */
-    @AfterReturning(returning = "object", pointcut = "log()")
-    public void doAfterReturning(Object object) {
-        log.info("RESPONSE       : {}", object.toString());
+    private Object getParameter(Method method, Object[] args) {
+        List<Object> argList = new ArrayList<>();
+        Parameter[] parameters = method.getParameters();
+        for (int i = 0; i < parameters.length; i++) {
+            // 将RequestBody注解修饰的参数作为请求参数
+            RequestBody requestBody = parameters[i].getAnnotation(RequestBody.class);
+            if (requestBody != null) {
+                argList.add(args[i]);
+            }
+            // 将RequestParam注解修饰的参数作为请求参数
+            RequestParam requestParam = parameters[i].getAnnotation(RequestParam.class);
+            if (requestParam != null) {
+                Map<String, Object> map = new HashMap<>();
+                String key = parameters[i].getName();
+                if (!StringUtils.isEmpty(requestParam.value())) {
+                    key = requestParam.value();
+                }
+                map.put(key, args[i]);
+                argList.add(map);
+            }
+        }
+        if (argList.size() == 0) {
+            return null;
+        } else if (argList.size() == 1) {
+            return argList.get(0);
+        } else {
+            return argList;
+        }
     }
-
-    /**
-     * 异常通知
-     */
-    @AfterThrowing(pointcut = "log()")
-    public void doAfterThrowing() {
-        log.error("doAfterThrowing: {}", " 异常情况!");
-    }
-
 
 }
 ```

@@ -228,6 +228,8 @@ ENTRYPOINT 与 CMD 的关系：
 
 ### 打包推送脚本
 
+build.sh：
+
 ```shell
 #!/usr/bin/env bash
 
@@ -235,6 +237,17 @@ ENTRYPOINT 与 CMD 的关系：
 
 docker build -t docker.tgnb.cc/live/api-service:2.8.4 .
 docker push docker.tgnb.cc/live/api-service:2.8.4
+```
+
+Dockerfile
+
+```
+FROM openjdk:8-jre
+MAINTAINER tg tg@gmail.com
+
+COPY api/target/api-1.0.RELEASE.jar /api-service.jar
+
+ENTRYPOINT ["java","-jar","/api-service.jar", "-Xms6.5g", "-Xmx6.5g","-xx:NewSize=5.5g","-xx:MaxNewSize=5.5g","-XX:MaxDirectMemorySize=1g"]
 ```
 
 ### docker 未启动
@@ -310,6 +323,6 @@ denied: requested access to the resource is denied
 
 ### sh 脚本无法运行
 
-Linux 执行.sh 文件，提示 `No such file or directory` 的问题，可能是平台之间权限兼容的问题：
+Linux 执行.sh 文件，提示 `No such file or directory` 的问题，可能是平台之间权限兼容的问题。
 
-首先用 vim 打开该 sh 文件，输入 `:set ff`，回车显示文件编码 `fileformat=dos`。所以需要重新设置下脚本文件格式，vim 输入 `:set ff=unix`，保存后退出再执行即可。
+首先用 vim 打开该 sh 文件，输入 `:set ff`，回车显示文件编码为 `fileformat=dos`。所以需要重新设置下脚本文件格式，vim 输入 `:set ff=unix`，保存后退出再执行即可。
