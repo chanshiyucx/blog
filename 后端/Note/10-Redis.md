@@ -1,36 +1,6 @@
-# Mysql and Redis
+# Redis
 
-## Mysql
-
-- pom.xml 引入相关依赖
-- 资源文件对 mysql 进行配置
-
-引入依赖：
-
-```xml
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-```
-
-配置文件：
-
-```yml
-spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-    hikari:
-      username: root
-      password: 1124chanshiyu
-      driver-class-name: com.mysql.cj.jdbc.Driver
-```
-
-## Redis
+## 引入
 
 - pom.xml 引入相关依赖
 - 资源文件对 redis 进行配置
@@ -268,6 +238,39 @@ public class RedisUtil {
         }
     }
 
+}
+```
+
+错误用法：
+
+```java
+// 读取登录已失败次数
+String redisKey = String.format(RedisAttributes.LOGIN_FAILED_COUNT, username);
+String redisVal = redisService.get(redisKey);
+int count = redisVal == null ? 0 : Integer.parseInt(redisVal);
+// 失败五次进行封号处理，否则将失败次数加一
+if (count + 1 < MAX_LOGIN_FAILED_COUNT) {
+    redisService.set(redisKey, String.valueOf(count + 1));
+} else {
+    /* ... */
+    // 删除redis缓存
+    redisService.del(redisKey);
+}
+```
+
+正确用法：
+
+```java
+// 读取登录已失败次数
+Long count = redisService.incr(redisKey);
+// 失败五次进行封号处理
+if (count + 1 > MAX_LOGIN_FAILED_COUNT) {
+    Users user = new Users();
+    user.setId(db.getId());
+    user.setState(AccountStatusAttributes.disabled);
+    this.usersService.update(user);
+    // 删除redis缓存
+    redisService.del(redisKey);
 }
 ```
 

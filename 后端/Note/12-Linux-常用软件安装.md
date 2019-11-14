@@ -4,7 +4,7 @@
 
 ### 下载
 
-```bash
+```shell
 # 解压
 tar -zxvf jdk-8u152-linux-x64.tar.gz
 
@@ -20,7 +20,7 @@ chown -R root:root /usr/local/java/
 
 ### 配置环境变量
 
-配置系统环境变量 `/etc/environment`，添加后面三句即可：
+配置系统环境变量 `/etc/profile`，添加后面三句即可：
 
 ```
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -65,19 +65,19 @@ fi
 
 ### 使用户环境变量生效
 
-```bash
+```shell
 source /etc/profile
 ```
 
 ### 测试是否安装成功
 
-```bash
+```shell
 java -version
 ```
 
 ### 为其他用户更新用户环境变量
 
-```bash
+```shell
 su lusifer
 source /etc/profile
 ```
@@ -86,7 +86,7 @@ source /etc/profile
 
 ### 下载
 
-```bash
+```shell
 # 解压
 tar -zxvf apache-tomcat-8.5.23.tar.gz
 
@@ -99,10 +99,45 @@ mv tomcat/ /usr/local/
 
 ### 运行
 
-```bash
+```shell
 # 启动
 /usr/local/tomcat/bin/startup.sh
 
 # 停止
 /usr/local/tomcat/bin/shutdown.sh
+```
+
+## Maven
+
+### 下载
+
+```java
+# 下载
+wget http://apache.communilink.net/maven/maven-3/3.6.2/binaries/apache-maven-3.6.2-bin.tar.gz
+
+# 解压
+tar -zxvf apache-maven-3.6.2-bin.tar.gz
+```
+
+### 配置环境变量
+
+配置系统环境变量 `/etc/profile`，添加后面两句即可：
+
+```
+vim /etc/profile
+
+export MAVEN_HOME=/usr/local/apache-maven-3.6.2
+export PATH=$MAVEN_HOME/bin/:$PATH
+```
+
+### 生效
+
+```
+source /etc/profile
+```
+
+### 验证
+
+```shell
+mvn -version
 ```

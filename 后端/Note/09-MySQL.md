@@ -99,3 +99,33 @@ set global validate_password_policy=0;
 select @@validate_password_length;
 set global validate_password_length=1;
 ```
+
+## 引入
+
+- pom.xml 引入相关依赖
+- 资源文件对 mysql 进行配置
+
+引入依赖：
+
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
+配置文件：
+
+```yml
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    hikari:
+      username: root
+      password: 1124chanshiyu
+      driver-class-name: com.mysql.cj.jdbc.Driver
+```
