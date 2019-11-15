@@ -326,3 +326,5 @@ denied: requested access to the resource is denied
 Linux 执行.sh 文件，提示 `No such file or directory` 的问题，可能是平台之间权限兼容的问题。
 
 首先用 vim 打开该 sh 文件，输入 `:set ff`，回车显示文件编码为 `fileformat=dos`。所以需要重新设置下脚本文件格式，vim 输入 `:set ff=unix`，保存后退出再执行即可。
+
+需要注意：**使用 vagrant 虚拟机进行 maven 打包的时候，需要配置 mvnw 文件编码**。

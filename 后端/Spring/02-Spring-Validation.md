@@ -121,5 +121,239 @@ public class UserController {
 }
 ```
 
+## 验证方式
+
+### 验证请求体
+
+验证请求体（RequestBody），需要验证的参数上加上了 `@Valid` 注解，如果验证失败，它将抛出 `MethodArgumentNotValidException`。默认情况下，Spring 会将此异常转换为 HTTP Status 400（错误请求）。
+
+Controller：
+
+```java
+@RestController
+@RequestMapping("/api")
+public class PersonController {
+
+    @PostMapping("/person")
+    public ResponseEntity<Person> getPerson(@RequestBody @Valid Person person) {
+        return ResponseEntity.ok().body(person);
+    }
+}
+```
+
+ExceptionHandler：
+
+```java
+@ControllerAdvice(assignableTypes = {PersonController.class})
+public class GlobalExceptionHandler {
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, String>> handleValidationExceptions(
+            MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+    }
+}
+```
+
+### 验证请求参数
+
+**一定一定不要忘记在类上加上 `Validated` 注解了，这个参数可以告诉 Spring 去校验方法参数。**
+
+Controller：
+
+```java
+@RestController
+@RequestMapping("/api")
+@Validated
+public class PersonController {
+
+    @GetMapping("/person/{id}")
+    public ResponseEntity<Integer> getPersonByID(@Valid @PathVariable("id") @Max(value = 5,message = "超过 id 的范围了") Integer id) {
+        return ResponseEntity.ok().body(id);
+    }
+
+    @PutMapping("/person")
+    public ResponseEntity<String> getPersonByName(@Valid @RequestParam("name") @Size(max = 6,message = "超过 name 的范围了") String name) {
+        return ResponseEntity.ok().body(name);
+    }
+}
+```
+
+ExceptionHandler：
+
+```java
+@ControllerAdvice(assignableTypes = {PersonController.class})
+public class GlobalExceptionHandler {
+    @ExceptionHandler(ConstraintViolationException.class)
+    ResponseEntity<String> handleConstraintViolationException(ConstraintViolationException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+}
+```
+
+### 验证 Service 方法
+
+此外还可以验证任何 Spring 组件的输入，而不是验证控制器级别的输入，我们可以使用 `@Validated` 和 `@Valid` 注释的组合来实现这一需求。
+
+**一定一定不要忘记在类上加上 Validated 注解了，这个参数可以告诉 Spring 去校验方法参数。**
+
+```java
+@Service
+@Validated
+public class PersonService {
+
+    public void validatePerson(@Valid Person person){
+        // do something
+    }
+}
+```
+
+## 自定义 Validator
+
+### 验证枚举值
+
+主要实现：
+
+- `Flag`
+- `FlagValidator`
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Constraint(validatedBy = FlagValidator.class)
+public @interface Flag {
+    String[] value() default {};
+
+    String message() default "flag is not found";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+}
+```
+
+```java
+public class FlagValidator implements ConstraintValidator<Flag, Integer> {
+    private String[] values;
+
+    @Override
+    public void initialize(Flag flag) {
+        this.values = flag.value();
+    }
+
+    @Override
+    public boolean isValid(Integer value, ConstraintValidatorContext constraintValidatorContext) {
+        boolean isValid = false;
+        if (value == null) {
+            // 当状态为空时使用默认值
+            return true;
+        }
+        for (String val : values) {
+            if (val.equals(String.valueOf(value))) {
+                isValid = true;
+                break;
+            }
+        }
+        return isValid;
+    }
+}
+```
+
+使用：
+
+```java
+@ApiModelProperty(value = "是否进行显示", required = true)
+@Flag(value = {"0","1"}, message = "显示状态不正确")
+private Integer showStatus;
+```
+
+### 验证范围值
+
+需求：Person 类有一个 region 字段，region 字段只能是 China、China-Taiwan、China-HongKong 这三个中的一个。
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Constraint(validatedBy = RegionValidator.class)
+public @interface Region {
+    String[] value() default {};
+
+    String message() default "Region 值不在可选范围内";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+}
+```
+
+```java
+public class RegionValidator implements ConstraintValidator<Region, String> {
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        HashSet<Object> regions = new HashSet<>();
+        regions.add("China");
+        regions.add("China-Taiwan");
+        regions.add("China-HongKong");
+        return regions.contains(value);
+    }
+}
+```
+
+使用：
+
+```java
+@Region
+private String region;
+```
+
+### 校验电话号码
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Constraint(validatedBy = PhoneNumberValidator.class)
+public @interface PhoneNumber {
+    String[] value() default {};
+
+    String message() default "Invalid phone number";
+
+    Class<?>[] groups() default {};
+
+    Class<? extends Payload>[] payload() default {};
+}
+```
+
+```java
+public class PhoneNumberValidator implements ConstraintValidator<PhoneNumber,String> {
+
+    @Override
+    public boolean isValid(String phoneField, ConstraintValidatorContext context) {
+        if (phoneField == null) {
+            // can be null
+            return true;
+        }
+        return phoneField.matches("^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|70)\\d{8}$") && phoneField.length() > 8 && phoneField.length() < 14;
+    }
+}
+```
+
+使用：
+
+```java
+@PhoneNumber(message = "phoneNumber 格式不正确")
+@NotNull(message = "phoneNumber 不能为空")
+private String phoneNumber;
+```
+
 参考文章：  
-[使用 spring validation 完成数据后端校验](https://www.cnkirito.moe/spring-validation/)
+[使用 spring validation 完成数据后端校验](https://www.cnkirito.moe/spring-validation/)  
+[spring-bean-validation](https://github.com/Snailclimb/springboot-guide/blob/master/docs/advanced/spring-bean-validation.md)
