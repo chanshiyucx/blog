@@ -159,17 +159,10 @@ public class AsyncController {
 
 请求接口，控制台打印出下面的内容：
 
-```html
-2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-1] c.c.moemall.admin.lib.AsyncService : My
-ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-5]
-c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-5start this task! 2019-11-15 16:16:59.519 WARN
-20652 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
-2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My
-ThreadPoolTaskExecutor-4start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-6]
-c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:16:59.519 WARN
-20652 --- [lTaskExecutor-3] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task!
-2019-11-15 16:17:00.519 INFO 20652 --- [nio-8090-exec-1] c.c.moemall.admin.lib.AsyncController : Elapsed time:
-1004
+```
+2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-1] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-5] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-5start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
+2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-4start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-6] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-3] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task!
+2019-11-15 16:17:00.519 INFO 20652 --- [nio-8090-exec-1] c.c.moemall.admin.lib.AsyncController : Elapsed time: 1004
 ```
 
 可以看到处理所有任务花费的时间大概是 1s。这与我们自定义的 `ThreadPoolTaskExecutor` 有关，我们配置的核心线程数是 6，然后通过通过下面的代码模拟分配了 6 个任务给系统执行。这样每个线程都会被分配到一个任务，每个任务执行花费时间是 1s，所以处理 6 个任务的总花费时间是 1s。如果把核心线程数的数量改为 3，再次请求这个接口你会发现处理所有任务花费的时间大概是 2s。
@@ -223,14 +216,10 @@ public class AsyncController {
 
 请求接口，控制台打印出下面的内容：
 
-```html
-2019-11-15 16:18:53.504 INFO 22028 --- [nio-8090-exec-3] c.c.moemall.admin.lib.AsyncController : Elapsed time:
-2 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-6] c.c.moemall.admin.lib.AsyncService : My
-ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-1]
-c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:18:53.506 WARN
-22028 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-4start this task!
-2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-5] c.c.moemall.admin.lib.AsyncService : My
-ThreadPoolTaskExecutor-5start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-3]
-c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task! 2019-11-15 16:18:53.506 WARN
-22028 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
+```
+2019-11-15 16:18:53.504 INFO 22028 --- [nio-8090-exec-3] c.c.moemall.admin.lib.AsyncController : Elapsed time: 2
+2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-6] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-1] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-4start this task!
+2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-5] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-5start this task!
+2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-3] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task!
+2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
 ```
