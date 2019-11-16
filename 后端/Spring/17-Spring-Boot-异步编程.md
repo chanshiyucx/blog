@@ -26,7 +26,7 @@ public interface TaskExecutor extends Executor {
 }
 ```
 
-![TaskExecutor](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/TaskExecutor.png)
+![TaskExecutor](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/TaskExecutor.png)
 
 如果没有自定义 `Executor`, Spring 将创建一个 `SimpleAsyncTaskExecutor` 并使用它。
 
@@ -160,9 +160,13 @@ public class AsyncController {
 请求接口，控制台打印出下面的内容：
 
 ```
-2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-1] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-5] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-5start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
-2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-4start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-6] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:16:59.519 WARN 20652 --- [lTaskExecutor-3] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task!
-2019-11-15 16:17:00.519 INFO 20652 --- [nio-8090-exec-1] c.c.moemall.admin.lib.AsyncController : Elapsed time: 1004
+[lTaskExecutor-1] : My ThreadPoolTaskExecutor-1start this task!
+[lTaskExecutor-5] : My ThreadPoolTaskExecutor-5start this task!
+[lTaskExecutor-2] : My ThreadPoolTaskExecutor-2start this task!
+[lTaskExecutor-4] : My ThreadPoolTaskExecutor-4start this task!
+[lTaskExecutor-6] : My ThreadPoolTaskExecutor-6start this task!
+[lTaskExecutor-3] : My ThreadPoolTaskExecutor-3start this task!
+[nio-8090-exec-1] : Elapsed time: 1004
 ```
 
 可以看到处理所有任务花费的时间大概是 1s。这与我们自定义的 `ThreadPoolTaskExecutor` 有关，我们配置的核心线程数是 6，然后通过通过下面的代码模拟分配了 6 个任务给系统执行。这样每个线程都会被分配到一个任务，每个任务执行花费时间是 1s，所以处理 6 个任务的总花费时间是 1s。如果把核心线程数的数量改为 3，再次请求这个接口你会发现处理所有任务花费的时间大概是 2s。
@@ -217,9 +221,68 @@ public class AsyncController {
 请求接口，控制台打印出下面的内容：
 
 ```
-2019-11-15 16:18:53.504 INFO 22028 --- [nio-8090-exec-3] c.c.moemall.admin.lib.AsyncController : Elapsed time: 2
-2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-6] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-6start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-1] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-1start this task! 2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-4] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-4start this task!
-2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-5] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-5start this task!
-2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-3] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-3start this task!
-2019-11-15 16:18:53.506 WARN 22028 --- [lTaskExecutor-2] c.c.moemall.admin.lib.AsyncService : My ThreadPoolTaskExecutor-2start this task!
+[nio-8090-exec-3] : Elapsed time: 2
+[lTaskExecutor-6] : My ThreadPoolTaskExecutor-6start this task!
+[lTaskExecutor-1] : My ThreadPoolTaskExecutor-1start this task!
+[lTaskExecutor-4] : My ThreadPoolTaskExecutor-4start this task!
+[lTaskExecutor-5] : My ThreadPoolTaskExecutor-5start this task!
+[lTaskExecutor-3] : My ThreadPoolTaskExecutor-3start this task!
+[lTaskExecutor-2] : My ThreadPoolTaskExecutor-2start this task!
 ```
+
+### 并发执行
+
+```java
+@Component
+public class AsyncTask {
+
+    @Async
+    public Future<Boolean> doTask1() throws Exception {
+        long start = System.currentTimeMillis();
+        Thread.sleep(1000);
+        long end = System.currentTimeMillis();
+        System.out.println("任务1耗时：" + (end - start) + "毫秒");
+        return new AsyncResult<>(true);
+    }
+
+    @Async
+    public Future<Boolean> doTask2() throws Exception {
+        long start = System.currentTimeMillis();
+        Thread.sleep(600);
+        long end = System.currentTimeMillis();
+        System.out.println("任务2耗时：" + (end - start) + "毫秒");
+        return new AsyncResult<>(true);
+    }
+
+    @Async
+    public Future<Boolean> doTask3() throws Exception {
+        long start = System.currentTimeMillis();
+        Thread.sleep(300);
+        long end = System.currentTimeMillis();
+        System.out.println("任务3耗时：" + (end - start) + "毫秒");
+        return new AsyncResult<>(true);
+    }
+
+}
+```
+
+使用：
+
+```java
+long start = System.currentTimeMillis();
+
+Future<Boolean> a = asyncTask.doTask1();
+Future<Boolean> b = asyncTask.doTask2();
+Future<Boolean> c = asyncTask.doTask3();
+
+while (!a.isDone() || !b.isDone() || !c.isDone()) {
+    if (a.isDone() && b.isDone() && c.isDone()) {
+        break;
+    }
+}
+
+long end = System.currentTimeMillis();
+System.out.println("总耗时：" + (end - start) + "毫秒");
+```
+
+使用异步任务时，总耗时为所有任务中最长耗时的任务，如果去除 `@Async` 注解，总耗时为所有任务耗时累加。
