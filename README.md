@@ -38,6 +38,9 @@
     - [13 WSL 安装 Docker 实录](時雨/2019/13-WSL-安装-Docker-实录.md)
     - [14 Eriri comic reader](時雨/2019/14-Eriri-comic-reader.md)
     - [15 微服务之所见](時雨/2019/15-微服务之所见.md)
+    - [16 Aurora 2.0](時雨/2019/16-Aurora-2.0.md)
+    - [17 jsDelivr 全站托管](時雨/2019/17-jsDelivr-全站托管.md)
+    - [18 两年工作台变迁史](時雨/2019/18-两年工作台变迁史.md)
 - 书斋
   - ES6 标准入门
     - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
@@ -125,11 +128,11 @@
     - [04 Vagrant](后端/Note/04-Vagrant.md)
     - [05 Linux](后端/Note/05-Linux.md)
     - [06 Docker](后端/Note/06-Docker.md)
-    - [07 MySQL](后端/Note/07-MySQL.md)
-    - [08 Lombok](后端/Note/08-Lombok.md)
-    - [09 Swagger](后端/Note/09-Swagger.md)
-    - [10 Mybatis](后端/Note/10-Mybatis.md)
-    - [11 Mysql and Redis](后端/Note/11-Mysql-and-Redis.md)
+    - [07 Lombok](后端/Note/07-Lombok.md)
+    - [08 Swagger](后端/Note/08-Swagger.md)
+    - [09 MySQL](后端/Note/09-MySQL.md)
+    - [10 Redis](后端/Note/10-Redis.md)
+    - [11 Mybatis](后端/Note/11-Mybatis.md)
     - [12 Linux 常用软件安装](后端/Note/12-Linux-常用软件安装.md)
     - [13 CentOS 防火墙](后端/Note/13-CentOS-防火墙.md)
     - [14 Nginx 指北](后端/Note/14-Nginx-指北.md)
@@ -149,10 +152,14 @@
     - [13 Spring Boot Aspect](后端/Spring/13-Spring-Boot-Aspect.md)
     - [14 JWT](后端/Spring/14-JWT.md)
     - [15 HTTP 状态码详解](后端/Spring/15-HTTP-状态码详解.md)
-    - [16 枚举参数验证](后端/Spring/16-枚举参数验证.md)
+    - [16 Spring Boot 异步编程](后端/Spring/16-Spring-Boot-异步编程.md)
+    - [17 Spring Boot 定时任务](后端/Spring/17-Spring-Boot-定时任务.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)
     - [03 Docker FastDFS](后端/Project/03-Docker-FastDFS.md)
     - [04 Docker RocketMQ](后端/Project/04-Docker-RocketMQ.md)
     - [05 Moemall Admin Snippets](后端/Project/05-Moemall-Admin-Snippets.md)
+- 采集
+  - 文档
+    - [01 mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
