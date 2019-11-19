@@ -82,7 +82,21 @@ public CommonListResult<UmsAdminVO> list(Integer pageNum, Integer pageSize) {
 </mapper>
 ```
 
-## 004 添加登录日志
+## 004 批量插入
+
+```xml
+<insert id="insertList">
+    INSERT INTO pms_product_ladder (product_id, count, discount, price) VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+        (#{item.productId,jdbcType=BIGINT},
+        #{item.count,jdbcType=INTEGER},
+        #{item.discount,jdbcType=DECIMAL},
+        #{item.price,jdbcType=DECIMAL})
+    </foreach>
+</insert>
+```
+
+## 005 添加登录日志
 
 ```java
 private void insertLoginLog(String username) {
@@ -101,7 +115,7 @@ private void insertLoginLog(String username) {
 }
 ```
 
-## 005 Mybatis 排序和模糊查询
+## 006 Mybatis 排序和模糊查询
 
 ```java
 @Override
@@ -121,7 +135,7 @@ public CommonListResult<PmsBrand> list(Integer pageNum, Integer pageSize, String
 }
 ```
 
-## 006 Mybatis 批量更新
+## 007 Mybatis 批量更新
 
 ```java
 private void updateRole(Long adminId, List<Long> roleIds) {
@@ -142,7 +156,7 @@ private void updateRole(Long adminId, List<Long> roleIds) {
 }
 ```
 
-## 007 自定义验证注解
+## 008 自定义验证注解
 
 主要实现：
 
@@ -200,7 +214,7 @@ public class FlagValidatorClass implements ConstraintValidator<FlagValidator, In
 private Integer showStatus;
 ```
 
-## 008 简单的文件上传
+## 009 简单的文件上传
 
 ```java
 @RestController
@@ -230,3 +244,175 @@ public class ToolController {
 
 }
 ```
+
+## 010 批量建立和插入关系
+
+```java
+/**
+ * 建立和插入关系
+ *
+ * @param dao       可以操作的 DAO
+ * @param dataList  要插入的数据
+ * @param productId 建立关系的 id
+ */
+private void relateAndInsertList(Object dao, List dataList, Long productId) {
+    try {
+        if (CollectionUtils.isEmpty(dataList)) return;
+        for (Object item : dataList) {
+            Method setId = item.getClass().getMethod("setId", Long.class);
+            setId.invoke(item, (Long) null);
+            Method setProductId = item.getClass().getMethod("setProductId", Long.class);
+            setProductId.invoke(item, productId);
+        }
+        Method insertList = dao.getClass().getMethod("insertList", List.class);
+        insertList.invoke(dao, dataList);
+    } catch (Exception e) {
+        throw new RuntimeException(e.getMessage());
+    }
+}
+```
+
+## 011 批量更新状态
+
+```java
+@Override
+public int updateDeleteStatus(List<Long> ids, Integer deleteStatus) {
+    PmsProduct record = new PmsProduct();
+    record.setDeleteStatus(deleteStatus);
+    PmsProductExample example = new PmsProductExample();
+    example.createCriteria().andIdIn(ids);
+    return productMapper.updateByExampleSelective(record, example);
+}
+```
+
+## 012 条件查询
+
+如果提供关键字，则根据关键字和删除状态搜索，否则只按删除状态搜索。
+
+```java
+@Override
+public List<PmsProduct> list(String keyword) {
+    PmsProductExample productExample = new PmsProductExample();
+    PmsProductExample.Criteria criteria = productExample.createCriteria();
+    criteria.andDeleteStatusEqualTo(0);
+    if(!StringUtils.isEmpty(keyword)){
+        criteria.andNameLike("%" + keyword + "%");
+        productExample.or().andDeleteStatusEqualTo(0).andProductSnLike("%" + keyword + "%");
+    }
+    return productMapper.selectByExample(productExample);
+}
+```
+
+**需求 1：where 查询，需要支持（a or b or c）and d**，也就是 a、b、c 三个条件是或的关系，然后再与 d 相与。
+
+```java
+Example e = new Example(User.class);
+Example.Criteria c = e.createCriteria();
+
+//关键字查询部分
+String keyword = pageReq.getKeyword();
+if (StringUtils.isNotEmpty(keyword)) {
+    c.orEqualTo("userName", keyword).orEqualTo("policeNo", keyword).orEqualTo("realName", keyword);
+}
+//部门查询部门
+Example.Criteria criteria = e.createCriteria();
+criteria.andEqualTo("departmentId", departmentId);
+e.and(criteria);
+```
+
+**需求 2：(a=? And b=?) or (a=? And c=?)**
+
+写法 1：
+
+```java
+DemoExample example=new DemoExample();
+
+DemoExample.Criteria criteria1=example.createCriteria();
+criteria1.andAEqualTo(?).andBEqualTo(?);
+
+DemoExample.Criteria criteria2=example.createCriteria();
+criteria2.andAEqualTo(?).andCEqualTo(?);
+
+example.or(criteria2);
+```
+
+写法 2：
+
+```java
+DemoExample example=new DemoExample();
+
+example.or().andAEqualTo(?).andBEqualTo(?);
+example.or().andAEqualTo(?).andCEqualTo(?);
+```
+
+## 013 模糊查询
+
+```xml
+ <select id="getList" resultMap="com.chanshiyu.moemall.mbg.mapper.OmsOrderMapper.BaseResultMap">
+    SELECT *
+    FROM oms_order
+    WHERE delete_status = 0
+    <if test="queryParam.orderSn!=null and queryParam.orderSn!=''">
+        AND order_sn = #{queryParam.orderSn}
+    </if>
+    <if test="queryParam.status!=null">
+        AND `status` = #{queryParam.status}
+    </if>
+    <if test="queryParam.sourceType!=null">
+        AND source_type = #{queryParam.sourceType}
+    </if>
+    <if test="queryParam.orderType!=null">
+        AND order_type = #{queryParam.orderType}
+    </if>
+    <if test="queryParam.createTime!=null and queryParam.createTime!=''">
+        AND create_time LIKE concat(#{queryParam.createTime},"%")
+    </if>
+    <if test="queryParam.receiverKeyword!=null and queryParam.receiverKeyword!=''">
+        AND (
+        receiver_name LIKE concat("%",#{queryParam.receiverKeyword},"%")
+        OR receiver_phone LIKE concat("%",#{queryParam.receiverKeyword},"%")
+        )
+    </if>
+</select>
+```
+
+### 014 批量更新
+
+```xml
+<update id="delivery">
+    UPDATE oms_order
+    SET
+    delivery_sn = CASE id
+    <foreach collection="list" item="item">
+        WHEN #{item.orderId} THEN #{item.deliverySn}
+    </foreach>
+    END,
+    delivery_company = CASE id
+    <foreach collection="list" item="item">
+        WHEN #{item.orderId} THEN #{item.deliveryCompany}
+    </foreach>
+    END,
+    delivery_time = CASE id
+    <foreach collection="list" item="item">
+        WHEN #{item.orderId} THEN now()
+    </foreach>
+    END,
+    `status` = CASE id
+    <foreach collection="list" item="item">
+        WHEN #{item.orderId} THEN 2
+    </foreach>
+    END
+    WHERE
+    id IN
+    <foreach collection="list" item="item" separator="," open="(" close=")">
+        #{item.orderId}
+    </foreach>
+    AND `status` = 1
+</update>
+```
+
+## 概念
+
+### SKU、SPU
+
+SKU（Stock Keeping Unit）是指库存量单位，SPU（Standard Product Unit）是指标准产品单位。举个例子：iphone xs 是一个 SPU，而 iphone xs 公开版 64G 银色是一个 SKU。

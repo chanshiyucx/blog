@@ -773,3 +773,90 @@ User findByColumn(@Param("column") String column, @Param("value") String value);
   </foreach>
 </insert>
 ```
+
+### 批量查询
+
+```xml
+WHERE id IN
+  <foreach collection="ids" item="item" index="index" open="(" separator="," close=")" >
+      #{item}
+  </foreach>
+
+
+<if test="tags!=null">
+  AND
+  <foreach collection="tags" item="tag" index="index" open=" (" separator=" OR " close=")">
+       d.tag LIKE CONCAT('%', #{tag}, '%')
+  </foreach>
+</if>
+```
+
+`CONCAT('%', #{tag}, '%')` 可以用 `bind` 实现：
+
+```xml
+<select id="selectBlogsLike" resultType="Blog">
+    <bind name="pattern" value="'%' + title + '%'" />
+    SELECT * FROM BLOG
+    WHERE title LIKE #{pattern}
+</select>
+```
+
+### 时间比较
+
+```xml
+WHERE create_time <![CDATA[>=]]> #{startTime} AND create_time <![CDATA[<=]]> #{endTime}
+WHERE create_time BETWEEN #{startTime} AND #{endTime}
+WHERE create_time BETWEEN CONCAT(DATE(#{startDate})," 00:00:00") AND CONCAT(DATE(#{endDate})," 23:59:59")
+WHERE create_time BETWEEN DATE(#{startDate}) AND DATE_ADD(DATE(#{endDate}),INTERVAL 1 DAY)
+```
+
+### 批量更新
+
+**更新单条记录：**
+
+```xml
+UPDATE course SET name = 'course1' WHERE id = 'id1';
+```
+
+**更新多条记录的同一个字段为同一个值：**
+
+```xml
+UPDATE course SET name = 'course1' WHERE id in ('id1', 'id2', 'id3);
+```
+
+**更新多条记录为多个字段为不同的值：**
+
+比较普通的写法，是通过循环，依次执行 update 语句：
+
+```xml
+<update id="updateBatch"  parameterType="java.util.List">
+    <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+        update course
+        <set>
+            name=${item.name}
+        </set>
+        where id = ${item.id}
+    </foreach>
+</update>
+```
+
+这样做一条记录 update 一次，性能比较差，容易造成阻塞。
+
+MySQL 没有提供直接的方法来实现批量更新，但可以使用 case when 语法来实现这个功能：
+
+```xml
+UPDATE course
+    SET name = CASE id
+        WHEN 1 THEN 'name1'
+        WHEN 2 THEN 'name2'
+        WHEN 3 THEN 'name3'
+    END,
+    title = CASE id
+        WHEN 1 THEN 'New Title 1'
+        WHEN 2 THEN 'New Title 2'
+        WHEN 3 THEN 'New Title 3'
+    END
+WHERE id IN (1,2,3)
+```
+
+这条 sql 的意思是，如果 id 为 1，则 name 的值为 name1，title 的值为 New Title1；依此类推。

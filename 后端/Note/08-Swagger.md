@@ -148,6 +148,13 @@ public class ProductCategoryController {
         return ResultVO.ok(page.getContent(), resultAttributesVO);
     }
 
+    @ApiOperation(value = "商品库存", notes = "模糊搜索库存")
+    @GetMapping("/sku/{pid}")
+    public CommonResult<List<PmsSkuStock>> getList(@PathVariable Long pid, @RequestParam(value = "keyword", required = false) String keyword) {
+        List<PmsSkuStock> skuStockList = skuStockService.getList(pid, keyword);
+        return CommonResult.success(skuStockList);
+    }
+
 }
 ```
 
