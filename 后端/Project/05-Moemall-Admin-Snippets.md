@@ -61,6 +61,14 @@ public CommonListResult<UmsAdminVO> list(Integer pageNum, Integer pageSize) {
     ResultAttributes attributes = new ResultAttributes(page.getPageNum(), page.getPageSize(), page.getTotal());
     return new CommonListResult<>(page.getResult(), attributes);
 }
+
+/** 未尝试 */
+@Override
+@Transactional(propagation = Propagation.SUPPORTS)
+public List<OmsOrder> list(OmsOrderQueryParam queryParam, Integer pageSize, Integer pageNum) {
+    PageHelper.startPage(pageNum, pageSize);
+    return orderDao.getList(queryParam);
+}
 ```
 
 ```xml

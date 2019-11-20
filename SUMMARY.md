@@ -143,6 +143,7 @@
     - [15 HTTP 状态码详解](后端/Spring/15-HTTP-状态码详解.md)
     - [16 Spring Boot 异步编程](后端/Spring/16-Spring-Boot-异步编程.md)
     - [17 Spring Boot 定时任务](后端/Spring/17-Spring-Boot-定时任务.md)
+    - [18 Spring Boot 管理 bean](后端/Spring/18-Spring-Boot-管理-bean.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)

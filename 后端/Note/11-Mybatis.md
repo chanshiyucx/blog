@@ -860,3 +860,18 @@ WHERE id IN (1,2,3)
 ```
 
 这条 sql 的意思是，如果 id 为 1，则 name 的值为 name1，title 的值为 New Title1；依此类推。
+
+### 查询结果排序
+
+单字段排序：
+
+```java
+example.setOrderByClause("`AFTER_CHECK_TIME` DESC");
+```
+
+多个字段排序：
+
+```java
+// 查询结果先按`index`字段排序，如果相同，则按`AFTER_CHECK_TIME`排序
+example.setOrderByClause("`index` ASC,`AFTER_CHECK_TIME` ASC");
+```
