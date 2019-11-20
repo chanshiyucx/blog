@@ -125,6 +125,7 @@
     - [12 Linux 常用软件安装](后端/Note/12-Linux-常用软件安装.md)
     - [13 CentOS 防火墙](后端/Note/13-CentOS-防火墙.md)
     - [14 Nginx 指北](后端/Note/14-Nginx-指北.md)
+    - [15 SQL 语句 where 1=1](后端/Note/15-SQL语句where1=1.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
     - [02 Spring Validation](后端/Spring/02-Spring-Validation.md)
