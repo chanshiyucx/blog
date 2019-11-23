@@ -52,13 +52,15 @@
     - [02 JavaScript 正则技巧](前端/JavaScript/02-JavaScript-正则技巧.md)
     - [03 从浏览器解析 JS 运行机制](前端/JavaScript/03-从浏览器解析-JS-运行机制.md)
     - [04 Canvas 基础用法](前端/JavaScript/04-Canvas-基础用法.md)
-    - [05 Flex 弹性布局](前端/JavaScript/05-Flex-弹性布局.md)
-    - [06 Blob Url And Data Url](前端/JavaScript/06-Blob-Url-And-Data-Url.md)
-    - [07 函数节流与函数防抖](前端/JavaScript/07-函数节流与函数防抖.md)
-    - [08 排序算法初探](前端/JavaScript/08-排序算法初探.md)
+    - [05 Blob Url And Data Url](前端/JavaScript/05-Blob-Url-And-Data-Url.md)
+    - [06 函数节流与函数防抖](前端/JavaScript/06-函数节流与函数防抖.md)
+    - [07 排序算法初探](前端/JavaScript/07-排序算法初探.md)
   - Node
     - [01 Node Tips](前端/Node/01-Node-Tips.md)
     - [02 七天学会 NodeJS](前端/Node/02-七天学会-NodeJS.md)
+  - CSS
+    - [01 Flex 弹性布局](前端/JavaScript/01-Flex-弹性布局.md)
+    - [02 Position 定位](前端/JavaScript/02-Position-定位.md)
   - Note
     - [01 Note](前端/Note/01-Note.md)
     - [02 Interview](前端/Note/02-Interview.md)
