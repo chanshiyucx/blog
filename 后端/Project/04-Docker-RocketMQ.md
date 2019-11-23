@@ -28,6 +28,19 @@ RocketMQ 优势：
 - 支持 Consumer 端 Tag 过滤，减少不必要的网络传输（RabbitMQ 和 Kafka 不支持）
 - 支持重复消费（RabbitMQ 不支持，Kafka 支持）
 
+RocketMQ 有 namesrv 和 broker 组成。
+
+namesrv 的功能如下：
+
+- 接收 broker 的请求注册 broker 路由信息（master 和 slave）
+- 接收 client 的请求根据某个 topic 获取所有到 broker 的路由信息
+
+broker 则是 RocketMQ 真正存储消息的地方，broker 消息存储主要包括 3 个部分，分别 commitLog 的存储、consumeQueue 的存储、index 的存储。
+
+Producer 和 Consumer 都是通过 namesrv 获取 broker 路由信息，连接到 broker 生产消费消息，namesrv 和 broker 可以分别集群部署，生产者消费者同样可以分别集群部署，物理部署架构图如下：
+
+![RocketMQ](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/RocketMQ.jpg)
+
 ## Docker 安装 RocketMQ
 
 ### docker-compose.yml
@@ -89,6 +102,8 @@ networks:
     name: rmq
     driver: bridge
 ```
+
+需要注意 rocketmq-broker 与 rokcetmq-console 都需要与 rokcetmq-nameserver 连接，需要知道 nameserver ip。使用 docker-compose 之后，上面三个 docker 容器将会一起编排，**可以直接使用容器名代替容器 ip，如这里 nameserver 容器名 rmqnamesrv**。
 
 ### broker.conf
 
@@ -191,6 +206,19 @@ flushDiskType=ASYNC_FLUSH
 # sendMessageThreadPoolNums=128
 # 拉消息线程池数量
 # pullMessageThreadPoolNums=128
+```
+
+精简配置文件：
+
+```
+brokerClusterName = DefaultCluster
+brokerName = broker-a
+brokerId = 0
+deleteWhen = 04
+fileReservedTime = 48
+brokerRole = ASYNC_MASTER
+flushDiskType = ASYNC_FLUSH
+brokerIP1=192.168.205.10
 ```
 
 配置完成，启动：
@@ -352,3 +380,7 @@ public class RocketmqApplication implements CommandLineRunner {
 
 }
 ```
+
+参考文章：
+[基于 Docker 安装 RocketMQ](https://www.funtl.com/zh/spring-cloud-alibaba/%E5%9F%BA%E4%BA%8E-Docker-%E5%AE%89%E8%A3%85-RocketMQ.html)
+[rocketmq 部署启动指南-Docker 版](http://www.justdojava.com/2019/08/26/rocketmq-creator/)

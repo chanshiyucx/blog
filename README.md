@@ -4,6 +4,10 @@
 
 [![Author](https://img.shields.io/badge/author-chanshiyucx-blue.svg?style=flat-square)](https://chanshiyu.com) [![Email](https://img.shields.io/badge/Emali%20me-me@chanshiyu.com-green.svg?style=flat-square)](http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=tNnR9Nfc1drH3N3NwZrX29k)
 
+Code is Long, Life is Short.
+
+まだ五里霧中です。
+
 | 目录 | 描述                                                                  |
 | :--- | :-------------------------------------------------------------------- |
 | 時雨 | 日常博文，记录自己工作与生活中的那点小事                              |
@@ -12,6 +16,7 @@
 | 后端 | 后端知识库，包括且不限于 Java、Spring、Linux、MySQL、Nginx 等知识总结 |
 | 采集 | 优秀的博客文章或资料，采集以备之后学习                                |
 
+- [README](README.md)
 - 時雨
   - 2017
     - [01 网站动态标题的两种方式](時雨/2017/01-网站动态标题的两种方式.md)
@@ -136,6 +141,7 @@
     - [12 Linux 常用软件安装](后端/Note/12-Linux-常用软件安装.md)
     - [13 CentOS 防火墙](后端/Note/13-CentOS-防火墙.md)
     - [14 Nginx 指北](后端/Note/14-Nginx-指北.md)
+    - [15 SQL 语句 where 1=1](后端/Note/15-SQL语句where1=1.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
     - [02 Spring Validation](后端/Spring/02-Spring-Validation.md)
@@ -154,6 +160,7 @@
     - [15 HTTP 状态码详解](后端/Spring/15-HTTP-状态码详解.md)
     - [16 Spring Boot 异步编程](后端/Spring/16-Spring-Boot-异步编程.md)
     - [17 Spring Boot 定时任务](后端/Spring/17-Spring-Boot-定时任务.md)
+    - [18 Spring Boot 管理 bean](后端/Spring/18-Spring-Boot-管理-bean.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Netty 聊天系统](后端/Project/02-Netty-聊天系统.md)
