@@ -247,7 +247,7 @@ Spring Cloud Stream 内部有两个概念：`Binder` 和 `Binding`。
 
 Binding 在消息中间件与应用程序提供的 Provider 和 Consumer 之间提供了一个桥梁，实现了开发者只需使用应用程序的 Provider 或 Consumer 生产或消费数据即可，屏蔽了开发者与底层消息中间件的接触。
 
-![RocketMQ中间件](/POI/201911/RocketMQ中间件.png)
+![RocketMQ中间件](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/RocketMQ中间件.png)
 
 ## 消息生产者
 
