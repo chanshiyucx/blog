@@ -231,6 +231,24 @@ docker-compose up -d
 
 ![RocketMQ控制台](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/RocketMQ%E6%8E%A7%E5%88%B6%E5%8F%B0.png)
 
+## Spring Cloud Stream
+
+Spring Cloud Stream 是一个用于构建基于消息的微服务应用框架。它基于 SpringBoot 来创建具有生产级别的单机 Spring 应用，并且使用 `Spring Integration` 与 Broker 进行连接。
+
+Spring Cloud Stream 提供了消息中间件配置的统一抽象，推出了 publish-subscribe、consumer groups、partition 这些统一的概念（Kafka、RabbitMQ、RocketMQ 都是消息中间件）。
+
+Spring Cloud Stream 内部有两个概念：`Binder` 和 `Binding`。
+
+**Binder: 跟外部消息中间件集成的组件，用来创建 Binding，各消息中间件都有自己的 Binder 实现。**
+
+比如 Kafka 的实现 KafkaMessageChannelBinder，RabbitMQ 的实现 RabbitMessageChannelBinder 以及 RocketMQ 的实现 RocketMQMessageChannelBinder。
+
+**Binding: 包括 Input Binding 和 Output Binding。**
+
+Binding 在消息中间件与应用程序提供的 Provider 和 Consumer 之间提供了一个桥梁，实现了开发者只需使用应用程序的 Provider 或 Consumer 生产或消费数据即可，屏蔽了开发者与底层消息中间件的接触。
+
+![RocketMQ中间件](/POI/201911/RocketMQ中间件.png)
+
 ## 消息生产者
 
 ### pom.xml
@@ -381,6 +399,7 @@ public class RocketmqApplication implements CommandLineRunner {
 }
 ```
 
-参考文章：
-[基于 Docker 安装 RocketMQ](https://www.funtl.com/zh/spring-cloud-alibaba/%E5%9F%BA%E4%BA%8E-Docker-%E5%AE%89%E8%A3%85-RocketMQ.html)
-[rocketmq 部署启动指南-Docker 版](http://www.justdojava.com/2019/08/26/rocketmq-creator/)
+参考文章：  
+[基于 Docker 安装 RocketMQ](https://www.funtl.com/zh/spring-cloud-alibaba/%E5%9F%BA%E4%BA%8E-Docker-%E5%AE%89%E8%A3%85-RocketMQ.html)  
+[rocketmq 部署启动指南-Docker 版](http://www.justdojava.com/2019/08/26/rocketmq-creator/)  
+[Spring Alibaba RocketMQ](https://github.com/alibaba/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/rocketmq-example/readme-zh.md)
