@@ -443,7 +443,7 @@ transient Entry[] table;
 
 Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值和散列桶取模运算结果相同的 Entry。
 
-![HashMap](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/HashMap.png)
+![HashMap](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/HashMap.png)
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -519,7 +519,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-![HashMap 拉链法](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/HashMap2.png)
+![HashMap 拉链法](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/HashMap2.png)
 
 #### 3. put 操作
 
@@ -852,7 +852,7 @@ final Segment<K,V>[] segments;
 static final int DEFAULT_CONCURRENCY_LEVEL = 16;
 ```
 
-![ConcurrentHashMap](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/ConcurrentHashMap.png)
+![ConcurrentHashMap](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/ConcurrentHashMap.png)
 
 #### 2. size 操作
 
