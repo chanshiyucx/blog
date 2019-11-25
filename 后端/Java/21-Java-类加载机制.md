@@ -4,7 +4,7 @@
 
 ## 类的生命周期
 
-![类的生命周期](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/类的生命周期.png)
+![类的生命周期](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/类的生命周期.png)
 
 包括以下 7 个阶段：
 
@@ -170,7 +170,7 @@ System.out.println(ConstClass.HELLOWORLD);
 
 下图展示了类加载器之间的层次关系，称为双亲委派模型（Parents Delegation Model）。该模型要求除了顶层的启动类加载器外，其它的类加载器都要有自己的父类加载器。这里的父子关系一般通过组合关系（Composition）来实现，而不是继承关系（Inheritance）。
 
-![双亲委派模型](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/双亲委派模型.png)
+![双亲委派模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/双亲委派模型.png)
 
 ### 1. 工作过程
 

@@ -176,7 +176,7 @@ public class Overloading {
 
 > 关于重载是不是多态有多种论调，有些人认为重载不属于多态的体现，可以参考：[Java 中多态的实现方式](https://github.com/hollischuang/toBeTopJavaer/blob/master/basics/java-basic/polymorphism.md)
 
-![重写与重载](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/overloading-vs-overriding.png)
+![重写与重载](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/overloading-vs-overriding.png)
 
 ## 多态
 

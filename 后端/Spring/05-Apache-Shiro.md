@@ -2,13 +2,13 @@
 
 ## 整体架构
 
-![Apache Shiro 整体架构](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Apache_Shiro_%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84.png)
+![Apache Shiro 整体架构](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Apache_Shiro_整体结构.png)
 
 ## 认证授权
 
-![Shiro 认证](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Shiro%E8%AE%A4%E8%AF%81.png)
+![Shiro 认证](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Shiro认证.png)
 
-![Shiro 授权](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Shiro%E6%8E%88%E6%9D%83.png)
+![Shiro 授权](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Shiro授权.png)
 
 引入依赖：
 

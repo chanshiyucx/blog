@@ -146,7 +146,7 @@ private void fastRemove(int index) {
 
 之后下一次循环执行到 `String str = (String) var3.next();` 的时候，就会调用 `checkForComodification` 方法，此时一个为 3，一个为 4，就只好抛出异常 `ConcurrentModificationException` 了。
 
-![fastRemove](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/java-fail-fast-1.png)
+![fastRemove](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/java-fail-fast-1.png)
 
 总结：在 for each 循环中，集合遍历其实是通过迭代器 Iterator 配合 while 循环实现的，但是元素的 `remove` 却直接使用的集合类自身的方法。这就导致 Iterator 在遍历的时候，会发现元素在自己不知情的情况下被修改了，它觉得很难接受，就抛出了异常。
 

@@ -15,7 +15,7 @@ Feature:
 
 下面是一些预览图：
 
-![首页列表](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/eriri_%E9%A6%96%E9%A1%B5%E5%88%97%E8%A1%A8.png#full)
-![添加目录](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/eriri_%E6%B7%BB%E5%8A%A0%E7%9B%AE%E5%BD%95.png#full)
-![双页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/eriri_%E5%8F%8C%E9%A1%B5%E6%A8%A1%E5%BC%8F.png#full)
-![单页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/%E5%8D%95%E9%A1%B5%E6%A8%A1%E5%BC%8F.png#full)
+![首页列表](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_首页列表.png#full)
+![添加目录](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_添加目录.png#full)
+![双页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_双页模式.png#full)
+![单页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_单页模式.png#full)

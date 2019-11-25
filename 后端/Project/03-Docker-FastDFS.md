@@ -24,7 +24,7 @@ FastDFS 服务端有两个角色：跟踪器（tracker）和存储节点（stora
 - tracker 返回一台可用的 storage
 - client 直接和 storage 通讯完成文件下载
 
-![fastdfs](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/12_fastdfs_%E6%B5%81%E7%A8%8B.jpg#full)
+![fastdfs](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/fastdfs_流程.jpg#full)
 
 ## 准备依赖
 
@@ -39,7 +39,7 @@ FastDFS 服务端有两个角色：跟踪器（tracker）和存储节点（stora
 
 ## 配置文件
 
-![fastdfs_文件上传](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Java%E4%BB%BF%E5%BE%AE%E4%BF%A1%E5%85%A8%E6%A0%88/fastdfs_%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.png#full)
+![fastdfs_文件上传](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/fastdfs_文件上传.png#full)
 
 ### docker-compose.yml
 

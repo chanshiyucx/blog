@@ -9,7 +9,7 @@ List 是单列集合 Collection 下的一个实现类，List 的实现接口又�
 
 ArrayList 是我们在开发中最常用的数据存储容器，它的底层是通过数组来实现的。我们在集合里面可以存储任何类型的数据，而且他是一个顺序容器，存放的数据顺序就是和我们放入的顺序是一致的，而且他还允许我们放入 null 元素，我们可以画个图理解一下。
 
-![ArrayList](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/ArrayList.jpg)
+![ArrayList](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/ArrayList.jpg)
 
 上图数组里面存放的元素的引用，再分析下源码。
 
@@ -137,7 +137,7 @@ private class Itr implements Iterator<E> {
 
 LinkedList 的底层是一个双向链表的结构，它可以进行高效的插入和移除的操作。
 
-![LinkedList 节点](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LinkedList1.jpg)
+![LinkedList 节点](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LinkedList1.jpg)
 
 LinkedList 是由很多个这样的节点组成的：
 
@@ -147,7 +147,7 @@ LinkedList 是由很多个这样的节点组成的：
 
 整体结构：
 
-![LinkedList 整体结构](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LinkedList2.jpg)
+![LinkedList 整体结构](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LinkedList2.jpg)
 
 图解中可以看出 LinkedList 有好多的 Node，并且还有 first 和 last 这两个变量保存头部和尾部节点的信息。
 

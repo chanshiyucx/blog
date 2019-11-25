@@ -39,7 +39,7 @@ broker 则是 RocketMQ 真正存储消息的地方，broker 消息存储主要�
 
 Producer 和 Consumer 都是通过 namesrv 获取 broker 路由信息，连接到 broker 生产消费消息，namesrv 和 broker 可以分别集群部署，生产者消费者同样可以分别集群部署，物理部署架构图如下：
 
-![RocketMQ](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/RocketMQ.jpg)
+![RocketMQ](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/RocketMQ.jpg)
 
 ## Docker 安装 RocketMQ
 
@@ -229,7 +229,7 @@ docker-compose up -d
 
 访问 `http://rmqIP:8080` 进入控制台。
 
-![RocketMQ控制台](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/RocketMQ%E6%8E%A7%E5%88%B6%E5%8F%B0.png)
+![RocketMQ控制台](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/RocketMQ控制台.png)
 
 ## Spring Cloud Stream
 
@@ -247,7 +247,7 @@ Spring Cloud Stream 内部有两个概念：`Binder` 和 `Binding`。
 
 Binding 在消息中间件与应用程序提供的 Provider 和 Consumer 之间提供了一个桥梁，实现了开发者只需使用应用程序的 Provider 或 Consumer 生产或消费数据即可，屏蔽了开发者与底层消息中间件的接触。
 
-![RocketMQ中间件](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/RocketMQ中间件.png)
+![RocketMQ中间件](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/RocketMQ中间件.png)
 
 ## 消息生产者
 

@@ -2,7 +2,7 @@
 
 ## 线程状态转换
 
-![线程状态转换](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/线程状态转换.png)
+![线程状态转换](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/线程状态转换.png)
 
 ### 新建（New）
 
@@ -236,8 +236,8 @@ public static void main(String[] args) throws InterruptedException {
 
 ```html
 Main run java.lang.InterruptedException: sleep interrupted at java.lang.Thread.sleep(Native Method) at
-InterruptExample.lambda$main$0(InterruptExample.java:5) at InterruptExample$$Lambda$1/713338599.run(Unknown
-Source) at java.lang.Thread.run(Thread.java:745)
+InterruptExample.lambda$main$0(InterruptExample.java:5) at InterruptExample$$Lambda$1/713338599.run(Unknown Source) at
+java.lang.Thread.run(Thread.java:745)
 ```
 
 ### interrupted()
@@ -297,11 +297,9 @@ public static void main(String[] args) {
 
 ```html
 Main run java.lang.InterruptedException: sleep interrupted at java.lang.Thread.sleep(Native Method) at
-ExecutorInterruptExample.lambda$main$0(ExecutorInterruptExample.java:9) at
-ExecutorInterruptExample$$Lambda$1/1160460865.run(Unknown Source) at
+ExecutorInterruptExample.lambda$main$0(ExecutorInterruptExample.java:9) at ExecutorInterruptExample$$Lambda$1/1160460865.run(Unknown Source) at
 java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) at
-java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) at
-java.lang.Thread.run(Thread.java:745)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) at java.lang.Thread.run(Thread.java:745)
 ```
 
 如果只想中断 Executor 中的一个线程，可以通过使用 `submit()` 方法来提交一个线程，它会返回一个 Future<?> 对象，通过调用该对象的 `cancel(true)` 方法就可以中断线程。
@@ -669,7 +667,7 @@ AQS（AbstractQueuedSynchronizer），即队列同步器。它是构建锁或者
 
 维护了一个计数器 cnt，每次调用 `countDown()` 方法会让计数器的值减 1，减到 0 的时候，那些因为调用 `await()` 方法而在等待的线程就会被唤醒。
 
-![CountDownLatch](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/CountDownLatch.png)
+![CountDownLatch](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/CountDownLatch.png)
 
 ```java
 public class CountdownLatchExample {
@@ -718,7 +716,7 @@ public CyclicBarrier(int parties) {
 }
 ```
 
-![CyclicBarrier](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/CyclicBarrier.png)
+![CyclicBarrier](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/CyclicBarrier.png)
 
 ```java
 public class CyclicBarrierExample {
@@ -952,4 +950,4 @@ public class ForkJoinPool extends AbstractExecutorService
 
 ForkJoinPool 实现了工作窃取算法来提高 CPU 的利用率。每个线程都维护了一个双端队列，用来存储需要执行的任务。工作窃取算法允许空闲的线程从其它线程的双端队列中窃取一个任务来执行。窃取的任务必须是最晚的任务，避免和队列所属线程发生竞争。例如下图中，Thread2 从 Thread1 的队列中拿出最晚的 Task1 任务，Thread1 会拿出 Task2 来执行，这样就避免发生竞争。但是如果队列中只有一个任务时还是会发生竞争。
 
-![ForkJoin](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/11/ForkJoin.png)
+![ForkJoin](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/ForkJoin.png)

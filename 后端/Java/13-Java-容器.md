@@ -4,7 +4,7 @@
 
 ## Collection
 
-![Collection](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/collection.png)
+![Collection](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/collection.png)
 
 ### Set
 
@@ -25,7 +25,7 @@
 
 ## Map
 
-![Map](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/map.png)
+![Map](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/map.png)
 
 - TreeMap：基于红黑树实现。
 - HashMap：基于哈希表实现。
@@ -36,7 +36,7 @@
 
 ### 迭代器模式
 
-![迭代器模式](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/迭代器模式.png)
+![迭代器模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/迭代器模式.png)
 
 Collection 继承了 Iterable 接口，其中的 `iterator()` 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
@@ -408,7 +408,7 @@ CopyOnWriteArrayList 在写操作的同时允许读操作，大大提高了读�
 
 基于双向链表实现，使用 Node 存储链表节点信息。
 
-![LinkedList](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LinkedList.png)
+![LinkedList](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LinkedList.png)
 
 ```java
 private static class Node<E> {

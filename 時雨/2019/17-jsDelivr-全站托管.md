@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/chanshiyucx/poi/master/2019/1.jpg
 如果你有绑定自有域名，也可以通过绑定域名来访问：
 
 ```
-https://chanshiyu.com/poi/2019/1.jpg
+https://chanshiyu.com/yoi/2019/1.jpg
 ```
 
 然后便可以使用 jsDelivr CDN 加速访问图片，格式如下：
@@ -41,7 +41,7 @@ https://cdn.jsdelivr.net/gh/user/repo@version/file
 具体到上传的这张图片地址便是：
 
 ```
-https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/1.jpg
+https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/1.jpg
 ```
 
 泪，一下子就流了下来 இ௰இ
@@ -54,8 +54,7 @@ https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/1.jpg
 
 ```js
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === 'production' ? `//cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/` : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? `//cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/` : '/'
 }
 ```
 

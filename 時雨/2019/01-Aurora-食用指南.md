@@ -49,7 +49,7 @@ Aurora 使用 Github api 做后台数据托管。所以需要新建一个仓库�
 
 由于 Github api 有访问次数限制，所以需要申请 token 来解除访问限制，[申请地址戳这里](https://github.com/settings/tokens/new)。将申请的 token 从中间随意拆成两部分填入配置项，拆分的目的避免代码提交的时候 github 对其进行检测，导致 token 失效。
 
-![Github Token](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/github_token.png)
+![Github Token](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/github_token.png)
 
 ```javascript
 // github 用户名
@@ -64,7 +64,7 @@ token: ['0ad1a0539c5b96fd18fa', 'aaafba9c7d1362a5746c'],
 
 Aurora 主题的文章阅读次数与 Valine 评论系统都是采用 [Leancloud](https://leancloud.cn/) 存储。注册一个 Leancloud 账号并新建一个应用，将应用 key 填入相应配置项。 **然后创建三个 Class，Comment 用来存储游客评论、Counter 用来存储文章热度、Visitor 用来统计友链访问次数，注意新建时选择表的访问权限无限制。**
 
-![Leancloud_应用_Key](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Leancloud_应用_Key.png)
+![Leancloud_应用_Key](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Leancloud_应用_Key.png)
 
 ```javascript
 /**
@@ -82,9 +82,9 @@ Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理
 
 首先需要申请 [GitHub Application](https://github.com/settings/applications/new)，跳转地址填写你的博客域名，如果你使用 github pages 来托管你的网站，你也可以使用 `https://chanshiyucx.github.io` 域名。最后将生成的 `Client ID` 和 `Client Secret` 填入相应配置项。**在开发环境调试时 Gitlak 无法展示是正常现象，发布到线上后会正常显示。**
 
-![申请 GitHub Application](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/申请_GitHub_Application.png)
+![申请 GitHub Application](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/申请_GitHub_Application.png)
 
-![生成 clientID 和 clientSecret](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/生成_clientID_和_clientSecret.png)
+![生成 clientID 和 clientSecret](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/生成_clientID_和_clientSecret.png)
 
 ```javascript
 /**
@@ -120,13 +120,13 @@ JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写
 
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
-![文章模板](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/文章模板.png)
+![文章模板](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/文章模板.png)
 
 ### 心情模板
 
 注意心情 issues 状态是 `closed` 的，且需要打上 `Inspiration` 的 Labels，其他不做约束。
 
-![书单、友链、关于标签](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/页面模板.png)
+![书单、友链、关于标签](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/页面模板.png)
 
 ### 友链模板
 
@@ -153,7 +153,7 @@ progress: 正在阅读...
 rating: 5,
 postTitle: ES6 标准入门
 postLink: //chanshiyu.com/#/post/12
-cover: //chanshiyu.com/poi/2019/ES6-标准入门.jpg
+cover: //chanshiyu.com/yoi/2019/ES6-标准入门.jpg
 link: //www.duokan.com/book/169714
 description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 ES6 了...他转身朝着黑板，拿起一支粉笔，使出全身的力量，写了两个大字：“ES6 万岁！”（《最后一课》）。
 ```
@@ -164,7 +164,7 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 
 ### 添加分类
 
-![添加分类](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/Aurora%E5%88%86%E7%B1%BB.png)
+![添加分类](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Aurora分类.png)
 
 ## 部署
 

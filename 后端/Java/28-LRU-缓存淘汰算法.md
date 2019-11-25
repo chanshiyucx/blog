@@ -11,11 +11,11 @@ LRU 即 Least Recently Used，这种算法认为最近使用的数据是热门�
 
 假设现在缓存内部数据如下图，当调用缓存获取 key=1 的数据，LRU 算法需要将 1 这个节点移动到头结点，其余节点不变：
 
-![缓存数据](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LRU01.png)
+![缓存数据](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LRU01.png)
 
 然后我们插入一个 key=8 节点，此时缓存容量到达上限，所以加入之前需要先删除数据，然后再将数据添加到头结点。由于每次查询都会将数据移动到头结点，未被查询的数据就将会下沉到尾部节点，尾部的数据就可以认为是最少被访问的数据，所以删除尾结点的数据。
 
-![插入数据](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LRU02.png)
+![插入数据](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LRU02.png)
 
 这里总结一下 LRU 算法具体步骤：
 
@@ -34,7 +34,7 @@ LRU 即 Least Recently Used，这种算法认为最近使用的数据是热门�
 
 综上使用双向链表加散列表结合体，数据结构如图所示:
 
-![双向链表加散列表](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LRU03.png)
+![双向链表加散列表](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LRU03.png)
 
 > 在双向链表中特意增加两个『哨兵』节点，不用来存储任何数据。使用哨兵节点，增加/删除节点的时候就可以不用考虑边界节点不存在情况，简化编程难度，降低代码复杂度。
 
@@ -176,7 +176,7 @@ public class LRUCache {
 
 以下方案来源与 MySQL InnoDB LRU 改进算法，将链表拆分成两部分，分为热数据区，与冷数据区，如图所示：
 
-![MySQL InnoDB LRU](https://cdn.jsdelivr.net/gh/chanshiyucx/poi/2019/LRU04.png)
+![MySQL InnoDB LRU](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/LRU04.png)
 
 改进之后算法流程将会变成下面一样:
 
