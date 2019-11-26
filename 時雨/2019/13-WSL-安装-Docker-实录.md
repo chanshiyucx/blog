@@ -88,7 +88,9 @@ sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 ```
 
-## vim 美化
+## 准备工作
+
+### vim 美化
 
 修改 vim 配色为 `molokai`：
 
