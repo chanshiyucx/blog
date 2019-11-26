@@ -249,68 +249,13 @@ Binding 在消息中间件与应用程序提供的 Provider 和 Consumer 之间�
 
 ![RocketMQ中间件](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/RocketMQ中间件.png)
 
-## 消息生产者
+## 使用
 
-### pom.xml
+这里只展示最简单 Demo，更多栗子可以参考 [spring cloud alibaba rocketmq](https://github.com/alibaba/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/rocketmq-example/rocketmq-produce-example/src/main/java/com/alibaba/cloud/examples/RocketMQProduceApplication.java)
 
-新建工程名 `spring-cloud-alibaba-rocketmq` 的项目，pom.xml 文件如下：
+### 接入
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.chanshiyu</groupId>
-        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../spring-cloud-alibaba-dependencies/pom.xml</relativePath>
-    </parent>
-    <artifactId>spring-cloud-alibaba-rocketmq</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>spring-cloud-alibaba-rocketmq</name>
-    <description>Demo project for Spring Boot</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.chanshiyu.rocketmq.RocketmqApplication</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
-```
-
-主要新增依赖：
+1. 首先，修改 pom.xml 文件，引入 RocketMQ Stream Starter。
 
 ```xml
 <dependency>
@@ -319,83 +264,141 @@ Binding 在消息中间件与应用程序提供的 Provider 和 Consumer 之间�
 </dependency>
 ```
 
-### application.yml
+2. 配置 Input 和 Output 的 Binding 信息并配合 `@EnableBinding` 注解使其生效
 
 ```yml
 spring:
-  application:
-    name: rocketmq-provider
   cloud:
     stream:
+      # 配置 rocketmq 的 nameserver 地址
       rocketmq:
         binder:
-          name-server: 192.168.205.10:9876
+          name-server: 192.168.205.4:9876
+      # 配置 input 和 output binding
       bindings:
-        output: { destination: test-topic, content-type: application/json }
-
-server:
-  port: 9093
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+        input:
+          content-type: text/plain
+          destination: test-topic
+          group: test-group
+        output:
+          content-type: text/plain
+          destination: test-topic
 ```
-
-### 发送消息
-
-```java
-@SpringBootApplication
-@EnableBinding({ Source.class })
-public class RocketmqApplication implements CommandLineRunner {
-
-    @Autowired
-    private MessageChannel output;
-
-    public static void main(String[] args) {
-        SpringApplication.run(RocketmqApplication.class, args);
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        output.send(MessageBuilder.withPayload("Hello chanshiyu").build());
-    }
-}
-```
-
-## 消息消费者
-
-pom.xml 文件如上，只需在 `application.yml` 中新增 input：
-
-```yml
-input: { destination: test-topic, content-type: text/plain, group: test-group }
-```
-
-修改 `RocketmqApplication`，注解添加 `Sink.class`，然后通过 `@StreamListener` 注解获取消息：
 
 ```java
 @SpringBootApplication
 @EnableBinding({ Source.class, Sink.class })
-public class RocketmqApplication implements CommandLineRunner {
+public class AdminApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(RocketMQApplication.class, args);
+    }
+}
+```
+
+### 消息生产者
+
+消息发送服务 SenderService：
+
+```java
+@Service
+public class SenderService {
 
     @Autowired
-    private MessageChannel output; // 获取name为output的binding
+    private MessageChannel output;
 
-    public static void main(String[] args) {
-        SpringApplication.run(RocketmqApplication.class, args);
+    public void send(String msg) throws Exception {
+        output.send(MessageBuilder.withPayload(msg).build());
     }
+
+    public <T> void sendWithTags(T msg, String tag) throws Exception {
+        Message message = MessageBuilder.createMessage(msg,
+                new MessageHeaders(Stream.of(tag).collect(Collectors
+                        .toMap(str -> MessageConst.PROPERTY_TAGS, String::toString))));
+        output.send(message);
+    }
+
+    public <T> void sendObject(T msg, String tag) throws Exception {
+        Message message = MessageBuilder.withPayload(msg)
+                .setHeader(MessageConst.PROPERTY_TAGS, tag)
+                .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
+                .build();
+        output.send(message);
+    }
+
+    public <T> void sendTransactionalMsg(T msg, int num) throws Exception {
+        MessageBuilder builder = MessageBuilder.withPayload(msg)
+                .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON);
+        builder.setHeader("test", String.valueOf(num));
+        builder.setHeader(RocketMQHeaders.TAGS, "binder");
+        Message message = builder.build();
+        output.send(message);
+    }
+}
+```
+
+发送消息：
+
+```java
+@Bean
+public CustomRunner customRunner() {
+    return new CustomRunner("output");
+}
+
+public static class CustomRunner implements CommandLineRunner {
+
+    private final String bindingName;
+
+    public CustomRunner(String bindingName) {
+        this.bindingName = bindingName;
+    }
+
+    @Autowired
+    private SenderService senderService;
 
     @Override
     public void run(String... args) throws Exception {
-        output.send(MessageBuilder.withPayload("Hello chanshiyu").build());
+        if (this.bindingName.equals("output")) {
+            int count = 5;
+            for (int index = 1; index <= count; index++) {
+                String msgContent = "msg-" + index;
+                if (index % 3 == 0) {
+                    senderService.send(msgContent);
+                }
+                else if (index % 3 == 1) {
+                    senderService.sendWithTags(msgContent, "tagStr");
+                }
+                else {
+                    senderService.sendObject(new Foo(index, "foo"), "tagObj");
+                }
+            }
+        }
     }
+}
+
+@Data
+public static class Foo {
+    private Integer inx;
+    private String msg;
+
+    Foo(Integer inx, String msg) {
+        this.inx = inx;
+        this.msg = msg;
+    }
+}
+```
+
+### 消息消费者
+
+消息接收服务 ReceiveService：
+
+```java
+@Service
+public class ReceiveService {
 
     @StreamListener("input")
-    public void receiveInput(String message) {
-        System.out.println("Receive input: " + message);
+    public void receiveInput1(String receiveMsg) {
+        System.out.println("input receive: " + receiveMsg);
     }
-
 }
 ```
 
