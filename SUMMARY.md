@@ -115,7 +115,7 @@
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
     - [03 Handler 的执行顺序](后端/Netty/03-Handler-的执行顺序.md)
-    - [04 SimpleChannelInboundHandler](后端/Netty/04-SimpleChannelInboundHandler.md)
+    - [04 Handler 对比](后端/Netty/04-Handler-对比.md)
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
