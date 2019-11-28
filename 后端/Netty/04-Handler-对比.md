@@ -20,6 +20,8 @@ public class ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implemen
 
 `SimpleChannelInboundHandler` 匹配规则，它会判断消息体类型，如果匹配则调用 `channelRead0(ctx, msg)` 处理消息，不会向下一个 handler 传递，否则的话调用 `ctx.fireChannelRead(msg)` 传递数据给下一个 handler。
 
+> 在客户端，当 `channelRead0()` 方法完成时，你已经有了传入消息，并且已经处理完它了。当该方法返回时，`SimpleChannelInboundHandler` 负责释放指向保存该消息的 ByteBuf 的内存引用。 --《Netty In Action》
+
 ```java
 public abstract class SimpleChannelInboundHandler<I> extends ChannelInboundHandlerAdapter {
     /** 省略一些细节 **/

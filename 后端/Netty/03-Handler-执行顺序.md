@@ -1,4 +1,4 @@
-# Handler 的执行顺序
+# Handler 执行顺序
 
 ## ChannelInboundHandler 和 ChannelOutboundHandler
 

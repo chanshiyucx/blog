@@ -114,7 +114,7 @@
   - Netty
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
-    - [03 Handler 的执行顺序](后端/Netty/03-Handler-的执行顺序.md)
+    - [03 Handler 执行顺序](后端/Netty/03-Handler-执行顺序.md)
     - [04 Handler 对比](后端/Netty/04-Handler-对比.md)
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
