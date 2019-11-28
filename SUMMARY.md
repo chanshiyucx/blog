@@ -159,3 +159,12 @@
 - 采集
   - 文档
     - [01 mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
+  - 资料
+    - [01 CS-Notes](https://github.com/CyC2018/CS-Notes)
+    - [02 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)
+    - [03 JavaGuide](https://github.com/Snailclimb/JavaGuide)
+    - [04 Java-Interview-Advanced](https://github.com/shishan100/Java-Interview-Advanced)
+    - [05 springboot-guide](https://github.com/Snailclimb/springboot-guide)
+  - 工具
+    - [01 IntelliJ-IDEA-Tutorial](https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/keymap-introduce.md)
+    - [02 hutool](https://github.com/looly/hutool/)
