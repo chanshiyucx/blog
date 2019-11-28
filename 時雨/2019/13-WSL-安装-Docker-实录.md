@@ -137,8 +137,6 @@ sudo service ssh status            # 检查状态
 sudo systemctl enable ssh          # 开机自动启动 SSH 命令
 ```
 
-### Cmder 连接远程桌面
-
 之后便可在 win10 系统上通过 SSH 远程连接：
 
 ```bash

@@ -1,41 +1,11 @@
-# Netty
+# Netty 服务器
 
 Netty 是一个提供了易于使用的 API 客户端/服务器框架。特性：
 
 - 高并发 - NIO（非阻塞 IO）
 - 传输快 - 零拷贝
 
-## BIO、NIO、AIO
-
-阻塞与非阻塞：线程访问资源，该资源是否准备就绪的一种处理方式。阻塞会一直等待资源就绪，而非阻塞会立即响应结果，先处理其他资源。
-
-同步和异步：访问数据的一种机制。
-
-![阻塞与非阻塞](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/01_阻塞与非阻塞.png)
-
-![同步与异步](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/02_同步与异步.png)
-
-![BIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/03_BIO.png)
-
-![NIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/04_NIO.png)
-
-![AIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/05_AIO.png)
-
-![生活实例](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/06_生活实例.png)
-
-![三者区别](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/07_三者区别.png)
-
-### Reactor 线程模型
-
-![单线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/08_单线程模型.png)
-
-![多线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/09_多线程模型.png)
-
-![主从线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/10_主从线程模型.png)
-
-## Netty 服务器
-
-Netty 服务器流程
+Netty 服务器流程：
 
 - 构建一对主从线程组
 - 定义服务器启动类
@@ -45,7 +15,7 @@ Netty 服务器流程
 
 ![channel 初始化器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/11_channel_初始化器.png)
 
-### Netty Server
+## Netty Server
 
 ```java
 @Component
@@ -55,7 +25,7 @@ public class WSServer {
 
     private EventLoopGroup subGroup;
 
-    private  ServerBootstrap server;
+    private ServerBootstrap server;
 
     private ChannelFuture channelFuture;
 
@@ -87,7 +57,7 @@ public class WSServer {
 }
 ```
 
-### Netty Server Initializer
+## Netty Server Initializer
 
 ```java
 public class WSServerInitializer extends ChannelInitializer<NioSocketChannel> {
@@ -124,7 +94,7 @@ public class WSServerInitializer extends ChannelInitializer<NioSocketChannel> {
 }
 ```
 
-### ChatHandler
+## ChatHandler
 
 ```java
 public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
@@ -162,7 +132,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 }
 ```
 
-### Netty Booter
+## Netty Booter
 
 ```java
 @Component
@@ -181,3 +151,51 @@ public class NettyBooter implements ApplicationListener<ContextRefreshedEvent> {
 
 }
 ```
+
+## 概念
+
+### ChannelInboundHandlerAdapter vs SimpleChannelInboundHandler
+
+`SimpleChannelInboundHandler是有泛型参数的`，可以指定一个具体的类型参数，通过 decoder 配合使用，非常方便。`ChannelInboundHandlerAdapter` 则是直接操作 byte 数组的。
+
+类的关系：
+
+```java
+ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implements ChannelInboundHandler
+
+SimpleChannelInboundHandler<I> extends ChannelInboundHandlerAdapter
+```
+
+可以看出 `SimpleChannelInboundHandler` 是继承 `ChannelInboundHandlerAdapter` 的，也就是说 `SimpleChannelInboundHandler` 也拥有 `ChannelInboundHandlerAdapter` 的方法。
+
+一般而言业务代码 `SimpleChannelInboundHandler` 写在 `channelRead0` 方法中，而 `ChannelInboundHandlerAdapter` 写在 `channelRead` 方法中，注意后面有 0 后缀区别。
+
+**`SimpleChannelInboundHandler` 对 `channelRead` 的重写：**
+
+```java
+public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+    boolean release = true;
+    try {
+        if (acceptInboundMessage(msg)) { //类型匹配
+            I imsg = (I) msg;
+            channelRead0(ctx, imsg);
+        } else {
+            release = false;
+            ctx.fireChannelRead(msg);
+        }
+    } finally {
+        if (autoRelease && release) {
+            ReferenceCountUtil.release(msg); //释放引用
+        }
+    }
+}
+```
+
+`SimpleChannelInboundHandler` 的 `channelRead` 相比 `ChannelInboundHandlerAdapter` 而言，主要做了类型匹配以及用完之后释放指向保存该消息的 ByteBuf 的内存引用。
+
+如果说 channelRead 都是同步操作的话，`SimpleChannelInboundHandler` 是不错的选择，如果操作是异步的话，那他的逻辑就有点麻烦了，例如你把数据交给另外的线程处理了，还没处理就会释放了，这时候 `ChannelInboundHandlerAdapter` 处理自由的优点也就提现出来了，可以更好的处理更多的特定场景。
+
+`SimpleChannelInboundHandler` 的好处是可以处理不同的类型对象，并且可以做释放。`ChannelInboundHandlerAdapter` 的好处则是更自由，在异步的场景下更适合。
+
+参考文章：  
+[从零开始学 netty](https://www.imooc.com/article/27677)
