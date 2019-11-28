@@ -158,6 +158,7 @@
     - [02 Docker FastDFS](后端/Project/02-Docker-FastDFS.md)
     - [03 Docker RocketMQ](后端/Project/03-Docker-RocketMQ.md)
     - [04 Moemall Admin Snippets](后端/Project/04-Moemall-Admin-Snippets.md)
+    - [05 Netty 聊天系统](后端/Project/05-Netty-聊天系统.md)
 - 采集
   - 文档
     - [01 mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
