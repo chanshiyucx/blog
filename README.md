@@ -129,6 +129,8 @@ Code is Long, Life is Short.
   - Netty
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
+    - [03 Handler 执行顺序](后端/Netty/03-Handler-执行顺序.md)
+    - [04 Handler 对比](后端/Netty/04-Handler-对比.md)
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
@@ -171,9 +173,16 @@ Code is Long, Life is Short.
     - [02 Docker FastDFS](后端/Project/02-Docker-FastDFS.md)
     - [03 Docker RocketMQ](后端/Project/03-Docker-RocketMQ.md)
     - [04 Moemall Admin Snippets](后端/Project/04-Moemall-Admin-Snippets.md)
+    - [05 Netty 聊天系统](后端/Project/05-Netty-聊天系统.md)
 - 采集
   - 文档
     - [01 mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
   - 资料
     - [01 CS-Notes](https://github.com/CyC2018/CS-Notes)
     - [02 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)
+    - [03 JavaGuide](https://github.com/Snailclimb/JavaGuide)
+    - [04 Java-Interview](https://github.com/shishan100/Java-Interview-Advanced)
+    - [05 springboot-guide](https://github.com/Snailclimb/springboot-guide)
+  - 工具
+    - [01 IntelliJ-IDEA-Tutorial](https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/keymap-introduce.md)
+    - [02 hutool](https://github.com/looly/hutool/)

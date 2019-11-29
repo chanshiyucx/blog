@@ -2,9 +2,9 @@
 
 ## 引入依赖
 
-该聊天项目是一个标准的多模块 spring boot 项目，只需要引入三个基本的依赖包。
+该聊天项目是一个标准的多模块 spring boot 项目，只需要引入四个基本的依赖包。
 
-netty 提供易于使用的 API 客户端/服务器框架，disruptor 高性能无锁队列进行消息生产和消费，fastjson 进行消息序列和反序列化。
+netty 提供易于使用的 API 客户端/服务器框架，disruptor 高性能无锁队列进行消息生产和消费，fastjson 进行消息序列和反序列化，bcprov 提供加解密。
 
 ```xml
 <!-- netty -->
@@ -24,6 +24,12 @@ netty 提供易于使用的 API 客户端/服务器框架，disruptor 高性能�
     <groupId>com.alibaba</groupId>
     <artifactId>fastjson</artifactId>
     <version>1.2.55</version>
+</dependency>
+ <!-- 加解密服务 -->
+<dependency>
+    <groupId>org.bouncycastle</groupId>
+    <artifactId>bcprov-jdk16</artifactId>
+    <version>1.46</version>
 </dependency>
 ```
 
