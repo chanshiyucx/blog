@@ -1,5 +1,7 @@
 # AES CBC 加解密
 
+需要注意的是：编码前要先将发送消息转化为 base64，而解码时不需要，因为接收的消息就是 base64。
+
 ```java
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -18,7 +20,9 @@ public class CryptoAesUtil {
     private static final Base64.Encoder encoder = Base64.getEncoder();
 
     public static String encrypt(String data, String key, String iv) throws Exception {
-        byte[] result = handleMsg(data, key, iv, Cipher.ENCRYPT_MODE);
+        // 注意编码前先转换消息为 base64
+        String baseData = encoder.encodeToString(data.getBytes());
+        byte[] result = handleMsg(baseData, key, iv, Cipher.ENCRYPT_MODE);
         return encoder.encodeToString(result);
     }
 
@@ -28,10 +32,12 @@ public class CryptoAesUtil {
     }
 
     private static byte[] handleMsg(String data, String key, String iv, int mode) throws Exception {
-        // 先把 Base64 格式的数据转成原始格式
+        String baseKey = encoder.encodeToString(key.getBytes());
+        String baseIv = encoder.encodeToString(iv.getBytes());
+        // 从 Base64 格式还原到原始格式
         byte[] dataByte = decoder.decode(data);
-        byte[] keyByte = decoder.decode(key);
-        byte[] ivByte = decoder.decode(iv);
+        byte[] keyByte = decoder.decode(baseKey);
+        byte[] ivByte = decoder.decode(baseIv);
         // 指定算法，模式，填充方法 创建一个 Cipher 实例
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", "BC");
         // 生成 Key 对象
