@@ -59,8 +59,8 @@
     - [01 Node Tips](前端/Node/01-Node-Tips.md)
     - [02 七天学会 NodeJS](前端/Node/02-七天学会-NodeJS.md)
   - CSS
-    - [01 Flex 弹性布局](前端/JavaScript/01-Flex-弹性布局.md)
-    - [02 Position 定位](前端/JavaScript/02-Position-定位.md)
+    - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
+    - [02 Position 定位](前端/CSS/02-Position-定位.md)
   - Note
     - [01 Note](前端/Note/01-Note.md)
     - [02 Interview](前端/Note/02-Interview.md)
