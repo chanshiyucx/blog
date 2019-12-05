@@ -15,7 +15,7 @@ Feature:
 
 下面是一些预览图：
 
-![首页列表](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_首页列表.png#full)
-![添加目录](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_添加目录.png#full)
-![双页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_双页模式.png#full)
-![单页模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/eriri_单页模式.png#full)
+![首页列表](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Eriri-comic-reader/eriri_首页列表.png#full)
+![添加目录](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Eriri-comic-reader/eriri_添加目录.png#full)
+![双页模式](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Eriri-comic-reader/eriri_双页模式.png#full)
+![单页模式](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Eriri-comic-reader/eriri_单页模式.png#full)

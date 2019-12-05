@@ -2,7 +2,7 @@
 
 ## 运行时数据区域
 
-![运行时数据区域](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/运行时数据区域.png)
+![运行时数据区域](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/运行时数据区域.png)
 
 ### 程序计数器
 
@@ -12,7 +12,7 @@
 
 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。从方法调用直至执行完成的过程，对应着一个栈帧在 Java 虚拟机栈中入栈和出栈的过程。
 
-![Java 虚拟机栈](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/虚拟机栈.png)
+![Java 虚拟机栈](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/虚拟机栈.png)
 
 可以通过 -Xss 这个虚拟机参数来指定每个线程的 Java 虚拟机栈内存大小，在 JDK 1.4 中默认为 256K，而在 JDK 1.5+ 默认为 1M：
 
@@ -31,7 +31,7 @@ java -Xss2M HackTheJava
 
 本地方法一般是用其它语言（C、C++ 或汇编语言等）编写的，并且被编译为基于本机硬件和操作系统的程序，对待这些方法需要特别处理。
 
-![本地方法栈](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/本地方法栈.png)
+![本地方法栈](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/本地方法栈.png)
 
 ### 堆
 
@@ -116,7 +116,7 @@ Java 虚拟机使用该算法来判断对象是否可被回收，GC Roots 一般
 - 方法区中类静态属性引用的对象
 - 方法区中的常量引用的对象
 
-![可达性分析算法](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/可达性分析算法.png)
+![可达性分析算法](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/可达性分析算法.png)
 
 #### 3. 方法区的回收
 
@@ -196,7 +196,7 @@ obj = null;
 
 #### 1. 标记 - 清除
 
-![标记 - 清除](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/标记-清除.png)
+![标记 - 清除](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/标记-清除.png)
 
 在标记阶段，程序会检查每个对象是否为活动对象，如果是活动对象，则程序会在对象头部打上标记。
 
@@ -211,7 +211,7 @@ obj = null;
 
 #### 2. 标记 - 整理
 
-![标记 - 整理](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/标记-整理.png)
+![标记 - 整理](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/标记-整理.png)
 
 让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。
 
@@ -225,7 +225,7 @@ obj = null;
 
 #### 3. 复制
 
-![复制](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/复制.png)
+![复制](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/复制.png)
 
 将内存划分为大小相等的两块，每次只使用其中一块，当这一块内存用完了就将还存活的对象复制到另一块上面，然后再把使用过的内存空间进行一次清理。
 
@@ -246,7 +246,7 @@ HotSpot 虚拟机的 Eden 和 Survivor 大小比例默认为 8:1，保证了内�
 
 ### 垃圾收集器
 
-![垃圾收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/垃圾收集器.jpg)
+![垃圾收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/垃圾收集器.jpg)
 
 以上是 HotSpot 虚拟机中的 7 个垃圾收集器，连线表示垃圾收集器可以配合使用。
 
@@ -255,7 +255,7 @@ HotSpot 虚拟机的 Eden 和 Survivor 大小比例默认为 8:1，保证了内�
 
 #### 1. Serial 收集器
 
-![Serial 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Serial-收集器.jpg)
+![Serial 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/Serial-收集器.jpg)
 
 Serial 翻译为串行，也就是说它以串行的方式执行。
 
@@ -267,7 +267,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 #### 2. ParNew 收集器
 
-![ParNew 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/ParNew-收集器.jpg)
+![ParNew 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/ParNew-收集器.jpg)
 
 它是 Serial 收集器的多线程版本。
 
@@ -287,7 +287,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 #### 4. Serial Old 收集器
 
-![Serial Old 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Serial-Old-收集器.jpg)
+![Serial Old 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/Serial-Old-收集器.jpg)
 
 是 Serial 收集器的老年代版本，也是给 Client 场景下的虚拟机使用。如果用在 Server 场景下，它有两大用途：
 
@@ -296,7 +296,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 #### 5. Parallel Old 收集器
 
-![Parallel Old 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Parallel-Old-收集器.jpg)
+![Parallel Old 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/Parallel-Old-收集器.jpg)
 
 是 Parallel Scavenge 收集器的老年代版本。
 
@@ -304,7 +304,7 @@ Serial 翻译为串行，也就是说它以串行的方式执行。
 
 #### 6. CMS 收集器
 
-![CMS 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/CMS-收集器.jpg)
+![CMS 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/CMS-收集器.jpg)
 
 CMS（Concurrent Mark Sweep），Mark Sweep 指的是标记 - 清除算法。
 
@@ -329,17 +329,17 @@ G1（Garbage-First），它是一款面向服务端应用的垃圾收集器，�
 
 堆被分为新生代和老年代，其它收集器进行收集的范围都是整个新生代或者老年代，而 G1 可以直接对新生代和老年代一起回收。
 
-![G1 收集器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/G1-收集器1.png)
+![G1 收集器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/G1-收集器1.png)
 
 G1 把堆划分成多个大小相等的独立区域（Region），新生代和老年代不再物理隔离。
 
-![Region](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/G1-收集器2.png)
+![Region](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/G1-收集器2.png)
 
 通过引入 Region 的概念，从而将原来的一整块内存空间划分成多个的小空间，使得每个小空间可以单独进行垃圾回收。这种划分方法带来了很大的灵活性，使得可预测的停顿时间模型成为可能。通过记录每个 Region 垃圾回收时间以及回收所获得的空间（这两个值是通过过去回收的经验获得），并维护一个优先列表，每次根据允许的收集时间，优先回收价值最大的 Region。
 
 每个 Region 都有一个 Remembered Set，用来记录该 Region 对象的引用对象所在的 Region。通过使用 Remembered Set，在做可达性分析的时候就可以避免全堆扫描。
 
-![Remembered Set](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/G1-收集器3.jpg)
+![Remembered Set](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-虚拟机/G1-收集器3.jpg)
 
 如果不计算维护 Remembered Set 的操作，G1 收集器的运作大致可划分为以下几个步骤：
 

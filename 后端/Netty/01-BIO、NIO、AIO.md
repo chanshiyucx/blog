@@ -4,24 +4,24 @@
 
 同步和异步：访问数据的一种机制。
 
-![阻塞与非阻塞](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/01_阻塞与非阻塞.png)
+![阻塞与非阻塞](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/01_阻塞与非阻塞.png)
 
-![同步与异步](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/02_同步与异步.png)
+![同步与异步](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/02_同步与异步.png)
 
-![BIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/03_BIO.png)
+![BIO](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/03_BIO.png)
 
-![NIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/04_NIO.png)
+![NIO](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/04_NIO.png)
 
-![AIO](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/05_AIO.png)
+![AIO](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/05_AIO.png)
 
-![生活实例](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/06_生活实例.png)
+![生活实例](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/06_生活实例.png)
 
-![三者区别](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/07_三者区别.png)
+![三者区别](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/07_三者区别.png)
 
 ### Reactor 线程模型
 
-![单线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/08_单线程模型.png)
+![单线程模型](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/08_单线程模型.png)
 
-![多线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/09_多线程模型.png)
+![多线程模型](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/09_多线程模型.png)
 
-![主从线程模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/10_主从线程模型.png)
+![主从线程模型](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/BIO-NIO-AIO/10_主从线程模型.png)

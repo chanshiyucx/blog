@@ -4,7 +4,7 @@
 
 Java 服务端开发亦是如此，采用分层架构，针对每一层，对应对象的职责是不同的，以及层与层之间也需要通信，故而有着不同的“概念”对象。
 
-![Java_数据模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Java_数据模型.jpg)
+![Java_数据模型](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-服务端分层模型/Java_数据模型.jpg)
 
 ## 分层领域模型
 

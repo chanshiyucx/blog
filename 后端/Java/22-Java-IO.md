@@ -64,7 +64,7 @@ Java I/O 使用了装饰者模式来实现。以 InputStream 为例，
 - FileInputStream 是 InputStream 的子类，属于具体组件，提供了字节流的输入操作；
 - FilterInputStream 属于抽象装饰者，装饰者用于装饰组件，为组件提供额外的功能。例如 BufferedInputStream 为 FileInputStream 提供缓存的功能。
 
-![装饰者模式](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/装饰者模式.png)
+![装饰者模式](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/装饰者模式.png)
 
 实例化一个具有缓存功能的字节流对象时，只需要在 FileInputStream 对象上再套一层 BufferedInputStream 对象即可。
 
@@ -244,7 +244,7 @@ public static void main(String[] args) throws IOException {
 - Socket：客户端类
 - 服务器和客户端通过 InputStream 和 OutputStream 进行输入输出。
 
-![Sockets](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Sockets.png)
+![Sockets](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/Sockets.png)
 
 ### Datagram
 
@@ -306,23 +306,23 @@ I/O 包和 NIO 已经很好地集成了，`java.io.*` 已经以 NIO 为基础重
 
 ① 新建一个大小为 8 个字节的缓冲区，此时 position 为 0，而 limit = capacity = 8。capacity 变量不会改变，下面的讨论会忽略它。
 
-![缓冲区](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/缓冲区1.png)
+![缓冲区](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/缓冲区1.png)
 
 ② 从输入通道中读取 5 个字节数据写入缓冲区中，此时 position 为 5，limit 保持不变。
 
-![缓冲区](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/缓冲区2.png)
+![缓冲区](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/缓冲区2.png)
 
 ③ 在将缓冲区的数据写到输出通道之前，需要先调用 flip() 方法，这个方法将 limit 设置为当前 position，并将 position 设置为 0。
 
-![缓冲区](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/缓冲区3.png)
+![缓冲区](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/缓冲区3.png)
 
 ④ 从缓冲区中取 4 个字节到输出缓冲中，此时 position 设为 4。
 
-![缓冲区](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/缓冲区4.png)
+![缓冲区](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/缓冲区4.png)
 
 ⑤ 最后需要调用 clear() 方法来清空缓冲区，此时 position 和 limit 都被设置为最初位置。
 
-![缓冲区](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/缓冲区5.png)
+![缓冲区](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/缓冲区5.png)
 
 ### 文件 NIO 实例
 
@@ -380,7 +380,7 @@ NIO 实现了 IO 多路复用中的 Reactor 模型，一个线程 Thread 使用�
 
 应该注意的是，只有套接字 Channel 才能配置为非阻塞，而 FileChannel 不能，为 FileChannel 配置非阻塞也没有意义。
 
-![选择器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/选择器.png)
+![选择器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-IO/选择器.png)
 
 #### 1. 创建选择器
 

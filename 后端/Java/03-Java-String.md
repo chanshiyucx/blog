@@ -66,7 +66,7 @@ String 不可变性天生具备线程安全，可以在多个线程中安全地�
 
 当一个字符串调用 `intern()` 方法时，如果 String Pool 中已经存在一个字符串和该字符串值相等（使用 `equals()` 方法进行确定），那么就会返回 String Pool 中字符串的引用；否则，就会在 String Pool 中添加一个新的字符串，并返回这个新字符串的引用。
 
-![String Pool](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/string-pool.png)
+![String Pool](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-String/string-pool.png)
 
 下面示例中，s1 和 s2 采用 `new String()` 的方式新建了两个不同字符串，而 s3 和 s4 是通过 `s1.intern()` 方法取得一个字符串引用。`intern()` 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用。因此 s3 和 s4 引用的是同一个字符串。
 

@@ -6,7 +6,7 @@
 
 一个 `ChannelPipeline` 可以把 `ChannelInboundHandler` 和 `ChannelOutboundHandler` 混合在一起，当一个数据流进入 `ChannelPipeline` 时，它会从管道头部开始传给第一个 `ChannelInboundHandler`，当第一个处理完后再传给下一个，一直传递到管道的尾部。与之相对应的是，当数据被写出时，它会从管道的尾部开始，先经过管道尾部的最后一个 `ChannelOutboundHandler`，当它处理完成后会传递给前一个 `ChannelOutboundHandler`。
 
-![channelpipeline](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/channelpipeline.png)
+![channelpipeline](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Handler-执行顺序/channelpipeline.png)
 
 数据在各个 Handler 之间传递，这需要调用方法中传递的 `ChanneHandlerContext` 来操作，在 netty 的 API 中提供了两个基类分 `ChannelInboundHandlerAdapter` 和 `ChannelOutboundHandlerAdapter`，他们仅仅实现了调用 `ChanneHandlerContext` 来把消息传递给下一个 Handler，因为我们只关心处理数据，因此在程序中可以继承这两个基类，而我们仅需实现处理数据的部分即可。
 

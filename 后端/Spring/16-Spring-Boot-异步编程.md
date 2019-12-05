@@ -26,7 +26,7 @@ public interface TaskExecutor extends Executor {
 }
 ```
 
-![TaskExecutor](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/TaskExecutor.png)
+![TaskExecutor](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/SpringBoot-异步编程/TaskExecutor.png)
 
 如果没有自定义 `Executor`, Spring 将创建一个 `SimpleAsyncTaskExecutor` 并使用它。
 

@@ -12,9 +12,9 @@
 
 ## 002 Vim
 
-![Vim 常用命令](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Vim常用命令.jpg)
+![Vim 常用命令](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/Vim常用命令.jpg)
 
-![Vim 键盘图](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Vim键盘图.jpg)
+![Vim 键盘图](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/Vim键盘图.jpg)
 
 ## 整站下载资源
 
@@ -41,7 +41,7 @@ wget -c -r -np -k -L -p https://chanshiyu.com/
 
 无法解决，只能降低提示等级：
 
-![idea autowired error](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/idea-autowired-error.png)
+![idea autowired error](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/idea-autowired-error.png)
 
 ## Window10 端口占用
 

@@ -13,7 +13,7 @@ Netty 服务器流程：
 - 设置处理从线程池的助手类初始化器
 - 监听启动和关闭服务器
 
-![channel 初始化器](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/11_channel_初始化器.png)
+![channel 初始化器](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Netty-服务器/11_channel_初始化器.png)
 
 ## Netty Server
 

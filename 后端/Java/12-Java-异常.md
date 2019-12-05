@@ -1,6 +1,6 @@
-# Java-异常
+# Java 异常
 
-![Java-异常](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/Java-Throwable.png)
+![Java 异常](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-异常/Java-Throwable.png)
 
 `Throwable` 可以用来表示任何可以作为异常抛出的类，分为两种：`Error` 和 `Exception`。
 

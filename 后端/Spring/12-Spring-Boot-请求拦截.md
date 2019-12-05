@@ -8,7 +8,7 @@
 
 三种方式的请求拦截顺序：
 
-![请求拦截模型](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/请求拦截模型.png)
+![请求拦截模型](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/SpringBoot-请求拦截/请求拦截模型.png)
 
 ## AOP
 

@@ -1,6 +1,6 @@
 # HTTP 状态码详解
 
-![HTTP 状态码详解](https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/HTTP_状态码详解.jpg)
+![HTTP 状态码详解](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/HTTP-状态码详解/HTTP_状态码详解.jpg)
 
 ## 状态码的分类
 
