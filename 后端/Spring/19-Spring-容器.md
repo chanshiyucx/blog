@@ -58,15 +58,32 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"bean.x
 ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean.xml","service.xml"});
 ```
 
-举个栗子，新建一个项目：
+### 注解驱动开发
+
+我们举个栗子，比较传统的 xml 配置文件注册 bean 和注解方式注册 bean 两种方式。
 
 ![Spring Context依赖](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/Spring-Context依赖.png)
 
-1. **使用 xml 配置文件引入 bean**
+### 注册 bean
 
-![beans xml](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/beans-xml.png)
+1. **使用 xml 配置文件**
 
-然后通过上面提到过的 `ClassPathXmlApplicationContext` 引入 bean：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.chanshiyu.bean.Person">
+        <property name="name" value="zhangsan"/>
+        <property name="age" value="18"/>
+    </bean>
+</beans>
+```
+
+然后通过 `ClassPathXmlApplicationContext` 引入类路径下的配置文件来注册 bean：
 
 ```java
 ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
@@ -74,14 +91,101 @@ Person bean = (Person) applicationContext.getBean("person");
 System.out.println(bean);
 ```
 
-2. **使用注解方式引入 bean**
-
-![注解引入](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/注解引入.png)
+2. **使用注解方式**
 
 ```java
-ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManConfig.class);
+// 配置类 == 配置文件
+@Configuration
+public class MainConfig {
+
+    // 给容器中注册一个 bean; 类型为返回值类型，id 默认为方法名
+    @Bean
+    public Person person() {
+        return new Person("lisi", 20);
+    }
+
+}
+```
+
+然后通过 `AnnotationConfigApplicationContext` 引入注解配置文件来注册 bean：
+
+```java
+ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
 Person bean = applicationContext.getBean(Person.class);
 System.out.println(bean);
 ```
 
-需要注意：**`@Bean` 注册 Bean，类型为返回值类型，id 默认为方法名，`@Bean(name)` 可以指定 id**。
+需要注意：**`@Bean` 注册 Bean，类型为返回值类型，id 默认为方法名，`@Bean(name)` 可以指定 bean id**。
+
+### 包扫描
+
+包扫描、只要标注了 `@Controller`、`@Service`、`@Repository`、`@Component` 注解的类都可以被自动注册为 bean。
+
+1. **使用 xml 配置文件**
+
+在 `beans.xml` 中加入：
+
+```xml
+<context:component-scan base-package="com.chanshiyu"></context:component-scan>
+```
+
+2. **使用注解方式**
+
+```java
+@Configuration
+@ComponentScan(value = "com.chanshiyu")
+public class MainConfig {}
+```
+
+包扫描规则：
+
+```java
+@ComponentScan(value = "com.chanshiyu", excludeFilters = {
+        @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class}),
+        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class})
+})
+/**
+ * @ComponentScan  value:指定要扫描的包
+ * excludeFilters = Filter[] ：指定扫描的时候按照什么规则排除那些组件
+ * includeFilters = Filter[] ：指定扫描的时候只需要包含哪些组件
+ * FilterType.ANNOTATION：按照注解
+ * FilterType.ASSIGNABLE_TYPE：按照给定的类型；
+ * FilterType.ASPECTJ：使用ASPECTJ表达式
+ * FilterType.REGEX：使用正则指定
+ * FilterType.CUSTOM：使用自定义规则
+ */
+```
+
+1. 注意 `includeFilters` 需要配合 `useDefaultFilters` 一起使用，禁用默认的过滤规则，因为默认的规则就是扫描所有的组件。
+
+```xml
+<context:component-scan base-package="com.chanshiyu" use-default-filters="false"/>
+```
+
+```java
+@ComponentScan(value = "com.chanshiyu", includeFilters = {
+        @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class}),
+}, useDefaultFilters = false)
+```
+
+2. 如果使用的 jdk8 版本以上，`@ComponentScan` 可以重复使用，即可以多次使用该注解定义规则。如果版本在 jdk8 以下，可以使用 `@ComponentScans` 注解定义多个扫描规则。
+
+```java
+@ComponentScans(value = {
+        @ComponentScan(value = "com.chanshiyu", includeFilters = {
+                @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
+        }, useDefaultFilters = false)
+})
+```
+
+## Tips
+
+### 打印所有被 spring 托管的 bean
+
+```java
+ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+for (String beanDefinitionName : beanDefinitionNames) {
+    System.out.println(beanDefinitionName);
+}
+```
