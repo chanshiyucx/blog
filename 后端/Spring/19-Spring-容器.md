@@ -44,7 +44,9 @@ XmlBeanFactory factory = new XmlBeanFactory(res);
 在使用 `BeanFactory` 接口时，我们一般都是使用这个实现类：`org.springframework.beans.factory.xml.XmlBeanFactory`。然而 `ApplicationContext` 作为 `BeanFactory` 的子接口，使用它作为 Spring 容器会更加方便。它的实现类有：
 
 - `FileSystemXmlApplicationContext`：以基于文件系统的 XML 配置文件创建 `ApplicationContext` 实例。
-- `ClassPathXmlApplicationContext`：以类加载路径下的 XML 配置文件创建的 `ApplicationContext` 实例。
+- `ClassPathXmlApplicationContext`：以类加载路径下的 XML 配置文件创建 `ApplicationContext` 实例。
+- `XmlWebApplicationContext`：以 web 应用下的 XML 配置文件创建 `ApplicationContext` 实例。
+- `AnnotationConfigApplicationContext`：以 java 的配置类创建 `ApplicationContext` 实例。
 
 食用方式：
 
@@ -59,6 +61,9 @@ ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean
 举个栗子，新建一个项目：
 
 ![Spring Context依赖](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/Spring-Context依赖.png)
+
+1. **使用 xml 配置文件引入 bean**
+
 ![beans xml](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/beans-xml.png)
 
 然后通过上面提到过的 `ClassPathXmlApplicationContext` 引入 bean：
@@ -68,3 +73,15 @@ ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean
 Person bean = (Person) applicationContext.getBean("person");
 System.out.println(bean);
 ```
+
+2. **使用注解方式引入 bean**
+
+![注解引入](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/注解引入.png)
+
+```java
+ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManConfig.class);
+Person bean = applicationContext.getBean(Person.class);
+System.out.println(bean);
+```
+
+需要注意：**`@Bean` 注册 Bean，类型为返回值类型，id 默认为方法名，`@Bean(name)` 可以指定 id**。
