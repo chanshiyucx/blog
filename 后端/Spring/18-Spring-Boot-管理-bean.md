@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 /**
  * @author SHIYU
  * @date 2019/11/6 15:13
- * @description 提供手动获取被spring管理的bean对象
+ * @description 提供手动获取被 spring 管理的 bean 对象
  */
 public class SpringUtil implements ApplicationContextAware {
 
@@ -70,7 +70,7 @@ public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-       ProxyServiceImpl proxyService = SpringUtil.getBean(ProxyServiceImpl.class);
+        ProxyServiceImpl proxyService = SpringUtil.getBean(ProxyServiceImpl.class);
     }
 
 }
