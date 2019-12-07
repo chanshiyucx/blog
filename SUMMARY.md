@@ -162,7 +162,8 @@
     - [05 Netty 聊天系统](后端/Project/05-Netty-聊天系统.md)
 - 采集
   - 文档
-    - [01 mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
+    - [01 Git 文档](https://git-scm.com/book/zh/v2)
+    - [02 Mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
   - 资料
     - [01 CS-Notes](https://github.com/CyC2018/CS-Notes)
     - [02 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)

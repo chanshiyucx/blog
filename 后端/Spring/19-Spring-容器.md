@@ -58,7 +58,7 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"bean.x
 ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean.xml","service.xml"});
 ```
 
-### 注解驱动开发
+## 注解驱动开发
 
 我们举个栗子，比较传统的 xml 配置文件注册 bean 和注解方式注册 bean 两种方式。
 
@@ -140,21 +140,55 @@ public class MainConfig {}
 包扫描规则：
 
 ```java
-@ComponentScan(value = "com.chanshiyu", excludeFilters = {
-        @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class}),
-        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class})
-})
 /**
  * @ComponentScan  value:指定要扫描的包
- * excludeFilters = Filter[] ：指定扫描的时候按照什么规则排除那些组件
- * includeFilters = Filter[] ：指定扫描的时候只需要包含哪些组件
+ * excludeFilters = Filter[]：指定扫描的时候按照什么规则排除那些组件
+ * includeFilters = Filter[]：指定扫描的时候只需要包含哪些组件
  * FilterType.ANNOTATION：按照注解
- * FilterType.ASSIGNABLE_TYPE：按照给定的类型；
+ * FilterType.ASSIGNABLE_TYPE：按照给定的类型
  * FilterType.ASPECTJ：使用ASPECTJ表达式
  * FilterType.REGEX：使用正则指定
  * FilterType.CUSTOM：使用自定义规则
  */
+@ComponentScan(value = "com.chanshiyu", excludeFilters = {
+        @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class, Service.class}),
+        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {BookService.class})
+})
 ```
+
+这里重点介绍一下 `FilterType.CUSTOM` 自定义过滤规则，先自定义自己的规则类：
+
+```java
+public class MyTypeFilter implements TypeFilter {
+
+    /**
+     * metadataReader：读取到的当前正在扫描的类的信息
+     * metadataReaderFactory: 可以获取到其他任何类信息的工厂
+     */
+    public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
+        //获取当前类注解的信息
+        AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
+        //获取当前正在扫描的类的类信息
+        ClassMetadata classMetadata = metadataReader.getClassMetadata();
+        //获取当前类资源（类的路径）
+        Resource resource = metadataReader.getResource();
+        String className = classMetadata.getClassName();
+        // 所有类名包含 Controller 的类都可以被扫描到
+        return className.contains("Controller");
+    }
+}
+```
+
+食用自定义规则：
+
+```java
+@Configuration
+@ComponentScan(value = "com.chanshiyu", includeFilters = {
+        @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTypeFilter.class})
+}, useDefaultFilters = false)
+```
+
+使用包扫描的两个注意点：
 
 1. 注意 `includeFilters` 需要配合 `useDefaultFilters` 一起使用，禁用默认的过滤规则，因为默认的规则就是扫描所有的组件。
 
