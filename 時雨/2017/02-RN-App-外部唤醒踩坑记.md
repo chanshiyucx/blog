@@ -12,7 +12,7 @@
 
 激活 Xcode 工程中的 `Associated Domains` ，需要填入想要支持的域名，必须以 `applinks:` 为前缀，Apple 将会在合适的时候，从这个域名请求验证文件。
 
-![添加验证域名](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/添加验证域名.jpg#full)
+![添加验证域名](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/添加验证域名.jpg)
 
 ### 上传验证文件
 
@@ -34,7 +34,7 @@
 
 上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
-![Apple Developer 获取 ID](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/Apple_Developer.jpg#full)
+![Apple Developer 获取 ID](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/Apple_Developer.jpg)
 
 如果上传成功后，可以进行先行[在线验证](https://branch.io/resources/aasa-validator/)。
 

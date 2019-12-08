@@ -299,7 +299,7 @@ console.log(regex.test(date2)) // false
 
 ”回溯法“本质上是深度优先算法。举个栗子，以正则 `/ab{1,3}/c` 来匹配字符串 'abbc'，其匹配流程如下：
 
-![正则回溯](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JS-正则技巧/regex_1.png#full)
+![正则回溯](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JS-正则技巧/regex_1.png)
 
 图中第 5 步有红颜色，表示匹配不成功。此时 b{1,3} 已经匹配到了 2 个字符 "b"，准备尝试第三个时，结果发现接下来的字符是 "c"。那么就认为 b{1,3} 就已经匹配完毕。然后状态又回到之前的状态，最后再用子表达式 c，去匹配字符 "c"。此时整个表达式匹配成功了。图中第 6 步便称为”回溯“。
 
@@ -314,7 +314,7 @@ console.log(string.match(regex))
 
 尽管是惰性匹配，但为了整体匹配成功，第一个分组还是会多分配一个字符，其整体匹配流程如下：
 
-![惰性正则回溯](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JS-正则技巧/regex_2.png#full)
+![惰性正则回溯](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JS-正则技巧/regex_2.png)
 
 此外，分支结构也可视为一种回溯，在当前分支不满足匹配条件时，会切换到另一条分支。
 

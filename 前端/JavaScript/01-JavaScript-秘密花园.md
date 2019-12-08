@@ -57,7 +57,7 @@ Bar.prototype.constructor = Bar
  **/
 ```
 
-![继承与原型链](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JavaScript-秘密花园/prototype.png#full)
+![继承与原型链](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JavaScript-秘密花园/prototype.png)
 
 > 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 

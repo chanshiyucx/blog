@@ -10,7 +10,7 @@ Flex 容器有两根轴线：水平的主轴（main axis）和垂直的交叉轴
 
 当前主流浏览器对 Flex 布局都能良好兼容，可以放心使用：
 
-![Can I Use Flex](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Flex-弹性布局/Can_I_Use_Flex.png#full)
+![Can I Use Flex](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Flex-弹性布局/Can_I_Use_Flex.png)
 
 ## 容器的属性
 
