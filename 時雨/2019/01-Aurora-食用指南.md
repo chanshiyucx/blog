@@ -110,8 +110,8 @@ gitalk: {
 
 文章模板没有太多的格式约束，只需要在文章正文顶部加上封面配图即可，配图采用的是 markdown 的注释语法，所以并不会在正文里渲染，以后即使你更换博客主题，也不会影响内容的展示。
 
-```text
-JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写作）和张易江（设计）完成，由三生石上翻译完成，内容短小精炼。这次温故知新，做一番总结。
+```markdown
+[pixiv: 41652582]: # 'https://raw.githubusercontent.com/chanshiyucx/yoi/master/bg/3.jpg'
 ```
 
 由于博客的文章、友链、书单、关于、心情等内容都放在 issues 里，所以需要对它们进行区分，这里主要使用 `issues 状态`与 `Labels` 进行分类。
@@ -121,6 +121,12 @@ JavaScript 秘密花园由两位 Stack Overflow 用户伊沃·韦特泽尔（写
 新建文章的时候 `Labels` 表示文章标签，`Milestone` 代表文章的分类，同时在文章正文顶部使用 markdown 注释来设置文章封面图，如下所示：
 
 ![文章模板](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Aurora-食用指南/文章模板.png)
+
+Tips：通过给正文图片预设尺寸可以获得更流畅的图片加载效果，尺寸设置形如 `?vw=1920&vh=1080`，举个栗子：
+
+```markdown
+[预设尺寸](https://raw.githubusercontent.com/chanshiyucx/yoi/bg.png?vw=1920&vh=1080)
+```
 
 ### 心情模板
 
