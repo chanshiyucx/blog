@@ -58,13 +58,13 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"bean.x
 ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean.xml","service.xml"});
 ```
 
-## 注解驱动开发
+## 组件注册
 
 我们举个栗子，比较传统的 xml 配置文件注册 bean 和注解方式注册 bean 两种方式。
 
 ![Spring Context依赖](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/Spring-Context依赖.png)
 
-### 注册 bean
+### @Bean
 
 1. **使用 xml 配置文件**
 
@@ -117,9 +117,9 @@ System.out.println(bean);
 
 需要注意：**`@Bean` 注册 Bean，类型为返回值类型，id 默认为方法名，`@Bean(name)` 可以指定 bean id**。
 
-### 包扫描
+### @ComponentScan
 
-包扫描、只要标注了 `@Controller`、`@Service`、`@Repository`、`@Component` 注解的类都可以被自动注册为 bean。
+`@ComponentScan` 包扫描：只要标注了 `@Controller`、`@Service`、`@Repository`、`@Component` 注解的类都可以被自动注册为 bean。
 
 1. **使用 xml 配置文件**
 
@@ -137,7 +137,7 @@ System.out.println(bean);
 public class MainConfig {}
 ```
 
-包扫描规则：
+自定义过滤规则：
 
 ```java
 /**
@@ -212,14 +212,122 @@ public class MyTypeFilter implements TypeFilter {
 })
 ```
 
+时雨：`@Configuration` 只是配置文件，不会自动扫描包，需要配合 `@ComponentScan` 指定路径才会自动扫描注册。
+
+### @Scope
+
+`@Scope` 调整组件注册作用域，默认情况下，组件注册是单实例的，注册后每次从容器中获取的实例都是同一个。
+
+```java
+/**
+    * prototype：多实例的：ioc容器启动并不会去调用方法创建对象放在容器中，每次获取的时候才会调用方法创建对象；
+    * singleton：单实例的（默认值）：ioc容器启动会调用方法创建对象放到ioc容器中，以后每次获取就是直接从容器（map.get()）中拿；
+    * request：同一次请求创建一个实例
+    * session：同一个session创建一个实例
+    */
+@Scope
+@Bean("person")
+public Person person() {
+    return new Person("lisi", 20);
+}
+```
+
+```java
+ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+
+Person bean = (Person) applicationContext.getBean("person");
+Person bean2 = (Person) applicationContext.getBean("person");
+System.out.println(bean == bean2); // true
+```
+
+### @Lazy
+
+`@Lazy` 懒加载，针对上节提到的单实例 bean，单实例 bean 默认在容器启动的时候创建对象，通过懒加载让容器启动时不创建对象。第一次使用 Bean 时创建对象，并初始化。
+
+```java
+@Lazy
+@Bean("person")
+public Person person() {
+    return new Person("lisi", 20);
+}
+```
+
+### @Conditional
+
+`@Conditional` 按照一定的条件进行判断，满足条件给容器中注册 bean，它既可以作用在方法上，也可以作用在类上。
+
+```java
+// 如果系统是windows，给容器中注册 bill
+@Conditional({ WindowsCondition.class })
+@Bean("bill")
+public Person person01() {
+    return new Person("bill", 60);
+}
+
+// 如果是linux系统，给容器中注册 linus
+@Conditional({ LinuxCondition.class })
+@Bean("linus")
+public Person person02() {
+    return new Person("linus", 50);
+}
+```
+
+判断是否 windows 系统：
+
+```java
+public class WindowsCondition implements Condition {
+    /**
+     * ConditionContext：判断条件能使用的上下文（环境）
+     * AnnotatedTypeMetadata：注释信息
+     */
+    public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
+        Environment environment = conditionContext.getEnvironment();
+        String property = environment.getProperty("os.name");
+        return property.contains("Windows");
+    }
+}
+```
+
+在上下文环境中可以获取很多有用信息：
+
+```java
+//1、能获取到 ioc 使用的 beanfactory
+ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+//2、获取类加载器
+ClassLoader classLoader = context.getClassLoader();
+//3、获取当前环境信息
+Environment environment = context.getEnvironment();
+//4、获取到 bean 定义的注册类
+BeanDefinitionRegistry registry = context.getRegistry();
+
+// 可以判断容器中的 bean 注册情况，也可以给容器中注册 bean
+boolean definition = registry.containsBeanDefinition("person");
+```
+
 ## Tips
 
 ### 打印所有被 spring 托管的 bean
 
 ```java
 ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
-String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
-for (String beanDefinitionName : beanDefinitionNames) {
-    System.out.println(beanDefinitionName);
+
+// 只打印名称
+String[] namesForType = applicationContext.getBeanNamesForType(Person.class);
+for (String name : namesForType) {
+    System.out.println(name);
 }
+
+// 打印详细信息
+Map<String, Person> persons = applicationContext.getBeansOfType(Person.class);
+System.out.println(persons);
+```
+
+### 获取运行环境信息
+
+```java
+ConfigurableEnvironment environment = (ConfigurableEnvironment) applicationContext.getEnvironment();
+// 动态获取环境变量的值: Windows 10
+String property = environment.getProperty("os.name");
+System.out.println(property);
 ```
