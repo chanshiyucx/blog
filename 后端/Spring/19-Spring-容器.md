@@ -64,6 +64,13 @@ ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean
 
 ![Spring Context依赖](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/spring-容器/Spring-Context依赖.png)
 
+给容器中注册组件有以下几种方式：
+
+1. `@Bean`：导入第三方包里面的组件
+2. `@ComponentScan` 包扫描 + 组件标注注解 `@Controller/@Service/@Repository/@Component`：导入自己写的类
+3. `@Import`：快速给容器中导入一个组件
+4. 使用 Spring 提供的 `FactoryBean`（工厂 Bean）
+
 ### @Bean
 
 1. **使用 xml 配置文件**
@@ -255,7 +262,9 @@ public Person person() {
 
 ### @Conditional
 
-`@Conditional` 按照一定的条件进行判断，满足条件给容器中注册 bean，它既可以作用在方法上，也可以作用在类上。
+`@Conditional` 按照一定的条件进行判断，满足条件给容器中注册 bean，它既可以作用在方法上，也可以作用在类上，当作用于类上时，满足当前条件时，这个类中配置的所有 bean 注册才能生效。
+
+类中组件统一设置。；
 
 ```java
 // 如果系统是windows，给容器中注册 bill
@@ -305,9 +314,175 @@ BeanDefinitionRegistry registry = context.getRegistry();
 boolean definition = registry.containsBeanDefinition("person");
 ```
 
+### @Import
+
+`@Import` 导入组件，id 默认是组件的全类名。
+
+1. `@Import`：容器中就会自动注册这个组件，id 默认是全类名
+2. `ImportSelector`：返回需要导入的组件的全类名数组；
+3. `ImportBeanDefinitionRegistrar`：手动注册 bean 到容器中
+
+```java
+@Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+```
+
+`MyImportSelector`：
+
+```java
+public class MyImportSelector implements ImportSelector {
+
+    // 返回值，就是到导入到容器中的组件全类名
+    // AnnotationMetadata: 当前标注 @Import 注解的类的所有注解信息
+    public String[] selectImports(AnnotationMetadata annotationMetadata) {
+        return new String[]{ "com.chanshiyu.bean.Blue", "com.chanshiyu.bean.Green" };
+    }
+}
+```
+
+`MyImportBeanDefinitionRegistrar`：
+
+```java
+public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+    /**
+     * AnnotationMetadata：当前类的注解信息
+     * BeanDefinitionRegistry：BeanDefinition 注册类，把所有需要添加到容器中的 bean；调用 BeanDefinitionRegistry.registerBeanDefinition 手工注册进来
+     */
+    public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
+        boolean definition = beanDefinitionRegistry.containsBeanDefinition("com.chanshiyu.bean.Red");
+        boolean definition2 = beanDefinitionRegistry.containsBeanDefinition("com.chanshiyu.bean.Blue");
+        if(definition && definition2){
+            // 指定 Bean 定义信息
+            RootBeanDefinition beanDefinition = new RootBeanDefinition(Black.class);
+            // 注册一个 Bean，指定 bean 名
+            beanDefinitionRegistry.registerBeanDefinition("black", beanDefinition);
+        }
+    }
+}
+```
+
+### FactoryBean
+
+```java
+public class ColorFactoryBean implements FactoryBean {
+    // 返回一个Color对象，这个对象会添加到容器中
+    public Object getObject() throws Exception {
+        return new Color();
+    }
+
+    public Class<?> getObjectType() {
+        return Color.class;
+    }
+
+    public boolean isSingleton() {
+        return false;
+    }
+}
+```
+
+注册 Bean：
+
+```java
+@Bean
+public ColorFactoryBean colorFactoryBean() {
+    return new ColorFactoryBean();
+}
+```
+
+```java
+//工厂Bean获取的是调用getObject创建的对象
+Object bean2 = applicationContext.getBean("colorFactoryBean");
+Object bean3 = applicationContext.getBean("colorFactoryBean");
+System.out.println("bean2 的类型：" + bean2.getClass()); // com.chanshiyu.bean.Color
+System.out.println(bean2 == bean3); // false
+
+Object bean4 = applicationContext.getBean("&colorFactoryBean");
+System.out.println("bean4 的类型：" + bean4.getClass()); // com.chanshiyu.bean.ColorFactoryBean
+```
+
+需要注意：使用 Spring 提供的 `FactoryBean`，默认获取到的是工厂 bean 调用 getObject 创建的对象，要获取工厂 Bean 本身，我们需要给 id 前面加一个 `&`，如 `&colorFactoryBean`。
+
+如上栗子：`@Bean` 返回 ColorFactoryBean，默认获取 `com.chanshiyu.bean.Color`，需要加上 `&` 才返回 `com.chanshiyu.bean.ColorFactoryBean`。
+
+## 生命周期
+
+bean 的生命周期：创建 --> 初始化 --> 销毁的过程。容器管理 bean 的生命周期。
+
+### 初始化和销毁
+
+我们可以通过 `@Bean` 指定 `initMethod` 和 `destroyMethod` 自定义初始化和销毁方法，容器在 bean 进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。
+
+- 初始化：对象创建完成，并赋值好，调用初始化方法，单实例在容器创建时创建对象，多实例在获取时候创建对象。
+- 销毁：单实例在容器关闭的时候销毁；多实例下容器不会管理这个 bean，容器不会调用销毁方法。
+
+```java
+public class Car {
+
+    public Car() {
+        System.out.println("car ... constructor ...");
+    }
+
+    public void init() {
+        System.out.println("car ... init ...");
+    }
+
+    public void destroy() {
+        System.out.println("car ... destroy ...");
+    }
+
+}
+```
+
+```java
+@Configuration
+public class MainConfigOfLifeCycle {
+
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    public Car car() {
+        return new Car();
+    }
+
+}
+```
+
+```java
+AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+System.out.println("容器创建成功...");
+
+applicationContext.close();
+System.out.println("容器关闭...");
+```
+
+打印日志：
+
+```
+car ... constructor ...
+car ... init ...
+容器创建成功...
+car ... destroy ...
+容器关闭...
+```
+
 ## Tips
 
-### 打印所有被 spring 托管的 bean
+### 获取运行环境信息
+
+```java
+ConfigurableEnvironment environment = (ConfigurableEnvironment) applicationContext.getEnvironment();
+// 动态获取环境变量的值: Windows 10
+String property = environment.getProperty("os.name");
+System.out.println(property);
+```
+
+### 获取容器中所有 bean
+
+```java
+String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+for (String beanDefinitionName : beanDefinitionNames) {
+    System.out.println(beanDefinitionName);
+}
+```
+
+### 获取容器中特定类型的 bean
 
 ```java
 ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
@@ -321,13 +496,4 @@ for (String name : namesForType) {
 // 打印详细信息
 Map<String, Person> persons = applicationContext.getBeansOfType(Person.class);
 System.out.println(persons);
-```
-
-### 获取运行环境信息
-
-```java
-ConfigurableEnvironment environment = (ConfigurableEnvironment) applicationContext.getEnvironment();
-// 动态获取环境变量的值: Windows 10
-String property = environment.getProperty("os.name");
-System.out.println(property);
 ```
