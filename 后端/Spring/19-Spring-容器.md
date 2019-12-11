@@ -407,12 +407,21 @@ System.out.println("bean4 的类型：" + bean4.getClass()); // com.chanshiyu.be
 
 bean 的生命周期：创建 --> 初始化 --> 销毁的过程。容器管理 bean 的生命周期。
 
+1. 指定初始化和销毁方法：通过 `@Bean` 指定 `initMethod` 和 `destroyMethod`；
+2. 通过让 Bean 实现 `InitializingBean`（定义初始化逻辑）和 `DisposableBean`（定义销毁逻辑）接口；
+3. 可以使用 JSR250：
+   - `@PostConstruct`：在 bean 创建完成并且属性赋值完成，来执行初始化方法
+   - `@PreDestroy`：在容器销毁 bean 之前通知进行清理工作
+4. BeanPostProcessor【interface】：bean 的后置处理器，在 bean 初始化前后进行一些处理工作
+   - `postProcessBeforeInitialization`：在初始化之前工作
+   - `postProcessAfterInitialization`：在初始化之后工作
+
 ### 初始化和销毁
 
 我们可以通过 `@Bean` 指定 `initMethod` 和 `destroyMethod` 自定义初始化和销毁方法，容器在 bean 进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。
 
 - 初始化：对象创建完成，并赋值好，调用初始化方法，单实例在容器创建时创建对象，多实例在获取时候创建对象。
-- 销毁：单实例在容器关闭的时候销毁；多实例下容器不会管理这个 bean，容器不会调用销毁方法。
+- 销毁：单实例在容器关闭的时候销毁，多实例下容器不会管理这个 bean，容器不会调用销毁方法。
 
 ```java
 public class Car {
@@ -459,6 +468,93 @@ car ... constructor ...
 car ... init ...
 容器创建成功...
 car ... destroy ...
+容器关闭...
+```
+
+### InitializingBean 和 DisposableBean
+
+```java
+@Component
+public class Cat implements InitializingBean, DisposableBean {
+
+    public Cat() {
+        System.out.println("cat ... constructor ...");
+    }
+
+
+    public void destroy() throws Exception {
+        System.out.println("cat ... destroy ...");
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("cat ... afterPropertiesSet ...");
+    }
+}
+```
+
+```
+cat ... constructor ...
+cat ... afterPropertiesSet ...
+容器创建成功...
+cat ... destroy ...
+容器关闭...
+```
+
+### @PostConstruct 和 @PreDestroy
+
+```java
+public class Dog {
+
+    public Dog() {
+        System.out.println("dog ... constructor ...");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("dog ... @PostConstruct ...");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("dog ... @PreDestroy ...");
+    }
+}
+```
+
+```
+dog ... constructor ...
+dog ... @PostConstruct ...
+容器创建成功...
+dog ... @PreDestroy ...
+容器关闭...
+```
+
+### BeanPostProcessor
+
+`BeanPostProcessor` 后置处理器：初始化前后进行处理工作，需要将后置处理器加入到容器中，将对每一个注册的 bean 都起作用。
+
+```java
+@Component
+public class MyBeanPostProcessor implements BeanPostProcessor {
+    public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
+        System.out.println("postProcessBeforeInitialization..." + s);
+        return o;
+    }
+
+    public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
+        System.out.println("postProcessAfterInitialization..." + s);
+        return o;
+    }
+}
+```
+
+```
+cat ... constructor ...
+postProcessBeforeInitialization...cat
+cat ... afterPropertiesSet ...
+postProcessAfterInitialization...cat
+容器创建成功...
+cat ... destroy ...
 容器关闭...
 ```
 
