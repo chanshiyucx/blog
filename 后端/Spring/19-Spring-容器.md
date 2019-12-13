@@ -533,6 +533,19 @@ dog ... @PreDestroy ...
 
 `BeanPostProcessor` 后置处理器：初始化前后进行处理工作，需要将后置处理器加入到容器中，将对每一个注册的 bean 都起作用。
 
+遍历得到容器中所有的 `BeanPostProcessor`；挨个执行 `beforeInitialization`，一但返回 null，跳出 for 循环，不会执行后面的 `beforeInitialization`。
+
+`BeanPostProcessor` 执行顺序：
+
+```java
+populateBean(beanName, mbd, instanceWrapper);  // 给bean进行属性赋值
+initializeBean{
+    applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+    invokeInitMethods(beanName, wrappedBean, mbd); // 执行自定义初始化
+    applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
+}
+```
+
 ```java
 @Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
@@ -557,6 +570,8 @@ postProcessAfterInitialization...cat
 cat ... destroy ...
 容器关闭...
 ```
+
+Spring 底层对 `BeanPostProcessor` 的使用：bean 赋值，注入其他组件，生命周期注解功能，`@Autowired`，`@Async` 等等功能都是使用 `BeanPostProcessor`。
 
 ## Tips
 
