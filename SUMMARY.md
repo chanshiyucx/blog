@@ -179,4 +179,3 @@
     - [04 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)
     - [05 30-seconds-of-java8](https://github.com/biezhi/30-seconds-of-java8)
     - [06 Java3y](https://github.com/ZhongFuCheng3y/3y)
-    - [07 spring-security-jwt-guide](https://github.com/Snailclimb/spring-security-jwt-guide)
