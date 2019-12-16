@@ -363,7 +363,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 ### FactoryBean
 
 ```java
-public class ColorFactoryBean implements FactoryBean {
+public class ColorFactoryBean implements FactoryBean<Color> {
     // 返回一个Color对象，这个对象会添加到容器中
     public Object getObject() throws Exception {
         return new Color();
@@ -373,6 +373,7 @@ public class ColorFactoryBean implements FactoryBean {
         return Color.class;
     }
 
+    // 是否单实例
     public boolean isSingleton() {
         return false;
     }
@@ -393,7 +394,7 @@ public ColorFactoryBean colorFactoryBean() {
 Object bean2 = applicationContext.getBean("colorFactoryBean");
 Object bean3 = applicationContext.getBean("colorFactoryBean");
 System.out.println("bean2 的类型：" + bean2.getClass()); // com.chanshiyu.bean.Color
-System.out.println(bean2 == bean3); // false
+System.out.println(bean2 == bean3); // false，因为 isSingleton 设置的是单实例
 
 Object bean4 = applicationContext.getBean("&colorFactoryBean");
 System.out.println("bean4 的类型：" + bean4.getClass()); // com.chanshiyu.bean.ColorFactoryBean
@@ -539,7 +540,7 @@ dog ... @PreDestroy ...
 
 ```java
 populateBean(beanName, mbd, instanceWrapper);  // 给bean进行属性赋值
-initializeBean{
+initializeBean {
     applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
     invokeInitMethods(beanName, wrappedBean, mbd); // 执行自定义初始化
     applyBeanPostProcessorsAfterInitialization(wrappedBean, beanName);
@@ -573,6 +574,39 @@ cat ... destroy ...
 
 Spring 底层对 `BeanPostProcessor` 的使用：bean 赋值，注入其他组件，生命周期注解功能，`@Autowired`，`@Async` 等等功能都是使用 `BeanPostProcessor`。
 
+## 属性赋值
+
+使用 `@Value`赋值，赋值有三种形式：
+
+1. 基本数值
+2. 可以写`#{}`，SpEL
+3. 可以写`${}`，取出配置文件中的值（在运行环境变量里面的值）
+
+在传统 xml 的方法中，需要装载配置文件：
+
+```xml
+<context:property-placeholder location="classpath:person.properties"/>
+```
+
+使用注解方式依旧需要装载配置文件：
+
+```java
+@PropertySource(value = {"classpath:/person.properties"})
+```
+
+使用：
+
+```java
+@Value("张三")
+private String name;
+
+@Value("#{20 - 2}")
+private Integer age;
+
+@Value("${person.nickname}")
+private String nickname;
+```
+
 ## Tips
 
 ### 获取运行环境信息
@@ -583,6 +617,8 @@ ConfigurableEnvironment environment = (ConfigurableEnvironment) applicationConte
 String property = environment.getProperty("os.name");
 System.out.println(property);
 ```
+
+因为配置文件会装载进环境变量，所以 `getProperty` 可以获取配置文件中的值。
 
 ### 获取容器中所有 bean
 
