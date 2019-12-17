@@ -607,6 +607,145 @@ private Integer age;
 private String nickname;
 ```
 
+## 自动装配
+
+自动装配：Spring 利用依赖注入（DI），完成对 IOC 容器中中各个组件的依赖关系赋值。
+
+1. 默认优先按照类型去容器中找对应的组件：`applicationContext.getBean(BookDao.class)`，找到就赋值
+2. 如果找到多个相同类型的组件，再将属性的名称作为组件的 id 去容器中查找，`applicationContext.getBean("bookDao")`
+3. `@Qualifier("bookDao")`：使用 `@Qualifier` 指定需要装配的组件的 id，而不是使用属性名
+4. 自动装配默认一定要将属性赋值好，没有就会报错，`@Autowired(required=false)` 使容器中不必强制包含某种类型的 bean
+5. `@Primary`：让 Spring 进行自动装配的时候，默认使用首选的 bean；也可以继续使用 `@Qualifier` 指定需要装配的 bean 的名字，优先级 `@Qualifier` 大于 `@Primary`
+
+### @Autowired
+
+**栗子一：自动注入组件和容器中的组件是同一个**
+
+```java
+@Service
+public class BookService {
+
+    @Autowired
+    private BookDao bookDao;
+
+    @Override
+    public String toString() {
+        return "BookService{" +
+                "bookDao=" + bookDao +
+                '}';
+    }
+}
+```
+
+```java
+BookService bookService = applicationContext.getBean(BookService.class);
+System.out.println(bookService);
+
+BookDao bookDao = applicationContext.getBean(BookDao.class);
+System.out.println(bookDao);
+
+applicationContext.close();
+```
+
+```java
+BookService{bookDao=com.chanshiyu.dao.BookDao@12d3a4e9}
+com.chanshiyu.dao.BookDao@12d3a4e9
+```
+
+**栗子二：存在多个同类型的组件，将属性的名称作为组件的 id 去容器中查找**
+
+接上面栗子，修改 BookDao，添加 label 属性，默认值为 "1"：
+
+```java
+@Repository
+public class BookDao {
+
+    private String label = "1";
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    @Override
+    public String toString() {
+        return "BookDao{" +
+                "label='" + label + '\'' +
+                '}';
+    }
+}
+```
+
+再通过 `@Bean` 手动注入一个 `BookDao`，设置 label 为 "2"：
+
+```java
+@Bean("bookDao2")
+public BookDao bookDao() {
+    BookDao bookDao = new BookDao();
+    bookDao.setLabel("2");
+    return bookDao;
+
+}
+```
+
+`@Autowired` 自动注入 `bookDao`：
+
+```java
+@Service
+public class BookService {
+
+    @Autowired
+    private BookDao bookDao;
+
+    @Override
+    public String toString() {
+        return "BookService{" +
+                "bookDao=" + bookDao +
+                '}';
+    }
+}
+```
+
+此时自动注入的 bookDao 的 label 属性是 "1" 还是 "2" 呢：
+
+```
+BookService{bookDao=BookDao{label='1'}}
+```
+
+根据规则一，默认优先按照类型去容器中找对应的组件，当找到多个相同类型的组件，再根据规则二，**将属性的名称作为组件的 id 去容器中查找**。这里自动注入的属性名为 `bookDao`，所以查找的组件 id 也是 `bookDao`，而我们通过 `@Bean("bookDao2")` 注入的组件 id 为 `bookDao2`，所以最终自动注入的组件 label 属性为 "1"。
+
+通过 `@Qualifier` 指定注入的组件 id，而不是使用属性名：
+
+```java
+@Qualifier("bookDao2")
+@Autowired
+private BookDao bookDao;
+```
+
+通过 `@Primary` 让 Spring 进行自动装配的时候，默认使用首选的 bean，优先级 `@Qualifier` 大于 `@Primary`：
+
+```java
+@Primary
+@Bean("bookDao2")
+public BookDao bookDao() {
+    BookDao bookDao = new BookDao();
+    bookDao.setLabel("2");
+    return bookDao;
+
+}
+```
+
+### @Resource
+
+### @Inject
+
+### 自动装配位置
+
+### 自动注入原理
+
 ## Tips
 
 ### 获取运行环境信息
