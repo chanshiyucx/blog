@@ -619,7 +619,7 @@ private String nickname;
 
 ### @Autowired
 
-**栗子一：自动注入组件和容器中的组件是同一个**
+**栗子一：自动注入组件和容器中的组件是同一个实例**
 
 ```java
 @Service
@@ -643,8 +643,6 @@ System.out.println(bookService);
 
 BookDao bookDao = applicationContext.getBean(BookDao.class);
 System.out.println(bookDao);
-
-applicationContext.close();
 ```
 
 ```java
@@ -738,11 +736,90 @@ public BookDao bookDao() {
 }
 ```
 
-### @Resource
+### @Resource/@Inject
 
-### @Inject
+spring 还支持 `@Resource(JSR250)` 和 `@Inject(JSR330)` 自动注入。
+
+`@Autowired` 属于 Spring 定义的注解，`@Resource`、`@Inject` 都是 java 规范。
+
+`@Resource` 可以和 `@Autowired` 一样实现自动装配功能；默认是按照组件名称进行装配的，但是没有能支持 `@Primary` 功能，没有支持 `@Autowired(reqiured=false)`
+
+`@Resource` 指定装配的组件 id，功能类似 `@Qualifier`：
+
+```java
+@Resource(name = "bookDao2")
+private BookDao bookDao;
+```
+
+`@Inject` 需要导入 `javax.inject` 的包，和 `@Autowired` 的功能一样，支持 `@Primary`，但是没有支持`@Autowired(reqiured=false)`
 
 ### 自动装配位置
+
+`@Autowired` 可以作用的位置：构造器，方法，参数，属性，都是从容器中获取参数组件的值。
+
+- 标注再构造器上：如果组件只有一个有参构造器，这个有参构造器的 `@Autowired` 可以省略，参数位置的组件还是可以自动从容器中获取
+- 标注在方法位置：`@Bean` + 方法参数，参数从容器中获取，`@Autowired` 可以省略，依旧可以自动装配
+- 标注在参数位置
+
+```java
+@Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Autowired {
+    boolean required() default true;
+}
+```
+
+下面四种情形的 `@Autowired` 都可以省略：
+
+**构造器**
+
+```java
+@Autowired
+public BookService(BookDao bookDao) {
+    this.bookDao = bookDao;
+}
+```
+
+**方法**
+
+```java
+@Autowired
+public void setBookDao(BookDao bookDao) {
+    this.bookDao = bookDao;
+}
+```
+
+**参数**
+
+```java
+public void setBookDao(@Autowired BookDao bookDao) {
+    this.bookDao = bookDao;
+}
+```
+
+**属性**
+
+```java
+@Autowired
+private BookDao bookDao;
+```
+
+再举栗一种常用的情形，`@Bean` + 方法参数，参数从容器中获取：
+
+```java
+/**
+ * @Bean标注的方法创建对象的时候，方法参数的值从容器中获取
+ * @param car 从容器中获取
+ * @return
+ */
+@Bean
+public Color color(Car car){
+    Color color = new Color();
+    color.setCar(car);
+    return color;
+}
+```
 
 ### 自动注入原理
 
