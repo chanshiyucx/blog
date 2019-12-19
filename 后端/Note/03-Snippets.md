@@ -52,3 +52,26 @@ while ((line = bufferedReader.readLine()) != null) {
     System.out.println(line);
 }
 ```
+
+## 005 日期清空时分秒
+
+```java
+Date date = e.getCreateTime();
+Calendar calendar = Calendar.getInstance();
+calendar.setTime(date);
+calendar.set(Calendar.MINUTE, 0);
+calendar.set(Calendar.SECOND, 0);
+calendar.set(Calendar.MILLISECOND, 0);
+Date time = calendar.getTime();
+```
+
+## 006 HttpServletRequest
+
+```java
+@GetMapping("{id}")
+public String reg(HttpServletRequest request, @PathVariable long id) {
+    System.out.println("url" + request.getRequestURI());
+    TbUser tbUser = tbUserMapper.selectByPrimaryKey(id);
+    return tbUser.getUsername();
+}
+```

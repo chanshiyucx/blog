@@ -50,17 +50,6 @@ netstat -ano | findstr <端口号>
 taskkill -PID <进程号> -F
 ```
 
-## HttpServletRequest
-
-```java
-@GetMapping("{id}")
-public String reg(HttpServletRequest request, @PathVariable long id) {
-    System.out.println("url" + request.getRequestURI());
-    TbUser tbUser = tbUserMapper.selectByPrimaryKey(id);
-    return tbUser.getUsername();
-}
-```
-
 ## ConfigurableApplicationContext
 
 微服务中读取配置信息，为什么不用 `@Value` 注解，因为 `@Value` 读取是一次性的，`ConfigurableApplicationContext` 可以动态刷新。

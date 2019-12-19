@@ -241,6 +241,10 @@ public class RedisUtil {
 }
 ```
 
+## Tips
+
+### 计数增减
+
 错误用法：
 
 ```java
@@ -271,6 +275,29 @@ if (count + 1 > MAX_LOGIN_FAILED_COUNT) {
     this.usersService.update(user);
     // 删除redis缓存
     redisService.del(redisKey);
+}
+```
+
+## 模糊查询
+
+```java
+/**
+    * 获取所有支付订单
+    * @return
+    */
+public List<PayOrderBean> getAllOrder() {
+    Set<String> keys = redisOperatorService.keys(TAG + "PAY_ORDER_*");
+    if (CollectionUtils.isEmpty(keys)) {
+        return new ArrayList<>();
+    }
+    List<PayOrderBean> payOrderBeans = new ArrayList<>();
+    for (String orderKey : keys) {
+        PayOrderBean payOrderBean = (PayOrderBean) redisOperatorService.getObByKey(orderKey);
+        if (payOrderBean != null) {
+            payOrderBeans.add(payOrderBean);
+        }
+    }
+    return payOrderBeans;
 }
 ```
 
