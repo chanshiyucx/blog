@@ -3,6 +3,12 @@
 ## 常用 SQL
 
 ```sql
+-- 登录
+mysql -u root -p
+
+-- 指定ip和端口登录
+mysql -h 127.0.0.1 -u root -p -P 3306
+
 -- 查看 MySQL 版本
 select version();
 
@@ -35,6 +41,10 @@ insert into student (name, age) values ("张三", 22);
 
 -- 查看表数据：
 select * from student;
+
+-- 查看编码方式
+show variables like 'char%';
+show variables like 'character%';
 ```
 
 ## 配置远程访问
