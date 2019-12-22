@@ -56,13 +56,14 @@ while ((line = bufferedReader.readLine()) != null) {
 ## 005 日期清空时分秒
 
 ```java
-Date date = e.getCreateTime();
-Calendar calendar = Calendar.getInstance();
-calendar.setTime(date);
-calendar.set(Calendar.MINUTE, 0);
-calendar.set(Calendar.SECOND, 0);
-calendar.set(Calendar.MILLISECOND, 0);
-Date time = calendar.getTime();
+private Date convertTime(Date date) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(date);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+    return calendar.getTime();
+}
 ```
 
 ## 006 HttpServletRequest
@@ -74,4 +75,12 @@ public String reg(HttpServletRequest request, @PathVariable long id) {
     TbUser tbUser = tbUserMapper.selectByPrimaryKey(id);
     return tbUser.getUsername();
 }
+```
+
+## 007 HashMap to List
+
+```java
+HashMap<String, OrderAmount> OrderAmountHashMap = new HashMap<>();
+List<String> axis = OrderAmountHashMap.keySet().stream().sorted().collect(Collectors.toList());
+List<OrderAmount> list = new ArrayList<OrderAmount>(OrderAmountHashMap.values());
 ```
