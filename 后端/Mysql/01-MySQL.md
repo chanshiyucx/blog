@@ -49,6 +49,7 @@ show variables like 'character%';
 -- 查询某一列为空或不为空的记录
 select * from pay_order where ip IS NULL;
 select * from pay_order where ip IS NOT NULL;
+select ip from pay_order where ip IS NOT NULL;
 ```
 
 ## 配置远程访问
