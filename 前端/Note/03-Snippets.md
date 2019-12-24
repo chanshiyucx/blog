@@ -199,8 +199,7 @@ const isRepeat = (function() {
 长数组按指定长度拆分为嵌套子数组：
 
 ```javascript
-const chunk = (arr, size) =>
-  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(size * i, size * i + size))
+const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) => arr.slice(size * i, size * i + size))
 chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
 ```
 
@@ -261,7 +260,7 @@ const formBuilder = obj => {
 }
 ```
 
-## AES 加解密
+## 016 AES 加解密
 
 ```javascript
 const CryptoJS = require('crypto-js')
@@ -300,4 +299,15 @@ export const decodeMsg = msgStr => {
   const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
   return decryptedStr.toString()
 }
+```
+
+## 017 求差集
+
+```javascript
+// const difference = [users, unUsed].reduce((a, b) => a.filter(c => !b.includes(c)))
+
+const diff = arr => {
+  return arr.reduce((a, b) => a.filter(c => !b.includes(c)))
+}
+diff([[1, 2, 3], [2, 3], [3]]) // [1]
 ```

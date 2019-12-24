@@ -126,6 +126,7 @@ Code is Long, Life is Short.
     - [31 AES CBC 加解密](后端/Java/31-AES-CBC-加解密.md)
     - [32 Java 服务端分层模型](后端/Java/32-Java-服务端分层模型.md)
     - [33 Magic 魔数获取文件类型](后端/Java/33-Magic-魔数获取文件类型.md)
+    - [34 获取请求 IP 地址](后端/Java/34-获取请求IP地址.md)
   - Netty
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
@@ -134,6 +135,7 @@ Code is Long, Life is Short.
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
+    - [03 truncate 和 delete](后端/Mysql/03-truncate和delete.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
@@ -202,3 +204,4 @@ Code is Long, Life is Short.
     - [08 Flat Icon](https://www.flaticon.com/)
     - [09 Regexper](https://regexper.com/)
     - [10 Toyaml](https://www.toyaml.com/index.html)
+    - [11 TempMail](https://temp-mail.org/zh/)

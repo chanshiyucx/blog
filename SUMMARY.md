@@ -120,6 +120,7 @@
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
+    - [03 truncate 和 delete](后端/Mysql/03-truncate和delete.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
