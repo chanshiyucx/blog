@@ -85,18 +85,11 @@ List<String> axis = OrderAmountHashMap.keySet().stream().sorted().collect(Collec
 List<OrderAmount> list = new ArrayList<OrderAmount>(OrderAmountHashMap.values());
 ```
 
-```sql
-alter table `pay_order`
-add column `ip` varchar(64) NULL DEFAULT NULL
-after `status`;
+### 008 List Stream 索引下标
 
-
-DROP TABLE IF EXISTS `pay_client`;
-CREATE TABLE `pay_client` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip` varchar(64) NOT NULL COMMENT 'ip',
-  `name` varchar(64) NOT NULL COMMENT 'name',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
-  PRIMARY KEY (`id`)
-);
+```java
+List<Date> dateList = getDateListOfDay();
+List<String> axis = IntStream.range(0, dateList.size())
+        .mapToObj(i -> DateFormat.format(dateList.get(i)))
+        .collect(Collectors.toList());
 ```
