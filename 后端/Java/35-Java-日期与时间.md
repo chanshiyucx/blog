@@ -107,3 +107,42 @@ System.out.println(sdf2.format(date)); // 星期四 十二月 26, 2019
 ```
 
 `Date` 对象有几个严重的问题：它不能转换时区，除了 `toGMTString()` 可以按 `GMT+0:00` 输出外，`Date` 总是以当前计算机系统的默认时区为基础进行输出。此外，我们也很难对日期和时间进行加减，计算两个日期相差多少天，计算某个月第一个星期一的日期等。
+
+## Calendar
+
+`Calendar` 可以用于获取并设置年、月、日、时、分、秒，它和 Date 比，主要多了一个可以做简单的日期和时间运算的功能。
+
+```java
+Calendar c = Calendar.getInstance();
+int y = c.get(Calendar.YEAR);
+int m = c.get(Calendar.MONTH) + 1;
+int d = c.get(Calendar.DAY_OF_MONTH);
+int w = c.get(Calendar.DAY_OF_WEEK);
+int hh = c.get(Calendar.HOUR_OF_DAY);
+int mm = c.get(Calendar.MINUTE);
+int ss = c.get(Calendar.SECOND);
+int ms = c.get(Calendar.MILLISECOND);
+System.out.println(y + "-" + m + "-" + d + " " + w + " " + hh + ":" + mm + ":" + ss + "." + ms);
+// 2019-12-27 6 10:11:10.657
+```
+
+`Calendar` 获取年月日这些信息变成了 `get(int field)`，**返回的年份不必转换，返回的月份仍然要加 1**，返回的星期要特别注意，1~7 分别表示周日，周一，……，周六。
+
+`Calendar` 只有一种方式获取，即 `Calendar.getInstance()`，而且一获取到就是当前时间。如果我们想给它设置成特定的一个日期和时间，就必须先清除所有字段。
+
+```java
+// 当前时间
+Calendar c = Calendar.getInstance();
+// 清除所有
+c.clear();
+// 设置年月日，注意月份8表示9月
+c.set(Calendar.YEAR, 2019);
+c.set(Calendar.MONTH, 8);
+c.set(Calendar.DATE, 2);
+// 设置时间
+c.set(Calendar.HOUR_OF_DAY, 21);
+c.set(Calendar.MINUTE, 22);
+c.set(Calendar.SECOND, 23);
+System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(c.getTime()));
+// 2019-09-02 21:22:23
+```
