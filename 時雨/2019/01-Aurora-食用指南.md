@@ -32,12 +32,7 @@ npm start
 
 ## 替换站点标题和图标
 
-首先修改浏览器上标签页的站点标题和图标，在主题目录 `public/` 下有三个图标 `apple-icon-180x180.png、favicon-16x16.png、favicon-32x32.png`，用你自己的站点图标替换它们。然后修改 `public/index.html` 的站点标题为你的网站标题。
-
-```markup
-<!-- 替换成你自己的网站标题 -->
-<title>蝉時雨</title>
-```
+首先修改站点标题和图标，替换主题目录 `public/assets` 下的图标资源，然后修改 `public/index.html` 的站点标题和描述，同时注意修改 `manifest.json` 标题。
 
 ## 配置主题
 
@@ -174,6 +169,6 @@ description: 柏林已经来了命令，阿尔萨斯和洛林的学校只许教 
 
 ## 部署
 
-修改根目录下 `deploy.sh`，配置自定义域名与推送仓库，然后执行 `deploy.sh` 自动打包发布到 github-pages。相关文档参考[自动部署](https://cli.vuejs.org/zh/guide/deployment.html#now)。
+Aurora 2.0 添加一键部署功能，只需要编辑 `build.sh`，配置自己的仓库和域名，之后命令行执行 `./build.sh`，即可自动打包并上传到指定仓库，将该仓库开启 `Github Pages` 功能即可在线访问。相关文档参考[自动部署](https://cli.vuejs.org/zh/guide/deployment.html#now)。
 
 Just enjoy it! 😃
