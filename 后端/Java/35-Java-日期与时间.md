@@ -359,3 +359,28 @@ System.out.println(dt2); // 2019-11-30T15:16:17
 ```
 
 注意到 `LocalDateTime` 无法与时间戳进行转换，因为 `LocalDateTime` 没有时区，无法确定某一时刻。后面我们要介绍的 `ZonedDateTime` 相当于 `LocalDateTime` 加时区的组合，它具有时区，可以与 long 表示的时间戳进行转换。
+
+### Duration 和 Period
+
+`Duration` 表示两个时刻之间的时间间隔。另一个类似的 `Period` 表示两个日期之间的天数：
+
+```java
+LocalDateTime start = LocalDateTime.of(2019, 11, 19, 8, 15, 0);
+LocalDateTime end = LocalDateTime.of(2020, 1, 9, 19, 25, 30);
+Duration d = Duration.between(start, end);
+System.out.println(d); // PT1235H10M30S
+
+Period p = LocalDate.of(2019, 11, 19).until(LocalDate.of(2020, 1, 9));
+System.out.println(p); // P1M21D
+```
+
+注意到两个 `LocalDateTime` 之间的差值使用 `Duration` 表示，类似 `PT1235H10M30S`，表示 1235 小时 10 分钟 30 秒。而两个 `LocalDate` 之间的差值用 `Period` 表示，类似 `P1M21D`，表示 1 个月 21 天。
+
+`Duration` 和 `Period` 的表示方法也符合 ISO 8601 的格式，它以 `P...T...` 的形式表示，`P...T` 之间表示日期间隔，`T` 后面表示时间间隔。如果是 `PT...` 的格式表示仅有时间间隔。
+
+利用 `ofXxx()` 或者 `parse()` 方法也可以直接创建 `Duration`：
+
+```java
+Duration d1 = Duration.ofHours(10); // 10 hours
+Duration d2 = Duration.parse("P1DT2H3M"); // 1 day, 2 hours, 3 minutes
+```
