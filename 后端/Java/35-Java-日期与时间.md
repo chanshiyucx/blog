@@ -29,7 +29,7 @@ long t = 1574208900123L;
 
 要获取当前时间戳，可以使用 `System.currentTimeMillis()`，这是 Java 程序获取时间戳最常用的方法
 
-## 标准库 API
+## 标准库
 
 Java 标准库有两套处理日期和时间的 API：
 
@@ -38,7 +38,9 @@ Java 标准库有两套处理日期和时间的 API：
 
 为什么会有新旧两套 API 呢？因为历史遗留原因，旧的 API 存在很多问题，所以引入了新的 API。因为很多遗留代码仍然使用旧的 API，所以目前仍然需要对旧的 API 有一定了解，很多时候还需要在新旧两种对象之间进行转换。
 
-## Date
+## Date 和 Calendar
+
+### Date
 
 `java.util.Date` 是用于表示一个日期和时间的对象，注意与 `java.sql.Date` 区分，后者用在数据库中。如果观察 Date 的源码，可以发现它实际上存储了一个 long 类型的以毫秒表示的时间戳：
 
@@ -108,9 +110,9 @@ System.out.println(sdf2.format(date)); // 星期四 十二月 26, 2019
 
 `Date` 对象有几个严重的问题：它不能转换时区，除了 `toGMTString()` 可以按 `GMT+0:00` 输出外，`Date` 总是以当前计算机系统的默认时区为基础进行输出。此外，我们也很难对日期和时间进行加减，计算两个日期相差多少天，计算某个月第一个星期一的日期等。
 
-## Calendar
+### Calendar
 
-`Calendar` 可以用于获取并设置年、月、日、时、分、秒，它和 Date 比，主要多了一个可以做简单的日期和时间运算的功能。
+`Calendar` 可以用于获取并设置年、月、日、时、分、秒，它和 `Date` 比，主要多了一个可以做简单的日期和时间运算的功能。
 
 ```java
 Calendar c = Calendar.getInstance();
@@ -149,7 +151,7 @@ System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(c.getTime(
 
 利用 `Calendar.getTime()` 可以将一个 `Calendar` 对象转换成 `Date` 对象，然后就可以用 `SimpleDateFormat` 进行格式化了。
 
-## TimeZone
+### TimeZone
 
 `Calendar` 和 `Date` 相比，它提供了时区转换的功能。时区用 `TimeZone` 对象表示：
 
@@ -210,3 +212,150 @@ Date d = c.getTime();
 System.out.println(sdf.format(d));
 // 2019-11-25 6:15:00
 ```
+
+## LocalDateTime
+
+从 Java 8 开始，`java.time` 包提供了新的日期和时间 API，主要涉及的类型有：
+
+- 本地日期和时间：`LocalDateTime`，`LocalDate`，`LocalTime`；
+- 带时区的日期和时间：`ZonedDateTime`；
+- 时刻：`Instant`；
+- 时区：`ZoneId`，`ZoneOffset`；
+- 时间间隔：`Duration`。
+- 以及一套新的用于取代 `SimpleDateFormat` 的格式化类型 `DateTimeFormatter`。
+
+和旧的 API 相比，新 API 严格区分了时刻、本地日期、本地时间和带时区的日期时间，并且，对日期和时间进行运算更加方便。
+
+此外，新 API 修正了旧 API 不合理的常量设计：
+
+- Month 的范围用 1~12 表示 1 月到 12 月；
+- Week 的范围用 1~7 表示周一到周日。
+
+最后，新 API 的类型几乎全部是不变类型（和 String 类似），可以放心使用不必担心被修改。
+
+### LocalDateTime
+
+`LocalDateTime` 表示一个本地日期和时间，本地日期和时间通过 `now()` 获取，且总是以当前默认时区返回，和旧 API 不同，`LocalDateTime`、`LocalDate` 和 `LocalTime` 默认严格按照 ISO 8601 规定的日期和时间格式进行打印。
+
+```java
+LocalDate d = LocalDate.now(); // 当前日期
+LocalTime t = LocalTime.now(); // 当前时间
+LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+System.out.println(d); // 2019-12-31
+System.out.println(t); // 10:38:55.839
+System.out.println(dt); // 2019-12-31T10:38:55.839
+```
+
+在上面栗子中，在获取 3 个类型的时候，由于执行一行代码总会消耗一点时间，因此，3 个类型的日期和时间很可能对不上（毫秒数不同）。为了保证获取到同一时刻的日期和时间，可以通过互相转换来获取一个相同的时刻：
+
+```java
+LocalDateTime dt = LocalDateTime.now(); // 当前日期和时间
+LocalDate d = dt.toLocalDate(); // 转换到当前日期
+LocalTime t = dt.toLocalTime(); // 转换到当前时间
+```
+
+同理，也可以反过来，通过指定的日期和时间创建 `LocalDateTime` 可以通过 `of()` 方法：
+
+```java
+LocalDate d2 = LocalDate.of(2019, 11, 30); // 2019-11-30
+LocalTime t2 = LocalTime.of(15, 16, 17); // 15:16:17
+LocalDateTime dt2 = LocalDateTime.of(2019, 11, 30, 15, 16, 17);
+LocalDateTime dt3 = LocalDateTime.of(d2, t2);
+```
+
+因为严格按照 ISO 8601 的格式，因此，将字符串转换为 `LocalDateTime` 就可以传入标准格式：
+
+```java
+LocalDateTime dt = LocalDateTime.parse("2019-11-19T15:16:17");
+LocalDate d = LocalDate.parse("2019-11-19");
+LocalTime t = LocalTime.parse("15:16:17");
+```
+
+ISO 8601 规定的日期和时间分隔符是 `T`。标准格式如下：
+
+- 日期：`yyyy-MM-dd`
+- 时间：`HH:mm:ss`
+- 带毫秒的时间：`HH:mm:ss.SSS`
+- 日期和时间：`yyyy-MM-dd'T'HH:mm:ss`
+- 带毫秒的日期和时间：`yyyy-MM-dd'T'HH:mm:ss.SSS`
+
+LocalDateTime 提供了对日期和时间进行加减的非常简单的链式调用：
+
+```java
+LocalDateTime dt = LocalDateTime.of(2019, 10, 26, 20, 30, 59);
+System.out.println(dt); // 2019-10-26T20:30:59
+// 加5天减3小时
+LocalDateTime dt2 = dt.plusDays(5).minusHours(3);
+System.out.println(dt2); // 2019-10-31T17:30:59
+// 减1月
+LocalDateTime dt3 = dt2.minusMonths(1);
+System.out.println(dt3); // 2019-09-30T17:30:59
+```
+
+月份加减会自动调整日期，例如从 `2019-10-31` 减去 1 个月得到的结果是 `2019-09-30`，因为 9 月没有 31 日。
+
+对日期和时间进行调整则使用 `withXxx()` 方法，例如：`withHour(15)` 会把 `10:11:12` 变为 `15:11:12`。
+
+- 调整年：`withYear()`
+- 调整月：`withMonth()`
+- 调整日：`withDayOfMonth()`
+- 调整时：`withHour()`
+- 调整分：`withMinute()`
+- 调整秒：`withSecond()`
+
+```java
+LocalDateTime dt = LocalDateTime.of(2019, 10, 26, 20, 30, 59);
+System.out.println(dt); // 2019-10-26T20:30:59
+// 日期变为31日
+LocalDateTime dt2 = dt.withDayOfMonth(31);
+System.out.println(dt2); // 2019-10-31T20:30:59
+// 月份变为9，日期自动变为30日
+LocalDateTime dt3 = dt2.withMonth(9);
+System.out.println(dt3); // 2019-09-30T20:30:59
+```
+
+`LocalDateTime` 还有一个通用的 `with()` 方法允许我们做更复杂的运算：
+
+```java
+// 本月第一天0:00时刻
+LocalDateTime firstDay = LocalDate.now().withDayOfMonth(1).atStartOfDay();
+System.out.println(firstDay); // 2019-12-01T00:00
+
+// 本月最后1天
+LocalDate lastDay = LocalDate.now().with(TemporalAdjusters.lastDayOfMonth());
+System.out.println(lastDay); // 2019-12-31
+
+// 下月第1天
+LocalDate nextMonthFirstDay = LocalDate.now().with(TemporalAdjusters.firstDayOfNextMonth());
+System.out.println(nextMonthFirstDay); // 2020-01-01
+
+// 本月第1个周一
+LocalDate firstWeekday = LocalDate.now().with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY));
+System.out.println(firstWeekday); // 2019-12-02
+```
+
+要判断两个 `LocalDateTime` 的先后，可以使用 `isBefore()`、`isAfter()` 方法，对于 `LocalDate` 和 `LocalTime` 类似：
+
+```java
+LocalDateTime now = LocalDateTime.now();
+LocalDateTime target = LocalDateTime.of(2019, 11, 19, 8, 15, 0);
+System.out.println(now.isBefore(target)); // false
+System.out.println(LocalDate.now().isBefore(LocalDate.of(2019, 11, 19))); // false
+System.out.println(LocalTime.now().isAfter(LocalTime.parse("08:15:00"))); // true
+```
+
+### DateTimeFormatter
+
+`DateTimeFormatter` 可以自定义输出的格式，或者要把一个非 ISO 8601 格式的字符串解析成 `LocalDateTime`。
+
+```java
+// 自定义格式化
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+System.out.println(dtf.format(LocalDateTime.now())); // 2019/12/31 16:26:58
+
+// 用自定义格式解析
+LocalDateTime dt2 = LocalDateTime.parse("2019/11/30 15:16:17", dtf);
+System.out.println(dt2); // 2019-11-30T15:16:17
+```
+
+注意到 `LocalDateTime` 无法与时间戳进行转换，因为 `LocalDateTime` 没有时区，无法确定某一时刻。后面我们要介绍的 `ZonedDateTime` 相当于 `LocalDateTime` 加时区的组合，它具有时区，可以与 long 表示的时间戳进行转换。
