@@ -126,7 +126,7 @@ System.out.println(y + "-" + m + "-" + d + " " + w + " " + hh + ":" + mm + ":" +
 // 2019-12-27 6 10:11:10.657
 ```
 
-`Calendar` 获取年月日这些信息变成了 `get(int field)`，**返回的年份不必转换，返回的月份仍然要加 1**，返回的星期要特别注意，1~7 分别表示周日，周一，……，周六。
+`Calendar` 获取年月日这些信息变成了 `get(int field)`，**返回的年份不必转换，返回的月份仍然要加 1**，返回的星期要特别注意，1~7 分别表示周日、周一至周六。
 
 `Calendar` 只有一种方式获取，即 `Calendar.getInstance()`，而且一获取到就是当前时间。如果我们想给它设置成特定的一个日期和时间，就必须先清除所有字段。
 
@@ -145,4 +145,68 @@ c.set(Calendar.MINUTE, 22);
 c.set(Calendar.SECOND, 23);
 System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(c.getTime()));
 // 2019-09-02 21:22:23
+```
+
+利用 `Calendar.getTime()` 可以将一个 `Calendar` 对象转换成 `Date` 对象，然后就可以用 `SimpleDateFormat` 进行格式化了。
+
+## TimeZone
+
+`Calendar` 和 `Date` 相比，它提供了时区转换的功能。时区用 `TimeZone` 对象表示：
+
+```java
+TimeZone tzDefault = TimeZone.getDefault(); // 当前时区
+TimeZone tzGMT9 = TimeZone.getTimeZone("GMT+09:00"); // GMT+9:00时区
+TimeZone tzNY = TimeZone.getTimeZone("America/New_York"); // 纽约时区
+System.out.println(tzDefault.getID()); // Asia/Shanghai
+System.out.println(tzGMT9.getID()); // GMT+09:00
+System.out.println(tzNY.getID()); // America/New_York
+```
+
+时区的唯一标识是以字符串表示的 ID，我们获取指定 `TimeZone` 对象也是以这个 ID 为参数获取，`GMT+09:00`、`Asia/Shanghai` 都是有效的时区 ID。使用 `TimeZone.getAvailableIDs()` 可以列出系统支持的所有 ID。
+
+利用时区就可以对指定时间进行转换。利用 Calendar 进行时区转换的步骤是：
+
+1. 清除所有字段；
+2. 设定指定时区；
+3. 设定日期和时间；
+4. 创建 `SimpleDateFormat`并设定目标时区；
+5. 格式化获取的 `Date` 对象。
+
+**注意 `Date` 对象无时区信息，时区信息存储在 `SimpleDateFormat` 中**，本质上时区转换只能通过 `SimpleDateFormat` 在显示的时候完成。
+
+下面的例子演示了如何将北京时间 `2019-11-20 8:15:00` 转换为纽约时间：
+
+```java
+// 当前时间
+Calendar c = Calendar.getInstance();
+// 清除所有
+c.clear();
+// 设置为北京时区
+c.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+// 设置年月日时分秒
+c.set(2019, 10, 20, 8, 15, 0);
+// 显示时间
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+sdf.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+System.out.println(sdf.format(c.getTime()));
+// 2019-11-19 19:15:0
+```
+
+`Calendar` 也可以对日期和时间进行简单的加减：
+
+```java
+// 当前时间
+Calendar c = Calendar.getInstance();
+// 清除所有
+c.clear();
+// 设置年月日时分秒
+c.set(2019, 10, 20, 8, 15, 0);
+// 加5天并减去2小时
+c.add(Calendar.DAY_OF_MONTH, 5);
+c.add(Calendar.HOUR_OF_DAY, -2);
+// 显示时间
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+Date d = c.getTime();
+System.out.println(sdf.format(d));
+// 2019-11-25 6:15:00
 ```

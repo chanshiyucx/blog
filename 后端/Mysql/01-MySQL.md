@@ -46,6 +46,13 @@ select * from student;
 show variables like 'char%';
 show variables like 'character%';
 
+-- 设置编码
+SET NAMES 'utf8';
+-- 它相当于下面的三句指令：
+SET character_set_client = utf8;
+SET character_set_results = utf8;
+SET character_set_connection = utf8;
+
 -- 查询某一列为空或不为空的记录
 select * from pay_order where ip IS NULL;
 select * from pay_order where ip IS NOT NULL;
