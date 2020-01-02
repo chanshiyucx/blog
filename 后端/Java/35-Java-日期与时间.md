@@ -1,5 +1,8 @@
 # Java 日期与时间
 
+> 本文为个人学习摘要笔记。  
+> 原文地址：[廖雪峰 Java 教程之日期和时间](https://www.liaoxuefeng.com/wiki/1252599548343744/1255943660631584)
+
 ## 本地化
 
 在计算机中，通常使用 `Locale` 表示一个国家或地区的日期、时间、数字、货币等格式。`Locale` 由 `语言_国家` 的字母缩写构成，例如，`zh_CN` 表示中文+中国，`en_US` 表示英文+美国。语言使用小写，国家使用大写。
@@ -233,8 +236,6 @@ System.out.println(sdf.format(d));
 
 最后，新 API 的类型几乎全部是不变类型（和 String 类似），可以放心使用不必担心被修改。
 
-### LocalDateTime
-
 `LocalDateTime` 表示一个本地日期和时间，本地日期和时间通过 `now()` 获取，且总是以当前默认时区返回，和旧 API 不同，`LocalDateTime`、`LocalDate` 和 `LocalTime` 默认严格按照 ISO 8601 规定的日期和时间格式进行打印。
 
 ```java
@@ -383,4 +384,131 @@ System.out.println(p); // P1M21D
 ```java
 Duration d1 = Duration.ofHours(10); // 10 hours
 Duration d2 = Duration.parse("P1DT2H3M"); // 1 day, 2 hours, 3 minutes
+```
+
+## ZonedDateTime
+
+`LocalDateTime` 总是表示本地日期和时间，要表示一个带时区的日期和时间，我们就需要 `ZonedDateTime`。
+
+可以简单地把 `ZonedDateTime` 理解成 `LocalDateTime` 加 `ZoneId`。`ZoneId` 是 `java.time` 引入的新的时区类，注意和旧的 `java.util.TimeZone` 区别。
+
+要创建一个 `ZonedDateTime` 对象，有以下几种方法：
+
+1. 通过 `now()` 方法返回当前时间：
+
+```java
+ZonedDateTime zbj = ZonedDateTime.now(); // 默认时区
+ZonedDateTime zny = ZonedDateTime.now(ZoneId.of("America/New_York")); // 用指定时区获取当前时间
+System.out.println(zbj); // 2020-01-02T09:30:27.396+07:00[Asia/Bangkok]
+System.out.println(zny); // 2020-01-01T21:30:27.397-05:00[America/New_York]
+```
+
+2. 通过给一个 `LocalDateTime` 附加一个 `ZoneId`，就可以变成 `ZonedDateTime`：
+
+```java
+LocalDateTime ldt = LocalDateTime.of(2019, 9, 15, 15, 16, 17);
+ZonedDateTime zbj = ldt.atZone(ZoneId.systemDefault());
+ZonedDateTime zny = ldt.atZone(ZoneId.of("America/New_York"));
+System.out.println(zbj); // 2019-09-15T15:16:17+07:00[Asia/Bangkok]
+System.out.println(zny); // 2019-09-15T15:16:17-04:00[America/New_York]
+```
+
+### 时区转换
+
+要转换时区，首先我们需要有一个 `ZonedDateTime` 对象，然后，通过 `withZoneSameInstant()` 将关联时区转换到另一个时区，转换后日期和时间都会相应调整。
+
+举个栗子，将北京时间转换为纽约时间：
+
+```java
+// 以中国时区获取当前时间
+ZonedDateTime zbj = ZonedDateTime.now(ZoneId.of("Asia/Shanghai"));
+// 转换为纽约时间
+ZonedDateTime zny = zbj.withZoneSameInstant(ZoneId.of("America/New_York"));
+System.out.println(zbj);
+System.out.println(zny);
+```
+
+## DateTimeFormatter
+
+使用旧的 `Date` 对象时，我们用 `SimpleDateFormat` 进行格式化显示。使用新的 `LocalDateTime` 或 `ZonedLocalDateTime` 时，我们要进行格式化显示，就要使用 `DateTimeFormatter`。
+
+和 `SimpleDateFormat` `不同的是，DateTimeFormatter` 不但是不变对象，它还是线程安全的。现在我们只需要记住：**因为 `SimpleDateFormat` 不是线程安全的，使用的时候，只能在方法内部创建新的局部变量。而 `DateTimeFormatter` 可以只创建一个实例，到处引用**。
+
+创建 `DateTimeFormatter` 时，通过传入格式化字符串实现：
+
+```java
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+```
+
+格式化字符串的使用方式与 `SimpleDateFormat` 完全一致。
+
+另一种创建 `DateTimeFormatter` 的方法是，传入格式化字符串时，同时指定 `Locale`：
+
+```java
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E, yyyy-MMMM-dd HH:mm", Locale.US);
+```
+
+使用效果：
+
+```java
+ZonedDateTime zdt = ZonedDateTime.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm ZZZZ");
+System.out.println(formatter.format(zdt)); // 2020-01-02T09:54 GMT+07:00
+
+DateTimeFormatter zhFormatter = DateTimeFormatter.ofPattern("yyyy MMM dd EE HH:mm", Locale.CHINA);
+System.out.println(zhFormatter.format(zdt)); // 2020 一月 02 星期四 09:54
+
+DateTimeFormatter usFormatter = DateTimeFormatter.ofPattern("E, MMMM/dd/yyyy HH:mm", Locale.US);
+System.out.println(usFormatter.format(zdt)); // Thu, January/02/2020 09:54
+```
+
+## Instant
+
+计算机存储的当前时间，本质上只是一个不断递增的整数。Java 提供的 `System.currentTimeMillis()` 返回的就是以毫秒表示的当前时间戳。
+
+这个当前时间戳在 `java.time` 中以 `Instant` 类型表示，我们用 `Instant.now()` 获取当前时间戳，效果和 `System.currentTimeMillis()` 类似：
+
+```java
+Instant now = Instant.now();
+System.out.println(now.getEpochSecond()); // 秒 1577933904
+System.out.println(now.toEpochMilli()); // 毫秒 1577933904063
+```
+
+实际上，`Instant` 内部只有两个核心字段：
+
+```java
+public final class Instant implements ... {
+    private final long seconds;
+    private final int nanos;
+}
+```
+
+一个是以秒为单位的时间戳，一个是更精确的纳秒精度。它和 `System.currentTimeMillis()` 返回的 `long` 相比，只是多了更高精度的纳秒。
+
+既然 `Instant` 就是时间戳，那么，给它附加上一个时区，就可以创建出 `ZonedDateTime`：
+
+```java
+// 以指定时间戳创建Instant:
+Instant ins = Instant.ofEpochSecond(1568568760);
+ZonedDateTime zdt = ins.atZone(ZoneId.systemDefault());
+System.out.println(zdt); // 2019-09-16T01:32:40+08:00[Asia/Shanghai]
+```
+
+对于某一个时间戳，给它关联上指定的 `ZoneId`，就得到了 `ZonedDateTime`，继而可以获得了对应时区的 `LocalDateTime`。
+
+所以，`LocalDateTime`，`ZoneId`，`Instant`，`ZonedDateTime` 和 `long` 都可以互相转换：
+
+```
+┌─────────────┐
+│LocalDateTime│────┐
+└─────────────┘    │    ┌─────────────┐
+                   ├───>│ZonedDateTime│
+┌─────────────┐    │    └─────────────┘
+│   ZoneId    │────┘           ▲
+└─────────────┘      ┌─────────┴─────────┐
+                     │                   │
+                     ▼                   ▼
+              ┌─────────────┐     ┌─────────────┐
+              │   Instant   │<───>│    long     │
+              └─────────────┘     └─────────────┘
 ```
