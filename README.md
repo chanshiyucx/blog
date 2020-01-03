@@ -39,7 +39,9 @@ Code is Long, Life is Short.
     - [12 jsDelivr 全站托管](時雨/2019/17-jsDelivr-全站托管.md)
     - [13 两年工作台变迁史](時雨/2019/18-两年工作台变迁史.md)
     - [14 春物](時雨/2019/14-春物.md)
-    - [15 一种优雅の笔记方式](時雨/2019/15-一种优雅の笔记方式.md)
+    - [15 一种优雅の笔记方式](時雨/2020/15-一种优雅の笔记方式.md)
+  - 2020
+    - [01 Telegram 电报机器人](時雨/2020/01-Telegram-电报机器人.md)
 - 书斋
   - ES6 标准入门
     - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
@@ -99,6 +101,7 @@ Code is Long, Life is Short.
     - [01 AES CBC 加解密](后端/实战系列/01-AES-CBC-加解密.md)
     - [02 Magic 魔数获取文件类型](后端/实战系列/02-Magic-魔数获取文件类型.md)
     - [03 获取请求 IP 地址](后端/实战系列/03-获取请求IP地址.md)
+    - [04 Kaptcha 与数学公式验证码](后端/实战系列/04-Kaptcha-与数学公式验证码.md)
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
     - [02 Java 数据类型](后端/Java/02-Java-数据类型.md)
@@ -132,6 +135,7 @@ Code is Long, Life is Short.
     - [30 Java 字符串拼接](后端/Java/30-Java-字符串拼接.md)
     - [31 Java 服务端分层模型](后端/Java/31-Java-服务端分层模型.md)
     - [32 Java 日期与时间](后端/Java/32-Java-日期与时间.md)
+    - [33 Java Servlet](后端/Java/33-Java-Servlet.md)
   - Mysql
     - [01 MySQL](后端/Mysql/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
@@ -141,6 +145,7 @@ Code is Long, Life is Short.
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
     - [03 Handler 执行顺序](后端/Netty/03-Handler-执行顺序.md)
     - [04 Handler 对比](后端/Netty/04-Handler-对比.md)
+    - [05 消息发送](后端/Netty/05-消息发送.md)
   - Note
     - [01 Note](后端/Note/01-Note.md)
     - [02 Interview](后端/Note/02-Interview.md)
