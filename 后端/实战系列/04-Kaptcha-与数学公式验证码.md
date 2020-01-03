@@ -2,7 +2,9 @@
 
 ## kaptcha 实现验证码
 
-[kaptcha github](https://github.com/penggle/kaptcha)
+Google 的 kaptcha 框架是一个高度可配置的实用验证码生成工具，官方地址：[kaptcha github](https://github.com/penggle/kaptcha)。
+
+Spring 中引入非常简单，首先添加依赖：
 
 ```xml
 <dependency>
