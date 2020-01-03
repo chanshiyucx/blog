@@ -50,3 +50,16 @@ public abstract class SimpleChannelInboundHandler<I> extends ChannelInboundHandl
     }
 }
 ```
+
+## 业务常见 handler
+
+| 类名                           | 说明                                                                                                                  |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| IdleStateHandler               | 空闲检测                                                                                                              |
+| FixedLengthFrameDecoder        | 固定长度的拆包器                                                                                                      |
+| MessageToMessageCodec          | 将编解码操作放到一个类实现                                                                                            |
+| HttpServerCodec                | http 编解码器                                                                                                         |
+| ChunkedWriteHandler            | 处理大文件传输的情形                                                                                                  |
+| HttpObjectAggregator           | 对 httpMessaHeartBeatHandlerge 进行聚合，聚合成 FullHttpRequest 或 FullHttpResponse                                   |
+| WebSocketServerProtocolHandler | 根据 WebSockets 规范的要求，处理 WebSocket 升级握手，PingWebSocketFrames、PongWebSocketFrames 和 CloseWebSocketFrames |
+| TextWebSocketFrameHandler      | 处理 TextWebSocketFrames 和握手完成事件                                                                               |
