@@ -45,15 +45,15 @@ Stream 不是集合元素，它不是数据结构并不保存数据，它是有�
 如果这些行为参数有状态，则流的操作的结果可能是不确定的，如下的代码在**并行执行**时多次的执行结果可能是不同的。这是因为这个 lambda 表达式是有状态的：
 
 ```java
-List<String> l = new ArrayList(Arrays.asList("one", "two", ……));
+List<String> l = new ArrayList(Arrays.asList("one", "two"));
 class State {
     boolean s;
 }
 final State state = new State();
 Stream<String> sl = l.stream().map(e -> {
-    if (state.s)
+    if (state.s) {
         return "OK";
-    else {
+    } else {
         state.s = true;
         return e;
     }
@@ -84,7 +84,7 @@ List<String>results = stream.filter(s -> pattern.matcher(s).matches())
 
 1. 使用流的静态方法，如 `Stream.of(Object[])`
 2. 通过 `Arrays.stream(Object[])` 方法
-3. 通过集合的 `stream()` 方法或者 `parallelStream()`
+3. 通过集合的 `stream()` 方法或者 `parallelStream()` 方法
 
 ```java
 // 1. Individual values
