@@ -349,6 +349,97 @@ System.out.println(summary.getCount()); // 5
 System.out.println(summary.getAverage()); // 3.0
 ```
 
+## 收集器
+
+`collect` 应该说是 Stream 中最强大的终端操作了，使用其几乎能得到你想要的任意数据的聚合，下面好好分析该工具的用法。
+
+预备类：
+
+```java
+/**
+ * 性别
+ */
+enum Gender {
+    MALE, FEMALE
+}
+
+/**
+ * 年纪
+ */
+enum Grade {
+    ONE, TWO, THREE, FOUR;
+}
+
+@Data
+@AllArgsConstructor
+class Student {
+    private String name;
+    private int age;
+    private Gender gender;
+    private Grade grade;
+}
+```
+
+测试数据：
+
+```java
+List<Student> students = Arrays.asList(
+            new Student("小明", 10, Gender.MALE, Grade.ONE),
+            new Student("大明", 9, Gender.MALE, Grade.THREE),
+            new Student("小白", 8, Gender.FEMALE, Grade.TWO),
+            new Student("小黑", 13, Gender.FEMALE, Grade.FOUR),
+            new Student("小红", 7, Gender.FEMALE, Grade.THREE),
+            new Student("小黄", 13, Gender.MALE, Grade.ONE),
+            new Student("小青", 13, Gender.FEMALE, Grade.THREE),
+            new Student("小紫", 9, Gender.FEMALE, Grade.TWO),
+            new Student("小王", 6, Gender.MALE, Grade.ONE),
+            new Student("小李", 6, Gender.MALE, Grade.ONE),
+            new Student("小马", 14, Gender.FEMALE, Grade.FOUR),
+            new Student("小刘", 13, Gender.MALE, Grade.FOUR));
+```
+
+```java
+public static void main(String[] args) {
+    Set<Integer> ages = students.stream()
+            .map(Student::getAge)
+            .collect(Collectors.toCollection(TreeSet::new));
+    System.out.println("所有学生的年龄：" + ages);
+
+    // 统计汇总信息 {个数，总数，最小，平均值，最大值}
+    IntSummaryStatistics agesSummaryStatistics = students.stream()
+            .collect(Collectors.summarizingInt(Student::getAge));
+    System.out.println("年龄汇总信息：" + agesSummaryStatistics);
+
+    // 分块
+    Map<Boolean, List<Student>> genders = students.stream()
+            .collect(Collectors.partitioningBy(s -> s.getGender() == Gender.MALE));
+    System.out.println("男学生列表：" + genders.get(true));
+    System.out.println("女学生列表：" + genders.get(false));
+
+    // 分组
+    Map<Grade, List<Student>> grades = students.stream()
+            .collect(Collectors.groupingBy(Student::getGrade));
+    System.out.println("学生班级列表：" + grades);
+
+    Map<Grade, Long> gradesCount = students.stream()
+            .collect(Collectors.groupingBy(Student::getGrade, Collectors.counting()));
+    System.out.println("每个班级学生个数列表：" + gradesCount);
+}
+```
+
+```
+所有学生的年龄：[6, 7, 8, 9, 10, 13, 14]
+
+年龄汇总信息：IntSummaryStatistics{count=12, sum=121, min=6, average=10.083333, max=14}
+
+男学生列表：[Student(name=小明, age=10, gender=MALE, grade=ONE), Student(name=大明, age=9, gender=MALE, grade=THREE), Student(name=小黄, age=13, gender=MALE, grade=ONE), Student(name=小王, age=6, gender=MALE, grade=ONE), Student(name=小李, age=6, gender=MALE, grade=ONE), Student(name=小刘, age=13, gender=MALE, grade=FOUR)]
+女学生列表：[Student(name=小白, age=8, gender=FEMALE, grade=TWO), Student(name=小黑, age=13, gender=FEMALE, grade=FOUR), Student(name=小红, age=7, gender=FEMALE, grade=THREE), Student(name=小青, age=13, gender=FEMALE, grade=THREE), Student(name=小紫, age=9, gender=FEMALE, grade=TWO), Student(name=小马, age=14, gender=FEMALE, grade=FOUR)]
+
+学生班级列表：{FOUR=[Student(name=小黑, age=13, gender=FEMALE, grade=FOUR), Student(name=小马, age=14, gender=FEMALE, grade=FOUR), Student(name=小刘, age=13, gender=MALE, grade=FOUR)], THREE=[Student(name=大明, age=9, gender=MALE, grade=THREE), Student(name=小红, age=7, gender=FEMALE, grade=THREE), Student(name=小青, age=13, gender=FEMALE, grade=THREE)], TWO=[Student(name=小白, age=8, gender=FEMALE, grade=TWO), Student(name=小紫, age=9, gender=FEMALE, grade=TWO)], ONE=[Student(name=小明, age=10, gender=MALE, grade=ONE), Student(name=小黄, age=13, gender=MALE, grade=ONE), Student(name=小王, age=6, gender=MALE, grade=ONE), Student(name=小李, age=6, gender=MALE, grade=ONE)]}
+
+每个班级学生个数列表：{FOUR=3, THREE=3, TWO=2, ONE=4}
+```
+
 参考文章：  
 [Java Stream 详解](https://colobu.com/2016/03/02/Java-Stream/#%E4%BB%8B%E7%BB%8D)  
 [Java 8 之基本类型优化](https://irusist.github.io/2016/01/02/Java-8%E4%B9%8B%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96/)
