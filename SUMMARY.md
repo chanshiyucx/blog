@@ -127,6 +127,7 @@
     - [03 truncate 和 delete](后端/Mysql/03-truncate和delete.md)
     - [04 实用 SQL](后端/Mysql/04-实用SQL.md)
     - [05 事务](后端/Mysql/05-事务.md)
+    - [06 一些文档](后端/Mysql/06-一些文档.md)
   - Netty
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)

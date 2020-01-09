@@ -24,7 +24,7 @@ Spring 容器最基本的接口就是 `BeanFactory`。`BeanFactory` 负责配置
 
 调用者只需使用 `getBean()` 方法即可获得指定 Bean 的引用，无须关心 Bean 的实例化过程，即 Bean 实例的创建过程完全透明。
 
-这些方法可以参考之前的笔记 [18 Spring Boot 管理 bean](https://chanshiyu.gitbook.io/blog/hou-duan/spring/18-Spring-Boot-管理-bean)。
+这些方法可以参考之前的笔记 [15 Spring Boot 管理 bean](./15-Spring-Boot-管理-bean)。
 
 创建 Spring 容器实例时，必须提供 Spring 容器管理的 Bean 的详细配置信息。Spring 的配置信息通常采用 xml 配置文件来设置，因此，创建 `BeanFactory` 实例时，应该提供 XML 配置文件作为参数。
 
