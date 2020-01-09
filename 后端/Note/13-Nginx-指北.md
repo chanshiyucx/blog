@@ -68,7 +68,7 @@ Nginx 优点：
 
 通用配置说明：
 
-```
+```conf
 # 定义nginx运行的用户和用户组，默认由nobody账号运行
 user nobody;
 
@@ -199,3 +199,19 @@ http {
     }
 }
 ```
+
+## 使用 Nginx 过滤网络爬虫
+
+Nginx 可以非常容易地根据 `User-Agent` 过滤请求，我们只需要在需要 URL 入口位置通过一个简单的正则表达式就可以过滤不符合要求的爬虫请求：
+
+```conf
+location / {
+    if ($http_user_agent ~* "python|curl|java|wget|httpclient|okhttp") {
+        return 503;
+    }
+    # 正常处理
+    ...
+}
+```
+
+变量 `$http_user_agent` 是一个可以直接在 `location` 中引用的 Nginx 变量。`~*` 表示不区分大小写的正则匹配，通过 python 就可以过滤掉 80% 的 Python 爬虫。
