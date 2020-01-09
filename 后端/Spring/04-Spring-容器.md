@@ -197,7 +197,7 @@ public class MyTypeFilter implements TypeFilter {
 
 使用包扫描的两个注意点：
 
-1. 注意 `includeFilters` 需要配合 `useDefaultFilters` 一起使用，禁用默认的过滤规则，因为默认的规则就是扫描所有的组件。
+- 注意 `includeFilters` 需要配合 `useDefaultFilters` 一起使用，禁用默认的过滤规则，因为默认的规则就是扫描所有的组件。
 
 ```xml
 <context:component-scan base-package="com.chanshiyu" use-default-filters="false"/>
@@ -209,7 +209,7 @@ public class MyTypeFilter implements TypeFilter {
 }, useDefaultFilters = false)
 ```
 
-2. 如果使用的 jdk8 版本以上，`@ComponentScan` 可以重复使用，即可以多次使用该注解定义规则。如果版本在 jdk8 以下，可以使用 `@ComponentScans` 注解定义多个扫描规则。
+- 如果使用的 jdk8 版本以上，`@ComponentScan` 可以重复使用，即可以多次使用该注解定义规则。如果版本在 jdk8 以下，可以使用 `@ComponentScans` 注解定义多个扫描规则。
 
 ```java
 @ComponentScans(value = {
@@ -227,11 +227,11 @@ public class MyTypeFilter implements TypeFilter {
 
 ```java
 /**
-    * prototype：多实例的：ioc容器启动并不会去调用方法创建对象放在容器中，每次获取的时候才会调用方法创建对象；
-    * singleton：单实例的（默认值）：ioc容器启动会调用方法创建对象放到ioc容器中，以后每次获取就是直接从容器（map.get()）中拿；
-    * request：同一次请求创建一个实例
-    * session：同一个session创建一个实例
-    */
+ * prototype：多实例的：ioc容器启动并不会去调用方法创建对象放在容器中，每次获取的时候才会调用方法创建对象；
+ * singleton：单实例的（默认值）：ioc容器启动会调用方法创建对象放到ioc容器中，以后每次获取就是直接从容器（map.get()）中拿；
+ * request：同一次请求创建一个实例
+ * session：同一个session创建一个实例
+ */
 @Scope
 @Bean("person")
 public Person person() {
@@ -394,7 +394,7 @@ public ColorFactoryBean colorFactoryBean() {
 Object bean2 = applicationContext.getBean("colorFactoryBean");
 Object bean3 = applicationContext.getBean("colorFactoryBean");
 System.out.println("bean2 的类型：" + bean2.getClass()); // com.chanshiyu.bean.Color
-System.out.println(bean2 == bean3); // false，因为 isSingleton 设置的是单实例
+System.out.println(bean2 == bean3); // false，因为 isSingleton 设置的是非单实例
 
 Object bean4 = applicationContext.getBean("&colorFactoryBean");
 System.out.println("bean4 的类型：" + bean4.getClass()); // com.chanshiyu.bean.ColorFactoryBean
@@ -685,7 +685,6 @@ public BookDao bookDao() {
     BookDao bookDao = new BookDao();
     bookDao.setLabel("2");
     return bookDao;
-
 }
 ```
 
@@ -742,9 +741,7 @@ spring 还支持 `@Resource(JSR250)` 和 `@Inject(JSR330)` 自动注入。
 
 `@Autowired` 属于 Spring 定义的注解，`@Resource`、`@Inject` 都是 java 规范。
 
-`@Resource` 可以和 `@Autowired` 一样实现自动装配功能；默认是按照组件名称进行装配的，但是没有能支持 `@Primary` 功能，没有支持 `@Autowired(reqiured=false)`
-
-`@Resource` 指定装配的组件 id，功能类似 `@Qualifier`：
+`@Resource` 可以和 `@Autowired` 一样实现自动装配功能；默认是按照组件名称进行装配的，但是没有能支持 `@Primary` 功能，也没有支持 `@Autowired(reqiured=false)`，不过 `@Resource` 可以指定装配的组件 id，功能类似 `@Qualifier`：
 
 ```java
 @Resource(name = "bookDao2")
@@ -757,7 +754,7 @@ private BookDao bookDao;
 
 `@Autowired` 可以作用的位置：构造器，方法，参数，属性，都是从容器中获取参数组件的值。
 
-- 标注再构造器上：如果组件只有一个有参构造器，这个有参构造器的 `@Autowired` 可以省略，参数位置的组件还是可以自动从容器中获取
+- 标注在构造器上：如果组件只有一个有参构造器，这个有参构造器的 `@Autowired` 可以省略，参数位置的组件还是可以自动从容器中获取
 - 标注在方法位置：`@Bean` + 方法参数，参数从容器中获取，`@Autowired` 可以省略，依旧可以自动装配
 - 标注在参数位置
 
@@ -821,7 +818,104 @@ public Color color(Car car){
 }
 ```
 
-### 自动注入原理
+### Aware
+
+自定义组件想要使用 Spring 容器底层的一些组件，如`ApplicationContext`，`BeanFactory` 等，可以实现接口 `Aware`，这样在创建对象的时候，会调用接口规定的方法注入 Spring 容器底层相关组件。
+
+`Aware` 依旧通过 `AwareProcessor` 处理，如 `ApplicationContextAware` 会实现通过 `ApplicationContextAwareProcessor`。
+
+```java
+@Component
+public class Red implements ApplicationContextAware, BeanNameAware, EmbeddedValueResolverAware {
+
+    private ApplicationContext applicationContext;
+
+    @Override
+    public void setBeanName(String s) {
+        System.out.println("bean name: " + s);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+        System.out.println("applicationContext: " + applicationContext);
+    }
+
+    @Override
+    public void setEmbeddedValueResolver(StringValueResolver stringValueResolver) {
+        String stringValue = stringValueResolver.resolveStringValue("你好 ${os.name}, 计算结果 #{20 - 2}");
+        System.out.println("解析字符串: " + stringValue);
+    }
+}
+```
+
+```
+bean name: red
+解析字符串: 你好 Windows 10, 计算结果 18
+applicationContext: org.springframework.context.annotation.AnnotationConfigApplicationContext@5577140b
+```
+
+### @Profile
+
+Spring 通过环境标识注解 `@Profile` 为我们提供的可以根据当前环境，动态的激活和切换一系列组件的功能。加了环境标识的 bean，只有这个环境被激活的时候才能注册到容器中。默认是 `default` 环境。
+
+`@Profile` 可以写在配置类上，只有指定的环境的时候，整个配置类里面的所有配置才能开始生效，没有标注环境标识的 bean 在，任何环境下都是加载的。
+
+```java
+@Configuration
+public class MainConfigOfProfile {
+
+    @Profile("test")
+    @Bean
+    public Black black() {
+        return new Black();
+    }
+
+    @Profile("dev")
+    @Bean
+    public Blue blue() {
+        return new Blue();
+    }
+
+    @Profile("prod")
+    @Bean
+    public White white() {
+        return new White();
+    }
+
+}
+```
+
+测试：
+
+```java
+public class IOCTestProfile {
+
+    @Test
+    public void test01() {
+        // 通过无参构造器设置环境参数
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.getEnvironment().setActiveProfiles("dev");
+        applicationContext.register(MainConfigOfProfile.class);
+        applicationContext.refresh();
+
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+    }
+}
+```
+
+时雨：`AnnotationConfigApplicationContext` 有参构造器如下，使用无参构造器只多了设置环境标识的步骤。
+
+```java
+public AnnotationConfigApplicationContext(Class<?>... annotatedClasses) {
+    this();
+    this.register(annotatedClasses);
+    this.refresh();
+}
+```
 
 ## Tips
 
