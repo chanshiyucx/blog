@@ -24,7 +24,7 @@ Spring 容器最基本的接口就是 `BeanFactory`。`BeanFactory` 负责配置
 
 调用者只需使用 `getBean()` 方法即可获得指定 Bean 的引用，无须关心 Bean 的实例化过程，即 Bean 实例的创建过程完全透明。
 
-这些方法可以参考之前的笔记 [15 Spring Boot 管理 bean](后端/Spring/15-Spring-Boot-管理-bean.md)。
+这些方法可以参考之前的笔记 [15 Spring Boot 管理 bean](https://chanshiyu.gitbook.io/blog/hou-duan/spring/15springboot-guan-li-bean)。
 
 创建 Spring 容器实例时，必须提供 Spring 容器管理的 Bean 的详细配置信息。Spring 的配置信息通常采用 xml 配置文件来设置，因此，创建 `BeanFactory` 实例时，应该提供 XML 配置文件作为参数。
 
@@ -73,7 +73,7 @@ ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean
 
 ### @Bean
 
-1. **使用 xml 配置文件**
+**1.使用 xml 配置文件**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -98,7 +98,7 @@ Person bean = (Person) applicationContext.getBean("person");
 System.out.println(bean);
 ```
 
-2. **使用注解方式**
+**2.使用注解方式**
 
 ```java
 // 配置类 == 配置文件
@@ -128,7 +128,7 @@ System.out.println(bean);
 
 `@ComponentScan` 包扫描：只要标注了 `@Controller`、`@Service`、`@Repository`、`@Component` 注解的类都可以被自动注册为 bean。
 
-1. **使用 xml 配置文件**
+**1.使用 xml 配置文件**
 
 在 `beans.xml` 中加入：
 
@@ -136,7 +136,7 @@ System.out.println(bean);
 <context:component-scan base-package="com.chanshiyu"></context:component-scan>
 ```
 
-2. **使用注解方式**
+**2.使用注解方式**
 
 ```java
 @Configuration
@@ -175,7 +175,7 @@ public class MyTypeFilter implements TypeFilter {
     public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
         //获取当前类注解的信息
         AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
-        //获取当前正在扫描的类的类信息
+        //获取当前类的类信息
         ClassMetadata classMetadata = metadataReader.getClassMetadata();
         //获取当前类资源（类的路径）
         Resource resource = metadataReader.getResource();
