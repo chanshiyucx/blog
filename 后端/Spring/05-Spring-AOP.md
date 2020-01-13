@@ -32,7 +32,7 @@ try {
 }
 ```
 
-实际代码例子：
+实际代码例子，统一日志处理切面 [`WebLogAspect.java`](https://github.com/macrozheng/mall/blob/master/mall-admin/src/main/java/com/macro/mall/component/WebLogAspect.java)：
 
 ```java
 @Slf4j
@@ -41,6 +41,7 @@ try {
 @Order(1)
 public class WebLogAspect {
 
+    // *.*(..) 表示任何类的任何方法的任何参数
     @Pointcut("execution(public * com.chanshiyu.moemall.admin.controller.*.*(..))")
     public void webLog() {}
 
