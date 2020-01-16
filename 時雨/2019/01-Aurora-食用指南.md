@@ -71,6 +71,8 @@ leancloud: {
 }
 ```
 
+> LeanCloud 中国版 2019 年 10 月份后开始停止为不绑定自有域名的应用服务，所以需要将节点切换到国际版。
+
 ### 配置 Gitalk
 
 Gitalk 是一个基于 GitHub Issue 和 Preact 开发的评论插件。其原理的文章存储是一样的，详细介绍见[官方文档](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)。
