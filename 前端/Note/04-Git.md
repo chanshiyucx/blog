@@ -1,28 +1,28 @@
 # Git
 
-## 001 设置用户名／邮箱
+## 设置用户名／邮箱
 
-```bash
+```shell
 git config --list
 git config --global user.name [username]
 git config --global user.email [email]
 ```
 
-## 002 配置大小写敏感
+## 配置大小写敏感
 
-```bash
+```shell
 git config core.ignorecase false
 ```
 
-## 003 生成密钥
+## 生成密钥
 
-```bash
+```shell
 ssh-keygen -t rsa -C [email]
 ```
 
-## 004 解决"修改文件名大小写"造成的 git 上传文件丢失
+## 解决"修改文件名大小写"造成的 git 上传文件丢失
 
-```bash
+```shell
 # 1. 让 git 区分大小写
 git config core.ignorecase false
 
@@ -37,6 +37,29 @@ git commit -m "fix: 修复 git 大小写不敏感造成文件未上传"
 
 # 5. 提交
 git push
+```
+
+## 分步克隆
+
+克隆最新一次 commit：
+
+```shell
+git clone https://xxxxxx.git --depth 1
+```
+
+然后克隆剩余所有：
+
+```shell
+git remote set-branches origin '*'
+git fetch -v
+```
+
+或者克隆某一分支：
+
+```shell
+git remote set-branches origin 'dev'
+git fetch origin dev
+git checkout dev
 ```
 
 ## 撤销 Git 操作
