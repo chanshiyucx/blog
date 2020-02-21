@@ -1,4 +1,4 @@
-# ArrayList 和 LinkedList
+# Java List
 
 > 本文为个人学习摘要笔记。  
 > 原文地址：[List 中的 ArrayList 和 LinkedList 源码分析](http://www.justdojava.com/2019/04/05/java-List/)
