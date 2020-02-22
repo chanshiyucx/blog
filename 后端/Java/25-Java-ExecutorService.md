@@ -131,3 +131,36 @@ List<Future<String>> futureList = executorService.invokeAll(callableList);
 这种机制，在某些情况下是非常有用的，比如，应用程序需要处理不定期出现的任务，或者在编译时不知道这些任务的数量。
 
 但另一方面，这也带来了副作用：即使应用程序可能已经到达它的终点，但并不会被停止，因为等待的 `ExecutorService` 将导致 JVM 继续运行。这样，我们就需要主动关闭 `ExecutorService`。
+
+要正确的关闭 `ExecutorService`，可以调用实例的 `shutdown()` 或 `shutdownNow()` 方法。
+
+### shutdown()
+
+`shutdown()` 方法并不会立即销毁 `ExecutorService` 实例，而是首先让 `ExecutorService` 停止接受新任务，并在所有正在运行的线程完成当前工作后关闭：
+
+```java
+executorService.shutdown();
+```
+
+### shutdownNow()
+
+`shutdownNow()` 方法会尝试立即销毁 `ExecutorService` 实例，所以并不能保证所有正在运行的线程将同时停止。该方法会返回等待处理的任务列表，由开发人员自行决定如何处理这些任务。
+
+```java
+List<Runnable> notExecutedTasks = executorService.shutDownNow();
+```
+
+### 最佳实践
+
+关闭 `ExecutorService` 实例的最佳实战是同时使用这两种方法并结合 `awaitTermination()` 方法。使用这种方式 `ExecutorService` 首先停止执行新任务，等待指定的时间段完成所有任务，如果该时间到期，则立即停止执行。
+
+```java
+executorService.shutdown();
+try {
+    if (!executorService.awaitTermination(800, TimeUnit.MILLISECONDS)) {
+        executorService.shutdownNow();
+    }
+} catch (InterruptedException e) {
+    executorService.shutdownNow();
+}
+```
