@@ -206,3 +206,53 @@ boolean isDone = future.isDone();
 boolean canceled = future.cancel(true);
 boolean isCancelled = future.isCancelled();
 ```
+
+## ScheduledExecutorService
+
+`ScheduledExecutorService` 接口用于在一些预定义的延迟之后运行任务或定期运行任务。同样的，实例化 `ScheduledExecutorService` 的最佳方式是使用 `Executors` 类的工厂方法。比如，要在固定延迟后安排单个任务的执行，可以使用 `ScheduledExecutorService` 实例的 `scheduled()` 方法：
+
+```java
+ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+// 在执行 callable 之前延迟了一秒钟
+Future<String> resultFuture = executorService.schedule(callable, 1, TimeUnit.SECONDS);
+String result = null;
+try {
+    result = resultFuture.get();
+    System.out.println("result: " + result);
+} catch (InterruptedException | ExecutionException e) {
+    e.printStackTrace();
+}
+```
+
+另外，`ScheduledExecutorService` 实例还提供了另一个重要方法 `scheduleAtFixedRate()`，它允许在固定延迟后定期执行任务。
+
+```java
+executorService.scheduleAtFixedRate(commod, initialDelay, period, unit);
+```
+
+`initialDelay` 是说系统启动后，需要等待多久才开始执行。`period` 为固定周期时间，按照一定频率来重复执行任务。
+
+- 如果 period 设置的是 3s，任务执行要 5s，那么等上一次任务执行完就立即执行，也就是任务与任务之间的差异是 5s；
+- 如果 period 设置的是 3s，任务执行要 2s，那么需要等到 3s 后再次执行下一次任务。
+
+```java
+// 100 毫秒的初始延迟后执行任务，之后，它将每 450 毫秒执行相同的任务
+executorService.scheduleAtFixedRate(runnable, 100, 450, TimeUnit.MILLISECONDS);
+```
+
+如果任务迭代之间必须具有固定长度的延迟，那么可以使用 `scheduleWithFixedDelay() 方法`。例如，以下代码将保证当前执行结束与另一个执行结束之间的间隔时间为 150 毫秒。
+
+```java
+executorService.scheduleWithFixedDelay(task, 100, 150, TimeUnit.MILLISECONDS);
+```
+
+## 总结
+
+尽管 `ExecutorService` 相对简单，但仍有一些常见的陷阱。
+
+1. 未能正确关闭 `ExecutorService`
+2. 使用固定长度的线程池时设置了错误的线程池容量。使用 `ExecutorService` 最重要的一件事，就是确定应用程序有效执行任务所需的线程数
+   - 太大的线程池只会产生不必要的开销，只会创建大多数处于等待模式的线程。
+   - 太少的线程池会让应用程序看起来没有响应，因为队列中的任务等待时间很长。
+3. 在取消任务后调用 Future 的 `get()` 方法。尝试获取已取消任务的结果将触发 `CancellationException` 异常。
+4. 使用 Future 的 `get()` 方法意外地阻塞了很长时间。应该使用超时来避免意外的等待。
