@@ -164,3 +164,45 @@ try {
     executorService.shutdownNow();
 }
 ```
+
+## Future 接口
+
+上面栗子中提到，`submit()` 方法和 `invokeAll()` 方法返回一个 Future 接口的对象或 Future 类型的对象集合。这些 Future 接口的对象允许我们获取任务执行的结果或检查任务的状态（正在运行还是执行完毕）。
+
+Future 接口提供了一个特殊的阻塞方法 `get()`，**它返回 `Callable` 任务执行的实际结果，但如果是 `Runnable` 任务，则只会返回 `null`**。
+
+因为 `get()` 方法是阻塞的。如果调用 `get()` 方法时任务仍在运行，那么调用将会一直被执阻塞，直到任务正确执行完毕并且结果可用时才返回。
+
+而且更重要的是，正在被执行的任务随时都可能抛出异常或中断执行。因此要将 `get()` 调用放在 `try catch` 语句块中，并捕捉 `InterruptedException` 或 `ExecutionException` 异常。
+
+```java
+Future<String> future = executorService.submit(callable);
+String result = null;
+try {
+    result = future.get();
+} catch (InterruptedException | ExecutionException e) {
+    e.printStackTrace();
+}
+```
+
+因为 `get()` 方法是阻塞的，而且并不知道要阻塞多长时间。因此可能导致应用程序的性能降低。如果结果数据并不重要，那么我们可以使用超时机制来避免长时间阻塞。
+
+```java
+String result = future.get(200, TimeUnit.MILLISECONDS);
+```
+
+这个 `get()` 的重载，第一个参数为超时的时间，第二个参数为时间的单位。上面的实例所表示就的就是等待 200 毫秒。注意，这个 `get()` 重载方法，如果在超时时间内正常结束，那么返回的是 Future 类型的结果，如果超时了还没结束，那么将抛出 TimeoutException 异常。
+
+除了 `get()` 方法之外，Future 还提供了其它很多方法，下面是几个重要的方法：
+
+| 方法          | 说明                       |
+| ------------- | -------------------------- |
+| isDone()      | 检查已分配的任务是否已处理 |
+| cancel()      | 取消任务执行               |
+| isCancelled() | 检查任务是否已取消         |
+
+```java
+boolean isDone = future.isDone();
+boolean canceled = future.cancel(true);
+boolean isCancelled = future.isCancelled();
+```
