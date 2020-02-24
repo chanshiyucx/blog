@@ -36,6 +36,9 @@ drop database databaseName;
 -- 删除数据表：
 drop table tableName;
 
+-- 导出建表语句
+show create table tableName;
+
 -- 插入表数据：
 insert into student (name, age) values ("张三", 22);
 
