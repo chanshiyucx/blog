@@ -328,3 +328,38 @@ t2 count = 7
 t2 count = 8
 t2 count = 9
 ```
+
+## 语句优化
+
+synchronized 同步代码块中的语句越少越好。比较下面 m1 和 m2。
+
+```java
+public class T {
+
+    private int count = 0;
+
+    public synchronized void m1() {
+        // do sth need not sync
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 业务逻辑中只有下面这句需要 sync，这时不应该给整个方法上锁
+        count++;
+    }
+
+    public void m2() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // 采用细粒度的锁，可以使线程争用时间变短，从而提高效率
+        synchronized (this) {
+            count++;
+        }
+    }
+
+}
+```

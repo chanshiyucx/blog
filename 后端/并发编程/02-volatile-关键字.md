@@ -81,7 +81,7 @@ public class T {
 }
 ```
 
-其实，除了上面 `synchronized` 解决方法外，java 提供的 `AtomicInteger` 相关类也可以解决。因为 `count.getAndIncrement()` 是一个原子操作，而 `count++` 不是。不过需要注意的是 `AtomicInteger` 本身方法是原子性的，但不能保证多个方法的连续调用是原子性的。
+其实，除了上面 `synchronized` 解决方法外，java 提供的 `AtomicInteger` 相关类也可以解决。因为 `count.getAndIncrement()` 是一个原子操作，而 `count++` 不是。
 
 ```java
 public class T {
@@ -113,5 +113,17 @@ public class T {
         System.out.println("count: " + t.count.get());
     }
 
+}
+```
+
+不过需要注意的是 `AtomicInteger` 本身方法是原子性的，但不能保证多个方法的连续调用是原子性的。再举个栗子，我们将上面栗子稍微修改一下，加一个判断，我们预期最后 count 值为 1000，但是实际结果却会大于 1000，因为虽然 `count.get()` 和 `count.getAndIncrement()` 都是原子操作，但是两者之间却不是，所以会出现当前 count 值为 999，A 线程 `count.get() < 1000` 判断为真进入循环后，此时 B 线程执行加一操作后值为 1000，A 线程依旧执行加一操作，导致最终结果偏大。
+
+```java
+public void m() {
+    for (int i = 0; i < 10000; i++) {
+        if (count.get() < 1000) {
+            count.getAndIncrement();
+        }
+    }
 }
 ```
