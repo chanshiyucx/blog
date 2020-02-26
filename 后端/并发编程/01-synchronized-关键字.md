@@ -407,3 +407,230 @@ public class T {
 
 }
 ```
+
+## 避免字符串作为锁对象
+
+不要以字符串常量作为锁对象，在下面栗子中，m1 和 m2 其实锁定的是同一个对象。
+
+```java
+public class T {
+
+    private String s1 = "Hello";
+
+    private String s2 = "Hello";
+
+    public void m1() {
+        synchronized (s1) {
+            System.out.println("m1 start");
+            while (true) {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void m2() {
+        synchronized (s2) {
+            System.out.println("m2 start");
+        }
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+        // 只有 t1 启动，t2 无法启动
+        new Thread(t::m1, "t1").start();
+        new Thread(t::m2, "t2").start();
+    }
+
+}
+```
+
+## 面试题
+
+### 0x01 元素监听
+
+实现一个容器，提供两个方法 add 和 size。写两个线程，线程 1 添加 10 个元素到容器中，线程 2 实现监控元素的个数，当个数到 5 时，线程 2 给出提示并结束。
+
+初步实现：
+
+```java
+public class T {
+
+    // 添加 volatile，使 t2 能够得到通知
+    private volatile List<Object> list = new ArrayList<>();
+
+    public void add(Object o) {
+        list.add(o);
+    }
+
+    private int size() {
+        return list.size();
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+        new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                t.add(new Object());
+                System.out.println("add " + i);
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        new Thread(() -> {
+            // 虽然可以实现，但是浪费 cpu，且不够精确
+            while (true) {
+                if(t.size() == 5) {
+                    break;
+                }
+            }
+            System.out.println("t2 end");
+        }).start();
+    }
+}
+```
+
+上面方法有两个缺点，一是循环判断浪费 cpu，二是判断时依旧可能会新增元素，不够精确。
+
+进阶优化版：
+
+```java
+public class T {
+
+    private volatile List<Object> list = new ArrayList<>();
+
+    public void add(Object o) {
+        list.add(o);
+    }
+
+    private int size() {
+        return list.size();
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+        final Object LOCK = new Object();
+
+        new Thread(() -> {
+            synchronized (LOCK) {
+                System.out.println("t2 start");
+                if (t.size() != 5) {
+                    try {
+                        LOCK.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println("t2 end");
+                // 让 t2 继续执行
+                LOCK.notify();
+            }
+        }, "t2").start();
+
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        new Thread(() -> {
+            synchronized (LOCK) {
+                System.out.println("t1 start");
+                for (int i = 0; i < 10; i++) {
+                    t.add(new Object());
+                    System.out.println("add " + i);
+
+                    if (t.size() == 5) {
+                        LOCK.notify();
+                        // 释放锁，让 t1 继续执行
+                        try {
+                            LOCK.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, "t1").start();
+    }
+}
+```
+
+需要注意的是 `wait` 会释放锁，而 `notify` 不会释放锁。需要让 t2 监听线程先执行，然后等待，t1 线程添加元素到 5 个时通知 t2，同时 t1 自己 `wait` 释放锁，不然 t2 无法执行，等到 t2 执行完毕，再通知 t1 执行。t1、t2 线程交替执行，通信过程比较繁琐。
+
+最终优化版，使用门闩 `CountDownLatch` 代替 `wait` 和 `notify`，`CountDownLatch` 不涉及到锁定：
+
+```java
+public class T {
+
+    private volatile List<Object> list = new ArrayList<>();
+
+    public void add(Object o) {
+        list.add(o);
+    }
+
+    private int size() {
+        return list.size();
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+        CountDownLatch latch = new CountDownLatch(1);
+
+        new Thread(() -> {
+            System.out.println("t2 start");
+            if (t.size() != 5) {
+                try {
+                    latch.await();
+                    // 也可以指定时间
+                    // latch.await(1000,TimeUnit.MILLISECONDS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println("t2 end");
+        }, "t2").start();
+
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        new Thread(() -> {
+            System.out.println("t1 start");
+            for (int i = 0; i < 10; i++) {
+                t.add(new Object());
+                System.out.println("add " + i);
+
+                if (t.size() == 5) {
+                    latch.countDown();
+                }
+
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "t1").start();
+    }
+}
+```
+
+当不涉及同步，只是涉及线程通信的时候，用 `synchorized + wait/notify` 显得太重了。
