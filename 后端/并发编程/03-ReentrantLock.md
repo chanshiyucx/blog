@@ -14,8 +14,8 @@ public class T {
 
     private void m1() {
         System.out.println("m1 start");
+        lock.lock(); // 等同于 synchronized(this)
         try {
-            lock.lock(); // 等同于 synchronized(this)
             for (int i = 0; i < 10; i++) {
                 TimeUnit.SECONDS.sleep(1);
             }
