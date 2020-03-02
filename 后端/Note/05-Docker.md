@@ -111,6 +111,11 @@ docker container logs [containerID] # 查看 docker 容器的输出
 docker container cp [containID]:[/path/to/file] . # 从正在运行的 Docker 容器里面，将文件拷贝到本机
 docker container prune              # 删除所有停止运行的容器
 
+docker rmi `docker images -q`       # 直接删除所有镜像
+docker rm `docker ps -aq`           # 直接删除所有容器
+docker rmi `docker images | grep xxxxx | awk '{print $3}'` # 按条件筛选之后删除镜像
+docker rm `docker ps -a | grep xxxxx | awk '{print $1}'` # 按条件筛选之后删除容器
+
 docker ps [-a]                      # 查看所有正在运行的容器，-a 可查看所有容器
 docker stop [containerID]           # 终止容器运行
 docker system df                    # 查看镜像、容器、数据卷所占用的空间
