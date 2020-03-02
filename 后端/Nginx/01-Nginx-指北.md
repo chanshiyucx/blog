@@ -153,7 +153,7 @@ http {
 
     # 设定负载均衡后台服务器列表
     upstream backend.com  {
-        #ip_hash; # 指定支持的调度算法
+        # ip_hash; # 指定支持的调度算法
         # upstream 的负载均衡，weight 是权重，可以根据机器配置定义权重。weigth 参数表示权值，权值越高被分配到的几率越大。
         server 192.168.10.100:8080 max_fails=2 fail_timeout=30s ;
         server 192.168.10.101:8080 max_fails=2 fail_timeout=30s ;

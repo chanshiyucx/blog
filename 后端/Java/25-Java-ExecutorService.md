@@ -7,6 +7,12 @@
 
 一般来说，`ExecutorService` 会自动提供一个线程池和相关 API，用于为其分配任务。
 
+`ExecutorService` 只是接口，Java 标准库提供的几个常用实现类有：
+
+- `FixedThreadPool`：线程数固定的线程池；
+- `CachedThreadPool`：线程数根据任务动态调整的线程池；
+- `SingleThreadExecutor`：仅单线程执行的线程池。
+
 ## 实例化 ExecutorService
 
 实例化 `ExecutorService` 的方式有两种：一种是工厂方法，另一种是直接创建。
@@ -19,15 +25,7 @@ ExecutorService executorService = Executors.newFixedThreadPool(10);
 
 当然还有其它很多工厂方法，每种工厂方法都可以创建满足特定用例的预定义实例。你所需要做的就是从 [Oracle 的 JDK 官方文档](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html)找到自己想要的合适的方法。
 
-另外也可以直接创建 `ExecutorService` 的实例，`ExecutorService` 只是一个接口，`java.util.concurrent` 包已经预定义了几种实现可供我们选择，或者你也可以创建自己的实现。
-
-例如，`ThreadPoolExecutor` 类实现了 `ExecutorService` 接口并提供了一些构造函数用于配置执行程序服务及其内部池。
-
-```java
-ExecutorService executorService = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS,
-    new LinkedBlockingQueue<Runnable>()
-);
-```
+另外也可以直接创建 `ExecutorService` 的实例，`java.util.concurrent` 包已经预定义了几种实现可供我们选择，或者你也可以创建自己的实现。
 
 ## ExecutorService 分配任务
 
@@ -240,7 +238,7 @@ executorService.scheduleAtFixedRate(commod, initialDelay, period, unit);
 executorService.scheduleAtFixedRate(runnable, 100, 450, TimeUnit.MILLISECONDS);
 ```
 
-如果任务迭代之间必须具有固定长度的延迟，那么可以使用 `scheduleWithFixedDelay() 方法`。例如，以下代码将保证当前执行结束与另一个执行结束之间的间隔时间为 150 毫秒。
+如果任务迭代之间必须具有固定长度的延迟，那么可以使用 `scheduleWithFixedDelay()` 方法。例如，以下代码将保证当前执行结束与另一个执行结束之间的间隔时间为 150 毫秒。
 
 ```java
 executorService.scheduleWithFixedDelay(task, 100, 150, TimeUnit.MILLISECONDS);
