@@ -99,6 +99,8 @@ try (var ctx = new UserContext("Bob")) {
 
 ## 小结
 
+`ThreadLocal` 空间换时间，`synchronized` 时间换空间。
+
 - `ThreadLocal` 表示线程的“局部变量”，它确保每个线程的 `ThreadLocal` 变量都是各自独立的；
 - `ThreadLocal` 适合在一个线程的处理流程中保持上下文（避免了同一参数在所有方法中传递）；
 - 使用 `ThreadLocal` 要用 `try ... finally` 结构，并在 `finally` 中清除。
