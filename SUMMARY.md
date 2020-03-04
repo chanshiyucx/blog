@@ -114,6 +114,9 @@
     - [03 ReentrantLock](后端/并发编程/03-ReentrantLock.md)
     - [04 ReadWriteLock](后端/并发编程/04-ReadWriteLock.md)
     - [05 StampedLock](后端/并发编程/05-StampedLock.md)
+    - [06 CompletableFuture](后端/并发编程/06-CompletableFuture.md)
+    - [07 ForkJoin](后端/并发编程/07-ForkJoin.md)
+    - [08 ThreadLocal](后端/并发编程/08-ThreadLocal.md)
   - 高效编程
     - [01 30 seconds of java8](后端/高效编程/01-30-seconds-of-java8.md)
     - [02 函数式替代 for 循环](后端/高效编程/02-函数式替代-for-循环.md)
