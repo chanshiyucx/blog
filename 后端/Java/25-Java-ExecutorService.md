@@ -199,6 +199,14 @@ String result = future.get(200, TimeUnit.MILLISECONDS);
 | cancel()      | 取消任务执行               |
 | isCancelled() | 检查任务是否已取消         |
 
+此外，也可以保证 `Callable` 成 `FutureTask` 直接交给线程执行：
+
+```java
+FutureTask<String> futureTask = new FutureTask<>(() -> "Hello");
+new Thread(futureTask).start();
+System.out.println(futureTask.get());
+```
+
 ```java
 boolean isDone = future.isDone();
 boolean canceled = future.cancel(true);

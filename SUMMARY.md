@@ -109,8 +109,8 @@
     - [24 Java CountDownLatch](后端/Java/24-Java-CountDownLatch.md)
     - [25 Java ExecutorService](后端/Java/25-Java-ExecutorService.md)
   - 并发编程
-    - [01 synchronized 关键字](后端/并发编程/01-synchronized-关键字.md)
-    - [02 volatile-关键字](后端/并发编程/02-volatile-关键字.md)
+    - [01 synchronized](后端/并发编程/01-synchronized.md)
+    - [02 volatile](后端/并发编程/02-volatile.md)
     - [03 ReentrantLock](后端/并发编程/03-ReentrantLock.md)
     - [04 ReadWriteLock](后端/并发编程/04-ReadWriteLock.md)
     - [05 StampedLock](后端/并发编程/05-StampedLock.md)
