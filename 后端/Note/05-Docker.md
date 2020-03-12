@@ -92,7 +92,7 @@ Docker 引擎是一个包含以下主要组件的客户端服务器应用程序�
 
 Docker 命令分管理命令 `Management Commands` 和命令 `Commands`。Docker 1.13+ 引入了管理命令来帮助组织一堆 Docker 命令。两个命令都做同样的事情，管理命令有助于对所有命令进行分类，并使命令本身更加一致。所以推荐使用管理命令，虽然多敲了几个字符，但是语义更清晰。
 
-```bash
+```shell
 docker images                       # 查看现有镜像
 docker image ls                     # 查看现有镜像，和上面等同
 # docker image ls -f dangling=true  # 查看虚悬镜像，-f 即 --filter，过滤镜像
@@ -126,7 +126,7 @@ docker volume prune                 # 删除无主数据卷
 
 示例：
 
-```bash
+```shell
 docker rum -it --rm [imageName] bash  # 以交互方式启动容器，停止后自动移除
 docker exec -it [containerID] bash    # 以交互方式进入容器
 ```
@@ -139,13 +139,36 @@ docker exec -it [containerID] bash    # 以交互方式进入容器
 4. `docker container logs` 查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令查看输出。
 5. `docker container exec` 进入容器内部。如果 `docker run` 命令运行容器的时候，没有使用 `-it参数`，就要用这个命令进入容器内部。
 
+## 查看日志
+
+```shell
+# 查看日志
+$ docker logs [OPTIONS] CONTAINER
+  Options:
+        --details        显示更多的信息
+    -f, --follow         跟踪实时日志
+        --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
+        --tail string    从日志末尾显示多少行日志， 默认是all
+    -t, --timestamps     显示时间戳
+        --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
+
+# 查看指定时间后的日志，只显示最后100行
+docker logs -f -t --since="2018-02-08" --tail=100 [containID]
+# 查看最近30分钟的日志
+docker logs --since 30m [containID]
+# 查看某时间之后的日志
+docker logs -t --since="2018-02-08T13:23:37" [containID]
+# 查看某时间段日志
+docker logs -t --since="2018-02-08T13:23:37" --until "2018-02-09T12:23:37" [containID]
+```
+
 ## Docker 容器制作
 
 ### 编写 Dockerfile 文件
 
 Dockerfile 文件是一个文本文件，用于配置 image，生成自己的 image 镜像。在配置 Dockerfile 文件之前，需要先添加一个文本文件 `.dockerignore`，用于排除不需要打包进入 image 镜像的文件路径。
 
-```text
+```
 .git
 node_modules
 npm-debug.log
@@ -153,7 +176,7 @@ npm-debug.log
 
 之后创建 Dockerfile 文本文件，配置如下（摘取自[阮一峰博客 Docker 入门教程](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)）：
 
-```text
+```
 FROM node:8.4         // 该 image 镜像继承官方 node 8.4 版本的 image
 MAINTAINER chanshiyu  // 标明作者
 COPY . /app           // 将除 .dockerignore 排除文件外的所有文件 copy 到 /app 目录
@@ -166,7 +189,7 @@ EXPOSE 3000           // 暴露 3000 端口，允许外部连接这个端口
 
 配置好 Dockerfile 文件之后，即可创建自己的 image 镜像文件：
 
-```bash
+```shell
 # docker image build -t [username]/[repository]:[tag] .
 docker image build -t koa-demo:0.0.1 .
 ```
@@ -175,7 +198,7 @@ docker image build -t koa-demo:0.0.1 .
 
 ### 生成容器
 
-```bash
+```shell
 docker container run --rm -p 8000:3000 -it koa-demo:0.0.1 /bin/bash
 ```
 
@@ -191,7 +214,7 @@ docker container run --rm -p 8000:3000 -it koa-demo:0.0.1 /bin/bash
 
 上例容器启动之后，需要手动在命令窗口执行 `node index.js` 来运行服务，通过 `CMD 命令` 可以自动执行。我们在 Dockerfile 里添加：
 
-```text
+```
 FROM node:8.4         // 该 image 镜像继承官方 node 8.4 版本的 image
 MAINTAINER chanshiyu  // 标明作者
 COPY . /app           // 将除 .dockerignore 排除文件外的所有文件 copy 到 /app 目录
@@ -210,7 +233,7 @@ CMD node demos/01.js  // 容器启动后自动执行
 
 ### 发布 image 镜像
 
-```bash
+```shell
 docker login
 
 # docker image tag [imageName] [username]/[repository]:[tag]
@@ -257,7 +280,7 @@ ENTRYPOINT ["java","-jar","/api-service.jar", "-Xms6.5g", "-Xmx6.5g","-xx:NewSiz
 
 ### docker 未启动
 
-```bash
+```shell
 systemctl daemon-reload
 service docker restart
 service docker status
@@ -292,7 +315,7 @@ innodb_use_native_aio=0
 
 给文件授权：
 
-```bash
+```shell
 sudo chmod 400 local.cnf
 ```
 
@@ -308,7 +331,7 @@ denied: requested access to the resource is denied
 
 需要修改 tag，然后再推送：
 
-```bash
+```shell
 # 修改 tag
 docker tag spring-mybatis:0.0.1 chanshiyu/spring-mybatis:0.0.1
 

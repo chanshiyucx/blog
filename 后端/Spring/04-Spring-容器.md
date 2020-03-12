@@ -10,7 +10,7 @@ Bean 是 Spring 管理的基本单位，在基于 Spring 的 Java EE 应用中�
 
 Spring 容器负责创建 Bean 实例，所以需要知道每个 Bean 的实现类，Java 程序面向接口编程，无须关心 Bean 实例的实现类；**但是 Spring 容器必须能够精确知道每个 Bean 实例的实现类**，因此 Spring 配置文件必须精确配置 Bean 实例的实现类。
 
-## BeanFactor
+## BeanFactory
 
 Spring 容器最基本的接口就是 `BeanFactory`。`BeanFactory` 负责配置、创建、管理 Bean，`ApplicationContext` 是它的子接口，因此也称之为 Spring 上下文。Spring 容器负责管理 Bean 与 Bean 之间的依赖关系。
 
