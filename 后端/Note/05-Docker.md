@@ -378,3 +378,7 @@ docker login -u admin -p xxx https://docker.xx.cc
 ```shell
 sudo service docker restart
 ```
+
+## 一些文档
+
+[centos docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/)
