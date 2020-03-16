@@ -7,4 +7,8 @@
 ssh -i LightsailDefaultKey-ap-southeast-1.pem centos@18.141.12.215
 ```
 
-## 初始化
+## 文件传输
+
+```shell
+scp -rp -i yourfile.pem ~/local_directory username@instance_url:directory
+```

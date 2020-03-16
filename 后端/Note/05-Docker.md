@@ -254,6 +254,12 @@ ENTRYPOINT 与 CMD 的关系：
 
 ## 问题
 
+### docker wuquanxian
+
+```shell
+sudo chmod 666 /var/run/docker.sock
+```
+
 ### 打包推送脚本
 
 build.sh：
@@ -364,6 +370,18 @@ docker 登录报错， `x509: certificate signed by unknown authority.`：
 ```shell
 docker login -u admin -p xxx https://docker.xx.cc
 ```
+
+## docker-compose: command not found
+
+> Note: If the command docker-compose fails after installation, check your path. You can also create a symbolic link to /usr/bin or any other directory in your path.
+
+For example:
+
+```shell
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+[Install Compose on Linux systems](https://docs.docker.com/compose/install/#install-compose-on-linux-systems)
 
 新增或编辑 `/etc/docker/daemon.json` 文件：
 

@@ -96,7 +96,7 @@ Linux 命令格式：`命令 [选项] [参数]`，需要注意：个别命令不
 
 例子：
 
-压缩文件夹：`tar -czvf test.tar.gz test\`
+压缩文件夹：`tar -czvf test.tar.gz test\`  
 解压文件夹：`tar -xzvf test.tar.gz`
 
 ### 文件搜索命令
