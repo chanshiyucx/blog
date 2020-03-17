@@ -122,6 +122,8 @@ docker system df                    # 查看镜像、容器、数据卷所占用
 
 docker volume ls                    # 查看数据卷
 docker volume prune                 # 删除无主数据卷
+
+docker inspect [containerID]        # 查看容器状态
 ```
 
 示例：
@@ -400,3 +402,4 @@ sudo service docker restart
 ## 一些文档
 
 [centos docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/)
+[Docker 命令手册](https://www.kancloud.cn/woshigrey/docker/945794)
