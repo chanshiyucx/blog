@@ -64,4 +64,18 @@ https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=hello
 
 大功告成，消息发送 OK！之后就可以发挥自己的奇思妙想做一些有趣的事情啦。
 
+## 如何获取 channel/group chat id
+
+[Telegram Bot - how to get a group chat id?](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)
+
+In order to get the group chat id, do as follows:
+
+1. Add the Telegram BOT to the group.
+2. Get the list of updates for your BOT.
+3. Use the "id" of the "chat" object to send your messages.
+
+```
+https://api.telegram.org/bot${token}/getUpdates
+```
+
 Just enjoy it 😃!

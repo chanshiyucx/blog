@@ -256,7 +256,7 @@ ENTRYPOINT 与 CMD 的关系：
 
 ## 问题
 
-### docker wuquanxian
+### docker 无权限
 
 ```shell
 sudo chmod 666 /var/run/docker.sock
