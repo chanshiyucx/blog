@@ -1,5 +1,37 @@
 # Linux 常用软件安装
 
+## htop
+
+```
+apt undate
+apt install htop
+```
+
+## oh my zsh
+
+```sh
+# 1.安装zsh包
+# centOS
+yum -y install zsh
+# ununtu
+apt install zsh
+
+# 2.查看当前shell
+echo $SHELL
+
+# 3.换默认shell为zsh，如果未切换，需要重启 shell
+chsh -s /bin/zsh
+
+# 4.安装on my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# 5.查看主题
+ls ~/.oh-my-zsh/themes
+
+# 6.修改主题，ZSH_THEME="robbyrussell" 改成自己喜欢的主题
+vim ~/.zshrc
+```
+
 ## Java
 
 ### 下载

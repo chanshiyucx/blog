@@ -373,7 +373,7 @@ docker 登录报错， `x509: certificate signed by unknown authority.`：
 docker login -u admin -p xxx https://docker.xx.cc
 ```
 
-## docker-compose: command not found
+### docker-compose: command not found
 
 > Note: If the command docker-compose fails after installation, check your path. You can also create a symbolic link to /usr/bin or any other directory in your path.
 
@@ -401,5 +401,5 @@ sudo service docker restart
 
 ## 一些文档
 
-[centos docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/)
+[centos docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/)  
 [Docker 命令手册](https://www.kancloud.cn/woshigrey/docker/945794)
