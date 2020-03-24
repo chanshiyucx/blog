@@ -196,9 +196,10 @@ Code is Long, Life is Short.
     - [07 Swagger](后端/Note/07-Swagger.md)
     - [08 Redis](后端/Note/08-Redis.md)
     - [09 Mybatis](后端/Note/09-Mybatis.md)
-    - [10 Linux](后端/Note/10-Linux.md)
-    - [11 Linux 常用软件安装](后端/Note/11-Linux-常用软件安装.md)
-    - [12 CentOS 防火墙](后端/Note/12-CentOS-防火墙.md)
+  - Linux
+    - [01 Linux 文件权限系统](后端/Linux/01-Linux-文件权限系统.md)
+    - [02 Linux 常用软件安装](后端/Linux/02-Linux-常用软件安装.md)
+    - [03 CentOS 防火墙](后端/Linux/03-CentOS-防火墙.md)
   - Project
     - [01 微信点餐系统](后端/Project/01-微信点餐系统.md)
     - [02 Docker FastDFS](后端/Project/02-Docker-FastDFS.md)
