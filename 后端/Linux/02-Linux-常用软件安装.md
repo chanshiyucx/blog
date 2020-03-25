@@ -7,7 +7,9 @@ apt undate
 apt install htop
 ```
 
-## oh my zsh
+## Oh My Zsh
+
+### 安装
 
 ```sh
 # 1.安装zsh包
@@ -30,6 +32,17 @@ ls ~/.oh-my-zsh/themes
 
 # 6.修改主题，ZSH_THEME="robbyrussell" 改成自己喜欢的主题
 vim ~/.zshrc
+```
+
+### 插件
+
+自动补全和语法高亮。
+
+```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+echo source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh >> ~/.zshrc
+echo source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh >> ~/.zshrc
 ```
 
 ## Java
