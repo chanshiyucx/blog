@@ -440,6 +440,14 @@ public static void main(String[] args) {
 每个班级学生个数列表：{FOUR=3, THREE=3, TWO=2, ONE=4}
 ```
 
+扩展 List to Map：
+
+```java
+// 将权限列表以id为key，以权限对象为值转换成map
+Map<Long, UmsPermission> permissionMap = permissionList.stream()
+    .collect(Collectors.toMap(permission -> permission.getId(), permission -> permission));
+```
+
 参考文章：  
 [Java Stream 详解](https://colobu.com/2016/03/02/Java-Stream/#%E4%BB%8B%E7%BB%8D)  
 [Java 8 之基本类型优化](https://irusist.github.io/2016/01/02/Java-8%E4%B9%8B%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%98%E5%8C%96/)

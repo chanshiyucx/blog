@@ -120,4 +120,5 @@ public class WebLogAspect {
 ```
 
 参考文章：  
+[SpringBoot 应用中使用 AOP 记录接口访问日志](http://www.macrozheng.com/#/technology/aop_log)
 [Spring Boot 实战系列 AOP 面向切面编程](https://juejin.im/post/5be0dd17e51d45304c3c7a75)

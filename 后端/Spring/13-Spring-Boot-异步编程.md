@@ -51,7 +51,7 @@ public class AsyncConfig implements AsyncConfigurer {
         executor.setQueueCapacity(QUEUE_CAPACITY);
         // 当最大池已满时，此策略保证不会丢失任务请求，但是可能会影响应用程序整体性能。
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
-        executor.setThreadNamePrefix("My ThreadPoolTaskExecutor-");
+        executor.setThreadNamePrefix("async-task-");
         executor.initialize();
         return executor;
     }
@@ -59,11 +59,32 @@ public class AsyncConfig implements AsyncConfigurer {
 }
 ```
 
+或者也可以使用在 `application.yml` 中设置线程池：
+
+```yml
+spring:
+  task:
+    execution:
+      pool:
+        # 最大线程数
+        max-size: 6
+        # 核心线程数
+        core-size: 10
+        # 存活时间
+        keep-alive: 10s
+        # 队列大小
+        queue-capacity: 100
+        # 是否允许核心线程超时
+        allow-core-thread-timeout: true
+      # 线程名称前缀
+      thread-name-prefix: async-task-
+```
+
 `ThreadPoolTaskExecutor` 常见概念：
 
 - `Core Pool Size`：核心线程数定义了最小可以同时运行的线程数量。
-- `Queue Capacity`：当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。
 - `Maximum Pool Size`：当队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。
+- `Queue Capacity`：当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。
 
 一般情况下不会将队列大小设为 `Integer.MAX_VALUE`，也不会将核心线程数和最大线程数设为同样的大小，这样的话最大线程数的设置都没什么意义了，你也无法确定当前 CPU 和内存利用率具体情况如何。
 
