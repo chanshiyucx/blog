@@ -778,9 +778,9 @@ User findByColumn(@Param("column") String column, @Param("value") String value);
 
 ```xml
 WHERE id IN
-  <foreach collection="ids" item="item" index="index" open="(" separator="," close=")" >
-      #{item}
-  </foreach>
+<foreach collection="ids" item="item" index="index" open="(" separator="," close=")" >
+    #{item}
+</foreach>
 
 
 <if test="tags!=null">
@@ -874,4 +874,39 @@ example.setOrderByClause("`AFTER_CHECK_TIME` DESC");
 ```java
 // 查询结果先按`index`字段排序，如果相同，则按`AFTER_CHECK_TIME`排序
 example.setOrderByClause("`index` ASC,`AFTER_CHECK_TIME` ASC");
+```
+
+## Mybatis Plus
+
+### apply sql 注入风险
+
+```java
+// 有注入风险
+apply("date_format(dateColumn,'%Y-%m-%d') = '2008-08-08' or true or true")
+
+// 安全
+apply("date_format(dateColumn,'%Y-%m-%d') = {0}", "2008-08-08 or true or true")
+```
+
+### condition 用法
+
+```java
+queryWrapper.like(StringUtils.isNotBlank(name), "name", name);
+```
+
+### 分组查询
+
+```java
+/*
+ * 按照直属上级分组，查询每组的平均年龄、最大年龄、最小年龄，并且只取年龄总和小于500的组。
+ * select avg(age) avg_age, min(age) min_age, max(age) max_age
+ * from user
+ * group by manager_id
+ * having sum(age) < 500;
+ */
+
+queryWrapper.select("avg(age) avg_age", "min(age) min_age", "max(age) max_age")
+            .groupBy("manager_id")
+            .having("sum(age) < {0}", 500);
+List<Map<String, Object>> userList = userMapper.selectMaps(queryWrapper);
 ```
