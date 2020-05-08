@@ -37,7 +37,10 @@ swagger:
 
 ## 配置类
 
+`@Profile({"dev", "test"})` 只在开发和测试环境启用 swagger。
+
 ```java
+@Profile({"dev", "test"})
 @Configuration
 @EnableSwagger2
 @Data
@@ -134,52 +137,118 @@ public class SwaggerConfig {
 | @ApiResponses      | 描述一组请求响应       |
 | @ApiIgnore         | 表示忽略               |
 
-```java
-@Api(value = "商品类目管理", tags = {"商品类目管理Controller"})
-public class ProductCategoryController {
+`ApiImplicitParam` 与 `ApiParam` 的区别：
 
-    @ApiOperation(value = "类目列表", notes = "类目列表")
+- 对 Servlets 或者非 JAX-RS 的环境，只能使用 `ApiImplicitParam`。
+- 在使用上，`ApiImplicitParam` 比 `ApiParam` 具有更少的代码侵入性，只要写在方法上就可以了，但是需要提供具体的属性才能配合 swagger ui 解析使用。
+- `ApiParam` 只需要较少的属性，与 swagger ui 配合更好。
+
+```java
+@RestController
+@RequestMapping("/user")
+@Api(tags = "1.0.0-SNAPSHOT", description = "用户管理", value = "用户管理")
+@Slf4j
+public class UserController {
+
     @GetMapping("/list")
-    public ResultVO<List<ProductCategory>> list(@ApiParam(value = "页码", defaultValue = "1") Integer pageNum,
-                                                @ApiParam(value = "每页大小", defaultValue = "10") Integer pageSize) {
-        PageRequest pageRequest = PageRequest.of(pageNum - 1, pageSize);
-        Page<ProductCategory> page = productCategoryService.findList(pageRequest);
-        ResultAttributesVO resultAttributesVO = new ResultAttributesVO(page.getPageable().getPageNumber() + 1, page.getSize(), page.getTotalElements());
-        return ResultVO.ok(page.getContent(), resultAttributesVO);
+    @ApiOperation(value = "类目列表", notes = "类目列表")
+    public List<User> list(@ApiParam("页码") @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                           @ApiParam("每页数量") @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
+        return new ArrayList<>();
     }
 
-    @ApiOperation(value = "商品库存", notes = "模糊搜索库存")
-    @GetMapping("/sku/{pid}")
-    public CommonResult<List<PmsSkuStock>> getList(@PathVariable Long pid, @RequestParam(value = "keyword", required = false) String keyword) {
-        List<PmsSkuStock> skuStockList = skuStockService.getList(pid, keyword);
-        return CommonResult.success(skuStockList);
+    @GetMapping
+    @ApiOperation(value = "条件查询（DONE）", notes = "备注")
+    @ApiImplicitParams({@ApiImplicitParam(name = "username", value = "用户名", dataType = DataType.STRING, paramType = ParamType.QUERY, defaultValue = "xxx")})
+    public ApiResponse<User> getByUserName(String username) {
+        log.info("多个参数用  @ApiImplicitParams");
+        return ApiResponse.<User>builder().code(200)
+                .message("操作成功")
+                .data(new User(1, username, "JAVA"))
+                .build();
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation(value = "主键查询（DONE）", notes = "备注")
+    @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.INT, paramType = ParamType.PATH)})
+    public ApiResponse<User> get(@PathVariable Integer id) {
+        log.info("单个参数用  @ApiImplicitParam");
+        return ApiResponse.<User>builder().code(200)
+                .message("操作成功")
+                .data(new User(id, "u1", "p1"))
+                .build();
+    }
+
+    @DeleteMapping("/{id}")
+    @ApiOperation(value = "删除用户（DONE）", notes = "备注")
+    @ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.INT, paramType = ParamType.PATH)
+    public void delete(@PathVariable Integer id) {
+        log.info("单个参数用 ApiImplicitParam");
+    }
+
+    @PostMapping
+    @ApiOperation(value = "添加用户（DONE）")
+    public User post(@RequestBody User user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
+        return user;
+    }
+
+    @PostMapping("/multipar")
+    @ApiOperation(value = "添加用户（DONE）")
+    public List<User> multipar(@RequestBody List<User> user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
+        return user;
+    }
+
+    @PostMapping("/array")
+    @ApiOperation(value = "添加用户（DONE）")
+    public User[] array(@RequestBody User[] user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
+        return user;
+    }
+
+    @PutMapping("/{id}")
+    @ApiOperation(value = "修改用户（DONE）")
+    public void put(@PathVariable Long id, @RequestBody User user) {
+        log.info("如果你不想写 @ApiImplicitParam 那么 swagger 也会使用默认的参数名作为描述信息 ");
+    }
+
+    @PostMapping("/{id}/file")
+    @ApiOperation(value = "文件上传（DONE）")
+    public String file(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
+        log.info(file.getContentType());
+        log.info(file.getName());
+        log.info(file.getOriginalFilename());
+        return file.getOriginalFilename();
     }
 
 }
 ```
 
 ```java
-@ApiModel(value = "商品类目")
-public class ProductCategory {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ApiModel(value = "通用PI接口返回", description = "Common Api Response")
+public class ApiResponse<T> implements Serializable {
 
-    @ApiModelProperty(value = "类目ID", dataType = "Integer")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
-    private Integer id;
-
-    @ApiModelProperty(value = "类目名称", dataType = "String")
-    @Column(name = "category_name")
-    @NotBlank(message = "类目名称不能为空")
-    private String name;
-
-    @ApiModelProperty(value = "创建时间", dataType = "String")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    private Date createTime;
-
-    @ApiModelProperty(value = "更新时间", dataType = "String")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    private Date updateTime;
+    private static final long serialVersionUID = -8987146499044811408L;
+    /**
+     * 通用返回状态
+     */
+    @ApiModelProperty(value = "通用返回状态", required = true)
+    private Integer code;
+    /**
+     * 通用返回信息
+     */
+    @ApiModelProperty(value = "通用返回信息", required = true)
+    private String message;
+    /**
+     * 通用返回数据
+     */
+    @ApiModelProperty(value = "通用返回数据", required = true)
+    private T data;
 
 }
 ```

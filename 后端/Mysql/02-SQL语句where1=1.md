@@ -6,7 +6,7 @@
 select * from user where 1=1
 ```
 
-其中这个 `where1=1` 是有特殊意义的，包含以下两种情境：**动态 SQL 拼接**和**查询表结构**。
+其中这个 `where 1=1` 是有特殊意义的，包含以下两种情境：**动态 SQL 拼接**和**查询表结构**。
 
 ## 动态 SQL 拼接
 
@@ -14,10 +14,10 @@ select * from user where 1=1
 
 ```java
 String sql="select * from table_name where 1=1";
-if( conditon 1) {
+if (conditon 1) {
   sql=sql+" and var2=value2";
 }
-if(conditon 2) {
+if (conditon 2) {
   sql=sql+" and var3=value3";
 }
 ```
@@ -62,7 +62,7 @@ select * from t1 where 1<>1;
 -- 实际等效于 select * from t1 where false;-- 语句将返回空记录集
 ```
 
-例 1）实际上等同于不加任何筛选条件，有些画蛇添足，`where 1=1` 的实际意义不如 `where 1<>1`或者 `where 1=0` 来得有用，当我们**只需要获取表的字段结构信息，而不需要理会实际保存的记录时，例 2）的写法将是非常可取的**，因为系统仅会读取结构信息，而不会将具体的表记录读入内存中，这无疑节省了系统开销。
+例 1 实际上等同于不加任何筛选条件，有些画蛇添足，`where 1=1` 的实际意义不如 `where 1<>1`或者 `where 1=0` 来得有用，当我们**只需要获取表的字段结构信息，而不需要理会实际保存的记录时，例 2）的写法将是非常可取的**，因为系统仅会读取结构信息，而不会将具体的表记录读入内存中，这无疑节省了系统开销。
 
 参考文章：  
 [SQL 语句中 where 1=1 的意义](https://cloud.tencent.com/developer/article/1455831)

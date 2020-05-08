@@ -59,7 +59,7 @@ Spring 事务管理分为编码式和声明式的两种方式。编程式事务�
 
 在 Spring 的 AOP 代理下，只有目标方法由外部调用，目标方法才由 Spring 生成的代理对象来管理，这会造成自调用问题。若同一类中的其他没有 `@Transactional` 注解的方法内部调用有 `@Transactional` 注解的方法，有 `@Transactional` 注解的方法的事务被忽略，不会发生回滚。
 
-## 使用姿势
+### 错误使用
 
 > 对声明式事务管理，Spring 提供了基于 Transactional 注解的实现方式，使用简单，减少了很多复杂的配置。但是，正因为它的简单，很多开发人员在使用的时候，随手就是一个 `@Transactional`，以为这样就把事务的问题解决了，何不知这样的使用方式很可能留下了很大的性能隐患。
 
@@ -71,6 +71,67 @@ Spring 事务管理分为编码式和声明式的两种方式。编程式事务�
 2. 标注了 `Transactional` 注解的方法体中不要涉及耗时很久的操作，如 IO 操作、网络通信等。
 3. 根据业务需要设置合适的事务参数，如是否需要新事务、超时时间等。
 
+## TransactionalEventListener
+
+在项目中，往往需要执行数据库操作后，发送消息或事件来异步调用其他组件执行相应的操作，例如：用户注册后发送激活码、配置修改后发送更新事件等。但是，数据库的操作如果还未完成，此时异步调用的方法查询数据库发现没有数据，这就会出现问题。例如下面这个可能存在问题的栗子：
+
+```java
+void saveUser(User u) {
+    //保存用户信息
+    userDao.save(u);
+    //触发保存用户事件
+    applicationContext.publishEvent(new SaveUserEvent(u.getId()));
+}
+
+@EventListener
+void onSaveUserEvent(SaveUserEvent event) {
+    //获取事件中的信息（用户id）
+    Integer id = event.getEventData();
+    //查询数据库，获取用户（此时如果用户还未插入数据库，则返回空）
+    User u = userDao.getUserById(id);
+    //这里可能报空指针异常！
+    String phone = u.getPhoneNumber();
+    MessageUtils.sendMessage(phone);
+}
+```
+
+为了解决上述问题，Spring 为我们提供了两种方式：
+
+1. `@TransactionalEventListener` 注解
+2. 事务同步管理器 `TransactionSynchronizationManager`
+
+### @TransactionalEventListener
+
+```java
+@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
+void onSaveUserEvent(SaveUserEvent event) {
+    Integer id = event.getEventData();
+    User u = userDao.getUserById(id);
+    String phone = u.getPhoneNumber();
+    MessageUtils.sendMessage(phone);
+}
+```
+
+这样，只有当前事务提交之后，才会执行事件监听器的方法。其中参数 phase 默认为 `AFTER_COMMIT`，共有四个枚举：`BEFORE_COMMIT`、`AFTER_COMMIT`、`AFTER_ROLLBACK`、`AFTER_COMPLETION`。
+
+### TransactionSynchronizationManager
+
+```java
+@EventListener
+void onSaveUserEvent(SaveUserEvent event) {
+    TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
+        @Override
+        public void afterCommit() {
+            Integer id = event.getEventData();
+            User u = userDao.getUserById(id);
+            String phone = u.getPhoneNumber();
+            MessageUtils.sendMessage(phone);
+        }
+    });
+}
+```
+
 参考文章：  
 [透彻的掌握 Spring 中 @Transactional 的使用](https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html)  
-[Spring 事务注解 Transactional 的正确使用姿势](https://juejin.im/post/5a76961a6fb9a063417b0488)
+[Spring 事务注解 Transactional 的正确使用姿势](https://juejin.im/post/5a76961a6fb9a063417b0488)  
+[TransactionalEventListener 注解](https://www.jianshu.com/p/6f9cc1384cdf)

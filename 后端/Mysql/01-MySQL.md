@@ -66,6 +66,24 @@ alter table clients
 add column `reception_mode` tinyint(2) NOT NULL DEFAULT 0 COMMENT '接待模式（0 轮询，1 平均）'
 after `auto_reception`;
 
+-- 修改字段长度
+alter table `iptables` modify column `white_ip` varchar(1024);
+```
+
+## 配置 mysql.cnf
+
+```
+[client]
+default-character-set=utf8mb4
+
+[mysql]
+default-character-set=utf8mb4
+
+[mysqld]
+character-set-client-handshake=FALSE
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+init_connect='SET NAMES utf8mb4'
 ```
 
 ## 配置远程访问
@@ -90,23 +108,6 @@ mysql -u root -p
 grant all privileges on *.* to 'root'@'%' identified by '你的 mysql root 账户密码';
 ```
 
-## 配置字符集
-
-在 `[mysqld]` 节点上增加如下配置：
-
-```
-[client]
-default-character-set=utf8
-```
-
-在 `[mysqld]` 节点底部增加如下配置：
-
-```
-default-storage-engine=INNODB
-character-set-server=utf8
-collation-server=utf8_general_ci
-```
-
 ## 配置忽略数据库大小写敏感
 
 在 `[mysqld]` 节点底部增加如下配置
@@ -129,34 +130,4 @@ set global validate_password_policy=0;
 ```
 select @@validate_password_length;
 set global validate_password_length=1;
-```
-
-## 引入
-
-- pom.xml 引入相关依赖
-- 资源文件对 mysql 进行配置
-
-引入依赖：
-
-```xml
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>
-```
-
-配置文件：
-
-```yml
-spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-    hikari:
-      username: root
-      password: 1124chanshiyu
-      driver-class-name: com.mysql.cj.jdbc.Driver
 ```
