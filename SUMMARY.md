@@ -188,7 +188,7 @@
     - [08 Redis](后端/Note/08-Redis.md)
     - [09 Mybatis](后端/Note/09-Mybatis.md)
     - [10 面试指南](后端/Note/10-面试指南.md)
-    - [11 IDEA 必装工具](后端/Note/11-IDEA-必装工具.md)
+    - [11 IDEA 高效指南](后端/Note/11-IDEA-高效指南.md)
   - Linux
     - [01 Linux 文件权限系统](后端/Linux/01-Linux-文件权限系统.md)
     - [02 Linux 常用软件安装](后端/Linux/02-Linux-常用软件安装.md)
