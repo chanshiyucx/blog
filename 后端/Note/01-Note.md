@@ -1,16 +1,6 @@
 # Note
 
-## 001 IDEA 常用快捷键
-
-| 快捷键           | 描述         |
-| :--------------- | :----------- |
-| Ctrl+Shift+Alt+N | 查找类名     |
-| Ctrl+Alt+O       | 移除未使用包 |
-| Ctrl+Shift+Enter | 换行         |
-| Ctrl+Shift+U     | 大小写转换   |
-| Ctrl+Alt+T       | 语句快捷键   |
-
-## 002 Vim
+## Vim
 
 ![Vim 常用命令](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/Vim常用命令.jpg)
 
@@ -21,27 +11,6 @@
 ```bash
 wget -c -r -np -k -L -p https://chanshiyu.com/
 ```
-
-## IDEA 启用 Run Dashboard
-
-修改 `.idea/workspace.xml`，找到 `RunDashboard` 添加下面配置：
-
-```xml
-<component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
-   <!-- ... -->
-  </component>
-```
-
-## IDEA could not autowire
-
-无法解决，只能降低提示等级：
-
-![idea autowired error](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/idea-autowired-error.png)
 
 ## Window10 端口占用
 

@@ -59,7 +59,6 @@ SET character_set_connection = utf8;
 -- 查询某一列为空或不为空的记录
 select * from pay_order where ip IS NULL;
 select * from pay_order where ip IS NOT NULL;
-select ip from pay_order where ip IS NOT NULL;
 
 -- 插入列
 alter table clients
@@ -130,4 +129,10 @@ set global validate_password_policy=0;
 ```
 select @@validate_password_length;
 set global validate_password_length=1;
+```
+
+## 解决 docker mysql 不能输入中文
+
+```sh
+docker exec -it CONTAINER env LANG=C.UTF-8 bash
 ```

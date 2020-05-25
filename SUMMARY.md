@@ -167,7 +167,8 @@
     - [04 实用 SQL](后端/Mysql/04-实用SQL.md)
     - [05 事务](后端/Mysql/05-事务.md)
     - [06 关系模型](后端/Mysql/06-关系模型.md)
-    - [07 一些文档](后端/Mysql/07-一些文档.md)
+    - [07 Mybatis](后端/Mysql/07-Mybatis.md)
+    - [08 一些文档](后端/Mysql/08-一些文档.md)
   - Nginx
     - [01 Nginx 指北](后端/Nginx/01-Nginx-指北.md)
     - [02 常用端口](后端/Nginx/02-常用端口.md)
@@ -186,7 +187,6 @@
     - [06 Lombok](后端/Note/06-Lombok.md)
     - [07 Swagger](后端/Note/07-Swagger.md)
     - [08 Redis](后端/Note/08-Redis.md)
-    - [09 Mybatis](后端/Note/09-Mybatis.md)
     - [10 面试指南](后端/Note/10-面试指南.md)
     - [11 IDEA 高效指南](后端/Note/11-IDEA-高效指南.md)
   - Linux

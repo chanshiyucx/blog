@@ -9,6 +9,25 @@
 - [RestfulToolkit](https://plugins.jetbrains.com/plugin/10292-restfultoolkit)
 - [Maven Helper](https://plugins.jetbrains.com/plugin/7179-maven-helper)
 
+## 常用快捷键
+
+| 快捷键                 | 描述                                   |
+| :--------------------- | :------------------------------------- |
+| CTRL + Y               | 删除当前行                             |
+| CTRL + P               | 提示方法参数                           |
+| CTRL + I               | 实现接口方法                           |
+| CTRL + H               | 查看当前类的子类                       |
+| CTRL + -               | 折叠/展开代码，加 `SHIFT` 全局展开折叠 |
+| CTRL + F12             | 弹出当前类所有属性和方法               |
+| CTRL + O               | 重写或者实现接口或父类方法             |
+| CTRL + ALT + O         | 移除未使用包                           |
+| CTRL + ALT + U         | 类之间关系拓扑图                       |
+| CTRL + ALT + T         | 语句快捷键                             |
+| CTRL + SHIFT + ALT + N | 查找类名                               |
+| CTRL + SHIFT + ENTER   | 换行                                   |
+| CTRL + SHIFT + U       | 大小写转换                             |
+| ALT + 左右箭头         | 切换窗口                               |
+
 ## 演出模式
 
 使用【Presentation Mode】，将 IDEA 弄到最大，可以让你只关注一个类里面的代码，进行毫无干扰的 coding。
@@ -41,14 +60,23 @@
 
 使用 `ALT+F1`，弹出 Select in 视图，然后选择 `Project View` 中的 Project，`CTRL+SHIFT+左右箭头`。
 
-## 常用快捷键
+## IDEA could not autowire
 
-`CTRL + F12`：弹出当前类所有属性和方法。
-`CTRL + Y`：删除当前行。
-`CTRL + O`：重写或者实现接口或父类方法。
-`CTRL + I`：实现接口方法。
-`CTRL + H`：查看当前类的子类。
-`CTRL + -`：折叠/展开代码，加 `SHIFT` 全局展开折叠。
-`CTRL + ALT + U`：类之间关系拓扑图。
-`CTRL + P`：提示方法参数。
-`ALT + 左右箭头`：切换窗口。
+无法解决，只能降低提示等级：
+
+![idea autowired error](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/idea-autowired-error.png)
+
+## IDEA 启用 Run Dashboard
+
+修改 `.idea/workspace.xml`，找到 `RunDashboard` 添加下面配置：
+
+```xml
+<component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+   <!-- ... -->
+  </component>
+```
