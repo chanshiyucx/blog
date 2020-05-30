@@ -24,7 +24,7 @@
     - [12 jsDelivr 全站托管](時雨/2019/12-jsDelivr-全站托管.md)
     - [13 两年工作台变迁史](時雨/2019/13-两年工作台变迁史.md)
     - [14 春物](時雨/2019/14-春物.md)
-    - [15 一种优雅の笔记方式](時雨/2020/15-一种优雅の笔记方式.md)
+    - [15 一种优雅の笔记方式](時雨/2019/15-一种优雅の笔记方式.md)
   - 2020
     - [01 Telegram 电报机器人](時雨/2020/01-Telegram-电报机器人.md)
     - [02 她的眼里有星辰](時雨/2020/02-她的眼里有星辰.md)
@@ -56,7 +56,7 @@
     - [05 Blob Url And Data Url](前端/JavaScript/05-Blob-Url-And-Data-Url.md)
     - [06 函数节流与函数防抖](前端/JavaScript/06-函数节流与函数防抖.md)
     - [07 排序算法初探](前端/JavaScript/07-排序算法初探.md)
-    - [08 洗牌算法实现数组乱序](時雨/JavaScript/08-洗牌算法实现数组乱序.md)
+    - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -187,8 +187,8 @@
     - [06 Lombok](后端/Note/06-Lombok.md)
     - [07 Swagger](后端/Note/07-Swagger.md)
     - [08 Redis](后端/Note/08-Redis.md)
-    - [10 面试指南](后端/Note/10-面试指南.md)
-    - [11 IDEA 高效指南](后端/Note/11-IDEA-高效指南.md)
+    - [09 面试指南](后端/Note/09-面试指南.md)
+    - [10 IDEA 高效指南](后端/Note/10-IDEA-高效指南.md)
   - Linux
     - [01 Linux 文件权限系统](后端/Linux/01-Linux-文件权限系统.md)
     - [02 Linux 常用软件安装](后端/Linux/02-Linux-常用软件安装.md)

@@ -34,6 +34,19 @@
 
 Linux 命令格式：`命令 [选项] [参数]`，需要注意：个别命令不遵守此规则，选项可以简化，如一些命令 `-a` 等同于 `--all`。
 
+### 登录
+
+```shell
+# ssh -i [pem.file] [user]@[ip]
+ssh -i LightsailDefaultKey-ap-southeast-1.pem centos@18.141.12.215
+```
+
+### 文件传输
+
+```shell
+scp -rp -i yourfile.pem ~/local_directory username@instance_url:directory
+```
+
 ### 系统管理命令
 
 | 命令     | 说明                                          |
