@@ -93,3 +93,45 @@ List<String> axis = IntStream.range(0, dateList.size())
         .mapToObj(i -> DateFormat.format(dateList.get(i)))
         .collect(Collectors.toList());
 ```
+
+## 009 读取并创建临时文件
+
+```java
+InputStream stream = FileUtil.class.getClassLoader().getResourceAsStream("media/" + mobileconfig);
+File targetFile = new File("media/" + System.currentTimeMillis() + ".mobileconfig");
+FileUtils.copyInputStreamToFile(stream, targetFile);
+return targetFile;
+```
+
+## 010 模板文件替换
+
+```java
+private static File template() {
+    Map<String, String> map = new HashMap<>();
+    map.put("image_url", imageUrl);
+    map.put("app_name", appName);
+    map.put("official_url", officialUrl);
+
+    InputStream stream = FileUtil.class.getClassLoader().getResourceAsStream("media/" + mobileconfig);
+    File targetFile = new File("media/" + System.currentTimeMillis() + ".mobileconfig");
+    StringSubstitutor sub = new StringSubstitutor(map);
+
+    try {
+        Reader fr = new InputStreamReader(stream);
+        BufferedReader reader = new BufferedReader(fr);
+        FileWriter fw = new FileWriter(target);
+        BufferedWriter writer = new BufferedWriter(fw);
+        String str;
+        while ((str = reader.readLine()) != null) {
+            String newStr = sub.replace(str);
+            writer.write(newStr);
+            writer.newLine();
+        }
+        writer.flush();
+        writer.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return target;
+}
+```
