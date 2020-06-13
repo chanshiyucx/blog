@@ -259,6 +259,26 @@ public class RingBufferWorkerPoolFactory {
 }
 ```
 
+```java
+public Disruptor(
+        final EventFactory<T> eventFactory,
+        final int ringBufferSize,
+        final ThreadFactory threadFactory,
+        final ProducerType producerType,
+        final WaitStrategy waitStrategy)
+{
+    this(
+        RingBuffer.create(producerType, eventFactory, ringBufferSize, waitStrategy),
+        new BasicExecutor(threadFactory));
+}
+```
+
+- `eventFactory`：在环形缓冲区中创建事件的 factory；
+- `ringBufferSize`：环形缓冲区的大小，必须是 2 的幂；
+- `threadFactory`：用于为处理器创建线程；
+- `producerType`：生成器类型以支持使用正确的 `sequencer` 和 `publisher` 创建 `RingBuffer`；枚举类型，`SINGLE`、`MULTI` 两个项。对应于 `SingleProducerSequencer` 和 `MultiProducerSequencer` 两种 `Sequencer`；
+- `waitStrategy`：等待策略；
+
 ### 启动
 
 ```java
@@ -311,15 +331,13 @@ private void msg() {
 使用 Disruptor，首先需要构建一个 RingBuffer，并指定一个大小，注意如果 RingBuffer 里面数据超过了这个大小则会覆盖旧数据。这可能是一个风险，但 Disruptor 提供了检查 RingBuffer 是否写满的机制用于规避这个问题。
 
 ```java
-// Publishers claim events in sequence
-long sequence = ringBuffer.next();
-
 // if capacity less than 10%, don't use ringbuffer anymore
 if(ringBuffer.remainingCapacity() < RING_SIZE * 0.1) {
     log.warn("disruptor:ringbuffer avaliable capacity is less than 10 %");
     return;
 }
-
+// Publishers claim events in sequence
+long sequence = ringBuffer.next();
 try {
     TranslatorDataWrapper wrapper = ringBuffer.get(sequence);
     wrapper.setCommand(command);
@@ -332,4 +350,5 @@ try {
 Bless Bless!
 
 参考文章：  
-[高性能队列 Disruptor 的使用](https://www.jianshu.com/p/8473bbb556af)
+[高性能队列 Disruptor 的使用](https://www.jianshu.com/p/8473bbb556af)  
+[蚂蚁金服分布式链路跟踪组件 SOFATracer 中 Disruptor 实践](https://www.sofastack.tech/blog/sofa-trcaer-disruptor-practice/)
