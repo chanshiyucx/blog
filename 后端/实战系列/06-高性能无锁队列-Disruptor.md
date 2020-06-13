@@ -1,6 +1,6 @@
 # 高性能无锁队列 Disruptor
 
-Disruptor 是英国外汇交易公司 LMAX 开发的一个高性能队列，研发的初衷是解决内存队列的延迟问题。
+Disruptor 是英国外汇交易公司 LMAX 开发的一个高性能队列，研发的初衷是解决内存队列的延迟问题，因其出色的性能表现获得 2011 Duke’s 程序框架创新奖。
 
 > A High Performance Inter-Thread Messaging Library
 > 项目地址：[LMAX Disruptor](https://github.com/LMAX-Exchange/disruptor)
@@ -24,6 +24,15 @@ Disruptor 高效原理：
 | SleepingWaitStrategy        | 自旋 + yield + sleep      | 性能和 CPU 资源之间有很好的折中。延迟不均匀                                                   |
 | TimeoutBlockingWaitStrategy | 加锁，有超时限制          | CPU 资源紧缺，吞吐量和延迟并不重要的场景                                                      |
 | YieldingWaitStrategy        | 自旋 + yield + 自旋       | 性能和 CPU 资源之间有很好的折中。延迟比较均匀                                                 |
+
+| 名称                        | 适用场景                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| BlockingWaitStrategy        | CPU 资源紧缺，吞吐量和延迟并不重要的场景                                                      |
+| BusySpinWaitStrategy        | 通过不断重试，减少切换线程导致的系统调用，而降低延迟。推荐在线程绑定到固定的 CPU 的场景下使用 |
+| PhasedBackoffWaitStrategy   | CPU 资源紧缺，吞吐量和延迟并不重要的场景                                                      |
+| SleepingWaitStrategy        | 性能和 CPU 资源之间有很好的折中。延迟不均匀                                                   |
+| TimeoutBlockingWaitStrategy | CPU 资源紧缺，吞吐量和延迟并不重要的场景                                                      |
+| YieldingWaitStrategy        | 性能和 CPU 资源之间有很好的折中。延迟比较均匀                                                 |
 
 ## 食用方式
 
@@ -321,3 +330,6 @@ try {
 ```
 
 Bless Bless!
+
+参考文章：  
+[高性能队列 Disruptor 的使用](https://www.jianshu.com/p/8473bbb556af)
