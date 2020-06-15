@@ -114,6 +114,7 @@
     - [23 Java Stream](后端/Java/23-Java-Stream.md)
     - [24 Java CountDownLatch](后端/Java/24-Java-CountDownLatch.md)
     - [25 Java ExecutorService](后端/Java/25-Java-ExecutorService.md)
+    - [26 Java 枚举](后端/Java/26-Java-枚举.md)
   - 并发编程
     - [01 synchronized](后端/并发编程/01-synchronized.md)
     - [02 volatile](后端/并发编程/02-volatile.md)
