@@ -305,3 +305,6 @@ for (User user : userList) {
     userStatisticMap.merge(user.getUserRole(), 1, Integer::sum);
 }
 ```
+
+扩展阅读：  
+[Java 语言中 Enum 类型的使用介绍](https://www.ibm.com/developerworks/cn/java/j-lo-enum/index.html)

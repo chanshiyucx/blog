@@ -52,7 +52,7 @@ public class T {
 
 顾名思义，`ReentrantLock` 是可重入锁，它和 `synchronized` 一样，一个线程可以多次获取同一个锁。
 
-和 synchronized 不同的是，ReentrantLock 可以尝试获取锁：
+和 `synchronized` 不同的是，`ReentrantLock` 可以尝试获取锁：
 
 ```java
 if (lock.tryLock(1, TimeUnit.SECONDS)) {
