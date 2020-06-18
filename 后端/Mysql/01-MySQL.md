@@ -67,6 +67,9 @@ after `auto_reception`;
 
 -- 修改字段长度
 alter table `iptables` modify column `white_ip` varchar(1024);
+
+-- 显示正在运行的线程
+show processlist;
 ```
 
 ## 配置 mysql.cnf
