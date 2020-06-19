@@ -204,9 +204,9 @@ public void run() {
 
 ### InterruptedException
 
-通过调用一个线程的 `interrupt()` 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 InterruptedException，从而提前结束该线程。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。
+通过调用一个线程的 `interrupt()` 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 `InterruptedException`，从而提前结束该线程。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。
 
-对于以下代码，在 main() 中启动一个线程之后再中断它，由于线程中调用了 `Thread.sleep()` 方法，因此会抛出一个 InterruptedException，从而提前结束线程，不执行之后的语句。
+对于以下代码，在 `main()` 中启动一个线程之后再中断它，由于线程中调用了 `Thread.sleep()` 方法，因此会抛出一个 `InterruptedException`，从而提前结束线程，不执行之后的语句。
 
 ```java
 public class InterruptExample {
@@ -242,7 +242,7 @@ java.lang.Thread.run(Thread.java:745)
 
 ### interrupted()
 
-如果一个线程的 `run()` 方法执行一个无限循环，并且没有执行 `sleep()` 等会抛出 InterruptedException 的操作，那么调用线程的 `interrupt()` 方法就无法使线程提前结束。
+如果一个线程的 `run()` 方法执行一个无限循环，并且没有执行 `sleep()` 等会抛出 `InterruptedException` 的操作，那么调用线程的 `interrupt()` 方法就无法使线程提前结束。
 
 但是调用 `interrupt()` 方法会设置线程的中断标记，此时调用 `interrupted()` 方法会返回 true。因此可以在循环体中使用 `interrupted()` 方法来判断线程是否处于中断状态，从而提前结束线程。
 
@@ -561,9 +561,7 @@ B
 
 调用 `wait()` 使得线程等待某个条件满足，线程在等待时会被挂起，当其他线程的运行使得这个条件满足时，其它线程会调用 `notify()` 或者 `notifyAll()` 来唤醒挂起的线程。
 
-它们都属于 Object 的一部分，而不属于 Thread。
-
-只能用在同步方法或者同步控制块中使用，否则会在运行时抛出 IllegalMonitorStateException。
+它们都属于 Object 的一部分，而不属于 Thread。只能用在同步方法或者同步控制块中使用，否则会在运行时抛出 `IllegalMonitorStateException`。
 
 使用 `wait()` 挂起期间，线程会释放锁。这是因为，如果没有释放锁，那么其它线程就无法进入对象的同步方法或者同步控制块中，那么就无法执行 `notify()` 或者 `notifyAll()` 来唤醒挂起的线程，造成死锁。
 
@@ -601,8 +599,8 @@ before after
 
 **wait() 和 sleep() 的区别**
 
-- wait() 是 Object 的方法，而 sleep() 是 Thread 的静态方法；
-- wait() 会释放锁，sleep() 不会。
+- `wait()` 是 Object 的方法，而 `sleep()` 是 Thread 的静态方法；
+- `wait()` 会释放锁，`sleep()` 不会。
 
 ## await()、signal()、signalAll()
 
