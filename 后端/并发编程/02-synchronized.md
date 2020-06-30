@@ -2,6 +2,8 @@
 
 `synchronized` 关键字采用对**代码块/方法体**加锁的方式解决 Java 中多线程访问同一个资源时，引起的资源冲突问题。
 
+一句话总结：`synchronized` 能够保证同一时刻最多只有一个线程执行某段代码，以达到保证并发安全的效果。
+
 ## 使用方式
 
 `synchronized` 同步锁分对象锁和类锁：
@@ -77,7 +79,7 @@ public class T {
 
 ## 一些栗子
 
-### 0x01 数据共享导致线程安全问题
+### 0x01 丢失的请求数
 
 ```java
 public class T implements Runnable {
@@ -100,46 +102,7 @@ public class T implements Runnable {
 }
 ```
 
-### 0x02 同步与非同步方法同时调用
-
-```java
-public class T {
-
-    public synchronized void m1() {
-        System.out.println(Thread.currentThread().getName() + " m1 start");
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(Thread.currentThread().getName() + " m1 end");
-    }
-
-    public void m2() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println(Thread.currentThread().getName() + " m2 end");
-    }
-
-    public static void main(String[] args) {
-        T t = new T();
-
-        new Thread(t::m1, "t1").start();
-        new Thread(t::m2, "t2").start();
-    }
-}
-```
-
-```
-t1 m1 start
-t2 m2 end
-t1 m1 end
-```
-
-### 0x03 脏读
+### 0x02 脏读
 
 业务写方法加锁，读方法不加锁，产生脏读问题：
 
@@ -199,9 +162,53 @@ balance: 0.0
 balance: 100.0
 ```
 
+### 0x03 同步与非同步方法同时调用
+
+```java
+public class T {
+
+    public synchronized void m1() {
+        System.out.println(Thread.currentThread().getName() + " m1 start");
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " m1 end");
+    }
+
+    public void m2() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " m2 end");
+    }
+
+    public static void main(String[] args) {
+        T t = new T();
+
+        new Thread(t::m1, "t1").start();
+        new Thread(t::m2, "t2").start();
+    }
+}
+```
+
+```
+t1 m1 start
+t2 m2 end
+t1 m1 end
+```
+
 ### 0x04 同步方法调用
 
 一个同步方法可以调用另一个同步方法，一个线程已经拥有了某个对象的锁，再次申请的时候仍然会得到该对象的锁，即 **`synchronied` 同步锁可重入**。
+
+可重入的好处：
+
+1. 避免死锁
+2. 提升封装性，避免重复的加锁和释放锁
 
 ```java
 public class T {
