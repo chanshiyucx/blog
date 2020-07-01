@@ -1012,7 +1012,7 @@ Java 内存模型试图屏蔽各种硬件和操作系统的内存访问差异，
 
 ![内存模型2](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/内存模型2.png)
 
-## 内存间交互操作
+### 内存间交互操作
 
 Java 内存模型定义了 8 个操作来完成主内存和工作内存的交互操作。
 
@@ -1145,7 +1145,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 上面提到了可以用 volatile 和 synchronized 来保证有序性。除此之外，JVM 还规定了先行发生原则，让一个操作无需控制就能先于另一个操作完成。
 
-### 1.
+#### 1. 单一线程原则
 
 > Single Thread rule
 
@@ -1173,7 +1173,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 > Thread Start Rule
 
-Thread 对象的 start() 方法调用先行发生于此线程的每一个动作。
+Thread 对象的 `start()` 方法调用先行发生于此线程的每一个动作。
 
 ![线程启动规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程启动规则.png)
 
@@ -1181,7 +1181,7 @@ Thread 对象的 start() 方法调用先行发生于此线程的每一个动作�
 
 > Thread Join Rule
 
-Thread 对象的结束先行发生于 join() 方法返回。
+Thread 对象的结束先行发生于 `join()` 方法返回。
 
 ![线程加入规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程加入规则.png)
 
@@ -1189,13 +1189,13 @@ Thread 对象的结束先行发生于 join() 方法返回。
 
 > Thread Interruption Rule
 
-对线程 interrupt() 方法的调用先行发生于被中断线程的代码检测到中断事件的发生，可以通过 interrupted() 方法检测到是否有中断发生。
+对线程 `interrupt()` 方法的调用先行发生于被中断线程的代码检测到中断事件的发生，可以通过 `interrupted()` 方法检测到是否有中断发生。
 
 #### 7. 对象终结规则
 
 > Finalizer Rule
 
-一个对象的初始化完成（构造函数执行结束）先行发生于它的 finalize() 方法的开始。
+一个对象的初始化完成（构造函数执行结束）先行发生于它的 `finalize()` 方法的开始。
 
 #### 8. 传递性
 
