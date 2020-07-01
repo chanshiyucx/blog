@@ -1,5 +1,8 @@
 # Java 并发
 
+> 本文为个人学习摘要笔记。  
+> 原文地址：[CS-Notes Java 并发](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20%E5%B9%B6%E5%8F%91.md)
+
 ## 线程状态转换
 
 ![线程状态转换](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程状态转换.png)
@@ -10,9 +13,7 @@
 
 ### 可运行（Runnable）
 
-可能正在运行，也可能正在等待 CPU 时间片。
-
-包含了操作系统线程状态中的 Running 和 Ready。
+可能正在运行，也可能正在等待 CPU 时间片。包含了操作系统线程状态中的 Running 和 Ready。
 
 ### 阻塞（Blocked）
 
@@ -557,7 +558,7 @@ A
 B
 ```
 
-## wait()、notify()、notifyAll()
+### wait() notify() notifyAll()
 
 调用 `wait()` 使得线程等待某个条件满足，线程在等待时会被挂起，当其他线程的运行使得这个条件满足时，其它线程会调用 `notify()` 或者 `notifyAll()` 来唤醒挂起的线程。
 
@@ -602,7 +603,7 @@ before after
 - `wait()` 是 Object 的方法，而 `sleep()` 是 Thread 的静态方法；
 - `wait()` 会释放锁，`sleep()` 不会。
 
-## await()、signal()、signalAll()
+### await()、signal()、signalAll()
 
 java.util.concurrent 类库中提供了 Condition 类来实现线程之间的协调，可以在 Condition 上调用 `await()` 方法使线程等待，其它线程调用 `signal()` 或 `signalAll()` 方法唤醒等待的线程。
 
@@ -893,7 +894,7 @@ public static void main(String[] args) {
 produce..produce..consume..consume..produce..consume..produce..consume..produce..consume..
 ```
 
-## ForkJoin
+### ForkJoin
 
 主要用于并行计算中，和 MapReduce 原理类似，都是把大的计算任务拆分成多个小任务并行计算。
 

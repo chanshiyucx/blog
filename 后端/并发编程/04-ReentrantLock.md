@@ -12,36 +12,22 @@ public class T {
 
     Lock lock = new ReentrantLock();
 
-    private void m1() {
+    private synchronized void m1() {
         System.out.println("m1 start");
-        lock.lock(); // 等同于 synchronized(this)
+    }
+
+    private void m2() {
+        lock.lock(); // 等同于 synchronized
         try {
-            for (int i = 0; i < 10; i++) {
-                TimeUnit.SECONDS.sleep(1);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("m2 start");
         } finally {
             lock.unlock();
         }
     }
 
-    private void m2() {
-        lock.lock();
-        System.out.println("m2 start");
-        lock.unlock();
-    }
-
     public static void main(String[] args) {
         T t = new T();
         new Thread(t::m1, "t1").start();
-
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         new Thread(t::m2, "t2").start();
     }
 
