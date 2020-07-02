@@ -1185,7 +1185,7 @@ Thread 对象的结束先行发生于 `join()` 方法返回。
 
 ![线程加入规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程加入规则.png)
 
-### 6. 线程中断规则
+#### 6. 线程中断规则
 
 > Thread Interruption Rule
 
