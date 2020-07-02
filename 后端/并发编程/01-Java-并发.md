@@ -1039,11 +1039,11 @@ Java 内存模型保证了 read、load、use、assign、store、write、lock 和
 
 下图演示了两个线程同时对 cnt 进行操作，load、assign、store 这一系列操作整体上看不具备原子性，那么在 T1 修改 cnt 并且还没有将修改后的值写入主内存，T2 依然可以读入旧值。可以看出，这两个线程虽然执行了两次自增运算，但是主内存中 cnt 的值最后为 1 而不是 2。因此对 int 类型读写操作满足原子性只是说明 load、assign、store 这些单个操作具备原子性。
 
-![原子性1](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性1.png)
+![原子性1](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性1.jpg)
 
 AtomicInteger 能保证多个线程修改的原子性。
 
-![原子性2](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性2.png)
+![原子性2](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性2.jpg)
 
 使用 AtomicInteger 重写之前线程不安全的代码之后得到以下线程安全实现：
 
