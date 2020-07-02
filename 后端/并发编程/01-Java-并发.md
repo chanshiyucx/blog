@@ -1220,7 +1220,7 @@ Thread 对象的结束先行发生于 `join()` 方法返回。
 - 枚举类型
 - Number 部分子类，如 Long 和 Double 等数值包装类型，BigInteger 和 BigDecimal 等大数据类型。但同为 Number 的原子类 AtomicInteger 和 AtomicLong 则是可变的。
 
-对于集合类型，可以使用 Collections.unmodifiableXXX() 方法来获取一个不可变的集合。
+对于集合类型，可以使用 `Collections.unmodifiableXXX()` 方法来获取一个不可变的集合。
 
 ```java
 public class ImmutableExample {
@@ -1237,7 +1237,7 @@ Exception in thread "main" java.lang.UnsupportedOperationException at java.util.
 ImmutableExample.main(ImmutableExample.java:9)
 ```
 
-Collections.unmodifiableXXX() 先对原始的集合进行拷贝，需要对集合进行修改的方法都直接抛出异常。
+`Collections.unmodifiableXXX()` 先对原始的集合进行拷贝，需要对集合进行修改的方法都直接抛出异常。
 
 ```java
 public V put(K key, V value) {
@@ -1275,7 +1275,7 @@ public void add() {
 }
 ```
 
-以下代码是 incrementAndGet() 的源码，它调用了 Unsafe 的 getAndAddInt() 。
+以下代码是 `incrementAndGet()` 的源码，它调用了 Unsafe 的 `getAndAddInt()` 。
 
 ```java
 public final int incrementAndGet() {
@@ -1283,9 +1283,9 @@ public final int incrementAndGet() {
 }
 ```
 
-以下代码是 getAndAddInt() 源码，var1 指示对象内存地址，var2 指示该字段相对对象内存地址的偏移，var4 指示操作需要加的数值，这里为 1。通过 getIntVolatile(var1, var2) 得到旧的预期值，通过调用 compareAndSwapInt() 来进行 CAS 比较，如果该字段内存地址中的值等于 var5，那么就更新内存地址为 var1+var2 的变量为 var5+var4。
+以下代码是 `getAndAddInt()` 源码，var1 指示对象内存地址，var2 指示该字段相对对象内存地址的偏移，var4 指示操作需要加的数值，这里为 1。通过 `getIntVolatile(var1, var2)` 得到旧的预期值，通过调用 `compareAndSwapInt()` 来进行 CAS 比较，如果该字段内存地址中的值等于 var5，那么就更新内存地址为 var1+var2 的变量为 var5+var4。
 
-可以看到 getAndAddInt() 在一个循环中进行，发生冲突的做法是不断的进行重试。
+可以看到 `getAndAddInt()` 在一个循环中进行，发生冲突的做法是不断的进行重试。
 
 ```java
 public final int getAndAddInt(Object var1, long var2, int var4) {
