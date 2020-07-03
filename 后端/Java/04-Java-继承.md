@@ -1,4 +1,182 @@
-# Java 重写与重载
+# Java 继承
+
+## 访问权限
+
+访问权限控制指的是本类及本类内部的成员（成员变量、成员方法、内部类）对其他类的可见性，即这些内容是否允许其他类访问。
+
+- 类可见表示其它类可以用这个类创建实例对象；
+- 成员可见表示其它类可以用这个类的实例对象访问到该成员。
+
+### 四种访问权限
+
+Java 中一共有四种访问权限控制，其权限控制的大小情况：**public > protected > default > private**。
+
+- public：表明该成员变量或者方法是对所有类或者对象都是可见的，所有类或者对象都可以直接访问。
+- protected：表明该成员变量或者方法只有自己和其位于同一个包的其他类可见，其他包下的类不可访问，除非是他的子类。
+- default：表明该成员变量或者方法只有自己和其位于同一个包的其他类可见，其他包内的类不能访问，即便是它的子类。
+- private：表明该成员变量或者方法是私有的，只有当前类对其具有访问权限，除此之外其他类或者对象都没有访问权限，子类也没有访问权限。
+
+**protected 用于修饰成员，表示在继承体系中成员对于子类可见，但是这个访问修饰符对于类没有意义。**
+
+如果子类的方法重写了父类的方法，那么子类中该方法的访问级别不允许低于父类的访问级别。这是为了确保可以使用父类实例的地方都可以使用子类实例去代替，也就是确保满足里氏替换原则。
+
+具体的权限控制看下面表格：
+
+| 访问权限  | 本类 | 本包的类 | 子类 | 非子类的外包类 |
+| --------- | ---- | -------- | ---- | -------------- |
+| public    | 是   | 是       | 是   | 是             |
+| protected | 是   | 是       | 是   | 否             |
+| default   | 是   | 是       | 否   | 否             |
+| private   | 是   | 否       | 否   | 否             |
+
+### 接口成员的访问权限
+
+接口由于其的特殊性，所有成员的访问权限都被规定，下面是接口成员的访问权限：
+
+- 变量：`public static final`
+- 抽象方法：`public abstract`
+- 静态方法：`public static`
+- 内部类、内部接口：`public static`
+
+## 抽象类与接口
+
+### 抽象类
+
+抽象类和抽象方法都使用 `abstract` 关键字进行声明。如果一个类中包含抽象方法，那么这个类必须声明为抽象类。
+
+抽象类和普通类最大的区别是，抽象类不能被实例化，需要继承抽象类才能实例化其子类。
+
+```java
+public abstract class AbstractClassExample {
+    protected int x;
+    private int y;
+
+    public abstract void func1();
+
+    public void func2() {
+        System.out.println("func2");
+    }
+}
+```
+
+```java
+public class AbstractExtendClassExample extends AbstractClassExample {
+    @Override
+    public void func1() {
+        System.out.println("func1");
+    }
+}
+```
+
+### 接口
+
+接口是抽象类的延伸，在 Java 8 之前，它可以看成是一个完全抽象的类，也就是说它不能有任何的方法实现。
+
+从 Java 8 开始，接口也可以拥有默认的方法实现，这是因为不支持默认方法的接口的维护成本太高了。在 Java 8 之前，如果一个接口想要添加新的方法，那么要修改所有实现了该接口的类。
+
+**接口的成员（字段 + 方法）默认都是 public 的，并且不允许定义为 private 或者 protected。**
+
+**接口的字段默认都是 static 和 final 的。**
+
+```java
+public interface InterfaceExample {
+
+    void func1();
+
+    default void func2(){
+        System.out.println("func2");
+    }
+
+    int x = 123;
+    public int z = 0;       // Modifier 'public' is redundant for interface fields
+
+    // int y;               // Variable 'y' might not have been initialized
+    // private int k = 0;   // Modifier 'private' not allowed here
+    // protected int l = 0; // Modifier 'protected' not allowed here
+    // private void fun3(); // Modifier 'private' not allowed here
+}
+```
+
+```java
+public class InterfaceImplementExample implements InterfaceExample {
+    @Override
+    public void func1() {
+        System.out.println("func1");
+    }
+}
+```
+
+### 比较
+
+- 从设计层面上看，抽象类提供了一种 IS-A 关系，那么就必须满足里式替换原则，即子类对象必须能够替换掉所有父类对象。而接口更像是一种 LIKE-A 关系，它只是提供一种方法实现契约，并不要求接口和实现接口的类具有 IS-A 关系。
+- 从使用上来看，一个类可以实现多个接口，但是不能继承多个抽象类。
+- 接口的字段只能是 static 和 final 类型的，而抽象类的字段没有这种限制。
+- 接口的成员只能是 public 的，而抽象类的成员可以有多种访问权限。
+
+### 使用选择
+
+使用接口：
+
+- 需要让不相关的类都实现一个方法，例如不相关的类都可以实现 Compareable 接口中的 compareTo() 方法；
+- 需要使用多重继承。
+
+使用抽象类：
+
+- 需要在几个相关的类中共享代码。
+- 需要能控制继承来的成员的访问权限，而不是都为 public。
+- 需要继承非静态和非常量字段。
+
+在很多情况下，接口优先于抽象类。因为接口没有抽象类严格的类层次结构要求，可以灵活地为一个类添加行为。并且从 Java 8 开始，接口也可以有默认的方法实现，使得修改接口的成本也变的很低。
+
+## super
+
+- 访问父类的构造函数：可以使用 `super()` 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。应该注意到，**子类一定会调用父类的构造函数来完成初始化工作**，一般是调用父类的默认构造函数，如果子类需要调用父类其它构造函数，那么就可以使用 super 函数。
+- 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。
+
+```java
+public class SuperExample {
+
+    protected int x;
+    protected int y;
+
+    public SuperExample(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void func() {
+        System.out.println("SuperExample.func()");
+    }
+}
+```
+
+```java
+public class SuperExtendExample extends SuperExample {
+
+    private int z;
+
+    public SuperExtendExample(int x, int y, int z) {
+        super(x, y);
+        this.z = z;
+    }
+
+    @Override
+    public void func() {
+        super.func();
+        System.out.println("SuperExtendExample.func()");
+    }
+}
+```
+
+```java
+SuperExample e = new SuperExtendExample(1, 2, 3);
+e.func();
+
+// SuperExample.func()
+// SuperExtendExample.func()
+```
+
+## 重写与重载
 
 重写（Overriding）和重载（Overloading）是 Java 中两个比较重要的概念。
 
@@ -8,7 +186,7 @@
 > 重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要覆盖父类方法。
 > 重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理。
 
-## 重写
+### 重写
 
 重写（Overriding）存在于继承体系中，指子类对父类允许访问的方法的实现过程进行重新编写，返回值和形参都不能改变。**即外壳不变，核心重写！**
 
@@ -112,7 +290,7 @@ public static void main(String[] args) {
 }
 ```
 
-## 重载
+### 重载
 
 重载（overloading）是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。
 
@@ -155,7 +333,7 @@ public class Overloading {
 }
 ```
 
-## 总结
+### 总结
 
 重写与重载之间的区别：
 
@@ -176,9 +354,9 @@ public class Overloading {
 
 > 关于重载是不是多态有多种论调，有些人认为重载不属于多态的体现，可以参考：[Java 中多态的实现方式](https://github.com/hollischuang/toBeTopJavaer/blob/master/basics/java-basic/polymorphism.md)
 
-![重写与重载](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-重写与重载/overloading-vs-overriding.png)
+![重写与重载](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-继承/overloading-vs-overriding.png)
 
-## 多态
+### 多态
 
 上面总结了重写与重载的概念与他们之间的区别，这里再说一下多态，以及为什么说重载不属于多态。
 
