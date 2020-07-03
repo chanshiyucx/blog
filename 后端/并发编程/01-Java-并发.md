@@ -62,11 +62,13 @@
 
 实现 Runnable 和 Callable 接口的类只能当做一个可以在线程中运行的任务，不是真正意义上的线程，因此最后还需要通过 Thread 来调用。可以说任务是通过线程驱动从而执行的。
 
+> 時雨：在 《Java 并发核心知识体系精讲》中，参考 Oracle 官方文档，标注实现多线程方式只有两种：实现 Runnable 接口和继承 Thread 类。
+> 两个的区别：实现 Runnable 接口最终调用 `target.run()` 方法，而继承 Thread 类整个 `run()` 方法都被重写。
+> 更准确的说：创建线程只有一种方式那就是构造 Thread 类，而实现线程的执行单元有两种方式。
+
 ### 实现 Runnable 接口
 
-需要实现 `run()` 方法。
-
-通过 Thread 调用 `start()` 方法来启动线程。
+需要实现 Runnable 接口的 `run()` 方法，并把 Runnable 实例传给 Thread 类，通过 Thread 调用 `start()` 方法来启动线程。
 
 ```java
 public class MyRunnable implements Runnable {
@@ -78,9 +80,20 @@ public class MyRunnable implements Runnable {
 
 ```java
 public static void main(String[] args) {
-    MyRunnable instance = new MyRunnable();
-    Thread thread = new Thread(instance);
+    MyRunnable target = new MyRunnable();
+    Thread thread = new Thread(target);
     thread.start();
+}
+```
+
+Thread 内的 `run()` 方法里会调用 `target.run()` 方法，target 在构造函数时传入并完成后续初始化：
+
+```java
+@Override
+public void run() {
+    if (target != null) {
+        target.run();
+    }
 }
 ```
 
@@ -108,7 +121,7 @@ public static void main(String[] args) throws ExecutionException, InterruptedExc
 
 ### 继承 Thread 类
 
-同样也是需要实现 `run()` 方法，因为 Thread 类也实现了 Runable 接口。
+同样也是需要实现 `run()` 方法，因为 Thread 类也实现了 Runable 接口。这种方式整个 `run()` 方法都被重写，所以不会调用 `target.run()` 方法。
 
 当调用 `start()` 方法启动一个线程时，虚拟机会将该线程放入就绪队列中等待被调度，当一个线程被调度时会执行该线程的 `run()` 方法。
 
@@ -132,7 +145,24 @@ public static void main(String[] args) {
 实现接口会更好一些，因为：
 
 - Java 不支持多重继承，因此继承了 Thread 类就无法继承其它类，但是可以实现多个接口；
-- 类可能只要求可执行就行，继承整个 Thread 类开销过大。
+- 类可能只要求可执行就行，继承整个 Thread 类开销过大；
+- 继承 Thread 每次执行任务都要新建一个线程，而通过实现接口可以利用线程池节省开销。
+
+### 典型错误观点
+
+#### 1. 线程池创建线程也算是一种新建线程的方式
+
+因为线程池内部创建线程也是使用 new Thread()，所以不算新的创建线程方式，观点错误。
+
+#### 2. 通过 Callable 和 FutureTask 创建线程也算是一种新建线程的方式
+
+Callable 和 FutureTask 本质上也是实现 Runnable 接口，所以观点错误。
+
+![Callable](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/Callable.png)
+
+#### 3. 定时器创建线程也算是一种新建线程的方式
+
+定时器本质也是使用 new Thread()，所以不算新的创建线程方式，观点错误。
 
 ## 基础线程机制
 

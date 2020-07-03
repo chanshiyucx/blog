@@ -1,5 +1,8 @@
 # Java IO
 
+> 本文为个人学习摘要笔记。  
+> 原文地址：[CS-Notes Java IO](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md)
+
 Java 的 I/O 大概可以分成以下几类：
 
 - 磁盘操作：File
