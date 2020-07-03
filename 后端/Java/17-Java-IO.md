@@ -105,7 +105,7 @@ String str2 = new String(bytes, "UTF-8");
 System.out.println(str2);
 ```
 
-在调用无参数 getBytes() 方法时，默认的编码方式不是 UTF-16be。双字节编码的好处是可以使用一个 char 存储中文和英文，而将 String 转为 bytes[] 字节数组就不再需要这个好处，因此也就不再需要双字节编码。getBytes() 的默认编码方式与平台有关，一般为 UTF-8。
+**在调用无参数 getBytes() 方法时，默认的编码方式不是 UTF-16be。**双字节编码的好处是可以使用一个 char 存储中文和英文，而将 String 转为 bytes[] 字节数组就不再需要这个好处，因此也就不再需要双字节编码。getBytes() 的默认编码方式与平台有关，一般为 UTF-8。
 
 ```java
 byte[] bytes = str1.getBytes();
