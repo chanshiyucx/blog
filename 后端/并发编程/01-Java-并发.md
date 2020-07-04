@@ -156,13 +156,23 @@ public static void main(String[] args) {
 
 #### 2. 通过 Callable 和 FutureTask 创建线程也算是一种新建线程的方式
 
-Callable 和 FutureTask 本质上也是实现 Runnable 接口，所以观点错误。
+Callable 和 FutureTask 本质上也是实现 Runnable 接口，观点错误。
 
 ![Callable](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/Callable.png)
 
 #### 3. 定时器创建线程也算是一种新建线程的方式
 
 定时器本质也是使用 new Thread()，所以不算新的创建线程方式，观点错误。
+
+```java
+Timer timer = new Timer();
+timer.scheduleAtFixedRate(new TimerTask() {
+    @Override
+    public void run() {
+        System.out.println(System.currentTimeMillis());
+    }
+}, 1000, 1000);
+```
 
 ## 基础线程机制
 
@@ -233,6 +243,8 @@ public void run() {
 
 一个线程执行完毕之后会自动结束，如果在运行过程中发生异常也会提前结束。
 
+**如何正确停止线程：使用 interrupt 来通知，而不是强制**。
+
 ### InterruptedException
 
 通过调用一个线程的 `interrupt()` 来中断该线程，如果该线程处于阻塞、限期等待或者无限期等待状态，那么就会抛出 `InterruptedException`，从而提前结束该线程。但是不能中断 I/O 阻塞和 synchronized 锁阻塞。
@@ -247,35 +259,32 @@ public class InterruptExample {
         public void run() {
             try {
                 Thread.sleep(2000);
-                System.out.println("Thread run");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
-}
-```
 
-```java
-public static void main(String[] args) throws InterruptedException {
-    Thread thread1 = new MyThread1();
-    thread1.start();
-    thread1.interrupt();
-    System.out.println("Main run");
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread1 = new MyThread1();
+        thread1.start();
+        thread1.interrupt();
+    }
 }
 ```
 
 ```html
-Main run java.lang.InterruptedException: sleep interrupted at java.lang.Thread.sleep(Native Method) at
-InterruptExample.lambda$main$0(InterruptExample.java:5) at InterruptExample$$Lambda$1/713338599.run(Unknown Source) at
-java.lang.Thread.run(Thread.java:745)
+java.lang.InterruptedException: sleep interrupted at java.lang.Thread.sleep(Native Method) at InterruptExample.lambda$main$0(InterruptExample.java:5)
+at InterruptExample$$Lambda$1/713338599.run(Unknown Source) at java.lang.Thread.run(Thread.java:745)
 ```
 
 ### interrupted()
 
 如果一个线程的 `run()` 方法执行一个无限循环，并且没有执行 `sleep()` 等会抛出 `InterruptedException` 的操作，那么调用线程的 `interrupt()` 方法就无法使线程提前结束。
 
-但是调用 `interrupt()` 方法会设置线程的中断标记，此时调用 `interrupted()` 方法会返回 true。因此可以在循环体中使用 `interrupted()` 方法来判断线程是否处于中断状态，从而提前结束线程。
+但是调用 `interrupt()` 方法会设置线程的中断标记，此时调用 `interrupted()` 方法会返回 true。因此可以在循环体中使用该方法来判断线程是否处于中断状态，从而提前结束线程。
+
+時雨：如果使用的是实现 Runnable 接口启动新线程，则需要使用 `Thread.currentThread().isInterrupted()` 方法判断线程是否处于中断状态。
 
 ```java
 public class InterruptExample {
@@ -289,14 +298,12 @@ public class InterruptExample {
             System.out.println("Thread end");
         }
     }
-}
-```
 
-```java
-public static void main(String[] args) throws InterruptedException {
-    Thread thread2 = new MyThread2();
-    thread2.start();
-    thread2.interrupt();
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread2 = new MyThread2();
+        thread2.start();
+        thread2.interrupt();
+    }
 }
 ```
 
