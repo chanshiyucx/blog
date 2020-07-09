@@ -60,6 +60,9 @@ SET character_set_connection = utf8;
 select * from pay_order where ip IS NULL;
 select * from pay_order where ip IS NOT NULL;
 
+-- 求差集
+select distinct ip from pay_order where ip not in (select ip from pay_client);
+
 -- 插入列
 alter table clients
 add column `reception_mode` tinyint(2) NOT NULL DEFAULT 0 COMMENT '接待模式（0 轮询，1 平均）'
