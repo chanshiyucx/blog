@@ -286,6 +286,8 @@ at InterruptExample$$Lambda$1/713338599.run(Unknown Source) at java.lang.Thread.
 
 時雨：如果使用的是实现 Runnable 接口启动新线程，则需要使用 `Thread.currentThread().isInterrupted()` 方法判断线程是否处于中断状态。
 
+時雨：Java 设计 sleep 函数时，如果 sleep 响应了中断，便会把 `interrupted()` 标记位清除，所以如果循环内 sleep，即使在循环条件中判断 `interrupted()` 也不能停止后续循环。
+
 ```java
 public class InterruptExample {
 
@@ -309,6 +311,33 @@ public class InterruptExample {
 
 ```html
 Thread end
+```
+
+時雨：中断最佳实践：
+
+1. 优先方法签名抛出异常而不是 try/catch 捕获，让上层自行处理；
+2. 如果无法或不想抛出异常，try/catch 捕获后需要手动恢复中断 `Thread.currentThread().interrupt();`，让上层可以获取中断状态。
+
+为什么不用废弃的 `stop()` 停止线程：因为 `stop()` 方法停止线程会让线程运行到一半突然停止，没办法完成一个基本单位的操作，造成脏数据。
+
+为什么不用 `volatile` 设置 boolean 标记位的方法停止线程：在某些情况，`volatile` 标记位可以起到和 `interrupted()` 一样的效果，但是在长时间阻塞的情况下，比如生产者/消费者模式，使用 `ArrayBlockingQueue` 做容器，在判断完成进入循环体内后却阻塞了，不进入再判断，无法中断线程。
+
+```java
+int num = 0;
+ArrayBlockingQueue storage = new ArrayBlockingQueue(10);
+try {
+    while (num <= 10000 && !canceled) {
+        if (num % 100 == 0) {
+            // 在此阻塞，不进入下次循环判断，即使 canceled 置为 true 也无法停止运行
+            storage.put(num);
+        }
+        num++;
+    }
+} catch (InterruptedException e) {
+    e.printStackTrace();
+} finally {
+    System.out.println("生成者停止运行");
+}
 ```
 
 ### Executor 的中断操作
