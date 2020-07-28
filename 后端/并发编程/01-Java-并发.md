@@ -320,7 +320,7 @@ Thread end
 
 为什么不用废弃的 `stop()` 停止线程：因为 `stop()` 方法停止线程会让线程运行到一半突然停止，没办法完成一个基本单位的操作，造成脏数据。
 
-为什么不用 `volatile` 设置 boolean 标记位的方法停止线程：在某些情况，`volatile` 标记位可以起到和 `interrupted()` 一样的效果，但是在长时间阻塞的情况下，比如生产者/消费者模式，使用 `ArrayBlockingQueue` 做容器，在判断完成进入循环体内后却阻塞了，不进入再判断，无法中断线程。
+为什么不用 volatile 设置 boolean 标记位的方法停止线程：在某些情况，volatile 标记位可以起到和 `interrupted()` 一样的效果，但是在长时间阻塞的情况下，比如生产者/消费者模式，使用 `ArrayBlockingQueue` 做容器，在判断完成进入循环体内后却阻塞了，不进入再判断，无法中断线程。
 
 ```java
 int num = 0;
@@ -337,6 +337,33 @@ try {
     e.printStackTrace();
 } finally {
     System.out.println("生成者停止运行");
+}
+```
+
+修复方式只需要将 `volatile` 标记位判断改为 `interrupted()` 判断即可。
+
+注意：`interrupted` 是静态方法，该方法获取并**重置**线程中断状态，目标线程是当前运行的线程而不是调用的的线程。
+
+```java
+public class Demo1 implements Runnable {
+
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread(new Demo1());
+        thread.start();
+        thread.interrupt();
+        System.out.println(thread.isInterrupted()); // true
+        System.out.println(thread.interrupted()); // false 目标是主线程而不是 thread 线程
+        System.out.println(Thread.interrupted()); // false
+        System.out.println(thread.isInterrupted()); // true
+        thread.join();
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+        }
+    }
+
 }
 ```
 
@@ -1198,6 +1225,8 @@ public static void main(String[] args) throws InterruptedException {
 - final，被 final 关键字修饰的字段在构造器中一旦初始化完成，并且没有发生 this 逃逸（其它线程通过 this 引用访问到初始化了一半的对象），那么其它线程就能看见 final 字段的值。
 
 对前面的线程不安全示例中的 cnt 变量使用 volatile 修饰，不能解决线程不安全问题，因为 **volatile 并不能保证操作的原子性**。
+
+volatile 是一种同步机制，比 synchronized 或者 lock 相关类更轻量，因为使用 volatile 并不会发生上下文切换等开销很大的行为。
 
 #### 3. 有序性
 
