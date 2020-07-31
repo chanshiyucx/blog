@@ -3,17 +3,17 @@
 > 本文为个人学习摘要笔记。  
 > 原文地址：[一文秒懂 Java ExecutorService](https://www.twle.cn/c/yufei/javatm/javatm-basic-executorservice.html)
 
-`ExecutorService` 是 `Java java.util.concurrent` 包的重要组成部分，是 Java JDK 提供的框架，用于简化异步模式下任务的执行。
+ExecutorService 是 java.util.concurrent 包的重要组成部分，是 Java JDK 提供的框架，用于简化异步模式下任务的执行。
 
-一般来说，`ExecutorService` 会自动提供一个线程池和相关 API，用于为其分配任务。
+一般来说，ExecutorService 会自动提供一个线程池和相关 API，用于为其分配任务。
 
-`ExecutorService` 只是接口，Java 标准库提供的几个常用实现类有：
+ExecutorService 只是接口，Java 标准库提供的几个常用实现类有：
 
 - `FixedThreadPool`：线程数固定的线程池；
 - `CachedThreadPool`：线程数根据任务动态调整的线程池；
 - `SingleThreadExecutor`：仅单线程执行的线程池。
 
-他们内部实现依旧是调用 `ThreadPoolExecutor`，构造方法如下：
+他们内部实现依旧是调用 ThreadPoolExecutor，构造方法如下：
 
 ```java
 public ThreadPoolExecutor(
@@ -47,9 +47,9 @@ public static ExecutorService newSingleThreadExecutor() {
 
 ## 实例化 ExecutorService
 
-实例化 `ExecutorService` 的方式有两种：一种是工厂方法，另一种是直接创建。
+实例化 ExecutorService 的方式有两种：一种是工厂方法，另一种是直接创建。
 
-创建 `ExecutorService` 实例的最简单方法是使用 `Executors` 类的提供的工厂方法。比如：
+创建 ExecutorService 实例的最简单方法是使用 Executors 类的提供的工厂方法。比如：
 
 ```java
 ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -57,11 +57,11 @@ ExecutorService executorService = Executors.newFixedThreadPool(10);
 
 当然还有其它很多工厂方法，每种工厂方法都可以创建满足特定用例的预定义实例。你所需要做的就是从 [Oracle 的 JDK 官方文档](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html)找到自己想要的合适的方法。
 
-另外也可以直接创建 `ExecutorService` 的实例，`java.util.concurrent` 包已经预定义了几种实现可供我们选择，或者你也可以创建自己的实现。
+另外也可以直接创建 ExecutorService 的实例，`java.util.concurrent` 包已经预定义了几种实现可供我们选择，或者你也可以创建自己的实现。
 
 ## ExecutorService 分配任务
 
-`ExecutorService` 可以执行 `Runnable` 和 `Callable` 任务。
+ExecutorService 可以执行 Runnable 和 Callable 任务。
 
 ```java
 public class T {
@@ -120,11 +120,11 @@ public class T {
 }
 ```
 
-`ExecutorService` 有多种方法进行任务分配，比如 `execute()`、`submit()`、`invokeAny()` 和 `invokeAll()` 等方法，这些方法都继承自 `Executor` 接口。
+ExecutorService 有多种方法进行任务分配，比如 `execute()`、`submit()`、`invokeAny()` 和 `invokeAll()` 等方法，这些方法都继承自 Executor 接口。
 
 ### execute()
 
-该方法返回值为空（`void`），因此使用该方法无法获得任务执行结果或检查任务的状态（是正在运行（`running`）还是执行完毕（`executed`））。
+该方法返回值为空，因此使用该方法无法获得任务执行结果或检查任务的状态（是正在运行（running）还是执行完毕（executed））。
 
 ```java
 executorService.execute(runnable);
@@ -132,7 +132,7 @@ executorService.execute(runnable);
 
 ### submit()
 
-`submit()` 方法会将一个 `Callable` 或 `Runnable` 任务提交给 `ExecutorService` 并返回 `Future` 类型的结果。
+`submit()` 方法会将一个 Callable 或 Runnable 任务提交给 ExecutorService 并返回 Future 类型的结果。
 
 ```java
 Future<String> future = executorService.submit(callable);
@@ -140,7 +140,7 @@ Future<String> future = executorService.submit(callable);
 
 ### invokeAny()
 
-`invokeAny()` 方法将一组任务分配给 `ExecutorService`，使每个任务执行，并返回任意一个成功执行的任务的结果。
+`invokeAny()` 方法将一组任务分配给 ExecutorService，使每个任务执行，并返回任意一个成功执行的任务的结果。
 
 ```java
 String result = executorService.invokeAny(callableList);
@@ -148,7 +148,7 @@ String result = executorService.invokeAny(callableList);
 
 ### invokeAll()
 
-`invokeAll()` 方法将一组任务分配给 `ExecutorService` ，使每个任务执行，并以 `Future` 类型的对象列表的形式返回所有任务执行的结果。
+`invokeAll()` 方法将一组任务分配给 ExecutorService ，使每个任务执行，并以 Future 类型的对象列表的形式返回所有任务执行的结果。
 
 ```java
 List<Future<String>> futureList = executorService.invokeAll(callableList);
@@ -156,17 +156,17 @@ List<Future<String>> futureList = executorService.invokeAll(callableList);
 
 ## 关闭 ExecutorService
 
-一般情况下，`ExecutorService` 并不会自动关闭，即使所有任务都执行完毕，或者没有要处理的任务，也不会自动销毁 `ExecutorService`。它会一直出于等待状态，等待给它分配新的工作。
+一般情况下，ExecutorService 并不会自动关闭，即使所有任务都执行完毕，或者没有要处理的任务，也不会自动销毁 ExecutorService。它会一直出于等待状态，等待给它分配新的工作。
 
 这种机制，在某些情况下是非常有用的，比如，应用程序需要处理不定期出现的任务，或者在编译时不知道这些任务的数量。
 
-但另一方面，这也带来了副作用：即使应用程序可能已经到达它的终点，但并不会被停止，因为等待的 `ExecutorService` 将导致 JVM 继续运行。这样，我们就需要主动关闭 `ExecutorService`。
+但另一方面，这也带来了副作用：即使应用程序可能已经到达它的终点，但并不会被停止，因为等待的 ExecutorService 将导致 JVM 继续运行。这样，我们就需要主动关闭 ExecutorService。
 
-要正确的关闭 `ExecutorService`，可以调用实例的 `shutdown()` 或 `shutdownNow()` 方法。
+要正确的关闭 ExecutorService，可以调用实例的 `shutdown()` 或 `shutdownNow()` 方法。
 
 ### shutdown()
 
-`shutdown()` 方法并不会立即销毁 `ExecutorService` 实例，而是首先让 `ExecutorService` 停止接受新任务，并在所有正在运行的线程完成当前工作后关闭：
+`shutdown()` 方法并不会立即销毁 ExecutorService 实例，而是首先让 ExecutorService 停止接受新任务，并在所有正在运行的线程完成当前工作后关闭：
 
 ```java
 executorService.shutdown();
@@ -174,7 +174,7 @@ executorService.shutdown();
 
 ### shutdownNow()
 
-`shutdownNow()` 方法会尝试立即销毁 `ExecutorService` 实例，所以并不能保证所有正在运行的线程将同时停止。该方法会返回等待处理的任务列表，由开发人员自行决定如何处理这些任务。
+`shutdownNow()` 方法会尝试立即销毁 ExecutorService 实例，所以并不能保证所有正在运行的线程将同时停止。该方法会返回等待处理的任务列表，由开发人员自行决定如何处理这些任务。
 
 ```java
 List<Runnable> notExecutedTasks = executorService.shutDownNow();
@@ -182,7 +182,7 @@ List<Runnable> notExecutedTasks = executorService.shutDownNow();
 
 ### 最佳实践
 
-关闭 `ExecutorService` 实例的最佳实战是同时使用这两种方法并结合 `awaitTermination()` 方法。使用这种方式 `ExecutorService` 首先停止执行新任务，等待指定的时间段完成所有任务，如果该时间到期，则立即停止执行。
+关闭 ExecutorService 实例的最佳实战是同时使用这两种方法并结合 `awaitTermination()` 方法。使用这种方式 ExecutorService 首先停止执行新任务，等待指定的时间段完成所有任务，如果该时间到期，则立即停止执行。
 
 ```java
 executorService.shutdown();
@@ -199,7 +199,7 @@ try {
 
 上面栗子中提到，`submit()` 方法和 `invokeAll()` 方法返回一个 Future 接口的对象或 Future 类型的对象集合。这些 Future 接口的对象允许我们获取任务执行的结果或检查任务的状态（正在运行还是执行完毕）。
 
-Future 接口提供了一个特殊的阻塞方法 `get()`，**它返回 `Callable` 任务执行的实际结果，但如果是 `Runnable` 任务，则只会返回 `null`**。
+Future 接口提供了一个特殊的阻塞方法 `get()`，**它返回 Callable 任务执行的实际结果，但如果是 Runnable 任务，则只会返回 `null`**。
 
 因为 `get()` 方法是阻塞的。如果调用 `get()` 方法时任务仍在运行，那么调用将会一直被执阻塞，直到任务正确执行完毕并且结果可用时才返回。
 
@@ -231,7 +231,7 @@ String result = future.get(200, TimeUnit.MILLISECONDS);
 | cancel()      | 取消任务执行               |
 | isCancelled() | 检查任务是否已取消         |
 
-此外，也可以包装 `Callable` 成 `FutureTask` 直接交给线程执行：
+此外，也可以包装 Callable 成 FutureTask 直接交给线程执行：
 
 ```java
 FutureTask<String> futureTask = new FutureTask<>(() -> "Hello");
@@ -247,7 +247,7 @@ boolean isCancelled = future.isCancelled();
 
 ## ScheduledExecutorService
 
-`ScheduledExecutorService` 接口用于在一些预定义的延迟之后运行任务或定期运行任务。同样的，实例化 `ScheduledExecutorService` 的最佳方式是使用 `Executors` 类的工厂方法。比如，要在固定延迟后安排单个任务的执行，可以使用 `ScheduledExecutorService` 实例的 `scheduled()` 方法：
+ScheduledExecutorService 接口用于在一些预定义的延迟之后运行任务或定期运行任务。同样的，实例化 ScheduledExecutorService 的最佳方式是使用 Executors 类的工厂方法。比如，要在固定延迟后安排单个任务的执行，可以使用 ScheduledExecutorService 实例的 `scheduled()` 方法：
 
 ```java
 ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
@@ -262,7 +262,7 @@ try {
 }
 ```
 
-另外，`ScheduledExecutorService` 实例还提供了另一个重要方法 `scheduleAtFixedRate()`，它允许在固定延迟后定期执行任务。
+另外，ScheduledExecutorService 实例还提供了另一个重要方法 `scheduleAtFixedRate()`，它允许在固定延迟后定期执行任务。
 
 ```java
 executorService.scheduleAtFixedRate(commod, initialDelay, period, unit);
@@ -286,11 +286,11 @@ executorService.scheduleWithFixedDelay(task, 100, 150, TimeUnit.MILLISECONDS);
 
 ## 总结
 
-尽管 `ExecutorService` 相对简单，但仍有一些常见的陷阱。
+尽管 ExecutorService 相对简单，但仍有一些常见的陷阱。
 
-1. 未能正确关闭 `ExecutorService`
-2. 使用固定长度的线程池时设置了错误的线程池容量。使用 `ExecutorService` 最重要的一件事，就是确定应用程序有效执行任务所需的线程数
+1. 未能正确关闭 ExecutorService
+2. 使用固定长度的线程池时设置了错误的线程池容量。使用 ExecutorService 最重要的一件事，就是确定应用程序有效执行任务所需的线程数
    - 太大的线程池只会产生不必要的开销，只会创建大多数处于等待模式的线程。
    - 太少的线程池会让应用程序看起来没有响应，因为队列中的任务等待时间很长。
-3. 在取消任务后调用 Future 的 `get()` 方法。尝试获取已取消任务的结果将触发 `CancellationException` 异常。
+3. 在取消任务后调用 Future 的 `get()` 方法。尝试获取已取消任务的结果将触发 CancellationException 异常。
 4. 使用 Future 的 `get()` 方法意外地阻塞了很长时间。应该使用超时来避免意外的等待。
