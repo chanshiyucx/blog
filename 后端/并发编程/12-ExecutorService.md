@@ -13,6 +13,38 @@
 - `CachedThreadPool`：线程数根据任务动态调整的线程池；
 - `SingleThreadExecutor`：仅单线程执行的线程池。
 
+他们内部实现依旧是调用 `ThreadPoolExecutor`，构造方法如下：
+
+```java
+public ThreadPoolExecutor(
+    int corePoolSize,
+    int maximumPoolSize,
+    long keepAliveTime,
+    TimeUnit unit,
+    BlockingQueue<Runnable> workQueue,
+    ThreadFactory threadFactory,
+    RejectedExecutionHandler handler)
+
+public static ExecutorService newFixedThreadPool(int nThreads) {
+    return new ThreadPoolExecutor(nThreads, nThreads,
+                                    0L, TimeUnit.MILLISECONDS,
+                                    new LinkedBlockingQueue<Runnable>());
+}
+
+public static ExecutorService newCachedThreadPool() {
+    return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
+                                    60L, TimeUnit.SECONDS,
+                                    new SynchronousQueue<Runnable>());
+}
+
+public static ExecutorService newSingleThreadExecutor() {
+    return new FinalizableDelegatedExecutorService
+        (new ThreadPoolExecutor(1, 1,
+                                0L, TimeUnit.MILLISECONDS,
+                                new LinkedBlockingQueue<Runnable>()));
+}
+```
+
 ## 实例化 ExecutorService
 
 实例化 `ExecutorService` 的方式有两种：一种是工厂方法，另一种是直接创建。
