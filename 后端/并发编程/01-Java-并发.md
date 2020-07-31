@@ -1226,7 +1226,7 @@ public static void main(String[] args) throws InterruptedException {
 
 对前面的线程不安全示例中的 cnt 变量使用 volatile 修饰，不能解决线程不安全问题，因为 **volatile 并不能保证操作的原子性**。
 
-volatile 是一种同步机制，比 synchronized 或者 lock 相关类更轻量，因为使用 volatile 并不会发生上下文切换等开销很大的行为。
+volatile 是一种同步机制，比 synchronized 或者 Lock 相关类更轻量，因为使用 volatile 并不会发生上下文切换等开销很大的行为。
 
 #### 3. 有序性
 

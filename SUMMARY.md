@@ -106,9 +106,7 @@
     - [15 Java Stream](后端/Java/15-Java-Stream.md)
     - [16 Java 枚举](后端/Java/16-Java-枚举.md)
     - [17 Java 日期与时间](后端/Java/17-Java-日期与时间.md)
-    - [18 Java CountDownLatch](后端/Java/18-Java-CountDownLatch.md)
-    - [19 Java ExecutorService](后端/Java/19-Java-ExecutorService.md)
-    - [20 Java fail fast](后端/Java/20-Java-fail-fast.md)
+    - [18 Java fail fast](后端/Java/18-Java-fail-fast.md)
   - 并发编程
     - [01 Java 并发](后端/并发编程/01-Java-并发.md)
     - [02 synchronized](后端/并发编程/02-synchronized.md)
@@ -119,6 +117,8 @@
     - [07 CompletableFuture](后端/并发编程/07-CompletableFuture.md)
     - [08 ForkJoin](后端/并发编程/08-ForkJoin.md)
     - [09 ThreadLocal](后端/并发编程/09-ThreadLocal.md)
+    - [10 Java CountDownLatch](后端/并发编程/10-Java-CountDownLatch.md)
+    - [11 Java ExecutorService](后端/并发编程/11-Java-ExecutorService.md)
   - 高效编程
     - [01 30 seconds of java8](后端/高效编程/01-30-seconds-of-java8.md)
     - [02 函数式替代 for 循环](后端/高效编程/02-函数式替代-for-循环.md)
