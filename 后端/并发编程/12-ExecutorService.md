@@ -1,4 +1,4 @@
-# Java ExecutorService
+# ExecutorService
 
 > 本文为个人学习摘要笔记。  
 > 原文地址：[一文秒懂 Java ExecutorService](https://www.twle.cn/c/yufei/javatm/javatm-basic-executorservice.html)

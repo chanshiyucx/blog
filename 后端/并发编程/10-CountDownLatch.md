@@ -1,4 +1,4 @@
-# Java CountDownLatch
+# CountDownLatch
 
 > 本文为个人学习摘要笔记。  
 > 原文地址：[CountDownLatch 详解](https://www.jianshu.com/p/128476015902)
@@ -12,11 +12,11 @@
 `CountDownLatch` 类只提供了一个构造器和三个主要方法：
 
 ```java
-public CountDownLatch(int count) {  };  // 参数 count 为计数值
+public CountDownLatch(int count) {};  // 参数 count 为计数值
 
-public void await() throws InterruptedException { };   //调用 await() 方法的线程会被挂起，它会等待直到 count 值为 0 才继续执行
-public boolean await(long timeout, TimeUnit unit) throws InterruptedException { };  //和 await() 类似，只不过等待一定的时间后 count 值还没变为 0 的话就会继续执行
-public void countDown() { };  //将 count 值减 1
+public void await() throws InterruptedException {};   // 调用 await() 方法的线程会被挂起，它会等待直到 count 值为 0 才继续执行
+public boolean await(long timeout, TimeUnit unit) throws InterruptedException {};  // 和 await() 类似，只不过等待一定的时间后 count 值还没变为 0 的话就会继续执行
+public void countDown() {};  // 将 count 值减 1
 ```
 
 `countDown()` 方法用于使计数器减一，一般是执行任务的线程调用，`await()` 方法则使调用该方法的线程处于等待状态，一般是主线程调用。直到某个线程将计数器倒数至 0，其就会唤醒在 `await()` 方法中等待的线程。
