@@ -111,7 +111,7 @@ Future<String> future = executorService.submit(callable);
 `invokeAny()` 方法将一组任务分配给 `ExecutorService`，使每个任务执行，并返回任意一个成功执行的任务的结果。
 
 ```java
-Future<String> result = executorService.submit(callable);
+String result = executorService.invokeAny(callableList);
 ```
 
 ### invokeAll()
@@ -199,7 +199,7 @@ String result = future.get(200, TimeUnit.MILLISECONDS);
 | cancel()      | 取消任务执行               |
 | isCancelled() | 检查任务是否已取消         |
 
-此外，也可以保证 `Callable` 成 `FutureTask` 直接交给线程执行：
+此外，也可以包装 `Callable` 成 `FutureTask` 直接交给线程执行：
 
 ```java
 FutureTask<String> futureTask = new FutureTask<>(() -> "Hello");
