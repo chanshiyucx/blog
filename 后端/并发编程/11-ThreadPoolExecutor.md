@@ -3,9 +3,9 @@
 > 本文为个人学习摘要笔记。  
 > 原文地址：[ThreadPoolExecutor 参数解析](https://juejin.im/post/6844903554986049543)
 
-`ThreadPoolExecutor` 作为 `java.util.concurrent` 包对外提供基础实现，以内部线程池的形式对外提供管理任务执行、线程调度、线程池管理等等服务。
+ThreadPoolExecutor 作为 java.util.concurrent 包对外提供基础实现，以内部线程池的形式对外提供管理任务执行、线程调度、线程池管理等等服务。
 
-`ThreadPoolExecutor` 是一个可被继承的线程池实现，包含了用于微调的许多参数和钩子。`Executors` 方法提供的线程服务，都是通过参数设置来实现不同的线程池机制。
+ThreadPoolExecutor 是一个可被继承的线程池实现，包含了用于微调的许多参数和钩子。Executors 方法提供的线程服务，都是通过参数设置来实现不同的线程池机制。
 
 ## 核心构造方法
 
@@ -99,3 +99,13 @@ private final ThreadPoolExecutor mExecutor;
     }
 }
 ```
+
+## 最佳实践
+
+阿里巴巴 Java 开发手册中强制规定：【强制】线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这
+样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。
+
+说明：Executors 返回的线程池对象的弊端如下：
+
+1. FixedThreadPool 和 SingleThreadPool：允许的请求队列长度为 Integer.MAX_VALUE，可能会堆积大量的请求，从而导致 OOM；
+2. CachedThreadPool 和 ScheduledThreadPool：允许的创建线程数量为 Integer.MAX_VALUE，可能会创建大量的线程，从而导致 OOM。
