@@ -11,7 +11,8 @@ ExecutorService 只是接口，Java 标准库提供的几个常用实现类有�
 
 - `FixedThreadPool`：线程数固定的线程池；
 - `CachedThreadPool`：线程数根据任务动态调整的线程池；
-- `SingleThreadExecutor`：仅单线程执行的线程池。
+- `SingleThreadExecutor`：仅单线程执行的线程池；
+- `ScheduledThreadPool`：以用来处理延时任务或者定时任务。
 
 他们内部实现依旧是调用 ThreadPoolExecutor，构造方法如下：
 
@@ -25,23 +26,36 @@ public ThreadPoolExecutor(
     ThreadFactory threadFactory,
     RejectedExecutionHandler handler)
 
+// FixedThreadPool
 public static ExecutorService newFixedThreadPool(int nThreads) {
     return new ThreadPoolExecutor(nThreads, nThreads,
                                     0L, TimeUnit.MILLISECONDS,
                                     new LinkedBlockingQueue<Runnable>());
 }
 
+// CachedThreadPool
 public static ExecutorService newCachedThreadPool() {
     return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                     60L, TimeUnit.SECONDS,
                                     new SynchronousQueue<Runnable>());
 }
 
+// SingleThreadExecutor
 public static ExecutorService newSingleThreadExecutor() {
     return new FinalizableDelegatedExecutorService
         (new ThreadPoolExecutor(1, 1,
                                 0L, TimeUnit.MILLISECONDS,
                                 new LinkedBlockingQueue<Runnable>()));
+}
+
+// ScheduledThreadPool
+public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+    return new ScheduledThreadPoolExecutor(corePoolSize);
+}
+
+public ScheduledThreadPoolExecutor(int corePoolSize) {
+    super(corePoolSize, Integer.MAX_VALUE, 0, NANOSECONDS,
+            new DelayedWorkQueue());
 }
 ```
 
