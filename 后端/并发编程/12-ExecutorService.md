@@ -134,7 +134,7 @@ public class T {
 }
 ```
 
-`isShutdown()` 可以判断是否线程池是否已经执行停止方法了。
+`isShutdown()` 可以判断是否线程池是否已经执行停止方法，`isTerminated()` 可以判断线程池是否真正停止运行。
 
 ExecutorService 有多种方法进行任务分配，比如 `execute()`、`submit()`、`invokeAny()` 和 `invokeAll()` 等方法，这些方法都继承自 Executor 接口。
 
