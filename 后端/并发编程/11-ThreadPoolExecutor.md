@@ -7,6 +7,8 @@ ThreadPoolExecutor 作为 java.util.concurrent 包对外提供基础实现，以
 
 ThreadPoolExecutor 是一个可被继承的线程池实现，包含了用于微调的许多参数和钩子。Executors 方法提供的线程服务，都是通过参数设置来实现不同的线程池机制。
 
+![关系](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/ThreadPoolExecutor/关系.png)
+
 ## 核心构造方法
 
 ```java
@@ -112,7 +114,7 @@ private final ThreadPoolExecutor mExecutor;
 
 ## DEMO
 
-### 可暂停的线程池
+### 可暂停恢复的线程池
 
 ```java
 /**
@@ -183,16 +185,13 @@ public class PauseableThreadPool extends ThreadPoolExecutor {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        PauseableThreadPool pauseableThreadPool = new PauseableThreadPool(10, 20, 10l, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("我被执行");
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        PauseableThreadPool pauseableThreadPool = new PauseableThreadPool(10, 20, 10L, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
+        Runnable runnable = () -> {
+            System.out.println("我被执行");
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         };
         for (int i = 0; i < 10000; i++) {

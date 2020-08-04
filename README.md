@@ -137,8 +137,10 @@ Code is Long, Life is Short.
     - [07 CompletableFuture](后端/并发编程/07-CompletableFuture.md)
     - [08 ForkJoin](后端/并发编程/08-ForkJoin.md)
     - [09 ThreadLocal](后端/并发编程/09-ThreadLocal.md)
-    - [10 Java CountDownLatch](后端/并发编程/10-Java-CountDownLatch.md)
-    - [11 Java ExecutorService](后端/并发编程/11-Java-ExecutorService.md)
+    - [10 CountDownLatch](后端/并发编程/10-CountDownLatch.md)
+    - [11 ThreadPoolExecutor](后端/并发编程/11-ThreadPoolExecutor.md)
+    - [12 ExecutorService](后端/并发编程/12-ExecutorService.md)
+    - [13 Atom 原子类](后端/并发编程/13-Atom-原子类.md)
   - 高效编程
     - [01 30 seconds of java8](后端/高效编程/01-30-seconds-of-java8.md)
     - [02 函数式替代 for 循环](后端/高效编程/02-函数式替代-for-循环.md)

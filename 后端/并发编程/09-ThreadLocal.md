@@ -104,3 +104,36 @@ try (var ctx = new UserContext("Bob")) {
 - `ThreadLocal` 表示线程的“局部变量”，它确保每个线程的 `ThreadLocal` 变量都是各自独立的；
 - `ThreadLocal` 适合在一个线程的处理流程中保持上下文（避免了同一参数在所有方法中传递）；
 - 使用 `ThreadLocal` 要用 `try ... finally` 结构，并在 `finally` 中清除。
+
+## DEMO
+
+### ThreadLocal SimpleDateFormat
+
+```java
+/**
+ * 10 个线程执行 1000 次打印格式化日期，每个线程有自己的格式化对象
+ */
+public class ThreadLocalNormalUsage03 {
+
+    private static ExecutorService threadPool = Executors.newFixedThreadPool(10);
+
+    private static ThreadLocal<SimpleDateFormat> dateFormatThreadLocal = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 1000; i++) {
+            int finalI = i;
+            threadPool.submit(() -> {
+                String date = new ThreadLocalNormalUsage03().date(finalI);
+                System.out.println(date);
+            });
+        }
+        threadPool.shutdown();
+    }
+
+    private String date(int seconds) {
+        Date date = new Date(1000 * seconds);
+        SimpleDateFormat simpleDateFormat = dateFormatThreadLocal.get();
+        return simpleDateFormat.format(date);
+    }
+}
+```
