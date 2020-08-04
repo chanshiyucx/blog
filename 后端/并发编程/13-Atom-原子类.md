@@ -15,3 +15,142 @@ CAS 比较交换的过程可以通俗的理解为 CAS(V,O,N)，包含三个值�
 ### Synchronized VS CAS
 
 `synchronized` 在存在线程竞争的情况下会出现线程阻塞和唤醒锁带来的性能问题，因为这是一种**互斥同步**。而 CAS 并不是武断的间线程挂起，当 CAS 操作失败后会进行一定的尝试，而非进行耗时的挂起唤醒的操作，因此也叫做**非互斥同步**。这是两者主要的区别。
+
+### CAS 存在的问题
+
+**1. ABA 问题**
+
+因为 CAS 会检查旧值有没有变化，这里存在这样一个有意思的问题。比如一个旧值 A 变为了成 B，然后再变成 A，刚好在做 CAS 时检查发现旧值并没有变化依然为 A，但是实际上的确发生了变化。解决方案可以沿袭数据库中常用的乐观锁方式，添加一个版本号可以解决。原来的变化路径 A->B->A 就变成了 1A->2B->3C。
+
+**2.自旋时间过长**
+
+使用 CAS 时非阻塞同步，也就是说不会将线程挂起，会自旋（无非就是一个死循环）进行下一次尝试，如果这里自旋时间过长对性能是很大的消耗。
+
+## 原子更新基本类型
+
+atomic 包提高原子更新基本类型的工具类有：
+
+- AtomicBoolean：以原子更新的方式更新 Boolean；
+- AtomicInteger：以原子更新的方式更新 Integer；
+- AtomicLong：以原子更新的方式更新 Long。
+
+这几个类的用法基本一致，这里以 AtomicInteger 为例总结常用的方法：
+
+- `addAndGet(int delta)`：以原子方式将输入的数值与实例中原本的值相加，并返回最后的结果；
+- `incrementAndGet()`：以原子的方式将实例中的原值进行加 1 操作，并返回最终相加后的结果；
+- `getAndIncrement()`：以原子的方式将实例中的原值加 1，返回的是自增前的旧值；
+- `getAndSet(int newValue)`：将实例中的值更新为新值，并返回旧值。
+
+为了能够弄懂 AtomicInteger 的实现原理，以 `getAndIncrement` 方法为例，来看下源码：
+
+```java
+public final int getAndIncrement() {
+    return unsafe.getAndAddInt(this, valueOffset, 1);
+}
+```
+
+可以看出，该方法实际上是调用了 unsafe 实例的 `getAndAddInt` 方法，unsafe 实例的获取时通过 UnSafe 类的静态方法 `getUnsafe` 获取：
+
+```java
+private static final Unsafe unsafe = Unsafe.getUnsafe();
+```
+
+Unsafe 类在 sun.misc 包下，Unsafer 类提供了一些底层操作，atomic 包下的原子操作类的也主要是通过 Unsafe 类提供的 `compareAndSwapInt`，`compareAndSwapLong` 等一系列提供 CAS 操作的方法来进行实现，并且由于 CAS 是采用乐观锁策略，因此，这种数据更新的方法也具有高效性。
+
+AtomicLong 的实现原理和 AtomicInteger 一致，只不过一个针对的是 long 变量，一个针对的是 int 变量。而 boolean 变量的更新类 AtomicBoolean 类是怎样实现更新的呢？核心方法是 `compareAndSet` 方法，其源码如下：
+
+```java
+public final boolean compareAndSet(boolean expect, boolean update) {
+    int e = expect ? 1 : 0;
+    int u = update ? 1 : 0;
+    return unsafe.compareAndSwapInt(this, valueOffset, e, u);
+}
+```
+
+可以看出，`compareAndSet` 方法的实际上也是先转换成 0,1 的整型变量，然后是通过针对 int 型变量的原子更新方法 `compareAndSwapInt` 来实现的。
+
+## 原子更新数组类型
+
+atomic 包下提供能原子更新数组中元素的类有：
+
+- AtomicIntegerArray：原子更新整型数组中的元素；
+- AtomicLongArray：原子更新长整型数组中的元素；
+- AtomicReferenceArray：原子更新引用类型数组中的元素。
+
+这几个类的用法一致，就以 AtomicIntegerArray 来总结下常用的方法：
+
+- `addAndGet(int i, int delta)`：以原子更新的方式将数组中索引为 i 的元素与输入值相加；
+- `getAndIncrement(int i)`：以原子更新的方式将数组中索引为 i 的元素自增加 1；
+- `compareAndSet(int i, int expect, int update)`：将数组中索引为 i 的位置的元素进行更新。
+
+可以看出，AtomicIntegerArray 与 AtomicInteger 的方法基本一致，只不过在 AtomicIntegerArray 的方法中会多一个指定数组索引位 i。
+
+## 原子更新引用类型
+
+如果需要原子更新引用类型变量的话，为了保证线程安全，atomic 也提供了相关的类：
+
+- AtomicReference：原子更新引用类型；
+- AtomicReferenceFieldUpdater：原子更新引用类型里的字段；
+- AtomicMarkableReference：原子更新带有标记位的引用类型。
+
+```java
+public class AtomicDemo {
+    private static AtomicReference reference = new AtomicReference();
+
+    public static void main(String[] args) {
+        User user1 = new User("a", 1);
+        reference.set(user1);
+        User user2 = new User("b",2);
+        User user = reference.getAndSet(user2);
+        System.out.println(user); // User{userName='a', age=1}
+        System.out.println(reference.get()); // User{userName='b', age=2}
+    }
+
+    static class User {
+        private String userName;
+        private int age;
+
+    public User(String userName, int age) {
+        this.userName = userName;
+        this.age = age;
+    }
+}
+```
+
+## 原子更新字段类型
+
+如果需要更新对象的某个字段，并在多线程的情况下，能够保证线程安全，atomic 同样也提供了相应的原子操作类：
+
+- AtomicIntegeFieldUpdater：原子更新整型字段类；
+- AtomicLongFieldUpdater：原子更新长整型字段类；
+- AtomicStampedReference：原子更新引用类型，这种更新方式会带有版本号。而为什么在更新的时候会带有版本号，是为了解决 CAS 的 ABA 问题。
+
+要想使用原子更新字段需要两步操作：
+
+- 原子更新字段类都是抽象类，只能通过静态方法 newUpdater 来创建一个更新器，并且需要设置想要更新的类和属性；
+- 更新类的属性必须使用 public volatile 进行修饰。
+
+这几个类提供的方法基本一致，以 AtomicIntegerFieldUpdater 为例来看看具体的使用：
+
+```java
+public class AtomicDemo {
+  private static AtomicIntegerFieldUpdater updater = AtomicIntegerFieldUpdater.newUpdater(User.class,"age");
+
+  public static void main(String[] args) {
+      User user = new User("a", 1);
+      int oldValue = updater.getAndAdd(user, 5);
+      System.out.println(oldValue); // 1
+      System.out.println(updater.get(user)); // 6
+  }
+
+  static class User {
+      private String userName;
+      public volatile int age;
+
+      public User(String userName, int age) {
+          this.userName = userName;
+          this.age = age;
+      }
+  }
+}
+```
