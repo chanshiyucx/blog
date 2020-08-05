@@ -1,5 +1,8 @@
 # BlockingQueue
 
+> 本文为个人学习摘要笔记。  
+> 官方文档：[Oracle BlockingQueue](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/BlockingQueue.html)
+
 BlockingQueue，即阻塞队列被广泛使用在“生产者-消费者”问题中，其原因是 BlockingQueue 提供了可阻塞的插入和移除的方法。当队列容器已满，生产者线程会被阻塞，直到队列未满；当队列容器为空时，消费者线程会被阻塞，直至队列非空时为止。
 
 ## BlockingQueue API
