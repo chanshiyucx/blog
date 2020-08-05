@@ -128,7 +128,7 @@ public class AtomicDemo {
 要想使用原子更新字段需要两步操作：
 
 - 原子更新字段类都是抽象类，只能通过静态方法 newUpdater 来创建一个更新器，并且需要设置想要更新的类和属性；
-- 更新类的属性必须使用 public volatile 进行修饰。
+- 更新类的属性必须使用 public volatile 进行修饰，不能使用 static 或 final 关键字修饰。
 
 这几个类提供的方法基本一致，以 AtomicIntegerFieldUpdater 为例来看看具体的使用：
 
@@ -154,3 +154,112 @@ public class AtomicDemo {
   }
 }
 ```
+
+## LongAdder
+
+```java
+public class AtomicLongDemo {
+
+    public static void main(String[] args) {
+        AtomicLong counter = new AtomicLong(0);
+        ExecutorService service = Executors.newFixedThreadPool(20);
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            service.submit(new Task(counter));
+        }
+        service.shutdown();
+        while (!service.isTerminated()) {
+
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("AtomicLong 运算结果：" + counter.get() + "，耗时：" + (end - start));
+    }
+
+    private static class Task implements Runnable {
+
+        private AtomicLong counter;
+
+        Task(AtomicLong counter) {
+            this.counter = counter;
+        }
+
+        @Override
+        public void run() {
+            for (int i = 0; i < 10000; i++) {
+                counter.incrementAndGet();
+            }
+        }
+    }
+}
+```
+
+```
+AtomicLong 运算结果：100000000，耗时：1916
+```
+
+```java
+public class LongAdderDemo {
+
+    public static void main(String[] args) {
+        LongAdder counter = new LongAdder();
+        ExecutorService service = Executors.newFixedThreadPool(20);
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 10000; i++) {
+            service.submit(new Task(counter));
+        }
+        service.shutdown();
+        while (!service.isTerminated()) {
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("LongAdder 运算结果：" + counter.sum() + "，耗时：" + (end - start));
+    }
+
+    private static class Task implements Runnable {
+        private LongAdder counter;
+
+        Task(LongAdder counter) {
+            this.counter = counter;
+        }
+
+        @Override
+        public void run() {
+            for (int i = 0; i < 10000; i++) {
+                counter.increment();
+            }
+        }
+    }
+}
+```
+
+```
+LongAdder 运算结果：100000000，耗时：133
+```
+
+运行速度提升不止十倍！在小并发的环境下，论更新的效率，两者都差不多。但是高并发的场景下，LongAdder 有着明显更高的吞吐量，但是有着更高的空间复杂度（以空间换时间）。当我们的场景是为了统计计数，而不是为了更细粒度的同步控制时，并且是在多线程更新的场景时，LongAdder 类比 AtomicLong 更好用。
+
+虽然高并发下 LongAdder 效率远高于 AtomicLong，但 LongAdder 并不能完全替代 AtomicLong，LongAdder 适合的场景是统计求和计数的场景，而且 LongAdder 基本只提供了 add 方法，而 AtomicLong 还具有 CAS 方法。
+
+## LongAccumulator
+
+LongAdder 类是 LongAccumulator 的一个特例，LongAccumulator 提供了比 LongAdder 更强大的功能，如下构造函数根据输入的两个参数返回一个计算值，identity 则是 LongAccumulator 累加器的初始值。
+
+```java
+public class LongAccumulatorDemo {
+
+    public static void main(String[] args) {
+        LongAccumulator accumulator = new LongAccumulator((x, y) -> 2 + x * y, 1);
+        ExecutorService executor = Executors.newFixedThreadPool(8);
+        IntStream.range(1, 10).forEach(i -> executor.submit(() -> accumulator.accumulate(i)));
+        executor.shutdown();
+        while (!executor.isTerminated()) {
+        }
+        System.out.println(accumulator.getThenReset());
+    }
+}
+```
+
+LongAdder 其实是 LongAccumulator 的一个特例，`new LongAdder()` 的调用相当于 `new LongAccumulator((x, y) -> x + y, 0)`。前者初始值只能默认为 0，后者可以指定累加规则比如不是累加而是相乘，只需要构造 LongAccumulator 时候传入自定义双面运算器就 OK，前者则内置累加的规则。
+
+> LongAccumulator will work correctly if we supply it with a commutative function where the order of accumulation does not matter.
+
+只有不在乎执行顺序时才适合使用 LongAccumulator。
