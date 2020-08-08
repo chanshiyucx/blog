@@ -182,14 +182,13 @@ Code is Long, Life is Short.
     - [18 JPA](后端/Spring/18-JPA.md)
     - [19 Apache Shiro](后端/Spring/19-Apache-Shiro.md)
     - [20 Spring 异步请求](后端/Spring/20-Spring-异步请求.md)
-  - Mysql
-    - [01 MySQL](后端/Mysql/01-MySQL.md)
-    - [02 SQL 语句 where 1=1](后端/Mysql/02-SQL语句where1=1.md)
-    - [03 truncate 和 delete](后端/Mysql/03-truncate和delete.md)
-    - [04 实用 SQL](后端/Mysql/04-实用SQL.md)
-    - [05 事务](后端/Mysql/05-事务.md)
-    - [06 关系模型](后端/Mysql/06-关系模型.md)
-    - [07 Mybatis](后端/Mysql/07-Mybatis.md)
+  - MySQL
+    - [01 MySQL](后端/MySQL/01-MySQL.md)
+    - [02 SQL 语句 where 1=1](后端/MySQL/02-SQL语句where1=1.md)
+    - [03 truncate 和 delete](后端/MySQL/03-truncate和delete.md)
+    - [04 事务](后端/MySQL/04-事务.md)
+    - [05 关系模型](后端/MySQL/05-关系模型.md)
+    - [06 Mybatis](后端/MySQL/06-Mybatis.md)
   - Nginx
     - [01 Nginx 指北](后端/Nginx/01-Nginx-指北.md)
     - [02 常用端口](后端/Nginx/02-常用端口.md)
