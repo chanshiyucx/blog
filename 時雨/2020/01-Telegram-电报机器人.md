@@ -43,6 +43,9 @@ In order to get the group chat id, do as follows:
 https://api.telegram.org/bot${token}/getUpdates
 ```
 
+> 2020/08/21 時雨
+> 直接 @GetIDs Bot，将其拉入群组即可获得群组 ID
+
 ## 发送消息
 
 机器人注册成功，咱就可以发送消息了，参考官方接口文档参考 [Telegram Bot API](https://core.telegram.org/bots/api)，访问接口发送消息：
