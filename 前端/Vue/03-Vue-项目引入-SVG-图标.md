@@ -31,7 +31,7 @@ SVG 与 icon font 的区别：
 ```javascript
 // vue.config.js
 module.exports = {
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     // svg rule loader
     const svgRule = config.module.rule('svg') // 找到 svg-loader
     svgRule.uses.clear() // 清除已有 loader
@@ -41,9 +41,9 @@ module.exports = {
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
-        symbolId: 'icon-[name]'
+        symbolId: 'icon-[name]',
       })
-  }
+  },
 }
 ```
 
@@ -70,7 +70,7 @@ import SvgIcon from '@/components/SvgIcon' // svg组件
 Vue.component('svg-icon', SvgIcon)
 
 const req = require.context('./svg', false, /\.svg$/)
-const requireAll = requireContext => requireContext.keys().map(requireContext)
+const requireAll = (requireContext) => requireContext.keys().map(requireContext)
 requireAll(req)
 ```
 
@@ -95,12 +95,12 @@ requireAll(req)
     props: {
       iconClass: {
         type: String,
-        required: true
+        required: true,
       },
       className: {
         type: String,
-        default: ''
-      }
+        default: '',
+      },
     },
     computed: {
       iconName() {
@@ -112,8 +112,8 @@ requireAll(req)
         } else {
           return 'svg-icon'
         }
-      }
-    }
+      },
+    },
   }
 </script>
 
@@ -140,4 +140,5 @@ import './assets/icons'
 <svg-icon icon-class="github" />
 ```
 
-参考文章： [在 vue 项目中优雅的使用 Svg](https://juejin.im/post/5bcfdad4e51d457a8254e9d6)
+参考文章：  
+[在 vue 项目中优雅的使用 Svg](https://juejin.im/post/5bcfdad4e51d457a8254e9d6)
