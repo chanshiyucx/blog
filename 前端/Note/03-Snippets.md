@@ -3,7 +3,7 @@
 ## 001 Fisher–Yates Shuffle 洗牌算法
 
 ```javascript
-const shuffle = arr => {
+const shuffle = (arr) => {
   let i = arr.length
   let j
   while (i) {
@@ -17,8 +17,8 @@ const shuffle = arr => {
 ## 002 数字千分位格式化
 
 ```javascript
-const toThousandFilter = num => {
-  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
+const toThousandFilter = (num) => {
+  return (+num || 0).toString().replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
 
@@ -46,7 +46,7 @@ const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
     h: date.getHours(),
     i: date.getMinutes(),
     s: date.getSeconds(),
-    a: date.getDay()
+    a: date.getDay(),
   }
   const time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
     let value = formatObj[key]
@@ -66,8 +66,8 @@ const parseTime = (time, format = '{y}-{m}-{d} {h}:{i}:{s}') => {
 ## 004 动态加载 JS 文件
 
 ```javascript
-const loadJS = url => {
-  return new Promise(resolve => {
+const loadJS = (url) => {
+  return new Promise((resolve) => {
     const recaptchaScript = document.createElement('script')
     recaptchaScript.setAttribute('src', url)
     recaptchaScript.async = true
@@ -79,7 +79,7 @@ const loadJS = url => {
 const loadAssets = async () => {
   const assets = [
     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
+    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
   ]
 
   for (const url of assets) {
@@ -91,9 +91,9 @@ const loadAssets = async () => {
 ## 005 动态下载文件
 
 ```javascript
-const downloadFile = file => {
-  fetch(file.url).then(res =>
-    res.blob().then(blob => {
+const downloadFile = (file) => {
+  fetch(file.url).then((res) =>
+    res.blob().then((blob) => {
       const a = document.createElement('a')
       const url = window.URL.createObjectURL(blob)
       a.href = url
@@ -108,7 +108,7 @@ const downloadFile = file => {
 ## 006 获取文件扩展名
 
 ```javascript
-const getFileExt = filename => {
+const getFileExt = (filename) => {
   return filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2)
 }
 ```
@@ -129,15 +129,15 @@ const createUniqueString = () => {
 /**
  * @description 绑定事件 on(element, event, handler)
  */
-const on = (function() {
+const on = (function () {
   if (document.addEventListener) {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event && handler) {
         element.addEventListener(event, handler, false)
       }
     }
   } else {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event && handler) {
         element.attachEvent('on' + event, handler)
       }
@@ -148,15 +148,15 @@ const on = (function() {
 /**
  * @description 解绑事件 off(element, event, handler)
  */
-const off = (function() {
+const off = (function () {
   if (document.removeEventListener) {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event) {
         element.removeEventListener(event, handler, false)
       }
     }
   } else {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event) {
         element.detachEvent('on' + event, handler)
       }
@@ -183,9 +183,9 @@ const getVideoDuration = () => {
 ## 010 判断是否重复操作
 
 ```javascript
-const isRepeat = (function() {
+const isRepeat = (function () {
   const reData = {}
-  return function(name = 'default', time = 300) {
+  return function (name = 'default', time = 300) {
     const i = new Date()
     const re = i - (isNaN(reData[name]) ? 0 : reData[name])
     reData[name] = i
@@ -208,7 +208,7 @@ chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
 多层嵌套数组展开：
 
 ```javascript
-const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)))
+const deepFlatten = (arr) => [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)))
 deepFlatten([1, [2, 3], [[4, 5], 6]]) // [1, 2, 3, 4, 5, 6]
 ```
 
@@ -228,32 +228,37 @@ searchParams.set('a', '0') // "a=0&b=2&c=3"
 searchParams.delete('a') // "b=2&c=3"
 ```
 
+由于 `URLSearchParams` 的兼容性，老旧浏览器兼容可以使用下面代码：
+
+```js
+function getQueryString(name) {
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+  var r = location.search.substr(1).match(reg)
+  if (r != null) {
+    return decodeURIComponent(r[2])
+  }
+  return null
+}
+```
+
 ## 014 获取路由参数对象
 
 ```javascript
-const param2Obj = url => {
+const param2Obj = (url) => {
   const search = url.split('?')[1]
   if (!search) {
     return {}
   }
-  return JSON.parse(
-    '{"' +
-      decodeURIComponent(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"')
-        .replace(/\+/g, ' ') +
-      '"}'
-  )
+  return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"').replace(/\+/g, ' ') + '"}')
 }
 ```
 
 ## 015 构建 FormData 表单
 
 ```javascript
-const formBuilder = obj => {
+const formBuilder = (obj) => {
   const formData = new FormData()
-  Object.keys(obj).forEach(k => {
+  Object.keys(obj).forEach((k) => {
     formData.append(k, obj[k])
   })
   return formData
@@ -272,13 +277,13 @@ const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412') // 密钥偏移量
  * 消息加密
  * @param {*} msg
  */
-export const encodeMsg = msg => {
+export const encodeMsg = (msg) => {
   const msgStr = JSON.stringify(msg)
   const srcs = CryptoJS.enc.Utf8.parse(msgStr)
   const encrypted = CryptoJS.AES.encrypt(srcs, key, {
     iv,
     mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
+    padding: CryptoJS.pad.Pkcs7,
   })
   const encryptedStr = encrypted.ciphertext.toString()
   return encryptedStr
@@ -288,13 +293,13 @@ export const encodeMsg = msg => {
  * 消息解密
  * @param {*} msgStr
  */
-export const decodeMsg = msgStr => {
+export const decodeMsg = (msgStr) => {
   const encryptedHexStr = CryptoJS.enc.Hex.parse(msgStr)
   const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
   const decrypt = CryptoJS.AES.decrypt(srcs, key, {
     iv,
     mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
+    padding: CryptoJS.pad.Pkcs7,
   })
   const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
   return decryptedStr.toString()
@@ -306,8 +311,8 @@ export const decodeMsg = msgStr => {
 ```javascript
 // const difference = [users, unUsed].reduce((a, b) => a.filter(c => !b.includes(c)))
 
-const diff = arr => {
-  return arr.reduce((a, b) => a.filter(c => !b.includes(c)))
+const diff = (arr) => {
+  return arr.reduce((a, b) => a.filter((c) => !b.includes(c)))
 }
 diff([[1, 2, 3], [2, 3], [3]]) // [1]
 ```
