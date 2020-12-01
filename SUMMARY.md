@@ -175,6 +175,7 @@
     - [04 事务](后端/MySQL/04-事务.md)
     - [05 关系模型](后端/MySQL/05-关系模型.md)
     - [06 Mybatis](后端/MySQL/06-Mybatis.md)
+    - [07 MySQL 查看数据库表详情](后端/MySQL/07-MySQL-查看数据库表详情)
   - Nginx
     - [01 Nginx 指北](后端/Nginx/01-Nginx-指北.md)
     - [02 常用端口](后端/Nginx/02-常用端口.md)
