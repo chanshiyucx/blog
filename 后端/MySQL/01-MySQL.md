@@ -138,6 +138,9 @@ alter table `iptables` modify column `white_ip` varchar(1024);
 
 -- 显示正在运行的线程
 show processlist;
+
+-- 查看时区
+show variables like '%time_zone%';
 ```
 
 ## 聚合函数
