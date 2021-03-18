@@ -257,3 +257,4 @@ Code is Long, Life is Short.
     - [10 TempMail](https://temp-mail.org/zh/)
     - [11 Algorithms](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
     - [12 Carbon](https://carbon.now.sh/)
+    - [13 DeepL](https://www.deepl.com/translator)
