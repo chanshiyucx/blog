@@ -61,7 +61,7 @@
     - [06 函数节流与函数防抖](前端/JavaScript/06-函数节流与函数防抖.md)
     - [07 排序算法初探](前端/JavaScript/07-排序算法初探.md)
     - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
-    - [09 JavaScript 正则匹配方法探究](前端/JavaScript/09-JavaScript-正则匹配方法探究.md)
+    - [09 JavaScript 正则匹配探究](前端/JavaScript/09-JavaScript-正则匹配探究.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
