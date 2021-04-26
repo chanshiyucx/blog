@@ -80,6 +80,7 @@
     - [04 React Hook 定时器](前端/React/04-React-Hook-定时器.md)
     - [05 Fetch data with React Hooks](前端/React/05-Fetch-data-with-React-Hooks.md)
     - [06 React 和 Vue 中 key 的作用](前端/React/06-React-和-Vue-中-key-的作用.md)
+    - [07 Typescript 中 interface 和 type 区别](前端/React/07-Typescript-中-interface-和-type-区别.md)
   - Vue
     - [01 Vue Tips](前端/Vue/01-Vue-Tips.md)
     - [02 Vue 构建项目写入配置文件](前端/Vue/02-Vue-构建项目写入配置文件.md)
