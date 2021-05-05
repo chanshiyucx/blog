@@ -1,7 +1,7 @@
-# Typescript 中 interface 和 type 区别
+# TypeScript 中 interface 和 type 区别
 
 > 本文为个人学习摘要笔记。  
-> 原文地址：[Typescript 中的 interface 和 type 到底有什么区别](https://juejin.cn/post/6844903749501059085)
+> 原文地址：[TypeScript 中的 interface 和 type 到底有什么区别](https://juejin.cn/post/6844903749501059085)
 
 ## 相同点
 
