@@ -33,6 +33,9 @@
     - [05 Telegram RSS 订阅频道](時雨/2020/05-Telegram-RSS-订阅频道.md)
     - [06 水月雨银色飞船](時雨/2020/06-水月雨-银色飞船.md)
     - [07 五年前旧照](時雨/2020/07-五年前旧照.md)
+  - 2021
+    - [01 春宵苦短 2020](時雨/2021/01-春宵苦短-2020.md)
+    - [02 风花](時雨/2021/02-风花.md)
 - 书斋
   - ES6 标准入门
     - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
@@ -49,8 +52,6 @@
     - [02 设计模式（上）](书斋/JavaScript-设计模式/02-设计模式（上）.md)
     - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
-  - 技术文摘
-    - [01 基于消息队列的分布式事务解决方案](书斋/技术文摘/01-基于消息队列的分布式事务解决方案.md)
 - 前端
   - JavaScript
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
@@ -73,6 +74,7 @@
     - [02 Interview](前端/Note/02-Interview.md)
     - [03 Snippets](前端/Note/03-Snippets.md)
     - [04 Git](前端/Note/04-Git.md)
+    - [05 Tool](前端/Note/05-Tool.md)
   - React
     - [01 React Props Children 传值](前端/React/01-React-Props-Children-传值.md)
     - [02 Use a Render Prop!](前端/React/02-Use-a-Render-Prop!.md)
@@ -93,6 +95,7 @@
     - [02 图片加解密二三事](前端/实战系列/02-图片加解密二三事.md)
     - [03 优雅实现 BackTop](前端/实战系列/03-优雅实现-BackTop.md)
     - [04 动态加载 JS 文件](前端/实战系列/04-动态加载-JS-文件.md)
+    - [05 神奇的 Document.designMode](前端/实战系列/05-神奇的Document.designMode.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
@@ -113,6 +116,7 @@
     - [16 Java 枚举](后端/Java/16-Java-枚举.md)
     - [17 Java 日期与时间](后端/Java/17-Java-日期与时间.md)
     - [18 Java fail fast](后端/Java/18-Java-fail-fast.md)
+    - [19 Java BiFunction 和 BinaryOperator](后端/Java/19-Java-BiFunction-和-BinaryOperator.md)
   - 并发编程
     - [01 Java 并发](后端/并发编程/01-Java-并发.md)
     - [02 synchronized](后端/并发编程/02-synchronized.md)
@@ -171,6 +175,7 @@
     - [18 JPA](后端/Spring/18-JPA.md)
     - [19 Apache Shiro](后端/Spring/19-Apache-Shiro.md)
     - [20 Spring 异步请求](后端/Spring/20-Spring-异步请求.md)
+    - [21 Spring Boot 跨域解决方式](后端/Spring/21-Spring-Boot-跨域解决方式.md)
   - MySQL
     - [01 MySQL](后端/MySQL/01-MySQL.md)
     - [02 SQL 语句 where 1=1](后端/MySQL/02-SQL语句where1=1.md)
@@ -182,6 +187,7 @@
   - Nginx
     - [01 Nginx 指北](后端/Nginx/01-Nginx-指北.md)
     - [02 常用端口](后端/Nginx/02-常用端口.md)
+    - [03 nginx gzip 压缩](后端/Nginx/03-nginx-gzip压缩.md)
   - Netty
     - [01 BIO、NIO、AIO](后端/Netty/01-BIO、NIO、AIO.md)
     - [02 Netty Server](后端/Netty/02-Netty-Server.md)
@@ -209,7 +215,11 @@
     - [03 Docker RocketMQ](后端/Project/03-Docker-RocketMQ.md)
     - [04 Moemall Admin Snippets](后端/Project/04-Moemall-Admin-Snippets.md)
     - [05 Netty 聊天系统](后端/Project/05-Netty-聊天系统.md)
-- 采集
+- 纸函
+  - [Note](纸函/Note.md)
+  - [20210506](纸函/20210506.md)
+  - [20210512](纸函/20210512.md)
+- 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
     - [02 Mybatis 官方文档](https://mybatis.org/mybatis-3/zh/index.html)
@@ -217,16 +227,14 @@
     - [04 Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/)
     - [05 Hutool](https://hutool.cn/docs)
     - [06 Redis 命令中心](http://www.redis.cn/commands.html)
-  - 文章
-    - [01 七天学会 NodeJS](https://nqdeng.github.io/7-days-nodejs/)
-    - [02 Fisher–Yates Shuffle](https://bost.ocks.org/mike/shuffle/)
-    - [03 Spring Boot 中文索引](http://springboot.fun/)
+    - [07 Spring Boot 中文索引](http://springboot.fun/)
+    - [08 七天学会 NodeJS](https://nqdeng.github.io/7-days-nodejs/)
   - 项目
     - [01 CS-Notes](https://github.com/CyC2018/CS-Notes)
-    - [02 JavaGuide](https://github.com/Snailclimb/JavaGuide)
-    - [03 Java-Interview](https://github.com/shishan100/Java-Interview-Advanced)
-    - [04 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)
-    - [05 30-seconds-of-java8](https://github.com/biezhi/30-seconds-of-java8)
+    - [02 30-seconds-of-java8](https://github.com/biezhi/30-seconds-of-java8)
+    - [03 JavaGuide](https://github.com/Snailclimb/JavaGuide)
+    - [04 Java-Interview](https://github.com/shishan100/Java-Interview-Advanced)
+    - [05 toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)
     - [06 Java3y](https://github.com/ZhongFuCheng3y/3y)
   - 工具
     - [01 IntelliJ-IDEA-Tutorial](https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/keymap-introduce.md)
