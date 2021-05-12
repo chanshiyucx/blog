@@ -186,9 +186,9 @@ const getVideoDuration = () => {
 const isRepeat = (function () {
   const reData = {}
   return function (name = 'default', time = 300) {
-    const i = new Date()
-    const re = i - (isNaN(reData[name]) ? 0 : reData[name])
-    reData[name] = i
+    const now = new Date()
+    const re = now - (isNaN(reData[name]) ? 0 : reData[name])
+    reData[name] = now
     return re <= time
   }
 })()

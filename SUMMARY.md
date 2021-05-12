@@ -36,22 +36,6 @@
   - 2021
     - [01 春宵苦短 2020](時雨/2021/01-春宵苦短-2020.md)
     - [02 风花](時雨/2021/02-风花.md)
-- 书斋
-  - ES6 标准入门
-    - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
-    - [02 语法的扩展](书斋/ES6-标准入门/02-语法的扩展.md)
-    - [03 数据类型与数据结构](书斋/ES6-标准入门/03-数据类型与数据结构.md)
-    - [04 Proxy 和 Reflect](书斋/ES6-标准入门/04-Proxy-和-Reflect.md)
-    - [05 异步编程 Promise](书斋/ES6-标准入门/05-异步编程-Promise.md)
-    - [06 Iterator 和 for of 循环](书斋/ES6-标准入门/06-Iterator-和-for-of-循环.md)
-    - [07 Generator 函数](书斋/ES6-标准入门/07-Generator-函数.md)
-    - [08 Async 函数](书斋/ES6-标准入门/08-Async-函数.md)
-    - [09 Class 类](书斋/ES6-标准入门/09-Class-类.md)
-  - JavaScript 设计模式
-    - [01 基础知识](书斋/JavaScript-设计模式/01-基础知识.md)
-    - [02 设计模式（上）](书斋/JavaScript-设计模式/02-设计模式（上）.md)
-    - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
-    - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 前端
   - JavaScript
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
@@ -215,6 +199,22 @@
     - [03 Docker RocketMQ](后端/Project/03-Docker-RocketMQ.md)
     - [04 Moemall Admin Snippets](后端/Project/04-Moemall-Admin-Snippets.md)
     - [05 Netty 聊天系统](后端/Project/05-Netty-聊天系统.md)
+- 书斋
+  - ES6 标准入门
+    - [01 变量声明与解构赋值](书斋/ES6-标准入门/01-变量声明与解构赋值.md)
+    - [02 语法的扩展](书斋/ES6-标准入门/02-语法的扩展.md)
+    - [03 数据类型与数据结构](书斋/ES6-标准入门/03-数据类型与数据结构.md)
+    - [04 Proxy 和 Reflect](书斋/ES6-标准入门/04-Proxy-和-Reflect.md)
+    - [05 异步编程 Promise](书斋/ES6-标准入门/05-异步编程-Promise.md)
+    - [06 Iterator 和 for of 循环](书斋/ES6-标准入门/06-Iterator-和-for-of-循环.md)
+    - [07 Generator 函数](书斋/ES6-标准入门/07-Generator-函数.md)
+    - [08 Async 函数](书斋/ES6-标准入门/08-Async-函数.md)
+    - [09 Class 类](书斋/ES6-标准入门/09-Class-类.md)
+  - JavaScript 设计模式
+    - [01 基础知识](书斋/JavaScript-设计模式/01-基础知识.md)
+    - [02 设计模式（上）](书斋/JavaScript-设计模式/02-设计模式（上）.md)
+    - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
+    - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
   - [Note](纸函/Note.md)
   - [20210506](纸函/20210506.md)
