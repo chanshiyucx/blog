@@ -1,5 +1,8 @@
 # TypeScript 中 is 关键字
 
+> 本文为个人学习摘要笔记。  
+> 原文地址：[TypeScript 中的 is](https://segmentfault.com/a/1190000022883470)
+
 TypeScript 里有类型保护机制。要定义一个类型保护，我们只要简单地定义一个函数，它的返回值是一个**类型谓词**：
 
 ```typescript

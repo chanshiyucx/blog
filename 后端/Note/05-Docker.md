@@ -329,6 +329,12 @@ sudo chmod 400 local.cnf
 
 重新启动，问题解决！
 
+### docker compose 指定文件启动
+
+```
+docker-compose -f docker-compose-dev.yml up
+```
+
 ### docker push 无法推送
 
 报错：

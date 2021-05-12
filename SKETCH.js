@@ -1,5 +1,12 @@
-const option = {
-  time: 3,
-}
+const genId = (() => {
+  let count = 0
+  return () => {
+    return ++count
+  }
+})()
 
-console.log(option?.time ?? 9)
+console.log(genId())
+console.log(genId())
+console.log(genId())
+console.log(genId())
+console.log(genId())
