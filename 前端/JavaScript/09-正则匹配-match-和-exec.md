@@ -1,4 +1,4 @@
-# JavaScript 正则匹配探究
+# 正则匹配探究
 
 在 JavaScript 中常用正则匹配方法有 `match` 和 `exec`, 这两个方法属于不同的对象方法。
 

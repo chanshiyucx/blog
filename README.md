@@ -67,7 +67,8 @@ Code is Long, Life is Short.
     - [06 函数节流与函数防抖](前端/JavaScript/06-函数节流与函数防抖.md)
     - [07 排序算法初探](前端/JavaScript/07-排序算法初探.md)
     - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
-    - [09 JavaScript 正则匹配探究](前端/JavaScript/09-JavaScript-正则匹配探究.md)
+    - [09 正则匹配 match 和 exec](前端/JavaScript/09-正则匹配-match-和-exec.md)
+    - [10 正则匹配汉字](前端/JavaScript/10-正则匹配汉字.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -240,6 +241,7 @@ Code is Long, Life is Short.
   - [Note](纸函/Note.md)
   - [20210506](纸函/20210506.md)
   - [20210512](纸函/20210512.md)
+  - [20210518](纸函/20210518.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
