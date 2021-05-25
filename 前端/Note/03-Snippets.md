@@ -316,3 +316,29 @@ const diff = (arr) => {
 }
 diff([[1, 2, 3], [2, 3], [3]]) // [1]
 ```
+
+## 018 去除 HTML 标签
+
+### 正则表达式
+
+```js
+export const removeHtmlTag = (raw) => raw.replace(/<[\s\S]+?>/g, '')
+```
+
+### DOM API
+
+```js
+export const removeHtmlTag = (raw) => {
+  const box = document.createElement('template')
+  box.innerHTML = raw
+  return box.content.textContent
+}
+```
+
+## 019 判断合法日期
+
+```js
+export const isDate = (raw) => !isNaN(+new Date(raw))
+```
+
+利用 Date 构造函数内部的算法，对于无法解析为日期的数据，`date.toString()` 会返回 `Invalid Date`，`date.getTime()` 对应的返回值则是 `NaN`。而算数运算符会调用对象的 `valueOf()` 方法，`date.valueOf()` 的返回值又与 `date.getTime()` 相同。
