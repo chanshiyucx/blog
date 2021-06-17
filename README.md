@@ -160,7 +160,7 @@ Code is Long, Life is Short.
     - [03 获取请求 IP 地址](后端/实战系列/03-获取请求IP地址.md)
     - [04 Kaptcha 与数学公式验证码](后端/实战系列/04-Kaptcha-与数学公式验证码.md)
     - [05 Netty 获取客户端 IP.md](后端/实战系列/05-Netty-获取客户端IP.md)
-    - [06 高性能无锁队列 Disruptor.md](后端/实战系列/06-高性能无锁队列-Disruptor.md)
+    - [06 高性能无锁队列 Disruptor](后端/实战系列/06-高性能无锁队列-Disruptor.md)
     - [07 前后端接入阿里云盾](后端/实战系列/07-前后端接入阿里云盾.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
