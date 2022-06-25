@@ -447,3 +447,143 @@ JavaScript
 Model 改变 View 的过程：依赖于 ES5 的 object.defindeProperty，通过 defineProperty 实现的数据劫持，getter 收集依赖，setter 调用更新回调（不同于观察者模式，是发布订阅 + 中介）。
 
 View 改变 Model 的过程：依赖于 v-model ,该语法糖实现是在单向数据绑定的基础上，增加事件监听并赋值给对应的 Model。
+
+### 020 改造下面的代码，使之输出 0 - 9
+
+```js
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => {
+    console.log(i)
+  }, 1000)
+}
+```
+
+解法一：利用 let 变量的特性，在每一次 for 循环的过程中，let 声明的变量会在当前的块级作用域里面（for 循环的 body 体，也即两个花括号之间的内容区域）创建一个文法环境（Lexical Environment），该环境里面包括了当前 for 循环过程中的 i，
+
+```js
+for (let i = 0; i < 10; i++) {
+  setTimeout(() => {
+    console.log(i)
+  }, 1000)
+}
+```
+
+解法二：利用函数自执行的方式，把当前 for 循环过程中的 i 传递进去，构建出块级作用域。IIFE 其实并不属于闭包的范畴。
+
+```js
+for (var i = 0; i < 10; i++) {
+  ;((i) => {
+    setTimeout(() => {
+      console.log(i)
+    }, 1000)
+  })(i)
+}
+```
+
+### 021 下面的代码打印什么内容？
+
+```js
+var b = 10
+;(function b() {
+  b = 20
+  console.log(b)
+})()
+```
+
+打印内容：
+
+```
+ƒ b() {
+  b = 20;
+  console.log(b)
+}
+```
+
+原因：一个声明在函数体内都是可见的，函数声明优先于变量声明；**在非匿名自执行函数中，函数变量为只读状态无法修改**。
+
+- 函数表达式与函数声明不同，函数名只在该函数内部有效，并且此绑定是常量绑定。
+- IIFE 中的函数是函数表达式，而不是函数声明。
+
+改造使其分别打印 10 和 20：
+
+```js
+var b = 10
+;(function b() {
+  var b = 20
+  console.log(this.b) // 10
+  console.log(b) // 20
+})()
+```
+
+### 022 浏览器的缓存机制
+
+从缓存位置上来说分为四种，并且各自有优先级，当依次查找缓存且都没有命中的时候，才会去请求网络。
+
+1. Service Worker
+2. Memory Cache
+3. Disk Cache
+4. Push Cache
+
+Service Worker 是运行在浏览器背后的独立线程。使用 Service Worker 的话，传输协议必须为 HTTPS。因为 Service Worker 中涉及到请求拦截，所以必须使用 HTTPS 协议来保障安全。Service Worker 的缓存与浏览器其他内建的缓存机制不同，它可以让我们自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的。
+
+Service Worker 实现缓存功能一般分为三个步骤：首先需要先注册 Service Worker，然后监听到 install 事件以后就可以缓存需要的文件，那么在下次用户访问的时候就可以通过拦截请求的方式查询是否存在缓存，存在缓存的话就可以直接读取缓存文件，否则就去请求数据。
+
+Memory Cache 也就是内存中的缓存，主要包含的是当前中页面中已经抓取到的资源,例如页面上已经下载的样式、脚本、图片等。读取内存中的数据肯定比磁盘快，内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。一旦我们关闭 Tab 页面，内存中的缓存也就被释放了。
+
+内存缓存中有一块重要的缓存资源是 preloader 相关指令（例如 `<link rel="prefetch">`）下载的资源。总所周知 preloader 的相关指令已经是页面优化的常见手段之一，它可以一边解析 js/css 文件，一边网络请求下一个资源。
+
+Disk Cache 也就是存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。绝大部分的缓存都来自 Disk Cache。
+
+浏览器会把哪些文件丢进内存中？哪些丢进硬盘中？关于这点，网上说法不一，不过以下观点比较靠得住：
+
+- 对于大文件来说，大概率是不存储在内存中的，反之优先；
+- 当前系统内存使用率高的话，文件优先存储进硬盘。
+
+Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在 Chrome 浏览器中只有 5 分钟左右，同时它也并非严格执行 HTTP 头中的缓存指令。
+
+### 023 使用迭代的方式实现 flatten 函数
+
+```js
+let arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]]
+
+// 迭代
+const flatten = (arr) => {
+  while (arr.some((item) => Array.isArray(item))) {
+    arr = [].concat(...arr)
+  }
+  return arr
+}
+
+// 递归
+const flatten = (arr) => arr.reduce((acc, cur) => (Array.isArray(cur) ? [...acc, ...flatten(cur)] : [...acc, cur]), [])
+```
+
+### 024 为什么 Vuex 的 mutation 和 Redux 的 reducer 中不能做异步操作
+
+因为更改 state 的函数必须是纯函数，**纯函数既是统一输入就会统一输出**，没有任何副作用；如果是异步则会引入额外的副作用，导致更改后的 state 不可预测。
+
+因为异步操作是成功还是失败不可预测，什么时候进行异步操作也不可预测；当异步操作成功或失败时，如果不 commit(mutation) 或者 dispatch(action)，Vuex 和 Redux 就不能捕获到异步的结果从而进行相应的操作。
+
+### 25 代码中 a 在什么情况下会打印 1？
+
+```js
+var a = ?;
+if(a == 1 && a == 2 && a == 3){
+ 	console.log(1);
+}
+```
+
+**因为 == 会进行隐式类型转换**，所以重写 toString 方法就可以了：
+
+```js
+var a = {
+  i: 1,
+  toString() {
+    return a.i++
+  },
+}
+
+if (a == 1 && a == 2 && a == 3) {
+  console.log(1)
+}
+```
