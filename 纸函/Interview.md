@@ -683,3 +683,267 @@ push 方法应该是根据数组的 length 来根据参数给数组创建一个�
 2. 使用第二次 push，obj 对象的 push 方法设置 obj[3]=2;obj.length+=1
 3. 使用 console.log 输出的时候，因为 obj 具有 length 属性和 splice 方法，故将其作为数组进行打印
 4. 打印时因为数组未设置下标为 0 1 处的值，故打印为 empty，主动 obj[0] 获取为 undefined
+
+### 032 双向绑定和 vuex 是否冲突
+
+在严格模式中使用 Vuex，当用户输入时，v-model 会试图直接修改属性值，但这个修改不是在 mutation 中修改的，所以会抛出一个错误。当需要在组件中使用 vuex 中的 state 时，有 2 种解决方案：
+
+1. 在 input 中绑定 value(vuex 中的 state)，然后监听 input 的 change 或者 input 事件，在事件回调中调用 mutation 修改 state 的值
+2. 使用带有 setter 的双向绑定计算属性。
+
+```js
+<input v-model="message" />
+
+computed: {
+    message: {
+        get () {
+            return this.$store.state.obj.message
+        },
+        set (value) {
+            this.$store.dispatch('updateMessage', value);
+        }
+
+
+    }
+}
+mutations: {
+    UPDATE_MESSAGE (state, v) {
+        state.obj.message = v;
+    }
+}
+actions: {
+    update_message ({ commit }, v) {
+        commit('UPDATE_MESSAGE', v);
+    }
+}
+```
+
+### 033 call 和 apply 的区别是什么，哪个性能更好一些
+
+Function.prototype.apply 和 Function.prototype.call 的作用是一样的，区别在于传入参数的不同：
+
+- 第一个参数都是，指定函数体内 this 的指向；
+- 第二个参数开始不同，apply 是传入带下标的集合，数组或者类数组，apply 把它传给函数作为参数，call 从第二个开始传入的参数是不固定的，都会传给函数作为参数。
+
+call 比 apply 的性能要好，因为内部少了一次将 apply 第二个参数解构的操作。
+
+在 es6 引入了延展操作符后，即使参数是数组，可以使用 call：
+
+```js
+let params = [1, 2, 3, 4]
+xx.call(obj, ...params)
+```
+
+### 034 为什么通常在发送数据埋点请求的时候使用的是 1x1 像素的透明 gif 图片？
+
+1. 没有跨域问题，一般这种上报数据，代码要写通用的（排除 ajax）
+2. 不会阻塞页面加载，影响用户的体验，只要 new Image 对象就好了（排除 JS/CSS 文件资源方式上报）
+3. 在所有图片中，体积最小（比较 PNG/JPG）
+
+### 035 实现 (5).add(3).minus(2) 功能
+
+```js
+Number.prototype.add = function (n) {
+  return this.valueOf() + n
+}
+Number.prototype.minus = function (n) {
+  return this.valueOf() - n
+}
+```
+
+### 036 Vue 的响应式原理中 Object.defineProperty 有什么缺陷？为什么在 Vue3.0 采用了 Proxy，抛弃了 Object.defineProperty？
+
+1. Object.defineProperty 无法监控到数组下标的变化，导致通过数组下标添加元素，不能实时响应；
+2. Object.defineProperty 只能劫持对象的属性，从而需要对每个对象每个属性进行遍历，如果属性值是对象，还需要深度遍历。Proxy 可以劫持整个对象，并返回一个新的对象。
+3. Proxy 不仅可以代理对象，还可以代理数组。还可以代理动态增加的属性。
+
+### 037 怎么让一个 div 水平垂直居中
+
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+
+1.
+
+```css
+div.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+2.
+
+```css
+div.parent {
+  position: relative;
+}
+div.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+3.
+
+```css
+div.parent {
+  position: relative;
+}
+div.child {
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+```
+
+4.
+
+```css
+div.parent {
+  display: grid;
+}
+div.child {
+  justify-self: center;
+  align-self: center;
+}
+```
+
+### 038 输出以下代码的执行结果并解释为什么
+
+```js
+var a = { n: 1 }
+var b = a
+a.x = a = { n: 2 }
+
+console.log(a.x) // undefined
+console.log(b.x) // {n:2}
+```
+
+`a.x = a = {n: 2};` 这一行比较复杂。先获取等号左侧的 a.x，但 a.x 并不存在，于是 JS 为（堆内存中的）对象创建一个新成员 x，这个成员的初始值为 undefined，（这也是为什么直接引用一个未定义的变量会报错，但是直接引用一个对象的不存在的成员时，会返回 undefined）
+
+创建完成后，目标指针已经指向了这个新成员 x，并会先挂起，单等等号右侧的内容有结果了，便完成赋值。接着执行赋值语句的右侧，发现 a={n:2} 是个简单的赋值操作，于是 a 的新值等于了{n:2}。这里特别注意，这个 a 已经不是开头的那个 a，而是一个全新的 a，这个新 a 指针已经不是指向原来的值的那个堆内存，而是分配了一个新的堆内存。但是原来旧的堆内存因为还有 b 在占用，所以并未被回收。然后将这个新的对象 a 的堆内存指针，赋值给了刚才挂起的新成员 x，此时，对象成员 x 便等于了新的对象 a。所以，现在 `b={n:1,x:{n:2}}; a={n:2};`。
+
+### 039 冒泡排序如何实现，时间复杂度是多少？
+
+时间复杂度：O(n^2)
+
+```js
+const arr = [8, 94, 15, 88, 55, 76, 21, 39]
+
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+      }
+    }
+  }
+  console.log(arr)
+}
+```
+
+- 当 i=0 的时候，里面的循环完整执行，从 j=0 执行到 j=6,这也就是第一遍排序，结果是将最大的数排到了最后，这一遍循环结束后的结果应该是 [8,15,88,55,76,21,39,94]
+- 当 i=1 的时候，里面的循环再次完整执行，由于最大的数已经在最后了，没有必要去比较数组的最后两项，这也是 `j<arr.length-1-i` 的巧妙之处，结果是 [8,15,55,76,21,39,88,94]
+
+### 040 某公司 1 到 12 月份的销售额存在一个对象里面
+
+如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null, null, null, null, null]。
+
+```js
+let obj = { 1: 222, 2: 123, 5: 888 }
+const result = Array.from({ length: 12 }).map((_, index) => obj[index + 1] || null)
+console.log(result)
+```
+
+### 041 要求设计 LazyMan 类，实现以下功能。
+
+```js
+LazyMan('Tony')
+// Hi I am Tony
+
+LazyMan('Tony').sleep(10).eat('lunch')
+// Hi I am Tony
+// 等待了10秒...
+// I am eating lunch
+
+LazyMan('Tony').eat('lunch').sleep(10).eat('dinner')
+// Hi I am Tony
+// I am eating lunch
+// 等待了10秒...
+// I am eating diner
+
+LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk food')
+// Hi I am Tony
+// 等待了5秒...
+// I am eating lunch
+// I am eating dinner
+// 等待了10秒...
+// I am eating junk food
+```
+
+实现：
+
+```js
+class LazyManClass {
+  constructor(name) {
+    console.log(`Hi I am ${name}`)
+    this.taskList = []
+    setTimeout(() => {
+      this.next()
+    }, 0)
+  }
+
+  eat(name) {
+    const task = () => {
+      console.log(`I am eating ${name}`)
+      this.next()
+    }
+    this.taskList.push(task)
+    return this
+  }
+
+  sleep(time) {
+    const task = () => {
+      setTimeout(() => this.next(), time * 1000)
+    }
+    this.taskList.push(task)
+    return this
+  }
+
+  sleepFirst(time) {
+    const task = () => {
+      setTimeout(() => this.next(), time * 1000)
+    }
+    this.taskList.unshift(task)
+    return this
+  }
+
+  next() {
+    const task = this.taskList.shift()
+    task && task()
+  }
+}
+
+function LazyMan(name) {
+  return new LazyManClass(name)
+}
+```
+
+### 042 opacity: 0、visibility: hidden、display: none 优劣和适用场景
+
+- display: none 会回流操作 性能开销较大，回流会计算相邻元素甚至组先级元素的位置、属性等
+- visibility: hidden 是重绘操作 比回流操作性能高一些
+- opacity: 0 重建图层，性能较高
