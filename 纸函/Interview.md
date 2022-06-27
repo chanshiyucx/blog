@@ -1146,3 +1146,103 @@ const find = (S, T) => {
   return matched ? matched.index : -1
 }
 ```
+
+### 054 使用 JavaScript Proxy 实现简单的数据绑定
+
+```html
+<body>
+  <input type="text" id="name" />
+  <p id="word">Hello</p>
+  <script>
+    const inputEl = document.getElementById('name')
+    const wordEl = document.getElementById('word')
+    const data = {}
+    const proxy = new Proxy(data, {
+      get(target, property) {
+        return Reflect.get(...arguments)
+      },
+      set(target, property, value) {
+        target[property] = value
+        wordEl.innerHTML = value
+        return Reflect.set(...arguments)
+      },
+    })
+
+    inputEl.addEventListener('keyup', (e) => {
+      proxy.text = e.target.value
+    })
+  </script>
+</body>
+```
+
+### 055 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少
+
+数组可以直接根据索引取的对应的元素，所以不管取哪个位置的元素的时间复杂度都是 O(1)
+
+得出结论：**消耗时间几乎一致，差异可以忽略不计**
+
+### 056 输出以下代码运行结果
+
+这题考察的是对象的键名的转换。
+
+- **对象的键名只能是字符串和 Symbol 类型**。
+- 其他类型的键名会被转换成字符串类型。
+- 对象转字符串默认会调用 toString 方法。
+
+```js
+// example 1
+var a = {},
+  b = '123',
+  c = 123
+a[b] = 'b' // c 的键名会被转换成字符串'123'，这里会把 b 覆盖掉。
+a[c] = 'c'
+console.log(a[b]) // 输出 c
+
+// example 2
+var a = {},
+  b = Symbol('123'),
+  c = Symbol('123')
+a[b] = 'b' // b 是 Symbol 类型，不需要转换。
+a[c] = 'c' // c 是 Symbol 类型，不需要转换。任何一个 Symbol 类型的值都是不相等的，所以不会覆盖掉 b。
+console.log(a[b]) // 输出 b
+
+// example 3
+var a = {},
+  b = { key: '123' },
+  c = { key: '456' }
+a[b] = 'b' // b 不是字符串也不是 Symbol 类型，需要转换成字符串。对象类型会调用 toString 方法转换成字符串 [object Object]。
+a[c] = 'c' // c 不是字符串也不是 Symbol 类型，需要转换成字符串。  对象类型会调用 toString 方法转换成字符串 [object Object]。这里会把 b 覆盖掉。
+console.log(a[b]) // 输出 c
+```
+
+### 057 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数
+
+```
+输入: [1, 2, 3, 4, 5, 6, 7] 和 k = 3
+输出: [5, 6, 7, 1, 2, 3, 4]
+解释:
+向右旋转 1 步: [7, 1, 2, 3, 4, 5, 6]
+向右旋转 2 步: [6, 7, 1, 2, 3, 4, 5]
+向右旋转 3 步: [5, 6, 7, 1, 2, 3, 4]
+```
+
+解法一：
+
+```js
+function rotate(arr, k) {
+  const len = arr.length
+  const step = k % len // 因为步数有可能大于数组长度，所以要先取余
+  return arr.slice(-step).concat(arr.slice(0, len - step))
+}
+```
+
+解法二：
+
+```js
+function rotate(arr, k) {
+  for (let i = 0; i < k; i++) {
+    arr.unshift(arr.pop())
+  }
+  return arr
+}
+```
