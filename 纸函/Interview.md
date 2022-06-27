@@ -947,3 +947,202 @@ function LazyMan(name) {
 - display: none 会回流操作 性能开销较大，回流会计算相邻元素甚至组先级元素的位置、属性等
 - visibility: hidden 是重绘操作 比回流操作性能高一些
 - opacity: 0 重建图层，性能较高
+
+### 043 箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？
+
+箭头函数是和普通函数相比，有以下几点差异：
+
+1. 函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。
+2. 不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+3. 不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
+4. 不可以使用 new 命令，因为：
+   - 没有自己的 this，无法调用 call，apply。
+   - 没有 prototype 属性 ，而 new 命令在执行时需要将构造函数的 prototype 赋值给新的对象的 **proto**
+
+### 044 给定两个数组，写一个方法来计算它们的交集
+
+给定 nums1 = [1, 2, 2, 1]，nums2 = [2, 2]，返回 [2, 2]。
+
+这道题不是工程题，是道算法题。求的是~~两个数组的最长公共子序列~~ (子序列要求顺序，交集不需要），列如：
+
+```js
+var nums1 = [1]
+var nums2 = [1, 1]
+```
+
+交集应该是 [1]。
+
+这道题两种思路，空间换时间，或者不用额外空间就提升时间复杂度。
+
+1. 空间换时间的思路是用个 Hash 表来存数组 1 的元素以及出现的个数（此处需要遍历 n 次，并存一个 n 级别的空间）。遍历数组 2，发现数组 2 里有 Hash 表里的值就存到 Result 数组里，并把 Hash 表内该值次数减一（为 0 之后就 Delete）。如果不存在 Hash 表里，就跳过。这样时间复杂度就是(m+n)。
+
+2. 不用额外空间，就用遍历 n 的时候，判断值在不在 m 里，如果在，把 m 里的该值 push 到 Result 数组里，并将该值从 m 数组里删掉（用 splice）。这样就是不用额外空间，但是提高了时间复杂度。
+
+思路 1 的解法：
+
+```js
+const intersect = (nums1, nums2) => {
+  const map = {}
+  const res = []
+  for (let n of nums1) {
+    if (map[n]) {
+      map[n]++
+    } else {
+      map[n] = 1
+    }
+  }
+  for (let n of nums2) {
+    if (map[n] > 0) {
+      res.push(n)
+      map[n]--
+    }
+  }
+  return res
+}
+```
+
+### 045 已知如下代码，如何修改才能让图片宽度为 300px?
+
+```html
+<img src="1.jpg" style="width:480px!important;”>
+```
+
+有两种方式：
+
+```css
+/* 方式一 */
+max-width: 300px;
+
+/* 方式二 */
+transform: scale(0.625, 0.625);
+```
+
+### 046 redux 为什么要把 reducer 设计成纯函数？
+
+redux 的设计思想就是不产生副作用，数据更改的状态可回溯，所以 redux 中处处都是纯函数
+
+### 047 如何设计实现无缝轮播
+
+无限轮播基本插件都可以做到，不过要使用原生代码实现无缝滚动的话我可以提点思路，因为轮播图基本都在 ul 盒子里面的 li 元素。
+
+1. 首先获取第一个 li 元素和最后一个 li 元素,
+2. 克隆第一个 li 元素，和最后一个 li 元素，
+3. 分别插入到 lastli 的后面和 firstli 的前面，
+4. 然后监听滚动事件，如果滑动距离超过 x 或-x，让其实现跳转下一张图或者跳转上一张，(此处最好设置滑动距离)，
+5. 然后在滑动最后一张实现最后一张和克隆第一张的无缝转换，当到克隆的第一张的时候停下的时候，让其切入真的第一张，则实现无线滑动，向前滑动同理
+
+### 048 [模拟实现一个 Promise.finally](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/109)
+
+```js
+Promise.prototype.finally = function (callback) {
+  let P = this.constructor // 获取当前实例构造函数的引用
+  return this.then(
+    (value) => P.resolve(callback()).then(() => value), // 接受状态：返回数据
+    (reason) =>
+      P.resolve(callback()).then(() => {
+        throw reason
+      }) // 拒绝状态：抛出错误
+  )
+}
+```
+
+测试：
+
+```js
+/*********************** 测试 ***********************/
+const p = new Promise((resolve, reject) => {
+  console.info('starting...')
+
+  setTimeout(() => {
+    Math.random() > 0.5 ? resolve('success') : reject('fail')
+  }, 1000)
+})
+
+// 正常顺序测试
+p.then((data) => {
+  console.log(`%c resolve: ${data}`, 'color: green')
+})
+  .catch((err) => {
+    console.log(`%c catch: ${err}`, 'color: red')
+  })
+  .finally(() => {
+    console.info('finally: completed')
+  })
+
+// finally 前置测试
+p.finally(() => {
+  console.info('finally: completed')
+})
+  .then((data) => {
+    console.log(`%c resolve: ${data}`, 'color: green')
+  })
+  .catch((err) => {
+    console.log(`%c catch: ${err}`, 'color: red')
+  })
+```
+
+### 049 ES6 代码转成 ES5 代码的实现思路是什么？
+
+ES6 代码转成 ES5 代码，可以参考 Babel 的实现方式。那么 Babel 是如何把 ES6 转成 ES5 呢，其大致分为三步：
+
+1. 将代码字符串解析成抽象语法树，即所谓的 AST
+2. 对 AST 进行处理，在这个阶段可以对 ES6 代码进行相应转换，即转成 ES5 代码
+3. 根据处理后的 AST 再生成代码字符串
+
+### 050 如何解决移动端 Retina 屏 1px 像素问题
+
+1. 伪元素 + transform scaleY(.5)
+2. border-image
+3. background-image
+4. box-shadow
+
+### 051 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC' 变成 'aBc'
+
+方案一
+
+```js
+const processString = (str) =>
+  str
+    .split('')
+    .map((s) => (s === s.toUpperCase() ? s.toLowerCase() : s.toUpperCase()))
+    .join('')
+```
+
+方案二
+
+```js
+const processString = (str) => str.replace(/[a-zA-Z]/g, (s) => (/[a-z]/.test(s) ? s.toUpperCase() : s.toLowerCase()))
+```
+
+### 052 绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面？
+
+1. 当修改了一个或多个文件，文件系统接收更改并通知 webpack；
+2. webpack 重新编译构建一个或多个模块，并通知 HMR 服务器进行更新；
+3. HMR Server 使用 webSocket 通知 HMR runtime 需要更新，HMR 运行时通过 HTTP 请求更新 jsonp；
+4. HMR 运行时替换更新中的模块，如果确定这些模块无法更新，则触发整个页面刷新。
+
+### 053 实现一个字符串匹配算法，从长度为 n 的字符串 S 中，查找是否存在字符串 T，T 的长度是 m，若存在返回所在位置。
+
+```js
+// 因为 T 的 length 是一定的，所以在循环S的的时候 ，循环当前项 i 后面至少还有 T.length 个元素
+const find = (S, T) => {
+  if (S.length < T.length) return -1
+  for (let i = 0; i < S.length - T.length; i++) {
+    if (S.substr(i, T.length) === T) return i
+  }
+  return -1
+}
+```
+
+或者使用正则：
+
+```js
+// 方法一：
+const find = (S, T) => S.search(T)
+
+// 方法二：
+const find = (S, T) => {
+  const matched = S.match(T)
+  return matched ? matched.index : -1
+}
+```
