@@ -156,6 +156,21 @@ TCP 是全双工信道，何为全双工就是客户端与服务端建立两条�
 4. 客户端利用公钥将会话秘钥加密, 并传送给服务端, 服务端利用自己的私钥解密出会话秘钥
 5. 之后服务器与客户端使用秘钥加密传输
 
+### 011 介绍下 HTTPS 中间人攻击
+
+https 协议由 http + ssl 协议构成，中间人攻击过程如下：
+
+1. 服务器向客户端发送公钥。
+2. 攻击者截获公钥，保留在自己手上。
+3. 然后攻击者自己生成一个【伪造的】公钥，发给客户端。
+4. 客户端收到伪造的公钥后，生成加密 hash 值发给服务器。
+5. 攻击者获得加密 hash 值，用自己的私钥解密获得真秘钥。
+6. 同时生成假的加密 hash 值，发给服务器。
+7. 服务器用私钥解密获得假秘钥。
+8. 服务器用加秘钥加密传输信息。
+
+防范方法：服务端在发送浏览器的公钥中加入 CA 证书，浏览器可以验证 CA 证书的有效性
+
 ### 012 vue 渲染大量数据时应该怎么优化？
 
 1. 使用虚拟列表
@@ -1245,4 +1260,264 @@ function rotate(arr, k) {
   }
   return arr
 }
+```
+
+### 058 Vue 的父组件和子组件生命周期钩子执行顺序是什么
+
+1. 加载渲染过程: 父 beforeCreate->父 created->父 beforeMount->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted
+2. 子组件更新过程: 父 beforeUpdate->子 beforeUpdate->子 updated->父 updated
+3. 父组件更新过程: 父 beforeUpdate->父 updated
+4. 销毁过程: 父 beforeDestroy->子 beforeDestroy->子 destroyed->父 destroyed
+
+### 059 打印出 1 - 10000 之间的所有对称数 例如 121、1331 等
+
+```js
+;[...Array(10000).keys()].filter((x) => {
+  return x.toString().length > 1 && x === Number(x.toString().split('').reverse().join(''))
+})
+```
+
+### 060 定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序
+
+```
+输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+```
+
+```js
+const zeroMove = (arr) => {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === 0) {
+      arr.push(arr.splice(i, 1)[0])
+    }
+  }
+  return arr
+}
+```
+
+### 061 var、let 和 const 区别的实现原理是什么
+
+先说说这三者的区别吧：
+
+- var 和 let 用以声明变量，const 用于声明只读的常量；
+- var 声明的变量，不存在块级作用域，在全局范围内都有效，let 和 const 声明的，只在它所在的代码块内有效；
+- let 和 const 不存在像 var 那样的 “变量提升” 现象，所以 var 定义变量可以先使用，后声明，而 let 和 const 只可先声明，后使用；
+- let 声明的变量存在暂时性死区，即只要块级作用域中存在 let，那么它所声明的变量就绑定了这个区域，不再受外部的影响。
+- let 不允许在相同作用域内，重复声明同一个变量；
+- const 在声明时必须初始化赋值，一旦声明，其声明的值就不允许改变，更不允许重复声明；
+
+### 062 请实现一个 add 函数，满足以下功能
+
+```
+add(1);  // 1
+add(1)(2);   // 3
+add(1)(2)(3)；  // 6
+add(1)(2, 3);   // 6
+add(1, 2)(3);   // 6
+add(1, 2, 3);   // 6
+```
+
+```js
+const add = (...rest) => {
+  const args = [...rest]
+  const fn = (...re) => {
+    args.push(...re)
+    return fn
+  }
+
+  fn.toString = () => {
+    return args.reduce((a, b) => a + b)
+  }
+
+  return fn
+}
+```
+
+### 063 react-router 里的 <Link> 标签和 <a> 标签有什么区别
+
+从最终渲染的 DOM 来看，这两者都是链接，都是 <a> 标签，区别是：
+
+- <Link> 是 react-router 里实现路由跳转的链接，一般配合 <Route> 使用，react-router 接管了其默认的链接跳转行为，区别于传统的页面跳转，<Link> 的“跳转”行为只会触发相匹配的 <Route> 对应的页面内容更新，而不会刷新整个页面。
+- 而 <a> 标签就是普通的超链接了，用于从当前页面跳转到 href 指向的另一个页面（非锚点情况）。
+
+### 064 两数之和
+
+给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+
+示例：
+
+```
+给定 nums = [2, 7, 11, 15], target = 9
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+```
+
+```js
+const test = (arr, target) => {
+  for (let i = 0; i < arr.length; i++) {
+    const v = target - arr[i]
+    const j = arr.findIndex((t) => t === v && t !== arr[i]) // 数不能重复使用
+    if (j >= 0) {
+      return [i, j]
+    }
+  }
+}
+```
+
+### 065 设计并实现 Promise.race()
+
+Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝。
+
+```js
+Promise._race = (promises) =>
+  new Promise((resolve, reject) => {
+    promises.forEach((promise) => {
+      promise.then(resolve, reject)
+    })
+  })
+```
+
+基本和上面的例子差不多，不同点是每个传入值使用 Promise.resolve 转为 Promise 对象，兼容非 Promise 对象
+
+```js
+const _race = (p) => {
+  return new Promise((resolve, reject) => {
+    p.forEach((item) => {
+      Promise.resolve(item).then(resolve, reject)
+    })
+  })
+}
+```
+
+### 066 实现模糊搜索结果的关键词高亮显示
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      bdi {
+        color: #f60;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="input" />
+    <ul class="container"></ul>
+
+    <script>
+      const data = ['上海野生动物园', '上饶野生动物园', '北京巷子', '上海中心', '上海黄埔江', '迪士尼上海', '陆家嘴上海中心']
+      const input = document.querySelector('.input')
+      const container = document.querySelector('.container')
+
+      const debounce = (fn, timeout = 300) => {
+        let t
+        return (...args) => {
+          if (t) {
+            clearTimeout(t)
+          }
+          t = setTimeout(() => {
+            fn.apply(fn, args)
+          }, timeout)
+        }
+      }
+
+      const memorize = (fn) => {
+        const cache = new Map()
+        return (name) => {
+          if (!name) {
+            container.innerHTML = ''
+            return
+          }
+
+          if (cache.get(name)) {
+            container.innerHTML = cache.get(name)
+            return
+          }
+
+          const res = fn.call(fn, name).join('')
+          cache.set(name, res)
+          container.innerHTML = res
+        }
+      }
+
+      const handleInput = (value) => {
+        const reg = new RegExp(`\(${value}\)`)
+        const search = data.reduce((acc, cur) => {
+          if (reg.test(cur)) {
+            const match = RegExp.$1
+            acc.push(`<li>${cur.replace(match, '<bdi>$&</bdi>')}</li>`)
+          }
+          return acc
+        }, [])
+        return search
+      }
+
+      const memorizeInput = memorize(handleInput)
+
+      input.addEventListener(
+        'input',
+        debounce((e) => memorizeInput(e.target.value))
+      )
+    </script>
+  </body>
+</html>
+```
+
+### 067 已知数据格式，实现一个函数 fn 找出链条中所有的父级 id
+
+- bfs 利用队列实现，循环中做的是 push => shift => push => shift
+- dfs 利用栈实现，循环中做的是 push => pop => push => pop
+
+```js
+const data = [
+  {
+    id: '1',
+    name: 'test1',
+    children: [
+      {
+        id: '11',
+        name: 'test11',
+        children: [
+          {
+            id: '111',
+            name: 'test111',
+          },
+          {
+            id: '112',
+            name: 'test112',
+          },
+        ],
+      },
+    ],
+  },
+]
+
+const find = (data, id, mode = 'bfs') => {
+  const quene = [...data]
+  do {
+    // const current = quene.shift()
+    const current = quene[mode === 'bfs' ? 'shift' : 'pop']()
+    if (current.children) {
+      quene.push(
+        ...current.children.map((x) => ({
+          ...x,
+          path: (current.path || current.id) + '-' + x.id,
+        }))
+      )
+    }
+    if (current.id === id) {
+      return current
+    }
+  } while (quene.length)
+  return undefined
+}
+
+console.log(find(data, '112')) // {id: '112', name: 'test112', path: '1-11-112'}
 ```
