@@ -1521,3 +1521,376 @@ const find = (data, id, mode = 'bfs') => {
 
 console.log(find(data, '112')) // {id: '112', name: 'test112', path: '1-11-112'}
 ```
+
+### 068 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。请找出这两个有序数组的中位数。
+
+示例 1：nums1 = [1, 3]，nums2 = [2]，中位数是 2.0
+示例 2：nums1 = [1, 2]，nums2 = [3, 4]，中位数是(2 + 3) / 2 = 2.5
+
+```js
+const findMedianSortedArrays = (nums1, nums2) => {
+  let nums = []
+  while (nums1.length && nums2.length) {
+    if (nums1[0] < nums2[0]) {
+      nums.push(nums1.shift())
+    } else {
+      nums.push(nums2.shift())
+    }
+  }
+  nums = [...nums, ...nums1, ...nums2]
+
+  let media
+  if (nums.length % 2) {
+    media = nums[Math.floor(nums.length / 2)]
+  } else {
+    const m = nums.length / 2
+    media = (nums[m - 1] + nums[m]) / 2
+  }
+  return media
+}
+```
+
+### 069 vue 在 v-for 时给每项元素绑定事件需要用事件代理吗？为什么？
+
+首先我们需要知道事件代理主要有什么作用？
+
+- 事件代理能够避免我们逐个的去给元素新增和删除事件
+- 事件代理比每一个元素都绑定一个事件性能要更好
+
+从 vue 的角度上来看上面两点
+
+- 在 v-for 中，我们直接用一个 for 循环就能在模板中将每个元素都绑定上事件，并且当组件销毁时，vue 也会自动给我们将所有的事件处理器都移除掉。所以事件代理能做到的第一点 vue 已经给我们做到了
+- 在 v-for 中，给元素绑定的都是相同的事件，所以除非上千行的元素需要加上事件，其实和使用事件代理的性能差别不大，所以也没必要用事件代理
+
+### 070 修改以下 print 函数，使之输出 0 到 99，或者 99 到 0
+
+要求：
+
+1. 只能修改 setTimeout 到 `Math.floor(Math.random() * 1000` 的代码
+2. 不能修改 `Math.floor(Math.random() * 1000`
+3. 不能使用全局变量
+
+```js
+function print(n) {
+  setTimeout(() => {
+    console.log(n)
+  }, Math.floor(Math.random() * 1000))
+}
+for (var i = 0; i < 100; i++) {
+  print(i)
+}
+```
+
+有 2 种方法
+
+1. 立即执行函数
+2. 定时器第二位重新赋固定的值
+
+```js
+// 方法一
+function print(n) {
+  setTimeout(
+    (() => {
+      console.log(n)
+    })(),
+    Math.floor(Math.random() * 1000)
+  )
+}
+
+// 方法二
+function print(n) {
+  setTimeout(
+    () => {
+      console.log(n)
+    },
+    1,
+    Math.floor(Math.random() * 1000)
+  )
+}
+```
+
+```js
+setTimeout(func|code, delay,a,b,c ..)  // 第一个参数是执行体，第二个参数是延时时间，后面的参数可以作为参数传入第一个函数执行体内作为参数使用
+```
+
+### 071 模拟实现一个 localStorage
+
+```js
+const localStorageMock = (function () {
+  let store = {}
+  return {
+    getItem: function (key) {
+      return store[key] || null
+    },
+    setItem: function (key, value) {
+      store[key] = value.toString()
+    },
+    removeItem: function (key) {
+      delete store[key]
+    },
+    clear: function () {
+      store = {}
+    },
+  }
+})()
+
+Object.defineProperty(window, 'localStorage2', {
+  value: localStorageMock,
+})
+
+localStorage2.setItem('test', 'test')
+console.log(localStorage2.getItem('test')) //test
+localStorage2.removeItem('test')
+console.log(localStorage2.getItem('test')) //null
+localStorage2.setItem('test', 'test')
+localStorage2.clear()
+console.log(localStorage2.getItem('test')) //null
+```
+
+### 072 匹配 elective 后的数字输出
+
+url 有三种情况
+
+```
+https://www.xx.cn/api?keyword=&level1=&local_batch_id=&elective=&local_province_id=33
+https://www.xx.cn/api?keyword=&level1=&local_batch_id=&elective=800&local_province_id=33
+https://www.xx.cn/api?keyword=&level1=&local_batch_id=&elective=800,700&local_province_id=33
+```
+
+匹配 elective 后的数字输出（写出你认为的最优解法）: [] || ['800'] || ['800','700']
+
+```js
+function getUrlValue(url) {
+  if (!url) return
+  let res = url.match(/(?<=elective=)(\d+(,\d+)*)/)
+  return res ? res[0].split(',') : []
+}
+```
+
+```js
+new URLSearchParams(url).get('elective')
+```
+
+### 073 分别写出如下代码的返回值
+
+```js
+String('11') == new String('11') // true
+String('11') === new String('11') // false
+```
+
+new String() 返回的是对象，== 的时候，实际运行的是 `String('11') == new String('11').toString();`
+
+### 074 如何快速从一个巨大的数组中随机获取部分元素
+
+比如有个数组有 100K 个元素，从中不重复随机选取 10K 个元素。
+
+```js
+/* 洗牌算法：
+    1.生成一个0 - arr.length 的随机数
+    2.交换该随机数位置元素和数组的最后一个元素，并把该随机位置的元素放入结果数组
+    3.生成一个0 - arr.length - 1 的随机数
+    4.交换该随机数位置元素和数组的倒数第二个元素，并把该随机位置的元素放入结果数组
+    依次类推，直至取完所需的10k个元素
+*/
+
+function shuffle(arr, size) {
+  let result = []
+  for (let i = 0; i < size; i++) {
+    const randomIndex = Math.floor(Math.random() * (arr.length - i))
+    const item = arr[randomIndex]
+    result.push(item)
+    arr[randomIndex] = arr[arr.length - 1 - i]
+    arr[arr.length - 1 - i] = item
+  }
+  return result
+}
+```
+
+### 074 数字连续，输入 '1, 2, 3, 5, 7, 8, 10' 输出 '1~3, 5, 7~8, 10'
+
+请写一个函数，完成以下功能，输入 '1, 2, 3, 5, 7, 8, 10' 输出 '1~3, 5, 7~8, 10'。
+
+这道题的意思是：如果连续数字的话，就取连续的第一个数和最后一个数，中间用~隔开。如果不连续就用，隔开。
+
+```js
+const nums = [1, 2, 3, 5, 7, 8, 10]
+const simplifyStr = (nums) => {
+  const result = []
+  let temp = nums[0]
+  nums.forEach((value, index) => {
+    if (value + 1 !== nums[index + 1]) {
+      if (temp !== value) {
+        result.push(`${temp}~${value}`)
+      } else {
+        result.push(`${value}`)
+      }
+      temp = nums[index + 1]
+    }
+  })
+  return result
+}
+console.log(simplifyStr(nums).join(','))
+```
+
+### 075 for in 和 for of 的区别
+
+它们两者都可以用于遍历，不过 for in 遍历的是数组的索引（index），而 for of 遍历的是数组元素值（value）。
+
+for in 更适合遍历对象，当然也可以遍历数组，但是会存在一些问题，比如：
+
+1. index 索引为字符串型数字，不能直接进行几何运算
+2. 遍历顺序有可能不是按照实际数组的内部顺序
+3. **使用 for in 会遍历数组所有的可枚举属性、包括原型**，如果不想遍历原型方法和属性的话，可以在循环内部判断一下，使用 hasOwnProperty() 方法可以判断某属性是不是该对象的实例属性
+
+```js
+for (let index in arr) {
+  if (arr.hasOwnProperty(index)) {
+  }
+}
+```
+
+for of 遍历的是数组元素值，而且 for of 遍历的只是数组内的元素，不包括原型属性和索引。
+
+总结：
+
+1. for in 遍历的是数组的索引（即键名），而 for of 遍历的是数组元素值
+2. for in 总是得到对象的 key 或数组、字符串的下标
+3. for of 总是得到对象的 value 或数组、字符串的值
+
+### 076 flatObj
+
+写个程序把 entry 转换成如下对象
+
+```
+var entry = {
+a: {
+ b: {
+   c: {
+     dd: 'abcdd'
+   }
+ },
+ d: {
+   xx: 'adxx'
+ },
+ e: 'ae'
+}
+}
+
+// 要求转换成如下对象
+var output = {
+'a.b.c.dd': 'abcdd',
+'a.d.xx': 'adxx',
+'a.e': 'ae'
+}
+```
+
+```js
+const entry = {
+  a: {
+    b: {
+      c: {
+        dd: 'abcdd',
+      },
+    },
+    d: {
+      xx: 'adxx',
+    },
+    e: 'ae',
+  },
+}
+
+const flatObj = (obj, parentKey = '', result = {}) => {
+  Object.keys(obj).forEach((k) => {
+    const newKey = `${parentKey}${k}`
+    if (typeof obj[k] === 'object') {
+      flatObj(obj[k], newKey + '.', result)
+    } else {
+      result[newKey] = obj[k]
+    }
+  })
+  return result
+}
+```
+
+### 077 出字符串中连续出现最多的字符
+
+```
+'abcaakjbb' => {'a':2,'b':2}
+'abbkejsbcccwqaa' => {'c':3}
+```
+
+```js
+const str = 'abcaakjbb'
+const arr = str.match(/(\w)\1*/g) // ['a', 'b', 'c', 'aa', 'k', 'j', 'bb']
+const maxLen = Math.max(...arr.map((s) => s.length))
+const result = arr.reduce((pre, curr) => {
+  console.log('curr', curr, curr[0])
+  if (curr.length === maxLen) {
+    pre[curr[0]] = curr.length // curr[0] 的意思是 aa 只取 a
+  }
+  return pre
+}, {})
+
+console.log(result)
+```
+
+**正则表达式中的小括号"()"。是代表分组的意思。如果再其后面出现\1 则是代表与第一个小括号中要匹配的内容相同。**
+
+### 078 输出以下代码运行结果
+
+```js
+1 + '1' // '11'
+
+2 * '2'[(1, 2)] + // 4，乘性操作符：如果有一个操作数不是数值，则在后台调用 Number()将其转换为数值
+  [2, 1] // '1,22,1'， Javascript中所有对象基本都是先调用valueOf方法，如果不是数值，再调用toString方法。
+
+'a' + +'b' // 'aNaN'， 后边的“+”将作为一元操作符，如果操作数是字符串，将调用Number方法将该操作数转为数值，如果操作数无法转为数值，则为NaN。
+```
+
+### 079 webpack 打包 vue 速度太慢怎么办？
+
+1：确保下 webpack，npm, node 及主要库版本要新，比如：4.x 比 3.x 提升很多。
+
+2：loader 范围缩小到 src 项目文件！一些不必要的 loader 能关就关了吧
+
+3：eslint 代码校验其实是一个很费时间的一个步奏。
+：可以把 eslint 的范围缩小到 src,且只检查 _.js 和 _.vue
+：生产环境不开启 lint，使用 pre-commit 或者 husky 在提交前校验
+
+4：happypack 多进程进行
+
+如果上面优化后，时间还是不满意的话，就尝试下 5,6 吧。
+
+5：动态链接库（DllPlugin），楼上已说。有点类似配置的 externals。
+缺点：将不能按需加载，会将配置的第三方库全部打包进去。
+推荐：可以将使用率较高的包采用 dll 方案。
+
+6：HardSourceWebpackPlugin 会将模块编译后进行缓存，第一次之后速度会明显提升。
+
+### 080 vue 是如何对数组方法进行变异的？例如 push、pop、splice 等方法
+
+重写了数组中的那些方法，首先获取到这个数组的 **ob** ,也就是它的 Observer 对象，如果有新的值，就调用 observeArray 继续对新的值观察变化，然后手动调用 notify，通知渲染 watcher，执行 update
+
+### 081 永久性重定向（301）和临时性重定向（302）
+
+1. 301 redirect——301 代表永久性转移(Permanently Moved)，301 重定向是网页更改地址后对搜索引擎友好的最好方法，只要不是暂时搬移的情况,都建议使用 301 来做转址。如果我们把一个地址采用 301 跳转方式跳转的话，搜索引擎会把老地址的 PageRank 等信息带到新地址，同时在搜索引擎索引库中彻底废弃掉原先的老地址。旧网址的排名等完全清零
+
+2. 302 redirect——302 代表暂时性转移(Temporarily Moved )，在前些年，不少 Black Hat SEO 曾广泛应用这项技术作弊，目前，各大主要搜索引擎均加强了打击力度，象 Google 前些年对 Business.com 以及近来对 BMW 德国网站的惩罚。即使网站客观上不是 spam，也很容易被搜寻引擎容易误判为 spam 而遭到惩罚。
+
+301 应用场景: 域名到期不想继续用这个，换了地址
+302 应用场景: 做活动时候，从首页跳到活动页面,
+
+### 082 如何用 css 或 js 实现多行文本溢出省略效果
+
+```css
+// 单行：
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+// 多行：
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3; //行数
+overflow: hidden;
+```
