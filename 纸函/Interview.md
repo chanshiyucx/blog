@@ -19,9 +19,9 @@ key 的作用就是更新组件时**判断两个节点是否相同**。相同就
 - Set 类似于数组，但是成员的值都是唯一的，可以遍历。
 - WeakSet 成员都是对象，且都是弱引用，可以用来保存 DOM 节点，不容易造成内存泄漏，不能遍历。
 - Map 本质上是健值对的集合，可以遍历。
-- WeakMap 只接受对象作为健名（null 除外），不接受其他类型的值作为健名，健名所指向的对象，不计入垃圾回收机制，不能遍历。
+- WeakMap 只接受对象作为健名（null 除外），不接受其他类型的值作为健名，健名所指向的对象，不能遍历。
 
-### 004 setTimeout、Promise、Async/Await 的区别?
+### 004 setTimeout、Promise、Async/Await 的区别？
 
 1. setTimeout
 
@@ -31,7 +31,7 @@ setTimeout(function () {
   console.log('settimeout')
 })
 console.log('script end')
-// 输出顺序：script start->script end->settimeout
+// 输出顺序：script start -> script end -> settimeout
 ```
 
 2. Promise
@@ -106,7 +106,18 @@ console.log('script end') // 5
 Async/Await 就是一个**自执行的 generate 函数**，是 Generator 的语法糖。利用 generate 函数的特性把异步的代码写成“同步”的形式。
 Generator 之所以可以通过同步实现异步是它具有暂停执行和恢复执行的特性和函数体内外的数据交换和错误处理机制。
 
-### 006 将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
+### 006 JS 异步解决方案
+
+- 回调函数，缺点：回调地狱，不能用 try catch 捕获错误，不能 return
+- Promise，缺点：无法取消 Promise ，错误需要通过回调函数来捕获
+- Generator，需要配合 co 库
+- Async/await：代码清晰，不用像 Promise 写一大堆 then 链，处理了回调地狱的问题
+
+### 007 Promise 构造函数是同步执行还是异步执行，那么 then 方法呢？
+
+Promise 本身是**同步的立即执行函数**，Promise new 的时候会立即执行里面的代码，then 是微任务，会在本次任务执行完的时候执行，setTimeout 是宏任务 ，会在下次任务执行的时候执行。
+
+### 008 将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组
 
 ```js
 var arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14]]]], 10]
@@ -114,17 +125,6 @@ Array.from(new Set(arr.flat(Infinity))).sort((a, b) => {
   return a - b
 })
 ```
-
-### 007 JS 异步解决方案
-
-- 回调函数，缺点：回调地狱，不能用 try catch 捕获错误，不能 return
-- Promise，缺点：无法取消 Promise ，错误需要通过回调函数来捕获
-- Generator，需要配合 co 库
-- Async/await：代码清晰，不用像 Promise 写一大堆 then 链，处理了回调地狱的问题
-
-### 008 Promise 构造函数是同步执行还是异步执行，那么 then 方法呢？
-
-Promise 本身是**同步的立即执行函数**，Promise new 的时候会立即执行里面的代码，then 是微任务，会在本次任务执行完的时候执行，setTimeout 是宏任务 ，会在下次任务执行的时候执行。
 
 ### 009 简单讲解一下 http2 的多路复用
 
@@ -138,17 +138,23 @@ HTTP/2 的多路复用就是为了解决上述的两个性能问题。 在 HTTP/
 ### 010 谈谈你对 TCP 三次握手和四次挥手
 
 三次握手之所以是三次是保证 client 和 server 均让对方知道自己的接收和发送能力没问题而保证的最小次数。
-第一次 client => server 只能 server 判断出 client 具备发送能力
-第二次 server => client client 就可以判断出 server 具备发送和接受能力
-第三次 client => server 双方均保证了自己的接收和发送能力没有问题
+第一次 client => server，只能 server 判断出 client 具备发送能力
+第二次 server => client，client 就可以判断出 server 具备发送和接受能力
+第三次 client => server，双方均保证了自己的接收和发送能力没有问题
 三次是最少的安全次数，两次不安全，四次浪费资源。
 
 为什么要四次挥手？
-TCP 是全双工信道，何为全双工就是客户端与服务端建立两条通道，通道 1:客户端的输出连接服务端的输入；通道 2:客户端的输入连接服务端的输出。两个通道可以同时工作，所以关闭双通道的时候就是这样：
+TCP 是全双工信道，何为全双工就是客户端与服务端建立两条通道：
+通道 1:客户端的输出连接服务端的输入；
+通道 2:客户端的输入连接服务端的输出。
+
+两个通道可以同时工作，所以关闭双通道的时候就是这样：
 客户端：我要关闭输入通道了。 服务端：好的，你关闭吧，我这边也关闭这个通道。
 服务端：我也要关闭输入通道了。 客户端：好的你关闭吧，我也把这个通道关闭。
 
-### 011 介绍 HTTPS 握手过程
+### 011 介绍 HTTPS 握手过程与中间人攻击
+
+HTTPS 握手过程：
 
 1. 客户端使用 https 的 url 访问 web 服务器，要求与服务器建立 ssl 连接
 2. web 服务器收到客户端请求后, 会将网站的证书（包含公钥）传送一份给客户端
@@ -156,9 +162,7 @@ TCP 是全双工信道，何为全双工就是客户端与服务端建立两条�
 4. 客户端利用公钥将会话秘钥加密, 并传送给服务端, 服务端利用自己的私钥解密出会话秘钥
 5. 之后服务器与客户端使用秘钥加密传输
 
-### 011 介绍下 HTTPS 中间人攻击
-
-https 协议由 http + ssl 协议构成，中间人攻击过程如下：
+HTTPS 中间人攻击：
 
 1. 服务器向客户端发送公钥。
 2. 攻击者截获公钥，保留在自己手上。
@@ -179,7 +183,7 @@ https 协议由 http + ssl 协议构成，中间人攻击过程如下：
 
 ### 013 Redux 和 Vuex 的设计思想
 
-共同点：首先两者都是处理全局状态的工具库，大致实现思想都是：全局 state 保存状态---->dispatch(action)---->reducer(vuex 里的 mutation)----> 生成 newState，整个状态为同步操作。
+共同点：首先两者都是处理全局状态的工具库，大致实现思想都是：全局 state 保存状态 --> dispatch(action) --> reducer(vuex 里的 mutation) --> 生成 newState，整个状态为同步操作。
 区别：最大的区别在于处理异步的不同，vuex 里面多了一步 commit 操作，在 action 之后 commit(mutation) 之前处理异步，而 redux 里面则是通过中间件处理
 
 ### 014 ES5/ES6 的继承除了写法以外还有什么区别？
@@ -461,7 +465,7 @@ JavaScript
 
 Model 改变 View 的过程：依赖于 ES5 的 object.defindeProperty，通过 defineProperty 实现的数据劫持，getter 收集依赖，setter 调用更新回调（不同于观察者模式，是发布订阅 + 中介）。
 
-View 改变 Model 的过程：依赖于 v-model ,该语法糖实现是在单向数据绑定的基础上，增加事件监听并赋值给对应的 Model。
+View 改变 Model 的过程：依赖于 v-model，该语法糖实现是在单向数据绑定的基础上，增加事件监听并赋值给对应的 Model。
 
 ### 020 改造下面的代码，使之输出 0 - 9
 
@@ -473,7 +477,7 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-解法一：利用 let 变量的特性，在每一次 for 循环的过程中，let 声明的变量会在当前的块级作用域里面（for 循环的 body 体，也即两个花括号之间的内容区域）创建一个文法环境（Lexical Environment），该环境里面包括了当前 for 循环过程中的 i，
+解法一：利用 let 变量的特性，在每一次 for 循环的过程中，let 声明的变量会在当前的块级作用域里面创建一个文法环境，该环境里面包括了当前 for 循环过程中的 i。
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -717,8 +721,6 @@ computed: {
         set (value) {
             this.$store.dispatch('updateMessage', value);
         }
-
-
     }
 }
 mutations: {
@@ -883,7 +885,7 @@ const result = Array.from({ length: 12 }).map((_, index) => obj[index + 1] || nu
 console.log(result)
 ```
 
-### 041 要求设计 LazyMan 类，实现以下功能。
+### 041 要求设计 LazyMan 类，实现以下功能
 
 ```js
 LazyMan('Tony')
@@ -1046,7 +1048,7 @@ redux 的设计思想就是不产生副作用，数据更改的状态可回溯�
 4. 然后监听滚动事件，如果滑动距离超过 x 或-x，让其实现跳转下一张图或者跳转上一张，(此处最好设置滑动距离)，
 5. 然后在滑动最后一张实现最后一张和克隆第一张的无缝转换，当到克隆的第一张的时候停下的时候，让其切入真的第一张，则实现无线滑动，向前滑动同理
 
-### 048 [模拟实现一个 Promise.finally](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/109)
+### 048 模拟实现一个 Promise.finally
 
 ```js
 Promise.prototype.finally = function (callback) {
@@ -1129,14 +1131,7 @@ const processString = (str) =>
 const processString = (str) => str.replace(/[a-zA-Z]/g, (s) => (/[a-z]/.test(s) ? s.toUpperCase() : s.toLowerCase()))
 ```
 
-### 052 绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面？
-
-1. 当修改了一个或多个文件，文件系统接收更改并通知 webpack；
-2. webpack 重新编译构建一个或多个模块，并通知 HMR 服务器进行更新；
-3. HMR Server 使用 webSocket 通知 HMR runtime 需要更新，HMR 运行时通过 HTTP 请求更新 jsonp；
-4. HMR 运行时替换更新中的模块，如果确定这些模块无法更新，则触发整个页面刷新。
-
-### 053 实现一个字符串匹配算法，从长度为 n 的字符串 S 中，查找是否存在字符串 T，T 的长度是 m，若存在返回所在位置。
+### 052 实现一个字符串匹配算法，从长度为 n 的字符串 S 中，查找是否存在字符串 T，T 的长度是 m，若存在返回所在位置
 
 ```js
 // 因为 T 的 length 是一定的，所以在循环S的的时候 ，循环当前项 i 后面至少还有 T.length 个元素
@@ -1162,7 +1157,7 @@ const find = (S, T) => {
 }
 ```
 
-### 054 使用 JavaScript Proxy 实现简单的数据绑定
+### 053 使用 JavaScript Proxy 实现简单的数据绑定
 
 ```html
 <body>
@@ -1190,13 +1185,13 @@ const find = (S, T) => {
 </body>
 ```
 
-### 055 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少
+### 054 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少
 
 数组可以直接根据索引取的对应的元素，所以不管取哪个位置的元素的时间复杂度都是 O(1)
 
 得出结论：**消耗时间几乎一致，差异可以忽略不计**
 
-### 056 输出以下代码运行结果
+### 055 输出以下代码运行结果
 
 这题考察的是对象的键名的转换。
 
@@ -1230,7 +1225,7 @@ a[c] = 'c' // c 不是字符串也不是 Symbol 类型，需要转换成字符�
 console.log(a[b]) // 输出 c
 ```
 
-### 057 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数
+### 056 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数
 
 ```
 输入: [1, 2, 3, 4, 5, 6, 7] 和 k = 3
@@ -1262,14 +1257,14 @@ function rotate(arr, k) {
 }
 ```
 
-### 058 Vue 的父组件和子组件生命周期钩子执行顺序是什么
+### 057 Vue 的父组件和子组件生命周期钩子执行顺序是什么
 
-1. 加载渲染过程: 父 beforeCreate->父 created->父 beforeMount->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted
-2. 子组件更新过程: 父 beforeUpdate->子 beforeUpdate->子 updated->父 updated
-3. 父组件更新过程: 父 beforeUpdate->父 updated
-4. 销毁过程: 父 beforeDestroy->子 beforeDestroy->子 destroyed->父 destroyed
+1. 加载渲染过程：父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 子 beforeMount -> 子 mounted -> 父 mounted
+2. 子组件更新过程：父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+3. 父组件更新过程：父 beforeUpdate -> 父 updated
+4. 销毁过程：父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
 
-### 059 打印出 1 - 10000 之间的所有对称数 例如 121、1331 等
+### 058 打印出 1 - 10000 之间的所有对称数 例如 121、1331 等
 
 ```js
 ;[...Array(10000).keys()].filter((x) => {
@@ -1277,7 +1272,7 @@ function rotate(arr, k) {
 })
 ```
 
-### 060 定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序
+### 059 定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序
 
 ```
 输入: [0,1,0,3,12]
@@ -1293,6 +1288,21 @@ const zeroMove = (arr) => {
   }
   return arr
 }
+```
+
+### 060 如何用 css 或 js 实现多行文本溢出省略效果
+
+```css
+// 单行：
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+// 多行：
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3; //行数
+overflow: hidden;
 ```
 
 ### 061 var、let 和 const 区别的实现原理是什么
@@ -1333,12 +1343,12 @@ const add = (...rest) => {
 }
 ```
 
-### 063 react-router 里的 <Link> 标签和 <a> 标签有什么区别
+### 063 react-router 里的 `<Link>` 标签和 `<a>` 标签有什么区别
 
-从最终渲染的 DOM 来看，这两者都是链接，都是 <a> 标签，区别是：
+从最终渲染的 DOM 来看，这两者都是链接，都是 `<a>` 标签，区别是：
 
-- <Link> 是 react-router 里实现路由跳转的链接，一般配合 <Route> 使用，react-router 接管了其默认的链接跳转行为，区别于传统的页面跳转，<Link> 的“跳转”行为只会触发相匹配的 <Route> 对应的页面内容更新，而不会刷新整个页面。
-- 而 <a> 标签就是普通的超链接了，用于从当前页面跳转到 href 指向的另一个页面（非锚点情况）。
+- `<Link>` 是 react-router 里实现路由跳转的链接，一般配合 `<Route>` 使用，react-router 接管了其默认的链接跳转行为，区别于传统的页面跳转，`<Link>` 的“跳转”行为只会触发相匹配的 `<Route>` 对应的页面内容更新，而不会刷新整个页面。
+- 而 `<a>` 标签就是普通的超链接了，用于从当前页面跳转到 href 指向的另一个页面（非锚点情况）。
 
 ### 064 两数之和
 
@@ -1522,7 +1532,7 @@ const find = (data, id, mode = 'bfs') => {
 console.log(find(data, '112')) // {id: '112', name: 'test112', path: '1-11-112'}
 ```
 
-### 068 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。请找出这两个有序数组的中位数。
+### 068 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2，请找出这两个有序数组的中位数
 
 示例 1：nums1 = [1, 3]，nums2 = [2]，中位数是 2.0
 示例 2：nums1 = [1, 2]，nums2 = [3, 4]，中位数是(2 + 3) / 2 = 2.5
@@ -1706,7 +1716,7 @@ function shuffle(arr, size) {
 }
 ```
 
-### 074 数字连续，输入 '1, 2, 3, 5, 7, 8, 10' 输出 '1~3, 5, 7~8, 10'
+### 075 数字连续，输入 '1, 2, 3, 5, 7, 8, 10' 输出 '1~3, 5, 7~8, 10'
 
 请写一个函数，完成以下功能，输入 '1, 2, 3, 5, 7, 8, 10' 输出 '1~3, 5, 7~8, 10'。
 
@@ -1732,7 +1742,7 @@ const simplifyStr = (nums) => {
 console.log(simplifyStr(nums).join(','))
 ```
 
-### 075 for in 和 for of 的区别
+### 076 for in 和 for of 的区别
 
 它们两者都可以用于遍历，不过 for in 遍历的是数组的索引（index），而 for of 遍历的是数组元素值（value）。
 
@@ -1757,7 +1767,7 @@ for of 遍历的是数组元素值，而且 for of 遍历的只是数组内的�
 2. for in 总是得到对象的 key 或数组、字符串的下标
 3. for of 总是得到对象的 value 或数组、字符串的值
 
-### 076 flatObj
+### 077 flatObj
 
 写个程序把 entry 转换成如下对象
 
@@ -1812,7 +1822,7 @@ const flatObj = (obj, parentKey = '', result = {}) => {
 }
 ```
 
-### 077 出字符串中连续出现最多的字符
+### 078 出字符串中连续出现最多的字符
 
 ```
 'abcaakjbb' => {'a':2,'b':2}
@@ -1836,7 +1846,7 @@ console.log(result)
 
 **正则表达式中的小括号"()"。是代表分组的意思。如果再其后面出现\1 则是代表与第一个小括号中要匹配的内容相同。**
 
-### 078 输出以下代码运行结果
+### 079 输出以下代码运行结果
 
 ```js
 1 + '1' // '11'
@@ -1845,52 +1855,4 @@ console.log(result)
   [2, 1] // '1,22,1'， Javascript中所有对象基本都是先调用valueOf方法，如果不是数值，再调用toString方法。
 
 'a' + +'b' // 'aNaN'， 后边的“+”将作为一元操作符，如果操作数是字符串，将调用Number方法将该操作数转为数值，如果操作数无法转为数值，则为NaN。
-```
-
-### 079 webpack 打包 vue 速度太慢怎么办？
-
-1：确保下 webpack，npm, node 及主要库版本要新，比如：4.x 比 3.x 提升很多。
-
-2：loader 范围缩小到 src 项目文件！一些不必要的 loader 能关就关了吧
-
-3：eslint 代码校验其实是一个很费时间的一个步奏。
-：可以把 eslint 的范围缩小到 src,且只检查 _.js 和 _.vue
-：生产环境不开启 lint，使用 pre-commit 或者 husky 在提交前校验
-
-4：happypack 多进程进行
-
-如果上面优化后，时间还是不满意的话，就尝试下 5,6 吧。
-
-5：动态链接库（DllPlugin），楼上已说。有点类似配置的 externals。
-缺点：将不能按需加载，会将配置的第三方库全部打包进去。
-推荐：可以将使用率较高的包采用 dll 方案。
-
-6：HardSourceWebpackPlugin 会将模块编译后进行缓存，第一次之后速度会明显提升。
-
-### 080 vue 是如何对数组方法进行变异的？例如 push、pop、splice 等方法
-
-重写了数组中的那些方法，首先获取到这个数组的 **ob** ,也就是它的 Observer 对象，如果有新的值，就调用 observeArray 继续对新的值观察变化，然后手动调用 notify，通知渲染 watcher，执行 update
-
-### 081 永久性重定向（301）和临时性重定向（302）
-
-1. 301 redirect——301 代表永久性转移(Permanently Moved)，301 重定向是网页更改地址后对搜索引擎友好的最好方法，只要不是暂时搬移的情况,都建议使用 301 来做转址。如果我们把一个地址采用 301 跳转方式跳转的话，搜索引擎会把老地址的 PageRank 等信息带到新地址，同时在搜索引擎索引库中彻底废弃掉原先的老地址。旧网址的排名等完全清零
-
-2. 302 redirect——302 代表暂时性转移(Temporarily Moved )，在前些年，不少 Black Hat SEO 曾广泛应用这项技术作弊，目前，各大主要搜索引擎均加强了打击力度，象 Google 前些年对 Business.com 以及近来对 BMW 德国网站的惩罚。即使网站客观上不是 spam，也很容易被搜寻引擎容易误判为 spam 而遭到惩罚。
-
-301 应用场景: 域名到期不想继续用这个，换了地址
-302 应用场景: 做活动时候，从首页跳到活动页面,
-
-### 082 如何用 css 或 js 实现多行文本溢出省略效果
-
-```css
-// 单行：
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-
-// 多行：
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 3; //行数
-overflow: hidden;
 ```
