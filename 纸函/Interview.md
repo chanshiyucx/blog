@@ -175,7 +175,7 @@ HTTPS 中间人攻击：
 
 防范方法：服务端在发送浏览器的公钥中加入 CA 证书，浏览器可以验证 CA 证书的有效性
 
-## 012 vue 渲染大量数据时应该怎么优化？
+## 012 Vue 渲染大量数据时应该怎么优化？
 
 1. 使用虚拟列表
 2. 对于固定的非响应式的数据，Object.freeze 冻结对象
@@ -450,16 +450,26 @@ JavaScript
 
 ## 018 cookie 和 token 都存放在 header 中，为什么不会劫持 token？
 
-- xss：跨站脚本攻击，用攻击者通过各种方式将恶意代码注入到其他用户的页面中。就可以通过脚本获取信息，发起请求之类的操作。
-- csrf：跨站请求伪造，简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了 web 中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的。csrf 并不能够拿到用户的任何信息，它只是欺骗用户浏览器，让其以用户的名义进行操作。
+- XSS：跨站脚本攻击，用攻击者通过各种方式将恶意代码注入到其他用户的页面中。就可以通过脚本获取信息，发起请求之类的操作。
+- CSRF：跨站请求伪造，简单地说，是攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。这利用了 web 中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的。CSRF 并不能够拿到用户的任何信息，它只是欺骗用户浏览器，让其以用户的名义进行操作。
 
-上面的两种攻击方式，如果被 xss 攻击了，不管是 token 还是 cookie，都能被拿到，**所以对于 xss 攻击来说，cookie 和 token 没有什么区别**。但是对于 csrf 来说就有区别了。
-以上面的 csrf 攻击为例：
+上面的两种攻击方式，如果被 XSS 攻击了，不管是 token 还是 cookie，都能被拿到，**所以对于 XSS 攻击来说，cookie 和 token 没有什么区别**。但是对于 CSRF 来说就有区别了。
+以上面的 CSRF 攻击为例：
 
 - cookie：用户点击了链接，cookie 未失效，导致发起请求后后端以为是用户正常操作，于是进行扣款操作。
 - token：用户点击链接，由于浏览器不会自动带上 token，所以即使发了请求，后端的 token 验证不会通过，所以不会进行扣款操作。
 
 这是个人理解的为什么只劫持 cookie 不劫持 token 的原因。
+
+扩展：如何防护？
+
+XSS：所有可输入的地方没有对输入数据进行处理的话，都会存在 XSS 漏洞，防御 XSS 攻击最简单直接的方法，就是过滤用户的输入
+
+CSRF：
+
+1. 验证码
+2. 验证 HTTP Referer 字段
+3. 添加 token，而不是 cookie
 
 ## 019 Vue 的双向数据绑定，Model 如何改变 View，View 又是如何改变 Model 的
 
@@ -609,13 +619,22 @@ if (a == 1 && a == 2 && a == 3) {
 
 ## 026 介绍下 BFC 及其应用
 
-BFC（Formatting context）就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。创建 BFC 的方式有：
+BFC（Formatting context）就是块级格式上下文，是页面盒模型布局中的一种 CSS 渲染模式，相当于一个独立的容器，里面的元素和外部的元素相互不影响。
 
-1. html 根元素
-2. float 浮动
-3. 绝对定位
-4. display 为表格布局或者弹性布局
-5. overflow 不为 visiable
+创建 BFC 的方式有：
+
+1. float 浮动
+2. position 为 absolute 或 fixed
+3. display 为表格布局或者弹性布局
+4. overflow 除了 visible 以外的值（hidden，auto，scroll）
+
+BFC 的特性：
+
+1. 内部的 Box 会在垂直方向上一个接一个的放置。
+2. 垂直方向上的距离由 margin 决定
+3. BFC 的区域不会与 float 的元素区域重叠。
+4. 计算 BFC 的高度时，浮动元素也参与计算
+5. BFC 就是页面上的一个独立容器，容器里面的子元素不会影响外面元素。
 
 BFC 主要的作用是：
 
@@ -1846,13 +1865,167 @@ console.log(result)
 
 **正则表达式中的小括号"()"。是代表分组的意思。如果再其后面出现\1 则是代表与第一个小括号中要匹配的内容相同。**
 
-## 079 输出以下代码运行结果
+## 079 什么是闭包？
+
+对于 JavaScrip 而言，函数内部可以直接读取全局变量，在函数外部无法读取函数内的局部变量。而闭包便是指 有权访问另外一个函数作用域中的变量的函数，也就是能够读取其他函数内部变量的函数。
+
+## 080 wait 同步执行
 
 ```js
-1 + '1' // '11'
+function wait() {
+  return new Promise((resolve) => setTimeout(resolve, 10 * 1000))
+}
 
-2 * '2'[(1, 2)] + // 4，乘性操作符：如果有一个操作数不是数值，则在后台调用 Number()将其转换为数值
-  [2, 1] // '1,22,1'， Javascript中所有对象基本都是先调用valueOf方法，如果不是数值，再调用toString方法。
+async function main() {
+  console.time()
+  const x = await wait() // 每个都是都执行完才结, 包括setTimeout（10*1000）的执行时间
+  const y = await wait() // 执行顺序 x->y->z 同步执行，x 与 setTimeout 属于同步执行
+  const z = await wait()
+  console.timeEnd() // default: 30099.47705078125ms
 
-'a' + +'b' // 'aNaN'， 后边的“+”将作为一元操作符，如果操作数是字符串，将调用Number方法将该操作数转为数值，如果操作数无法转为数值，则为NaN。
+  console.time()
+  const x1 = wait() // x1,y1,z1 同时异步执行，包括setTimeout（10*1000）的执行时间
+  const y1 = wait() // x1 与 setTimeout 属于同步执行
+  const z1 = wait()
+  await x1
+  await y1
+  await z1
+  console.timeEnd() // default: 10000.67822265625ms
+
+  console.time()
+  const x2 = wait() // x2,y2,z2 同步执行，但是不包括setTimeout（10*1000）的执行时间
+  const y2 = wait() // x2 与 setTimeout 属于异步执行
+  const z2 = wait()
+  x2, y2, z2
+  console.timeEnd() // default: 0.065185546875ms
+}
+main()
+```
+
+## 081 用 setTimeout 实现 setInterval
+
+```js
+function mySetInterval() {
+  mySetInterval.timer = setTimeout(() => {
+    arguments[0]()
+    mySetInterval(...arguments)
+  }, arguments[1])
+}
+
+mySetInterval.clear = function () {
+  clearTimeout(mySetInterval.timer)
+}
+
+mySetInterval(() => {
+  console.log(11111)
+}, 1000)
+
+setTimeout(() => {
+  // 5s 后清理
+  mySetInterval.clear()
+}, 5000)
+```
+
+## 082 求两个日期中间的有效日期
+
+```js
+const rangeDay = (start, end) => {
+  const result = []
+  const startTime = start.getTime()
+  const endTime = end.getTime()
+  const range = endTime - startTime
+  const oneDay = 24 * 60 * 60 * 1000
+  let total = 0
+  while (total <= range) {
+    result.push(new Date(startTime + total).toLocaleDateString().replace(/\//g, '-'))
+    total += oneDay
+  }
+  return result
+}
+
+rangeDay(new Date('2015-02-28'), new Date('2015-03-03'))
+// ['2015-2-28', '2015-3-1', '2015-3-2', '2015-3-3']
+```
+
+## 083 黄、红、蓝三色球排序
+
+在一个字符串数组中有红、黄、蓝三种颜色的球，且个数不相等、顺序不一致，请为该数组排序。使得排序后数组中球的顺序为:黄、红、蓝。例如：红蓝蓝黄红黄蓝红红黄红，排序后为：黄黄黄红红红红红蓝蓝蓝。
+
+```js
+const arr = '红蓝蓝黄红黄蓝红红黄红'
+const obj = { 黄: 0, 红: 1, 蓝: 2 }
+arr
+  .split('')
+  .sort((a, b) => obj[a] - obj[b])
+  .join('')
+```
+
+## 084 Vue 中的 computed 是如何实现的？
+
+computed 本身是通过代理的方式代理到组件实例上的，所以读取计算属性的时候，执行的是一个内部的 getter，而不是用户定义的方法。
+
+computed 内部实现了一个惰性的 watcher，在实例化的时候不会去求值，其内部通过 dirty 属性标记计算属性是否需要重新求值。当 computed 依赖的任一状态发生变化，都会通知这个惰性 watcher，让它把 dirty 属性设置为 true。所以，当再次读取这个计算属性的时候，就会重新去求值。
+
+惰性 watcher/计算属性在创建时是不会去求值的，是在使用的时候去求值的。
+
+## 085 求多个数组之间的交集
+
+```js
+function intersect(...args) {
+  if (args.length === 0) {
+    return []
+  }
+
+  if (args.length === 1) {
+    return args[0]
+  }
+
+  return args.reduce((result, arg) => {
+    return result.filter((item) => arg.includes(item))
+  })
+}
+```
+
+## 086 将 '10000000000' 形式的字符串，以每 3 位进行分隔展示 '10.000.000.000'
+
+```js
+// 寻找字符空隙加 .
+'10000000000'.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+
+// 寻找数字并在其后面加 .
+'10000000000'.replace(/(\d)(?=(\d{3})+\b)/g, '$1.')
+```
+
+扩展：
+
+\b 是单词边界，具体就是 \w 与 \W 之间的位置，也包括 \w 与 ^ 之间的位置，和 \w 与 $ 之间的位置。
+
+```js
+var result = '[JS] Lesson_01.mp4'.replace(/\b/g, '#')
+console.log(result) // "[#JS#] #Lesson_01#.#mp4#"
+
+var result = '[JS] Lesson_01.mp4'.replace(/\B/g, '#')
+console.log(result) // "#[J#S]# L#e#s#s#o#n#_#0#1.m#p#4"
+```
+
+(?=p)，其中 p 是一个子模式，即 p 前面的位置，或者说，该位置后面的字符要匹配 p，而 (?!p) 就是 (?=p) 的反面意思。
+
+```js
+var result = 'hello'.replace(/(?=l)/g, '#')
+console.log(result) // "he#l#lo"
+
+var result = 'hello'.replace(/(?!l)/g, '#')
+console.log(result) // "#h#ell#o#"
+```
+
+二者的学名分别是 positive lookahead 和 negative lookahead。中文翻译分别是正向先行断言和负向先行断言。
+
+## 087 字符转 Base64
+
+```js
+let encodedData = window.btoa('this is a example')
+console.log(encodedData) // dGhpcyBpcyBhIGV4YW1wbGU=
+
+let decodeData = window.atob(encodedData)
+console.log(decodeData) // this is a example
 ```
