@@ -1853,7 +1853,6 @@ const str = 'abcaakjbb'
 const arr = str.match(/(\w)\1*/g) // ['a', 'b', 'c', 'aa', 'k', 'j', 'bb']
 const maxLen = Math.max(...arr.map((s) => s.length))
 const result = arr.reduce((pre, curr) => {
-  console.log('curr', curr, curr[0])
   if (curr.length === maxLen) {
     pre[curr[0]] = curr.length // curr[0] 的意思是 aa 只取 a
   }
@@ -2028,4 +2027,113 @@ console.log(encodedData) // dGhpcyBpcyBhIGV4YW1wbGU=
 
 let decodeData = window.atob(encodedData)
 console.log(decodeData) // this is a example
+```
+
+## 088 Vue 中的 computed 和 watch 的区别在哪里
+
+computed：计算属性是由 data 中的已知值，得到的一个新值。这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。计算属性不在 data 中。别人变化影响我自己。
+
+watch：监听数据的变化，监听的数据就是 data 中的已知值，我的变化影响别人。
+
+1. watch 擅长处理的场景：一个数据影响多个数据
+2. computed 擅长处理的场景：一个数据受多个数据影响
+
+## 089 v-if、v-show、v-html 的原理是什么，它是如何封装的？
+
+- v-if 会调用 addIfCondition 方法，生成 vnode 的时候会忽略对应节点，render 的时候就不会渲染；
+- v-show 会生成 vnode，render 的时候也会渲染成真实节点，只是在 render 过程中会在节点的属性中修改 show 属性值，也就是 display；
+- v-html 会先移除节点下的所有节点，调用 html 方法，通过 addProp 添加 innerHTML 属性，归根结底还是设置 innerHTML 为 v-html 的值；
+
+## 090 webpack 中 loader 和 plugin 的区别是什么？
+
+loader，它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。
+
+plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务。
+
+## 091 二分查找如何定位左边界和右边界？
+
+```js
+//递归查找基础代码
+function erfen_digui(arr, val, left = 0, right = arr.length - 1) {
+  if (left > right) {
+    return -1
+  }
+  let cent = Math.floor((right + left) / 2)
+  if (arr[cent] === val) {
+    return `最终查找结果下标为${cent}`
+  } else if (arr[cent] > val) {
+    right = cent - 1
+  } else {
+    left = cent + 1
+  }
+  return erfen_digui(arr, val, left, right)
+}
+
+//左边界（查找第一个元素）
+function erfen_digui(arr, val, left = 0, right = arr.length - 1) {
+  if (left > right) {
+    return -1
+  }
+  let cent = Math.floor((right + left) / 2)
+  if (arr[cent] === val) {
+    /****************改动点********************/
+    if (arr[cent - 1] === val) {
+      right = cent - 1
+    } else {
+      return `最终查找结果下标为${cent}`
+    }
+    /*****************************************/
+  } else if (arr[cent] > val) {
+    right = cent - 1
+  } else {
+    left = cent + 1
+  }
+  return erfen_digui(arr, val, left, right)
+}
+
+// 右边界（查找最后一个元素）
+function erfen_digui(arr, val, left = 0, right = arr.length - 1) {
+  if (left > right) {
+    return -1
+  }
+  let cent = Math.floor((right + left) / 2)
+  if (arr[cent] === val) {
+    /****************改动点********************/
+    if (arr[cent + 1] === val) {
+      left = cent + 1
+    } else {
+      return `最终查找结果下标为${cent}`
+    }
+    /*****************************************/
+  } else if (arr[cent] > val) {
+    right = cent - 1
+  } else {
+    left = cent + 1
+  }
+  return erfen_digui(arr, val, left, right)
+}
+```
+
+## 092 实现一个 normalize 函数，能将输入的特定的字符串转化为特定的结构化数据
+
+字符串仅由小写字母和 [] 组成，且字符串不会包含多余的空格。
+示例一: 'abc' --> {value: 'abc'}
+示例二：'[abc[bcd[def]]]' --> {value: 'abc', children: {value: 'bcd', children: {value: 'def'}}}
+
+```js
+let str = '[abc[bcd[def]]]'
+
+const normalize = (str) => {
+  let result = {}
+  str
+    .split(/[\[\]]/g) // ['', 'abc', 'bcd', 'def', '', '', '']
+    .filter(Boolean) // ['abc', 'bcd', 'def']
+    .reduce((obj, item, index, a) => {
+      obj.value = item
+      if (index !== a.length - 1) {
+        return (obj.children = {})
+      }
+    }, result)
+  return result
+}
 ```
