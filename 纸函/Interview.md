@@ -342,17 +342,13 @@ Object.prototype.toString.call() 常用于判断浏览器内置对象时。
 
 2. instanceof
 
-instanceof 的内部机制是通过判断对象的原型链中是不是能找到类型的 prototype。
-使用 instanceof 判断一个对象是否为数组，instanceof 会判断这个对象的原型链上是否会找到对应的 Array 的原型，找到返回 true，否则返回 false。
+instanceof 的内部机制是通过判断对象的原型链中是不是能找到类型的 prototype。instanceof 只能用来判断对象类型，原始类型不可以。
+
+使用 instanceof 判断一个对象是否为数组，instanceof 会判断这个对象的原型链上是否会找到对应的 Array 的原型。**并且所有对象类型 instanceof Object 都是 true**。
 
 ```js
 ;[] instanceof Array // true
-```
-
-但 instanceof 只能用来判断对象类型，原始类型不可以。并且所有对象类型 instanceof Object 都是 true。
-
-```js
-;[] instanceof Object // true 3. Array.isArray()
+;[] instanceof Object // true
 ```
 
 3. Array.isArray()
@@ -372,7 +368,7 @@ Object.prototype.toString.call(arr) // true
 arr instanceof Array // false
 ```
 
-Array.isArray()是 ES5 新增的方法，当不存在 Array.isArray()，可以用 Object.prototype.toString.call() 实现。
+Array.isArray() 是 ES5 新增的方法，当不存在 Array.isArray()，可以用 Object.prototype.toString.call() 实现。
 
 ```js
 if (!Array.isArray) {
@@ -381,6 +377,12 @@ if (!Array.isArray) {
   }
 }
 ```
+
+扩展：如何正确判断 JS 的数据类型？
+
+1. typeof：可以判断基本数据类型，但难以判断除了函数以外的复杂数据类型。对于 null、对象（Object）、数组（Array）来说，都会转换成 object。
+2. instanceof：所有对象类型 instanceof Object 都是 true。
+3. Object.prototype.toString.call()
 
 ## 016 介绍下重绘和回流（Repaint & Reflow），以及如何进行优化
 
@@ -2485,3 +2487,157 @@ console.log(4, new Date() - date)
 - import 会触发代码分割（把代码分离到不同的 bundle 中，然后可以按需加载或者并行加载这些文件），require 不会触发。
 
 目前所有的引擎都还没有实现 import，import 最终都会被转码为 require，在 webpack 打包中，import 和 require 都会变为*webpack_require*。
+
+## 102 H5 拥有 6 种新特性？
+
+1. 语义化标签，例如 header，footer，section，article 等语义化标签的作用：提升页面的阅读性(结构性增强)，更有利于 SEO，对于使用屏幕阅读器的人来说会更友好。
+2. 新增媒体元素，audio 和 video 标签能够很容易的输出音频或视频流，提供便利的获取文件信息的 API。
+3. 用于绘画的 canvas 属性，Canvas API 提供了一个通过 JavaScript 和 HTML 的 canvas 元素来绘制图形的方式。它可以用于动画、游戏画面、数据可视化、图片编辑以及实时视频处理等方面。
+4. 新增本地存储方式：sessionStorage、localStorage。sessionStorage 用于存储会话级别的数据，会话关闭，数据消失，不可设置过期时间。localStorage 用于存储需要进行持久化存储的数据，只要不主动删除，数据不会消失。
+5. 新的技术：webworker、websocket。 webworker：用于多线程编程，websocket：客户端与服务端双向数据通信协议。
+6. 新增的表单控件：calendar、date、time、email、url、search。
+
+## 103 CSS3 有哪些新特性？
+
+- 选择器
+- 边框与圆角
+- 背景与渐变
+- 过渡
+- 变换
+- 动画
+
+## 104 ES6 有哪些新特性？
+
+- 变量声明：const 和 let
+- 模板字符串
+- 箭头函数
+- 函数的参数默认值
+- 扩展运算符
+- 对象和数组解构
+- 数据类型 Symbol
+- 数据结构 Set 和 Map
+- Proxy 代理和 Reflect 反射
+- Promise 对象
+- Iterator 遍历器
+- Generator 函数和 Async/Await
+- Class 类继承
+- Module 的语法 import/export
+
+## 105 合并对象的有哪些方式？
+
+1. 扩展运算符：`const newObj = { ...obj1, ...obj2 };`
+2. `Object.assign()`：`const newObj = Object.assign(obj1, obj2);`
+
+区别：扩展运算符返回一个新对象，而 `Object.assign()` 函数却修改其第一个传入对象。
+
+## 106 排序算法
+
+### 冒泡排序
+
+原理：依次比较两个相邻的值，如果后者较小，则交换两者的顺序，让最大的值排在最后。
+
+```js
+function bubleSort(arr = []) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        ;[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+      }
+    }
+  }
+  return arr
+}
+```
+
+### 快速排序
+
+原理：使用到了递归思想
+
+1. 新建两个空数组 left、right
+2. 然后找到数组的基准值 `point = arr[Math.floor(arr.length/2)]`
+3. 遍历数组的每一项，小于这个基准值的项放到 left 数组，大于基准值的放到 right 数组
+4. 然后按照步骤 2、3，递归上面 left、right 数组
+5. 最后将 left、基准值和 right 数组用 concat 拼接起来
+
+```js
+function quickSort(arr = []) {
+  if (arr.length <= 1) {
+    return arr
+  }
+  let left = [],
+    right = []
+  let pivot = arr[Math.floor(arr.length / 2)]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else if (arr[i] > pivot) {
+      right.push(arr[i])
+    }
+  }
+  return quickSort(left).concat([pivot], quickSort(right))
+}
+```
+
+### 插入排序
+
+1. 将一组数据的首个数据组成有序区间，其他数据组成无序区间
+2. 在无序区间抽出首个数据 A
+3. A 依次与有序区间的各个数据进行对比。若遇到数据比 A 大的，则将 A 插入到该数据的前面一个位置，若 A 比有序区间的任何数据都要大，则插入到有序区间末尾。总之，保证插入后的有序区间依然有序。
+4. 重复 2 和 3 操作，直到无序区间没有数据
+
+```js
+function insertSort(arr = []) {
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = i; j > 0; j--) {
+      if (arr[j] < arr[j - 1]) {
+        ;[arr[j], arr[j - 1]] = [arr[j - 1], arr[j]]
+      }
+    }
+  }
+  return arr
+}
+```
+
+## 106 什么是媒体查询？响应式设计与自适应设计的区别？
+
+### 媒体查询
+
+媒体查询能在不同的条件下使用不同的样式，使页面在不同在终端设备下达到不同的渲染效果。
+
+原理：允许添加表达式用以媒体查询（包括 媒体类型 和 媒体特性），以此来选择不同的样式表，从而自动适应不同的屏幕分辨率。
+
+1. 媒体类型：将不同的设备划分为不同的类型
+
+- all （所有的设备）
+- print （打印设备）
+- screen （电脑屏幕，平板电脑，智能手机）
+
+2. 媒体特性：用来描述设备的特点，比如宽度和高度等
+
+- width 网页显示区域完全等于设置的宽度
+- height 网页显示区域完全等于设置的高度
+- max-width / max-height 网页显示区域小于等于设置的宽度
+- min-width / min-width 网页显示区域大于等于设置的宽度
+- orientation: portrait (竖屏模式) | landscape (横屏模式)
+
+### 响应式设计与自适应设计
+
+1. 响应式设计与自适应设计的区别？
+
+- 响应式设计：响应式开发一套界面，通过检测视口分辨率，针对不同客户端在客户端做代码处理，来展现不同的布局和内容。
+- 自适应设计：自适应需要开发多套界面，通过检测视口分辨率，来判断当前访问的设备是 PC 端、平板还是手机，从而返回不同的页面。
+
+2. 响应式设计与自适应设计如何选取？
+
+- 页面不是太复杂的情况下，采用响应式布局的方式
+- 页面中信息较多，布局较为复杂的情况，采用自适应布局的方式
+
+3. 响应式设计与自适应设计的优缺点？
+
+响应式布局
+优点：灵活性强，能够快捷解决多设备显示适用问题
+缺点：效率较低，兼容各设备工作量大；代码较为累赘，加载时间可能会加长；在一定程度上改变了网站原有的布局结构
+
+自适应布局
+优点：对网站复杂程度兼容更大，代码更高效
+缺点：同一个网站需要为不同的设备开发不同的页面，增加的开发的成本
