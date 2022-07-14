@@ -509,7 +509,7 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-## 021 下面的代码打印什么内容？
+## 021 函数与变量申明优先级？
 
 ```js
 var b = 10
@@ -1210,7 +1210,7 @@ const find = (S, T) => {
 
 得出结论：**消耗时间几乎一致，差异可以忽略不计**
 
-## 055 输出以下代码运行结果
+## 055 对象的键名的转换
 
 这题考察的是对象的键名的转换。
 
@@ -1326,16 +1326,31 @@ overflow: hidden;
 
 ## 061 var、let 和 const 区别的实现原理是什么
 
-先说说这三者的区别吧：
+<!-- 先说说这三者的区别吧：
 
 - var 和 let 用以声明变量，const 用于声明只读的常量；
 - var 声明的变量，不存在块级作用域，在全局范围内都有效，let 和 const 声明的，只在它所在的代码块内有效；
 - let 和 const 不存在像 var 那样的 “变量提升” 现象，所以 var 定义变量可以先使用，后声明，而 let 和 const 只可先声明，后使用；
 - let 声明的变量存在暂时性死区，即只要块级作用域中存在 let，那么它所声明的变量就绑定了这个区域，不再受外部的影响。
 - let 不允许在相同作用域内，重复声明同一个变量；
-- const 在声明时必须初始化赋值，一旦声明，其声明的值就不允许改变，更不允许重复声明；
+- const 在声明时必须初始化赋值，一旦声明，其声明的值就不允许改变，更不允许重复声明； -->
 
-## 062 请实现一个 add 函数，满足以下功能
+var 和 let/const 的区别：
+
+- 块级作用域：var 声明的变量，不存在块级作用域，在全局范围内都有效，let/const 声明的，只在它所在的代码块内有效
+- 不存在变量提升：var 定义变量可以先使用，后声明，而 let/const 只可先声明，后使用
+- 暂时性死区：let/const 声明的变量存在暂时性死区，即只要块级作用域中存在，那么它所声明的变量就绑定了这个区域，不再受外部的影响
+- 不可重复声明: let/const 不允许在相同作用域内，重复声明同一个变量
+- let/const 声明的全局变量不会挂在顶层对象下面
+
+const:
+
+- const 声明之后必须马上赋值，否则会报错
+- const 简单类型一旦声明就不能再更改，复杂类型（数组、对象等）指针指向的地址不能更改，内部数据可以更改
+
+let 一般用来声明变量，const 声明常量 函数
+
+## 062 add(1)(2, 3) 链式调用函数
 
 ```
 add(1);  // 1
@@ -1864,9 +1879,17 @@ console.log(result)
 
 **正则表达式中的小括号"()"。是代表分组的意思。如果再其后面出现\1 则是代表与第一个小括号中要匹配的内容相同。**
 
-## 079 什么是闭包？
+## 079 什么是闭包？使用闭包应该注意什么？
 
 对于 JavaScrip 而言，函数内部可以直接读取全局变量，在函数外部无法读取函数内的局部变量。而闭包便是指 有权访问另外一个函数作用域中的变量的函数，也就是能够读取其他函数内部变量的函数。
+
+使用闭包应该注意什么？
+
+1. 代码难以维护：闭包内部是可以访问上级作用域，改变上级作用域的私有变量，使用一定要小心，不要随便改变上级作用域私有变量的值。
+2. 内存泄漏：由于闭包会使得函数中的变量都保存在内存中，内存消耗很大，所以不能滥用闭包，不再用到的内存，没有及时释放，易造成内存泄漏。
+3. this 指向：闭包的 this 指向的是 window。
+
+闭包应用场景：回调、IIFE、函数防抖、节流、柯里化、模块化。
 
 ## 080 wait 同步执行
 
@@ -2137,3 +2160,328 @@ const normalize = (str) => {
   return result
 }
 ```
+
+## 093 实现一个批量请求函数 multiRequest(urls, maxNum)
+
+要求如下：
+
+1. 要求最大并发数 maxNum
+2. 每当有一个请求返回，就留下一个空位，可以增加新的请求
+3. 所有请求完成后，结果按照 urls 里面的顺序依次打出
+
+```js
+function multiRequest(urls, maxNum) {
+  const ret = []
+  let i = 0
+  let resolve
+  const promise = new Promise((r) => (resolve = r)) // resolve 赋值
+  const addTask = () => {
+    if (i >= urls.length) {
+      // 全部任务结束
+      return resolve()
+    }
+
+    const task = request(urls[i++]).finally(() => {
+      addTask() // 如果有任务结束，则添加新任务
+    })
+    ret.push(task)
+  }
+
+  while (i < maxNum) {
+    addTask() // 初始时添加任务至最大并发数
+  }
+
+  return promise.then(() => Promise.all(ret))
+}
+
+// 模拟请求
+function request(url) {
+  return new Promise((r) => {
+    const time = Math.random() * 1000
+    setTimeout(() => r(url), time)
+  })
+}
+```
+
+## 094 弹性盒子中 flex: 0 1 auto 表示什么意思？并求 left、right 盒子宽度？
+
+三个参数分别对应的是 flex-grow, flex-shrink 和 flex-basis，默认值为 0 1 auto。
+
+1. flex-grow 属性定义项目的放大比例，默认为 0，即如果存在剩余空间，也不放大。
+2. flex-shrink 属性定义了项目的缩小比例，默认为 1，即如果空间不足，该项目将缩小。
+3. flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。
+
+问题一，考察 flex-shrink：求最终 left、right 的宽度
+
+```html
+<div class="container">
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 600px;
+    height: 300px;
+    display: flex;
+  }
+  .left {
+    flex: 1 2 500px;
+    background: red;
+  }
+  .right {
+    flex: 2 1 400px;
+    background: blue;
+  }
+</style>
+```
+
+对应题目：
+
+- 子项溢出空间的宽度为：`500 + 400 - 600 = 300`
+- left 收缩比例：`(500 * 2) / (500 * 2 + 400 * 1) = 0.7143`
+- right 收缩比例：`(400 * 1) / (500 * 2 + 400 * 1) = 0.2857`
+
+对应的：
+
+- left 收缩宽度：`0.7143 * 300 = 214.29`
+- right 收缩宽度：`0.2857 * 300 = 85.71`
+
+所以：
+
+- left 最终宽度：`500 - 214.29 = 285.71`
+- right 最终宽度：`400 - 85.71 = 314.29`
+
+问题二，考察 flex-grow left、right 的宽度
+
+```html
+<div class="container">
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    width: 600px;
+    height: 300px;
+    display: flex;
+  }
+  .left {
+    flex: 1 2 300px;
+    background: red;
+  }
+  .right {
+    flex: 2 1 200px;
+    background: blue;
+  }
+</style>
+```
+
+剩余的空间：`600 - (300 + 200) = 100`
+子元素的 flex-grow 的值分别为 1 和 2，剩余空间用 3 等分来分：`100 / 3 = 33.3333333`
+
+所以：
+
+- left 最终宽度：`300 + 1 * 33.33 = 333.33`
+- right 最终宽度：`200 + 2 * 33.33 = 266.67`
+
+## 095 模拟实现 Array.prototype.splice
+
+有几点需要注意的：
+
+1. 第一个参数，开始下标
+2. 第二个参数，删除个数
+3. 从第三个开始往后都是插入的数据
+4. 操作的都是原数组，也就是改变的是原数组
+5. 返回一个被删除的数据的新数组
+
+```js
+Array.prototype._splice = function (start, deleteCount, ...addList) {
+  if (start < 0) {
+    if (Math.abs(start) > this.length) {
+      start = 0
+    } else {
+      start += this.length
+    }
+  }
+
+  if (typeof deleteCount === 'undefined') {
+    deleteCount = this.length - start
+  }
+
+  const removeList = this.slice(start, start + deleteCount)
+
+  const right = this.slice(start + deleteCount)
+
+  let addIndex = start
+  addList.concat(right).forEach((item) => {
+    this[addIndex] = item
+    addIndex++
+  })
+  this.length = addIndex
+
+  return removeList
+}
+```
+
+## 096 实现 Promise.retry，成功后 resolve 结果，失败后重试，尝试超过一定次数才真正的 reject
+
+```js
+Promise.retry = function (fn, times = 3) {
+  return new Promise(async (resolve, reject) => {
+    while (times--) {
+      try {
+        const ret = await fn()
+        resolve(ret)
+        break
+      } catch (error) {
+        if (!times) reject(error)
+      }
+    }
+  })
+}
+function request() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => (Math.random() > 0.9 ? resolve(n) : reject(n)), 1000)
+  })
+}
+Promise.retry(request)
+```
+
+## 097 循环异步串行
+
+输出以下代码运行结果，为什么？如果希望每隔 1s 输出一个结果，应该如何改造？注意不可改动 square 方法？
+
+```js
+const list = [1, 2, 3]
+const square = (num) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(num * num)
+    }, 1000)
+  })
+}
+
+function test() {
+  list.forEach(async (x) => {
+    const res = await square(x)
+    console.log(res)
+  })
+}
+test()
+```
+
+forEach 是不能阻塞的，默认是请求并行发起，所以是同时输出 1、4、9。
+
+串行解决方案：
+
+```js
+async function test() {
+  for (let i = 0; i < list.length; i++) {
+    let x = list[i]
+    const res = await square(x)
+    console.log(res)
+  }
+}
+```
+
+当然，也可以用 for of 语法，就是帅：
+
+```js
+async function test() {
+  for (let x of list) {
+    const res = await square(x)
+    console.log(res)
+  }
+}
+```
+
+还有一个更硬核点的，也是 axios 源码里所用到的，利用 promise 本身的链式调用来实现串行。
+
+```js
+let promise = Promise.resolve()
+function test(i = 0) {
+  if (i === list.length) return
+  promise = promise.then(() => square(list[i]))
+  test(i + 1)
+}
+test()
+```
+
+## 098 数组非零非负最小值 index
+
+[10,21,0,-7,35,7,9,23,18] 输出 5， 因为 7 最小。
+
+```js
+const minIndex = (arr) => arr.reduce((num, v, i) => (v > 0 && v < arr[num] ? i : num), 0)
+```
+
+## 099 实现对象的 Map 函数类似 Array.prototype.map
+
+```js
+Object.prototype.map = function (handleFn, thisValue) {
+  const obj = this
+  let res = {}
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      // 三个参数，当前值，可选的索引值，可选的当前对象
+      res[prop] = handleFn.call(thisValue, obj[prop], prop, obj)
+    }
+  }
+  return res
+}
+```
+
+## 100 异步输出
+
+```js
+var date = new Date()
+
+console.log(1, new Date() - date)
+
+setTimeout(() => {
+  console.log(2, new Date() - date)
+}, 500)
+
+Promise.resolve().then(console.log(3, new Date() - date))
+
+while (new Date() - date < 1000) {}
+
+console.log(4, new Date() - date)
+```
+
+解析：
+
+- 首先执行同步代码，输出 1 0
+- 遇到 setTimeout，定时 500ms 后执行，此时将 setTimeout 交给异步线程，主线程继续执行下一步，异步线程执行 setTimeout
+- 主线程执行 `Promise.resolve().then`，**`.then` 的参数不是函数，直接执行 (value => value)**，输出 3 1
+- 主线程继续执行同步任务 whlie ，等待 1000ms，在此期间，setTimeout 定时 500ms 完成，异步线程将 setTimeout 回调事件放入宏任务队列中
+- 继续执行下一步，输出 4 1000
+- 检查微任务队列，为空
+- 检查宏任务队列，执行 setTimeout 宏任务，输入 2 1000
+
+总结：
+
+- Promise 构造函数是同步执行的，then 方法是异步执行的
+- **`.then` 或者 `.catch` 的参数期望是函数，传入非函数则会直接执行**
+- Promise 的状态一经改变就不能再改变，构造函数中的 resolve 或 reject 只有第一次执行有效，多次调用没有任何作用
+- `.then` 方法是能接收两个参数的，第一个是处理成功的函数，第二个是处理失败的函数，再某些时候你可以认为 `.catch` 是 `.then` 第二个参数的简便写法
+- 当遇到 `promise.then` 时， 如果当前的 Promise 还处于 pending 状态，我们并不能确定调用 resolved 还是 rejected，只有等待 promise 的状态确定后，再做处理，所以我们需要把我们的两种情况的处理逻辑做成 callback 放入 promise 的回调数组内，当 promise 状态翻转为 resolved 时，才将之前的 `promise.then` 推入微任务队列
+
+## 101 require 和 import 的区别？
+
+- import 是 es6 的一个语法标准，require 是 AMD 规范引入方式。
+- import 在代码编译时被加载，所以必须放在文件开头，require 在代码运行时被加载，所以 require 理论上可以运用在代码的任何地方，所以 import 性能更好。
+- import 引入的对象被修改时，源对象也会被修改，相当于浅拷贝，require 引入的对象被修改时，源对象不会被修改，官网称值拷贝，可以理解为深拷贝。
+- import 有利于 tree-shaking（移除 JavaScript 上下文中未引用的代码），require 对 tree-shaking 不友好。
+- import 会触发代码分割（把代码分离到不同的 bundle 中，然后可以按需加载或者并行加载这些文件），require 不会触发。
+
+目前所有的引擎都还没有实现 import，import 最终都会被转码为 require，在 webpack 打包中，import 和 require 都会变为*webpack_require*。
