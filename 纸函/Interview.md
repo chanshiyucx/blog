@@ -178,14 +178,9 @@ HTTPS 中间人攻击：
 2. 对于固定的非响应式的数据，Object.freeze 冻结对象
 3. 利用服务器渲染 SSR，在服务端渲染组件
 
-## 013 Redux 和 Vuex 的设计思想
-
-共同点：首先两者都是处理全局状态的工具库，大致实现思想都是：全局 state 保存状态 --> dispatch(action) --> reducer(vuex 里的 mutation) --> 生成 newState，整个状态为同步操作。
-区别：最大的区别在于处理异步的不同，vuex 里面多了一步 commit 操作，在 action 之后 commit(mutation) 之前处理异步，而 redux 里面则是通过中间件处理
-
 ## 014 ES5/ES6 的继承除了写法以外还有什么区别？
 
-1. class 声明会提升，但不会初始化赋值。Foo 进入暂时性死区，类似于 let、const 声明变量。
+- class 声明会提升，但不会初始化赋值。类似于 let、const 声明变量有暂时性死区。
 
 ```js
 const bar = new Bar() // it's ok
@@ -201,7 +196,7 @@ class Foo {
 }
 ```
 
-2. class 声明内部会启用严格模式。
+- class 声明内部会启用严格模式。
 
 ```js
 // 引用一个未声明的变量
@@ -218,7 +213,7 @@ class Foo {
 const foo = new Foo()
 ```
 
-3. class 的所有方法（包括静态方法和实例方法）都是不可枚举的。
+- class 的所有方法（包括静态方法和实例方法）都是不可枚举的。
 
 ```js
 // 引用一个未声明的变量
@@ -249,7 +244,7 @@ const fooKeys = Object.keys(Foo) // []
 const fooProtoKeys = Object.keys(Foo.prototype) // []
 ```
 
-4. class 的所有方法（包括静态方法和实例方法）都没有原型对象 prototype，所以也没有[[construct]]，不能使用 new 来调用。
+- class 的所有方法（包括静态方法和实例方法）都没有原型对象 prototype，不能使用 new 来调用。
 
 ```js
 function Bar() {
@@ -274,7 +269,7 @@ const foo = new Foo()
 const fooPrint = new foo.print() // TypeError: foo.print is not a constructor
 ```
 
-5. 必须使用 new 调用 class。
+- 必须使用 new 调用 class。
 
 ```js
 function Bar() {
@@ -290,7 +285,7 @@ class Foo {
 const foo = Foo() // TypeError: Class constructor Foo cannot be invoked without 'new'
 ```
 
-6. class 内部无法重写类名。
+- class 内部无法重写类名。
 
 ```js
 function Bar() {
@@ -383,51 +378,34 @@ if (!Array.isArray) {
 
 ## 016 介绍下重绘和回流（Repaint & Reflow），以及如何进行优化
 
-1. 浏览器渲染机制
+浏览器渲染机制
 
-浏览器采用流式布局模型（Flow Based Layout）。浏览器会把 HTML 解析成 DOM，把 CSS 解析成 CSSOM，DOM 和 CSSOM 合并就产生了渲染树（Render Tree）。有了 RenderTree，我们就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制到页面上。
+浏览器采用流式布局模型。浏览器会把 HTML 解析成 DOM，把 CSS 解析成 CSSOM，DOM 和 CSSOM 合并就产生了渲染树（Render Tree）。有了 RenderTree，就知道了所有节点的样式，然后计算他们在页面上的大小和位置，最后把节点绘制到页面上。
 
-由于浏览器使用流式布局，对 Render Tree 的计算通常只需要遍历一次就可以完成，但 table 及其内部元素除外，他们可能需要多次计算，通常要花 3 倍于同等元素的时间，这也是为什么要避免使用 table 布局的原因之一。
+重绘
 
-2. 重绘
+由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，称为重绘，例如 outline、visibility、color、background-color 等，重绘的代价是高昂的，因为浏览器必须验证 DOM 树上其他节点元素的可见性。
 
-由于节点的几何属性发生改变或者由于样式发生改变而不会影响布局的，称为重绘，例如 outline, visibility, color、background-color 等，重绘的代价是高昂的，因为浏览器必须验证 DOM 树上其他节点元素的可见性。
-
-3. 回流
+回流
 
 回流是布局或者几何属性需要改变就称为回流。回流是影响浏览器性能的关键因素，因为其变化涉及到页面的布局更新。一个元素的回流可能会导致了其所有子元素以及 DOM 中紧随其后的节点、祖先节点元素的回流。
 
 **回流必定会发生重绘，重绘不一定会引发回流。**
 
-4. 浏览器优化
-
-现代浏览器大多都是通过队列机制来批量更新布局，浏览器会把修改操作放在队列中，至少一个浏览器刷新（即 16.6ms）才会清空队列，但当你获取布局信息的时候，队列中可能有会影响这些属性或方法返回值的操作，即使没有，浏览器也会强制清空队列，触发回流与重绘来确保返回正确的值。
-
-主要包括以下属性或方法：
-
-offsetTop、offsetLeft、offsetWidth、offsetHeight
-scrollTop、scrollLeft、scrollWidth、scrollHeight
-clientTop、clientLeft、clientWidth、clientHeight
-width、height
-getComputedStyle()
-getBoundingClientRect()
-
-所以，我们应该避免频繁的使用上述的属性，他们都会强制渲染刷新队列。
-
-5. 减少重绘与回流
+减少重绘与回流方式
 
 CSS
 
 1. 使用 transform 替代 top
-2. 使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局
+2. 使用 visibility 替换 display: none，因为前者只会引起重绘，后者会引发回流（改变了布局）
 3. 避免使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局。
 4. 尽可能在 DOM 树的最末端改变 class，回流是不可避免的，但可以减少其影响。尽可能在 DOM 树的最末端改变 class，可以限制了回流的范围，使其影响尽可能少的节点。
 5. 避免设置多层内联样式，CSS 选择符从右往左匹配查找，避免节点层级过多。
 6. 应该尽可能的避免写过于具体的 CSS 选择器，然后对于 HTML 来说也尽量少的添加无意义标签，保证层级扁平。
-7. 将动画效果应用到 position 属性为 absolute 或 fixed 的元素上，避免影响其他元素的布局，这样只是一个重绘，而不是回流，同时，控制动画速度可以选择 requestAnimationFrame
+7. 将动画效果应用到 position 属性为 absolute 或 fixed 的元素上，避免影响其他元素的布局，这样只是一个重绘，而不是回流，同时控制动画速度可以选择 requestAnimationFrame。
 8. 避免使用 CSS 表达式，可能会引发回流。
 9. 将频繁重绘或者回流的节点设置为图层，图层能够阻止该节点的渲染行为影响别的节点，例如 will-change、video、iframe 等标签，浏览器会自动将该节点变为图层。
-10. CSS3 硬件加速（GPU 加速），使用 css3 硬件加速，可以让 transform、opacity、filters 这些动画不会引起回流重绘 。但是对于动画的其它属性，比如 background-color 这些，还是会引起回流重绘的，不过它还是可以提升这些动画的性能。
+10. CSS3 硬件加速（GPU 加速），使用 css3 硬件加速，可以让 transform、opacity、filters 这些动画不会引起回流重绘。但是对于动画的其它属性，比如 background-color 这些，还是会引起回流重绘的，不过它还是可以提升这些动画的性能。
 
 JavaScript
 
@@ -435,17 +413,6 @@ JavaScript
 2. 避免频繁操作 DOM，创建一个 documentFragment，在它上面应用所有 DOM 操作，最后再把它添加到文档中。
 3. 避免频繁读取会引发回流/重绘的属性，如果确实需要多次使用，就用一个变量缓存起来。
 4. 对具有复杂动画的元素使用绝对定位，使它脱离文档流，否则会引起父元素及后续元素频繁回流。
-
-## 017 观察者模式和订阅-发布模式的区别，各自适用于什么场景
-
-观察者模式中主体和观察者是互相感知的，发布-订阅模式是借助第三方来实现调度的，发布者和订阅者之间互不感知。
-区别：
-
-- 观察者模式里，只有两个角色 —— 观察者 + 被观察者
-- 发布订阅模式里，却不仅仅只有发布者和订阅者两个角色，还有一个管理并执行消息队列的“经纪人 Broker”
-
-观察者和被观察者，是松耦合的关系，发布者和订阅者，则完全不存在耦合。
-可以理解为观察者模式没中间商赚差价，发布订阅模式有中间商赚差价。
 
 ## 018 cookie 和 token 都存放在 header 中，为什么不会劫持 token？
 
