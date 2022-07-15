@@ -156,7 +156,7 @@ HTTPS 握手过程：
 1. 客户端使用 https 的 url 访问 web 服务器，要求与服务器建立 ssl 连接
 2. web 服务器收到客户端请求后, 会将网站的证书（包含公钥）传送一份给客户端
 3. 客户端收到网站证书后会检查证书的颁发机构以及过期时间, 如果没有问题就随机产生一个秘钥
-4. 客户端利用公钥将会话秘钥加密, 并传送给服务端, 服务端利用自己的私钥解密出会话秘钥
+4. 客户端利用公钥将会话秘钥加密并传送给服务端, 服务端利用自己的私钥解密出会话秘钥
 5. 之后服务器与客户端使用秘钥加密传输
 
 HTTPS 中间人攻击：
@@ -164,9 +164,9 @@ HTTPS 中间人攻击：
 1. 服务器向客户端发送公钥。
 2. 攻击者截获公钥，保留在自己手上。
 3. 然后攻击者自己生成一个【伪造的】公钥，发给客户端。
-4. 客户端收到伪造的公钥后，生成加密 hash 值发给服务器。
-5. 攻击者获得加密 hash 值，用自己的私钥解密获得真秘钥。
-6. 同时生成假的加密 hash 值，发给服务器。
+4. 客户端收到伪造的公钥后，将密钥加密发给服务器。
+5. 攻击者获得加密密钥，用自己的私钥解密获得真秘钥。
+6. 同时生成假的加密密钥，发给服务器。
 7. 服务器用私钥解密获得假秘钥。
 8. 服务器用加秘钥加密传输信息。
 
@@ -2292,6 +2292,8 @@ function request(url) {
 - left 最终宽度：`300 + 1 * 33.33 = 333.33`
 - right 最终宽度：`200 + 2 * 33.33 = 266.67`
 
+扩展：`flex:1` 到底代表什么？ 等同于 `flex:1 1 0%`。
+
 ## 095 模拟实现 Array.prototype.splice
 
 有几点需要注意的：
@@ -2595,7 +2597,7 @@ function insertSort(arr = []) {
 }
 ```
 
-## 106 什么是媒体查询？响应式设计与自适应设计的区别？
+## 107 什么是媒体查询？响应式设计与自适应设计的区别？
 
 ### 媒体查询
 
@@ -2638,3 +2640,166 @@ function insertSort(arr = []) {
 自适应布局
 优点：对网站复杂程度兼容更大，代码更高效
 缺点：同一个网站需要为不同的设备开发不同的页面，增加的开发的成本
+
+## 108 React 什么是高阶组件？用来解决什么问题？
+
+高阶组件（HOC）是参数为组件，返回值为新组件的函数，即高阶组件是将组件转换为另一个组件。
+
+```js
+const EnhancedComponent = higherOrderComponent(WrappedComponent)
+```
+
+高阶作用用于强化组件，复用逻辑，提升渲染性能等作用。高阶组件的应用场景：
+
+1. 复用逻辑：高阶组件更像是一个加工组件的工厂，批量对原有组件进行加工，包装处理。可以根据业务需求定制化专属的 HOC，这样可以解决复用逻辑。
+2. 强化 props：高阶组件返回的组件，可以劫持上一层传过来的 props，然后混入新的 props，来增强组件的功能。代表作 react-router 中的 withRouter。
+3. 赋能组件：可以给被 HOC 包裹的业务组件，提供一些拓展功能，比如说额外的生命周期，额外的事件。
+4. 控制渲染：劫持渲染是 HOC 一个特性，在 wrapComponent 包装组件中，可以对原来的组件，进行条件渲染，节流渲染，懒加载等功能，典型代表 react-redux 中 connect 和 dva 中 dynamic 组件懒加载。
+
+## 109 React Hooks 解决了什么问题？
+
+Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
+
+引入 Hook 的原因：
+
+- 难以重用和共享组件中的与状态相关的逻辑
+- 逻辑复杂的组件难以开发与维护，当组件需要处理多个互不相关的 local state 时，每个生命周期函数中可能会包含着各种互不相关的逻辑在里面
+- 类组件中的 this 增加学习成本，类组件在基于现有工具的优化上存在些许问题
+- 由于业务变动，函数组件不得不改为类组件等等
+
+Hook 解决什么问题：
+
+- 每调用 useHook 一次都会生成一份独立的状态
+- 通过自定义 Hook 能够更好的封装我们的功能
+
+Hook 为函数式编程，每个功能都包裹在函数中，整体风格更清爽，更优雅。Hook 的出现，使函数组件的功能得到了扩充，拥有了类组件相似的功能，在我们日常使用中优先考虑 Hook。
+
+基础 Hook：`useState`、`useEffect`、`useContext`
+额外的 Hook：`useReducer`、`useCallback`、`useMemo`、`useRef`、`useLayoutEffect`
+
+Hook 与 Class 组件的区别：
+
+1. 写法更加的简洁
+2. 业务代码更加聚合：使用 Class 组件经常会出现一个功能出现在两个生命周期函数内的情况，这样分开写有时候可能会忘记。
+3. 逻辑复用方便：Class 组件的逻辑复用通常用 render props 以及 HOC 两种方式。Hook 提供了自定义 Hook 来复用逻辑。
+
+## 110 改变 this 的指向的方法以及区别？
+
+三种方式：call、apply、bind
+
+call 与 apply 的区别：接收的参数不同，call 和 apply 第一个参数都是函数运行的作用域 this，call 方法后续传参逐个列举，apply 方法第二个是参数数组。
+
+bind 与 call 和 apply 的区别：bind 的返回值是一个函数，而 call 和 apply 是立即调用。
+
+## 111 获取路由参数对象
+
+```js
+function getQuery(url) {
+  const obj = {}
+  const search = url.split('?')[1]
+  if (!search) return obj
+  const arr = search.split('&')
+  for (item of arr) {
+    const keyValue = item.split('=')
+    obj[keyValue[0]] = keyValue[1]
+  }
+  return obj
+}
+
+getQuery('https://www.jianshu.com/u/98ab8b7e6c50?name=shaonian&age=18&sex=man')
+// {name: 'shaonian', age: '18', sex: 'man'}
+```
+
+## 112 如何实现懒加载？
+
+路由懒加载：对于 React/Vue 这类 SPA（单页应用程序）来说，当打包构建应用时，JS 包会变得非常大，影响页面加载。路由懒加载能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就会更加高效。
+
+Vue 路由懒加载的实现：
+
+对于 Vue 来说，Vue Router 支持动态导入，可以用动态导入代替静态导入。
+
+```js
+// import UserDetails from './views/UserDetails'
+// 替换成
+const UserDetails = () => import('./views/UserDetails')
+```
+
+把组件按组分块，有时候想把某个路由下的所有组件都打包在同个异步块（chunk）中。只需要使用命名 chunk，一个特殊的注释语法来提供 chunk name (需要 Webpack > 2.4)，webpack 会将任何一个异步模块与相同的块名称组合到相同的异步块中。
+
+```js
+const UserDetails = () => import(/* webpackChunkName: "group-user" */ './UserDetails.vue')
+const UserDashboard = () => import(/* webpackChunkName: "group-user" */ './UserDashboard.vue')
+const UserProfileEdit = () => import(/* webpackChunkName: "group-user" */ './UserProfileEdit.vue')
+```
+
+React 实现路由懒加载：
+
+- 通过 `React.lzay() + Suspense` 实现组件的动态加载
+- `import()` 拆包
+
+## 113 Hook 实现节流防抖
+
+```js
+import { useEffect, useState, useCallback, useRef } from "react";
+
+export default function useThrottle(fn, delay) {
+  const timer = useRef(-1);
+  const throttle = useCallback(() => {
+    if (timer.current > -1) {
+      return;
+    }
+    timer.current = setTimeout(() => {
+      fn();
+      timer.current = -1;
+      clearTimeout(timer.current);
+    }, delay);
+  }, [fn, delay]);
+  return throttle;
+}
+
+export default function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  return debouncedValue;
+}
+```
+
+## 114 从 URL 输入到页面展现到底发生什么？
+
+1. DNS 解析：将域名解析成 IP 地址
+2. TCP 连接：TCP 三次握手
+3. 发送 HTTP 请求
+4. 服务器处理请求并返回 HTTP 报文
+5. 浏览器解析渲染页面
+6. 断开连接：TCP 四次挥手
+
+## 115 Vue 组件之间有哪几种通信方式？
+
+- 父子通信：父向子传递数据是通过 props，子向父是通过 $emit；通过 $parent / $children 通信；$ref 也可以访问组件实例；provide/inject；$attrs/$listeners；
+- 兄弟通信：Event Bus、Vuex
+- 跨级通信：Event Bus、Vuex；provide/inject ; $attrs/$listeners；
+
+## 116 React 组件之间有哪几种通信方式？
+
+- 父组件向子组件通信，通过 props 方式传递数据；也可以通过 ref 方式传递数据；
+- 子组件向父组件通信，通过回调函数方式传递数据；
+- 父组件向后代所有组件传递数据，如果组件层级过多，通过 props 的方式传递数据很繁琐，可以通过 Context.Provider 的方式；
+
+## 107 HTTP 常见状态码
+
+HTTP 状态码共分为 5 种类型：
+
+| 分类  | 分类描述                                       |
+| ----- | ---------------------------------------------- |
+| `1**` | 信息，服务器收到请求，需要请求者继续执行操作   |
+| `2**` | 成功，操作被成功接收并处理                     |
+| `3**` | 重定向，需要进一步的操作以完成请求             |
+| `4**` | 客户端错误，请求包含语法错误或无法完成请求     |
+| `5**` | 服务器错误，服务器在处理请求的过程中发生了错误 |
