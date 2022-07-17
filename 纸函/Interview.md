@@ -122,7 +122,7 @@ Array.from(new Set(arr.flat(Infinity))).sort((a, b) => {
 })
 ```
 
-## 008 简单讲解一下 http2 的多路复用
+## 008 简单讲解一下 Http2 的多路复用
 
 在 HTTP/1 中，每次请求都会建立一次 HTTP 连接，即 3 次握手 4 次挥手，这个过程在一次请求过程中占用了相当长的时间，即使开启了 Keep-Alive，解决了多次连接的问题，但是依然有两个效率上的问题：
 
@@ -171,6 +171,11 @@ HTTPS 中间人攻击：
 8. 服务器用加秘钥加密传输信息。
 
 防范方法：服务端在发送浏览器的公钥中加入 CA 证书，浏览器可以验证 CA 证书的有效性
+
+## Http 与 Https 有什么区别？
+
+Http：超文本传输协议，明文传输，数据未加密，安全性较差，用的是 80 端口
+Https：安全套接字超文本传输协议，有 ssl/tsl 证书，数据传输过程是加密，安全性较好，用的 443 端口，而且要比较 Http 更耗费服务器资源
 
 ## 011 Vue 渲染大量数据时应该怎么优化？
 
@@ -418,6 +423,16 @@ JavaScript
 - opacity: 0 重建图层，性能较高
 - display: none 会造成回流，性能开销较大，回流可能会重新计算其所有子元素以及紧随其后的节点、祖先节点元素的位置、属性
 - visibility: hidden 会造成重绘，比回流性能高一些
+
+## 016 什么是同源策略？如何解决跨域？
+
+所谓同源是指"协议+域名+端口"三者相同。
+
+解决跨域的方式：
+
+1. CORS（跨域资源共享）
+2. Nginx 反向代理
+3. JSONP：JSONP 主要就是利用了 script 标签没有跨域限制的这个特性来完成的，仅支持 GET 方法。
 
 ## 018 cookie 和 token 都存放在 header 中，为什么不会劫持 token？
 
@@ -2626,61 +2641,7 @@ Hook 与 Class 组件的区别：
 2. 业务代码更加聚合：使用 Class 组件经常会出现一个功能出现在两个生命周期函数内的情况，这样分开写有时候可能会忘记。
 3. 逻辑复用方便：Class 组件的逻辑复用通常用 render props 以及 HOC 两种方式。Hook 提供了自定义 Hook 来复用逻辑。
 
-## 110 改变 this 的指向的方法以及区别？
-
-三种方式：call、apply、bind
-
-call 与 apply 的区别：接收的参数不同，call 和 apply 第一个参数都是函数运行的作用域 this，call 方法后续传参逐个列举，apply 方法第二个是参数数组。
-
-bind 与 call 和 apply 的区别：bind 的返回值是一个函数，而 call 和 apply 是立即调用。
-
-## 111 获取路由参数对象
-
-```js
-function getQuery(url) {
-  const obj = {}
-  const search = url.split('?')[1]
-  if (!search) return obj
-  const arr = search.split('&')
-  for (item of arr) {
-    const keyValue = item.split('=')
-    obj[keyValue[0]] = keyValue[1]
-  }
-  return obj
-}
-
-getQuery('https://www.jianshu.com/u/98ab8b7e6c50?name=shaonian&age=18&sex=man')
-// {name: 'shaonian', age: '18', sex: 'man'}
-```
-
-## 112 如何实现懒加载？
-
-路由懒加载：对于 React/Vue 这类 SPA（单页应用程序）来说，当打包构建应用时，JS 包会变得非常大，影响页面加载。路由懒加载能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就会更加高效。
-
-Vue 路由懒加载的实现：
-
-对于 Vue 来说，Vue Router 支持动态导入，可以用动态导入代替静态导入。
-
-```js
-// import UserDetails from './views/UserDetails'
-// 替换成
-const UserDetails = () => import('./views/UserDetails')
-```
-
-把组件按组分块，有时候想把某个路由下的所有组件都打包在同个异步块（chunk）中。只需要使用命名 chunk，一个特殊的注释语法来提供 chunk name (需要 Webpack > 2.4)，webpack 会将任何一个异步模块与相同的块名称组合到相同的异步块中。
-
-```js
-const UserDetails = () => import(/* webpackChunkName: "group-user" */ './UserDetails.vue')
-const UserDashboard = () => import(/* webpackChunkName: "group-user" */ './UserDashboard.vue')
-const UserProfileEdit = () => import(/* webpackChunkName: "group-user" */ './UserProfileEdit.vue')
-```
-
-React 实现路由懒加载：
-
-- 通过 `React.lzay() + Suspense` 实现组件的动态加载
-- `import()` 拆包
-
-## 113 Hook 实现节流防抖
+## 110 Hook 实现节流防抖
 
 ```js
 import { useEffect, useState, useCallback, useRef } from "react";
@@ -2714,6 +2675,60 @@ export default function useDebounce(value, delay) {
 }
 ```
 
+## 111 改变 this 的指向的方法以及区别？
+
+三种方式：call、apply、bind
+
+call 与 apply 的区别：接收的参数不同，call 和 apply 第一个参数都是函数运行的作用域 this，call 方法后续传参逐个列举，apply 方法第二个是参数数组。
+
+bind 与 call 和 apply 的区别：bind 的返回值是一个函数，而 call 和 apply 是立即调用。
+
+## 112 获取路由参数对象
+
+```js
+function getQuery(url) {
+  const obj = {}
+  const search = url.split('?')[1]
+  if (!search) return obj
+  const arr = search.split('&')
+  for (item of arr) {
+    const keyValue = item.split('=')
+    obj[keyValue[0]] = keyValue[1]
+  }
+  return obj
+}
+
+getQuery('https://www.jianshu.com/u/98ab8b7e6c50?name=shaonian&age=18&sex=man')
+// {name: 'shaonian', age: '18', sex: 'man'}
+```
+
+## 113 如何实现懒加载？
+
+路由懒加载：对于 React/Vue 这类 SPA（单页应用程序）来说，当打包构建应用时，JS 包会变得非常大，影响页面加载。路由懒加载能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就会更加高效。
+
+Vue 路由懒加载的实现：
+
+对于 Vue 来说，Vue Router 支持动态导入，可以用动态导入代替静态导入。
+
+```js
+// import UserDetails from './views/UserDetails'
+// 替换成
+const UserDetails = () => import('./views/UserDetails')
+```
+
+把组件按组分块，有时候想把某个路由下的所有组件都打包在同个异步块（chunk）中。只需要使用命名 chunk，一个特殊的注释语法来提供 chunk name (需要 Webpack > 2.4)，webpack 会将任何一个异步模块与相同的块名称组合到相同的异步块中。
+
+```js
+const UserDetails = () => import(/* webpackChunkName: "group-user" */ './UserDetails.vue')
+const UserDashboard = () => import(/* webpackChunkName: "group-user" */ './UserDashboard.vue')
+const UserProfileEdit = () => import(/* webpackChunkName: "group-user" */ './UserProfileEdit.vue')
+```
+
+React 实现路由懒加载：
+
+- 通过 `React.lzay() + Suspense` 实现组件的动态加载
+- `import()` 拆包
+
 ## 114 从 URL 输入到页面展现到底发生什么？
 
 1. DNS 解析：将域名解析成 IP 地址
@@ -2735,7 +2750,7 @@ export default function useDebounce(value, delay) {
 - 子组件向父组件通信，通过回调函数方式传递数据；
 - 父组件向后代所有组件传递数据，如果组件层级过多，通过 props 的方式传递数据很繁琐，可以通过 Context.Provider 的方式；
 
-## 107 HTTP 常见状态码
+## 117 HTTP 常见状态码
 
 HTTP 状态码共分为 5 种类型：
 
@@ -2746,3 +2761,111 @@ HTTP 状态码共分为 5 种类型：
 | `3**` | 重定向，需要进一步的操作以完成请求             |
 | `4**` | 客户端错误，请求包含语法错误或无法完成请求     |
 | `5**` | 服务器错误，服务器在处理请求的过程中发生了错误 |
+
+## 118 如何实现浏览器多标签页之间通信？
+
+1. localStorage 实现通信
+
+```js
+window.addEventListener('storage', (e) => {
+  console.info('localStorage发生变化：', e)
+})
+```
+
+2. websocket
+
+原理比较简单，假如 pageA 和 pageB 都与服务器建立了 websocket 连接，那么两个页面都可以实时接收服务端发来的消息，也可以实时向服务端发送消息。如果 pageA 更改了数据，那么向服务端发送一条消息，服务端再将这条消息发送给 pageB 即可，这样就简单实现了两个标签页之间的通信。
+
+3. SharedWorker
+
+sharedWorker 就是 webWorker 中的一种，它可以由所有同源页面共享，利用这个特性，就可以使用它来进行多标签页之前的通信。
+
+它和 webSocket 实现多页面通讯的原理很类似，都是发送数据和接收数据这样的步骤，shardWorker 就好比的 webSocket 服务器。
+
+```js
+// worker.js
+const set = new Set()
+onconnect = (event) => {
+  const port = event.ports[0]
+  set.add(port)
+
+  // 接收信息
+  port.onmessage = (e) => {
+    // 广播信息
+    set.forEach((p) => {
+      p.postMessage(e.data)
+    })
+  }
+
+  // 发送信息
+  port.postMessage('worker广播信息')
+}
+
+// pageA
+const worker = new SharedWorker('./worker.js')
+worker.port.onmessage = (e) => {
+  console.info('pageA收到消息', e.data)
+}
+
+// pageB
+const worker = new SharedWorker('./worker.js')
+worker.port.postMessage(`客户端B发送的消息:HELLO`)
+```
+
+4. cookie + setInterval
+
+原理是在需要接收消息的页面不断轮询去查询 cookie，然后发送消息的页面将数据存储在 cookie 中，这样就实现了简单的数据共享。
+
+```js
+setInterval(() => {
+  //加入定时器，让函数每一秒就调用一次，实现页面刷新
+  console.log('cookie', document.cookie)
+}, 1000)
+```
+
+## 119 常用操作 dom 方法有哪些？
+
+`getetElementById`、`getElementsByClassName`、`getElementsByTagName`、`getElementsByName`、`querySelector`、`querySelectorAll`、`getAttribute`、`setAttribute`
+
+## 120 事件代理的原理以及优缺点是什么？
+
+原理：利用事件冒泡机制
+优点：
+
+1. 可以大量节省内存占用，减少事件注册
+2. 可以实现当新增子对象时，无需再对其进行事件绑定，对于动态内容部分尤为适合
+
+缺点：
+
+1. 事件委托的实现依靠的冒泡，因此不支持事件冒泡的事件就不适合使用事件委托
+2. 不是所有的事件绑定都适合使用事件委托，不恰当使用反而可能导致不需要绑定事件的元素也被绑定上了事件
+
+## 121 TCP/IP 协议体系结构四层分别是什么?
+
+四层：应用层、传输层、网络层、数据链路层。
+
+HTTP、TCP、IP 分别在应用层、传输层、网络层。
+
+## 122 Event Loop 概述？
+
+Event Loop 即事件循环，是指浏览器或 Node 的一种解决 JS 单线程运行时不会阻塞的一种机制，也就是我们经常使用异步的原理。
+
+在 JS 中，任务被分为两种，一种宏任务（MacroTask），一种叫微任务（MicroTask）。
+
+MacroTask（宏任务）：setTimeout、setInterval、setImmediate、I/O、UI Rendering。
+MicroTask（微任务）：Promise、MutationObserver、Process.nextTick（Node 独有）
+
+JS 有一个主线程和调用栈，所有的任务都会被放到调用栈等待主线程执行。
+
+JS 调用栈采用的是后进先出的规则，当函数执行的时候，会被添加到栈的顶部，当执行栈执行完成后，就会从栈顶移出，直到栈内被清空。
+
+JS 单线程任务被分为同步任务和异步任务，同步任务会在调用栈中按照顺序等待主线程依次执行，异步任务会在异步任务有了结果后，将注册的回调函数放入任务队列中等待主线程空闲的时，即调用栈被清空，被读取到栈内等待主线程的执行。
+
+当前调用栈执行完毕时会立刻先处理所有微任务队列中的事件，然后再处理宏任务队列中的事件。同一次事件循环中，微任务永远在宏任务之前执行。
+
+## 123 如何提高首屏加载速度？
+
+1. 对代码进行压缩，减小代码体积
+2. 路由懒加载
+3. 第三方库由 CDN 引入，可以减小代码的体积，从而提高首屏加载速度
+4. SSR 服务器渲染
