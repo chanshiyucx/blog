@@ -2932,3 +2932,37 @@ View 改变 Model 的过程：依赖于 v-model，该语法糖实现是在单向
 1. 使用虚拟列表
 2. 对于固定的非响应式的数据，Object.freeze 冻结对象
 3. 利用服务器渲染 SSR，在服务端渲染组件
+
+## 129 JS 多少种数据类型？
+
+七种：Number、String、Boolean、Object、Null、Undefined、Symbol
+
+## 130 Symbol 使用场景？
+
+1. 消除魔法字符
+2. Symbol 值作为属性名避免被覆盖
+3. 模拟类的私有方法：ES6 中的类是没有 private 关键字来声明类的私有方法和私有变量的，但是可以利用 Symbol 的唯一性来模拟。
+
+```js
+const speak = Symbol();
+class Person {
+    [speak]() {
+        ...
+    }
+}
+```
+
+## 131 v-show 和 v-if 指令的共同点和不同点？
+
+共同点：都能控制元素的显示和隐藏
+不同点：实现本质方法不同，v-show 本质就是通过控制 css 中的 display 设置为 none，控制隐藏，只会编译一次；v-if 是动态的向 DOM 树内添加或者删除 DOM 元素，若初始值为 false ，就不会编译了，而且 v-if 不停的销毁和创建比较消耗性能。
+
+总结：如果要频繁切换某节点，使用 v-show (切换开销比较小，初始开销较大)。如果不需要频繁切换某节点使用 v-if（初始渲染开销较小，切换开销比较大）。
+
+## 132 Vue 如何让 CSS 只在当前组件中起作用？
+
+在组件中的 style 前面加上 scoped。
+
+## 133 keep-alive 的作用是什么？
+
+keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。
