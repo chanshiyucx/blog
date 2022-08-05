@@ -1999,9 +1999,9 @@ console.log(decodeData) // this is a example
 
 ## 088 Vue 中的 computed 和 watch 的区别在哪里
 
-computed：计算属性是由 data 中的已知值，得到的一个新值。这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。计算属性不在 data 中。别人变化影响我自己。
+computed：计算属性，是由 data 中的已知值，得到的一个新值。这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。计算属性不在 data 中。别人变化影响我自己。
 
-watch：监听数据的变化，监听的数据就是 data 中的已知值，我的变化影响别人。
+watch：侦听器，监听数据的变化，监听的数据就是 data 中的已知值，我的变化影响别人。
 
 1. watch 擅长处理的场景：一个数据影响多个数据
 2. computed 擅长处理的场景：一个数据受多个数据影响
@@ -2011,6 +2011,13 @@ watch：监听数据的变化，监听的数据就是 data 中的已知值，我
 - v-if 会调用 addIfCondition 方法，生成 vnode 的时候会忽略对应节点，render 的时候就不会渲染；
 - v-show 会生成 vnode，render 的时候也会渲染成真实节点，只是在 render 过程中会在节点的属性中修改 show 属性值，也就是 display；
 - v-html 会先移除节点下的所有节点，调用 html 方法，通过 addProp 添加 innerHTML 属性，归根结底还是设置 innerHTML 为 v-html 的值；
+
+## 090 v-show 和 v-if 指令的共同点和不同点？
+
+共同点：都能控制元素的显示和隐藏
+不同点：实现本质方法不同，v-show 本质就是通过控制 css 中的 display 设置为 none，控制隐藏，只会编译一次；v-if 是动态的向 DOM 树内添加或者删除 DOM 元素，若初始值为 false ，就不会编译了，而且 v-if 不停的销毁和创建比较消耗性能。
+
+总结：如果要频繁切换某节点，使用 v-show (切换开销比较小，初始开销较大)。如果不需要频繁切换某节点使用 v-if（初始渲染开销较小，切换开销比较大）。
 
 ## 090 webpack 中 loader 和 plugin 的区别是什么？
 
@@ -2952,13 +2959,6 @@ class Person {
 }
 ```
 
-## 131 v-show 和 v-if 指令的共同点和不同点？
-
-共同点：都能控制元素的显示和隐藏
-不同点：实现本质方法不同，v-show 本质就是通过控制 css 中的 display 设置为 none，控制隐藏，只会编译一次；v-if 是动态的向 DOM 树内添加或者删除 DOM 元素，若初始值为 false ，就不会编译了，而且 v-if 不停的销毁和创建比较消耗性能。
-
-总结：如果要频繁切换某节点，使用 v-show (切换开销比较小，初始开销较大)。如果不需要频繁切换某节点使用 v-if（初始渲染开销较小，切换开销比较大）。
-
 ## 132 Vue 如何让 CSS 只在当前组件中起作用？
 
 在组件中的 style 前面加上 scoped。
@@ -2966,3 +2966,96 @@ class Person {
 ## 133 keep-alive 的作用是什么？
 
 keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。
+
+## 134 vue-loader 是什么？使用它的用途有哪些？
+
+vue 文件的一个加载器，将 template/js/style 转换成 js 模块。
+用途：js 可以写 es6、 style 样式可以 scss 或 less、 template 可以加 jade 等。
+
+## 135 v-on 可以监听多个方法吗？
+
+可以，栗子：
+
+```js
+<input type="text" v-on="{ input:onInput,focus:onFocus,blur:onBlur }">
+```
+
+## 136 Vue 组件中 data 为什么必须是一个函数？
+
+在 component 中，data 必须以函数的形式存在，不可以是对象。组件中的 data 写成一个函数，数据以函数返回值的形式定义，这样每次复用组件的时候，都会返回一份新的 data，相当于每个组件实例都有自己私有的数据空间，它们只负责各自维护的数据，不会造成混乱。而单纯的写成对象形式，就是所有的组件实例共用了一个 data，这样改一个全都改了。
+
+## 137 v-if 和 v-for 的优先级？
+
+当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级，这意味着 v-if 将分别重复运行于每个 v-for 循环中。所以，不推荐 v-if 和 v-for 同时使用。如果 v-if 和 v-for 一起用的话，vue 中的的会自动提示 v-if 应该放到外层去。
+
+## 138 Vue 中注册在 router-link 上事件无效解决方法？
+
+使用 `@click.native`。原因：router-link 会阻止 click 事件，`.native` 指直接监听一个原生事件。
+
+## 139 params 和 query 的区别？
+
+用法：query 要用 path 来引入，params 要用 name 来引入，接收参数都是类似的。query 在浏览器地址栏中显示参数，params 则不显示。
+
+注意点：query 刷新不会丢失数据，params 刷新会丢失数据。
+
+## 140 vuex 有哪几种属性？
+
+五种，分别是 State、Getter、Mutation 、Action、Module
+
+state => 基本数据(数据源存放地)
+getters => 从基本数据派生出来的数据
+mutations => 提交更改数据的方法，同步！
+actions => 像一个装饰器，包裹 mutations，使之可以异步。
+modules => 模块化 Vuex
+
+## 141 什么是 MVVM？
+
+MVVM 是 Model-View-ViewModel 缩写，也就是把 MVC 中的 Controller 演变成 ViewModel。Model 层代表数据模型，View 代表 UI 组件，ViewModel 是 View 和 Model 层的桥梁，数据会绑定到 viewModel 层并自动将数据渲染到页面中，视图变化的时候会通知 viewModel 层更新数据。
+
+## 142 路由导航守卫有哪些？
+
+全局：beforeEach、beforeResolve、afterEach
+路由独享：beforeEnter
+组件内：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave
+
+## 143 Vue 事件修饰符及其作用？
+
+- `.stop`：等同于 `event.stopPropagation()`，防止事件冒泡
+- `.prevent`：等同于 `event.preventDefault()`，防止执行预设的行为
+- `.capture`：当元素发生冒泡时，先触发带有该修饰符的元素
+- `.self`：只会触发自己范围内的事件，不包含子元素
+- `.once`：只会触发一次
+
+## 144 Vue data 中某一个属性的值发生改变后，视图会立即同步执行重新渲染吗？
+
+不会立即同步执行重新渲染。Vue 采用批量异步更新策略。
+
+Vue 在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。只要观察到数据变化，就会自动开启一个队列，并缓冲在同一个事件循环中发生的所以数据改变。在缓冲时会去除重复数据，从而避免不必要的计算和 DOM 操作。
+
+## 145 Vue 页面闪烁？
+
+Vue 提供了一个 `v-cloak` 指令，该指令一直保持在元素上，直到关联实例结束编译。当和 CSS 一起使用时，这个指令可以隐藏未编译的标签，直到实例编译结束。用法如下。
+
+```html
+[v-cloak]{ display:none; }
+
+<div v-cloak>{{ title }}</div>
+```
+
+## 146 Vue 开发环境下调用接口跨域问题？
+
+需在工程目录 config/index.js 内对 proxyTable 项进行如下配置:
+
+```js
+proxyTable: {
+  '/api': {
+    target: 'http://xxxxxx.com',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': ''
+    }
+  }
+}
+```
+
+配置完成后再调接口时如：'http://xxxxxx.com/login' 可以简写成'/api/login'，本地会虚拟化一个服务器帮你把这个请求代发给后台，从而避免跨域问题。
