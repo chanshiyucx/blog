@@ -378,3 +378,19 @@ display: -webkit-box;
 -webkit-line-clamp: 3; //行数
 overflow: hidden;
 ```
+
+## 021 文件大小单位转换
+
+```js
+export const bytesSize = (bytes) => {
+  if ((bytes >> 30) & 0x3ff) {
+    bytes = (bytes >>> 30) + '.' + String(bytes & (3 * 0x3ff)).substr(0, 2) + 'GB'
+  } else if ((bytes >> 20) & 0x3ff) {
+    bytes = (bytes >>> 20) + '.' + String(bytes & (2 * 0x3ff)).substr(0, 2) + 'MB'
+  } else if ((bytes >> 10) & 0x3ff) {
+    bytes = (bytes >>> 10) + '.' + String(bytes & 0x3ff).substr(0, 2) + 'KB'
+  } else if ((bytes >> 1) & 0x3ff) bytes = (bytes >>> 1) + 'Bytes'
+  else bytes = bytes + 'Byte'
+  return bytes
+}
+```
