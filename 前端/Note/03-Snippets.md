@@ -17,9 +17,7 @@ const shuffle = (arr) => {
 ## 002 数字千分位格式化
 
 ```javascript
-const toThousandFilter = (num) => {
-  return (+num || 0).toString().replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
-}
+const toThousandFilter = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 ```
 
 ## 003 日期格式化
@@ -203,13 +201,16 @@ const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }
 chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
 ```
 
-## 012 DeepFlatten
+## 012 判断是否为本地开发环境
 
-多层嵌套数组展开：
-
-```javascript
-const deepFlatten = (arr) => [].concat(...arr.map((v) => (Array.isArray(v) ? deepFlatten(v) : v)))
-deepFlatten([1, [2, 3], [[4, 5], 6]]) // [1, 2, 3, 4, 5, 6]
+```js
+const isLocalhost = Boolean(
+  window.location.hostname === 'localhost' ||
+    // [::1] is the IPv6 localhost address.
+    window.location.hostname === '[::1]' ||
+    // 127.0.0.0/8 are considered localhost for IPv4.
+    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
+)
 ```
 
 ## 013 获取路由参数
@@ -244,12 +245,26 @@ function getQueryString(name) {
 ## 014 获取路由参数对象
 
 ```javascript
-const param2Obj = (url) => {
+// 方法一：使用 JSON.parse
+const getQuery = (url) => {
   const search = url.split('?')[1]
   if (!search) {
     return {}
   }
   return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"').replace(/\+/g, ' ') + '"}')
+}
+
+// 方法二：直接遍历
+const getQuery = (url) => {
+  const obj = {}
+  const search = url.split('?')[1]
+  if (!search) return obj
+  const arr = search.split('&')
+  for (item of arr) {
+    const keyValue = item.split('=')
+    obj[keyValue[0]] = keyValue[1]
+  }
+  return obj
 }
 ```
 
@@ -306,18 +321,7 @@ export const decodeMsg = (msgStr) => {
 }
 ```
 
-## 017 求差集
-
-```javascript
-// const difference = [users, unUsed].reduce((a, b) => a.filter(c => !b.includes(c)))
-
-const diff = (arr) => {
-  return arr.reduce((a, b) => a.filter((c) => !b.includes(c)))
-}
-diff([[1, 2, 3], [2, 3], [3]]) // [1]
-```
-
-## 018 去除 HTML 标签
+## 017 去除 HTML 标签
 
 ### 正则表达式
 
@@ -335,6 +339,23 @@ export const removeHtmlTag = (raw) => {
 }
 ```
 
+## 018 HTML 转义与反转义
+
+```js
+// 转义
+let textNode = document.createTextNode('<span>by zhangxinxu</span>')
+let div = document.createElement('div')
+div.append(textNode)
+console.log(div.innerHTML)
+// &lt;span&gt;by zhangxinxu&lt;/span&gt;
+
+// 反转义
+let str = '&lt;span&gt;by zhangxinxu&lt;/span&gt;'
+let doc = new DOMParser().parseFromString(str, 'text/html')
+console.log(doc.documentElement.textContent)
+// <span>by zhangxinxu</span>
+```
+
 ## 019 判断合法日期
 
 ```js
@@ -342,3 +363,18 @@ export const isDate = (raw) => !isNaN(+new Date(raw))
 ```
 
 利用 Date 构造函数内部的算法，对于无法解析为日期的数据，`date.toString()` 会返回 `Invalid Date`，`date.getTime()` 对应的返回值则是 `NaN`。而算数运算符会调用对象的 `valueOf()` 方法，`date.valueOf()` 的返回值又与 `date.getTime()` 相同。
+
+## 020 多行文本溢出省略效果
+
+```css
+// 单行：
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+// 多行：
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3; //行数
+overflow: hidden;
+```

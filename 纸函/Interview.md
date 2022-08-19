@@ -143,8 +143,8 @@ JavaScript
 ## 013 opacity: 0、visibility: hidden、display: none 优劣和适用场景
 
 - opacity: 0 重建图层，性能较高
-- display: none 会造成回流，性能开销较大，回流可能会重新计算其所有子元素以及紧随其后的节点、祖先节点元素的位置、属性
 - visibility: hidden 会造成重绘，比回流性能高一些
+- display: none 会造成回流，性能开销较大，回流可能会重新计算其所有子元素以及紧随其后的节点、祖先节点元素的位置、属性
 
 ## 014 什么是同源策略？如何解决跨域？
 
@@ -512,7 +512,8 @@ plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结�
 - Proxy 代理和 Reflect 反射
 - Promise 对象
 - Iterator 遍历器
-- Generator 函数和 Async/Await
+- Generator 函数
+- Async/Await
 - Class 类继承
 - Module 的语法 import/export
 
@@ -762,7 +763,7 @@ watch：侦听器，监听数据的变化，监听的数据就是 data 中的已
 
 ## 057 Vue 组件之间有哪几种通信方式？
 
-- 父子通信：父向子传递数据是通过 props，子向父是通过 $emit；通过 $parent / $children 通信；$ref 也可以访问组件实例；provide/inject；$attrs/$listeners；
+- 父子通信：父向子传递数据是通过 props，子向父是通过 $emit；通过 $parent（父组件实例）/ $children（子组件实例）通信；$ref 也可以访问组件实例；provide/inject；$attrs/$listeners；
 - 兄弟通信：Event Bus、Vuex
 - 跨级通信：Event Bus、Vuex；provide/inject； $attrs/$listeners；
 
@@ -954,119 +955,3 @@ modules => 模块化 Vuex
 - `.capture`：当元素发生冒泡时，先触发带有该修饰符的元素
 - `.self`：只会触发自己范围内的事件，不包含子元素
 - `.once`：只会触发一次
-
-## 076 Vue 常用指令？
-
-v-model：用于表单元素实现双向数据绑定
-v-bind：动态绑定，及时对页面的数据进行更改
-v-on:click：给标签绑定函数
-v-for：循环
-v-if：显示与隐藏
-v-show：显示内容
-v-hide：隐藏内容
-v-text：解析文本
-v-html：解析 html 标签
-v-once：进入页面时，只渲染一次，不再进行渲染
-v-cloak：防止闪烁
-v-pre：把标签内部的元素原位输出
-
-## 077 Vue 页面闪烁？
-
-Vue 提供了一个 `v-cloak` 指令，该指令一直保持在元素上，直到关联实例结束编译。当和 CSS 一起使用时，这个指令可以隐藏未编译的标签，直到实例编译结束。用法如下。
-
-```html
-[v-cloak]{ display:none; }
-
-<div v-cloak>{{ title }}</div>
-```
-
-## 078 Vue 开发环境下调用接口跨域问题？
-
-需在工程目录 config/index.js 内对 proxyTable 项进行如下配置:
-
-```js
-proxyTable: {
-  '/api': {
-    target: 'http://xxxxxx.com',
-    changeOrigin: true,
-    pathRewrite: {
-      '^/api': ''
-    }
-  }
-}
-```
-
-配置完成后再调接口时如：'http://xxxxxx.com/login' 可以简写成'/api/login'，本地会虚拟化一个服务器帮你把这个请求代发给后台，从而避免跨域问题。
-
-## 079 Vue data 中某一个属性的值发生改变后，视图会立即同步执行重新渲染吗？
-
-不会立即同步执行重新渲染。Vue 采用批量异步更新策略。
-
-Vue 在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。只要观察到数据变化，就会自动开启一个队列，并缓冲在同一个事件循环中发生的所以数据改变。在缓冲时会去除重复数据，从而避免不必要的计算和 DOM 操作。
-
-## 080 为什么要使用 TypeScript ? TypeScript 相对于 JavaScript 的优势是什么？
-
-增加了静态类型，可以在开发人员编写脚本时检测错误，使得代码质量更好，更健壮。
-
-1. 杜绝手误导致的变量名写错
-2. 类型可以一定程度上充当文档
-3. IDE 自动填充，自动联想
-
-## 081 Declare 关键字是干嘛用的？
-
-我们在 .ts 中使用的第三方库时没有 .d.ts 声明文件的时候，我们可以通过 declare 来写申明文件。
-
-可以声明该模块，甚至可以直接声明一个值为 any 的同名的变量，然后我们就可以在代码中直接使用该三方库了。
-
-## 082 说说接口和类型别名 type 的区别？
-
-1. 类型别名不能 extends 和 implements
-2. 对于元组，联合类型我们一般使用类型别名 type
-
-## 083 React 什么是高阶组件？用来解决什么问题？
-
-高阶组件（HOC）是参数为组件，返回值为新组件的函数，即高阶组件是将组件转换为另一个组件。
-
-```js
-const EnhancedComponent = higherOrderComponent(WrappedComponent)
-```
-
-高阶作用用于强化组件，复用逻辑，提升渲染性能等作用。高阶组件的应用场景：
-
-1. 复用逻辑：高阶组件更像是一个加工组件的工厂，批量对原有组件进行加工，包装处理。可以根据业务需求定制化专属的 HOC，这样可以解决复用逻辑。
-2. 强化 props：高阶组件返回的组件，可以劫持上一层传过来的 props，然后混入新的 props，来增强组件的功能。代表作 react-router 中的 withRouter。
-3. 赋能组件：可以给被 HOC 包裹的业务组件，提供一些拓展功能，比如说额外的生命周期，额外的事件。
-4. 控制渲染：劫持渲染是 HOC 一个特性，在 wrapComponent 包装组件中，可以对原来的组件，进行条件渲染，节流渲染，懒加载等功能，典型代表 react-redux 中 connect 和 dva 中 dynamic 组件懒加载。
-
-## 084 React Hooks 解决了什么问题？
-
-Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
-
-引入 Hook 的原因：
-
-- 难以重用和共享组件中的与状态相关的逻辑
-- 逻辑复杂的组件难以开发与维护，当组件需要处理多个互不相关的 local state 时，每个生命周期函数中可能会包含着各种互不相关的逻辑在里面
-- 类组件中的 this 增加学习成本，类组件在基于现有工具的优化上存在些许问题
-- 由于业务变动，函数组件不得不改为类组件等等
-
-Hook 解决什么问题：
-
-- 每调用 useHook 一次都会生成一份独立的状态
-- 通过自定义 Hook 能够更好的封装我们的功能
-
-Hook 为函数式编程，每个功能都包裹在函数中，整体风格更清爽，更优雅。Hook 的出现，使函数组件的功能得到了扩充，拥有了类组件相似的功能，在我们日常使用中优先考虑 Hook。
-
-基础 Hook：`useState`、`useEffect`、`useContext`
-额外的 Hook：`useReducer`、`useCallback`、`useMemo`、`useRef`、`useLayoutEffect`
-
-Hook 与 Class 组件的区别：
-
-1. 写法更加的简洁
-2. 业务代码更加聚合：使用 Class 组件经常会出现一个功能出现在两个生命周期函数内的情况，这样分开写有时候可能会忘记。
-3. 逻辑复用方便：Class 组件的逻辑复用通常用 render props 以及 HOC 两种方式。Hook 提供了自定义 Hook 来复用逻辑。
-
-## 085 React 组件之间有哪几种通信方式？
-
-- 父组件向子组件通信，通过 props 方式传递数据；也可以通过 ref 方式传递数据；
-- 子组件向父组件通信，通过回调函数方式传递数据；
-- 父组件向后代所有组件传递数据，如果组件层级过多，通过 props 的方式传递数据很繁琐，可以通过 Context.Provider 的方式；

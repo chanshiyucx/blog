@@ -48,6 +48,9 @@
     - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
     - [09 正则匹配 match 和 exec](前端/JavaScript/09-正则匹配-match-和-exec.md)
     - [10 正则匹配汉字](前端/JavaScript/10-正则匹配汉字.md)
+    - [11 Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
+    - [12 TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
+    - [13 TypeScript 小技巧](前端/JavaScript/13-TypeScript-小技巧.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -56,10 +59,9 @@
     - [02 七天学会 NodeJS](前端/Node/02-七天学会-NodeJS.md)
   - Note
     - [01 Note](前端/Note/01-Note.md)
-    - [02 Interview](前端/Note/02-Interview.md)
+    - [02 Code](前端/Note/02-Code.md)
     - [03 Snippets](前端/Note/03-Snippets.md)
     - [04 Git](前端/Note/04-Git.md)
-    - [05 Tool](前端/Note/05-Tool.md)
   - React
     - [01 React Props Children 传值](前端/React/01-React-Props-Children-传值.md)
     - [02 Use a Render Prop!](前端/React/02-Use-a-Render-Prop!.md)
@@ -67,8 +69,7 @@
     - [04 React Hook 定时器](前端/React/04-React-Hook-定时器.md)
     - [05 Fetch data with React Hooks](前端/React/05-Fetch-data-with-React-Hooks.md)
     - [06 React 和 Vue 中 key 的作用](前端/React/06-React-和-Vue-中-key-的作用.md)
-    - [07 TypeScript 中 interface 和 type 区别](前端/React/07-TypeScript-中-interface-和-type-区别.md)
-    - [08 TypeScript 中 is 关键字](前端/React/08-TypeScript-中-is-关键字.md)
+    - [07 useCallback 的正确使用方式](前端/React/07-useCallback-的正确使用方式.md)
   - Vue
     - [01 Vue Tips](前端/Vue/01-Vue-Tips.md)
     - [02 Vue 构建项目写入配置文件](前端/Vue/02-Vue-构建项目写入配置文件.md)
@@ -219,11 +220,6 @@
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
   - [Note](纸函/Note.md)
-  - [20210506](纸函/20210506.md)
-  - [20210512](纸函/20210512.md)
-  - [20210518](纸函/20210518.md)
-  - [20210528](纸函/20210528.md)
-  - [Code](纸函/Code.md)
   - [Interview](纸函/Interview.md)
 - 万藏
   - 文档

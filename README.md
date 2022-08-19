@@ -69,6 +69,9 @@ Code is Long, Life is Short.
     - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
     - [09 正则匹配 match 和 exec](前端/JavaScript/09-正则匹配-match-和-exec.md)
     - [10 正则匹配汉字](前端/JavaScript/10-正则匹配汉字.md)
+    - [11 Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
+    - [12 TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
+    - [13 TypeScript 小技巧](前端/JavaScript/13-TypeScript-小技巧.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -77,10 +80,9 @@ Code is Long, Life is Short.
     - [02 七天学会 NodeJS](前端/Node/02-七天学会-NodeJS.md)
   - Note
     - [01 Note](前端/Note/01-Note.md)
-    - [02 Interview](前端/Note/02-Interview.md)
+    - [02 Code](前端/Note/02-Code.md)
     - [03 Snippets](前端/Note/03-Snippets.md)
     - [04 Git](前端/Note/04-Git.md)
-    - [05 Tool](前端/Note/05-Tool.md)
   - React
     - [01 React Props Children 传值](前端/React/01-React-Props-Children-传值.md)
     - [02 Use a Render Prop!](前端/React/02-Use-a-Render-Prop!.md)
@@ -88,14 +90,14 @@ Code is Long, Life is Short.
     - [04 React Hook 定时器](前端/React/04-React-Hook-定时器.md)
     - [05 Fetch data with React Hooks](前端/React/05-Fetch-data-with-React-Hooks.md)
     - [06 React 和 Vue 中 key 的作用](前端/React/06-React-和-Vue-中-key-的作用.md)
-    - [07 TypeScript 中 interface 和 type 区别](前端/React/07-TypeScript-中-interface-和-type-区别.md)
-    - [08 TypeScript 中 is 关键字](前端/React/08-TypeScript-中-is-关键字.md)
+    - [07 useCallback 的正确使用方式](前端/React/07-useCallback-的正确使用方式.md)
   - Vue
     - [01 Vue Tips](前端/Vue/01-Vue-Tips.md)
     - [02 Vue 构建项目写入配置文件](前端/Vue/02-Vue-构建项目写入配置文件.md)
     - [03 Vue 项目引入 SVG 图标](前端/Vue/03-Vue-项目引入-SVG-图标.md)
     - [04 Vue 一键导出 PDF](前端/Vue/04-Vue-一键导出-PDF.md)
     - [05 动态可响应对象](前端/Vue/05-动态可响应对象.md)
+    - [06 Vue 引入 SCSS](前端/Vue/06-Vue-引入-SCSS.md)
   - 实战系列
     - [01 WebSocket 心跳重连机制](前端/实战系列/01-WebSocket-心跳重连机制.md)
     - [02 图片加解密二三事](前端/实战系列/02-图片加解密二三事.md)
@@ -160,7 +162,7 @@ Code is Long, Life is Short.
     - [03 获取请求 IP 地址](后端/实战系列/03-获取请求IP地址.md)
     - [04 Kaptcha 与数学公式验证码](后端/实战系列/04-Kaptcha-与数学公式验证码.md)
     - [05 Netty 获取客户端 IP.md](后端/实战系列/05-Netty-获取客户端IP.md)
-    - [06 高性能无锁队列 Disruptor](后端/实战系列/06-高性能无锁队列-Disruptor.md)
+    - [06 高性能无锁队列 Disruptor.md](后端/实战系列/06-高性能无锁队列-Disruptor.md)
     - [07 前后端接入阿里云盾](后端/实战系列/07-前后端接入阿里云盾.md)
   - Spring
     - [01 Spring Boot](后端/Spring/01-Spring-Boot.md)
@@ -239,10 +241,7 @@ Code is Long, Life is Short.
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
   - [Note](纸函/Note.md)
-  - [20210506](纸函/20210506.md)
-  - [20210512](纸函/20210512.md)
-  - [20210518](纸函/20210518.md)
-  - [20220518](纸函/20220518.md)
+  - [Interview](纸函/Interview.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
