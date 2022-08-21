@@ -394,3 +394,65 @@ export const bytesSize = (bytes) => {
   return bytes
 }
 ```
+
+## 022 react ref 计算元素的尺寸
+
+```ts
+const demo = () => {
+  const ref = useCallback((el: HTMLElement | null) => {
+    if (el) {
+      setTimeout(() => {
+        const boundingRect = el.getBoundingClientRect()
+        props.onHeight(boundingRect.height)
+      })
+    }
+  }, [])
+
+  return <div ref={ref}>react ref 计算元素的尺寸</div>
+}
+```
+
+## 023 react 动态加载 script
+
+```js
+useEffect(() => {
+  const script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = 'https://utteranc.es/client.js'
+  script.async = true
+  script.crossOrigin = 'anonymous'
+  script.setAttribute('repo', 'chanshiyucx/aurora')
+  script.setAttribute('theme', 'github-dark')
+  script.setAttribute('issue-term', title)
+
+  const dom = document.querySelector('.comment')
+  dom?.appendChild(script)
+  return () => {
+    dom?.removeChild(script)
+  }
+}, [title])
+```
+
+## 024 获取图片源文件
+
+```html
+<!-- 1. data attribute -->
+<img src="img/journey_thumbnail.jpg" data-original="img/journey.jpg" />
+
+<!-- 2. anchor link -->
+<a href="demo/img/journey.jpg">
+  <img src="demo/img/journey_thumbnail.jpg" />
+</a>
+```
+
+```js
+export function getOriginalSource(el) {
+  if (el.dataset.original) {
+    return el.dataset.original
+  } else if (el.parentNode.tagName === 'A') {
+    return el.parentNode.getAttribute('href')
+  } else {
+    return null
+  }
+}
+```

@@ -83,6 +83,7 @@
     - [03 优雅实现 BackTop](前端/实战系列/03-优雅实现-BackTop.md)
     - [04 动态加载 JS 文件](前端/实战系列/04-动态加载-JS-文件.md)
     - [05 神奇的 Document.designMode](前端/实战系列/05-神奇的Document.designMode.md)
+    - [06 常用 DOM 方法比较.md](前端/实战系列/06-常用-DOM-方法比较.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
