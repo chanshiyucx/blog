@@ -87,6 +87,7 @@
     - [04 动态加载 JS 文件](前端/实战系列/04-动态加载-JS-文件.md)
     - [05 神奇的 Document.designMode](前端/实战系列/05-神奇的Document.designMode.md)
     - [06 常用 DOM 方法比较.md](前端/实战系列/06-常用-DOM-方法比较.md)
+    - [07 Ceph](前端/实战系列/07-Ceph.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
@@ -226,7 +227,6 @@
   - [Note](纸函/Note.md)
   - [Interview](纸函/Interview.md)
   - [2022-08-19](纸函/2022-08-19.md)
-  - [Ceph](纸函/Ceph/Ceph.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
