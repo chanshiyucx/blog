@@ -6,7 +6,7 @@ Ceph 的官方定义为：一种为优秀的性能、可靠性和可扩展性而
 
 ## Ceph 体系结构
 
-![体系结构](./Ceph体系结构.png)
+![体系结构](/IMAGES/2022/Ceph/Ceph体系结构.png)
 
 - RADOS：对象存储系统，可靠的、自组织的、可自动修复、自我管理的分布式对象存储系统
 - LIBRADOS：访问 RADOS 对象存储系统的库，可支持 C、C++、Java、Python 等多种语言
@@ -18,7 +18,7 @@ RADOS 对象存储系统是 Ceph 的基石。RADOS 完成了一个存储系统�
 
 ## Ceph 核心组件
 
-![核心组件](./Ceph核心组件.png)
+![核心组件](/IMAGES/2022/Ceph/Ceph核心组件.png)
 
 Ceph 的核心组件包括 Monitors、 Managers、OSD 和 MDS。
 
