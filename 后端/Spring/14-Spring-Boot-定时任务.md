@@ -109,7 +109,7 @@ Fixed Rate Task : The time is now 09:26:59
 
 示意图：
 
-![fixedRate](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/SpringBoot-定时任务/fixedRate.png)
+![fixedRate](/IMAGES/2019/SpringBoot-定时任务/fixedRate.png)
 
 ## 自定义线程池
 

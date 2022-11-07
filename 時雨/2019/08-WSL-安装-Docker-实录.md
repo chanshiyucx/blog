@@ -14,13 +14,13 @@ Docker 将应用程序与该程序的依赖，打包在一个文件里面。运�
 
 **控制面板&gt;程序和功能&gt;启用或关闭 window 功能&gt;勾选“适用于 Linux 的 Windows 子系统”**，之后重启系统。
 
-![启用 WSL](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/WSL-安装-Docker-实录/wsl-启用.png)
+![启用 WSL](/IMAGES/2019/WSL-安装-Docker-实录/wsl-启用.png)
 
 ### 安装 Ubuntu
 
 在 Microsoft Store 搜索 Ubuntu 并安装：
 
-![安装 Ubuntu](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/WSL-安装-Docker-实录/wsl-安装Ubuntu.png)
+![安装 Ubuntu](/IMAGES/2019/WSL-安装-Docker-实录/wsl-安装Ubuntu.png)
 
 安装完成查看基本信息：
 
@@ -127,7 +127,7 @@ PermitRootLogin yes           # 如果你需要用 root 直接登录系统则此
 PasswordAuthentication yes    # 将 no 改为 yes 表示使用帐号密码方式登录
 ```
 
-![SSH配置](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/WSL-安装-Docker-实录/wsl-ssh.png)
+![SSH配置](/IMAGES/2019/WSL-安装-Docker-实录/wsl-ssh.png)
 
 之后启动 SSH 并检查状态，输出 running 即正确：
 
@@ -205,7 +205,7 @@ sudo apt-get install python3-setuptools
 
 必须勾选最后一项，否则将不能在 wsl 中使用 docker。
 
-![docker for windows](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/WSL-安装-Docker-实录/docker-for-windows.png)
+![docker for windows](/IMAGES/2019/WSL-安装-Docker-实录/docker-for-windows.png)
 
 ### 安装 docker 客户端
 

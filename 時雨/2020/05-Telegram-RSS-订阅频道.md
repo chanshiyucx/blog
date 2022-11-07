@@ -84,9 +84,9 @@ NodeRSSBot 支持的操作命令：
 /sub @rss_chanshiyu https://blog.k8s.li/atom.xml
 ```
 
-![订阅RSS](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-RSS-订阅频道/订阅RSS.png)
+![订阅RSS](/IMAGES/2020/Telegram-RSS-订阅频道/订阅RSS.png)
 
-![订阅大成功](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-RSS-订阅频道/订阅大成功.png)
+![订阅大成功](/IMAGES/2020/Telegram-RSS-订阅频道/订阅大成功.png)
 
 最终成果点击 [RSS 時雨](https://t.me/rss_chanshiyu)，大家一起来玩呀，今天又发现了一个有意思的小玩具，咱对 Telegram 真是越来越爱了。
 

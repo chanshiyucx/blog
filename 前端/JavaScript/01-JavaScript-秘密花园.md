@@ -34,7 +34,7 @@ function Foo() {
 }
 
 Foo.prototype = {
-  method: function() {}
+  method: function () {},
 }
 
 function Bar() {}
@@ -57,7 +57,7 @@ Bar.prototype.constructor = Bar
  **/
 ```
 
-![继承与原型链](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JavaScript-秘密花园/prototype.png)
+![继承与原型链](/IMAGES/2019/JavaScript-秘密花园/prototype.png)
 
 > 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
@@ -83,7 +83,7 @@ function foo() {}
 // 函数表达式
 bar // undefined
 bar() // TypeError
-const bar = function() {}
+const bar = function () {}
 ```
 
 ### 命名函数的赋值表达式
@@ -125,7 +125,7 @@ new foo() // this 指向返回的新对象
 - 显示设置 this：调用 call 或者 apply 方法时，函数内 this 将会被显式设置为函数调用的第一个参数。
 
 ```javascript
-Foo.method = function() {
+Foo.method = function () {
   function test() {
     // this 将会被设置为全局对象
   }
@@ -136,7 +136,7 @@ Foo.method = function() {
 为了在 test 中获取对 Foo 对象的引用，需要在 method 函数内部创建一个局部变量指向 Foo 对象。因为 JavaScript 中不可以对作用域进行引用或赋值，所以不可以在外部访问私有变量。
 
 ```javascript
-Foo.method = function() {
+Foo.method = function () {
   const that = this
   function test() {
     // 使用 that 来指向 Foo 对象
@@ -169,17 +169,17 @@ foo(1, 2, 3)
 只有一个全局作用域导致的常见错误是命名冲突。在 JavaScript 中，这可以通过匿名包装器轻松解决。
 
 ```javascript
-;(function() {
+;(function () {
   // 小括号内的函数首先被执行, 并且返回函数对象
   // 函数创建一个命名空间
-  window.foo = function() {
+  window.foo = function () {
     // 对外公开的函数，创建了闭包
   }
 })() // 立即执行此匿名函数, 也就是函数对象
 
 // 另外两种方式
-;+(function() {})()
-;(function() {})()
+;+(function () {})()
+;(function () {})()
 ```
 
 ## 数组

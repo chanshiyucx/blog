@@ -313,7 +313,7 @@ eureka:
 
 和普通 Spring Boot 项目一样启动后，界面如下：
 
-![spring cloud eureka](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/spring-cloud-eureka.png)
+![spring cloud eureka](/IMAGES/2019/Spring-Cloud-Netflix/spring-cloud-eureka.png)
 
 ## 服务提供者
 
@@ -610,7 +610,7 @@ Your message is: 11, port: 8763
 
 此时架构图（service-admin 对应 service-hello，web-admin 对应 web-hello）：
 
-![服务注册发现](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/服务注册发现.png)
+![服务注册发现](/IMAGES/2019/Spring-Cloud-Netflix/服务注册发现.png)
 
 - Eureka Server：服务注册与发现中心，端口号为：8761
 - service-hello：服务提供者，工程运行了两个实例，端口号分别为：8762，8763
@@ -909,9 +909,9 @@ public class HystrixDashboardConfiguration {
 
 启动后访问仪表盘：http://localhost:8764/hystrix。
 
-![熔断器仪表盘](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/熔断器仪表盘.png)
+![熔断器仪表盘](/IMAGES/2019/Spring-Cloud-Netflix/熔断器仪表盘.png)
 
-![熔断器曲线](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/熔断器曲线.png)
+![熔断器曲线](/IMAGES/2019/Spring-Cloud-Netflix/熔断器曲线.png)
 
 fallback 触发条件：
 
@@ -928,13 +928,13 @@ fallback 触发条件：
 
 Hystrix Dashboard 界面监控参数：
 
-![Hystrix_Dashboard_界面监控参数](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/Hystrix_Dashboard_界面监控参数.png)
+![Hystrix_Dashboard_界面监控参数](/IMAGES/2019/Spring-Cloud-Netflix/Hystrix_Dashboard_界面监控参数.png)
 
 ## 路由网关
 
 在微服务架构中，需要几个基础的服务治理组件，包括**服务注册与发现、服务消费、负载均衡、熔断器、智能路由、配置管理等**，由这几个基础组件相互协作，共同组建了一个简单的微服务系统。一个简单的微服务系统如下图：
 
-![微服务系统](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Spring-Cloud-Netflix/微服务系统.png)
+![微服务系统](/IMAGES/2019/Spring-Cloud-Netflix/微服务系统.png)
 
 在 Spring Cloud 微服务系统中，一种常见的负载均衡方式是，客户端的请求首先经过负载均衡（Zuul、Ngnix），再到达服务网关（Zuul 集群），然后再到具体的服。服务统一注册到高可用的服务注册中心集群，服务的所有的配置文件由配置服务管理，配置服务的配置文件放在 GIT 仓库，方便开发人员随时改配置。
 

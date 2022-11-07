@@ -24,7 +24,7 @@ Tomcat 和 Jetty 就是一个 Servlet 容器。为了方便使用，它们也具
 左边：HTTP 服务器直接调用具体业务类，它们是紧耦合的
 右边：HTTP 服务器不直接调用业务类，而是把请求交给容器来处理，容器通过 Servlet 接口调用业务类
 
-![Servlet-规范](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Java-Servlet/Servlet-规范.jpg)
+![Servlet-规范](/IMAGES/2020/Java-Servlet/Servlet-规范.jpg)
 
 要点：
 

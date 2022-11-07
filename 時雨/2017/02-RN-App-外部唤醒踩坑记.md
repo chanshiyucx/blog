@@ -12,7 +12,7 @@
 
 激活 Xcode 工程中的 `Associated Domains` ，需要填入想要支持的域名，必须以 `applinks:` 为前缀，Apple 将会在合适的时候，从这个域名请求验证文件。
 
-![添加验证域名](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/添加验证域名.jpg)
+![添加验证域名](/IMAGES/2019/RN-App-外部唤醒踩坑记/添加验证域名.jpg)
 
 ### 上传验证文件
 
@@ -34,7 +34,7 @@
 
 上面需要修改的地方只有 `appId` 和 `paths`，其中 `appID` 由 `TeamId` 和 `Bundle Identifier` 两部分相加组成，即 `appID = TeamId.Bundle Identifier`。进入 Apple Developer 网站，找到 `Certificates, IDs & Profiles --> App IDs`，查阅便可获得：
 
-![Apple Developer 获取 ID](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/RN-App-外部唤醒踩坑记/Apple_Developer.jpg)
+![Apple Developer 获取 ID](/IMAGES/2019/RN-App-外部唤醒踩坑记/Apple_Developer.jpg)
 
 如果上传成功后，可以进行先行[在线验证](https://branch.io/resources/aasa-validator/)。
 
@@ -97,9 +97,9 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
     target: {
       namespace: 'android_app',
       package_name: 'com.had',
-      sha256_cert_fingerprints: ['C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81']
-    }
-  }
+      sha256_cert_fingerprints: ['C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81'],
+    },
+  },
 ]
 ```
 

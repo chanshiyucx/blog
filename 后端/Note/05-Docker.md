@@ -73,11 +73,11 @@ Docker 引擎是一个包含以下主要组件的客户端服务器应用程序�
 - REST API 用于指定程序可以用来与守护进程通信的接口，并指示它做什么
 - 一个有命令行界面 (CLI) 工具的客户端
 
-![Docker_引擎](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Docker/Docker_引擎.png)
+![Docker_引擎](/IMAGES/2019/Docker/Docker_引擎.png)
 
 ### Docker 系统架构
 
-![Docker_系统架构](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Docker/Docker_系统架构.png)
+![Docker_系统架构](/IMAGES/2019/Docker/Docker_系统架构.png)
 
 | 标题            | 说明                                                                          |
 | --------------- | ----------------------------------------------------------------------------- |

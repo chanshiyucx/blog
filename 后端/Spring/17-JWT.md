@@ -34,7 +34,7 @@ String signature = HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(pay
 eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE1NzA1MDEwMTQwOTUsImV4cCI6MTU3MTEwNTgxNH0.Tq9LIqSu8cet6ToqpTxS-sdY6bsCm0mWUFwKSgy5d0EovH4DYLxxqfswJpmibBNG0Ds2W0hM5D8BjVHHFeTTrg
 ```
 
-![token 解析](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JWT/token解析.png)
+![token 解析](/IMAGES/2019/JWT/token解析.png)
 
 ## JWT 的使用方式
 
@@ -115,7 +115,7 @@ token 自身包含了身份验证需要的所有信息，使得服务器不需�
 
 ### Session 认证图解
 
-![Session 认证图解](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JWT/Session_认证图解.png)
+![Session 认证图解](/IMAGES/2019/JWT/Session_认证图解.png)
 
 - 用户向服务器发送用户名和密码用于登陆系统。
 - 服务器验证通过后，服务器为用户创建一个 Session，并将 Session 信息存储起来。
@@ -125,7 +125,7 @@ token 自身包含了身份验证需要的所有信息，使得服务器不需�
 
 ### Token 认证图解
 
-![Token 认证图解](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/JWT/Token_认证图解.png)
+![Token 认证图解](/IMAGES/2019/JWT/Token_认证图解.png)
 
 - 用户向服务器发送用户名和密码用于登陆系统。
 - 身份验证服务响应并返回了签名的 JWT，上面包含了用户是谁的内容。

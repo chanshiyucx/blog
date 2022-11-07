@@ -2,13 +2,13 @@
 
 ## 整体架构
 
-![Apache Shiro 整体架构](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Apache-Shiro/Apache_Shiro_整体结构.png)
+![Apache Shiro 整体架构](/IMAGES/2019/Apache-Shiro/Apache_Shiro_整体结构.png)
 
 ## 认证授权
 
-![Shiro 认证](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Apache-Shiro/Shiro认证.png)
+![Shiro 认证](/IMAGES/2019/Apache-Shiro/Shiro认证.png)
 
-![Shiro 授权](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Apache-Shiro/Shiro授权.png)
+![Shiro 授权](/IMAGES/2019/Apache-Shiro/Shiro授权.png)
 
 引入依赖：
 

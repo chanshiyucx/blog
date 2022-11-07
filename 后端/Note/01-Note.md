@@ -2,9 +2,9 @@
 
 ## Vim
 
-![Vim 常用命令](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/Vim常用命令.jpg)
+![Vim 常用命令](/IMAGES/2019/note/Vim常用命令.jpg)
 
-![Vim 键盘图](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/Vim键盘图.jpg)
+![Vim 键盘图](/IMAGES/2019/note/Vim键盘图.jpg)
 
 ## 整站下载资源
 

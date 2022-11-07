@@ -7,7 +7,7 @@ ThreadPoolExecutor 作为 java.util.concurrent 包对外提供基础实现，以
 
 ThreadPoolExecutor 是一个可被继承的线程池实现，包含了用于微调的许多参数和钩子。Executors 方法提供的线程服务，都是通过参数设置来实现不同的线程池机制。
 
-![关系](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/ThreadPoolExecutor/关系.png)
+![关系](/IMAGES/2020/ThreadPoolExecutor/关系.png)
 
 ## 核心构造方法
 

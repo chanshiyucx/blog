@@ -64,7 +64,7 @@
 
 无法解决，只能降低提示等级：
 
-![idea autowired error](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/note/idea-autowired-error.png)
+![idea autowired error](/IMAGES/2019/note/idea-autowired-error.png)
 
 ## IDEA 启用 Run Dashboard
 

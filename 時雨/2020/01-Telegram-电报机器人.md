@@ -10,15 +10,15 @@
 
 ### 1. 搜索 @BotFather 并对话
 
-![@BotFather](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/@BotFather.png)
+![@BotFather](/IMAGES/2020/Telegram-电报机器人/@BotFather.png)
 
 ### 2. 发送/start 开始会话
 
-![start](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/start.png)
+![start](/IMAGES/2020/Telegram-电报机器人/start.png)
 
 ### 3. 发送/newbot 创建机器人
 
-![newbot](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/newbot.png)
+![newbot](/IMAGES/2020/Telegram-电报机器人/newbot.png)
 
 输入机器人的 `name` 和 `username`，创建完成返回 token，之后发送消息需要用到它。
 
@@ -26,8 +26,8 @@
 
 Telegram 中每个用户、频道、群组都会有一个 chat ID，机器人发送消息需要指定 chat ID 来将消息发送到指定用户。
 
-![@GetIDsBot](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/@GetIDsBot.png)
-![chatID](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/chatID.png)
+![@GetIDsBot](/IMAGES/2020/Telegram-电报机器人/@GetIDsBot.png)
+![chatID](/IMAGES/2020/Telegram-电报机器人/chatID.png)
 
 这里的关键点在于，如何获取 channel/group 的 chat id，这里咱确实踩了下 🕳，找了蛮久也没有找到正确的方法，最后发现其实是咱一开始姿势不对，后来找到 stackoverflow 有个回答 [Telegram Bot - how to get a group chat id?](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id) 成功解决问题。
 
@@ -185,6 +185,6 @@ public class TelegramStartedBootstrap implements ApplicationListener<ContextRefr
 
 最终成果，完美收发消息：
 
-![收发消息](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2020/Telegram-电报机器人/收发消息.png)
+![收发消息](/IMAGES/2020/Telegram-电报机器人/收发消息.png)
 
 Just enjoy it 😃! Bless Bless.
