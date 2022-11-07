@@ -85,7 +85,7 @@
     - [02 图片加解密二三事](前端/实战系列/02-图片加解密二三事.md)
     - [03 优雅实现 BackTop](前端/实战系列/03-优雅实现-BackTop.md)
     - [04 动态加载 JS 文件](前端/实战系列/04-动态加载-JS-文件.md)
-    - [05 神奇的 Document.designMode](前端/实战系列/05-神奇的Document.designMode.md)
+    - [05 Document.designMode](前端/实战系列/05-Document.designMode.md)
     - [06 常用 DOM 方法比较.md](前端/实战系列/06-常用-DOM-方法比较.md)
     - [07 Ceph](前端/实战系列/07-Ceph.md)
 - 后端
