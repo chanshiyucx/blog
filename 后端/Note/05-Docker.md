@@ -371,7 +371,7 @@ Linux 执行.sh 文件，提示 `No such file or directory` 的问题，可能�
 
 需要注意：**使用 vagrant 虚拟机进行 maven 打包的时候，需要配置 mvnw 文件编码**。
 
-### x509: certificate signed by unknown authority.
+### x509: certificate signed by unknown authority
 
 docker 登录报错， `x509: certificate signed by unknown authority.`：
 
