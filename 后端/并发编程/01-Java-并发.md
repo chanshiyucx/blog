@@ -158,7 +158,7 @@ public static void main(String[] args) {
 
 Callable 和 FutureTask 本质上也是实现 Runnable 接口，观点错误。
 
-![Callable](../../IMAGES/2019/Java-并发/Callable.png)
+![Callable](/IMAGES/2019/Java-并发/Callable.png)
 
 #### 3. 定时器创建线程也算是一种新建线程的方式
 
@@ -759,7 +759,7 @@ AQS（AbstractQueuedSynchronizer），即队列同步器。它是构建锁或者
 
 维护了一个计数器 cnt，每次调用 `countDown()` 方法会让计数器的值减 1，减到 0 的时候，那些因为调用 `await()` 方法而在等待的线程就会被唤醒。
 
-![CountDownLatch](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/CountDownLatch.png)
+![CountDownLatch](/IMAGES/2019/Java-并发/CountDownLatch.png)
 
 ```java
 public class CountdownLatchExample {
@@ -808,7 +808,7 @@ public CyclicBarrier(int parties) {
 }
 ```
 
-![CyclicBarrier](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/CyclicBarrier.png)
+![CyclicBarrier](/IMAGES/2019/Java-并发/CyclicBarrier.png)
 
 ```java
 public class CyclicBarrierExample {
@@ -1042,7 +1042,7 @@ public class ForkJoinPool extends AbstractExecutorService
 
 ForkJoinPool 实现了工作窃取算法来提高 CPU 的利用率。每个线程都维护了一个双端队列，用来存储需要执行的任务。工作窃取算法允许空闲的线程从其它线程的双端队列中窃取一个任务来执行。窃取的任务必须是最晚的任务，避免和队列所属线程发生竞争。例如下图中，Thread2 从 Thread1 的队列中拿出最晚的 Task1 任务，Thread1 会拿出 Task2 来执行，这样就避免发生竞争。但是如果队列中只有一个任务时还是会发生竞争。
 
-![ForkJoin](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/ForkJoin.png)
+![ForkJoin](/IMAGES/2019/Java-并发/ForkJoin.png)
 
 ## 线程不安全示例
 
@@ -1097,19 +1097,19 @@ Java 内存模型试图屏蔽各种硬件和操作系统的内存访问差异，
 
 加入高速缓存带来了一个新的问题：缓存一致性。如果多个缓存共享同一块主内存区域，那么多个缓存的数据可能会不一致，需要一些协议来解决这个问题。
 
-![内存模型1](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/内存模型1.png)
+![内存模型1](/IMAGES/2019/Java-并发/内存模型1.png)
 
 所有的变量都存储在主内存中，每个线程还有自己的工作内存，工作内存存储在高速缓存或者寄存器中，保存了该线程使用的变量的主内存副本拷贝。
 
 线程只能直接操作工作内存中的变量，不同线程之间的变量值传递需要通过主内存来完成。
 
-![内存模型2](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/内存模型2.png)
+![内存模型2](/IMAGES/2019/Java-并发/内存模型2.png)
 
 ### 内存间交互操作
 
 Java 内存模型定义了 8 个操作来完成主内存和工作内存的交互操作。
 
-![内存间交互操作](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/内存间交互操作.png)
+![内存间交互操作](/IMAGES/2019/Java-并发/内存间交互操作.png)
 
 - read：把一个变量的值从主内存传输到工作内存中
 - load：在 read 之后执行，把 read 得到的值放入工作内存的变量副本中
@@ -1132,11 +1132,11 @@ Java 内存模型保证了 read、load、use、assign、store、write、lock 和
 
 下图演示了两个线程同时对 cnt 进行操作，load、assign、store 这一系列操作整体上看不具备原子性，那么在 T1 修改 cnt 并且还没有将修改后的值写入主内存，T2 依然可以读入旧值。可以看出，这两个线程虽然执行了两次自增运算，但是主内存中 cnt 的值最后为 1 而不是 2。因此对 int 类型读写操作满足原子性只是说明 load、assign、store 这些单个操作具备原子性。
 
-![原子性1](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性1.jpg)
+![原子性1](/IMAGES/2019/Java-并发/原子性1.jpg)
 
 AtomicInteger 能保证多个线程修改的原子性。
 
-![原子性2](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/原子性2.jpg)
+![原子性2](/IMAGES/2019/Java-并发/原子性2.jpg)
 
 使用 AtomicInteger 重写之前线程不安全的代码之后得到以下线程安全实现：
 
@@ -1246,7 +1246,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 在一个线程内，在程序前面的操作先行发生于后面的操作。
 
-![单一线程原则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/单一线程原则.png)
+![单一线程原则](/IMAGES/2019/Java-并发/单一线程原则.png)
 
 #### 2. 管程锁定规则
 
@@ -1254,7 +1254,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 一个 unlock 操作先行发生于后面对同一个锁的 lock 操作。
 
-![管程锁定规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/管程锁定规则.png)
+![管程锁定规则](/IMAGES/2019/Java-并发/管程锁定规则.png)
 
 #### 3. volatile 变量规则
 
@@ -1262,7 +1262,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 对一个 volatile 变量的写操作先行发生于后面对这个变量的读操作。
 
-![volatile 变量规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/volatile_变量规则.png)
+![volatile 变量规则](/IMAGES/2019/Java-并发/volatile_变量规则.png)
 
 #### 4. 线程启动规则
 
@@ -1270,7 +1270,7 @@ volatile 关键字通过添加内存屏障的方式来禁止指令重排，即�
 
 Thread 对象的 `start()` 方法调用先行发生于此线程的每一个动作。
 
-![线程启动规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程启动规则.png)
+![线程启动规则](/IMAGES/2019/Java-并发/线程启动规则.png)
 
 #### 5. 线程加入规则
 
@@ -1278,7 +1278,7 @@ Thread 对象的 `start()` 方法调用先行发生于此线程的每一个动�
 
 Thread 对象的结束先行发生于 `join()` 方法返回。
 
-![线程加入规则](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程加入规则.png)
+![线程加入规则](/IMAGES/2019/Java-并发/线程加入规则.png)
 
 #### 6. 线程中断规则
 
@@ -1494,7 +1494,7 @@ public class ThreadLocalExample1 {
 
 它所对应的底层结构图为：
 
-![ThreadLocal](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/ThreadLocal.png)
+![ThreadLocal](/IMAGES/2019/Java-并发/ThreadLocal.png)
 
 每个 Thread 都有一个 ThreadLocal.ThreadLocalMap 对象。
 
@@ -1597,17 +1597,17 @@ JDK 1.6 引入了偏向锁和轻量级锁，从而让锁拥有了四个状态：
 
 以下是 HotSpot 虚拟机对象头的内存布局，这些数据被称为 Mark Word。其中 tag bits 对应了五个状态，这些状态在右侧的 state 表格中给出。除了 marked for gc 状态，其它四个状态已经在前面介绍过了。
 
-![Mark Word](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/轻量级锁1.png)
+![Mark Word](/IMAGES/2019/Java-并发/轻量级锁1.png)
 
 下图左侧是一个线程的虚拟机栈，其中有一部分称为 Lock Record 的区域，这是在轻量级锁运行过程创建的，用于存放锁对象的 Mark Word。而右侧就是一个锁对象，包含了 Mark Word 和其它信息。
 
-![Lock Record](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/轻量级锁2.png)
+![Lock Record](/IMAGES/2019/Java-并发/轻量级锁2.png)
 
 轻量级锁是相对于传统的重量级锁而言，它使用 CAS 操作来避免重量级锁使用互斥量的开销。对于绝大部分的锁，在整个同步周期内都是不存在竞争的，因此也就不需要都使用互斥量进行同步，可以先采用 CAS 操作进行同步，如果 CAS 失败了再改用互斥量进行同步。
 
 当尝试获取一个锁对象时，如果锁对象标记为 0 01，说明锁对象的锁未锁定（unlocked）状态。此时虚拟机在当前线程的虚拟机栈中创建 Lock Record，然后使用 CAS 操作将对象的 Mark Word 更新为 Lock Record 指针。如果 CAS 操作成功了，那么线程就获取了该对象上的锁，并且对象的 Mark Word 的锁标记变为 00，表示该对象处于轻量级锁状态。
 
-![轻量级锁](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/轻量级锁3.png)
+![轻量级锁](/IMAGES/2019/Java-并发/轻量级锁3.png)
 
 如果 CAS 操作失败了，虚拟机首先会检查对象的 Mark Word 是否指向当前线程的虚拟机栈，如果是的话说明当前线程已经拥有了这个锁对象，那就可以直接进入同步块继续执行，否则说明这个锁对象已经被其他线程线程抢占了。如果有两条以上的线程争用同一个锁，那轻量级锁就不再有效，要膨胀为重量级锁。
 
@@ -1619,7 +1619,7 @@ JDK 1.6 引入了偏向锁和轻量级锁，从而让锁拥有了四个状态：
 
 当有另外一个线程去尝试获取这个锁对象时，偏向状态就宣告结束，此时撤销偏向（Revoke Bias）后恢复到未锁定状态或者轻量级锁状态。
 
-![偏向锁](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/偏向锁.jpg)
+![偏向锁](/IMAGES/2019/Java-并发/偏向锁.jpg)
 
 ## 多线程开发良好的实践
 
