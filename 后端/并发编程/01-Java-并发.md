@@ -5,7 +5,7 @@
 
 ## 线程状态转换
 
-![线程状态转换](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/线程状态转换.png)
+![线程状态转换](/IMAGES/2019/Java-并发/线程状态转换.png)
 
 ### 新建（New）
 
