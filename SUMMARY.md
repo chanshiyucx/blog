@@ -225,6 +225,8 @@
 - 纸函
   - [Note](纸函/Note.md)
   - [Interview](纸函/Interview.md)
+  - [2022-08-19](纸函/2022-08-19.md)
+  - [Ceph](纸函/Ceph/Ceph.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
