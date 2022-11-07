@@ -158,7 +158,7 @@ public static void main(String[] args) {
 
 Callable 和 FutureTask 本质上也是实现 Runnable 接口，观点错误。
 
-![Callable](https://raw.githubusercontent.com/chanshiyucx/yoi/master/2019/Java-并发/Callable.png)
+![Callable](../../IMAGES/2019/Java-并发/Callable.png)
 
 #### 3. 定时器创建线程也算是一种新建线程的方式
 
