@@ -75,6 +75,7 @@ Code is Long, Life is Short.
     - [11 Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
     - [12 TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
     - [13 TypeScript 小技巧](前端/JavaScript/13-TypeScript-小技巧.md)
+    - [14 TypeScript 学习之 Omit](前端/JavaScript/14-TypeScript-学习之-Omit.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -101,6 +102,7 @@ Code is Long, Life is Short.
     - [04 Vue 一键导出 PDF](前端/Vue/04-Vue-一键导出-PDF.md)
     - [05 动态可响应对象](前端/Vue/05-动态可响应对象.md)
     - [06 Vue 引入 SCSS](前端/Vue/06-Vue-引入-SCSS.md)
+    - [07 Vue 路由权限控制](前端/Vue/07-Vue-路由权限控制.md)
   - 实战系列
     - [01 WebSocket 心跳重连机制](前端/实战系列/01-WebSocket-心跳重连机制.md)
     - [02 图片加解密二三事](前端/实战系列/02-图片加解密二三事.md)
