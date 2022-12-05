@@ -249,7 +249,11 @@ Code is Long, Life is Short.
 - 纸函
   - [Note](纸函/Note.md)
   - [Interview](纸函/Interview.md)
+  - [动态规划](纸函/动态规划.md)
+  - [算法小结](纸函/算法小结.md)
+  - [反串讲-对象](纸函/反串讲-对象.md)
   - [2022-08-19](纸函/2022-08-19.md)
+  - [2022-11-08](纸函/2022-11-08.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
