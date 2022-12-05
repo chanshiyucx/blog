@@ -11,7 +11,7 @@
 
 当不使用全局匹配时，两者的匹配效果是一样的，仅返回第一次匹配成功的结果：
 
-```js
+```javascript
 const str = 'aaa bbb ccc'
 const regex = /\b\w+\b/
 console.log('match:', str.match(regex))
@@ -23,7 +23,7 @@ console.log('exec:', regex.exec(str))
 
 当使用全局匹配时，两者的匹配结果出现区别：
 
-```js
+```javascript
 const str = 'aaa bbb ccc'
 const regex = /\b\w+\b/g
 console.log('match1:', str.match(regex))
@@ -50,7 +50,7 @@ console.log('exec3:', regex.exec(str))
 
 无全局匹配且分组时，match 和 exec 返回结果相同，此时由于表达式采用了括号分组，所以在返回匹配结果的同时，依次返回该结果的所有分组：
 
-```js
+```javascript
 const str = 'aaa1 bbb2 ccc3'
 const regex = /\b(\w+)(\d+)\b/
 console.log('match1:', str.match(regex))
@@ -70,7 +70,7 @@ console.log('exec3:', regex.exec(str))
 
 全局匹配且分组时，match 和 exec 返回结果不同。match 会返回所有匹配到的结果，而 exec 会返回本次匹配到的结果，若表达式中出现分组，则会依次返回本次匹配的全部分组：
 
-```js
+```javascript
 const str = 'aaa1 bbb2 ccc3'
 const regex = /\b(\w+)(\d+)\b/g
 console.log('match1:', str.match(regex))
@@ -90,7 +90,7 @@ console.log('exec3:', regex.exec(str))
 
 ## 实战
 
-```js
+```javascript
 // 匹配十六进制颜色值
 const regex = /#([0-9a-zA-Z]{6}|[0-9a-zA-Z]{3})/g
 const str = `#ffbbad #Fc01DF #FFF #ffE`

@@ -7,7 +7,7 @@
 1. 减少重新 render 的次数。因为 React 最耗费性能的就是调和过程（reconciliation），只要不 render 就不会触发 reconciliation；
 2. 减少计算量，这个自然不必多说。
 
-```js
+```javascript
 import React, { useState } from 'react'
 
 function Comp() {
@@ -33,7 +33,7 @@ function Comp() {
 
 Expensive 是一个渲染成本非常高的组件，但点击 Cheap 组件也会导致 Expensive 重新渲染，即使 dataB 并未发生改变。原因就是 onClickB 被重新定义，导致 React 在 diff 新旧组件时，判定组件发生了变化。这时候 useCabllback 和 memo 就发挥了作用：
 
-```js
+```javascript
 import React, { useState, memo, useCallback } from 'react'
 
 function Expensive({ onClick, name }) {

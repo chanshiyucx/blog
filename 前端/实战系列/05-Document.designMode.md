@@ -2,7 +2,7 @@
 
 document.designMode 控制整个文档是否可编辑。有效值为 "on" 和 "off" 。
 
-```js
+```javascript
 const mode = document.designMode
 document.designMode = 'on' || 'off'
 ```

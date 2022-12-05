@@ -203,7 +203,7 @@ chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
 
 ## 012 判断是否为本地开发环境
 
-```js
+```javascript
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -231,7 +231,7 @@ searchParams.delete('a') // "b=2&c=3"
 
 由于 `URLSearchParams` 的兼容性，老旧浏览器兼容可以使用下面代码：
 
-```js
+```javascript
 function getQueryString(name) {
   var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
   var r = location.search.substr(1).match(reg)
@@ -325,13 +325,13 @@ export const decodeMsg = (msgStr) => {
 
 ### 正则表达式
 
-```js
+```javascript
 export const removeHtmlTag = (raw) => raw.replace(/<[\s\S]+?>/g, '')
 ```
 
 ### DOM API
 
-```js
+```javascript
 export const removeHtmlTag = (raw) => {
   const box = document.createElement('template')
   box.innerHTML = raw
@@ -341,7 +341,7 @@ export const removeHtmlTag = (raw) => {
 
 ## 018 HTML 转义与反转义
 
-```js
+```javascript
 // 转义
 let textNode = document.createTextNode('<span>by zhangxinxu</span>')
 let div = document.createElement('div')
@@ -358,7 +358,7 @@ console.log(doc.documentElement.textContent)
 
 ## 019 判断合法日期
 
-```js
+```javascript
 export const isDate = (raw) => !isNaN(+new Date(raw))
 ```
 
@@ -381,7 +381,7 @@ overflow: hidden;
 
 ## 021 文件大小单位转换
 
-```js
+```javascript
 export const bytesSize = (bytes) => {
   if ((bytes >> 30) & 0x3ff) {
     bytes = (bytes >>> 30) + '.' + String(bytes & (3 * 0x3ff)).substr(0, 2) + 'GB'
@@ -414,7 +414,7 @@ const demo = () => {
 
 ## 023 react 动态加载 script
 
-```js
+```javascript
 useEffect(() => {
   const script = document.createElement('script')
   script.type = 'text/javascript'
@@ -445,7 +445,7 @@ useEffect(() => {
 </a>
 ```
 
-```js
+```javascript
 export function getOriginalSource(el) {
   if (el.dataset.original) {
     return el.dataset.original

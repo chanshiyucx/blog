@@ -10,13 +10,13 @@
 
 innerText 由于存在诸多特别的特性、以及兼容性差异，以及性能方面问题，以及实际开发的需求的考量，不推荐使用，**推荐使用 textContent 获取文本内容**。
 
-```js
+```javascript
 var text = dom.textContent
 ```
 
 如果你的项目还需要兼容 IE8 浏览器，则使用下面的代码：
 
-```js
+```javascript
 var text = dom.textContent || dom.innerText
 ```
 
@@ -32,7 +32,7 @@ var text = dom.textContent || dom.innerText
 
 使用 getAttribute 和 dataset 对象都能获取 data-author 属性值：
 
-```js
+```javascript
 button.getAttribute('data-author') // zhangxinxu
 button.dataset.author // zhangxinxu
 ```
@@ -43,7 +43,7 @@ button.dataset.author // zhangxinxu
 <button id="button" data-AUTHOR="zhangxinxu">作者是谁？</button>
 ```
 
-```js
+```javascript
 button.getAttribute('DATA-author') // zhangxinxu
 button.dataset.AUTHOR // undefined
 button.dataset.author // zhangxinxu
@@ -55,7 +55,7 @@ button.dataset.author // zhangxinxu
 <button id="button" data-article-author="zhangxinxu">感谢阅读！</button>
 ```
 
-```js
+```javascript
 button.getAttribute('data-article-author') // zhangxinxu
 button.dataset.articleAuthor // zhangxinxu
 ```
@@ -66,7 +66,7 @@ button.dataset.articleAuthor // zhangxinxu
 
 假设某个元素的 ID 是未知的，通过参数传过来的，但是这个字符串参数可能各种各样，假设这个字符串是'thanksForShare!'，此时分别运行下面的代码：
 
-```js
+```javascript
 document.getElementById('thanksForShare!') // 正常运行
 document.querySelector('#thanksForShare!') // 报错
 ```

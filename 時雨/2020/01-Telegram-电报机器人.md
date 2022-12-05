@@ -56,7 +56,7 @@ https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=hello
 
 通过浏览器或者 `curl` 请求这个地址即可发送消息。
 
-```json
+```javascripton
 {
   "ok": true,
   "result": {

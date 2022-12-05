@@ -114,7 +114,7 @@ if (isAxiosError(err)) {
 
 When to use JSX.Element vs ReactNode vs ReactElement?
 
-```js
+```javascript
 <p> // <- ReactElement = JSX.Element
   <Custom> // <- ReactElement = JSX.Element
      {true && "test"} // <- ReactNode

@@ -31,7 +31,7 @@ type SetUser = (name: string, age: number) => void
 
 interface 和 type 都可以拓展，并且两者并不是相互独立的，也就是说 interface 可以 extends type, type 也可以 extends interface。虽然效果差不多，但是两者语法不同。
 
-```js
+```javascript
 // interface extends interface
 interface Name {
   name: string;
@@ -69,7 +69,7 @@ type User = Name & {
 
 1. type 可以声明基本类型别名，联合类型，元组等类型
 
-```js
+```javascript
 // 基本类型别名
 type Name = string
 
@@ -89,7 +89,7 @@ type PetList = [Dog, Pet]
 
 2. type 语句中还可以使用 typeof 获取实例的 类型进行赋值
 
-```js
+```javascript
 // 当你想获取一个变量的类型时，使用 typeof
 let div = document.createElement('div')
 type B = typeof div
@@ -97,7 +97,7 @@ type B = typeof div
 
 3. 其他骚操作
 
-```js
+```javascript
 type StringOrNumber = string | number
 type Text = string | { text: string }
 type NameLookup = Dictionary<string, Person>
@@ -111,7 +111,7 @@ type Tree<T> = T | { left: Tree<T>, right: Tree<T> }
 
 interface 能够声明合并
 
-```js
+```javascript
 interface User {
   name: string
   age: number

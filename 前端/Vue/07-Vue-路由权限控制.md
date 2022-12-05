@@ -6,7 +6,7 @@
 
 参考代码：[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/blob/master/src/directive/permission/permission.js)
 
-```js
+```javascript
 // directive/permission/permission.js
 import router from '@/router'
 
@@ -43,7 +43,7 @@ export default permission
 
 注册到全局：
 
-```js
+```javascript
 // main.js
 import permission from '@/directive/permission/index.js'
 
@@ -66,7 +66,7 @@ v-permission 的局限：
 
 ## checkPermission
 
-```js
+```javascript
 // utils/permission.js
 import router from '@/router'
 

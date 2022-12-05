@@ -393,7 +393,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 新增或编辑 `/etc/docker/daemon.json` 文件：
 
-```json
+```javascripton
 {
   "insecure-registries": ["docker.tgnb.cc"]
 }

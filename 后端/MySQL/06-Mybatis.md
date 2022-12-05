@@ -69,7 +69,7 @@ public User(String id, String name) {
 
 这样之后，结果集中的 id 和 username 属性都会发生变化：
 
-```json
+```javascripton
 {
   "id": "1001--------",
   "username": "后羿--------",

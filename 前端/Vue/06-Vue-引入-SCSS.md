@@ -7,7 +7,7 @@
    > Similar to what @KostDM said, in my case it seems like sass-loader@11.0.0 doesn't work with vue@2.6.12.
 3. 修改 `build/utils.js` 文件如下
 
-```js
+```javascript
 // scss: generateLoaders('sass')
 
 scss: generateLoaders('sass').concat({
@@ -20,7 +20,7 @@ scss: generateLoaders('sass').concat({
 
 之后在 `main.js` 中可以不需要再引入全局 scss 文件：
 
-```js
+```javascript
 // import '@/assets/styles/index.scss'
 ```
 

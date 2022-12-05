@@ -72,7 +72,7 @@ function delLast(str, char) {
 
 ## 004 设计实现 Promise.finally
 
-```js
+```javascript
 Promise.prototype.finally = function (callback) {
   let P = this.constructor // 获取当前实例构造函数的引用
   return this.then(
@@ -89,7 +89,7 @@ Promise.prototype.finally = function (callback) {
 
 `Promise.race(iterable)` 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝。
 
-```js
+```javascript
 Promise._race = (promises) =>
   new Promise((resolve, reject) => {
     promises.forEach((promise) => {
@@ -100,7 +100,7 @@ Promise._race = (promises) =>
 
 基本和上面的例子差不多，不同点是每个传入值使用 Promise.resolve 转为 Promise 对象，兼容非 Promise 对象。
 
-```js
+```javascript
 const _race = (p) => {
   return new Promise((resolve, reject) => {
     p.forEach((item) => {
@@ -114,7 +114,7 @@ const _race = (p) => {
 
 从长度为 n 的字符串 S 中，查找是否存在字符串 T，T 的长度是 m，若存在返回所在位置
 
-```js
+```javascript
 const find = (S, T) => {
   if (S.length < T.length) return -1
   for (let i = 0; i < S.length - T.length; i++) {
@@ -126,7 +126,7 @@ const find = (S, T) => {
 
 或者使用正则：
 
-```js
+```javascript
 // 方法一：
 const find = (S, T) => S.search(T)
 
@@ -139,7 +139,7 @@ const find = (S, T) => {
 
 ## 007 add(1)(2, 3) 链式调用函数
 
-```js
+```javascript
 add(1);  // 1
 add(1)(2);  // 3
 add(1)(2)(3)； // 6
@@ -147,7 +147,7 @@ add(1)(2, 3);  // 6
 add(1, 2, 3);  // 6
 ```
 
-```js
+```javascript
 const add = (...rest) => {
   const args = [...rest]
   const fn = (...re) => {
@@ -167,7 +167,7 @@ const add = (...rest) => {
 
 比如有个数组有 100K 个元素，从中不重复随机选取 10K 个元素。
 
-```js
+```javascript
 /* 洗牌算法：
   1.生成一个0 - arr.length 的随机数
   2.交换该随机数位置元素和数组的最后一个元素，并把该随机位置的元素放入结果数组
@@ -197,7 +197,7 @@ function shuffle(arr, size) {
 2. 每当有一个请求返回，就留下一个空位，可以增加新的请求
 3. 所有请求完成后，结果按照 urls 里面的顺序依次打出
 
-```js
+```javascript
 function multiRequest(urls, maxNum) {
   const ret = []
   let i = 0
@@ -233,7 +233,7 @@ function request(url) {
 
 ## 010 实现 Promise.retry，成功后 resolve 结果，失败后重试，尝试超过一定次数才真正的 reject
 
-```js
+```javascript
 Promise.retry = function (fn, times = 3) {
   return new Promise(async (resolve, reject) => {
     while (times--) {
@@ -259,7 +259,7 @@ Promise.retry(request)
 
 ## 011 自增 ID
 
-```js
+```javascript
 const genId = (() => {
   let count = 0
   return () => {

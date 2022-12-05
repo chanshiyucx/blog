@@ -52,7 +52,7 @@ https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/1.jpg
 
 博客文件托管只需将修改 `vue.config.js` 中静态资源路径配置即可，将其修改为你的博客 pages 仓库，然后重新打包部署，全站 CDN 加速岂不美哉。
 
-```js
+```javascript
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? `//cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/` : '/',
 }

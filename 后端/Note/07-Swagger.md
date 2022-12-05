@@ -274,7 +274,7 @@ public class ApiResponse<T> implements Serializable {
 
 之后添加 `src/main/resources/META-INF/spring-configuration-metadata.json` 文件：
 
-```json
+```javascripton
 {
   "properties": [
     {

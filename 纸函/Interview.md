@@ -214,7 +214,7 @@ call 比 apply 的性能要好，因为内部少了一次将 apply 第二个参�
 
 在 es6 引入了延展操作符后，即使参数是数组，可以使用 call：
 
-```js
+```javascript
 let params = [1, 2, 3, 4]
 xx.call(obj, ...params)
 ```
@@ -235,7 +235,7 @@ xx.call(obj, ...params)
 2. Symbol 值作为属性名避免被覆盖
 3. 模拟类的私有方法：ES6 中的类是没有 private 关键字来声明类的私有方法和私有变量的，但是可以利用 Symbol 的唯一性来模拟。
 
-```js
+```javascript
 const speak = Symbol();
 class Person {
     [speak]() {
@@ -607,7 +607,7 @@ for in 更适合遍历对象，当然也可以遍历数组，但是会存在一�
 2. 遍历顺序有可能不是按照实际数组的内部顺序
 3. **使用 for in 会遍历数组所有的可枚举属性、包括原型**，如果不想遍历原型方法和属性的话，可以在循环内部判断一下，使用 hasOwnProperty() 方法可以判断某属性是不是该对象的实例属性
 
-```js
+```javascript
 for (let index in arr) {
   if (arr.hasOwnProperty(index)) {
   }
@@ -649,7 +649,7 @@ Vue 路由懒加载的实现：
 
 对于 Vue 来说，Vue Router 支持动态导入，可以用动态导入代替静态导入。
 
-```js
+```javascript
 // import UserDetails from './views/UserDetails'
 // 替换成
 const UserDetails = () => import('./views/UserDetails')
@@ -657,7 +657,7 @@ const UserDetails = () => import('./views/UserDetails')
 
 把组件按组分块，有时候想把某个路由下的所有组件都打包在同个异步块（chunk）中。只需要使用命名 chunk，一个特殊的注释语法来提供 chunk name (需要 Webpack > 2.4)，webpack 会将任何一个异步模块与相同的块名称组合到相同的异步块中。
 
-```js
+```javascript
 const UserDetails = () => import(/* webpackChunkName: "group-user" */ './UserDetails.vue')
 const UserDashboard = () => import(/* webpackChunkName: "group-user" */ './UserDashboard.vue')
 const UserProfileEdit = () => import(/* webpackChunkName: "group-user" */ './UserProfileEdit.vue')
@@ -700,7 +700,7 @@ MVVM 是 Model-View-ViewModel 缩写，也就是把 MVC 中的 Controller 演变
 1. 在 input 中绑定 value(vuex 中的 state)，然后监听 input 的 change 或者 input 事件，在事件回调中调用 mutation 修改 state 的值
 2. 使用带有 setter 的双向绑定计算属性。
 
-```js
+```javascript
 <input v-model="message" />
 
 computed: {
@@ -771,7 +771,7 @@ watch：侦听器，监听数据的变化，监听的数据就是 data 中的已
 
 1. localStorage 实现通信
 
-```js
+```javascript
 window.addEventListener('storage', (e) => {
   console.info('localStorage发生变化：', e)
 })
@@ -787,7 +787,7 @@ sharedWorker 就是 webWorker 中的一种，它可以由所有同源页面共�
 
 它和 webSocket 实现多页面通讯的原理很类似，都是发送数据和接收数据这样的步骤，shardWorker 就好比的 webSocket 服务器。
 
-```js
+```javascript
 // worker.js
 const set = new Set()
 onconnect = (event) => {
@@ -821,7 +821,7 @@ worker.port.postMessage(`客户端B发送的消息:HELLO`)
 
 原理是在需要接收消息的页面不断轮询去查询 cookie，然后发送消息的页面将数据存储在 cookie 中，这样就实现了简单的数据共享。
 
-```js
+```javascript
 setInterval(() => {
   //加入定时器，让函数每一秒就调用一次，实现页面刷新
   console.log('cookie', document.cookie)
@@ -910,7 +910,7 @@ vue 文件的一个加载器，将 template/js/style 转换成 js 模块。
 
 可以，栗子：
 
-```js
+```javascript
 <input type="text" v-on="{ input:onInput,focus:onFocus,blur:onBlur }">
 ```
 
