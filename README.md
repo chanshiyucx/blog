@@ -60,6 +60,9 @@ Code is Long, Life is Short.
   - 2022
     - [01 小城新貌](時雨/2022/01-小城新貌.md)
     - [02 原神满级纪念](時雨/2022/02-原神满级纪念.md)
+  - 2023
+    - [01 2022 逆旅](時雨/2023/01-2022-逆旅.md)
+    - [02 设计的金线](時雨/2023/02-设计的金线.md)
 - 前端
   - JavaScript
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
@@ -111,6 +114,8 @@ Code is Long, Life is Short.
     - [05 Document.designMode](前端/实战系列/05-Document.designMode.md)
     - [06 常用 DOM 方法比较.md](前端/实战系列/06-常用-DOM-方法比较.md)
     - [07 Ceph](前端/实战系列/07-Ceph.md)
+    - [08 Interview](前端/实战系列/08-Interview.md)
+    - [09 动态规划](前端/实战系列/09-动态规划.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
@@ -247,11 +252,6 @@ Code is Long, Life is Short.
     - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
-  - [Note](纸函/Note.md)
-  - [Interview](纸函/Interview.md)
-  - [动态规划](纸函/动态规划.md)
-  - [算法小结](纸函/算法小结.md)
-  - [反串讲-对象](纸函/反串讲-对象.md)
   - [2022-08-19](纸函/2022-08-19.md)
   - [2022-11-08](纸函/2022-11-08.md)
 - 万藏
