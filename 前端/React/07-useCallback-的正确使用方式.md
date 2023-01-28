@@ -24,7 +24,7 @@ function Comp() {
 
   return (
     <div>
-      <Cheap onClick={onClickA}>组件Cheap：{dataA}</div>
+      <Cheap onClick={onClickA}>组件Cheap：{dataA}</Cheap>
       <Expensive onClick={onClickB}>组件Expensive：{dataB}</Expensive>
     </div>
   )
@@ -72,3 +72,5 @@ export default function Comp() {
 memo 是 React v16.6.0 新增的方法，与 PureComponent 类似，前者负责 Function Component 的优化，后者负责 Class Component。它们都会对传入组件的新旧数据进行浅比较，如果相同则不会触发渲染。
 
 所以 useCallback 保证了 onClickB 不发生变化，此时点击 Cheap 组件不会触发 Expensive 组件的刷新，只有点击 Expensive 组件才会触发。
+
+在实现减少不必要渲染的优化过程中，useCallback 和 memo 是一对利器，需要配合使用。
