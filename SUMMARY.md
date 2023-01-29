@@ -42,6 +42,7 @@
   - 2023
     - [01 2022 逆旅](時雨/2023/01-2022-逆旅.md)
     - [02 设计的金线](時雨/2023/02-设计的金线.md)
+    - [03 半透明背景图实现](時雨/2023/03-半透明背景图实现.md)
 - 前端
   - JavaScript
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
@@ -98,6 +99,7 @@
     - [07 Ceph](前端/实战系列/07-Ceph.md)
     - [08 Interview](前端/实战系列/08-Interview.md)
     - [09 动态规划](前端/实战系列/09-动态规划.md)
+    - [10 AbortController 中断 fetch](前端/实战系列/10-AbortController-中断-fetch.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
