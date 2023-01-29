@@ -397,7 +397,7 @@ export const bytesSize = (bytes) => {
 
 ## 022 react ref 计算元素的尺寸
 
-```ts
+```typescript
 const demo = () => {
   const ref = useCallback((el: HTMLElement | null) => {
     if (el) {

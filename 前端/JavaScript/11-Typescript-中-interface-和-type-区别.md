@@ -67,7 +67,7 @@ type User = Name & {
 
 ### type 可以而 interface 不行
 
-1. type 可以声明基本类型别名，联合类型，元组等类型
+1.type 可以声明基本类型别名，联合类型，元组等类型
 
 ```javascript
 // 基本类型别名
@@ -87,7 +87,7 @@ type Pet = Dog | Cat
 type PetList = [Dog, Pet]
 ```
 
-2. type 语句中还可以使用 typeof 获取实例的 类型进行赋值
+2.type 语句中还可以使用 typeof 获取实例的 类型进行赋值
 
 ```javascript
 // 当你想获取一个变量的类型时，使用 typeof
@@ -95,7 +95,7 @@ let div = document.createElement('div')
 type B = typeof div
 ```
 
-3. 其他骚操作
+3.其他骚操作
 
 ```javascript
 type StringOrNumber = string | number

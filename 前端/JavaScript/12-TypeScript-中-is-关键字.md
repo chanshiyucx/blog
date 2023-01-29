@@ -61,3 +61,15 @@ example('hello world')
 
 - 在使用类型保护时，TS 会进一步缩小变量的类型。例子中，将类型从 any 缩小至了 string；
 - 类型保护的作用域仅仅在 if 后的块级作用域中生效。
+
+实战：
+
+```typescript
+function isAxiosError(error: any): error is AxiosError {
+  return error.isAxiosError
+}
+
+if (isAxiosError(err)) {
+  code = `Axios-${err.code}`
+}
+```
