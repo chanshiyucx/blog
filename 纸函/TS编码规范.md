@@ -32,13 +32,21 @@ interface Foo {
 ```
 
 > 为什么不使用 I 前缀命名接口？
-> 在 TS 中，类可以实现接口，接口可以继承接口，接口可以继承类。类和接口都是某种意义上的抽象和封装，继承时不需要关心它是一个接口还是一个类。如果用 I 前缀，当一个变量的类型更改了，比如由接口变成了类，那变量名称就必须同步更改。
->
+> I 前缀违反了封装原则，在 TS 中，类可以实现接口，接口可以继承接口，接口可以继承类。类和接口都是某种意义上的抽象和封装，继承时不需要关心它是一个接口还是一个类。如果用 I 前缀，当一个变量的类型更改了，比如由接口变成了类，那变量名称就必须同步更改。
+
+```ts
+interface IFoo {}
+class Point {}
+type Baz = IFoo & Point
+```
+
+其实我们关心的是这是否是一个「类型」，不论它是 interface 或 class 或 type，都作为「类型」，其它的都不加前缀，没必要给 interface 加个前缀去独立出来。
+
 > 1. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
 > 2. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
 > 3. [为什么不建议 TypeScript 中的接口名以 I 开头？](https://www.zhihu.com/question/484266650)
 
-4. 使用 PascalCase 为枚举值命名。
+4. 使用 PascalCase 为枚举对象本身和枚举成员命名。
 
 ```ts
 // Bad
@@ -96,6 +104,32 @@ class Foo {
 2. 不要在全局命名空间内定义类型/值
 3. 在文件中，类型定义应该放在最前面
 
+### 类型声明规范
+
+在进行类型声明时应尽量依靠 TS 的自动类型推断功能，如果能够推断出正确类型尽量不要再手动声明。
+
+1. 基础类型变量不需要手动声明类型。
+
+```ts
+let foo = 'foo'
+let bar = 2
+let baz = false
+```
+
+2. 引用类型变量应该保证类型正确，不正确的需要手动声明。
+
+```ts
+// 自动推断
+let foo = [1, 2] // number[]
+
+// 显示声明
+// Bad
+let bar = [] // any[]
+
+// Good
+let bar: number[] = []
+```
+
 ### 普通类型
 
 不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是非原始的装盒对象，该使用类型 `number，string，boolean，object`。
@@ -137,7 +171,7 @@ function fn(x: () => void) {
 }
 ```
 
-2. 函数重载应该排序，令精确的排在模糊的之前，TypeScript 会选择第一个匹配到的重载：
+2. 函数重载应该排序，令具体的排在模糊的之前，因为 TS 会选择第一个匹配到的重载，当位于前面的重载比后面的更”模糊“，那么后面的会被隐藏且不会被选用：
 
 ```ts
 // Bad
@@ -190,6 +224,86 @@ interface Moment {
 }
 ```
 
+### 类
+
+1. 类成员声明时除了 `public` 成员，其余成员都应该显式加上作用域修辞符。
+
+```ts
+// Bad
+class Foo {
+  foo = 'foo'
+  bar = 'bar'
+  getFoo() {
+    return this.foo
+  }
+}
+const foo = new Foo()
+foo.foo
+foo.bar
+
+// Good
+class Foo {
+  private foo = 'foo'
+  bar = 'bar'
+  getFoo() {
+    return this.foo
+  }
+}
+const foo = new Foo()
+foo.getFoo()
+foo.bar
+```
+
+2. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符。
+
+```ts
+class Animal {
+  eat() {
+    console.log('food')
+  }
+}
+
+// Bad
+class Dog extends Animal {
+  eat() {
+    console.log('bone')
+  }
+}
+
+// Good
+class Dog extends Animal {
+  override eat() {
+    console.log('bone')
+  }
+}
+```
+
+### 枚举
+
+使用枚举代替对象设置常量集合。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
+
+```ts
+// Bad
+const Status = {
+  Success: 'success',
+}
+
+// Good
+enum Status {
+  Success = 'success',
+}
+```
+
+`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
+
+```ts
+const foo = ['a', 'b'] as const
+foo.push('c') // 报错，因为 foo 类型被声明为不可变的
+
+const bar = { x: 1, y: 2 } as const
+bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
+```
+
 ### 风格
 
 1. 使用 arrow 函数代替匿名函数表达式。
@@ -210,3 +324,8 @@ interface Moment {
 1. [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
 2. [TypeScript 手册](https://bosens-china.github.io/Typescript-manual/download/zh/wiki/coding_guidelines.html)
 3. [TypeScript 中文手册](https://typescript.bootcss.com/declaration-files/do-s-and-don-ts.html)
+4. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
+5. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
+6. [为什么不建议 TypeScript 中的接口名以 I 开头？](https://www.zhihu.com/question/484266650)
+7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
+8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
