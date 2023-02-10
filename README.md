@@ -63,6 +63,7 @@ Code is Long, Life is Short.
   - 2023
     - [01 2022 逆旅](時雨/2023/01-2022-逆旅.md)
     - [02 设计的金线](時雨/2023/02-设计的金线.md)
+    - [03 半透明背景图实现](時雨/2023/03-半透明背景图实现.md)
 - 前端
   - JavaScript
     - [01 JavaScript 秘密花园](前端/JavaScript/01-JavaScript-秘密花园.md)
@@ -99,7 +100,7 @@ Code is Long, Life is Short.
     - [05 Fetch data with React Hooks](前端/React/05-Fetch-data-with-React-Hooks.md)
     - [06 React 和 Vue 中 key 的作用](前端/React/06-React-和-Vue-中-key-的作用.md)
     - [07 useCallback 的正确使用方式](前端/React/07-useCallback-的正确使用方式.md)
-    - [08 useLayoutEffect 和 useEffect 的区别](前端/React/08-useLayoutEffect-和-useEffect 的区别.md)
+    - [08 useLayoutEffect 和 useEffect 的区别](前端/React/08-useLayoutEffect-和-useEffect-的区别.md)
     - [09 forwardRef 逃生舱](前端/React/09-forwardRef-逃生舱.md)
   - Vue
     - [01 Vue Tips](前端/Vue/01-Vue-Tips.md)
@@ -256,8 +257,8 @@ Code is Long, Life is Short.
     - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
-  - [2022-08-19](纸函/2022-08-19.md)
   - [2023-01-10](纸函/2023-01-10.md)
+  - [TS 编码规范](纸函/TS编码规范.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)

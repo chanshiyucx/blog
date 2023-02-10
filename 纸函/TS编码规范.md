@@ -329,3 +329,4 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 6. [为什么不建议 TypeScript 中的接口名以 I 开头？](https://www.zhihu.com/question/484266650)
 7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
 8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
+9. [Typescript 中 interface 和 type 区别](https://juejin.cn/post/6844903749501059085)
