@@ -37,6 +37,8 @@ interface Foo {
 > 2. 防止不恰当的命名：禁止使用 I 前缀可以迫使程序员为接口取一个合适的、带有语义、便于和其他同类型变量区分的名字，而不仅是用前缀区分。
 > 3. 匈牙利命名的时代已经过时：匈牙利命名法由类型前缀加实际的变量名组成，用这种方法命名的变量，看到变量名，可以立即知道其类型。但它的缺点远 于它带来的好处，比如使变量名变得冗长，使相同主体名但类型不同的变量有歧义。
 
+示例：
+
 ```ts
 interface IFoo {}
 class Point {}
@@ -132,6 +134,127 @@ let bar = [] // any[]
 // Good
 let bar: number[] = []
 ```
+
+## interface 和 type
+
+1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
+2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
+
+相同点：
+
+1. 都可以描述一个对象或者函数。
+
+```ts
+// interface
+interface User {
+  name: string
+  age: number
+}
+
+interface SetUser {
+  (name: string, age: number): void
+}
+
+// type
+type User = {
+  name: string
+  age: number
+}
+
+type SetUser = (name: string, age: number) => void
+```
+
+2. 都允许继承
+
+interface 和 type 都可以继承，并且两者并不是相互独立的，也就是说 interface 可以 extends type, type 也可以 extends interface。虽然效果差不多，但是两者语法不同。
+
+```ts
+// interface extends interface
+interface Name {
+  name: string
+}
+interface User extends Name {
+  age: number
+}
+
+// type extends type
+type Name = {
+  name: string
+}
+type User = Name & { age: number }
+
+// interface extends type
+type Name = {
+  name: string
+}
+interface User extends Name {
+  age: number
+}
+
+// type extends interface
+interface Name {
+  name: string
+}
+type User = Name & {
+  age: number
+}
+```
+
+不同点：
+
+1. type 可以声明基本类型别名，联合类型，元组等类型，而 interface 不行。
+
+```ts
+// 基本类型别名
+type Name = string
+
+// 联合类型
+interface Dog {
+  wong()
+}
+interface Cat {
+  miao()
+}
+type Pet = Dog | Cat
+
+//  元组类型，具体定义数组每个位置的类型
+type PetList = [Dog, Pet]
+```
+
+2. type 语句中还可以使用 typeof 获取实例的 类型进行赋值。
+
+```ts
+// 当你想获取一个变量的类型时，使用 typeof
+const div = document.createElement('div')
+type B = typeof div
+```
+
+3. interface 能够声明合并，重复声明 type 会报错。
+
+```ts
+interface User {
+  name: string
+  age: number
+}
+
+interface User {
+  sex: string
+}
+
+/*
+User 接口为 {
+  name: string
+  age: number
+  sex: string
+}
+*/
+```
+
+总结：
+
+- 如果使用联合类型、元组等类型的时候，用 type 起一个别名使用
+- 如果需要使用 extends 进行类型继承时，使用 interface
+- 其他类型定义能使用 interface，优先使用 interface
 
 ### 普通类型
 
@@ -307,6 +430,50 @@ const bar = { x: 1, y: 2 } as const
 bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 ```
 
+### 定义文件规范
+
+1. 全局类型/变量定义写在 `global.d.ts` 文件中，在写入时需要判断。
+
+如果有引入外部模块，使用 `declare global {}` 形式定义：
+
+```ts
+import { StateType } from './state'
+declare global {
+  export const globalState: StateType
+  export const foo: string
+  export type AsyncFunction = (...args: any[]) => Promise<any>
+}
+```
+
+如果没有引入外部模块，直接使用 `declare` 定义：
+
+```ts
+interface StateType {}
+declare const globalState: StateType
+declare const foo: string
+declare type AsyncFunction = (...args: any[]) => Promise<any>
+```
+
+2. 为第三方库拓展定义文件
+
+第三方定义文件应该以 `[package].d.ts` 规则命名，文件统一放在项目的类型目录下。
+
+```ts
+// types/references/react-redux.d.ts
+// 最好加一句这段话，不然导出可能会被覆盖掉，只有 DefaultRootState 存在
+export * from 'react-redux'
+import { FooState } from './foo'
+
+// 扩展第三方库
+declare module 'react-redux' {
+  // 定义 DefaultRootState 的类型为
+  export interface DefaultRootState {
+    foo: FooState
+    [key: string]: any
+  }
+}
+```
+
 ### 风格
 
 1. 使用 arrow 函数代替匿名函数表达式。
@@ -322,6 +489,8 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 5. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
 6. 如果函数没有返回值，最好使用 `void`
 
+## 新的一些特性
+
 ## 参考资料
 
 1. [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
@@ -329,7 +498,7 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 3. [TypeScript 中文手册](https://typescript.bootcss.com/declaration-files/do-s-and-don-ts.html)
 4. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
 5. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
-6. [为什么不建议 TypeScript 中的接口名以 I 开头？](https://www.zhihu.com/question/484266650)
-7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
-8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
-9. [Typescript 中 interface 和 type 区别](https://juejin.cn/post/6844903749501059085)
+6. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
+7. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
+8. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
+9. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
