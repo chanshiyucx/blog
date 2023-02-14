@@ -135,7 +135,7 @@ let bar = [] // any[]
 let bar: number[] = []
 ```
 
-## interface 和 type
+### interface 和 type
 
 1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
@@ -430,7 +430,7 @@ const bar = { x: 1, y: 2 } as const
 bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 ```
 
-### 定义文件规范
+### 定义文件
 
 1. 全局类型/变量定义写在 `global.d.ts` 文件中，在写入时需要判断。
 
@@ -488,8 +488,6 @@ declare module 'react-redux' {
    3. `function f(x: number, y: string): void {}`
 5. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
 6. 如果函数没有返回值，最好使用 `void`
-
-## 新的一些特性
 
 ## 参考资料
 
