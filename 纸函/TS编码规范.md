@@ -98,8 +98,22 @@ class Foo {
 }
 ```
 
-7. 不要为私有属性名添加 `_` 前缀。
-8. 尽可能使用完整的单词拼写命名。
+7. 导入模块的命名空间时使用 camelCase 命名法，文件名则使用 snake_case 命名法。
+
+```ts
+import * as fooBar from './foo_bar'
+```
+
+8. 不要为私有属性名添加 `_` 前缀。
+9. 尽可能使用完整的单词拼写命名。
+
+总结：
+
+| 命名法                              | 分类                                   |
+| ----------------------------------- | -------------------------------------- |
+| 帕斯卡命名法（PascalCase）          | 类、接口、类型、枚举、枚举值、类型参数 |
+| 驼峰式命名法（camelCase）           | 变量、参数、函数、方法、属性、模块别名 |
+| 全大写下划线命名法（CONSTANT_CASE） | 全局常量                               |
 
 ## 类型
 
@@ -318,6 +332,43 @@ const func = (param: Param) => param
 func({ field1: '111', field2: 2 } as Param) // success
 ```
 
+### any 类型
+
+TS 的 `any` 类型是所有其它类型的超类，又是所有其它类型的子类，同时还允许解引用一切属性。因此，使用 `any` 十分危险，它会掩盖严重的程序错误，并且它从根本上破坏了对应的值“具有静态属性”的原则。
+
+**尽可能不要使用 `any`**。如果出现了需要使用 `any` 的场景，可以考虑下列的解决方案：
+
+1. 缩小 any 的影响范围
+
+```ts
+function f1() {
+  const x: any = expressionReturningFoo() // 不建议，后续的 x 都是 any 了
+  processBar(x)
+}
+
+function f2() {
+  const x = expressionReturningFoo()
+  processBar(x as any) // 建议，只有这里是 any
+}
+```
+
+2. 使用更细化的 any
+
+```ts
+const numArgsBad = (...args: any) => args.length // Return any 不推荐
+const numArgs = (...args: any[]) => args.length // Return number 推荐
+```
+
+3. any 的自动推断
+
+TS 中的 any 并不是一成不变的，会随着用户的操作，TS 会猜测更加合理的类型。
+
+```ts
+const output = [] // any[]
+output.push(1) // number[]
+output.push('2') // (number|string)[]
+```
+
 ## 数组
 
 声明数组时使用 `diskList:Dist[]` 而不是 `diskList:Array<Disk>`，便于阅读。
@@ -456,7 +507,7 @@ class Dog extends Animal {
 
 ## 枚举
 
-使用枚举代替对象设置常量集合。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
+**使用枚举代替对象设置常量集合。**使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
 
 ```ts
 // Bad
@@ -470,7 +521,19 @@ enum Status {
 }
 ```
 
-`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
+还可以通过 `const enum` 声明常量枚举：
+
+```ts
+const enum Status {
+  Success = 'success',
+}
+```
+
+常量枚举和普通枚举的差异主要在访问性与编译产物。对于常量枚举，你只能通过枚举成员访问枚举值（而不能通过值访问成员）。同时，在编译产物中并不会存在一个额外的辅助对象，对枚举成员的访问会被直接内联替换为枚举的值。
+
+**对于枚举类型，必须使用 `enum` 关键字，但不要使用 `const enum`（常量枚举）。TS 的枚举类型本身就是不可变的**。
+
+扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
 
 ```ts
 const foo = ['a', 'b'] as const
@@ -480,82 +543,96 @@ const bar = { x: 1, y: 2 } as const
 bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 ```
 
-## 处理 any
+## 模块
 
-1. 缩小 any 的影响范围
+### 导入
 
-```ts
-function f1() {
-  const x: any = expressionReturningFoo() // 不建议，后续的 x 都是 any 了
-  processBar(x)
-}
+TS 代码必须使用路径进行导入。这里的路径既可以是相对路径，以 `.` 或 `..` 开头，也可以是从项目根目录开始的绝对路径，如 `root/path/to/file`。
 
-function f2() {
-  const x = expressionReturningFoo()
-  processBar(x as any) // 建议，只有这里是 any
-}
-```
+在引用逻辑上属于同一项目的文件时，应使用相对路径 `./foo`，不要使用绝对路径 `path/to/foo`。
 
-2. 使用更细化的 any
+应尽可能地限制父层级的数量（避免出现诸如 `../../../` 的路径），过多的层级会导致模块和路径结构难以理解。
 
 ```ts
-const numArgsBad = (...args: any) => args.length // Return any 不推荐
-const numArgs = (...args: any[]) => args.length // Return number 推荐
+import { Symbol1 } from 'google3/path/from/root'
+import { Symbol2 } from '../parent/file'
+import { Symbol3 } from './sibling'
 ```
 
-3. any 的自动推断
+在 ES6 和 TS 中，导入语句共有四种变体：
 
-TS 中的 any 并不是一成不变的，会随着用户的操作，TS 会猜测更加合理的类型。
+| 导入类型 | 示例                              | 用途                                       |
+| -------- | --------------------------------- | ------------------------------------------ |
+| 模块     | `import * as foo from '...'`      | TS 导入方式                                |
+| 解构     | `import { SomeThing } from '...'` | TS 导入方式                                |
+| 默认     | `import SomeThing from '...'`     | 只用于外部代码的特殊需求                   |
+| 副作用   | `import '...'`                    | 只用于加载某些库的副作用（例如自定义元素） |
 
 ```ts
-const output = [] // any[]
-output.push(1) // number[]
-output.push('2') // (number|string)[]
+// 应当这样做！从这两种变体中选择较合适的一种（见下文）。
+import * as ng from '@angular/core'
+import { Foo } from './foo'
+
+// 只在有需要时使用默认导入。
+import Button from 'Button'
+
+// 有时导入某些库是为了其代码执行时的副作用。
+import 'jasmine'
+import '@polymer/paper-button'
 ```
 
-## 定义文件
+根据使用场景的不同，模块导入和解构导入分别有其各自的优势。
 
-1. 全局类型/变量定义写在 `global.d.ts` 文件中，在写入时需要判断。
+模块导入：
 
-如果有引入外部模块，使用 `declare global {}` 形式定义：
+1. 模块导入语句为整个模块提供了一个名称，模块中的所有符号都通过这个名称进行访问，这为代码提供了更好的可读性，同时令模块中的所有符号可以进行自动补全。
+2. 模块导入减少了导入语句的数量，降低了命名冲突的出现几率，同时还允许为被导入的模块提供一个简洁的名称。
+
+解构导入语句则为每一个被导入的符号提供一个局部的名称，这样在使用被导入的符号时，代码可以更简洁。
+
+### 导出
+
+代码中必须使用具名的导出声明。不要使用默认导出，这样能保证所有的导入语句都遵循统一的范式。
 
 ```ts
-import { StateType } from './state'
-declare global {
-  export const globalState: StateType
-  export const foo: string
-  export type AsyncFunction = (...args: any[]) => Promise<any>
-}
+// Use named exports:
+export class Foo {}
+
+// X 不要这样做！不要使用默认导出！
+export default class Foo {}
 ```
 
-如果没有引入外部模块，直接使用 `declare` 定义：
+为什么？因为默认导出并不为被导出的符号提供一个标准的名称，这增加了维护的难度和降低可读性的风险，同时并未带来明显的益处。
 
 ```ts
-interface StateType {}
-declare const globalState: StateType
-declare const foo: string
-declare type AsyncFunction = (...args: any[]) => Promise<any>
+// 默认导出会造成如下的弊端
+import Foo from './bar' // 这个语句是合法的。
+import Bar from './bar' // 这个语句也是合法的。
 ```
 
-2. 为第三方库拓展定义文件
-
-第三方定义文件应该以 `[package].d.ts` 规则命名，文件统一放在项目的类型目录下。
+具名导出的一个优势是，当代码中试图导入一个并未被导出的符号时，这段代码会报错。例如，假设在 `foo.ts` 中有如下的导出声明：
 
 ```ts
-// types/references/react-redux.d.ts
-// 最好加一句这段话，不然导出可能会被覆盖掉，只有 DefaultRootState 存在
-export * from 'react-redux'
-import { FooState } from './foo'
-
-// 扩展第三方库
-declare module 'react-redux' {
-  // 定义 DefaultRootState 的类型为
-  export interface DefaultRootState {
-    foo: FooState
-    [key: string]: any
-  }
-}
+// 不要这样做！
+const foo = 'blah'
+export default foo
 ```
+
+如果在 `bar.ts` 中有如下的导入语句：
+
+```ts
+// 编译错误！
+import { fizz } from './foo'
+```
+
+会导致编译错误： `error TS2614: Module '"./foo"' has no exported member 'fizz'`。反之，如果在 `bar.ts` 中的导入语句为：
+
+```ts
+// 不要这样做！这定义了一个多余的变量 fizz！
+import fizz from './foo'
+```
+
+结果是 `fizz === foo`，这往往不符合预期，且难以调试。
 
 ## 风格
 
@@ -577,10 +654,11 @@ declare module 'react-redux' {
 1. [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
 2. [TypeScript 手册](https://bosens-china.github.io/Typescript-manual/download/zh/wiki/coding_guidelines.html)
 3. [TypeScript 中文手册](https://typescript.bootcss.com/declaration-files/do-s-and-don-ts.html)
-4. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
-5. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
-6. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
-7. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
-8. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
-9. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
-10. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
+4. [Google TypeScript 风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-typescript-styleguide/contents/)
+5. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
+6. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
+7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
+8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
+9. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
+10. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
+11. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
