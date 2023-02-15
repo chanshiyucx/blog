@@ -4,11 +4,9 @@
 
 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
 
-TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript 下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。
-
-TypeScript 微软官方编码规范：[Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
-
-中文版：[TypeScript 手册](https://bosens-china.github.io/Typescript-manual/download/zh/wiki/coding_guidelines.html)
+- [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
+- [TypeScript 手册](https://bosens-china.github.io/Typescript-manual/download/zh/wiki/coding_guidelines.html)
+- [Google TypeScript 风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-typescript-styleguide/contents/)
 
 ## 命名
 
@@ -430,7 +428,7 @@ User 接口为 {
 
 总结：
 
-- 如果使用联合类型、交叉类型、元组等类型的时候，用 type 起一个别名使用
+- 如果使用联合类型、交叉类型、元组等类型的时候，用 type 类型别名
 - 如果需要使用 extends 进行类型继承时，使用 interface
 - 其他类型定义能使用 interface，优先使用 interface
 
