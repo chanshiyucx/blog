@@ -746,34 +746,6 @@ interface Moment {
 
 ## 类
 
-<!-- 1. 类成员声明时除了 `public` 成员，其余成员都应该显式加上作用域修辞符。
-
-```ts
-// Bad
-class Foo {
-  foo = 'foo'
-  bar = 'bar'
-  getFoo() {
-    return this.foo
-  }
-}
-const foo = new Foo()
-foo.foo
-foo.bar
-
-// Good
-class Foo {
-  private foo = 'foo'
-  bar = 'bar'
-  getFoo() {
-    return this.foo
-  }
-}
-const foo = new Foo()
-foo.getFoo()
-foo.bar
-``` -->
-
 1. 不要 #private 语法
 
 不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TS 的访问修饰符。
