@@ -1,18 +1,16 @@
 # TS/JS 编码规范
 
-## TypeScript 是什么
+## TS 编码规范
 
 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
 
 TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript 下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。
 
-## TS 编码规范
-
 TypeScript 微软官方编码规范：[Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
 
 中文版：[TypeScript 手册](https://bosens-china.github.io/Typescript-manual/download/zh/wiki/coding_guidelines.html)
 
-### 命名
+## 命名
 
 1. 使用 PascalCase 为类型命名，包括接口 interface、类型别名 type、类 class。
 2. 不要使用 `I` 做为接口名前缀，接口成员使用 camelCase 方式命名。
@@ -103,14 +101,14 @@ class Foo {
 7. 不要为私有属性名添加 `_` 前缀。
 8. 尽可能使用完整的单词拼写命名。
 
-### 类型
+## 类型
 
-#### 声明规范
+### 声明规范
 
 1. 除非类型/函数需要在多个组件中共享，否则不要导出
 2. 在文件中，类型定义应该放在最前面
 
-#### 自动类型推断
+### 自动类型推断
 
 在进行类型声明时应尽量依靠 TS 的自动类型推断功能，如果能够推断出正确类型尽量不要再手动声明。
 
@@ -136,7 +134,7 @@ let bar = [] // any[]
 let bar: number[] = []
 ```
 
-#### 普通类型
+### 普通类型
 
 **在任何情况下，都不应该使用这些装箱类型。**不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
 
@@ -164,7 +162,7 @@ const tmp7: String = () => {}
 const tmp8: String = []
 ```
 
-#### interface 和 type
+### interface 和 type
 
 1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
@@ -285,7 +283,7 @@ User 接口为 {
 - 如果需要使用 extends 进行类型继承时，使用 interface
 - 其他类型定义能使用 interface，优先使用 interface
 
-#### 绕过类型检测
+### 绕过类型检测
 
 1. 鸭子类型
 
@@ -320,11 +318,11 @@ const func = (param: Param) => param
 func({ field1: '111', field2: 2 } as Param) // success
 ```
 
-### 数组
+## 数组
 
 声明数组时使用 `diskList:Dist[]` 而不是 `diskList:Array<Disk>`，便于阅读。
 
-### 函数
+## 函数
 
 1. 不要为返回值被忽略的回调函数设置一个 `any` 类型的返回值类型，可以使用 `void`：
 
@@ -402,7 +400,7 @@ interface Moment {
 }
 ```
 
-### 类
+## 类
 
 1. 类成员声明时除了 `public` 成员，其余成员都应该显式加上作用域修辞符。
 
@@ -456,7 +454,7 @@ class Dog extends Animal {
 }
 ```
 
-### 枚举
+## 枚举
 
 使用枚举代替对象设置常量集合。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
 
@@ -482,7 +480,7 @@ const bar = { x: 1, y: 2 } as const
 bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 ```
 
-### 处理 any
+## 处理 any
 
 1. 缩小 any 的影响范围
 
@@ -505,7 +503,17 @@ const numArgsBad = (...args: any) => args.length // Return any 不推荐
 const numArgs = (...args: any[]) => args.length // Return number 推荐
 ```
 
-### 定义文件
+3. any 的自动推断
+
+TS 中的 any 并不是一成不变的，会随着用户的操作，TS 会猜测更加合理的类型。
+
+```ts
+const output = [] // any[]
+output.push(1) // number[]
+output.push('2') // (number|string)[]
+```
+
+## 定义文件
 
 1. 全局类型/变量定义写在 `global.d.ts` 文件中，在写入时需要判断。
 
@@ -549,7 +557,7 @@ declare module 'react-redux' {
 }
 ```
 
-### 风格
+## 风格
 
 1. 使用 arrow 函数代替匿名函数表达式。
 2. 只要需要的时候才把 arrow 函数的参数括起来。 比如，`(x) => x + x` 是错误的，下面是正确的做法：
@@ -562,7 +570,7 @@ declare module 'react-redux' {
    2. `if (x < 10) {}`
    3. `function f(x: number, y: string): void {}`
 5. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
-6. 如果函数没有返回值，最好使用 `void`
+6. 如果函数没有返回值，最好使用 `void`。
 
 ## 参考资料
 
