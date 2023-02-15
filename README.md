@@ -259,6 +259,10 @@ Code is Long, Life is Short.
 - 纸函
   - [2023-01-10](纸函/2023-01-10.md)
   - [Ceph](纸函/Ceph.md)
+  - [Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
+  - [TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
+  - [TypeScript 操作符](前端/JavaScript/13-TypeScript-小技巧.md)
+  - [TypeScript 学习之 Omit](前端/JavaScript/14-TypeScript-学习之-Omit.md)
   - [TS 编码规范](纸函/TS编码规范.md)
 - 万藏
   - 文档
