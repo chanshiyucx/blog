@@ -14,7 +14,7 @@ TypeScript 微软官方编码规范：[Coding guidelines](https://github.com/mic
 
 ### 命名
 
-1. 使用 PascalCase 为类型命名。
+1. 使用 PascalCase 为类型命名，包括接口 interface、类型别名 type、类 class。
 2. 不要使用 `I` 做为接口名前缀，接口成员使用 camelCase 方式命名。
 
 ```ts
@@ -105,11 +105,12 @@ class Foo {
 
 ### 类型
 
-1. 除非类型/函数需要在多个组件中共享，否则不要导出
-2. 不要在全局命名空间内定义类型/值
-3. 在文件中，类型定义应该放在最前面
+#### 声明规范
 
-### 类型声明规范
+1. 除非类型/函数需要在多个组件中共享，否则不要导出
+2. 在文件中，类型定义应该放在最前面
+
+#### 自动类型推断
 
 在进行类型声明时应尽量依靠 TS 的自动类型推断功能，如果能够推断出正确类型尽量不要再手动声明。
 
@@ -135,7 +136,35 @@ let bar = [] // any[]
 let bar: number[] = []
 ```
 
-### interface 和 type
+#### 普通类型
+
+**在任何情况下，都不应该使用这些装箱类型。**不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
+
+```ts
+// Bad
+function reverse(s: String): String
+
+// Good
+function reverse(s: string): string
+```
+
+以 `String` 为例，它包括 `undefined、null、void`，以及代表的拆箱类型 `string`，但并不包括其他装箱类型对应的拆箱类型，我们看以下的代码：
+
+```ts
+// 以下代码成立
+const tmp1: String = undefined
+const tmp2: String = null
+const tmp3: String = void 0
+const tmp4: String = 'linbudu'
+
+// 以下代码不成立，因为不是字符串类型的拆箱类型
+const tmp5: String = 599
+const tmp6: String = { name: 'linbudu' }
+const tmp7: String = () => {}
+const tmp8: String = []
+```
+
+#### interface 和 type
 
 1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
@@ -202,7 +231,7 @@ type User = Name & {
 
 不同点：
 
-1. type 可以声明基本类型别名，联合类型，元组等类型，而 interface 不行。
+1. type 可以声明基本类型别名、联合类型、交叉类型、元组等类型，而 interface 不行。
 
 ```ts
 // 基本类型别名
@@ -252,21 +281,9 @@ User 接口为 {
 
 总结：
 
-- 如果使用联合类型、元组等类型的时候，用 type 起一个别名使用
+- 如果使用联合类型、交叉类型、元组等类型的时候，用 type 起一个别名使用
 - 如果需要使用 extends 进行类型继承时，使用 interface
 - 其他类型定义能使用 interface，优先使用 interface
-
-### 普通类型
-
-不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是非原始的装盒对象，该使用类型 `number，string，boolean，object`。
-
-```ts
-// Bad
-function reverse(s: String): String
-
-// Good
-function reverse(s: string): string
-```
 
 ### 数组
 
