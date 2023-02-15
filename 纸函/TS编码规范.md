@@ -285,6 +285,41 @@ User 接口为 {
 - 如果需要使用 extends 进行类型继承时，使用 interface
 - 其他类型定义能使用 interface，优先使用 interface
 
+#### 绕过类型检测
+
+1. 鸭子类型
+
+> 当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。
+
+鸭子类型放在 TS 里来说就是我们可以在鸟上构建走路、游泳、叫等方法，创建一只像鸭子的鸟，来绕开对鸭子的类型检测。
+
+```ts
+interface Param {
+  field1: string
+}
+
+const func = (param: Param) => param
+func({ field1: '111', field2: 2 }) // Error
+
+const param1 = { field1: '111', field2: 2 }
+func(param1) // success
+```
+
+在这里构造了一个函数 func 接受参数为 Param，当直接调用 func 传参时，相当于是赋值给变量 param，此时会严格按照参数校验进行，因此会报错。
+
+而如果使用一个临时变量存储，再将变量传递给 func，此时则会应用鸭子类型的特性，因为 param1 中 包含 field1，TS 会认为 param1 已经完全实现了 Param，可以认为 param1 对应的类型是 Param 的子类，这个时候则可以绕开对多余的 field2 的检测。
+
+2. 类型断言
+
+```ts
+interface Param {
+  field1: string
+}
+
+const func = (param: Param) => param
+func({ field1: '111', field2: 2 } as Param) // success
+```
+
 ### 数组
 
 声明数组时使用 `diskList:Dist[]` 而不是 `diskList:Array<Disk>`，便于阅读。
@@ -447,6 +482,29 @@ const bar = { x: 1, y: 2 } as const
 bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 ```
 
+### 处理 any
+
+1. 缩小 any 的影响范围
+
+```ts
+function f1() {
+  const x: any = expressionReturningFoo() // 不建议，后续的 x 都是 any 了
+  processBar(x)
+}
+
+function f2() {
+  const x = expressionReturningFoo()
+  processBar(x as any) // 建议，只有这里是 any
+}
+```
+
+2. 使用更细化的 any
+
+```ts
+const numArgsBad = (...args: any) => args.length // Return any 不推荐
+const numArgs = (...args: any[]) => args.length // Return number 推荐
+```
+
 ### 定义文件
 
 1. 全局类型/变量定义写在 `global.d.ts` 文件中，在写入时需要判断。
@@ -517,3 +575,4 @@ declare module 'react-redux' {
 7. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
 8. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
 9. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
+10. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
