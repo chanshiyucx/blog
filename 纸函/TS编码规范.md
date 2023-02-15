@@ -134,7 +134,7 @@ let bar = [] // any[]
 let bar: number[] = []
 ```
 
-### 普通类型
+### 拆箱类型
 
 **在任何情况下，都不应该使用这些装箱类型**。不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
 
