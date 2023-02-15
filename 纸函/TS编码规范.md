@@ -43,7 +43,6 @@ type Baz = IFoo & Point
 
 > 1. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
 > 2. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
-> 3. [为什么不建议 TypeScript 中的接口名以 I 开头？](https://www.zhihu.com/question/484266650)
 
 4. 使用 PascalCase 为枚举对象本身和枚举成员命名。
 
@@ -157,6 +156,18 @@ import '@polymer/paper-button'
 2. 模块导入减少了导入语句的数量，降低了命名冲突的出现几率，同时还允许为被导入的模块提供一个简洁的名称。
 
 解构导入语句则为每一个被导入的符号提供一个局部的名称，这样在使用被导入的符号时，代码可以更简洁。
+
+在代码中，可以使用重命名导入解决命名冲突：
+
+```ts
+import { SomeThing as SomeOtherThing } from './foo'
+```
+
+在以下几种情况下，重命名导入可能较为有用：
+
+1. 避免与其它导入的符号产生命名冲突。
+2. 被导入符号的名称是自动生成的。
+3. 被导入符号的名称不能清晰地描述其自身，需要通过重命名提高代码的可读性，如将 RxJS 的 from 函数重命名为 observableFrom。
 
 ### 导出
 
@@ -625,7 +636,7 @@ interface Moment {
 
 ## 类
 
-1. 类成员声明时除了 `public` 成员，其余成员都应该显式加上作用域修辞符。
+<!-- 1. 类成员声明时除了 `public` 成员，其余成员都应该显式加上作用域修辞符。
 
 ```ts
 // Bad
@@ -651,9 +662,69 @@ class Foo {
 const foo = new Foo()
 foo.getFoo()
 foo.bar
+``` -->
+
+1. 不要 #private 语法
+
+不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TS 的访问修饰符。
+
+```ts
+// 不要这样做！
+class Clazz {
+  #ident = 1
+}
+
+// 应当这样做！
+class Clazz {
+  private ident = 1
+}
 ```
 
-2. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符。
+为什么？因为私有字段语法会导致 TS 在编译为 JS 时出现体积和性能问题。同时，ES2015 之前的标准都不支持私有字段语法，因此它限制了 TS 最低只能被编译至 ES2015。另外，在进行静态类型和可见性检查时，私有字段语法相比访问修饰符并无明显优势。
+
+2. 用 readonly
+
+对于不会在构造函数以外进行赋值的属性，应使用 `readonly` 修饰符标记。这些属性并不需要具有深层不可变性。
+
+3. 参数属性
+
+不要在构造函数中显式地对类成员进行初始化。应当使用 TS 的参数属性语法。直接在构造函数的参数前面加上修饰符或 readonly 等同于在类中定义该属性同时给该属性赋值，使代码更简洁。
+
+```ts
+// 不要这样做！重复的代码太多了！
+class Foo {
+  private readonly barService: BarService
+  constructor(barService: BarService) {
+    this.barService = barService
+  }
+}
+
+// 应当这样做！简洁明了！
+class Foo {
+  constructor(private readonly barService: BarService) {}
+}
+```
+
+4. 字段初始化
+
+如果某个成员并非参数属性，应当在声明时就对其进行初始化，这样有时可以完全省略掉构造函数。
+
+```ts
+// 不要这样做！没有必要单独把初始化语句放在构造函数里！
+class Foo {
+  private readonly userList: string[]
+  constructor() {
+    this.userList = []
+  }
+}
+
+// 应当这样做！省略了构造函数！
+class Foo {
+  private readonly userList: string[] = []
+}
+```
+
+5. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符
 
 ```ts
 class Animal {
@@ -679,7 +750,7 @@ class Dog extends Animal {
 
 ## 枚举
 
-**使用枚举代替对象设置常量集合。**使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
+**使用枚举代替对象设置常量集合**。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
 
 ```ts
 // Bad
