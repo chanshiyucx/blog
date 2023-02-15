@@ -76,10 +76,11 @@ Code is Long, Life is Short.
     - [08 洗牌算法实现数组乱序](前端/JavaScript/08-洗牌算法实现数组乱序.md)
     - [09 正则匹配 match 和 exec](前端/JavaScript/09-正则匹配-match-和-exec.md)
     - [10 正则匹配汉字](前端/JavaScript/10-正则匹配汉字.md)
-    - [11 Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
-    - [12 TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
-    - [13 TypeScript 小技巧](前端/JavaScript/13-TypeScript-小技巧.md)
-    - [14 TypeScript 学习之 Omit](前端/JavaScript/14-TypeScript-学习之-Omit.md)
+    - [11 JSX.Element vs ReactElement](前端/JavaScript/11-JSX.Element-vs-ReactElement.md)
+    - [12 Typescript 中 interface 和 type 区别](前端/JavaScript/12-Typescript-中-interface-和-type-区别.md)
+    - [13 TypeScript-中 is 关键字](前端/JavaScript/13-TypeScript-中-is-关键字.md)
+    - [14 TypeScript 操作符](前端/JavaScript/14-TypeScript-操作符.md)
+    - [15 TypeScript 编码规范](前端/JavaScript/15-TypeScript-编码规范.md)
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
@@ -258,12 +259,6 @@ Code is Long, Life is Short.
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
   - [2023-01-10](纸函/2023-01-10.md)
-  - [Ceph](纸函/Ceph.md)
-  - [Typescript 中 interface 和 type 区别](前端/JavaScript/11-Typescript-中-interface-和-type-区别.md)
-  - [TypeScript 中 is 关键字](前端/JavaScript/12-TypeScript-中-is-关键字.md)
-  - [TypeScript 操作符](前端/JavaScript/13-TypeScript-小技巧.md)
-  - [TypeScript 学习之 Omit](前端/JavaScript/14-TypeScript-学习之-Omit.md)
-  - [TS 编码规范](纸函/TS编码规范.md)
 - 万藏
   - 文档
     - [01 Git 文档](https://git-scm.com/book/zh/v2)
