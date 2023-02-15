@@ -267,7 +267,53 @@ const tmp7: String = () => {}
 const tmp8: String = []
 ```
 
-### interface 和 type
+### null 还是 undefined？
+
+TS 代码中可以使用 `undefined` 或者 `null` 标记缺少的值，这里并无通用的规则约定应当使用其中的某一种。许多 JS API 使用 `undefined`（例如 `Map.get`），然而 DOM 则更多地使用 `null`（例如 `Element.getAttribute`），因此，对于 `null` 和 `undefined` 的选择取决于当前的上下文。
+
+1. 可空/未定义类型别名
+
+**不允许为包括 `|null` 或 `|undefined` 的联合类型创建类型别名**。这种可空的别名通常意味着空值在应用中会被层层传递，并且它掩盖了导致空值出现的源头。另外，这种别名也让类或接口中的某个值何时有可能为空变得不确定。
+
+因此，代码必须在使用别名时才允许添加 `|null` 或者 `|undefined`。同时，代码应当在空值出现位置的附近对其进行处理。
+
+```ts
+// 不要这样做！不要在创建别名的时候包含 undefined ！
+type CoffeeResponse = Latte | Americano | undefined
+
+class CoffeeService {
+  getLatte(): CoffeeResponse {}
+}
+```
+
+正确的做法：
+
+```ts
+// 应当这样做！在使用别名的时候联合 undefined ！
+type CoffeeResponse = Latte | Americano
+
+class CoffeeService {
+  // 代码应当在空值出现位置的附近对其进行处理
+  getLatte(): CoffeeResponse | undefined {}
+}
+```
+
+2. 可选参数/可选字段优先
+
+TS 支持使用创建可选参数和可选字段，例如：
+
+```ts
+interface CoffeeOrder {
+  sugarCubes: number
+  milk?: Whole | LowFat | HalfHalf
+}
+
+function pourCoffee(volume?: Milliliter) {}
+```
+
+可选参数实际上隐式地向类型中联合了 `|undefined`。应当使用可选字段（对于类或者接口）和可选参数而非联合 `|undefined` 类型。
+
+### interface 还是 type？
 
 1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
@@ -387,6 +433,26 @@ User 接口为 {
 - 如果使用联合类型、交叉类型、元组等类型的时候，用 type 起一个别名使用
 - 如果需要使用 extends 进行类型继承时，使用 interface
 - 其他类型定义能使用 interface，优先使用 interface
+
+所以，当需要声明用于对象的类型时，应当使用接口，而非对象字面量表达式的类型别名：
+
+```ts
+// 应当这样做！
+interface User {
+  firstName: string
+  lastName: string
+}
+
+// 不要这样做！
+type User = {
+  firstName: string
+  lastName: string
+}
+```
+
+为什么？这两种形式是几乎等价的，因此，基于从两个形式中只选择其中一种以避免项目中出现变种的原则，这里选择了更常见的接口形式。相关技术原因 [TypeScript: Prefer Interfaces](https://ncjamieson.com/prefer-interfaces/)。
+
+> TS 团队负责人的话：“老实说，我个人的意见是对于任何可以建模的对象都应当使用接口。相比之下，使用类型别名没有任何优势，尤其是类型别名有许多的显示和性能问题”。
 
 ### 绕过类型检测
 
@@ -659,6 +725,7 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 6. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
 7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
 8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
-9. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
-10. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
-11. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
+9. [TypeScript: Prefer Interfaces](https://ncjamieson.com/prefer-interfaces/)
+10. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
+11. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
+12. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
