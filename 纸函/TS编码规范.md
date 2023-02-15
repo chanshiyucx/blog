@@ -1,7 +1,5 @@
 # TS/JS 编码规范
 
-## TS 编码规范
-
 TypeScript 是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
 
 - [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
@@ -526,7 +524,26 @@ output.push('2') // (number|string)[]
 
 ## 数组
 
-声明数组时使用 `diskList:Dist[]` 而不是 `diskList:Array<Disk>`，便于阅读。
+- 对于简单类型，应当使用数组的语法糖 `T[]`
+- 对于其它复杂的类型，则应当使用较长的 `Array<T>`
+
+这条规则也适用于 `readonly T[]` 和 `ReadonlyArray<T>`。
+
+```ts
+// 应当这样做！
+const a: string[]
+const b: readonly string[]
+const c: ns.MyObj[]
+const d: Array<string | number>
+const e: ReadonlyArray<string | number>
+
+// 不要这样做！
+const f: Array<string> // 语法糖写法更短
+const g: ReadonlyArray<string>
+const h: { n: number; s: string }[] // 大括号和中括号让这行代码难以阅读
+const i: (string | number)[]
+const j: readonly (string | number)[]
+```
 
 ## 函数
 
