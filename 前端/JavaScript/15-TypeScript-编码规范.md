@@ -537,6 +537,44 @@ output.push('2') // (number|string)[]
 
 `any` 类型的值可以赋给其它任何类型，还可以对其解引用任意属性。一般来说，这个行为不是必需的，也不符合期望，此时代码试图表达的内容其实是“该类型是未知的”。在这种情况下，应当使用内建的 `unknown` 类型。它能够表达相同的语义，并且，因为 `unknown` 不能解引用任意属性，它较 `any` 而言更为安全。一个 `unknown` 类型的变量可以再次赋值为任意其它类型。
 
+## 枚举
+
+**使用枚举代替对象设置常量集合**。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
+
+```ts
+// Bad
+const Status = {
+  Success: 'success',
+}
+
+// Good
+enum Status {
+  Success = 'success',
+}
+```
+
+还可以通过 `const enum` 声明常量枚举：
+
+```ts
+const enum Status {
+  Success = 'success',
+}
+```
+
+常量枚举和普通枚举的差异主要在访问性与编译产物。对于常量枚举，你只能通过枚举成员访问枚举值（而不能通过值访问成员）。同时，在编译产物中并不会存在一个额外的辅助对象，对枚举成员的访问会被直接内联替换为枚举的值。
+
+**对于枚举类型，必须使用 `enum` 关键字，但不要使用 `const enum`（常量枚举）。TS 的枚举类型本身就是不可变的**。
+
+扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
+
+```ts
+const foo = ['a', 'b'] as const
+foo.push('c') // 报错，因为 foo 类型被声明为不可变的
+
+const bar = { x: 1, y: 2 } as const
+bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
+```
+
 ## 数组
 
 - 对于简单类型，应当使用数组的语法糖 `T[]`
@@ -752,44 +790,6 @@ class Dog extends Animal {
 }
 ```
 
-## 枚举
-
-**使用枚举代替对象设置常量集合**。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
-
-```ts
-// Bad
-const Status = {
-  Success: 'success',
-}
-
-// Good
-enum Status {
-  Success = 'success',
-}
-```
-
-还可以通过 `const enum` 声明常量枚举：
-
-```ts
-const enum Status {
-  Success = 'success',
-}
-```
-
-常量枚举和普通枚举的差异主要在访问性与编译产物。对于常量枚举，你只能通过枚举成员访问枚举值（而不能通过值访问成员）。同时，在编译产物中并不会存在一个额外的辅助对象，对枚举成员的访问会被直接内联替换为枚举的值。
-
-**对于枚举类型，必须使用 `enum` 关键字，但不要使用 `const enum`（常量枚举）。TS 的枚举类型本身就是不可变的**。
-
-扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
-
-```ts
-const foo = ['a', 'b'] as const
-foo.push('c') // 报错，因为 foo 类型被声明为不可变的
-
-const bar = { x: 1, y: 2 } as const
-bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
-```
-
 ## 风格
 
 1. 使用箭头函数代替匿名函数表达式。
@@ -804,6 +804,7 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
    3. `function f(x: number, y: string): void {}`
 5. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
 6. 如果函数没有返回值，最好使用 `void`。
+7. **相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。[JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
 
 ## 参考资料
 
@@ -819,3 +820,4 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 10. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
 11. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
 12. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
+13. [JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)
