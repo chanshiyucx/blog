@@ -11,7 +11,7 @@ TypeScript 是一种由微软开发的自由和开源的编程语言。它是 Ja
 1. 使用 PascalCase 为类型命名，包括接口 interface、类型别名 type、类 class。
 2. 不要使用 `I` 做为接口名前缀，接口成员使用 camelCase 方式命名。
 
-```ts
+```typescript
 // Bad
 interface IFoo {
   Bar: number
@@ -33,7 +33,7 @@ interface Foo {
 
 示例：
 
-```ts
+```typescript
 interface IFoo {}
 class Point {}
 type Baz = IFoo & Point
@@ -46,7 +46,7 @@ type Baz = IFoo & Point
 
 4. 使用 PascalCase 为枚举对象本身和枚举成员命名。
 
-```ts
+```typescript
 // Bad
 enum color {
   red,
@@ -61,7 +61,7 @@ enum Color {
 4. 使用 camelCase 为函数命名。
 5. 使用 camelCase 为属性或本地变量命名。
 
-```ts
+```typescript
 // Bad
 const DiskInfo
 function GetDiskInfo() {}
@@ -73,7 +73,7 @@ function getDiskInfo() {}
 
 6. 使用 PascalCase 为类命名，类成员使用 camelCase 方式命名。
 
-```ts
+```typescript
 // Bad
 class foo {}
 
@@ -95,7 +95,7 @@ class Foo {
 
 7. 导入模块的命名空间时使用 camelCase 命名法，文件名则使用 snake_case 命名法。
 
-```ts
+```typescript
 import * as fooBar from './foo_bar'
 ```
 
@@ -120,7 +120,7 @@ TS 代码必须使用路径进行导入。这里的路径既可以是相对路�
 
 应尽可能地限制父层级的数量（避免出现诸如 `../../../` 的路径），过多的层级会导致模块和路径结构难以理解。
 
-```ts
+```typescript
 import { Symbol1 } from 'google3/path/from/root'
 import { Symbol2 } from '../parent/file'
 import { Symbol3 } from './sibling'
@@ -135,7 +135,7 @@ import { Symbol3 } from './sibling'
 | 默认     | `import SomeThing from '...'`     | 只用于外部代码的特殊需求                   |
 | 副作用   | `import '...'`                    | 只用于加载某些库的副作用（例如自定义元素） |
 
-```ts
+```typescript
 // 应当这样做！从这两种变体中选择较合适的一种（见下文）。
 import * as ng from '@angular/core'
 import { Foo } from './foo'
@@ -159,7 +159,7 @@ import '@polymer/paper-button'
 
 在代码中，可以使用重命名导入解决命名冲突：
 
-```ts
+```typescript
 import { SomeThing as SomeOtherThing } from './foo'
 ```
 
@@ -173,7 +173,7 @@ import { SomeThing as SomeOtherThing } from './foo'
 
 代码中必须使用具名的导出声明。不要使用默认导出，这样能保证所有的导入语句都遵循统一的范式。
 
-```ts
+```typescript
 // Use named exports:
 export class Foo {}
 
@@ -183,7 +183,7 @@ export default class Foo {}
 
 为什么？因为默认导出并不为被导出的符号提供一个标准的名称，这增加了维护的难度和降低可读性的风险，同时并未带来明显的益处。
 
-```ts
+```typescript
 // 默认导出会造成如下的弊端
 import Foo from './bar' // 这个语句是合法的。
 import Bar from './bar' // 这个语句也是合法的。
@@ -191,7 +191,7 @@ import Bar from './bar' // 这个语句也是合法的。
 
 具名导出的一个优势是，当代码中试图导入一个并未被导出的符号时，这段代码会报错。例如，假设在 `foo.ts` 中有如下的导出声明：
 
-```ts
+```typescript
 // 不要这样做！
 const foo = 'blah'
 export default foo
@@ -199,14 +199,14 @@ export default foo
 
 如果在 `bar.ts` 中有如下的导入语句：
 
-```ts
+```typescript
 // 编译错误！
 import { fizz } from './foo'
 ```
 
 会导致编译错误： `error TS2614: Module '"./foo"' has no exported member 'fizz'`。反之，如果在 `bar.ts` 中的导入语句为：
 
-```ts
+```typescript
 // 不要这样做！这定义了一个多余的变量 fizz！
 import fizz from './foo'
 ```
@@ -226,7 +226,7 @@ import fizz from './foo'
 
 1. 基础类型变量不需要手动声明类型。
 
-```ts
+```typescript
 let foo = 'foo'
 let bar = 2
 let baz = false
@@ -234,7 +234,7 @@ let baz = false
 
 2. 引用类型变量应该保证类型正确，不正确的需要手动声明。
 
-```ts
+```typescript
 // 自动推断
 let foo = [1, 2] // number[]
 
@@ -250,7 +250,7 @@ let bar: number[] = []
 
 **在任何情况下，都不应该使用这些装箱类型**。不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
 
-```ts
+```typescript
 // Bad
 function reverse(s: String): String
 
@@ -260,7 +260,7 @@ function reverse(s: string): string
 
 以 `String` 为例，它包括 `undefined、null、void`，以及代表的拆箱类型 `string`，但并不包括其他装箱类型对应的拆箱类型，我们看以下的代码：
 
-```ts
+```typescript
 // 以下代码成立
 const tmp1: String = undefined
 const tmp2: String = null
@@ -284,7 +284,7 @@ TS 代码中可以使用 `undefined` 或者 `null` 标记缺少的值，这里�
 
 因此，代码必须在使用别名时才允许添加 `|null` 或者 `|undefined`。同时，代码应当在空值出现位置的附近对其进行处理。
 
-```ts
+```typescript
 // 不要这样做！不要在创建别名的时候包含 undefined ！
 type CoffeeResponse = Latte | Americano | undefined
 
@@ -295,7 +295,7 @@ class CoffeeService {
 
 正确的做法：
 
-```ts
+```typescript
 // 应当这样做！在使用别名的时候联合 undefined ！
 type CoffeeResponse = Latte | Americano
 
@@ -309,7 +309,7 @@ class CoffeeService {
 
 TS 支持使用创建可选参数和可选字段，例如：
 
-```ts
+```typescript
 interface CoffeeOrder {
   sugarCubes: number
   milk?: Whole | LowFat | HalfHalf
@@ -329,7 +329,7 @@ function pourCoffee(volume?: Milliliter) {}
 
 1. 都可以描述一个对象或者函数。
 
-```ts
+```typescript
 // interface
 interface User {
   name: string
@@ -353,7 +353,7 @@ type SetUser = (name: string, age: number) => void
 
 interface 和 type 都可以继承，并且两者并不是相互独立的，也就是说 interface 可以 extends type, type 也可以 extends interface。虽然效果差不多，但是两者语法不同。
 
-```ts
+```typescript
 // interface extends interface
 interface Name {
   name: string
@@ -389,7 +389,7 @@ type User = Name & {
 
 1. type 可以声明基本类型别名、联合类型、交叉类型、元组等类型，而 interface 不行。
 
-```ts
+```typescript
 // 基本类型别名
 type Name = string
 
@@ -408,7 +408,7 @@ type PetList = [Dog, Pet]
 
 2. type 语句中还可以使用 typeof 获取实例的 类型进行赋值。
 
-```ts
+```typescript
 // 当你想获取一个变量的类型时，使用 typeof
 const div = document.createElement('div')
 type B = typeof div
@@ -416,7 +416,7 @@ type B = typeof div
 
 3. interface 能够声明合并，重复声明 type 会报错。
 
-```ts
+```typescript
 interface User {
   name: string
   age: number
@@ -443,7 +443,7 @@ User 接口为 {
 
 所以，当需要声明用于对象的类型时，应当使用接口，而非对象字面量表达式的类型别名：
 
-```ts
+```typescript
 // 应当这样做！
 interface User {
   firstName: string
@@ -469,7 +469,7 @@ type User = {
 
 鸭子类型放在 TS 里来说就是我们可以在鸟上构建走路、游泳、叫等方法，创建一只像鸭子的鸟，来绕开对鸭子的类型检测。
 
-```ts
+```typescript
 interface Param {
   field1: string
 }
@@ -487,7 +487,7 @@ func(param1) // success
 
 2. 类型断言
 
-```ts
+```typescript
 interface Param {
   field1: string
 }
@@ -504,7 +504,7 @@ TS 的 `any` 类型是所有其它类型的超类，又是所有其它类型的�
 
 1. 缩小 any 的影响范围
 
-```ts
+```typescript
 function f1() {
   const x: any = expressionReturningFoo() // 不建议，后续的 x 都是 any 了
   processBar(x)
@@ -518,7 +518,7 @@ function f2() {
 
 2. 使用更细化的 any
 
-```ts
+```typescript
 const numArgsBad = (...args: any) => args.length // Return any 不推荐
 const numArgs = (...args: any[]) => args.length // Return number 推荐
 ```
@@ -527,7 +527,7 @@ const numArgs = (...args: any[]) => args.length // Return number 推荐
 
 TS 中的 any 并不是一成不变的，会随着用户的操作，TS 会猜测更加合理的类型。
 
-```ts
+```typescript
 const output = [] // any[]
 output.push(1) // number[]
 output.push('2') // (number|string)[]
@@ -543,7 +543,7 @@ output.push('2') // (number|string)[]
 
 类型断言（x as SomeType）和非空断言（y!）是不安全的。这两种语法只能够绕过编译器，而并不添加任何运行时断言检查，因此有可能导致程序在运行时崩溃。因此，**除非有明显或确切的理由，否则不应使用类型断言和非空断言**。
 
-```ts
+```typescript
 // 不要这样做！
 ;(x as Foo).foo()
 
@@ -552,7 +552,7 @@ y!.bar()
 
 如果希望对类型和非空条件进行断言，最好的做法是显式地编写运行时检查。
 
-```ts
+```typescript
 // 应当这样做！
 // 这里假定 Foo 是一个类。
 if (x instanceof Foo) {
@@ -566,7 +566,7 @@ if (y) {
 
 有时根据代码中的上下文可以确定某个断言必然是安全的。在这种情况下，应当添加注释详细地解释为什么这一不安全的行为可以被接受，如果使用断言的理由很明显，注释就不是必需的。
 
-```ts
+```typescript
 // 可以这样做！
 // x 是一个 Foo 类型的示例，因为……
 ;(x as Foo).foo()
@@ -577,7 +577,7 @@ y!.bar()
 
 2. 类型断言必须使用 `as` 语法，不要使用尖括号语法，这样能强制保证在断言外必须使用括号。
 
-```ts
+```typescript
 // 不要这样做！
 const x = (<Foo>z).length
 const y = <Foo>z.length
@@ -588,7 +588,7 @@ const x = (z as Foo).length
 
 3. 使用类型标记（`: Foo`）而非类型断言（`as Foo`）标明对象字面量的类型。在日后对接口的字段类型进行修改时，前者能够帮助程序员发现 Bug。
 
-```ts
+```typescript
 interface Foo {
   bar: number
   baz?: string // 这个字段曾经的名称是“bam”，后来改名为“baz”。
@@ -609,7 +609,7 @@ const b = {
 
 **使用枚举代替对象设置常量集合**。使用对象定义的普通的常量集合修改时不会提示错误，除非使用 `as const` 修饰符。
 
-```ts
+```typescript
 // Bad
 const Status = {
   Success: 'success',
@@ -623,7 +623,7 @@ enum Status {
 
 还可以通过 `const enum` 声明常量枚举：
 
-```ts
+```typescript
 const enum Status {
   Success = 'success',
 }
@@ -635,7 +635,7 @@ const enum Status {
 
 扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
 
-```ts
+```typescript
 const foo = ['a', 'b'] as const
 foo.push('c') // 报错，因为 foo 类型被声明为不可变的
 
@@ -650,7 +650,7 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 
 这条规则也适用于 `readonly T[]` 和 `ReadonlyArray<T>`。
 
-```ts
+```typescript
 // 应当这样做！
 const a: string[]
 const b: readonly string[]
@@ -670,7 +670,7 @@ const j: readonly (string | number)[]
 
 1. 不要为返回值被忽略的回调函数设置一个 `any` 类型的返回值类型，可以使用 `void`：
 
-```ts
+```typescript
 // Bad
 function fn(x: () => any) {
   x()
@@ -684,7 +684,7 @@ function fn(x: () => void) {
 
 使用 `void` 相对安全，因为它防止了你不小心使用 x 的返回值：
 
-```ts
+```typescript
 function fn(x: () => void) {
   const k = x() // oops! meant to do something else
   k.doSomething() // error, but would be OK if the return type had been 'any'
@@ -693,7 +693,7 @@ function fn(x: () => void) {
 
 2. 函数重载应该排序，令具体的排在模糊的之前，因为 TS 会选择第一个匹配到的重载，当位于前面的重载比后面的更”模糊“，那么后面的会被隐藏且不会被选用：
 
-```ts
+```typescript
 // Bad
 declare function fn(x: any): any
 declare function fn(x: HTMLElement): number
@@ -713,7 +713,7 @@ let x = fn(myElem) // x: string, :)
 
 3. 优先使用使用可选参数，而不是重载：
 
-```ts
+```typescript
 // Bad
 interface Example {
   diff(one: string): number
@@ -729,7 +729,7 @@ interface Example {
 
 4. 使用联合类型，不要为仅在某个位置上的参数类型不同的情况下定义重载：
 
-```ts
+```typescript
 // Bad
 interface Moment {
   utcOffset(): number
@@ -750,7 +750,7 @@ interface Moment {
 
 不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TS 的访问修饰符。
 
-```ts
+```typescript
 // 不要这样做！
 class Clazz {
   #ident = 1
@@ -772,7 +772,7 @@ class Clazz {
 
 不要在构造函数中显式地对类成员进行初始化。应当使用 TS 的参数属性语法。直接在构造函数的参数前面加上修饰符或 readonly 等同于在类中定义该属性同时给该属性赋值，使代码更简洁。
 
-```ts
+```typescript
 // 不要这样做！重复的代码太多了！
 class Foo {
   private readonly barService: BarService
@@ -791,7 +791,7 @@ class Foo {
 
 如果某个成员并非参数属性，应当在声明时就对其进行初始化，这样有时可以完全省略掉构造函数。
 
-```ts
+```typescript
 // 不要这样做！没有必要单独把初始化语句放在构造函数里！
 class Foo {
   private readonly userList: string[]
@@ -808,7 +808,7 @@ class Foo {
 
 5. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符
 
-```ts
+```typescript
 class Animal {
   eat() {
     console.log('food')
@@ -834,7 +834,7 @@ class Dog extends Animal {
 
 1. 使用箭头函数代替匿名函数表达式。
 
-```ts
+```typescript
 // Good
 bar(() => {
   this.doSomething()
