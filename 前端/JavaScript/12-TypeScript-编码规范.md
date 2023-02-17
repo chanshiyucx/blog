@@ -27,7 +27,7 @@ interface Foo {
 
 > 为什么不使用 I 前缀命名接口？
 >
-> 1. I 前缀违反了封装原则：在 TS 中，类可以实现接口，接口可以继承接口，接口可以继承类。类和接口都是某种意义上的抽象和封装，继承时不需要关心它是一个接口还是一个类。如果用 I 前缀，当一个变量的类型更改了，比如由接口变成了类，那变量名称就必须同步更改。
+> 1. I 前缀违反了封装原则：在 TypeScript 中，类可以实现接口，接口可以继承接口，接口可以继承类。类和接口都是某种意义上的抽象和封装，继承时不需要关心它是一个接口还是一个类。如果用 I 前缀，当一个变量的类型更改了，比如由接口变成了类，那变量名称就必须同步更改。
 > 2. 防止不恰当的命名：禁止使用 I 前缀可以迫使程序员为接口取一个合适的、带有语义、便于和其他同类型变量区分的名字，而不仅是用前缀区分。
 > 3. 匈牙利命名的时代已经过时：匈牙利命名法由类型前缀加实际的变量名组成，用这种方法命名的变量，看到变量名，可以立即知道其类型。但它的缺点远 于它带来的好处，比如使变量名变得冗长，使相同主体名但类型不同的变量有歧义。
 
@@ -114,7 +114,7 @@ import * as fooBar from './foo_bar'
 
 ### 导入
 
-TS 代码必须使用路径进行导入。这里的路径既可以是相对路径，以 `.` 或 `..` 开头，也可以是从项目根目录开始的绝对路径，如 `root/path/to/file`。
+TypeScript 代码必须使用路径进行导入。这里的路径既可以是相对路径，以 `.` 或 `..` 开头，也可以是从项目根目录开始的绝对路径，如 `root/path/to/file`。
 
 在引用逻辑上属于同一项目的文件时，应使用相对路径 `./foo`，不要使用绝对路径 `path/to/foo`。
 
@@ -126,12 +126,12 @@ import { Symbol2 } from '../parent/file'
 import { Symbol3 } from './sibling'
 ```
 
-在 ES6 和 TS 中，导入语句共有四种变体：
+在 ES6 和 TypeScript 中，导入语句共有四种变体：
 
 | 导入类型 | 示例                              | 用途                                       |
 | -------- | --------------------------------- | ------------------------------------------ |
-| 模块     | `import * as foo from '...'`      | TS 导入方式                                |
-| 解构     | `import { SomeThing } from '...'` | TS 导入方式                                |
+| 模块     | `import * as foo from '...'`      | TypeScript 导入方式                        |
+| 解构     | `import { SomeThing } from '...'` | TypeScript 导入方式                        |
 | 默认     | `import SomeThing from '...'`     | 只用于外部代码的特殊需求                   |
 | 副作用   | `import '...'`                    | 只用于加载某些库的副作用（例如自定义元素） |
 
@@ -222,7 +222,7 @@ import fizz from './foo'
 
 ### 自动类型推断
 
-在进行类型声明时应尽量依靠 TS 的自动类型推断功能，如果能够推断出正确类型尽量不要再手动声明。
+在进行类型声明时应尽量依靠 TypeScript 的自动类型推断功能，如果能够推断出正确类型尽量不要再手动声明。
 
 1. 基础类型变量不需要手动声明类型。
 
@@ -276,7 +276,7 @@ const tmp8: String = []
 
 ### null 还是 undefined？
 
-TS 代码中可以使用 `undefined` 或者 `null` 标记缺少的值，这里并无通用的规则约定应当使用其中的某一种。许多 JS API 使用 `undefined`（例如 `Map.get`），然而 DOM 则更多地使用 `null`（例如 `Element.getAttribute`），因此，对于 `null` 和 `undefined` 的选择取决于当前的上下文。
+TypeScript 代码中可以使用 `undefined` 或者 `null` 标记缺少的值，这里并无通用的规则约定应当使用其中的某一种。许多 JavaScript API 使用 `undefined`（例如 `Map.get`），然而 DOM 则更多地使用 `null`（例如 `Element.getAttribute`），因此，对于 `null` 和 `undefined` 的选择取决于当前的上下文。
 
 1. 可空/未定义类型别名
 
@@ -307,7 +307,7 @@ class CoffeeService {
 
 2. 可选参数/可选字段优先
 
-TS 支持使用创建可选参数和可选字段，例如：
+TypeScript 支持使用创建可选参数和可选字段，例如：
 
 ```typescript
 interface CoffeeOrder {
@@ -322,7 +322,7 @@ function pourCoffee(volume?: Milliliter) {}
 
 ### interface 还是 type？
 
-1. interface：接口是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
+1. interface：接口是 TypeScript 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 2. type：类型别名用于给各种类型定义别名，它并不是一个类型，只是一个别名而已。
 
 相同点：
@@ -459,7 +459,7 @@ type User = {
 
 为什么？这两种形式是几乎等价的，因此，基于从两个形式中只选择其中一种以避免项目中出现变种的原则，这里选择了更常见的接口形式。相关技术原因 [TypeScript: Prefer Interfaces](https://ncjamieson.com/prefer-interfaces/)。
 
-> TS 团队负责人的话：“老实说，我个人的意见是对于任何可以建模的对象都应当使用接口。相比之下，使用类型别名没有任何优势，尤其是类型别名有许多的显示和性能问题”。
+> TypeScript 团队负责人的话：“老实说，我个人的意见是对于任何可以建模的对象都应当使用接口。相比之下，使用类型别名没有任何优势，尤其是类型别名有许多的显示和性能问题”。
 
 ### 绕过类型检测
 
@@ -467,7 +467,7 @@ type User = {
 
 > 当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。
 
-鸭子类型放在 TS 里来说就是我们可以在鸟上构建走路、游泳、叫等方法，创建一只像鸭子的鸟，来绕开对鸭子的类型检测。
+鸭子类型放在 TypeScript 里来说就是我们可以在鸟上构建走路、游泳、叫等方法，创建一只像鸭子的鸟，来绕开对鸭子的类型检测。
 
 ```typescript
 interface Param {
@@ -483,7 +483,7 @@ func(param1) // success
 
 在这里构造了一个函数 func 接受参数为 Param，当直接调用 func 传参时，相当于是赋值给变量 param，此时会严格按照参数校验进行，因此会报错。
 
-而如果使用一个临时变量存储，再将变量传递给 func，此时则会应用鸭子类型的特性，因为 param1 中 包含 field1，TS 会认为 param1 已经完全实现了 Param，可以认为 param1 对应的类型是 Param 的子类，这个时候则可以绕开对多余的 field2 的检测。
+而如果使用一个临时变量存储，再将变量传递给 func，此时则会应用鸭子类型的特性，因为 param1 中 包含 field1，TypeScript 会认为 param1 已经完全实现了 Param，可以认为 param1 对应的类型是 Param 的子类，这个时候则可以绕开对多余的 field2 的检测。
 
 2. 类型断言
 
@@ -498,7 +498,7 @@ func({ field1: '111', field2: 2 } as Param) // success
 
 ### any 类型
 
-TS 的 `any` 类型是所有其它类型的超类，又是所有其它类型的子类，同时还允许解引用一切属性。因此，使用 `any` 十分危险，它会掩盖严重的程序错误，并且它从根本上破坏了对应的值“具有静态属性”的原则。
+TypeScript 的 `any` 类型是所有其它类型的超类，又是所有其它类型的子类，同时还允许解引用一切属性。因此，使用 `any` 十分危险，它会掩盖严重的程序错误，并且它从根本上破坏了对应的值“具有静态属性”的原则。
 
 **尽可能不要使用 `any`**。如果出现了需要使用 `any` 的场景，可以考虑下列的解决方案：
 
@@ -525,7 +525,7 @@ const numArgs = (...args: any[]) => args.length // Return number 推荐
 
 3. any 的自动推断
 
-TS 中的 any 并不是一成不变的，会随着用户的操作，TS 会猜测更加合理的类型。
+TypeScript 中的 any 并不是一成不变的，会随着用户的操作，TypeScript 会猜测更加合理的类型。
 
 ```typescript
 const output = [] // any[]
@@ -631,9 +631,9 @@ const enum Status {
 
 常量枚举和普通枚举的差异主要在访问性与编译产物。对于常量枚举，你只能通过枚举成员访问枚举值（而不能通过值访问成员）。同时，在编译产物中并不会存在一个额外的辅助对象，对枚举成员的访问会被直接内联替换为枚举的值。
 
-**对于枚举类型，必须使用 `enum` 关键字，但不要使用 `const enum`（常量枚举）。TS 的枚举类型本身就是不可变的**。
+**对于枚举类型，必须使用 `enum` 关键字，但不要使用 `const enum`（常量枚举）。TypeScript 的枚举类型本身就是不可变的**。
 
-扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TS 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TS 会报错。
+扩展：`as const` 修饰符用在变量声明或表达式的类型上时，它会强制 TypeScript 将变量或表达式的类型视为不可变的（immutable）。这意味着，如果你尝试对变量或表达式进行修改，TypeScript 会报错。
 
 ```typescript
 const foo = ['a', 'b'] as const
@@ -691,7 +691,7 @@ function fn(x: () => void) {
 }
 ```
 
-2. 函数重载应该排序，令具体的排在模糊的之前，因为 TS 会选择第一个匹配到的重载，当位于前面的重载比后面的更”模糊“，那么后面的会被隐藏且不会被选用：
+2. 函数重载应该排序，令具体的排在模糊的之前，因为 TypeScript 会选择第一个匹配到的重载，当位于前面的重载比后面的更”模糊“，那么后面的会被隐藏且不会被选用：
 
 ```typescript
 // Bad
@@ -748,7 +748,7 @@ interface Moment {
 
 1. 不要 #private 语法
 
-不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TS 的访问修饰符。
+不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TypeScript 的访问修饰符。
 
 ```typescript
 // 不要这样做！
@@ -762,7 +762,7 @@ class Clazz {
 }
 ```
 
-为什么？因为私有字段语法会导致 TS 在编译为 JS 时出现体积和性能问题。同时，ES2015 之前的标准都不支持私有字段语法，因此它限制了 TS 最低只能被编译至 ES2015。另外，在进行静态类型和可见性检查时，私有字段语法相比访问修饰符并无明显优势。
+为什么？因为私有字段语法会导致 TypeScript 在编译为 JavaScript 时出现体积和性能问题。同时，ES2015 之前的标准都不支持私有字段语法，因此它限制了 TypeScript 最低只能被编译至 ES2015。另外，在进行静态类型和可见性检查时，私有字段语法相比访问修饰符并无明显优势。
 
 2. 用 readonly
 
@@ -770,7 +770,7 @@ class Clazz {
 
 3. 参数属性
 
-不要在构造函数中显式地对类成员进行初始化。应当使用 TS 的参数属性语法。直接在构造函数的参数前面加上修饰符或 readonly 等同于在类中定义该属性同时给该属性赋值，使代码更简洁。
+不要在构造函数中显式地对类成员进行初始化。应当使用 TypeScript 的参数属性语法。直接在构造函数的参数前面加上修饰符或 readonly 等同于在类中定义该属性同时给该属性赋值，使代码更简洁。
 
 ```typescript
 // 不要这样做！重复的代码太多了！
@@ -868,7 +868,7 @@ bar(function () {})
 7. [Typescript 开发规范](https://juejin.cn/post/7047843645273145358)
 8. [TypeScript 中 as const 是什么](https://juejin.cn/post/7181833448464580645)
 9. [TypeScript: Prefer Interfaces](https://ncjamieson.com/prefer-interfaces/)
-10. [TS 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
+10. [TypeScript 中 interface 和 type 究竟有什么区别？](https://juejin.cn/post/7063521133340917773)
 11. [Typescript 声明文件-第三方类型扩展](https://segmentfault.com/a/1190000022842783)
 12. [Effective Typescript：使用 Typescript 的 n 个技巧](https://zhuanlan.zhihu.com/p/104311029)
 13. [JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)

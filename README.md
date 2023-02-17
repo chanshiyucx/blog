@@ -77,10 +77,16 @@ Code is Long, Life is Short.
     - [09 正则匹配 match 和 exec](前端/JavaScript/09-正则匹配-match-和-exec.md)
     - [10 正则匹配汉字](前端/JavaScript/10-正则匹配汉字.md)
     - [11 JSX.Element vs ReactElement](前端/JavaScript/11-JSX.Element-vs-ReactElement.md)
-    - [12 Typescript 中 interface 和 type 区别](前端/JavaScript/12-Typescript-中-interface-和-type-区别.md)
+    - [12 TypeScript 编码规范](前端/JavaScript/12-TypeScript-编码规范.md)
+    - [13 Typescript 中 interface 和 type 区别](前端/JavaScript/13-Typescript-中-interface-和-type-区别.md)
+    - [14 TypeScript 中 is 关键字](前端/JavaScript/14-TypeScript-中-is-关键字.md)
+    - [15 TypeScript 操作符](前端/JavaScript/15-TypeScript-操作符.md)
+    - [16 TypeScript Omit](前端/JavaScript/16-TypeScript-Omit.md)
+    - [17 TypeScript Record](前端/JavaScript/17-TypeScript-Record.md)
+    <!-- - [12 Typescript 中 interface 和 type 区别](前端/JavaScript/12-Typescript-中-interface-和-type-区别.md)
     - [13 TypeScript-中 is 关键字](前端/JavaScript/13-TypeScript-中-is-关键字.md)
     - [14 TypeScript 操作符](前端/JavaScript/14-TypeScript-操作符.md)
-    - [15 TypeScript 编码规范](前端/JavaScript/15-TypeScript-编码规范.md)
+    - [15 TypeScript 编码规范](前端/JavaScript/15-TypeScript-编码规范.md) -->
   - CSS
     - [01 Flex 弹性布局](前端/CSS/01-Flex-弹性布局.md)
     - [02 Position 定位](前端/CSS/02-Position-定位.md)
