@@ -174,3 +174,117 @@ function print(value: number | string) {
 ```
 
 **使用 `typeof` 进行类型判断后，TypeScript 会将变量缩减为那个具体的类型，只要这个类型与变量的原始类型是兼容的。**
+
+## 类型保护 instanceof
+
+与 `typeof` 类似，不过作用方式不同，`instanceof` 类型保护是通过构造函数来细化类型的一种方式。
+`instanceof` 的右侧要求是一个构造函数，TypeScript 将细化为：
+
+- 此构造函数的 `prototype` 属性的类型，如果它的类型不为 `any` 的话
+- 构造签名所返回的类型的联合
+
+```typescript
+class Bird {
+  fly() {
+    console.log('Bird flying')
+  }
+  layEggs() {
+    console.log('Bird layEggs')
+  }
+}
+
+class Fish {
+  swim() {
+    console.log('Fish swimming')
+  }
+  layEggs() {
+    console.log('Fish layEggs')
+  }
+}
+
+const bird = new Bird()
+const fish = new Fish()
+
+function start(pet: Bird | Fish) {
+  // 调用 layEggs 没问题，因为 Bird 或者 Fish 都有 layEggs 方法
+  pet.layEggs()
+
+  if (pet instanceof Bird) {
+    pet.fly()
+  } else {
+    pet.swim()
+  }
+
+  // 等同于下面
+  // if ((pet as Bird).fly) {
+  //   (pet as Bird).fly();
+  // } else if ((pet as Fish).swim) {
+  //   (pet as Fish).swim();
+  // }
+}
+```
+
+## 索引类型查询操作符 keyof
+
+语法：`keyof T`，对于任何类型 `T`， `keyof T` 的结果为 `T` 上已知的公共属性名的联合。
+
+`keyof` 与 Object.keys 略有相似，只不过 keyof 取 interface 的键。
+
+```typescript
+interface Point {
+  x: number
+  y: number
+}
+
+// type keys = "x" | "y"
+type keys = keyof Point
+```
+
+假设有一个 object 如下所示，我们需要使用 typescript 实现一个 get 函数来获取它的属性值：
+
+```typescript
+function get(o: object, name: string) {
+  return o[name]
+}
+```
+
+我们刚开始可能会这么写，不过它有很多缺点：
+
+1. 无法确认返回类型：这将损失 ts 最大的类型校验功能；
+2. 无法对 key 做约束：可能会犯拼写错误的问题。
+
+这时可以使用 keyof 来加强 get 函数的类型功能：
+
+```typescript
+function get<T extends object, K extends keyof T>(o: T, name: K): T[K] {
+  return o[name]
+}
+```
+
+需要注意，**`keyof` 只能返回类型上已知的公共属性名**：
+
+```typescript
+class Animal {
+  type: string
+  weight: number
+  private speed: number
+}
+
+type AnimalProps = keyof Animal // 'type' | 'weight'
+```
+
+当需要获取对象的某个属性值，但是不确定是哪个属性，这个时候可以使用 `extends` 配合 `typeof` 对属性名进行限制，限制传入的参数只能是对象的属性名：
+
+```typescript
+const person = {
+  name: 'Jack',
+  age: 20,
+}
+
+function getPersonValue<T extends keyof typeof person>(fieldName: keyof typeof person) {
+  return person[fieldName]
+}
+
+const nameValue = getPersonValue('name')
+const ageValue = getPersonValue('age')
+```
