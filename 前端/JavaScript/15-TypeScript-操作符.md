@@ -34,3 +34,25 @@ function get<T extends object, K extends keyof T>(o: T, name: K): T[K] {
   return o[name]
 }
 ```
+
+## Partial 和 Pick
+
+```typescript
+interface Organization {
+  id: number
+  name: string
+  address: string
+  type: string
+  nationality: string
+}
+const url: string = 'https://...some-server-url.com'
+
+const params: Partial<Organization> = {
+  address: '...new address',
+}
+
+// 和上面 Partial 效果一样
+const params: Pick<Organization, 'address'> = {
+  address: '...new address',
+}
+```
