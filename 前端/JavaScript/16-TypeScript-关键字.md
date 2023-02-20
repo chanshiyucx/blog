@@ -22,16 +22,16 @@ interface Person {
 }
 
 // 将 T 的所有属性转换为只读类型
-type ReadOnlyType<T> = {
+type Readonly<T> = {
   readonly [P in keyof T]: T[P]
 }
 
-// type ReadOnlyPerson = {
+// type ReadonlyPerson = {
 //   readonly name: string
 //   readonly age: number
 //   readonly gender: number
 // }
-type ReadOnlyPerson = ReadOnlyType<Person>
+type ReadonlyPerson = Readonly<Person>
 ```
 
 ## 类型谓词 is
