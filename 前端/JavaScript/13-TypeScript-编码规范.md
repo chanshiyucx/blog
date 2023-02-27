@@ -120,12 +120,6 @@ function getDiskInfo() {}
 
 ```typescript
 // Bad
-class foo {}
-
-// Good
-class Foo {}
-
-// Bad
 class Foo {
   Bar: number
   Baz(): number {}
