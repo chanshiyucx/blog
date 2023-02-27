@@ -42,7 +42,7 @@ interface Foo {
 >
 > 1. I 前缀违反了封装原则：在 TypeScript 中，类可以实现接口，接口可以继承接口，接口可以继承类。类和接口都是某种意义上的抽象和封装，继承时不需要关心它是一个接口还是一个类。如果用 I 前缀，当一个变量的类型更改了，比如由接口变成了类，那变量名称就必须同步更改。
 > 2. 防止不恰当的命名：禁止使用 I 前缀可以迫使程序员为接口取一个合适的、带有语义、便于和其他同类型变量区分的名字，而不仅是用前缀区分。
-> 3. 匈牙利命名的时代已经过时：匈牙利命名法由类型前缀加实际的变量名组成，用这种方法命名的变量，看到变量名，可以立即知道其类型。但它的缺点远 于它带来的好处，比如使变量名变得冗长，使相同主体名但类型不同的变量有歧义。
+> 3. 匈牙利命名的时代已经过时：匈牙利命名法由类型前缀加实际的变量名组成，用这种方法命名的变量，看到变量名，可以立即知道其类型。但它的缺点远大于它带来的好处，比如使变量名变得冗长，使相同主体名但类型不同的变量有歧义。
 
 示例：
 
@@ -52,7 +52,39 @@ class Point {}
 type Baz = IFoo & Point
 ```
 
-其实我们关心的是这是否是一个「类型」，不论它是 interface 或 class 或 type，都作为「类型」，其它的都不加前缀，没必要给 interface 加个前缀去独立出来。
+其实我们关心的是这是否是一个「类型」，不论它是 `interface` 或 `class` 或 `type`，都作为「类型」，其它的都不加前缀，没必要给 `interface` 加个前缀去独立出来。
+
+延申：不同于 Java 等静态类型语言，TypeScript 考虑到 JavaScript 本身的灵活特性，采用的是 Structural Type System。**TypeScript 比较的并不是类型定义本身，而是类型定义的形状（Shape），即各种约束条件。**
+
+示例一：
+
+```typescript
+interface Foo {
+  name: string
+}
+
+type Bar = {
+  name: string
+}
+
+const foo: Foo = { name: 'shiyu' }
+const bar: Bar = foo // Okay.
+```
+
+示例二：
+
+```typescript
+class Foo {
+  say(input: string): number {}
+}
+
+class Bar {
+  say(input: string): number {}
+}
+
+const foo: Foo = new Foo() // Okay.
+const bar: Bar = new Foo() // Okay.
+```
 
 > 1. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
 > 2. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
