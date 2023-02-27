@@ -9,6 +9,19 @@ TypeScript 是一种由微软开发的自由和开源的编程语言。它是 Ja
 ## 命名
 
 1. 使用 PascalCase 为类型命名，包括接口 interface、类型别名 type、类 class。
+
+```typescript
+// Bad
+interface foo {}
+type bar = {}
+class baz {}
+
+// Good
+interface Foo {}
+type Bar = {}
+class Baz {}
+```
+
 2. 不要使用 `I` 做为接口名前缀，接口成员使用 camelCase 方式命名。
 
 ```typescript
