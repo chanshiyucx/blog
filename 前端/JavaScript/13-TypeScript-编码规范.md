@@ -561,6 +561,7 @@ interface Param {
 }
 
 const func = (param: Param) => param
+
 func({ field1: '111', field2: 2 }) // Error
 
 const param1 = { field1: '111', field2: 2 }
@@ -608,6 +609,8 @@ function f2() {
 const numArgsBad = (...args: any) => args.length // Return any 不推荐
 const numArgs = (...args: any[]) => args.length // Return number 推荐
 ```
+
+让剩余参数从 `any` 范围缩小到 `any[]`，从而可以读取调用数组上属性和方法。
 
 3. any 的自动推断
 
