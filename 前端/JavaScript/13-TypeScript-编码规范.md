@@ -223,7 +223,10 @@ export default class Foo {}
 为什么？因为默认导出并不为被导出的符号提供一个标准的名称，这增加了维护的难度和降低可读性的风险，同时并未带来明显的益处。
 
 ```typescript
-// 默认导出会造成如下的弊端
+// bar.ts 采用默认导出
+export default class Bar {}
+
+// 在其他文件导入时，会造成如下的弊端
 import Foo from './bar' // 这个语句是合法的。
 import Bar from './bar' // 这个语句也是合法的。
 ```
@@ -232,11 +235,11 @@ import Bar from './bar' // 这个语句也是合法的。
 
 ```typescript
 // 不要这样做！
-const foo = 'blah'
+const foo = 'something'
 export default foo
 ```
 
-如果在 `bar.ts` 中有如下的导入语句：
+如果在 `bar.ts` 中采用解构导入：
 
 ```typescript
 // 编译错误！
