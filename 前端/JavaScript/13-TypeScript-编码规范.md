@@ -967,16 +967,123 @@ myPromise.then((v) => {
    2. `(x,y) => x + y`
    3. `<T>(x: T, y: T) => x === y`
 
-### 风格
+### 控制流语句/语句块
 
-1. 总是使用 `{}` 把循环体和条件语句括起来。
-2. 小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
-   1. `for (let i = 0, n = str.length; i < 10; i++) {}`
-   2. `if (x < 10) {}`
-   3. `function f(x: number, y: string): void {}`
-3. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
-4. 如果函数没有返回值，最好使用 `void`。
-5. **相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。[JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
+多行控制流语句必须使用大括号。
+
+```typescript
+// 应当这样做！
+for (let i = 0; i < x; i++) {
+  doSomethingWith(i)
+  andSomeMore()
+}
+if (x) {
+  doSomethingWithALongMethodName(x)
+}
+```
+
+不要这么做：
+
+```typescript
+// 不要这样做！
+if (x)
+    x.doFoo(...)
+for (let i = 0; i < x; i++)
+    doSomethingWithALongMethodName(i)
+```
+
+这条规则的例外时，能够写在同一行的 `if` 语句可以省略大括号。
+
+```typescript
+// 可以这样做！
+if (x) x.doFoo()
+```
+
+### switch 语句
+
+所有的 `switch` 语句都必须包含一个 `default` 分支，即使这个分支里没有任何代码。
+
+```typescript
+// 应当这样做！
+switch (x) {
+  case Y:
+    doSomethingElse()
+    break
+  default:
+  // 什么也不做。
+}
+```
+
+非空语句组不允许越过分支向下执行：
+
+```typescript
+// 不能这样做！
+switch (x) {
+  case X:
+    doSomething()
+  // 不允许向下执行！
+  case Y:
+  // ...
+}
+```
+
+空语句组可以这样做：
+
+```typescript
+// 可以这样做！
+switch (x) {
+  case X:
+  case Y:
+    doSomething()
+    break
+  default: // 什么也不做。
+}
+```
+
+### 相等性判断
+
+**相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。
+
+```typescript
+// 不要这样做！
+if (foo == 'bar' || baz != bam) {
+  // 由于发生了类型转换，会导致难以理解的行为。
+}
+
+// 应当这样做！
+if (foo === 'bar' || baz !== bam) {
+  // 一切都很好！
+}
+```
+
+[JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
+
+### 变量申明
+
+每个变量声明语句只声明一个变量
+
+```typescript
+// Good
+let a = 1
+let b = 2
+
+// Bad
+let c = 1,
+  d = 2
+```
+
+### 空格
+
+小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
+
+```typescript
+for (let i = 0, n = str.length; i < 10; i++) {}
+
+if (x < 10) {
+}
+
+function f(x: number, y: string): void {}
+```
 
 ## 参考资料
 
