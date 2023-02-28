@@ -187,6 +187,8 @@ import 'jasmine'
 import '@polymer/paper-button'
 ```
 
+### 模块导入和解构导入
+
 根据使用场景的不同，模块导入和解构导入分别有其各自的优势。
 
 模块导入：
@@ -195,6 +197,38 @@ import '@polymer/paper-button'
 2. 模块导入减少了导入语句的数量，降低了命名冲突的出现几率，同时还允许为被导入的模块提供一个简洁的名称。
 
 解构导入语句则为每一个被导入的符号提供一个局部的名称，这样在使用被导入的符号时，代码可以更简洁。
+
+模块导入的例子：
+
+```typescript
+// Bad，不要这样做！无意义地使用命名空间中的名称使得导入语句过于冗长。
+import { TableViewItem, TableViewHeader, TableViewRow, TableViewModel, TableViewRenderer } from './tableview'
+let item: TableViewItem
+
+// Good，应当这样做！使用模块作为命名空间。
+import * as tableview from './tableview'
+let item: tableview.Item
+```
+
+解构导入的例子：
+
+```typescript
+// 不要这么做
+// import * as testing from './testing'
+
+// 这样做更好！为这几个常用的函数提供局部变量名。
+import { describe, it, expect } from './testing'
+
+// 所有的测试都只会重复地使用相同的三个函数，优先使用解构导入语句直接导入这几个符号
+testing.describe('foo', () => {
+  testing.it('bar', () => {
+    testing.expect()
+    testing.expect()
+  })
+})
+```
+
+### 重命名导入
 
 在代码中，可以使用重命名导入解决命名冲突：
 
