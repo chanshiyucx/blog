@@ -835,7 +835,33 @@ interface Moment {
 
 ## 类
 
-1. 不要 #private 语法
+1. 没有必要提供一个空的或者仅仅调用父类构造函数的构造函数。
+
+如果没有为类显式地提供构造函数，编译器会提供一个默认的构造函数。但是，含有参数属性、访问修饰符或参数装饰器的构造函数即使函数体为空也不能省略。
+
+```typescript
+// 不要这样做！没有必要声明一个空的构造函数！
+class UnnecessaryConstructor {
+  constructor() {}
+}
+
+// 不要这样做！没有必要声明一个仅仅调用基类构造函数的构造函数！
+class UnnecessaryConstructorOverride extends Base {
+  constructor(value: number) {
+    super(value)
+  }
+}
+
+// 应当这样做！默认构造函数由编译器提供即可！
+class DefaultConstructor {}
+
+// 应当这样做！含有参数属性的构造函数不能省略！
+class ParameterProperties {
+  constructor(private myService) {}
+}
+```
+
+2. 不要 #private 语法
 
 不要使用 `#private` 私有字段（又称私有标识符）语法声明私有成员。而应当使用 TypeScript 的访问修饰符。
 
@@ -853,11 +879,11 @@ class Clazz {
 
 为什么？因为私有字段语法会导致 TypeScript 在编译为 JavaScript 时出现体积和性能问题。同时，ES2015 之前的标准都不支持私有字段语法，因此它限制了 TypeScript 最低只能被编译至 ES2015。另外，在进行静态类型和可见性检查时，私有字段语法相比访问修饰符并无明显优势。
 
-2. 用 readonly
+3. 用 readonly
 
 对于不会在构造函数以外进行赋值的属性，应使用 `readonly` 修饰符标记。这些属性并不需要具有深层不可变性。
 
-3. 参数属性
+4. 参数属性
 
 不要在构造函数中显式地对类成员进行初始化。应当使用 TypeScript 的参数属性语法。直接在构造函数的参数前面加上修饰符或 readonly 等同于在类中定义该属性同时给该属性赋值，使代码更简洁。
 
@@ -876,7 +902,7 @@ class Foo {
 }
 ```
 
-4. 字段初始化
+5. 字段初始化
 
 如果某个成员并非参数属性，应当在声明时就对其进行初始化，这样有时可以完全省略掉构造函数。
 
@@ -895,7 +921,7 @@ class Foo {
 }
 ```
 
-5. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符
+6. 子类继承父类时，如果需要重写父类方法，需要加上 `override` 修辞符
 
 ```typescript
 class Animal {
