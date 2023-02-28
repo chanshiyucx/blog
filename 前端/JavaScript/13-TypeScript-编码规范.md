@@ -1082,6 +1082,46 @@ if (foo === 'bar' || baz !== bam) {
 
 [JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
 
+### 异常
+
+在实例化异常对象时，必须使用 `new Error()` 语法而非调用 `Error()` 函数。虽然这两种方法都能够创建一个异常实例，但是使用 `new` 能够与代码中其它的对象实例化在形式上保持更好的一致性。
+
+```typescript
+// 应当这样做！
+throw new Error('Foo is not a valid bar.')
+
+// 不要这样做！
+throw Error('Foo is not a valid bar.')
+```
+
+### 对象迭代
+
+对对象使用 `for in` 语法进行迭代很容易出错，因为它同时包括了对象从原型链中继承得来的属性。因此，禁止使用裸的 `for in` 语句。
+
+```typescript
+// 不要这样做！
+for (const x in someObj) {
+  // x 可能包括 someObj 从原型中继承得到的属性。
+}
+```
+
+在对对象进行迭代时，必须使用 `hasOwnProperty` 语句对对象的属性进行过滤，或者使用 `Object.keys()` 和 `Object.entries()`：
+
+```typescript
+// 应当这样做！
+for (const x in someObj) {
+  if (!someObj.hasOwnProperty(x)) continue
+}
+
+// 应当这样做！这里使用 for of 语法
+for (const x of Object.keys(someObj)) {
+}
+
+// 应当这样做！
+for (const [key, value] of Object.entries(someObj)) {
+}
+```
+
 ### 空格
 
 小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
