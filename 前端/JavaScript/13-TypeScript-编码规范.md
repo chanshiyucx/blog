@@ -743,7 +743,7 @@ bar.x = 3 // 报错，因为 bar 类型被声明为不可变的
 // 应当这样做！
 const a: string[]
 const b: readonly string[]
-const c: ns.MyObj[]
+const c: MyObj[]
 const d: Array<string | number>
 const e: ReadonlyArray<string | number>
 
