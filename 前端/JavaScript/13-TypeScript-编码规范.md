@@ -916,7 +916,9 @@ class Dog extends Animal {
 }
 ```
 
-## 风格
+## 风格与语言特性
+
+### 箭头函数
 
 1. 使用箭头函数代替匿名函数表达式。
 
@@ -930,18 +932,51 @@ bar(() => {
 bar(function () {})
 ```
 
-2. 只要需要的时候才把箭头函数的参数括起来。 比如，`(x) => x + x` 是错误的，下面是正确的做法：
+只有当函数需要动态地重新绑定 `this` 时，才能使用 `function` 关键字声明函数表达式，但是通常情况下代码中不应当重新绑定 `this`。
+
+2. 使用箭头函数时，应当根据具体情况选择表达式或者代码块作为函数体。
+
+```typescript
+// 使用函数声明的顶层函数。
+function someFunction() {
+  // 代码块函数体
+  const receipts = books.map((b: Book) => {
+    const receipt = payMoney(b.price)
+    return receipt
+  })
+
+  // 表达式函数体
+  const longThings = myValues.filter((v) => v.length > 1000).map((v) => String(v))
+}
+```
+
+错误示例：
+
+```typescript
+// 不要这样做！如果不需要函数返回值的话，应当使用代码块函数体（{ ... }）。
+myPromise.then((v) => console.log(v))
+
+// 应当这样做！使用代码块函数体。
+myPromise.then((v) => {
+  console.log(v)
+})
+```
+
+3. 只要需要的时候才把箭头函数的参数括起来。 比如，`(x) => x + x` 是错误的，下面是正确的做法：
    1. `x => x + x`
    2. `(x,y) => x + y`
    3. `<T>(x: T, y: T) => x === y`
-3. 总是使用 `{}` 把循环体和条件语句括起来。
-4. 小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
+
+### 风格
+
+1. 总是使用 `{}` 把循环体和条件语句括起来。
+2. 小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
    1. `for (let i = 0, n = str.length; i < 10; i++) {}`
    2. `if (x < 10) {}`
    3. `function f(x: number, y: string): void {}`
-5. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
-6. 如果函数没有返回值，最好使用 `void`。
-7. **相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。[JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
+3. 每个变量声明语句只声明一个变量 （比如使用 `let x = 1; let y = 2;` 而不是 `let x = 1, y = 2;`）。
+4. 如果函数没有返回值，最好使用 `void`。
+5. **相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。[JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
 
 ## 参考资料
 
