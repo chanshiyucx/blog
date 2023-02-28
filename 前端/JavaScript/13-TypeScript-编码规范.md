@@ -918,6 +918,30 @@ class Dog extends Animal {
 
 ## 风格与语言特性
 
+### 变量申明
+
+1. 必须使用 `const` 或 `let` 声明变量。尽可能地使用 `const`，除非这个变量需要被重新赋值。禁止使用 `var`。
+
+```typescript
+const foo = otherValue // 如果 foo 不可变，就使用 const。
+let bar = someValue // 如果 bar 在之后会被重新赋值，就使用 let
+
+// 不要这么做！
+var foo = someValue
+```
+
+2. 每个变量声明语句只声明一个变量：
+
+```typescript
+// Good
+let a = 1
+let b = 2
+
+// Bad
+let c = 1,
+  d = 2
+```
+
 ### 箭头函数
 
 1. 使用箭头函数代替匿名函数表达式。
@@ -1042,7 +1066,7 @@ switch (x) {
 
 ### 相等性判断
 
-**相等性判断必须使用三等号（===）和对应的不等号（!==）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。
+**相等性判断必须使用三等号（===）和对应的不等号（!==），禁止使用两等号（==）和对应的不等号（!=）**。两等号会在比较的过程中进行类型转换，这非常容易导致难以理解的错误。并且在 JavaScript 虚拟机上，两等号的运行速度比三等号慢。
 
 ```typescript
 // 不要这样做！
@@ -1057,20 +1081,6 @@ if (foo === 'bar' || baz !== bam) {
 ```
 
 [JavaScript 相等表](https://dorey.github.io/JavaScript-Equality-Table/#three-equals)。
-
-### 变量申明
-
-每个变量声明语句只声明一个变量
-
-```typescript
-// Good
-let a = 1
-let b = 2
-
-// Bad
-let c = 1,
-  d = 2
-```
 
 ### 空格
 
