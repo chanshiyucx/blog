@@ -1122,6 +1122,36 @@ for (const [key, value] of Object.entries(someObj)) {
 }
 ```
 
+### 数组迭代
+
+不要在数组上使用 `for in` 进行迭代。这是一个违反直觉的操作，因为它是对数组的下标而非元素进行迭代，还会将其强制转换为 `string` 类型。
+
+```typescript
+// 不要这样做！
+for (const x in someArray) {
+  // 这里的 x 是数组的下标！(还是 string 类型的！)
+}
+```
+
+如果要在数组上进行迭代，应当使用 `for of` 语句或者传统的 `for` 循环语句。
+
+```typescript
+// 应当这样做！
+for (const x of someArr) {
+  // 这里的 x 是数组的元素
+}
+
+// 应当这样做！
+for (let i = 0; i < someArr.length; i++) {
+  // 如果需要使用下标，就对下标进行迭代，否则就使用 for/of 循环。
+  const x = someArr[i]
+}
+
+// 应当这样做！返回的是索引和值
+for (const [i, x] of someArr.entries()) {
+}
+```
+
 ### 空格
 
 小括号里开始不要有空白。逗号，冒号，分号后要有一个空格。比如：
