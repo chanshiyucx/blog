@@ -213,17 +213,27 @@ let item: tableview.Item
 解构导入的例子：
 
 ```typescript
-// 不要这么做
-// import * as testing from './testing'
+import * as testing from './testing'
 
-// 这样做更好！为这几个常用的函数提供局部变量名。
-import { describe, it, expect } from './testing'
-
-// 所有的测试都只会重复地使用相同的三个函数，优先使用解构导入语句直接导入这几个符号
+// 所有的测试都只会重复地使用相同的三个函数。考虑使用解构导入语句直接导入这几个符号
 testing.describe('foo', () => {
   testing.it('bar', () => {
     testing.expect()
     testing.expect()
+  })
+})
+```
+
+建议：
+
+```typescript
+// 这样做更好！为这几个常用的函数提供局部变量名。
+import { describe, it, expect } from './testing'
+
+describe('foo', () => {
+  it('bar', () => {
+    expect()
+    expect()
   })
 })
 ```
