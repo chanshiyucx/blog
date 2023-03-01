@@ -267,7 +267,7 @@ export default class Foo {}
 为什么？因为默认导出并不为被导出的符号提供一个标准的名称，这增加了维护的难度和降低可读性的风险，同时并未带来明显的益处。
 
 ```typescript
-// 采用默认导出
+// foot.ts 采用默认导出
 export default class Foo {}
 
 // 在其他文件导入时，会造成如下的弊端
