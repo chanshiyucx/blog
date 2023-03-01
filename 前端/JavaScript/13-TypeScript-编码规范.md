@@ -1196,6 +1196,9 @@ if (x < 10) {
 function f(x: number, y: string): void {}
 ```
 
+> 「有研究显示，写代码不喜欢英文加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。
+> 与大家共勉之。」
+
 ## 参考资料
 
 1. [Coding guidelines](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
