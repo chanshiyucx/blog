@@ -267,12 +267,12 @@ export default class Foo {}
 为什么？因为默认导出并不为被导出的符号提供一个标准的名称，这增加了维护的难度和降低可读性的风险，同时并未带来明显的益处。
 
 ```typescript
-// bar.ts 采用默认导出
-export default class Bar {}
+// 采用默认导出
+export default class Foo {}
 
 // 在其他文件导入时，会造成如下的弊端
-import Foo from './bar' // 这个语句是合法的。
-import Bar from './bar' // 这个语句也是合法的。
+import Foo from './foo' // 这个语句是合法的。
+import Bar from './foo' // 这个语句也是合法的。
 ```
 
 具名导出的一个优势是，当代码中试图导入一个并未被导出的符号时，这段代码会报错。例如，假设在 `foo.ts` 中有如下的导出声明：
