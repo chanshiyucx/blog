@@ -275,7 +275,9 @@ import Foo from './foo' // 这个语句是合法的。
 import Bar from './foo' // 这个语句也是合法的。
 ```
 
-具名导出的一个优势是，当代码中试图导入一个并未被导出的符号时，这段代码会报错。例如，假设在 `foo.ts` 中有如下的导出声明：
+具名导出的一个优势是，当代码中试图导入一个并未被导出的符号时，上面这段代码会报错。
+
+假设在 `foo.ts` 中有如下的导出声明：
 
 ```typescript
 // 不要这样做！
@@ -287,17 +289,17 @@ export default foo
 
 ```typescript
 // 编译错误！
-import { fizz } from './foo'
+import { bar } from './foo'
 ```
 
-会导致编译错误： `error TS2614: Module '"./foo"' has no exported member 'fizz'`。反之，如果在 `bar.ts` 中的导入语句为：
+会导致编译错误： `error TS2614: Module '"./foo"' has no exported member 'bar'`。反之，如果在 `bar.ts` 中的导入语句为：
 
 ```typescript
-// 不要这样做！这定义了一个多余的变量 fizz！
-import fizz from './foo'
+// 不要这样做！这定义了一个多余的变量 bar！
+import bar from './foo'
 ```
 
-结果是 `fizz === foo`，这往往不符合预期，且难以调试。
+结果是 `bar === foo`，这往往不符合预期，且难以调试。
 
 ## 类型
 
