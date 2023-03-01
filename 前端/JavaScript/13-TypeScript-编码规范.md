@@ -191,6 +191,27 @@ import 'jasmine'
 import '@polymer/paper-button'
 ```
 
+模块导入进行排序和分组，当文件越来越大，`import` 语句就会变成一团乱麻，`import` 语句一般可以分为三组：
+
+1. npm 模块
+2. src 相对导入模块(如@/utils)
+3. 相对路径
+
+每个分组之间使用空行分隔：
+
+```typescript
+import A from 'a'
+import A from 'b'
+
+import MyComponent from '@/components/MyComponent'
+import Redirect from '@/components/Redirect'
+
+// 按照相对路径的深度
+import foo from '../../foo'
+import bar from '../bar'
+import bar from './bar'
+```
+
 #### 模块导入和解构导入
 
 根据使用场景的不同，模块导入和解构导入分别有其各自的优势。
