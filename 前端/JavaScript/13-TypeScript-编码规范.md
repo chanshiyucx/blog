@@ -169,10 +169,10 @@ import { Symbol3 } from '@/utils/sibling'
 
 | 导入类型 | 示例                              | 用途                                       |
 | -------- | --------------------------------- | ------------------------------------------ |
-| 模块     | `import * as foo from '...'`      | TypeScript 导入方式                        |
-| 解构     | `import { SomeThing } from '...'` | TypeScript 导入方式                        |
-| 默认     | `import SomeThing from '...'`     | 只用于外部代码的特殊需求                   |
-| 副作用   | `import '...'`                    | 只用于加载某些库的副作用（例如自定义元素） |
+| 模块     | `import * as foo from 'foo'`      | TypeScript 导入方式                        |
+| 解构     | `import { SomeThing } from 'foo'` | TypeScript 导入方式                        |
+| 默认     | `import SomeThing from 'foo'`     | 只用于外部代码的特殊需求                   |
+| 副作用   | `import 'foo'`                    | 只用于加载某些库的副作用（例如自定义元素） |
 
 ```typescript
 // 应当这样做！从这两种变体中选择较合适的一种（见下文）。
