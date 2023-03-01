@@ -336,7 +336,7 @@ let bar: number[] = []
 
 ### 拆箱类型
 
-**在任何情况下，都不应该使用这些装箱类型**。不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
+**在任何情况下，都不应该使用装箱类型**。不要使用如下类型 `Number，String，Boolean，Object`，这些类型指的是**装箱类型**，该使用类型 `number，string，boolean，object`，这些类型指的是**拆箱类型**。
 
 ```typescript
 // Bad
@@ -687,7 +687,7 @@ interface Foo {
 
 const a: Foo = {
   bar: 123,
-  bam: 'abc', // 如果使用类型标记，改名之后这里会报错！
+  bam: 'abc', // 如果使用类型标记，改名之后这里会报错！对象字面量只能指定已知属性，并且“bam”不在类型“Foo”中
 }
 
 const b = {
