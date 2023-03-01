@@ -44,6 +44,9 @@ interface Foo {
 > 2. 防止不恰当的命名：禁止使用 I 前缀可以迫使程序员为接口取一个合适的、带有语义、便于和其他同类型变量区分的名字，而不仅是用前缀区分。
 > 3. 匈牙利命名的时代已经过时：匈牙利命名法由类型前缀加实际的变量名组成，用这种方法命名的变量，看到变量名，可以立即知道其类型。但它的缺点远大于它带来的好处，比如使变量名变得冗长，使相同主体名但类型不同的变量有歧义。
 
+[Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)  
+[Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
+
 示例：
 
 ```typescript
@@ -89,9 +92,6 @@ const bar: Bar = new Foo() // Okay.
 ```
 
 将 Foo 实例赋值给 Bar 类型的变量时，TypeScript 编译器检查发现该实例上具有 Bar 类型需要的所有约束条件，即一个名为 say 的接受一个 string 参数并返回一个 number 的方法（`say(input: string): number`），所以不会有任何报错。
-
-> 1. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
-> 2. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
 
 4. 使用 PascalCase 为枚举对象本身和枚举成员命名。
 
