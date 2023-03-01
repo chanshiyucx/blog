@@ -132,7 +132,7 @@ class Foo {
 }
 ```
 
-7. 导入模块的命名空间时使用 camelCase 命名法，文件名则使用 snake_case 命名法。
+7. 导入模块的命名空间时使用 camelCase 命名法。
 
 ```typescript
 import * as fooBar from './foo_bar'
