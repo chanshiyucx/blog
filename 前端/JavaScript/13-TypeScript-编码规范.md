@@ -157,12 +157,12 @@ TypeScript 代码必须使用路径进行导入。这里的路径既可以是相
 
 在引用逻辑上属于同一项目的文件时，应使用相对路径 `./foo`，不要使用绝对路径 `path/to/foo`。
 
-应尽可能地限制父层级的数量（避免出现诸如 `../../../` 的路径），过多的层级会导致模块和路径结构难以理解。
+应尽可能地限制父层级的数量（避免出现诸如 `../../../` 的路径），过多的层级会导致模块和路径结构难以理解，当路径层级过多时建议使用路径别名。
 
 ```typescript
-import { Symbol1 } from 'google3/path/from/root'
-import { Symbol2 } from '../parent/file'
-import { Symbol3 } from './sibling'
+import { Symbol1 } from '../parent/file'
+import { Symbol2 } from './sibling'
+import { Symbol3 } from '@/utils/sibling'
 ```
 
 在 ES6 和 TypeScript 中，导入语句共有四种变体：
