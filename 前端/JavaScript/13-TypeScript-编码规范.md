@@ -54,7 +54,9 @@ type Baz = IFoo & Point
 
 其实我们关心的是这是否是一个「类型」，不论它是 `interface` 或 `class` 或 `type`，都作为「类型」，其它的都不加前缀，没必要给 `interface` 加个前缀去独立出来。
 
-延申：不同于 Java 等静态类型语言，TypeScript 考虑到 JavaScript 本身的灵活特性，采用的是 Structural Type System。**TypeScript 比较的并不是类型定义本身，而是类型定义的形状（Shape），即各种约束条件。**
+延申：不同于 Java 等静态类型语言，TypeScript 考虑到 JavaScript 本身的灵活特性，采用的是 `Structural Type System`。带来的好处就是不会像 Java 的 `Nominal Typing System` 一样感觉处处被束缚，使用上会更加简单，同时也达到了类型安全的作用，甚至比 Java 更强大。
+
+**TypeScript 比较的并不是类型定义本身，而是类型定义的形状（Shape），即各种约束条件。**
 
 示例一：
 
@@ -85,6 +87,8 @@ class Bar {
 const foo: Foo = new Foo() // Okay.
 const bar: Bar = new Foo() // Okay.
 ```
+
+将 Foo 实例赋值给 Bar 类型的变量时，TypeScript 编译器检查发现该实例上具有 Bar 类型需要的所有约束条件，即一个名为 say 的接受一个 string 参数并返回一个 number 的方法（`say(input: string): number`），所以不会有任何报错。
 
 > 1. [Prohibition against prefixing interfaces with "I"](https://github.com/microsoft/TypeScript-Handbook/issues/121)
 > 2. [Confused about the Interface and Class coding guidelines for TypeScript](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
