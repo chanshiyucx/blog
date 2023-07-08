@@ -1,4 +1,12 @@
-# RN App 外部唤醒踩坑记
+---
+title: RN App 外部唤醒踩坑记
+date: 2018-09-30 08:17:37
+category: 技术向
+tags:
+  - ReactNative
+  - UniversalLinks
+  - AppLinks
+---
 
 公司新企划的 RN 项目需要实现链接分享功能，用户直接通过分享链接唤醒 App 并跳转相应页面，同时该功能要求在 iOS 和 Android 双端兼容，在此记录下拥抱新技术的踩坑历程。
 
@@ -93,11 +101,13 @@ App Links 和 Universal Links 实现大同小异，也是通过上传文件进�
 ```javascript
 ;[
   {
-    relation: ['delegate_permission/common.handle_all_urls'],
+    relation: ["delegate_permission/common.handle_all_urls"],
     target: {
-      namespace: 'android_app',
-      package_name: 'com.had',
-      sha256_cert_fingerprints: ['C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81'],
+      namespace: "android_app",
+      package_name: "com.had",
+      sha256_cert_fingerprints: [
+        "C1:96:B8:EB:AC:BD:6C:B3:03:...:7E:13:CC:0B:EE:50:80:5D:DA:81",
+      ],
     },
   },
 ]

@@ -1,4 +1,11 @@
-# WSL 安装 Docker 实录
+---
+title: WSL 安装 Docker 实录
+date: 2019-06-19 11:42:03
+category: 代码库
+tags:
+  - WSL
+  - Docker
+---
 
 WSL（Windows Subsystem for Linux）是 win10 自带的适用于 Linux 的子系统。相比于虚拟机更为轻巧。启用 WSL 后配合 Win10 商店自带的 Ubuntu，便可在 Win10 上运行 Linux 系统。
 

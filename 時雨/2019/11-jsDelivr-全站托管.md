@@ -1,4 +1,11 @@
-# jsDelivr 全站托管
+---
+title: jsDelivr 全站托管
+date: 2019-11-08 08:07:28
+category: 分享境
+tags:
+  - JSDelivr
+  - CDN
+---
 
 可能是自己消息闭塞，近日才知道 jsDelivr 可以访问 github 仓库资源，并通过 CDN 缓存方式加速国内的访问。于是查阅资料略加研究，决定将全站进行 jsDelivr 托管。
 
@@ -54,7 +61,10 @@ https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/1.jpg
 
 ```javascript
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? `//cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/` : '/',
+  publicPath:
+    process.env.NODE_ENV === "production"
+      ? `//cdn.jsdelivr.net/gh/chanshiyucx/chanshiyucx.github.io/`
+      : "/",
 }
 ```
 

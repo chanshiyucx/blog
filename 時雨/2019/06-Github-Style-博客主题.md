@@ -1,4 +1,11 @@
-# Github Style 博客主题
+---
+title: Github Style 博客主题
+date: 2019-04-14 03:48:40
+category: 分享境
+tags:
+  - 主题
+  - Gitleaf
+---
 
 前不久闲逛发现了个 Github Style 的 Hexo 博客主题 [小白妹妹写代码](https://sabrinaluo.github.io/tech/)，突然感觉这种简约风格主题莫名好看，故摸鱼摸了一周也仿了个 Github Style 的单页面主题 Gitleaf。
 

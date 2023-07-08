@@ -1,4 +1,11 @@
-# Telegram RSS 订阅频道
+---
+title: Telegram RSS 订阅频道
+date: 2020-04-25 03:07:58
+category: 分享境
+tags:
+  - RSS
+  - Telegram
+---
 
 垂涎木子的 Telegram K8S 订阅频道 [RSS Kubernetes](https://t.me/rss_kubernetes) 已经很久了，今天才想起来为何不自己搞一个，在木子的友情帮助下，非常轻松地将服务搭建起来了，特此安利一下。
 
@@ -22,7 +29,7 @@ docker pull fengkx/node_rssbot
 因为想要更方便地配置参数和启动服务，所以时雨更倾向于使用 docker-compose 启动而不是官方文档推荐的 docker 命令启动。编写一个简易的 docker-compose.yml 文件：
 
 ```yml
-version: '3.1'
+version: "3.1"
 
 services:
   rssbot:

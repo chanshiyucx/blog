@@ -1,4 +1,10 @@
-# Python 文件操作
+---
+title: Python 文件操作
+date: 2019-01-30 09:22:59
+category: 技术向
+tags:
+  - Python
+---
 
 趁工作闲暇将之前用 Nodejs 写的微博爬虫用 Python 重构了一遍，可以算是入门 Python 的第一个练手作，虽然磕磕碰碰踩了不少坑，基本功能还算完成，这里记录一些实用方法。
 

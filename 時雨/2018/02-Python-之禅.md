@@ -1,4 +1,10 @@
-# Python 之禅
+---
+title: Python 之禅
+date: 2019-01-28 07:47:23
+category: 自言语
+tags:
+  - Python
+---
 
 作为一个前端攻城狮，工作中用到最多的是 JavaScript，但我接触的第一门编程语言却是 Python，大学时期只是略作了解，而现在，是时候重启 Python 之路，开启新的篇章。
 

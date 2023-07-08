@@ -1,4 +1,11 @@
-# Telegram 电报机器人
+---
+title: Telegram 电报机器人
+date: 2020-03-25 03:54:04
+category: 分享境
+tags:
+  - Java
+  - Telegram
+---
 
 在木子的博客看到一篇 [VPS 安全加固之用户登陆后向 telegram 发送登录信息](https://blog.k8s.li/linux-login-alarm-telegram.html)的文章，感觉挺 interesting，试着按教程折腾，好耶ヽ(✿ ﾟ ▽ ﾟ)ノ，又成功解锁了一个新玩具！
 
