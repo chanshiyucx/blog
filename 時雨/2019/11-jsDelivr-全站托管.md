@@ -29,25 +29,25 @@ jsDelivr 提供 npm，GitHub，WordPress 等项目的镜像。由于我只使用
 
 使用 github 做图床，我们可以通过 [PicGo](https://github.com/Molunerfinn/PicGo) 或者 chrome 插件 [Picee](https://chrome.google.com/webstore/detail/picee/nmeeieecbmdnilkkaliknhkkakonobbc) 来上传图片到图片仓库。举个栗子，这里我上传图片到名为 poi 的 github 仓库中，上传成功后图片访问地址类似如下格式：
 
-```
+```html
 /IMAGES/2019/1.jpg
 ```
 
 如果你有绑定自有域名，也可以通过绑定域名来访问：
 
-```
+```html
 https://chanshiyu.com/yoi/2019/1.jpg
 ```
 
 然后便可以使用 jsDelivr CDN 加速访问图片，格式如下：
 
-```
+```html
 https://cdn.jsdelivr.net/gh/user/repo@version/file
 ```
 
 具体到上传的这张图片地址便是：
 
-```
+```html
 https://cdn.jsdelivr.net/gh/chanshiyucx/yoi/2019/1.jpg
 ```
 

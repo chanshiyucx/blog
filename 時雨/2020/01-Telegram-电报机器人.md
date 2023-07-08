@@ -46,7 +46,7 @@ In order to get the group chat id, do as follows:
 
 即先将机器人加入频道或群组，然后通过下面的接口获取频道或群组的 chat id。
 
-```
+```html
 https://api.telegram.org/bot${token}/getUpdates
 ```
 
@@ -57,13 +57,13 @@ https://api.telegram.org/bot${token}/getUpdates
 
 机器人注册成功，咱就可以发送消息了，参考官方接口文档参考 [Telegram Bot API](https://core.telegram.org/bots/api)，访问接口发送消息：
 
-```
+```html
 https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=hello
 ```
 
 通过浏览器或者 `curl` 请求这个地址即可发送消息。
 
-```javascripton
+```javascript
 {
   "ok": true,
   "result": {
