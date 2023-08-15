@@ -118,12 +118,9 @@ Code is Long, Life is Short.
     - [02 图片加解密二三事](前端/实战系列/02-图片加解密二三事.md)
     - [03 优雅实现 BackTop](前端/实战系列/03-优雅实现-BackTop.md)
     - [04 动态加载 JS 文件](前端/实战系列/04-动态加载-JS-文件.md)
-    - [05 Document.designMode](前端/实战系列/05-Document.designMode.md)
-    - [06 常用 DOM 方法比较.md](前端/实战系列/06-常用-DOM-方法比较.md)
-    - [07 Ceph](前端/实战系列/07-Ceph.md)
-    - [08 Interview](前端/实战系列/08-Interview.md)
-    - [09 动态规划](前端/实战系列/09-动态规划.md)
-    - [10 AbortController 中断 fetch](前端/实战系列/10-AbortController-中断-fetch.md)
+    - [05 常用 DOM 方法比较](前端/实战系列/05-常用-DOM-方法比较.md)
+    - [06 AbortController 中断 fetch](前端/实战系列/06-AbortController-中断-fetch.md)
+    - [07 计算字符所占字节数](前端/实战系列/07-计算字符所占字节数.md)
 - 后端
   - Java
     - [01 面向对象基本特征与原则](后端/Java/01-面向对象基本特征与原则.md)
@@ -243,6 +240,10 @@ Code is Long, Life is Short.
     - [03 设计模式（下）](书斋/JavaScript-设计模式/03-设计模式（下）.md)
     - [04 设计原则和编程技巧](书斋/JavaScript-设计模式/04-设计原则和编程技巧.md)
 - 纸函
+  - [01 Interview](纸函/01-Interview.md)
+  - [02 Ceph](纸函/02-Ceph.md)
+  - [03 动态规划](纸函/03-动态规划.md)
+  - [04 Document.designMode](纸函/04-Document.designMode.md)
   - [2023-01-10](纸函/2023-01-10.md)
 - 万藏
   - 文档
