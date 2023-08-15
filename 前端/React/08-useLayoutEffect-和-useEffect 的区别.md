@@ -8,10 +8,10 @@
 ## 具体表现
 
 ```jsx
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from "react"
 
 function App() {
-  const [state, setState] = useState('hello world')
+  const [state, setState] = useState("hello world")
 
   // 使用 useEffect 有闪烁现象，换成 useLayoutEffect 则无
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
     while (i <= 100000000) {
       i++
     }
-    setState('world hello')
+    setState("world hello")
   }, [])
 
   return (
@@ -32,7 +32,7 @@ function App() {
 export default App
 ```
 
-![具体表现](/IMAGES/2023/useLayoutEffect-和-useEffect-的区别/具体表现.webp)
+![具体表现](/IMAGES/useLayoutEffect-和-useEffect-的区别/具体表现.webp)
 
 因为 useEffect 是渲染完之后异步执行的，所以会导致 hello world 先被渲染到了屏幕上，再变成 world hello，就会出现闪烁现象。而 useLayoutEffect 是渲染之前同步执行的，所以会等它执行完再渲染上去，就避免了闪烁现象。也就是说我们最好把操作 dom 的相关操作放到 useLayouteEffect 中去，避免导致闪烁。
 
@@ -46,9 +46,10 @@ useLayoutEffect 不会在服务端执行，所以就有可能导致 ssr 渲染�
 - 如果你明确知道 useLayouteffect 对于首屏渲染并没有影响，但是后续会需要，你可以这样写：
 
 ```javascript
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect } from "react"
 
-export const useCustomLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
+export const useCustomLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect
 ```
 
 ### 总结

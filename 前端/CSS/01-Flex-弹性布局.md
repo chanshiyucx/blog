@@ -6,11 +6,11 @@ Flex 容器有两根轴线：水平的主轴（main axis）和垂直的交叉轴
 
 一张图说明 Flex Box 模型：
 
-![Flex Box](/IMAGES/2019/Flex-弹性布局/flex_box.png)
+![Flex Box](/IMAGES/Flex-弹性布局/flex_box.png)
 
 当前主流浏览器对 Flex 布局都能良好兼容，可以放心使用：
 
-![Can I Use Flex](/IMAGES/2019/Flex-弹性布局/Can_I_Use_Flex.png)
+![Can I Use Flex](/IMAGES/Flex-弹性布局/Can_I_Use_Flex.png)
 
 ## 容器的属性
 
@@ -33,7 +33,7 @@ flex-direction 属性决定主轴的方向，可选值：`row | row-reverse | co
 }
 ```
 
-![flex-direction](/IMAGES/2019/Flex-弹性布局/flex-direction.png)
+![flex-direction](/IMAGES/Flex-弹性布局/flex-direction.png)
 
 ### flex-wrap
 
@@ -45,7 +45,7 @@ flex-wrap 属性定义子项目是否可换行，可选值：`nowrap | wrap | wr
 }
 ```
 
-![flex-wrap](/IMAGES/2019/Flex-弹性布局/flex-wrap.png)
+![flex-wrap](/IMAGES/Flex-弹性布局/flex-wrap.png)
 
 ### flex-flow
 
@@ -61,7 +61,7 @@ justify-content：属性定义了项目在主轴上的对齐方式，可选值�
 }
 ```
 
-![justify-content](/IMAGES/2019/Flex-弹性布局/justify-content.png)
+![justify-content](/IMAGES/Flex-弹性布局/justify-content.png)
 
 ### align-items
 
@@ -73,7 +73,7 @@ align-items 属性定义项目在交叉轴上如何对齐，可选值 `flex-star
 }
 ```
 
-![align-items](/IMAGES/2019/Flex-弹性布局/align-items.png)
+![align-items](/IMAGES/Flex-弹性布局/align-items.png)
 
 ### align-content
 
@@ -81,11 +81,12 @@ align-content 属性定义多根轴线的对齐方式，如果项目只有一根
 
 ```css
 .box {
-  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+  align-content: flex-start | flex-end | center | space-between | space-around |
+    stretch;
 }
 ```
 
-![align-content](/IMAGES/2019/Flex-弹性布局/align-content.png)
+![align-content](/IMAGES/Flex-弹性布局/align-content.png)
 
 ## 项目的属性
 
@@ -108,7 +109,7 @@ order 属性定义项目的排列顺序，数值越小，排列越靠前，默�
 }
 ```
 
-![order](/IMAGES/2019/Flex-弹性布局/order.png)
+![order](/IMAGES/Flex-弹性布局/order.png)
 
 ### flex-grow
 
@@ -120,7 +121,7 @@ flex-grow 属性定义项目的放大比例，默认为 0，即如果存在剩�
 }
 ```
 
-![flex-grow](/IMAGES/2019/Flex-弹性布局/flex-grow.png)
+![flex-grow](/IMAGES/Flex-弹性布局/flex-grow.png)
 
 ### flex-shrink
 
@@ -132,7 +133,7 @@ flex-shrink 属性定义了项目的缩小比例，默认为 1，即如果空间
 }
 ```
 
-![flex-shrink](/IMAGES/2019/Flex-弹性布局/flex-shrink.png)
+![flex-shrink](/IMAGES/Flex-弹性布局/flex-shrink.png)
 
 ### flex-basis
 
@@ -158,4 +159,4 @@ flex 属性是 flex-grow, flex-shrink 和 flex-basis 的简写，默认值为 `0
 
 align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。
 
-![align-self](/IMAGES/2019/Flex-弹性布局/align-self.png)
+![align-self](/IMAGES/Flex-弹性布局/align-self.png)

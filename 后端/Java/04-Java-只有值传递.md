@@ -173,7 +173,7 @@ print in main , user is User{name='Hollis', gender='Male'}
 
 图解上面的过程：
 
-![Java 值传递](/IMAGES/2019/Java-只有值传递/Java-值传递.png)
+![Java 值传递](/IMAGES/Java-只有值传递/Java-值传递.png)
 
 当我们在 main 中创建一个 User 对象的时候，在堆中开辟一块内存，其中保存了 name 和 gender 等数据。然后 hollis 持有该内存的地址 `0x123456`（图 1）。当尝试调用 pass 方法，hollis 作为实际参数传递给形式参数 user 的时候，会把这个地址 `0x123456` 交给 user，这时，user 也指向了这个地址（图 2）。然后在 pass 方法内对参数进行修改的时候，即 `user = new User();`，会重新开辟一块 `0X456789` 的内存，赋值给 user。后面对 user 的任何修改都不会改变内存 `0X123456` 的内容。
 

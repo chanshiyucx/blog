@@ -30,8 +30,8 @@
 `<canvas>` 标签创建画布，并公开渲染上下文（The rendering context），用来绘制内容。使用方法 `getContext()` 可以获取渲染上下文对象，该方法接受一个参数表示上下文格式，一般传入 `2d`，当然还有 `3d` 模式，这里不细谈。
 
 ```javascript
-const canvas = document.getElementById('yoo')
-const ctx = canvas.getContext('2d')
+const canvas = document.getElementById("yoo")
+const ctx = canvas.getContext("2d")
 ```
 
 ### 绘制图形
@@ -47,13 +47,13 @@ const ctx = canvas.getContext('2d')
 三种方式示例如下：
 
 ```javascript
-ctx.fillStyle = '#fb618d'
+ctx.fillStyle = "#fb618d"
 ctx.fillRect(50, 50, 200, 200)
 ctx.clearRect(70, 70, 160, 160)
 ctx.strokeRect(90, 90, 120, 120)
 ```
 
-![三种方式绘制矩形](/IMAGES/2019/Canvas-基础用法/三种方式绘制矩形.png)
+![三种方式绘制矩形](/IMAGES/Canvas-基础用法/三种方式绘制矩形.png)
 
 #### 绘制路径
 
@@ -97,7 +97,7 @@ ctx.stroke()
 
 注意到填充三角形和描边三角形有些不同，当路径使用填充 `fill()` 时会自动闭合，而使用描边 `stroke()` 时则不会闭合路径，所以需要调用 `closePath()` 方法。
 
-![绘制三角形](/IMAGES/2019/Canvas-基础用法/绘制三角形.png)
+![绘制三角形](/IMAGES/Canvas-基础用法/绘制三角形.png)
 
 示例 2：绘制笑脸
 
@@ -114,7 +114,7 @@ ctx.arc(190, 110, 10, 0, Math.PI * 2, false) // 右眼
 ctx.stroke()
 ```
 
-![笑脸](/IMAGES/2019/Canvas-基础用法/笑脸.png)
+![笑脸](/IMAGES/Canvas-基础用法/笑脸.png)
 
 ### 贝塞尔曲线
 
@@ -122,11 +122,11 @@ canvas 里使用二次贝塞尔曲线和三次贝塞尔曲线可以用来绘制�
 
 canvas API `quadraticCurveTo(cp1x, cp1y, x, y)`，用来绘制二次贝塞尔曲线，`cp1x,cp1y` 为控制点，`x,y` 为结束点。
 
-![二次贝塞尔曲线](/IMAGES/2019/Canvas-基础用法/二次贝塞尔曲线.gif)
+![二次贝塞尔曲线](/IMAGES/Canvas-基础用法/二次贝塞尔曲线.gif)
 
 canvas API `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`，用来绘制三次贝塞尔曲线，`cp1x,cp1y` 为控制点一，`cp2x,cp2y` 为控制点二，`x,y` 为结束点。
 
-![三次贝塞尔曲线](/IMAGES/2019/Canvas-基础用法/三次贝塞尔曲线.gif)
+![三次贝塞尔曲线](/IMAGES/Canvas-基础用法/三次贝塞尔曲线.gif)
 
 关于贝塞尔曲线的使用，这里不再细研究~~（看得头痛）~~，下次如有机会再说。
 
@@ -139,7 +139,7 @@ canvas API `bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`，用来绘制三次贝
 ```javascript
 new Path2D() // 空的Path对象
 new Path2D(path) // 克隆Path对象
-new Path2D('M10 10 h 80 v 80 h -80 Z') // 从SVG建立Path对象
+new Path2D("M10 10 h 80 v 80 h -80 Z") // 从SVG建立Path对象
 ```
 
 之前介绍的所有 canvas API 都可以在生成的 Path2D 对象上使用。

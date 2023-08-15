@@ -41,7 +41,7 @@ function Bar() {}
 
 // 设置 Bar.prototype 属性为 Foo 的实例对象
 Bar.prototype = new Foo()
-Bar.prototype.foo = 'Hello World'
+Bar.prototype.foo = "Hello World"
 
 // 修正 Bar.prototype.constructor 为 Bar 本身
 Bar.prototype.constructor = Bar
@@ -57,7 +57,7 @@ Bar.prototype.constructor = Bar
  **/
 ```
 
-![继承与原型链](/IMAGES/2019/JavaScript-秘密花园/prototype.png)
+![继承与原型链](/IMAGES/JavaScript-秘密花园/prototype.png)
 
 > 当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）都有一个私有属性（称之为 proto）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。
 
@@ -205,15 +205,15 @@ foo // [1, 2, 3]
 JavaScript 是弱类型语言，这就意味着等于操作符会为了比较两个值而进行强制类型转换。
 
 ```javascript
-'' == '0' // false
-0 == '' // true
-0 == '0' // true
-false == 'false' // false
-false == '0' // true
+"" == "0" // false
+0 == "" // true
+0 == "0" // true
+false == "false" // false
+false == "0" // true
 false == undefined // false
 false == null // false
 null == undefined // true
-' \t\r\n' == 0 // true
+" \t\r\n" == 0 // true
 ```
 
 ### typeof 操作符
@@ -223,7 +223,7 @@ typeof 操作符（和 instanceof 一起）或许是 JavaScript 中最大的设�
 尽管 instanceof 还有一些极少数的应用场景，typeof 只有一个实际的应用，那便是用来检测一个对象是否已经定义或者是否已经赋值，而这个应用却不是用来检查对象的类型。
 
 ```javascript
-typeof foo !== 'undefined'
+typeof foo !== "undefined"
 ```
 
 上面代码会检测 foo 是否已经定义，如果没有定义而直接使用会导致 ReferenceError 的异常。 这是 typeof 唯一有用的地方。除非为了检测一个变量是否已经定义，应尽量避免使用 typeof 操作符。
@@ -260,8 +260,8 @@ function is(type, obj) {
   return obj !== undefined && obj !== null && clas === type
 }
 
-is('String', 'test') // true
-is('String', new String('test')) // true
+is("String", "test") // true
+is("String", new String("test")) // true
 ```
 
 为了检测一个对象类型，推荐使 `Object.prototype.toString` 方法，因为这是唯一一个可依赖的方式。
@@ -283,10 +283,10 @@ Bar.prototype = Foo
 new Bar() instanceof Foo // false
 
 // instanceof 比较内置类型
-new String('foo') instanceof String // true
-new String('foo') instanceof Object // true
-'foo' instanceof String // false
-'foo' instanceof Object // false
+new String("foo") instanceof String // true
+new String("foo") instanceof Object // true
+"foo" instanceof String // false
+"foo" instanceof Object // false
 ```
 
 需要注意：instanceof 用来比较属于不同 JavaScript 上下文的对象（比如浏览器中不同的文档结构）时将会出错，因为它们的构造函数不会是同一个对象。

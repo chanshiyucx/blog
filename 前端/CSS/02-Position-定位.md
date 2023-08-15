@@ -19,7 +19,7 @@ position 属性用来指定一个元素在网页上的位置，一共有 5 种�
 
 注意：**`static` 定位所导致的元素位置，是浏览器自主决定的，所以这时 top、bottom、left、right 这四个属性无效**。
 
-![static](/IMAGES/2019/Position-定位/static.jpg)
+![static](/IMAGES/Position-定位/static.jpg)
 
 ## relative，absolute，fixed
 
@@ -31,11 +31,11 @@ position 属性用来指定一个元素在网页上的位置，一共有 5 种�
 
 `relative` 表示，相对于默认位置（即 `static` 时的位置）进行偏移，即定位基点是元素的默认位置。
 
-![relative](/IMAGES/2019/Position-定位/relative.jpg)
+![relative](/IMAGES/Position-定位/relative.jpg)
 
 **`relative` 定位必须搭配 top、bottom、left、right 这四个属性一起使用，用来指定偏移的方向和距离。**
 
-![relative](/IMAGES/2019/Position-定位/relative1.jpg)
+![relative](/IMAGES/Position-定位/relative1.jpg)
 
 ```css
 div {
@@ -54,7 +54,7 @@ div {
 
 **`absolute` 定位也必须搭配 top、bottom、left、right 这四个属性一起使用。**
 
-![absolute](/IMAGES/2019/Position-定位/absolute.jpg)
+![absolute](/IMAGES/Position-定位/absolute.jpg)
 
 ```css
 #father {
@@ -74,7 +74,7 @@ div {
 
 `fixed` 表示，相对于视口（viewport，浏览器窗口）进行偏移，即定位基点是浏览器窗口。这会导致元素的位置不随页面滚动而变化，好像固定在网页上一样。
 
-![fixed](/IMAGES/2019/Position-定位/fixed.jpg)
+![fixed](/IMAGES/Position-定位/fixed.jpg)
 
 **它如果搭配 top、bottom、left、right 这四个属性一起使用，表示元素的初始位置是基于视口计算的，否则初始位置就是元素的默认位置。**
 
@@ -136,4 +136,4 @@ div {
 }
 ```
 
-![scroll-gif](/IMAGES/2019/Position-定位/scroll-gif.gif)
+![scroll-gif](/IMAGES/Position-定位/scroll-gif.gif)

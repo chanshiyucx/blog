@@ -502,7 +502,7 @@ Repository 子接口：
 
 Repository 查询方法定义规则：
 
-![Spring Data 查询方法定义规则](/IMAGES/2019/Spring-Data/spring_data_jpa.jpg)
+![Spring Data 查询方法定义规则](/IMAGES/Spring-Data/spring_data_jpa.jpg)
 
 示例：
 

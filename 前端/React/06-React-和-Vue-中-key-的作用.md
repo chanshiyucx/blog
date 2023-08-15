@@ -7,7 +7,7 @@ virtual dom，即虚拟 dom，虚拟 dom 对应的是真实 dom，使用 `docume
 为什么需要虚拟 dom？**其目的是通过简单对象来代替复杂的真实 dom 对象**。我们可新建一个真实 dom 并打印其属性，会发现真实 dom 上绑定了太多属性，如果每次都重新生成新的元素，对性能是巨大的浪费。
 
 ```javascript
-const mydiv = document.createElement('div')
+const mydiv = document.createElement("div")
 // 真实 dom 上实现了太多标准
 for (const k in mydiv) {
   console.log(k)
@@ -35,7 +35,7 @@ virtual dom 另一个重大意义就是提供一个中间层，通过 js 去写 
 
 **比较只会在同层级进行, 不会跨层级比较**，以下图为例，了解下 diff 过程中的 dom 比较流程：
 
-![DOM_树的比较](/IMAGES/2019/React-和-Vue-中-key-的作用/key-DOM树的比较.jpg)
+![DOM_树的比较](/IMAGES/React-和-Vue-中-key-的作用/key-DOM树的比较.jpg)
 
 ```markup
 <!-- 层级1 -->
@@ -94,8 +94,13 @@ if (sameVnode(oldVnode, vnode)) {
 function sameVnode(a, b) {
   return (
     a.key === b.key &&
-    ((a.tag === b.tag && a.isComment === b.isComment && isDef(a.data) === isDef(b.data) && sameInputType(a, b)) ||
-      (isTrue(a.isAsyncPlaceholder) && a.asyncFactory === b.asyncFactory && isUndef(b.asyncFactory.error)))
+    ((a.tag === b.tag &&
+      a.isComment === b.isComment &&
+      isDef(a.data) === isDef(b.data) &&
+      sameInputType(a, b)) ||
+      (isTrue(a.isAsyncPlaceholder) &&
+        a.asyncFactory === b.asyncFactory &&
+        isUndef(b.asyncFactory.error)))
   )
 }
 ```
@@ -146,7 +151,11 @@ function patchVnode(oldVnode, vnode) {
   // 1. 相同引用认为没变化
   if (oldVnode === vnode) return
   // 2. 比较文本节点，如果不相等则设置新的文本节点
-  if (oldVnode.text !== null && vnode.text !== null && oldVnode.text !== vnode.text) {
+  if (
+    oldVnode.text !== null &&
+    vnode.text !== null &&
+    oldVnode.text !== vnode.text
+  ) {
     api.setTextContent(el, vnode.text)
   } else {
     updateEle(el, vnode, oldVnode)
@@ -174,7 +183,7 @@ function patchVnode(oldVnode, vnode) {
 
 上面第 3 步进行子节点比较 `updateChildren` 采用的是 `头尾交叉对比`，大致就是 `oldCh` 和 `newCh` 各有两个头尾的变量 `StartIdx` 和 `EndIdx`，它们的 2 个变量相互比较，一共有 4 种比较方式。如果 4 种比较都没匹配，如果设置了 key，就会用 key 进行比较，在比较的过程中，变量会往中间靠，一旦 `StartIdx>EndIdx` 表明 `oldCh` 和 `newCh` 至少有一个已经遍历完了，就会结束比较。交叉对比源码参考 [Vue/patch.js](https://github.com/vuejs/vue/blob/dev/src/core/vdom/patch.js#L424)。
 
-![头尾交叉比较](/IMAGES/2019/React-和-Vue-中-key-的作用/key-diff2.png)
+![头尾交叉比较](/IMAGES/React-和-Vue-中-key-的作用/key-diff2.png)
 
 ## key 的作用
 

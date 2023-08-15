@@ -9,7 +9,7 @@ HashMap 是 Java 使用频率最高的用于映射（键值对）处理的数据
 
 Java 为数据结构中的映射定义了一个接口 `java.util.Map`，此接口主要有四个常用的实现类，分别是 `HashMap、Hashtable、LinkedHashMap` 和 `TreeMap`，类继承关系如下图所示：
 
-![java.util.Map](/IMAGES/2019/Java-HashMap/java.util.Map.jpg)
+![java.util.Map](/IMAGES/Java-HashMap/java.util.Map.jpg)
 
 下面针对各个实现类的特点说明：
 
@@ -26,7 +26,7 @@ Java 为数据结构中的映射定义了一个接口 `java.util.Map`，此接�
 
 从结构实现来讲，HashMap 是**数组+链表+红黑树**（JDK1.8 增加了红黑树部分）实现的，如下如所示：
 
-![HashMap 存储结构-字段](/IMAGES/2019/Java-HashMap/HashMap存储结构-字段.jpg)
+![HashMap 存储结构-字段](/IMAGES/Java-HashMap/HashMap存储结构-字段.jpg)
 
 HashMap 类中有一个非常重要的字段，就是 `Node[] table`，即哈希桶数组，明显它是一个 Node 的数组。Node 是 HashMap 的一个内部类，实现了 `Map.Entry` 接口，本质是就是一个映射（键值对），上图中的每个黑色圆点就是一个 Node 对象。
 
@@ -107,11 +107,11 @@ static int indexFor(int h, int length) {
 
 下面举例说明下，n 为 table 的默认长度 16：
 
-![哈希桶数组索引](/IMAGES/2019/Java-HashMap/哈希桶数组索引.jpg)
+![哈希桶数组索引](/IMAGES/Java-HashMap/哈希桶数组索引.jpg)
 
 ### 分析 HashMap 的 put 方法
 
-![HashMap的put方法](/IMAGES/2019/Java-HashMap/HashMap的put方法.png)
+![HashMap的put方法](/IMAGES/Java-HashMap/HashMap的put方法.png)
 
 ```java
 public V put(K key, V value) {

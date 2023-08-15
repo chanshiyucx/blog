@@ -70,7 +70,7 @@ export default function Counter() {
 
 如果这两种「移除 P 节点」的方式混用，那么先点击「按钮 1」再点击「按钮 2」就会报错：
 
-![ref失控](/IMAGES/2023/forwardRef-逃生舱/ref失控.png)
+![ref失控](/IMAGES/forwardRef-逃生舱/ref失控.png)
 
 ## 如何限制失控
 
@@ -124,7 +124,7 @@ function Form() {
 }
 ```
 
-![input聚焦](/IMAGES/2023/forwardRef-逃生舱/input聚焦.png)
+![input聚焦](/IMAGES/forwardRef-逃生舱/input聚焦.png)
 
 这是因为在 Form 组件中向 MyInput 传递 ref 失败了，`inputRef.current` 并没有指向 input 节点。
 

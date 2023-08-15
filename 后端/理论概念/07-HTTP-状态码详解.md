@@ -1,6 +1,6 @@
 # HTTP 状态码详解
 
-![HTTP 状态码详解](/IMAGES/2019/HTTP-状态码详解/HTTP_状态码详解.jpg)
+![HTTP 状态码详解](/IMAGES/HTTP-状态码详解/HTTP_状态码详解.jpg)
 
 ## 状态码的分类
 

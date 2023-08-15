@@ -22,7 +22,7 @@ Feature:
 
 下面是一些预览图：
 
-![首页列表](/IMAGES/2019/Eriri-comic-reader/eriri_首页列表.png)
-![添加目录](/IMAGES/2019/Eriri-comic-reader/eriri_添加目录.png)
-![双页模式](/IMAGES/2019/Eriri-comic-reader/eriri_双页模式.png)
-![单页模式](/IMAGES/2019/Eriri-comic-reader/eriri_单页模式.png)
+![首页列表](/IMAGES/Eriri-comic-reader/eriri_首页列表.png)
+![添加目录](/IMAGES/Eriri-comic-reader/eriri_添加目录.png)
+![双页模式](/IMAGES/Eriri-comic-reader/eriri_双页模式.png)
+![单页模式](/IMAGES/Eriri-comic-reader/eriri_单页模式.png)

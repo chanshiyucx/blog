@@ -8,7 +8,7 @@
 
 三种方式的请求拦截顺序：
 
-![请求拦截模型](/IMAGES/2019/SpringBoot-请求拦截/请求拦截模型.png)
+![请求拦截模型](/IMAGES/SpringBoot-请求拦截/请求拦截模型.png)
 
 ## AOP
 

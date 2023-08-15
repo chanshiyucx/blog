@@ -1,6 +1,6 @@
 # Spring 容器
 
-![Spring 注解驱动开发](/IMAGES/2019/spring-容器/Spring-注解驱动开发.png)
+![Spring 注解驱动开发](/IMAGES/spring-容器/Spring-注解驱动开发.png)
 
 Spring 有两个核心接口：`BeanFactory` 和 `ApplicationContext`，其中 `ApplicationContext` 是 `BeanFactory` 的子接口。他们都可代表 Spring 容器，Spring 容器是生成 Bean 实例的工厂，并且管理容器中的 Bean，包括整个的生命周期的管理——创建、装配、销毁。
 
@@ -62,7 +62,7 @@ ApplicationContext ctx1 = new FileSystemXmlApplicationContext(new String[]{"bean
 
 我们举个栗子，比较传统的 xml 配置文件注册 bean 和注解方式注册 bean 两种方式。
 
-![Spring Context依赖](/IMAGES/2019/spring-容器/Spring-Context依赖.png)
+![Spring Context依赖](/IMAGES/spring-容器/Spring-Context依赖.png)
 
 给容器中注册组件有以下几种方式：
 
