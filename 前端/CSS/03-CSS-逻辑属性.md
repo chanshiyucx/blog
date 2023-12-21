@@ -2,7 +2,7 @@
 
 所谓逻辑属性，指的是诸如类似 margin-inline-start，padding-block-end 这类包含 inline/block 和 start/end 关键字的 CSS 属性。
 
-**其中 inline 和 block 表示方向， start 和 end 表示起止方位。**在中文和英文网页环境中，inline 元素默认是从左往右水平排列的；block 元素默认是从上往下垂直排列的。因此，margin-inline-start 就表示内联元素排列方向的起始位置，就是“左侧”，margin-inline-end 就表示内联元素排列方向的终止位置，就是“右侧”。
+**其中 inline 和 block 表示方向， start 和 end 表示起止方位。** 在中文和英文网页环境中，inline 元素默认是从左往右水平排列的；block 元素默认是从上往下垂直排列的。因此，margin-inline-start 就表示内联元素排列方向的起始位置，就是“左侧”，margin-inline-end 就表示内联元素排列方向的终止位置，就是“右侧”。
 
 margin：
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1. data attribute -->
+    <img
+      id="t1"
+      src="img/journey_thumbnail.jpg"
+      data-original="img/journey.jpg"
+    />
+
+    <!-- 2. anchor link -->
+    <a href="demo/img/journey.jpg">
+      <img id="t2" src="demo/img/journey_thumbnail.jpg" />
+    </a>
+    <script>
+      const getOriginalSource = (el) => {
+        if (el.dataset.original) {
+          return el.dataset.original
+        } else if (el.parentElement?.tagName === "A") {
+          return el.parentElement.getAttribute("href")
+        } else {
+          return null
+        }
+      }
+      const t1 = document.getElementById("t1")
+      const t2 = document.getElementById("t2")
+      console.log("t1", t1)
+      console.log("t2", t2)
+      console.log(getOriginalSource(t1))
+      console.log(getOriginalSource(t2))
+    </script>
+  </body>
+</html>
