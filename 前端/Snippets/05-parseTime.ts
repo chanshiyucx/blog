@@ -45,3 +45,5 @@ const parseTime = (
 // 测试用例
 console.log(parseTime(new Date())) // 2023-12-21 15:21:36
 console.log(parseTime("2012-12-10")) // 2012-12-10 08:00:00
+
+
