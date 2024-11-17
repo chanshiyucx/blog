@@ -83,8 +83,6 @@ Button 2 removes the P-node by manipulating the DOM directly.
 
 If these two ways of removing P-nodes are mixed, then clicking button 1 and then button 2 will report an error.
 
-![ref-out-of-control.png](./static/ref-out-of-control.png)
-
 ![[ref-out-of-control.png]]
 
 This is the result of the runaway situation caused by using Ref to manipulate the DOM.
