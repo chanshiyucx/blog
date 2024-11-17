@@ -1,4 +1,4 @@
-name: Sync from obsidian 
+name: sync from obsidian 
 
 on:
   schedule:
