@@ -1,42 +1,43 @@
-name: Sync obsidian
+name: Sync directories from obsidian repo
 
 on:
   schedule:
     - cron: '0 * * * *' # 每小时运行一次
   workflow_dispatch: # 手动触发
-  push:
-    branches:
-      - main # 监听主分支变化
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout public repo
+      # Step 1: Checkout the target repository
+      - name: Checkout target repository (blog)
         uses: actions/checkout@v3
 
-      - name: Clone private repo
+      # Step 2: Clone the private obsidian repository
+      - name: Clone obsidian private repository
         run: |
-          git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git"
+          git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          git sparse-checkout set blog
+          # 只检出 blog 和 Leetcode 目录
+          git sparse-checkout set Blog Leetcode
+          cd ..
 
-      - name: Check private repo contents
+      # Step 3: Sync obsidian/Blog to blog/posts
+      - name: Sync Blog directory to blog/posts
         run: |
-          ls -l
-          ls -l obsidian
+          rsync -av --delete obsidian/Blog/ ./blog/posts/
 
-      - name: Sync blog directory
+      # Step 4: Sync obsidian/Leetcode to blog/leetcode
+      - name: Sync Leetcode directory to blog/leetcode
         run: |
-          rsync -av --delete obsidian/Blog/ ./posts/
-          rsync -av --delete obsidian/Leetcode/ ./leetcode/
-          rm -rf obsidian
+          rsync -av --delete obsidian/Leetcode/ ./blog/leetcode/
 
+      # Step 5: Commit and push changes to target repository
       - name: Commit and push changes
         run: |
           git config user.name "chanshiyu"
           git config user.email "chanshiyucx@gmail.com"
-          git add blog/
-          git commit -m "Sync blog directory from obsidian" || echo "No changes to commit"
+          git add blog/posts blog/leetcode
+          git commit -m "Sync Blog and Leetcode directories from obsidian repository" || echo "No changes to commit"
           git push
