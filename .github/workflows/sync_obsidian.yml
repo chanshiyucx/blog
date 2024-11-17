@@ -27,11 +27,13 @@ jobs:
       - name: Sync Blog directory to blog/posts
         run: |
           rsync -av --delete obsidian/Blog/ ./posts/
+          rm -f ./posts/SUMMARY.md
 
       # Step 4: Sync obsidian/Leetcode to blog/leetcode
       - name: Sync Leetcode directory to blog/leetcode
         run: |
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
+          rm -f ./leetcode/SUMMARY.md
 
       # Step 5: Commit and push changes to target repository
       - name: Commit and push changes
