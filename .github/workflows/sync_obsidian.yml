@@ -22,6 +22,11 @@ jobs:
           cd obsidian
           git sparse-checkout set blog
 
+      - name: Check private repo contents
+        run: |
+          ls -l
+          ls -l obsidian
+
       - name: Sync blog directory
         run: |
           rsync -av --delete obsidian/Blog/ ./posts/
