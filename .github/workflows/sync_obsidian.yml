@@ -38,6 +38,6 @@ jobs:
         run: |
           git config user.name "chanshiyu"
           git config user.email "chanshiyucx@gmail.com"
-          git add blog/posts blog/leetcode
+          git add .
           git commit -m "Sync Blog and Leetcode directories from obsidian repository" || echo "No changes to commit"
           git push
