@@ -2,7 +2,8 @@
 title: Longest Common Prefix
 date: 2024-10-31 15:19:01
 level: Easy
-tags: Algorithm/String
+tags:  
+  - Algorithm/String
 ---
 
 ## Intuition

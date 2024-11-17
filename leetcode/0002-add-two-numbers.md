@@ -2,7 +2,8 @@
 title: Add Two Numbers
 date: 2024-08-06 17:38:48
 level: Medium
-tags: Algorithm/LinkedList
+tags:  
+  - Algorithm/LinkedList
 ---
 
 ## Intuition

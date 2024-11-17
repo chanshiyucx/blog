@@ -2,7 +2,8 @@
 title: Palindrome Number
 date: 2024-10-30 11:33:03
 level: Easy
-tags: Algorithm/Math
+tags:  
+  - Algorithm/Math
 ---
 
 ## Intuition

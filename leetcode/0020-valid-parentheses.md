@@ -2,7 +2,8 @@
 title: Valid Parentheses
 date: 2024-11-06 15:09:51
 level: Easy
-tags: Algorithm/Stack
+tags:  
+  - Algorithm/Stack
 ---
 
 ## Intuition

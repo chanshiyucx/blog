@@ -2,7 +2,8 @@
 title: String To Integer Atoi
 date: 2024-10-30 11:05:52
 level: Medium
-tags: Algorithm/String
+tags:  
+  - Algorithm/String
 ---
 
 ## Intuition

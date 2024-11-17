@@ -2,7 +2,8 @@
 title: Find The Index Of The First Occurrence In A String
 date: 2024-11-17 10:17:26
 level: Easy
-tags: Algorithm/String
+tags:  
+  - Algorithm/String
 ---
 
 ## Intuition

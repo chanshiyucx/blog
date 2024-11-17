@@ -2,7 +2,8 @@
 title: Roman To Integer
 date: 2024-10-30 19:52:31
 level: Easy
-tags: Algorithm/HashTable
+tags:  
+  - Algorithm/HashTable
 ---
 
 ## Intuition

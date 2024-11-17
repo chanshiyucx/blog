@@ -2,7 +2,8 @@
 title: Two Sum
 date: 2024-08-06 17:38:02
 level: Easy
-tags: Algorithm/HashTable
+tags:  
+  - Algorithm/HashTable
 ---
 
 ## Intuition

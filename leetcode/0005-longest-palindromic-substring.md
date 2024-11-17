@@ -2,7 +2,8 @@
 title: Longest Palindromic Substring
 date: 2024-10-28 17:05:46
 level: Medium
-tags: Algorithm/TwoPointers
+tags:  
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

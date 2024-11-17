@@ -2,7 +2,8 @@
 title: Remove Duplicates From Sorted Array
 date: 2024-11-07 10:32:29
 level: Easy
-tags: Algorithm/TwoPointers
+tags:  
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

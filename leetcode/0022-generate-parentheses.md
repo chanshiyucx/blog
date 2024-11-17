@@ -2,7 +2,8 @@
 title: Generate Parentheses
 date: 2024-11-06 17:03:54
 level: Medium
-tags: Algorithm/Backtracking
+tags:  
+  - Algorithm/Backtracking
 ---
 
 ## Intuition

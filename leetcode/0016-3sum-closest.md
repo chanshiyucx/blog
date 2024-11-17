@@ -2,7 +2,8 @@
 title: 3sum Closest
 date: 2024-11-05 16:41:32
 level: Medium
-tags: Algorithm/TwoPointers
+tags:  
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

@@ -2,7 +2,8 @@
 title: Remove Element
 date: 2024-11-17 09:31:52
 level: Easy
-tags: Algorithm/TwoPointers
+tags:  
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

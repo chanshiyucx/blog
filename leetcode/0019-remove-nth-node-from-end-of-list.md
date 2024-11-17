@@ -2,7 +2,8 @@
 title: Remove Nth Node From End Of List
 date: 2024-11-06 14:22:18
 level: Medium
-tags: Algorithm/TwoPointers
+tags:  
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

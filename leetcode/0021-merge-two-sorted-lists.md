@@ -2,7 +2,8 @@
 title: Merge Two Sorted Lists
 date: 2024-11-06 15:54:47
 level: Easy
-tags: Algorithm/LinkedList
+tags:  
+  - Algorithm/LinkedList
 ---
 
 ## Intuition

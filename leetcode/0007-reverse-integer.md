@@ -2,7 +2,8 @@
 title: Reverse Integer
 date: 2024-10-30 10:20:38
 level: Medium
-tags: Algorithm/Math
+tags:  
+  - Algorithm/Math
 ---
 
 ## Intuition

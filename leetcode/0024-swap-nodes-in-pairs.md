@@ -2,7 +2,8 @@
 title: Swap Nodes In Pairs
 date: 2024-11-07 09:00:01
 level: Medium
-tags: Algorithm/LinkedList
+tags:  
+  - Algorithm/LinkedList
 ---
 
 ## Intuition
