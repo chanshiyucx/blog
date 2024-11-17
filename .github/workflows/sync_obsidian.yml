@@ -1,4 +1,4 @@
-name: Sync directories from obsidian repo
+name: Sync from obsidian 
 
 on:
   schedule:
@@ -26,12 +26,12 @@ jobs:
       # Step 3: Sync obsidian/Blog to blog/posts
       - name: Sync Blog directory to blog/posts
         run: |
-          rsync -av --delete obsidian/Blog/ ./blog/posts/
+          rsync -av --delete obsidian/Blog/ ./posts/
 
       # Step 4: Sync obsidian/Leetcode to blog/leetcode
       - name: Sync Leetcode directory to blog/leetcode
         run: |
-          rsync -av --delete obsidian/Leetcode/ ./blog/leetcode/
+          rsync -av --delete obsidian/Leetcode/ ./leetcode/
 
       # Step 5: Commit and push changes to target repository
       - name: Commit and push changes
