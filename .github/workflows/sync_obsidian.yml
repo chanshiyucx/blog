@@ -35,7 +35,12 @@ jobs:
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rm -f ./leetcode/SUMMARY.md
 
-      # Step 5: Commit and push changes to target repository
+      # Step 5: Sync obsidian/Album to blog/album
+      - name: Sync Album directory to blog/album
+        run: |
+          rsync -av --delete obsidian/Album/ ./album/
+
+      # Step 6: Commit and push changes to target repository
       - name: Commit and push changes
         run: |
           git config user.name "chanshiyu"
