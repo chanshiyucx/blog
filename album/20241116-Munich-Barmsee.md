@@ -1,7 +1,8 @@
 ---
 title: Munich Barmsee
 date: 2024-12-03 19:10:34
-tags: Album
+tags: 
+  - Album
 ---
 
 ![Lakeside Cabin](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02373.HIF)
