@@ -2,7 +2,8 @@
 title: Defuse The Bomb
 date: 2024-11-18 16:40:35
 level: Easy
-tags: Algorithm/SlidingWindow
+tags: 
+  - Algorithm/SlidingWindow
 ---
 
 ## Intuition

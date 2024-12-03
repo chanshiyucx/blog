@@ -2,7 +2,8 @@
 title: Divide Two Integers
 date: 2024-11-28 22:52:26
 level: Medium
-tags: Algorithm/Math
+tags: 
+  - Algorithm/Math
 ---
 
 ## Intuition

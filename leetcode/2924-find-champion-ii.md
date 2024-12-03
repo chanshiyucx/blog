@@ -2,7 +2,8 @@
 title: Find Champion Ii
 date: 2024-11-26 20:30:02
 level: Medium
-tags: Algorithm/Graph
+tags: 
+  - Algorithm/Graph
 ---
 
 ## Intuition

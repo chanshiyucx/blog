@@ -2,7 +2,8 @@
 title: Check If A Word Occurs As A Prefix Of Any Word In A Sentence
 date: 2024-12-02 21:15:36
 level: Easy
-tags: Algorithm/TwoPointers
+tags: 
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition

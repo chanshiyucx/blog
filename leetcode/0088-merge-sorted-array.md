@@ -2,7 +2,8 @@
 title: Merge Sorted Array
 date: 2024-11-26 21:08:20
 level: Easy
-tags: Algorithm/TwoPointers
+tags: 
+  - Algorithm/TwoPointers
 ---
 
 ## Intuition
