@@ -1,7 +1,7 @@
 ---
 title: Munich Barmsee
-date: 2024-12-03 19:10:34
-tags: 
+date: 2024-11-16T19:10:34
+tags:
   - Album
 ---
 
