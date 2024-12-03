@@ -1,5 +1,5 @@
 ---
-title: Changsha-Yuelu
+title: Changsha Yuelu
 date: 2024-12-03 12:03:50
 tags:
   - Album
