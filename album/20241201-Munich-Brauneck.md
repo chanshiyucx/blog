@@ -1,6 +1,6 @@
 ---
 title: Munich Brauneck
-date: 2024-12-01T21:22:26
+date: 2024-12-01 21:22:26
 tags:
   - Album
 ---
