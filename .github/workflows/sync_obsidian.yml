@@ -19,8 +19,8 @@ jobs:
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          # 只检出 blog 和 Leetcode 目录
-          git sparse-checkout set Blog Leetcode Album
+          # 检出目录
+          git sparse-checkout set Blog Notes Leetcode Album
           cd ..
 
       # Step 3: Sync obsidian/Blog to blog/posts
@@ -29,18 +29,24 @@ jobs:
           rsync -av --delete obsidian/Blog/ ./posts/
           rm -f ./posts/SUMMARY.md
 
-      # Step 4: Sync obsidian/Leetcode to blog/leetcode
+      # Step 4: Sync obsidian/Notes to blog/notes
+      - name: Sync Notes directory to blog/notes
+        run: |
+          rsync -av --delete obsidian/Notes/ ./notes/
+          rm -f ./notes/SUMMARY.md
+
+      # Step 5: Sync obsidian/Leetcode to blog/leetcode
       - name: Sync Leetcode directory to blog/leetcode
         run: |
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rm -f ./leetcode/SUMMARY.md
 
-      # Step 5: Sync obsidian/Album to blog/album
+      # Step 6: Sync obsidian/Album to blog/album
       - name: Sync Album directory to blog/album
         run: |
           rsync -av --delete obsidian/Album/ ./album/
 
-      # Step 6: Commit and push changes to target repository
+      # Step 7: Commit and push changes to target repository
       - name: Commit and push changes
         run: |
           git config user.name "chanshiyu"
