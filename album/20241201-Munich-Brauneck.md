@@ -4,7 +4,7 @@ date: 2024-12-01 21:22:26
 tags:
   - Album
 ---
-![“Snowy Mountain Village](https://cx-onedrive.pages.dev/api/raw?path=/20241201-Brauneck/DSC02519.jpg)
+![Snowy Mountain Village](https://cx-onedrive.pages.dev/api/raw?path=/20241201-Brauneck/DSC02519.jpg)
 
 ![Chasing the Sky](https://cx-onedrive.pages.dev/api/raw?path=/20241201-Brauneck/DSC02549.jpg)
 
