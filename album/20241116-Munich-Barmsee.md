@@ -5,14 +5,14 @@ tags:
   - Album
 ---
 
-![Lakeside Cabin](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02373.jpg)
+![Lakeside Cabin](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02373.jpg)
 
-![Shoreline Harmony](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02393.jpg)
+![Shoreline Harmony](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02393.jpg)
 
-![Serene Lake](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02403.jpg)
+![Serene Lake](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02403.jpg)
 
-![Smoke by the Lake](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02409.jpg)
+![Smoke by the Lake](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02409.jpg)
 
-![Lake of Echoing Mountains](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02429.jpg)
+![Lake of Echoing Mountains](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02429.jpg)
 
-![Meadowfoot Town](https://cx-onedrive.pages.dev/api/raw?path=/20241116-Barmsee/DSC02483.jpg)
+![Meadowfoot Town](https://cx-onedrive.pages.dev/api/raw?path=/Album/20241116-Barmsee/DSC02483.jpg)
