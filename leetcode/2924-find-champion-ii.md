@@ -35,7 +35,7 @@ This can be solved efficiently by leveraging an array to track which nodes have 
 
 ## Code
 
-```ts
+```typescript
 function findChampion(n: number, edges: number[][]): number {
   // Tracks if a node has incoming edges
   const isWeak = new Array(n).fill(false) 

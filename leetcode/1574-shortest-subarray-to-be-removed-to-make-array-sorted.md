@@ -33,7 +33,7 @@ The problem asks us to find the shortest subarray that, if removed, allows the r
 
 ## Code
 
-```ts
+```typescript
 function findLengthOfShortestSubarray(arr: number[]): number {
   let n = arr.length
 

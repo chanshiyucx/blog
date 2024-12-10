@@ -38,7 +38,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function myAtoi(s: string): number {
   let n = 0
   const match = s.match(/^\s*([-+]?)(\d+)/);

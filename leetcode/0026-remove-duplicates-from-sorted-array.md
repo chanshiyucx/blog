@@ -29,7 +29,7 @@ The problem requires removing duplicates from a sorted array in place. Since the
 
 ## Code
 
-```ts
+```typescript
 function removeDuplicates(nums: number[]): number {
   let index = 1
   for (let i = 1; i < nums.length; i++) {

@@ -22,7 +22,7 @@ Although they are factors out of React's control, React also wants to prevent th
 
 To use the ref prop, you can assign it a callback function that receives the DOM element as an argument，you can then access the DOM element using the current property of the ref object.
 
-```jsx
+```javascriptx
 import React, { useRef } from "react"
 
 function MyComponent() {
@@ -51,7 +51,7 @@ These are also DOM operations, but they are within React's control, so performin
 
 Here is an example of an out of control situation caused by using Ref to manipulate the DOM.
 
-```jsx
+```javascriptx
 export default function Counter() {
   const [show, setShow] = useState(true)
   const ref = useRef(null)
@@ -100,7 +100,7 @@ Low-order components are those that are wrapped based on the DOM, such as the fo
 
 In lower-order components, it is possible to point the ref directly to the DOM.
 
-```jsx
+```javascriptx
 function MyInput(props) {
   const ref = useRef(null)
   return <input ref={ref} {...props} />
@@ -109,7 +109,7 @@ function MyInput(props) {
 
 Higher-order components are those that are based on lower-order component wrappers, such as the following Form component, based on the Input component wrapper.
 
-```jsx
+```javascriptx
 function Form() {
   return (
     <>
@@ -122,7 +122,7 @@ function Form() {
 Higher-order components cannot point ref directly to the DOM. This restriction keeps the scope of ref runaway within a single component, and there will be no runaway ref across components.  
 Take the example in the document, if we want to click a button in the Form component to operate the input focus.
 
-```jsx
+```javascriptx
 function MyInput(props) {
   return <input {...props} />
 }
@@ -154,7 +154,7 @@ The reason for this is that React does not support passing refs across component
 
 If you must remove this restriction, you can use the `forwardRef` API to explicitly pass the ref.
 
-```jsx
+```javascriptx
 const MyInput = forwardRef((props, ref) => {
   return <input {...props} ref={ref} />
 })
@@ -189,7 +189,7 @@ Since refs get out of control because they use DOM methods that shouldn't be use
 
 Modifying our MyInput component with `useImperativeHandle`.
 
-```jsx
+```javascriptx
 const MyInput = forwardRef((props, ref) => {
   const realInputRef = useRef(null)
   useImperativeHandle(ref, () => ({
@@ -203,7 +203,7 @@ const MyInput = forwardRef((props, ref) => {
 
 Now, the Form component can only fetch the following data structure through inputRef.current：
 
-```js
+```javascript
 {
   focus() {
     realInputRef.current.focus();

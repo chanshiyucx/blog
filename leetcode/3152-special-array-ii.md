@@ -2,7 +2,8 @@
 title: Special Array Ii
 date: 2024-12-09 22:11:05
 level: Medium
-tags: Algorithm/PrefixSum
+tags: 
+  - Algorithm/PrefixSum
 ---
 
 ## Intuition
@@ -28,7 +29,7 @@ This problem involves determining whether all adjacent elements in a given subar
 
 ## Code
 
- ```ts
+ ```typescript
  function isArraySpecial(nums: number[], queries: number[][]): boolean[] {
   const sum: number[] = Array(nums.length).fill(0)
 

@@ -37,7 +37,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function lengthOfLongestSubstring(s: string): number {
   const set = new Set<string>()
   let left = 0

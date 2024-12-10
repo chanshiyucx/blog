@@ -32,7 +32,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function intToRoman(num: number): string {
   const map: [number, string][] = [
     [1000, "M"],

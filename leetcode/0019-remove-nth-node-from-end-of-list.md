@@ -34,7 +34,7 @@ To remove the nth node from the end of a linked list, we can use the **two-point
 
 ## Code
 
-```ts
+```typescript
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
   const dummyHead = new ListNode(0, head)
   let fast: ListNode | null = dummyHead

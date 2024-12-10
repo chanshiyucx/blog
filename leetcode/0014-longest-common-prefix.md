@@ -33,7 +33,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function longestCommonPrefix(strs: string[]): string {
   let left = 0
   while (left < strs[0].length) {

@@ -38,7 +38,7 @@ To solve this efficiently:
 
 ## Code
 
-```ts
+```typescript
 function divide(dividend: number, divisor: number): number {
   // Determine the sign of the result
   const signal = Math.sign(dividend) * Math.sign(divisor)

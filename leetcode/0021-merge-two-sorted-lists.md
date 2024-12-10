@@ -35,7 +35,7 @@ The task is to merge two sorted linked lists into a single sorted linked list. S
 
 ## Code
 
-```ts
+```typescript
 function mergeTwoLists(
   list1: ListNode | null,
   list2: ListNode | null

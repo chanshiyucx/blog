@@ -33,7 +33,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function twoSum(nums: number[], target: number): number[] {
   const map = new Map<number, number>()
   for (let i = 0; i < nums.length; i++) {

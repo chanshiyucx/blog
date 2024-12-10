@@ -30,7 +30,7 @@ The task is to remove all occurrences of a specific value (val) from an array in
 
 ## Code
 
-```ts
+```typescript
 function removeElement(nums: number[], val: number): number {
   let fast = 0
   let slow = 0

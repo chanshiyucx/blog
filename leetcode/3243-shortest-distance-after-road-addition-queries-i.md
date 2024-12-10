@@ -39,7 +39,7 @@ The problem involves determining the shortest distance from city 0 to city n-1 a
 
 ## Code
 
-```ts
+```typescript
 function shortestDistanceAfterQueries(
   n: number,
   queries: number[][],

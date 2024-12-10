@@ -36,7 +36,7 @@ The problem requires checking if an input string containing only brackets is val
 
 ## Code
 
-```ts
+```typescript
 function isValid(s: string): boolean {
   if ((s.length & 1) === 1) return false
   const map: Map<string, string> = new Map([

@@ -40,7 +40,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 class ListNode {
   val: number
   next: ListNode | null

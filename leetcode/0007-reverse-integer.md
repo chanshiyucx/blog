@@ -37,7 +37,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function reverse(x: number): number {
   let n = 0
   while (x !== 0) {

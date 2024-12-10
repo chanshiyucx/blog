@@ -32,7 +32,7 @@ The goal is to merge two sorted arrays into a single sorted array. The solution 
 
 ## Code
 
-```ts
+```typescript
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
   let i = m - 1  // Pointer for the last element in nums1
   let j = n - 1  // Pointer for the last element in nums2

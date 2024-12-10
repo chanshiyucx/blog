@@ -35,7 +35,7 @@ We can approach this problem by:
 
 ## Code
 
-```ts
+```typescript
 function isPrefixOfWord(sentence: string, searchWord: string): number {
   const words = sentence.split(' ') 
   for (let i = 0; i < words.length; i++) {

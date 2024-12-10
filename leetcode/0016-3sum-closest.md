@@ -41,7 +41,7 @@ The goal is to find a triplet in `nums` whose sum is closest to a given `target`
 
 ## Code
 
-```ts
+```typescript
 function threeSumClosest(nums: number[], target: number): number {
   nums = nums.sort((a, b) => a - b)
   let ans = nums[0] + nums[1] + nums[2]

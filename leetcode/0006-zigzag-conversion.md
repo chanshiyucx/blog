@@ -39,7 +39,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function convert(s: string, numRows: number): string {
   if (numRows <= 1) {
     return s

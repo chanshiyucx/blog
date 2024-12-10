@@ -33,7 +33,7 @@ The task is to find all possible letter combinations that a sequence of digits c
 
 ## Code
 
-```ts
+```typescript
 const map: Map<string, string[]> = new Map([
   ["2", ["a", "b", "c"]],
   ["3", ["d", "e", "f"]],

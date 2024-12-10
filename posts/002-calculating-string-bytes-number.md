@@ -19,7 +19,7 @@ Unicode code points range from 0 to 1114111 (0x10FFFF). `charCodeAt()` always re
 
 So we use `codePointAt(i)` method to get the Unicode code point value at the given index.
 
-```ts
+```typescript
 const charCode = str.codePointAt(i)
 ```
 
@@ -40,7 +40,7 @@ So we can count the number of bytes in each code point character in segments and
 
 It's important to note that the higher code points are represented by a pair of 16-bit surrogate pseudo-characters, so when the UTF-16 code units is greater than 0x10FFFF, the index should be an additional 1.
 
-```ts
+```typescript
 /**
  * @description Calculating the number of bytes in a UTF-8 encoded string
  * @param  str - Target string
@@ -73,7 +73,7 @@ UTF-16 encodes up to 65535 with two bytes, and beyond 65535 with four bytes.
 
 So the code to calculate the number of bytes in a UTF16 string is relatively simple.
 
-```ts
+```typescript
 /**
  * @description Calculating the number of bytes in a UTF-16 encoded string
  * @param  str - Target string
@@ -98,7 +98,7 @@ const stringByteUTF16 = (str: string): number => {
 
 ## Final Code
 
-```ts
+```typescript
 /**
  * @description Calculating the number of bytes in a string
  * @param  str - Target string

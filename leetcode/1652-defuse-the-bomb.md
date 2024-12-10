@@ -33,7 +33,7 @@ The task requires us to decrypt a given code by computing a sliding window sum, 
 
 ## Code
 
-```ts
+```typescript
 function decrypt(code: number[], k: number): number[] {
   const n = code.length
   const result = new Array(n).fill(0)

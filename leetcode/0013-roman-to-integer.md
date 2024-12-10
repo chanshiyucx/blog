@@ -33,7 +33,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function romanToInt(s: string): number {
   const map: { [key: string]: number } = {
     I: 1,

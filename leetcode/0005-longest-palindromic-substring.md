@@ -37,7 +37,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function expand(s: string, left: number, right: number): string {
   while (left >= 0 && right < s.length && s[left] === s[right]) {
     left--

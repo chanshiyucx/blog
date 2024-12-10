@@ -29,7 +29,7 @@ The problem asks us to generate all valid combinations of `n` pairs of parenthes
 
 ## Code
 
-```ts
+```typescript
 function backtrack(
   str: string,
   openRemaining: number,

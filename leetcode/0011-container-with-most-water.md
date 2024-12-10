@@ -40,7 +40,7 @@ Below is the step-by-step breakdown of the approach:
 
 ## Code
 
-```ts
+```typescript
 function maxArea(height: number[]): number {
   let ans = 0
   let left = 0
