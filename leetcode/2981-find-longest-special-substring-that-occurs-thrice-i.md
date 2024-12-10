@@ -8,32 +8,28 @@ tags:
 
 ## Intuition
 
-This problem requires finding the maximum possible length such that no character in the string appears consecutively for or more times while satisfying the given conditions. We can uses **binary search** over the possible values of, then validate the constraints.
+To solve the problem, we can uses **binary search** over the possible values of x, combined with a validation function to check the constraints.
 
 ## Approach
 
 1. **Binary Search Setup**:
 	- The range of x is from 0 to n (length of the string).
-	- We perform a binary search to check the maximum x where the condition holds.
+	- We perform binary search to find the maximum x that satisfies the condition.
 
 2. **Validate Possible**:
 	- Checks whether there exists a character in s that appears consecutively at least x times.
 
 3. **Update the Binary Search Range**:
 	- If `check(mid)` returns true, it means mid satisfies the condition, and we move the lower bound l to mid.
-	- Otherwise, move the upper bound r to mid - 1.
+	- Otherwise, move the upper bound r to `mid - 1`.
 
 4. **Return Result**:
 	- If l is 0, it means no valid satisfies the condition, so return -1. Otherwise, return l.
 
 ## Complexity
 
-- **Time Complexity**:
-- Binary search has iterations.
-- Each call to check involves a linear traversal of the string, .
-- Overall complexity: .
-- **Space Complexity**:
-- The cnt array has a constant size of 26 (number of letters in the alphabet), so .
+- **Time Complexity**: $O(nlogn)$, binary search has $O(logn)$ iterations, each call to check involves a linear traversal of the string cause $O(n)$.
+- **Space Complexity**: $O(1)$, the `cnt` array has a constant size of 26.
 
 ## Code
 
