@@ -6,7 +6,7 @@ tags:
 ---
 To convert an HTML string into real HTML or DOM, we can use the `DOMParser` Web API using JavaScript. The `DOMParser` helps us to parse HTML or XML string into real Document or DOM nodes.
 
-```typescript {8-9}
+```typescript {3-4}
 const convertStringToHTML = (htmlString: string): Element | null => {
   try {
     const parser = new DOMParser()
