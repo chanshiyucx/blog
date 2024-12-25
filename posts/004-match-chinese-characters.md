@@ -6,11 +6,11 @@ tags:
   - JavaScript/RegExp
 ---
 
-When searching "JavaScript regex for matching Chinese characters" on Google, most results suggest using `/[\u4e00-\u9fa5]/`. But is this regular expression really correct? Let's investigate.
+When searching for "JavaScript regex for matching Chinese characters" on Google, most results suggest using `/[\u4e00-\u9fa5]/`. But is this regular expression really correct? Let's dive in and find out.
 
 ## Han Script and Han Characters
 
-First, let's understand two fundamental concepts:
+Let's start by understanding two fundamental concepts:
 
 - **Han Script** is a writing system that originated from Chinese and was later adopted by Japanese, Korean, and other languages
 - **Han Characters (CJK Ideographs)** are the basic units of Han Script
@@ -25,7 +25,7 @@ What's the difference between Unicode, GBK, and UTF-8? They are actually concept
 
 Common character sets like Unicode and ASCII are designed to represent characters with a series of numbers, also known as code points.
 
-ASCII, created by the US, uses one byte to represent a character, defining encodings for 128 characters that correspond to English characters and binary values.
+ASCII uses one byte to represent a character, defining encodings for 128 characters that correspond to English characters and binary values.
 
 For Asian languages like Chinese, more bytes are needed to represent a single character. For example, GB2312 (for Simplified Chinese) uses two bytes per character, allowing representation of up to 65,536 characters (256 x 256).
 
@@ -44,6 +44,11 @@ UTF-8's main feature is its variable-length encoding, using 1-4 bytes per symbol
 GBK (Chinese Internal Code Specification) is similar to UTF-8 but specifically for Chinese characters. It's an extension of GB2312.
 
 In summary: **ASCII and Unicode are character sets, while UTF-8 and GBK are encoding methods**. They serve different purposes and cannot be directly compared.
+
+In summary:
+
+- **Character sets (e.g., Unicode, ASCII)** define mappings between characters and codes.
+- **Encodings (e.g., UTF-8, GBK)** specify how those codes are stored.
 
 ## Matching Chinese Characters with Regex
 
@@ -95,11 +100,9 @@ The `Script` property selects characters that:
 
 ## Summary
 
-1. `/[\u4e00-\u9fa5]/` is outdated - don't use this 20-year-old regex
-2. `/\p{Unified_Ideograph}/u` is correct, maintenance-free, and matches all Han characters
+1. `/[\u4e00-\u9fa5]/` is outdated, don't use this 20-year-old regex
+2. `/\p{Unified_Ideograph}/u` is correct, maintenance-free and matches all Han characters
 3. `/\p{Ideographic}/u` and `/\p{Script=Han}/u` match additional characters beyond Han characters and are incorrect for this specific purpose
-
-```
 
 Ref:
 - [Unicode character class escape](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
