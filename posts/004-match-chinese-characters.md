@@ -6,98 +6,101 @@ tags:
   - JavaScript/RegExp
 ---
 
-在谷歌搜索「JavaScript 正则表达式匹配汉字」的时候，前几条结果全都是 `/[\u4e00-\u9fa5]/`，然而事实上这个正则表达式的确没有问题吗？让我们来一探究竟。
+When searching "JavaScript regex for matching Chinese characters" on Google, most results suggest using `/[\u4e00-\u9fa5]/`. But is this regular expression really correct? Let's investigate.
 
-## 汉文与汉字
+## Han Script and Han Characters
 
-首先，我们需要了解**汉文**和**汉字**这两个基础概念：
+First, let's understand two fundamental concepts:
 
-- **汉文（Han Script）**是汉语、日本语、朝鲜语、韩国语的汉字书写系统；
-- **汉字（CJK Ideograph）**是汉文的基本单元。
+- **Han Script** is a writing system that originated from Chinese and was later adopted by Japanese, Korean, and other languages
+- **Han Characters (CJK Ideographs)** are the basic units of Han Script
 
-汉字文化圈中的许多国家或地区都对汉字提出了自己的编码标准，而 Unicode 将这些标准加总在一起进行统一编码，力求实现原标准与 Unicode 编码之间的无损转换。
+Many countries and regions in the Han cultural sphere have developed their own character encoding standards. Unicode unifies these standards, aiming to achieve lossless conversion between original standards and Unicode encoding.
 
-## 字符集和字符编码
+## Character Sets and Character Encodings
 
-Unicode，GBK 和 UTF-8 有什么区别？实际上它们不是同领域的概念。
+What's the difference between Unicode, GBK, and UTF-8? They are actually concepts from different domains.
 
-### 字符集
+### Character Sets
 
-我们常见的 Unicode、 ASCII 是一种字符集（character set），其作用是用一系列数字来表示字符（character），这些数字有时也称为码点（code points）。
+Common character sets like Unicode and ASCII are designed to represent characters with a series of numbers, also known as code points.
 
-例如 ASCII 码是美国制定了一套字符编码，ASCII 码使用一个字节来表示一个字符，一共规定了 128 个字符的编码，对应英语字符与二进制位之间的关系。
+ASCII, created by the US, uses one byte to represent a character, defining encodings for 128 characters that correspond to English characters and binary values.
 
-但对于一些亚洲国家的文字，比如中文，这些符号远远不够，必须使用多个字节表示一个符号。比如简体中文的 GB2312 编码方式，使用两个字节表示一个字符，最多可以表示 256 x 256 = 65536 个符号。
+For Asian languages like Chinese, more bytes are needed to represent a single character. For example, GB2312 (for Simplified Chinese) uses two bytes per character, allowing representation of up to 65,536 characters (256 x 256).
 
-由于世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。如果用错误的编码方式解读一段文本，就会出现乱码。由此 Unicode 应运而生。
+The existence of multiple encoding systems meant that the same binary number could be interpreted as different symbols. Reading text with the wrong encoding results in garbled characters. This is why Unicode was created.
 
-Unicode 是一个统一编码集合，类似于世界语，它将世界上所有符号都赋予了一个第一无二的编码。由于每个字符的编码都是唯一的，这样避免了字符编码混乱的问题。
+Unicode is a unified character set that assigns a unique code to every symbol in the world. This uniqueness eliminates character encoding confusion.
 
-### 字符编码
+### Character Encodings
 
-注意到 Unicode 只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。所以字符要保存在计算机中，必须要先经过编码。
+Unicode is just a character set - it defines binary codes for symbols but doesn't specify how to store these codes. To save characters in computers, they must first be encoded.
 
-UTF-8 是 Unicode 的字符编码方式之一，同时也是互联网上使用最广的一种 Unicode 的实现方式，其他实现方式还包括 UTF-16（字符用两个字节或四个字节表示）和 UTF-32（字符用四个字节表示）。
+UTF-8 is one of Unicode's encoding methods and the most widely used on the internet. Other implementations include UTF-16 (using two or four bytes per character) and UTF-32 (using four bytes per character).
 
-UTF-8 最大的一个特点，就是它是一种变长的编码方式。它可以使用 1~4 个字节表示一个符号，根据不同的符号而变化字节长度。
+UTF-8's main feature is its variable-length encoding, using 1-4 bytes per symbol depending on the character.
 
-GBK（汉字内码扩展规范）和 UTF-8 类似，是一种中文字符编码方式，它是 GB2312 的扩展。
+GBK (Chinese Internal Code Specification) is similar to UTF-8 but specifically for Chinese characters. It's an extension of GB2312.
 
-总结：**ASCII 和 Unicode 是一种字符集，而 UTF-8 和 GBK 是一种字符编码方式**。两者不是一类事物, 是无法进行对比的。
+In summary: **ASCII and Unicode are character sets, while UTF-8 and GBK are encoding methods**. They serve different purposes and cannot be directly compared.
 
-## 正则匹配汉字
+## Matching Chinese Characters with Regex
 
-介绍完字符集和字符编码之后，回到正题，我们已经知道「汉字」是汉文的基本单元，但这里的「汉字」具体指代哪些字符集呢？
+Now that we understand character sets and encodings, let's return to our main topic. What exactly do we mean by "Chinese characters" in terms of character sets?
 
-Unicode 从语义（semantic）、抽象字形（abstract shape），具体字形（typeface）三个维度出发，把不同编码标准里「起源相同、本义相同、形状一样或稍异」的汉字赋予相同编码，这些被编码的字符称为中日韩统一表意文字，即我们上面所提到的「汉字」。如果把它们全部列举出来写成正则表达式，那么就是技术上完整的匹配汉字的正则表达式了。
+Unicode unifies characters from different encoding standards based on three dimensions: semantics, abstract shape, and typeface. Characters with the same origin, meaning, and similar shapes are given the same encoding. These encoded characters are called CJK Unified Ideographs, which we referred to as "Han Characters" earlier.
 
-正则表达式 `/[\u4e00-\u9fa5]/` 匹配区域对应的是 Unicode 1.0.1 就收录进来的中日韩统一表意文字区块，在 Unicode 3.0 以前，这个正则表达式确实给出了所有汉字的编码。换言之，从 1992 年到 1999 年，这个正则表达式确实是正确的，想必这个表达式已经有 20 年了。
+The regex `/[\u4e00-\u9fa5]/` matches the CJK Unified Ideographs block included in Unicode 1.0.1. Before Unicode 3.0 (1992-1999), this expression correctly matched all Han characters. This regex is likely over 20 years old.
 
-然而时光飞逝，Unicode 在 2017 年 6 月发布了 10.0.0 版本。在这 20 年间，Unicode 添加了许多汉字。这些新增的汉字并不在上面这个正则表达式匹配的区域中，所以我们的正则也需要与时俱进匹配最新的 Unicode 标准。
+However, Unicode has evolved significantly, with version 10.0.0 released in June 2017. Many new Han characters have been added over these 20 years, falling outside the range of this regex. We need a modern solution that keeps up with Unicode standards.
 
-因此，我们需要换一个思路，写一个无需维护的匹配汉字的正则表达式：
+Here's a maintenance-free regex for matching Han characters:
 
-```javascript
+```typescript
 const HanZi = /\p{Unified_Ideograph}/u
+
+!!'你好'.match(HanZi) // true
 ```
 
-- `\u` 是 ECMAScript 2015 定义的正则表达式标志，意味着将表达式作为 Unicode 码点序列；
-- `\p` 是 ECMAScript 2018 定义的正则表达式 Unicode 属性转义，它赋予了我们根据 Unicode 字符的属性数据构造表达式的能力；
-- `Unified_Ideograph` 是 Unicode 字符的一个二值属性，对于汉字，其取值为 Yes，否则为 No。
+It's called [Unicode property escapes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) and already available in [Chrome 64, Firefox 78, Safari 11.1 and Node.js 10](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape#browser_compatibility).
 
-因此 `\p{Unified_Ideograph}` 匹配所有满足 `Unified_Ideograph=yes` 的 Unicode 字符，而它的底层实现由运行时所依赖的 Unicode 版本决定，开发者不需要知道汉字的具体 Unicode 码点范围。
+- `\u` is a regex flag defined in ECMAScript 2015, treating the pattern as Unicode code point sequences
+- `\p` is a Unicode property escape defined in ECMAScript 2018, enabling pattern construction based on Unicode character properties
+- `Unified_Ideograph` is a binary property of Unicode characters: Yes for Han characters, No for others
 
-## 易混淆的其他 Unicode 属性转义表达式
+`\p{Unified_Ideograph}` matches all Unicode characters with `Unified_Ideograph=yes`. The implementation depends on the Unicode version of the runtime, freeing developers from maintaining specific code point ranges.
 
-### `/\p{Ideographic}/u`
+## Similar Unicode Property Escapes
 
 ```typescript
 /\p{Ideographic}/u
 ```
 
-这个表达式匹配所有满足 `Ideographic=yes` 的 Unicode 字符，囊括了所有统一表意文字、西夏文及其组件、女书、中日韩兼容性字符、苏州码子、「〇」以及日本语中的书信结尾标志「〆」。
+This matches all characters with `Ideographic=yes`, including CJK Unified Ideographs, Tangut characters and components, Nüshu, CJK compatibility characters, Suzhou numerals, " 〇 ", and the Japanese letter-ending mark "〆".
 
-使用 `/\p{Ideographic}/u` 来匹配汉字会过于宽泛。一是包含了西夏文、女书，二是只用于编码转换用的兼容字符也纳入其中。
-
-### `/\p{Script=Han}/u`
+Using `/\p{Ideographic}/u` is too broad for matching Han characters as it includes Tangut, Nüshu, and compatibility characters.
 
 ```typescript
 /\p{Script=Han}/u
 ```
 
-`Script` 属性用来筛选满足下面条件的一组字符：
+The `Script` property selects characters that:
+1. Share common graphical features and historical development
+2. Are used to represent textual information in a writing system
 
-1. 字符的书写形式具有共同的图像特征与文字流变  
-2. 该组字符全部用来表达某个书写系统内的文本信息（textual information）
+`Script=Han` includes all CJK Unified Ideographs, compatibility characters, Suzhou numerals, " 〇 ", "〆", " 々 ", and commonly used radicals in dictionaries.
 
-`Script=Han` 的字符囊括了所有统一表意文字、中日韩兼容性字符、苏州码子、「〇」、「〆」、「々」以及字典常用的部首。
+`/\p{Script=Han}/u` matches all characters in the Han Script, including radicals and modifiers that either lack independent meaning or cannot exist independently. This regex confuses the scope of Han Script with Han Characters.
 
-从汉文（Han Script）与汉字（CJK Ideograph）的关系我们可以知道，`/\p{Script=Han}/u` 匹配的是汉文作为一个字符集里面的所有字符，因此它包括了部首、「々」等字符，这些字符要么当它们独立存在的时候没有语言意义（部首独立存在是一个符号），要么无法独立存在（「々」依赖于所修饰的汉字）。所以汉字是汉文的一个单元，汉文除了包含汉字以外，还包括这些符号、数字、修饰符。
+## Summary
 
-使用 `/\p{Script=Han}/u` 来匹配汉字是混淆了汉文与汉字的概念范围。
+1. `/[\u4e00-\u9fa5]/` is outdated - don't use this 20-year-old regex
+2. `/\p{Unified_Ideograph}/u` is correct, maintenance-free, and matches all Han characters
+3. `/\p{Ideographic}/u` and `/\p{Script=Han}/u` match additional characters beyond Han characters and are incorrect for this specific purpose
 
-## 总结
+```
 
-1. `/[\u4e00-\u9fa5]/` 是错的，不要用二十年前的正则表达式了。
-2. `/\p{Unified_Ideograph}/u` 是正确的，不需要维护，匹配所有汉字。
-3. `/\p{Ideographic}/u` 和 `/\p{Script=Han}/u` 匹配了除了汉字以外的其他一些字符，在「汉字匹配正则表达式」这个需求下，是错的。
+Ref:
+- [Unicode character class escape](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
+- [Unicode Regular Expressions](https://www.regular-expressions.info/unicode.html)
