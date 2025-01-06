@@ -4,7 +4,7 @@ date: 2025-01-06 20:14:44
 tags:
   - TypeScript/Array
 ---
-A 2D array is also known as a matrix. It's arranged in a table-like structure that consists of rows and columns.  In TypeScript, we can create 2D arrays in several ways, `Array.from()` being one of the most elegant solutions.
+A 2D array is also known as a matrix. It's arranged in a table-like structure that consists of rows and columns. In TypeScript, we can create 2D arrays in several ways, `Array.from()` being one of the most elegant solutions.
 
 The `Array.from()` method creates a shallow-copied array from an array-like or iterable object. It accepts two main parameters:
 
