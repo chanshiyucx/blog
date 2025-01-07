@@ -19,6 +19,21 @@ cross-fade(url(green.png) 75%, url(red.png) 75%); /* both green and red at 75% *
 
 So we can use `cross-fade()` to achieve the background image translucency effect.
 
-
+```css
+body {
+    --transparent: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
+    background-size: cover;
+    background-image: cross-fade(
+        var(--transparent),
+        url("./images/bg.jpg"),
+        50%
+    );
+    background-image: -webkit-cross-fade(
+        var(--transparent),
+        url("./images/bg.jpg"),
+        50%
+    );
+}      
+```
 
 Ref: [cross-fade()](https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade)
