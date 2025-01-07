@@ -2,7 +2,6 @@
 title: React Conditional Rendering
 date: 2024-12-04 11:30:45
 tags:
-  - Web/React
   - TypeScript/Record
 ---
 Using `Record` for conditional rendering provides a more elegant and maintainable solution compared to traditional methods like if/else or switch statements.
