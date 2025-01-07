@@ -4,7 +4,7 @@ date: 2025-01-07 14:14:50
 tags:
   - TypeScript/String
 ---
-A lot of bad text trimming code around usually cuts off a word mid-way through, which just looks bad. This code below aligns the ellipses with the start and end of words. It returns a tuple. This approach can obviously be used in any language.
+Many text truncation implementations often cut words abruptly in the middle, resulting in poor readability. The code below offers an elegant solution by ensuring the truncation occurs at word boundaries and adds ellipsis appropriately. It returns a tuple containing both the processed text and a flag indicating whether truncation was performed.
 
 ```typescript
 const trimText = (
