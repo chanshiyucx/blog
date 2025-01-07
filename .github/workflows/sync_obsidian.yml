@@ -1,56 +1,56 @@
-name: sync from obsidian 
+name: sync from obsidian
 
 on:
   schedule:
-    - cron: '0 * * * *' # 每小时运行一次
-  workflow_dispatch: # 手动触发
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the target repository
       - name: Checkout target repository (blog)
         uses: actions/checkout@v3
 
-      # Step 2: Clone the private obsidian repository
       - name: Clone obsidian private repository
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          # 检出目录
           git sparse-checkout set Blog Notes Leetcode Album
-          cd ..
+        continue-on-error: false
 
-      # Step 3: Sync obsidian/Blog to blog/posts
-      - name: Sync Blog directory to blog/posts
+      - name: Sync obsidian directories
         run: |
           rsync -av --delete obsidian/Blog/ ./posts/
-          rm -f ./posts/SUMMARY.md
-
-      # Step 4: Sync obsidian/Notes to blog/notes
-      - name: Sync Notes directory to blog/notes
-        run: |
           rsync -av --delete obsidian/Notes/ ./notes/
-          rm -f ./notes/SUMMARY.md
-
-      # Step 5: Sync obsidian/Leetcode to blog/leetcode
-      - name: Sync Leetcode directory to blog/leetcode
-        run: |
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
-          rm -f ./leetcode/SUMMARY.md
-
-      # Step 6: Sync obsidian/Album to blog/album
-      - name: Sync Album directory to blog/album
-        run: |
           rsync -av --delete obsidian/Album/ ./album/
+          find . -name "SUMMARY.md" -delete
+        continue-on-error: false
 
-      # Step 7: Commit and push changes to target repository
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add .
+          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+
       - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config user.name "chanshiyu"
           git config user.email "chanshiyucx@gmail.com"
-          git add .
-          git commit -m "Sync Blog and Leetcode directories from obsidian repository" || echo "No changes to commit"
+          git commit -m "Sync blog from obsidian repository"
           git push
+        continue-on-error: false
+
+      - name: Check for Markdown Changes
+        id: check_md_changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git diff --name-status HEAD^ HEAD | grep '\.md$' && echo "has_md_changes=true" >> $GITHUB_OUTPUT || echo "No markdown changes detected"
+
+      - name: Trigger Vercel Deploy
+        if: steps.check_md_changes.outputs.has_md_changes == 'true'
+        run: |
+          curl -X POST -d {} "${{ secrets.VERCEL_DEPLOY_HOOK }}"
