@@ -19,17 +19,17 @@ Below is the step-by-step breakdown of the approach:
 1. **Initialize Two Pointers:**  
 	- `left` pointer starts at the beginning of the array.
 	- `right` pointer starts at the end of the array.
-
+	
 2. **Calculate Area:**  
 	- In each iteration, compute the area between the lines at `left` and `right`.
 	- Use `Math.min(height[left], height[right])` to determine the height of the container since the water level is constrained by the shorter line.
-
+	
 3. **Update Maximum Area:**  
 	- Compare the current area with the previously stored maximum (`ans`) and update if the current area is larger.
-
+	
 4. **Move the Pointers:**  
 	- Move the pointer pointing to the **shorter line** since a taller line might create a larger area when paired with future lines.
-
+	
 5. **Return the Maximum Area:**  
 	- When the two pointers meet, we have checked all possible containers, and `ans` will hold the largest area.
 

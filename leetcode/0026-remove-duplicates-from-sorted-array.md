@@ -12,15 +12,17 @@ The problem requires removing duplicates from a sorted array in place. Since the
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Initialize an Index Pointer**:
-   - Use an `index` pointer to keep track of the next position for unique elements. Start from `1` since the first element is always unique.
+	- Use an `index` pointer to keep track of the next position for unique elements. Start from `1` since the first element is always unique.
 
 2. **Traverse the Array**:
-   - For each element, compare it to the previous one.
-   - If they differ, it means we found a unique element. Place it at the `index` position and increment `index`.
+	- For each element, compare it to the previous one.
+	- If they differ, it means we found a unique element. Place it at the `index` position and increment `index`.
 
 3. **Return Result**:
-   - After traversal, `index` represents the length of the modified array with unique elements.
+	- After traversal, `index` represents the length of the modified array with unique elements.
 
 ## Complexity
 

@@ -13,6 +13,8 @@ The problem involves determining the shortest distance from city 0 to city n-1 a
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Dynamic Programming Array (dp)**:
 	- Use `dp[i]` to store the shortest distance from city 0 to city i.
 	- Initially, the shortest distance to city i is i.

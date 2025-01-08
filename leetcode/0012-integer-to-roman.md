@@ -16,12 +16,12 @@ Below is the step-by-step breakdown of the approach:
 
 1. **Predefined Roman Numeral Map**:
 	- Use a list of tuples containing Roman numerals and their integer values, sorted in descending order.
-
+	
 2. **Iterate Over the List**:
 	- For each numeral-value pair, determine how many times the current value fits into the input number.
 	- Append the numeral to the result string that many times and update the input number to the remainder.
 	- If the remainder becomes 0, exit the loop to avoid unnecessary iterations.
-
+	
 3. **Return the Result**:
 	- After iterating through all the value-symbol pairs, return the `result` string.
 

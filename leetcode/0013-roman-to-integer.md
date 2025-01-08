@@ -16,13 +16,13 @@ Below is the step-by-step breakdown of the approach:
 
 1. **Create a Hash Map**:
 	- Store Roman numeral symbols as keys and their corresponding integer values as values for constant-time lookups.
-
+	
 2. **Traverse the String**:
 	- Iterate through the string from left to right.
 	- For each symbol `s[i]`, compare it with the next symbol `s[i + 1]`:
 		- If `s[i]` is smaller than `s[i + 1]`, subtract its value from the result (e.g., `"IV"`).
 		- Otherwise, add its value to the result.
-
+		
 3. **Return the Result**:
 	- Once the traversal is complete, the accumulated result will be the integer value of the Roman numeral. Return the result.
 

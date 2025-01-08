@@ -12,6 +12,8 @@ The problem requires finding the first occurrence of needle in haystack. This ca
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Edge Cases**:
 	- If needle is an empty string, return 0.
 	- If needle's length exceeds haystack's length, it is impossible for needle to exist in haystack; return -1.

@@ -14,6 +14,8 @@ This can be solved efficiently by leveraging an array to track which nodes have 
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Initialize Tracking Array**:
 	- Use an array isWeak of size n to record whether each node has incoming edges. Each entry starts as false (no incoming edges).
 

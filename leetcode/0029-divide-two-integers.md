@@ -18,6 +18,8 @@ To solve this efficiently:
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Sign Handling**:
 	- We store the sign of the result based on the signs of dividend and divisor. The sign will be positive if both numbers have the same sign, otherwise, it will be negative.
 

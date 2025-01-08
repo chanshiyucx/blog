@@ -18,7 +18,7 @@ Below is the step-by-step breakdown of the approach:
 
 1. **Handle Negative Numbers:**  
 	- If the input number is negative, return `false` immediately, as negative numbers can't be palindromes.
-
+	
 2. **Reverse the Number:**  
 	- Use a variable `y` to store the reversed number.
 	- Use a variable `n` to store a copy the of original input number.  
@@ -26,7 +26,7 @@ Below is the step-by-step breakdown of the approach:
 		- Extract the last digit of `n` using the modulus operation (`n % 10`).
 		- Append it to `y` after shifting its digits left (multiply `n` by 10).
 		- Remove the last digit from `n` using integer division (`~~(n / 10)`).
-
+		
 3. **Compare the Reversed Number:**  
 	- If the reversed number `y` matches the original number `x`, return `true`; otherwise, return `false`.
 

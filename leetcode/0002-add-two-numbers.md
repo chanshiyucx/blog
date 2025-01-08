@@ -18,7 +18,7 @@ Below is the step-by-step breakdown of the approach:
 	- Use a dummy head node to simplify code and avoid edge case handling.
 	- Initialize a `current` pointer to track the current position in the result list.
 	- Initialize a `carry` variable to manage carry-over from previous additions.
-
+	
 2. **Traverse the Lists**:
 	- Use a while loop to iterate through both lists until both `l1` and `l2` are exhausted.
 	- At each step:
@@ -26,10 +26,10 @@ Below is the step-by-step breakdown of the approach:
 		- Create a new node with the value `sum % 10` and attach it to the result list.
 		- Update `carry` to `Math.floor(sum / 10)` for the next iteration.
 		- Move `current`, `l1`, and `l2` to their respective next nodes.
-
+		
 3. **Handle Remaining Carry**:
 	- After the loop, if any `carry` remains, add a new node with its value to the result list.
-
+	
 4. **Return the Result**:
 	- Return the next node of the dummy head, which is the head of the resultant linked list.
 

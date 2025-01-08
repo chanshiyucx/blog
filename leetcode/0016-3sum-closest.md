@@ -12,27 +12,29 @@ The goal is to find a triplet in `nums` whose sum is closest to a given `target`
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Sort the Array**:
-   - First, sort `nums` in ascending order, which allows us to use two pointers effectively for summing values.
-
+	- First, sort `nums` in ascending order, which allows us to use two pointers effectively for summing values.
+	
 2. **Initialize Closest Sum**:
-   - Set `ans` as the sum of the first three numbers, as an initial closest sum.
-   - Calculate the initial difference, `diff`, between `ans` and `target`.
-
+	- Set `ans` as the sum of the first three numbers, as an initial closest sum.
+	- Calculate the initial difference, `diff`, between `ans` and `target`.
+	
 3. **Iterate with Fixed Pointer**:
-   - For each index `left`, treat `nums[left]` as the first number of the triplet.
-
+	- For each index `left`, treat `nums[left]` as the first number of the triplet.
+	
 4. **Two-Pointer Technique**:
-   - Set `middle` to `left + 1` and `right` to `nums.length - 1`.
-   - Calculate `sum = nums[left] + nums[middle] + nums[right]`.
-	 - If `sum` equals `target`, return `sum`, as it's the closest possible.
-	 - Otherwise, calculate the difference, `tempDiff`, between `sum` and `target`.
-	   - If `tempDiff` is smaller than `diff`, update `ans` with `sum` and `diff` with `tempDiff`.
-	 - If `sum` is greater than `target`, move `right` to decrease the sum.
-	 - If `sum` is less than `target`, move `middle` to increase the sum.
-
+	- Set `middle` to `left + 1` and `right` to `nums.length - 1`.
+	- Calculate `sum = nums[left] + nums[middle] + nums[right]`.
+	- If `sum` equals `target`, return `sum`, as it's the closest possible.
+	- Otherwise, calculate the difference, `tempDiff`, between `sum` and `target`.  
+		- If `tempDiff` is smaller than `diff`, update `ans` with `sum` and `diff` with `tempDiff`.  
+		- If `sum` is greater than `target`, move `right` to decrease the sum.  
+		- If `sum` is less than `target`, move `middle` to increase the sum.
+		
 5. **Return the Result**:
-   - After finding the closest sum in all iterations, return `ans`.
+  - After finding the closest sum in all iterations, return `ans`.
 
 ## Complexity
 

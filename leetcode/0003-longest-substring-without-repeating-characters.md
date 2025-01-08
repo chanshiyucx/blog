@@ -20,13 +20,13 @@ Below is the step-by-step breakdown of the approach:
 	- Use a hash set to store the characters in the current sliding window.
 	- Initialize two pointers: `left` to represent the start of the window and `right` to iterate over the string.
 	- Use a variable `ans` to store the maximum length of the substring found.
-
+	
 2. **Sliding Window Process**:
 	- Iterate over the string using the `right` pointer.
 		- If the character at `right` already exists in the hash set, remove characters from the start (by moving the `left` pointer) until the duplicate is removed.
 		- Add the current character at `right` to the hash set.
 		- Update `ans` to be the maximum of the current `ans` and the window size (`right - left + 1`).
-
+		
 3. **Return the Result**:
 	- After processing the string, return `ans` as the length of the longest substring with unique characters.
 

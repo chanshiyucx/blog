@@ -12,22 +12,24 @@ The problem requires checking if an input string containing only brackets is val
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Quick Length Check**:
-   - If the length of `s` is odd, it cannot be balanced, so we return `false`.
+	- If the length of `s` is odd, it cannot be balanced, so we return `false`.
 
 2. **Mapping Brackets**:
-   - Create a map of closing brackets to their corresponding opening brackets for easy lookup.
+	- Create a map of closing brackets to their corresponding opening brackets for easy lookup.
 
 3. **Traverse the String**:
-   - Use a stack to track unmatched opening brackets.
-   - For each character in `s`:
-	 - If it's a closing bracket, check if it matches the last item in the stack:
-	   - If it matches, pop the stack.
-	   - If not, return `false` as it's invalid.
-	 - If it's an opening bracket, push it onto the stack.
+	- Use a stack to track unmatched opening brackets.
+	- For each character in `s`:
+	- If it's a closing bracket, check if it matches the last item in the stack:
+		- If it matches, pop the stack.
+		- If not, return `false` as it's invalid.
+	- If it's an opening bracket, push it onto the stack.
 
 4. **Return Result**:
-   - If the stack is empty after traversal, all brackets were matched; otherwise, return `false`.
+	- If the stack is empty after traversal, all brackets were matched; otherwise, return `false`.
 
 ## Complexity
 

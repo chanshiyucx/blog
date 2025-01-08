@@ -12,6 +12,8 @@ The task requires us to decrypt a given code by computing a sliding window sum, 
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Handle Edge Case for** k = 0:
 	- If k = 0, we return an array of zeros since no values need to be modified.
 

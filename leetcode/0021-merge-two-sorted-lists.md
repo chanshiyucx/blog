@@ -3,7 +3,7 @@ title: Merge Two Sorted Lists
 date: 2024-11-06 15:54:47
 level: Easy
 tags:  
-  - Algorithm/LinkedList
+	- Algorithm/LinkedList
 ---
 
 ## Intuition
@@ -12,21 +12,23 @@ The task is to merge two sorted linked lists into a single sorted linked list. S
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Initialize a Dummy Node**:
-   - Create a `dummyHead` node, which serves as the starting point for our result list.
-   - Use a `current` pointer to track the end of the merged list as we build it.
+	- Create a `dummyHead` node, which serves as the starting point for our result list.
+	- Use a `current` pointer to track the end of the merged list as we build it.
 
 2. **Merge Lists**:
-   - Traverse through both lists until one becomes empty:
-	 - Compare the values at the current nodes of `list1` and `list2`.
-	 - Attach the smaller node to `current.next`, and move that list's pointer forward.
-	 - Advance `current` to `current.next` to continue building the merged list.
+	- Traverse through both lists until one becomes empty:
+	- Compare the values at the current nodes of `list1` and `list2`.
+	- Attach the smaller node to `current.next`, and move that list's pointer forward.
+	- Advance `current` to `current.next` to continue building the merged list.
 
 3. **Attach Remaining Nodes**:
-   - Once we reach the end of one list, directly link `current.next` to the remaining non-empty list, as it's already sorted.
+	- Once we reach the end of one list, directly link `current.next` to the remaining non-empty list, as it's already sorted.
 
 4. **Return Result**:
-   - Return `dummyHead.next`, which points to the head of the merged list.
+	- Return `dummyHead.next`, which points to the head of the merged list.
 
 ## Complexity
 

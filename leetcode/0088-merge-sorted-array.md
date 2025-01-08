@@ -12,6 +12,8 @@ The goal is to merge two sorted arrays into a single sorted array. The solution 
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Two Pointers (from the end)**:  
 	- Use two pointers, i and j, to iterate through `nums1` and `nums2` from the end of each valid part .
 	- Use a third pointer k to place elements into the correct position in `nums1`. This pointer starts from the last index (k = m + n - 1).

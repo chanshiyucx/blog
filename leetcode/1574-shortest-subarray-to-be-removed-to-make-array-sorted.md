@@ -12,6 +12,8 @@ The problem asks us to find the shortest subarray that, if removed, allows the r
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Find Left Sorted Segment**:
 	- Traverse from the start to identify the longest initial non-decreasing segment (left pointer).
 	- If the entire array is sorted, return 0.

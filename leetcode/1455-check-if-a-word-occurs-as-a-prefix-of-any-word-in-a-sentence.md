@@ -19,6 +19,8 @@ We can approach this problem by:
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Split the Sentence**:  
 	- The sentence can be split into an array of words using the `split(' ')` method.
 

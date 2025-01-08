@@ -16,17 +16,18 @@ Below is the step-by-step breakdown of the approach:
 
 1. **Initialize Variables**:
 	- Create a variable `n` initialized to 0 to store the reversed number.
-   
+	
 2. **Extract and Reverse Digits**:
 	- Use a while loop that runs until the input integer `x` becomes 0.
 	- In each iteration:
 		- Extract the last digit of `x` using `x % 10`.
 		- Append this digit to `n` by calculating `n * 10 + (x % 10)`.
 		- Update `x` to remove its last digit by performing integer division using `~~(x / 10)`.
+		
 3. **Check for Overflow**:
 	- Before continuing to the next iteration, ensure that `n` stays within the 32-bit signed integer range:
 		- If `n` is smaller than `-2^31` or larger than `2^31 - 1`, return 0 immediately.
-
+		
 4. **Return the Result**:
 	- If the entire process completes without overflow, return the final value of `n`.
 

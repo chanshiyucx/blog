@@ -16,19 +16,19 @@ Below is the step-by-step breakdown of the approach:
 
 1. **Edge Case Handling**:  
 	- If the number of rows is 1 or greater than the string length, return the input string directly as no transformation is needed.
-
+	
 2. **Initialize Data Structures**:  
 	- Create an array `record` of size `numRows`, with each element initialized to an empty string. This array will store the characters for each row.  
 	- Use a boolean flag `ascending` to track the direction of movement (either down or up the rows).  
 	- Initialize a `curRow` variable to keep track of the current row being filled.
-
+	
 3. **Iterate Through the Characters**:  
 	- Traverse the input string, placing each character in the appropriate row of `record` based on the current direction.  
 	- Adjust the `curRow` value:  
 		- If moving down, increment `curRow`.  
 		- If moving up, decrement `curRow`.  
 	- Switch directions whenever the first row (`curRow === 0`) or the last row (`curRow === numRows - 1`) is reached.
-
+	
 4. **Join the Rows**:  
 	- After all characters are placed, concatenate all rows from `record` to form the final result string.
 

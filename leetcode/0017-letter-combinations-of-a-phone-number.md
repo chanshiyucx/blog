@@ -12,19 +12,21 @@ The task is to find all possible letter combinations that a sequence of digits c
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Define the Map**:
-   - Create a map of digit-to-letter mappings, following the layout of a phone keypad.
+	- Create a map of digit-to-letter mappings, following the layout of a phone keypad.
 
 2. **Backtracking Function**:
-   - Use a helper function `backtrack` to build combinations by appending each letter corresponding to the current digit and recursively processing the next digit.
-   - When all digits have been processed, add the completed combination to the results array.
+	- Use a helper function `backtrack` to build combinations by appending each letter corresponding to the current digit and recursively processing the next digit.
+	- When all digits have been processed, add the completed combination to the results array.
 
 3. **Recursive Process**:
-   - Start with an empty combination string and the full `digits` string.
-   - For each recursive call, take the letters corresponding to the current digit, appending each letter to the current combination and proceeding with the next digit.
+	- Start with an empty combination string and the full `digits` string.
+	- For each recursive call, take the letters corresponding to the current digit, appending each letter to the current combination and proceeding with the next digit.
 
 4. **Return the Result**:
-   - Once all possible combinations are generated, return the results array.
+	- Once all possible combinations are generated, return the results array.
 
 ## Complexity
 

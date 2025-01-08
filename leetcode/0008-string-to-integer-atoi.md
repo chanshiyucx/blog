@@ -19,14 +19,14 @@ Below is the step-by-step breakdown of the approach:
 		- Any leading whitespace (`^\s*`).
 		- An optional sign (`[-+]?`).
 		- A sequence of digits (`\d+`).
-
+		
 2. **Parse the Matched Integer**:
 	- If the input string matches the pattern, extract the numeric part and convert it to an integer.
 	- Check the sign captured from the match. If the sign is negative, multiply the number by `-1`.
-
+	
 3. **Clamp the Result within 32-bit Range**:
 	- The integer should be clamped between **`-2^31`** and **`2^31 - 1`**, use `Math.max()` and `Math.min()` to enforce this constraint.
-
+	
 4. **Return the Result**:
 	- If the input string doesn't match the pattern, return `0`.
 	- Otherwise, return the clamped integer.

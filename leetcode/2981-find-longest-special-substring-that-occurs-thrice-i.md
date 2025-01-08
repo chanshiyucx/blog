@@ -12,6 +12,8 @@ To solve the problem, we can uses **binary search** over the possible values of 
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Binary Search Setup**:
 	- The range of x is from 0 to n (length of the string).
 	- We perform binary search to find the maximum x that satisfies the condition.

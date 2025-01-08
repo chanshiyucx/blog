@@ -12,13 +12,13 @@ This problem involves determining whether all adjacent elements in a given subar
 
 ## Approach
 
-1. **Precompute Special Parities**:
+Below is the step-by-step breakdown of the approach:
 
+1. **Precompute Special Parities**:
 	- Create a prefix sum array sum, `sum[i]` represents the count of indices up to i where adjacent elements have the same parity.
 	- Iterate through the array, comparing each pair of adjacent elements, if they have the same parity, increment the count.
 
 2. **Query Evaluation**:
-
 	- For a given query `[from, to]`, check whether `sum[from] === sum[to]`.
 	- This equality ensures that the number of same-parity pairs in the range `[from, to]` is zero, meaning all adjacent elements in this subarray have consistent parity.
 

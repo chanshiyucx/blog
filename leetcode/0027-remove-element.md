@@ -12,6 +12,8 @@ The task is to remove all occurrences of a specific value (val) from an array in
 
 ## Approach
 
+Below is the step-by-step breakdown of the approach:
+
 1. **Two Pointers**:
 	- fast: Scans through the array, checking each element.
 	- slow: Tracks where the next valid (non-val) element should be written.
