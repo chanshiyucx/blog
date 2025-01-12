@@ -40,12 +40,43 @@ Let's explore the standard JavaScript APIs that support `AbortSignal` out of t
 
 You can provide an abort `signal` when adding an event listener for it to be automatically removed once the abort happens.
 
+For example, Calling `controller.abort()` removes the `resize` listener from the window. That is an extremely elegant way of handling event listeners because you no longer need to abstract the listener function just so you can provide it to `.removeEventListener()`.
+
 ```javascript
+const listener = () => {}
+
+// window.addEventListener('resize', listener)
+// window.removeEventListener('resize', listener)
+
 const controller = new AbortController()
-
-window.addEventListener("resize", listener, { signal: controller.signal })
-
+window.addEventListener('resize', listener, { signal: controller.signal })
 controller.abort()
+```
+
+An `AbortController` instance is also much nicer to pass around if a different part of your application is responsible for removing the listener.
+
+A great "aha" moment for me was when I realized you can use a single `signal` to remove multiple event listeners!
+
+```javascript
+useEffect(() => {
+  const controller = new AbortController()
+
+  window.addEventListener("resize", handleResize, {
+    signal: controller.signal,
+  })
+  window.addEventListener("hashchange", handleHashChange, {
+    signal: controller.signal,
+  })
+  window.addEventListener("storage", handleStorageChange, {
+    signal: controller.signal,
+  })
+
+  return () => {
+    // Calling `.abort()` removes ALL event listeners
+    // associated with `controller.signal`. Gone!
+    controller.abort()
+  }
+}, [])
 ```
 
 ### Fetch requests
