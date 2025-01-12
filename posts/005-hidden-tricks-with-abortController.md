@@ -19,12 +19,13 @@ controller.signal
 controller.abort()
 ```
 
-Once you create a controller instance, you get two things:
+Creating a controller instance provides you with two key components:
 
 - `AbortController.signal`: an instance of [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal), which can be used to communicate with, or to abort, an asynchronous operation.
 - `AbortController.abort()`: aborts an asynchronous operation before it has completed. When called, triggers the abort event on the `signal`. It also updates the signal to be marked as aborted.
 
-So far so good. But where is the actual abort logic? That's the beauty—it's defined by the consumer. The abort handling comes down to listening to the `abort` event and implementing the abort in whichever way is suitable for the logic:
+You might wonder where the actual abort logic resides. Here's the elegant part—you define it! Simply listen for the `abort` event and implement your cancellation logic as needed:
+
 
 ```javascript
 controller.signal.addEventListener("abort", () => {
@@ -32,7 +33,8 @@ controller.signal.addEventListener("abort", () => {
 })
 ```
 
-Let's explore the standard JavaScript APIs that support `AbortSignal` out of the box.
+Now, let's explore which standard JavaScript APIs have built-in support for `AbortSignal`.
+
 
 ## Usage
 
@@ -40,7 +42,8 @@ Let's explore the standard JavaScript APIs that support `AbortSignal` out of t
 
 You can provide an abort `signal` when adding an event listener for it to be automatically removed once the abort happens.
 
-For example, Calling `controller.abort()` removes the `resize` listener from the window. That is an extremely elegant way of handling event listeners because you no longer need to abstract the listener function just so you can provide it to `.removeEventListener()`.
+For example, calling `controller.abort()` removes the `resize` listener from the window. That is an extremely elegant way of handling event listeners because you no longer need to abstract the listener function just so you can provide it to `.removeEventListener()`.
+
 
 ```javascript
 const listener = () => {}
@@ -171,3 +174,5 @@ controller.abort("user cancellation")
 ```
 
 > The `reason` argument can be any JavaScript value so you can pass strings, errors, or even objects.
+
+
