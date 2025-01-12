@@ -22,11 +22,31 @@ controller.abort()
 Once you create a controller instance, you get two things:
 
 - `AbortController.signal`: an instance of [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal), which can be used to communicate with, or to abort, an asynchronous operation.
-- `AbortController.abort()`: when called, triggers the abort event on the `signal`. It also updates the signal to be marked as aborted.
+- `AbortController.abort()`: aborts an asynchronous operation before it has completed. When called, triggers the abort event on the `signal`. It also updates the signal to be marked as aborted.
+
+So far so good. But where is the actual abort logic? That's the beauty—it's defined by the consumer. The abort handling comes down to listening to the `abort` event and implementing the abort in whichever way is suitable for the logic:
+
+```javascript
+controller.signal.addEventListener("abort", () => {
+  // Implement the abort logic.
+})
+```
+
+Let's explore the standard JavaScript APIs that support `AbortSignal` out of the box.
 
 ## Usage
 
 ### Event listeners
+
+You can provide an abort `signal` when adding an event listener for it to be automatically removed once the abort happens.
+
+```javascript
+const controller = new AbortController()
+
+window.addEventListener("resize", listener, { signal: controller.signal })
+
+controller.abort()
+```
 
 ### Fetch requests
 
