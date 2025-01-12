@@ -79,12 +79,95 @@ useEffect(() => {
 }, [])
 ```
 
+In the example above, I'm adding a `useEffect()` hook that introduces a bunch of event listeners with different purpose and logic. Notice how in the clean up function I can remove all of the added listeners by calling `controller.abort()` once. Neat!
+
 ### Fetch requests
+
+The `fetch()` function supports `AbortSignal` as well! Once the `abort` event on the signal is emitted, the request promise returned from the `fetch()` function will reject, aborting the pending request.
+
+```javascript
+function uploadFile(file: File) {
+  const controller = new AbortController()
+
+  // Provide the abort signal to this fetch request
+  // so it can be aborted anytime be calling `controller.abort()`.
+  const response = fetch("/upload", {
+    method: "POST",
+    body: file,
+    signal: controller.signal,
+  })
+
+  return { response, controller }
+}
+```
+
+Here, the `uploadFile()` function initiates a `POST /upload` request, returning the associated `response` promise but also a `controller` reference to abort that request at any point. This is handy if I need to cancel that pending upload, for example, when the user clicks on a "Cancel" button.
+
+The `AbortSignal` class also comes with a few static methods to simplify request handling in JavaScript.
+
+#### `AbortSignal.timeout`
+
+You can use the `AbortSignal.timeout()` static method as a shorthand to create a signal that dispatches the abort event after a certain timeout duration has passed. No need to create an `AbortController` if all you want is to cancel a request after it exceeds a timeout:
+
+```javascript
+fetch(url, {
+  // Abort this request automatically if it takes
+  // more than 3000ms to complete.
+  signal: AbortSignal.timeout(3000),
+})
+```
+
+#### `AbortSignal.any`
+
+Similar to how you can use `Promise.race()` to handle multiple promises on a first-come-first-served basis, you can utilize the `AbortSignal.any()` static method to group multiple abort signals into one.
+
+```javascript
+const publicController = new AbortController()
+const internalController = new AbortController()
+
+channel.addEventListener("message", handleMessage, {
+  signal: AbortSignal.any([publicController.signal, internalController.signal]),
+})
+```
+
+In the example above, I am introducing two abort controllers. The public one is exposed to the consumer of my code, allowing them to trigger aborts, resulting in the `message` event listener being removed. The internal one, however, allows me to also remove that listener without interfering with the public abort controller.
+
+If any of the abort signals provided to the `AbortSignal.any()` dispatch the abort event, that parent signal will also dispatch the abort event. Any other abort events past that point are ignored.
 
 ### Streams
 
-## Making anything abortable
+You can use `AbortController` and `AbortSignal` to cancel streams as well.
 
-### Abort error handling
+```javascript
+const stream = new WritableStream({
+  write(chunk, controller) {
+    controller.signal.addEventListener('abort', () => {
+      // Handle stream abort here.
+    })
+  },
+})
 
-## Conclusion
+const writer = stream.getWriter()
+await writer.abort()
+```
+
+The `WritableStream` controller exposes the `signal` property, which is the same old `AbortSignal`. That way, I can call `writer.abort()`, which will bubble up to the abort event on `controller.signal` in the `write()` method in the stream.
+
+## Abort error handling
+
+Every abort event is accompanied with the reason for that abort. That yields even more customizability as you can react to different abort reasons differently.
+
+The abort reason is an optional argument to the `controller.abort()` method. You can access the abort reason in the `reason` property of any `AbortSignal` instance.
+
+```javascript
+const controller = new AbortController()
+
+controller.signal.addEventListener("abort", () => {
+  console.log(controller.signal.reason) // "user cancellation"
+})
+
+// Provide a custom reason to this abort.
+controller.abort("user cancellation")
+```
+
+> The `reason` argument can be any JavaScript value so you can pass strings, errors, or even objects.
