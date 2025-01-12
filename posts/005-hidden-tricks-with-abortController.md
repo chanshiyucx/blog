@@ -26,7 +26,6 @@ Creating a controller instance provides you with two key components:
 
 You might wonder where the actual abort logic resides. Here's the elegant part—you define it! Simply listen for the `abort` event and implement your cancellation logic as needed:
 
-
 ```javascript
 controller.signal.addEventListener("abort", () => {
   // Implement the abort logic.
@@ -35,7 +34,6 @@ controller.signal.addEventListener("abort", () => {
 
 Now, let's explore which standard JavaScript APIs have built-in support for `AbortSignal`.
 
-
 ## Usage
 
 ### Event listeners
@@ -43,7 +41,6 @@ Now, let's explore which standard JavaScript APIs have built-in support for `Abo
 You can provide an abort `signal` when adding an event listener for it to be automatically removed once the abort happens.
 
 For example, calling `controller.abort()` removes the `resize` listener from the window. That is an extremely elegant way of handling event listeners because you no longer need to abstract the listener function just so you can provide it to `.removeEventListener()`.
-
 
 ```javascript
 const listener = () => {}
@@ -82,7 +79,7 @@ useEffect(() => {
 }, [])
 ```
 
-In the example above, I'm adding a `useEffect()` hook that introduces a bunch of event listeners with different purpose and logic. Notice how in the clean up function I can remove all of the added listeners by calling `controller.abort()` once. Neat!
+In the example above, I'm adding a `useEffect()` hook that introduces a bunch of event listeners with different purpose and logic. Notice how in the clean up function I can remove all of the added listeners by calling `controller.abort()` once!
 
 ### Fetch requests
 
@@ -173,6 +170,6 @@ controller.signal.addEventListener("abort", () => {
 controller.abort("user cancellation")
 ```
 
-> The `reason` argument can be any JavaScript value so you can pass strings, errors, or even objects.
+The `reason` argument can be any JavaScript value so you can pass strings, errors, or even objects.
 
-
+Ref: [MDN AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
