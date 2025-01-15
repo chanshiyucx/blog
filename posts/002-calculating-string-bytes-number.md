@@ -9,7 +9,7 @@ Recently, I encountered a challenging problem at work. I was responsible for dev
 
 At first I used `string.length` as the filename byte count, which resulted in an identifier error. After I checked the wiki documentation, I have a new perception of character encoding.
 
-## Unicode code points
+## Unicode Code Points
 
 The `charCodeAt()` method of String values returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
 
