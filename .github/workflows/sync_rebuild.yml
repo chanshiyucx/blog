@@ -22,9 +22,6 @@ jobs:
 
       - name: Sync obsidian directories
         run: |
-          mkdir -p ./polyglot/english/writing
-          mkdir -p ./polyglot/german/grammar
-          mkdir -p ./polyglot/german/writing
           rsync -av --delete obsidian/Blog/ ./posts/
           rsync -av --delete obsidian/Notes/ ./notes/
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
