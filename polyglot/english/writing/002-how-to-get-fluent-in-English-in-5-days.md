@@ -11,7 +11,7 @@ Today, I came across an insight episode online about how to get fluent in Englis
 
 ## Day One: Choose Your Topics
 
-**First, select five topics that genuinely ix`nterest you.** This is crucial because you'll naturally feel more confident speaking about topics you're passionate about.
+**First, select five topics that genuinely interest you.** This is crucial because you'll naturally feel more confident speaking about topics you're passionate about.
 
 **Next, write down three key reasons why each topic interests you.** This helps organize your thoughts from the start and is a fundamental step towards achieving fluency.
 
@@ -38,5 +38,7 @@ Think about the who, what, when, where, and why of your experiences. Having thes
 **Get creative and practice different scenarios.** This mental preparation helps reduce anxiety when speaking.
 
 Many people get nervous when faced with unexpected questions. However, if you prepare by thinking about possible questions and your responses beforehand, you'll feel more confident and speak more fluently in real conversations.
+
+## Conclusion
 
 Remember, success with this method depends on consistency and active engagement. Take your time with each step, work thoroughly with each topic, and make the material truly your own.
