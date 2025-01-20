@@ -4,36 +4,39 @@ date: 2025-01-20 15:07:45
 tags: 
   - English/Writing
 ---
-I always get nervous when someone asks me a question in English. I don't know how to speak about certain topics in English.  I feel like my vocabulary isn’t strong enough. I don't know how to speak English for a long time fluently and I don't know how to actually think in English. These are problems that I've encountered in my daily life.
 
-Today, I read an insight episode online about how to get fluent in English in 5 days. The episode is for intermediate and advanced English learners. Let's look at the details.
+Like many English learners, I always get nervous when someone asks me a question in English. I often struggle to discuss certain topics and feel my vocabulary is limited. Speaking fluently for long periods is challenging, and I haven't yet mastered thinking in English. These are common challenges I face in my daily English conversations.
+
+Today, I came across an insight episode online about how to get fluent in English in just 5 days. It's designed for intermediate and advanced English learners. Let's dive into the details!
 
 ## Day one
 
-**The first thing you want to do is select five topics you are interested in.** This is very important because you will gain confidence by speaking about topics you are actually interested in.
+**First, select five topics that genuinely interest you.** This is crucial because you'll naturally feel more confident speaking about topics you're passionate about.
 
-**The second part is after you've picked or chosen the topics, you are going to write three reasons for each topic.** This is important because you are going to organize your thoughts from the beginning and this is key for fluency.
+**Next, write down three key reasons why each topic interests you.** This helps organize your thoughts from the start and is a fundamental step towards achieving fluency.
 
 ## Day two
 
-**What you're gonna do for day two is find a blog or article about each topic.** This is very important because this will help you see how other  native English speakers actually speak about the topic.
+**Find a blog post or article about each of your chosen topics.** This exposes you to authentic English and shows you how native speakers naturally discuss these topics.
 
-**So, after you found the article or blog post you are going to pick out three interesting points about the topic.** This is important because by finding interesting points from the article, it will enhance or improve your ability to speak fluently about it later.
+**After reading each article, pick out three interesting points to discuss.** This exercise helps you develop your own perspectives while improving your ability to speak fluently about the topic.
 
 ## Day three
 
-**On day number three what you're gonna do is pick three vocabulary words you already know that describe the topic.** That means you don't need to get a dictionary out for this part, you want to pick something you already know. This is important because it will help you realize that you already know topic-specific vocabulary words, it's gonna give more confidence in what you already know.
+**Start by listing three familiar words that relate to each topic.** Don't reach for a dictionary – use words you already know. This helps build confidence by showing you already have topic-specific vocabulary at your disposal.
 
-**Now, for the second part what happens is we're gonna find three synonyms.** This is very important because it will help you expand or improve your vocabulary by making connections in your brain.
+**Then, find three synonyms for each word you listed.** This simple exercise helps expand your vocabulary naturally by creating meaningful connections in your mind.
 
 ## Day four
 
-**On day four, what you're gonna do is you need to think of a personal experience.** This step connects you to the topic and makes it easier to speak about in English. This is important because it will help you feel comfortable when you speak about the topic. If it's your personal experience, you will naturally speak more about it.
+**Connect each topic to your personal experiences.** This makes the topics more relatable and easier to discuss in English. When you share personal stories, the words tend to flow more naturally.
 
-You have your experience that you're gonna talk about but now you're already organizing your thoughts about who was there, what happened, when did it happen, where did it happen, and why did it happen. This will make it ten times easier for you to speak about it if someone asks you a question about this topic later.
+Think about the who, what, when, where, and why of your experiences. Having these details prepared will make it much easier to engage in natural conversations about these topics.
 
 ## Day five
 
-**Now, you're going to be creative.** This is important because it will help you mentally prepare and not get nervous when speaking.
+**Get creative and practice different scenarios.** This mental preparation helps reduce anxiety when speaking.
 
-So many times, people get nervous when someone asks them a question they never heard. But if you prepare possible questions beforehand, not only will you be comfortable, you will be able to speak fluently because you prepared yourself.
+Many people get nervous when faced with unexpected questions. However, if you prepare by thinking about possible questions and your responses beforehand, you'll feel more confident and speak more fluently in real conversations.
+
+Remember, success with this method depends on consistency and active engagement. Take your time with each step, work thoroughly with each topic, and make the material truly your own.
