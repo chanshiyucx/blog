@@ -21,3 +21,4 @@ Collocations:
 - **Guten Morgen** _(Good morning)_
 - **Guten Abend** _(Good evening)_
 - **Guten Nachmittag** _(Good afternoon)_
+- **Gute Nacht** _(Good night)_
