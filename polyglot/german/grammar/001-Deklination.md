@@ -47,3 +47,4 @@ tags:
 | Genitive   | Possession      | _Wessen?_         | Das Fell **des Hundes** ist braun. |
 | Dative     | Indirect Object | _Wem?_            | Ich gebe **dem Hund** Futter.      |
 | Accusative | Direct Object   | _Wen?_  or _Was?_ | Ich sehe **den Hund**.             |
+|            |                 |                   |                                    |
