@@ -7,21 +7,21 @@ tags:
 
 ## Bestimmter Artikel
 
-|           | Maskulinum  | Neutrum    | Femininum  | Plural     |
+|           | Maskulinum  | Femininum  | Neutrum    | Plural     |
 | --------- | ----------- | ---------- | ---------- | ---------- |
-| Nominativ | der Tisch   | das Kind   | die Tasche | die Eltern |
-| Genitiv   | des Tisches | des Kindes | der Tasche | der Eltern |
-| Dativ     | dem Tisch   | dem Kind   | der Tasche | den Eltern |
-| Akkusativ | den Tisch   | das Kind   | die Tasche | die Eltern |
+| Nominativ | der Tisch   | die Tasche | das Kind   | die Eltern |
+| Genitiv   | des Tisches | der Tasche | des Kindes | der Eltern |
+| Dativ     | dem Tisch   | der Tasche | dem Kind   | den Eltern |
+| Akkusativ | den Tisch   | die Tasche | das Kind   | die Eltern |
 
 ## Unbestimmter Artikel
 
-|           | Maskulinum    | Neutrum      | Femininum    |
-| --------- | ------------- | ------------ | ------------ |
-| Nominativ | ein Tisch     | ein Kind     | eine Tasche  |
-| Genitiv   | eines Tisches | eines Kindes | einer Tasche |
-| Dativ     | einem Tisch   | einem Kind   | einer Tasche |
-| Akkusativ | einen Tisch   | ein Kind     | eine Tasche  |
+|           | Maskulinum    | Femininum   | Neutrum      |
+| --------- | ------------- | ------------| ------------ |
+| Nominativ | ein Tisch     | eine Tasche | ein Kind     |
+| Genitiv   | eines Tisches | einer Tasche| eines Kindes |
+| Dativ     | einem Tisch   | einer Tasche| einem Kind   |
+| Akkusativ | einen Tisch   | eine Tasche | ein Kind     |
 
 ## Beispiel
 
