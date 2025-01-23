@@ -16,3 +16,23 @@ tags:
 - Sprechen Sie Deutsch? _(Do you speak German?)_
 - Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
 - Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
+- Was kann ich für Sie tun? _(What can I do for you?)_
+- Ich möchte mich in der Schweiz anmelden. _(I want to register in Switzerland.)_
+- Wie ist Ihr Vorname? _(What is your first name?)_
+- Mein Vorname ist Xin. _(My first name is Xin.)_
+- Wie ist Ihr Nachname? _(What is your last name?)_
+- Mein Nachname ist Chen. _(My last name is Chen.)_
+- Wie ist Ihre Adresse? _(What is your address?)_
+- Meine Adresse ist Thalkirchner Str. 88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
+- Was ist Ihr Wohnort? _(What is your place of residence?)_
+- Mein Wohnort ist München. _(My place of residence is Munich.)_
+- Wie ist Ihre Telefonnummer? _(What is your phone number?)_
+- Meine Telefonnummer ist 0176 12345678. _(My phone number is 0176 12345678.)_
+- Was ist Ihre Herkunft? _(What is your origin?)_
+- Was ist Ihre Muttersprache? _(What is your mother tongue?)_
+- Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
+- Wie heißt du? _(What is your name?)_
+- Woher kommst du? _(Where are you from?)_
+- Wo wohnst du? _(Where do you live?)_
+- Welche Sprache sprichst du? _(What language do you speak?)_
+

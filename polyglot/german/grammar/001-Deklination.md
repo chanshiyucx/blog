@@ -5,7 +5,7 @@ tags:
   - German/Grammar
 ---
 
-## Nominative
+## Nominativ
 
 **Function**: Indicates the subject of the sentence (who/what is doing something).  
 **Question Words**: _Wer?_ or _Was?_  
@@ -14,7 +14,7 @@ tags:
 - **Der Hund** bellt.
 - **Das Buch** ist interessant.
 
-## Genitive
+## Genitiv
 
 **Function**: Indicates possession (whose/what belongs to whom). Equivalent to "of" or "'s" in English.  
 **Question Word**: _Wessen?_  
@@ -23,7 +23,7 @@ tags:
 - Das Fell **des Hundes** ist braun.
 - Ich kenne den Title **des Buches**.
 
-## Dative
+## Dativ
 
 **Function**: Indicates the indirect object (to/for whom something is done).  
 **Question Word**: _Wem?_  
@@ -32,7 +32,7 @@ tags:
 - Ich gebe **dem Hund** Futter.
 - Er hilft **seiner Freundin**.
 
-## Accusative
+## Akkusativ
 
 **Function**: Indicates the direct object (the object directly acted upon).  
 **Question Words**: _Wen?_ or _Was?_  
@@ -41,10 +41,9 @@ tags:
 - Ich sehe **den Hund**.
 - Er kauft **einen Apfel**.
 
-| Case       | Function        | Question Words    | Example                            |
-| ---------- | --------------- | ----------------- | ---------------------------------- |
-| Nominative | Subject         | _Wer?_  or _Was?_ | **Der Hund** bellt.                |
-| Genitive   | Possession      | _Wessen?_         | Das Fell **des Hundes** ist braun. |
-| Dative     | Indirect Object | _Wem?_            | Ich gebe **dem Hund** Futter.      |
-| Accusative | Direct Object   | _Wen?_  or _Was?_ | Ich sehe **den Hund**.             |
-|            |                 |                   |                                    |
+| Case      | Function        | Question Words    | Example                            |
+| --------- | --------------- | ----------------- | ---------------------------------- |
+| Nominativ | Subject         | _Wer?_  or _Was?_ | **Der Hund** bellt.                |
+| Genitiv   | Possession      | _Wessen?_         | Das Fell **des Hundes** ist braun. |
+| Dativ     | Indirect Object | _Wem?_            | Ich gebe **dem Hund** Futter.      |
+| Akkusativ | Direct Object   | _Wen?_  or _Was?_ | Ich sehe **den Hund**.             |
