@@ -46,11 +46,11 @@ tags:
 
 |          | D    | A    | Beispiel                                              |
 | -------- | ---- | ---- | ----------------------------------------------------- |
-| ich      | mir  | mich | Ich wasche mir die Hände. (D)<br>Ich wasche mich. (A) |
-| du       | dir  | dich | Du wäschst dir die Hände.<br>Du wäschst dich.         |
-| er/es    | sich | sich | Er wäscht sich die Hände.<br>Er wäscht sich.          |
-| sie      | sich | sich | Sie wäscht sich die Hände.<br>Sie wäscht sich.        |
-| wir      | uns  | uns  | Wir waschen uns die Hände.<br>Wir waschen uns.        |
-| ihr      | euch | euch | Ihr wascht euch die Hände.<br>Ihr wascht euch.        |
-| sie (Pl) | sich | sich | Sie waschen sich die Hände.<br>Sie waschen sich.      |
-| Sie      | sich | sich | Sie waschen sich die Hände.<br>Sie waschen sich.      |
+| ich      | mir  | mich | Ich wasche mir die Hände. (D)<br/>Ich wasche mich. (A) |
+| du       | dir  | dich | Du wäschst dir die Hände.<br/>Du wäschst dich.         |
+| er/es    | sich | sich | Er wäscht sich die Hände.<br/>Er wäscht sich.          |
+| sie      | sich | sich | Sie wäscht sich die Hände.<br/>Sie wäscht sich.        |
+| wir      | uns  | uns  | Wir waschen uns die Hände.<br/>Wir waschen uns.        |
+| ihr      | euch | euch | Ihr wascht euch die Hände.<br/>Ihr wascht euch.        |
+| sie (Pl) | sich | sich | Sie waschen sich die Hände.<br/>Sie waschen sich.      |
+| Sie      | sich | sich | Sie waschen sich die Hände.<br/>Sie waschen sich.      |
