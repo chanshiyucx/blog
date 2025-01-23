@@ -9,19 +9,19 @@ tags:
 
 |           | Maskulinum  | Femininum  | Neutrum    | Plural     |
 | --------- | ----------- | ---------- | ---------- | ---------- |
-| Nominativ | der Tisch   | die Tasche | das Kind   | die Eltern |
-| Genitiv   | des Tisches | der Tasche | des Kindes | der Eltern |
-| Dativ     | dem Tisch   | der Tasche | dem Kind   | den Eltern |
-| Akkusativ | den Tisch   | die Tasche | das Kind   | die Eltern |
+| N | der Tisch   | die Tasche | das Kind   | die Eltern |
+| G   | des Tisches | der Tasche | des Kindes | der Eltern |
+| D     | dem Tisch   | der Tasche | dem Kind   | den Eltern |
+| A | den Tisch   | die Tasche | das Kind   | die Eltern |
 
 ## Unbestimmter Artikel
 
 |           | Maskulinum    | Femininum   | Neutrum      |
 | --------- | ------------- | ------------| ------------ |
-| Nominativ | ein Tisch     | eine Tasche | ein Kind     |
-| Genitiv   | eines Tisches | einer Tasche| eines Kindes |
-| Dativ     | einem Tisch   | einer Tasche| einem Kind   |
-| Akkusativ | einen Tisch   | eine Tasche | ein Kind     |
+| N | ein Tisch     | eine Tasche | ein Kind     |
+| G   | eines Tisches | einer Tasche| eines Kindes |
+| D     | einem Tisch   | einer Tasche| einem Kind   |
+| A | einen Tisch   | eine Tasche | ein Kind     |
 
 ## Beispiel
 
