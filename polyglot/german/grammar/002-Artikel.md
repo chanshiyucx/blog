@@ -7,12 +7,12 @@ tags:
 
 ## Bestimmter Artikel
 
-|           | Maskulinum  | Femininum  | Neutrum    | Plural     |
-| --------- | ----------- | ---------- | ---------- | ---------- |
-| N | der Tisch   | die Tasche | das Kind   | die Eltern |
+|     | Maskulinum  | Femininum  | Neutrum    | Plural     |
+| --- | ----------- | ---------- | ---------- | ---------- |
+| N   | der Tisch   | die Tasche | das Kind   | die Eltern |
 | G   | des Tisches | der Tasche | des Kindes | der Eltern |
-| D     | dem Tisch   | der Tasche | dem Kind   | den Eltern |
-| A | den Tisch   | die Tasche | das Kind   | die Eltern |
+| D   | dem Tisch   | der Tasche | dem Kind   | den Eltern |
+| A   | den Tisch   | die Tasche | das Kind   | die Eltern |
 
 ## Unbestimmter Artikel
 
