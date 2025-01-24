@@ -44,8 +44,8 @@ tags:
 
 ## Reflexiv
 
-|          | D    | A    | Beispiel                                              |
-| -------- | ---- | ---- | ----------------------------------------------------- |
+|          | D    | A    | Beispiel                                               |
+| -------- | ---- | ---- | ------------------------------------------------------ |
 | ich      | mir  | mich | Ich wasche mir die Hände. (D)<br/>Ich wasche mich. (A) |
 | du       | dir  | dich | Du wäschst dir die Hände.<br/>Du wäschst dich.         |
 | er/es    | sich | sich | Er wäscht sich die Hände.<br/>Er wäscht sich.          |
