@@ -41,3 +41,6 @@ tags:
 - Wie ist deine Adresse? _(What is your address?)_
 - Wie ist deine Herkunft? _(What is your origin?)_
 - Woher kommst du? _(Where are you from?)_
+- Was ist deine Muttersprache? _(What is your mother tongue?)_
+- Wie ist deine Telefonnummer? _(What is your phone number?)_
+- Ich bin 30 Jahre alt. _(I am 30 years old.)_
