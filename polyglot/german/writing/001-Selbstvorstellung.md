@@ -31,8 +31,13 @@ tags:
 - Was ist Ihre Herkunft? _(What is your origin?)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
+---
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
 - Welche Sprache sprichst du? _(What language do you speak?)_
 - Wie ist dein Vorname? _(What is your first name?)_
+- Wie ist dein Nachname? _(What is your last name?)_
+- Wie ist deine Adresse? _(What is your address?)_
+- Wie ist deine Herkunft? _(What is your origin?)_
+- Woher kommst du? _(Where are you from?)_
