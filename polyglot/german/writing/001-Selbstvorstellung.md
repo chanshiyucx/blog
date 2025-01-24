@@ -23,7 +23,7 @@ tags:
 - Wie ist Ihr Nachname? _(What is your last name?)_
 - Mein Nachname ist Chen. _(My last name is Chen.)_
 - Wie ist Ihre Adresse? _(What is your address?)_
-- Meine Adresse ist Thalkirchner Str. 88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
+- Meine Adresse ist Thalkirchner Str, 88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
 - Was ist Ihr Wohnort? _(What is your place of residence?)_
 - Mein Wohnort ist München. _(My place of residence is Munich.)_
 - Wie ist Ihre Telefonnummer? _(What is your phone number?)_
@@ -44,3 +44,5 @@ tags:
 - Was ist deine Muttersprache? _(What is your mother tongue?)_
 - Wie ist deine Telefonnummer? _(What is your phone number?)_
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
+- Wie alt sind Sie? _(How old are you?)_
+- Wie alt bist du? _(How old are you?)_
