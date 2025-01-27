@@ -23,7 +23,7 @@ tags:
 - Wie ist Ihr Nachname? _(What is your last name?)_
 - Mein Nachname ist Chen. _(My last name is Chen.)_
 - Wie ist Ihre Adresse? _(What is your address?)_
-- Meine Adresse ist Thalkirchner Str, 88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
+- Meine Adresse ist Thalkirchner Str.88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
 - Was ist Ihr Wohnort? _(What is your place of residence?)_
 - Mein Wohnort ist München. _(My place of residence is Munich.)_
 - Wie ist Ihre Telefonnummer? _(What is your phone number?)_
@@ -31,9 +31,12 @@ tags:
 - Was ist Ihre Herkunft? _(What is your origin?)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
+- Sind Sie verheiratet? _(Are you married?)_
+- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
+- Ich bin ledig. _(I am single.)_
+- Ich bin verheiratet. _(I am married.)_
 - Ja. Richtig. _(Yes, correct.)_
 - Ja. Genau. _(Yes, exactly.)_
----
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
@@ -47,5 +50,16 @@ tags:
 - Wie alt sind Sie? _(How old are you?)_
 - Wie alt bist du? _(How old are you?)_
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
----
-Hallo! Ich heiße XinChen. Ich bin 30 Jahre alt. Ich komme aus China und wohne in München. Ich spreche Chinesisch, Englisch und ich lerne Deutsch. Ich bin ledig. Ich arbeite als Architekt.
+- Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
+- Das sind meine Eltern. _(This is my parents.)_
+- Das sind meine Freunde. _(This is my friends.)_
+- Das ist meine Familie. _(This is my family.)_
+- Das ist meine Frau. _(This is my wife.)_
+- Das ist meine Mutter. _(This is my mother.)_
+- Das ist mein Vater. _(This is my father.)_
+- Sie sind verheiratet. _(They are married.)_
+- Sie tanzt gern. _(She likes to dance.)_
+- Er spielt gern Fußball. _(He likes to play football.)_
+- Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
+- Wie geht es Ihnen? _(How are you?)_
+- Danke, mir geht es gut. _(Thank you, I am fine.)_
