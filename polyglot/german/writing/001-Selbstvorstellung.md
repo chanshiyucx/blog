@@ -47,3 +47,5 @@ tags:
 - Wie alt sind Sie? _(How old are you?)_
 - Wie alt bist du? _(How old are you?)_
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
+---
+Hallo! Ich heiße XinChen. Ich bin 30 Jahre alt. Ich komme aus China und wohne in München. Ich spreche Chinesisch, Englisch und ich lerne Deutsch. Ich bin ledig. Ich arbeite als Architekt.
