@@ -15,7 +15,6 @@ tags:
 - Ich spreche Deutsch. _(I speak German.)_
 - Sprechen Sie Deutsch? _(Do you speak German?)_
 - Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
-- Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
 - Was kann ich für Sie tun? _(What can I do for you?)_
 - Ich möchte mich in der Schweiz anmelden. _(I want to register in Switzerland.)_
 - Wie ist Ihr Vorname? _(What is your first name?)_
@@ -29,18 +28,18 @@ tags:
 - Wie ist Ihre Telefonnummer? _(What is your phone number?)_
 - Meine Telefonnummer ist 0176 12345678. _(My phone number is 0176 12345678.)_
 - Was ist Ihre Herkunft? _(What is your origin?)_
+- Meine Herkunft ist China. _(My origin is China.)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
 - Sind Sie verheiratet? _(Are you married?)_
 - Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
 - Ich bin ledig. _(I am single.)_
 - Ich bin verheiratet. _(I am married.)_
-- Ja. Richtig. _(Yes, correct.)_
-- Ja. Genau. _(Yes, exactly.)_
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
 - Welche Sprache sprichst du? _(What language do you speak?)_
+- Sprichst du Deutsch? _(Do you speak German?)_
 - Wie ist dein Vorname? _(What is your first name?)_
 - Wie ist dein Nachname? _(What is your last name?)_
 - Wie ist deine Adresse? _(What is your address?)_
@@ -55,6 +54,7 @@ tags:
 - Das sind meine Freunde. _(This is my friends.)_
 - Das ist meine Familie. _(This is my family.)_
 - Das ist meine Frau. _(This is my wife.)_
+- Das ist mein Mann. _(This is my husband.)_
 - Das ist meine Mutter. _(This is my mother.)_
 - Das ist mein Vater. _(This is my father.)_
 - Sie sind verheiratet. _(They are married.)_
@@ -62,4 +62,16 @@ tags:
 - Er spielt gern Fußball. _(He likes to play football.)_
 - Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
 - Wie geht es Ihnen? _(How are you?)_
+- Wie geht es dir? _(How are you?)_
 - Danke, mir geht es gut. _(Thank you, I am fine.)_
+- Mir geht es sehr gut. _(I am very fine.)_
+- Mir geht es nicht so gut. _(I am not so fine.)_
+- Es geht mir gut. _(I am fine.)_
+- Mir ist kalt. _(I am cold.)_
+- Mir ist schlecht. _(I am sick.)_
+- Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
+- Ja. Richtig. _(Yes, correct.)_
+- Ja. Genau. _(Yes, exactly.)_
+- Kommst du aus China? _(Are you from China?)_
+- Ja, ich komme aus China. _(Yes, I am from China.)_
+- Nein, ich komme nicht aus China. _(No, I am not from China.)_

@@ -5,6 +5,20 @@ tags:
   - German/Grammar
 ---
 
+## Personal
+
+|          | N   | A    | D     | G      |
+| -------- | --- | ---- | ----- | ------ |
+| ich      | ich | mich | mir   | meiner |
+| du       | du  | dich | dir   | deiner |
+| er       | er  | ihn  | ihm   | seiner |
+| es       | es  | es   | ihm   | seiner |
+| sie      | sie | sie  | ihr   | ihrer  |
+| wir      | wir | uns  | uns   | unser  |
+| ihr      | ihr | euch | euch  | euer   |
+| sie (Pl) | sie | sie  | ihnen | ihrer  |
+| Sie      | Sie | Sie  | Ihnen | Ihrer  |
+
 ## Possessiv
 
 |         |     | Maskulinum | Femininum | Neutrum | Plural  |
