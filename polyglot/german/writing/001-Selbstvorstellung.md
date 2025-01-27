@@ -31,6 +31,7 @@ tags:
 - Was ist Ihre Herkunft? _(What is your origin?)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
+- Ja. Richtig. _(Yes, correct.)_
 ---
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
@@ -46,3 +47,4 @@ tags:
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
 - Wie alt sind Sie? _(How old are you?)_
 - Wie alt bist du? _(How old are you?)_
+
