@@ -12,6 +12,7 @@ tags:
 - Es ist schwarz. _(It is black.)_
 - Welche Farbe haben die Schuhe? _(What color are the shoes?)_
 - Sie sind braun. _(They are brown.)_
+----
 - Wie viel kostet das Kleid? _(How much is the dress?)_
 - Es kostet hundertneunundvierzig Euro. _(It costs one hundred and forty-nine euros.)_
 - Wie viel kostet der Pullover? _(How much is the sweater?)_
@@ -20,7 +21,8 @@ tags:
 - Sie kosten vierzehn Euro dreißig. _(They cost fourteen euros thirty.)_
 - Wie viel kostet die Schere? _(How much are the scissors?)_
 - Sie kostet sechs Euro achtzig. _(It costs six euros eighty.)_
-- ==Neun Euro für ein Bier sind teuer!== _(Nine euros for a beer is expensive!)_
+---
+- Neun Euro für ein Bier sind teuer! _(Nine euros for a beer is expensive!)_
 - Das ist teuer! _(That is expensive!)_
 - Der Kaffee ist heiß. _(The coffee is hot.)_
 - Der Wein ist sauer. _(The wine is sour.)_

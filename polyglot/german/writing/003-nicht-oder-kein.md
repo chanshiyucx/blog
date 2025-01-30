@@ -5,14 +5,31 @@ tags:
   - German/Writing
 ---
 - Was ist das?
-- Das ist ein Buch.
+- Das ist ein Buch.  
+---
 - Ist das eine Lampe?
 - Nein. Das ist keine Lampe.
 - Das ist ein Glas.
+---
 - Ist das ein Bett?
 - Nein. Das ist kein Bett.
 - Das ist ein Sofa.
+---
 - Wer ist das?
 - Das ist Nicole.
+- Sie kommt aus Deutsch.
+---
 - Ist das dein Freund?
 - Nein. Das ist nicht mein Freund.
+- Hast du eine Freundin?
+- Nein. Ich habe keine Freundin.
+---
+- Haben Sie Kinder?
+- Nein. Ich habe keine Kinder.
+- Ja. Ich habe **eine Tochter**.
+- Ja. Ich habe **einen Sohn**.
+---
+- Ich habe eine Schwester.
+- Ich habe einen Bruder.
+---
+- Sprechen Sie bitte langsam.

@@ -11,11 +11,14 @@ tags:
 - Wo wohnen Sie? _(Where do you live?)_
 - Ich wohne in München. _(I live in Munich.)_
 - Ich wohne hier in München. _(I live here in Munich.)_
+---
 - Welche Sprache sprechen Sie? _(What language do you speak?)_
 - Ich spreche Deutsch. _(I speak German.)_
 - Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
+- Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
 - Sprechen Sie Deutsch? _(Do you speak German?)_
 - Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
+---
 - Was kann ich für Sie tun? _(What can I do for you?)_
 - Ich möchte mich in der Schweiz anmelden. _(I want to register in Switzerland.)_
 - Wie ist Ihr Vorname? _(What is your first name?)_
@@ -35,14 +38,17 @@ tags:
 - Kommst du aus China? _(Are you from China?)_
 - Ja, ich komme aus China. _(Yes, I am from China.)_
 - Nein, ich komme nicht aus China. _(No, I am not from China.)_
+---
 - Sind Sie verheiratet? _(Are you married?)_
 - Bist du verheiratet? _(Are you married?)_
 - Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
+- Ja. Ich bin verheiratet. _(I am married.)_
 - Ich bin ledig. _(I am single.)_
-- Ich bin verheiratet. _(I am married.)_
+---
 - Wie alt sind Sie? _(How old are you?)_
 - Wie alt bist du? _(How old are you?)_
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
+---
 - Wie geht es Ihnen? _(How are you?)_
 - Wie geht es dir? _(How are you?)_
 - Danke, mir geht es gut. _(Thank you, I am fine.)_
@@ -50,7 +56,8 @@ tags:
 - Mir geht es nicht so gut. _(I am not so fine.)_
 - Es geht mir gut. _(I am fine.)_
 - Mir ist kalt. _(I am cold.)_
-- Mir ist schlecht. _(I am sick.)
+- Mir ist schlecht. _(I am sick.)  
+---
 - Wer ist das? _(Who is that?)_
 - Das ist meine Familie. _(This is my family.)_
 - Das sind meine Kinder. _(These are my children.)_
@@ -63,6 +70,21 @@ tags:
 - Das ist mein Vater. _(This is my father.)_
 - Das ist meine Schwester. _(This is my sister.)_
 - Das ist mein Bruder. _(This is my brother.)_
+- Das sind meine Freunde. _(These are my friends.)_
+---
+- Sie sind verheiratet. _(They are married.)_
+- Ich habe zwei Kinder. _(I have two children.)_
+- Meine Mutter arbeitet als Kassiererin. _(My mother works as a cashier.)_
+- Sie arbeitet als Kassiererin. _(She works as a cashier.)_
+- Mein Mann arbeitet als Polizist. _(My husband works as a policeman.)_
+- Er arbeitet als Polizist. _(He works as a policeman.)_
+- Meine Schwester ist neun Jahre alt. _(My sister is nine years old.)_
+- Sie ist neun Jahre alt. _(She is nine years old.)_
+- Mein Bruder ist zwölf Jahre alt. _(My brother is twelve years old.)_
+- Er ist elf Jahre alt. _(He is eleven years old.)_
+- Sie tanzt gern. _(She likes to dance.)_  
+- Er spielt gern Fußball. _(He likes to play football.)_
+---
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
@@ -74,21 +96,14 @@ tags:
 - Wie ist deine Telefonnummer? _(What is your phone number?)_
 - Wie ist deine Herkunft? _(What is your origin?)_
 - Was ist deine Muttersprache? _(What is your mother tongue?)_
-- Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
-- Das sind meine Freunde. _(These are my friends.)_
-- Ich habe zwei Kinder. _(I have two children.)_
-- Mein Bruder ist zwölf Jahre alt. _(My brother is twelve years old.)_
-- Er ist elf Jahre alt. _(He is eleven years old.)_
-- Sie ist neun Jahre alt. _(She is nine years old.)_
-- Sie sind verheiratet. _(They are married.)_
-- Sie tanzt gern. _(She likes to dance.)_  
-- Er spielt gern Fußball. _(He likes to play football.)_
-- Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
-- Ja. Richtig. _(Yes, correct.)_
-- Ja. Genau. _(Yes, exactly.)_
+---
 - Woher kommt Erik? _(Where does Erik come from?)_
 - Er kommt aus Schweden. _(He comes from Sweden.)_
 - Sie kommt aus Indien. _(She comes from India.)_
 - Wo wohnt Erik? _(Where does Erik live?)_
 - Er wohnt in Zürich. _(He lives in Zurich.)_
 - Sie wohnt in Basel. _(She lives in Basel.)_
+---
+- Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
+- Ja. Richtig. _(Yes, correct.)_
+- Ja. Genau. _(Yes, exactly.)_

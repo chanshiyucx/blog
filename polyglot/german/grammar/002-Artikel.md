@@ -16,12 +16,12 @@ tags:
 
 ## Unbestimmter Artikel
 
-|           | Maskulinum    | Femininum   | Neutrum      |
-| --------- | ------------- | ------------| ------------ |
-| N | ein Tisch     | eine Tasche | ein Kind     |
-| G   | eines Tisches | einer Tasche| eines Kindes |
-| D     | einem Tisch   | einer Tasche| einem Kind   |
-| A | einen Tisch   | eine Tasche | ein Kind     |
+|     | Maskulinum    | Femininum    | Neutrum      |
+| --- | ------------- | ------------ | ------------ |
+| N   | ein Tisch     | eine Tasche  | ein Kind     |
+| G   | eines Tisches | einer Tasche | eines Kindes |
+| D   | einem Tisch   | einer Tasche | einem Kind   |
+| A   | einen Tisch   | eine Tasche  | ein Kind     |
 
 ## Beispiel
 
