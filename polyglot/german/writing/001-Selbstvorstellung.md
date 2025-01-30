@@ -63,7 +63,6 @@ tags:
 - Das ist mein Vater. _(This is my father.)_
 - Das ist meine Schwester. _(This is my sister.)_
 - Das ist mein Bruder. _(This is my brother.)_
----
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
