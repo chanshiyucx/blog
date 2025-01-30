@@ -35,10 +35,11 @@ tags:
 - Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
 - Ich bin ledig. _(I am single.)_
 - Ich bin verheiratet. _(I am married.)_
+---
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
 - Wo wohnst du? _(Where do you live?)_
-- Welche Sprache sprichst du? _(What language do you speak?)_
+- Welche Sprachen sprichst du? _(What language do you speak?)_
 - Sprichst du Deutsch? _(Do you speak German?)_
 - Wie ist dein Vorname? _(What is your first name?)_
 - Wie ist dein Nachname? _(What is your last name?)_
@@ -60,7 +61,6 @@ tags:
 - Sie sind verheiratet. _(They are married.)_
 - Sie tanzt gern. _(She likes to dance.)_
 - Er spielt gern Fußball. _(He likes to play football.)_
-- Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
 - Wie geht es Ihnen? _(How are you?)_
 - Wie geht es dir? _(How are you?)_
 - Danke, mir geht es gut. _(Thank you, I am fine.)_
@@ -75,3 +75,7 @@ tags:
 - Kommst du aus China? _(Are you from China?)_
 - Ja, ich komme aus China. _(Yes, I am from China.)_
 - Nein, ich komme nicht aus China. _(No, I am not from China.)_
+- Ich habe zwei Kinder.
+- Er ist elf Jahre alt.
+- Sie ist nenu Jahre alt.
+- Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
