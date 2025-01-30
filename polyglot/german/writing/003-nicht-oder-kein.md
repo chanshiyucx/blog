@@ -1,7 +1,7 @@
 ---
-title: 
+title: nicht oder kein
 date: 2025-01-30 17:55:58
-tags: 
+tags:
   - German/Writing
 ---
 - Was ist das?
