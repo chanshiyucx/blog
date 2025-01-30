@@ -35,6 +35,9 @@ tags:
 - Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
 - Ich bin ledig. _(I am single.)_
 - Ich bin verheiratet. _(I am married.)_
+- Wie alt sind Sie? _(How old are you?)_
+- Wie alt bist du? _(How old are you?)_
+- Ich bin 30 Jahre alt. _(I am 30 years old.)_
 ---
 - Wie heißt du? _(What is your name?)_
 - Woher kommst du? _(Where are you from?)_
@@ -47,9 +50,6 @@ tags:
 - Wie ist deine Telefonnummer? _(What is your phone number?)_
 - Wie ist deine Herkunft? _(What is your origin?)_
 - Was ist deine Muttersprache? _(What is your mother tongue?)_
-- Wie alt sind Sie? _(How old are you?)_
-- Wie alt bist du? _(How old are you?)_
-- Ich bin 30 Jahre alt. _(I am 30 years old.)_
 - Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
 - Das sind meine Eltern. _(This is my parents.)_
 - Das sind meine Freunde. _(This is my friends.)_
