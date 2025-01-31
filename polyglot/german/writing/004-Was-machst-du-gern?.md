@@ -4,7 +4,7 @@ date: 2025-01-31 10:45:07
 tags: 
   - German/Writing
 ---
-- Was machst du gern? (What do you like to do?)
+- **Was machst du gern?** (What do you like to do?)
 - Ich spiele gern Fußball. (I like to play soccer.)
 - Ich spiele gern Basketball. (I like to play basketball.)
 - Ich schwimme gern. (I like to swim.)
@@ -15,11 +15,7 @@ tags:
 - **Ich esse gern Pizza.** (I like to eat pizza.)
 - **Ich kaufe gern Schuhe.** (I like to buy shoes.)
 ---
-- Spielst du gern Fußball? (Do you like to play soccer?)
-- Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
-- Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
----
-- Was machst du nicht gern? (What don't you like to do?)
+- **Was machst du nicht gern?** (What don't you like to do?)
 - Ich putze nicht gern. (I don't like to clean.)
 - Ich arbeite nicht gern. (I don't like to work.)
 - Ich koche nicht gern. (I don't like to cook.)
@@ -52,7 +48,28 @@ tags:
 > - Ich lese die Zeitung（我在读报纸）- 特指某份报纸
 
 ---
+- **Spielst du gern Fußball?** (Do you like to play soccer?)
+- Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
+- Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
+- Fährst du gern Velo?
+- Ja. Ich fahre gern Velo.
+- Nein. Ich fahre nicht gern Velo.
+---
+- **Machst du oft Sport?**
+- Ja. Ich mache oft Sport.
+- Nein. Ich mache selten Sport.
+---
 - Was machst du am Montag? (What are you doing on Monday?)
 - Ich gehe ins Kino. (I'm going to the cinema.)
 - Was machst du am Dienstag? (What are you doing on Tuesday?)
 - Ich putze die Wohnung. (I'm cleaning the apartment.)
+---
+- Rauchst du?
+- Ja. Ich rauche manchmal.
+- Nein. Ich rauche nicht.
+---
+- Isst du gesund?
+- Ja. Ich esse meistens gesund.
+- Nein. Ich esse selten gesund.
+---
+- 

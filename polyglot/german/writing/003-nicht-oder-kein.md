@@ -25,7 +25,9 @@ tags:
 - Nein. Ich habe keine Freundin. _(No. I don't have a girlfriend.)_
 ---
 - Haben Sie Kinder? _(Do you have children?)_
+- Hast du Kinder?
 - Nein. Ich habe keine Kinder. _(No. I don't have children.)_
+- Ja. Ich habe Kinder.
 - Ja. Ich habe eine Tochter. _(Yes. I have a daughter.)_
 - Ja. Ich habe einen Sohn. _(Yes. I have a son.)_
 ---
