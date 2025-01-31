@@ -56,9 +56,14 @@ tags:
 - **Spielst du gern Fußball?** (Do you like to play soccer?)
 - Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
 - Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
+---
 - Fährst du gern Rad? (Do you like to ride a bike?)
 - Ja. Ich fahre gern Rad. (Yes, I like to ride a bike.)
 - Nein. Ich fahre nicht gern Rad. (No, I don't like to ride a bike.)
+---
+- Siehst du gern Filme?
+- Ja. Ich sehe gern Filme.
+- Nein. Ich sehe nicht gern Filme.
 ---
 - **Machst du oft Sport?** (Do you exercise often?)
 - Ja. Ich mache oft Sport. (Yes, I exercise often.)

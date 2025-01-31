@@ -43,7 +43,7 @@ tags:
  - **Kannst du gut kochen?** _(Can you cook well?)_
  - **Ja. Ich kann sehr gut kochen.** _(Yes, I can cook very well.)_
  - **Nein. Ich kann nicht gut kochen.** _(No, I cannot cook well.)_
- ---
+---
 - Kannst du Gitarre spielen? _(Can you play guitar?)_
 - Ja. Ich kann Gitarre spielen. _(Yes, I can play guitar.)_
 - Nein. Ich kann nicht Gitarre spielen. _(No, I cannot play guitar.)_

@@ -7,6 +7,10 @@ tags:
 - Was ist das? _(What is this?)_
 - Das ist ein Buch. _(This is a book.)_
 ---
+- Wer ist das? _(Who is this?)_
+- Das ist Nicole. _(This is Nicole.)_
+- Sie kommt aus Deutschland. _(She comes from Germany.)_
+---
 - Ist das eine Lampe? _(Is this a lamp?)_
 - Nein. Das ist keine Lampe. _(No. This is not a lamp.)_
 - Das ist ein Glas. _(This is a glass.)_
@@ -15,17 +19,13 @@ tags:
 - Nein. Das ist kein Bett. _(No. This is not a bed.)_
 - Das ist ein Sofa. _(This is a sofa.)_
 ---
-- Wer ist das? _(Who is this?)_
-- Das ist Nicole. _(This is Nicole.)_
-- Sie kommt aus Deutschland. _(She comes from Germany.)_
----
 - Ist das dein Freund? _(Is this your boyfriend?)_
 - Nein. Das ist nicht mein Freund. _(No. This is not my boyfriend.)_
 - Hast du eine Freundin? _(Do you have a girlfriend?)_
 - Nein. Ich habe keine Freundin. _(No. I don't have a girlfriend.)_
 ---
-- Haben Sie Kinder? _(Do you have children?)_ 
-- Hast du Kinder? _(Do you have children?)_ 
+- Haben Sie Kinder? _(Do you have children?)_
+- Hast du Kinder? _(Do you have children?)_
 - Nein. Ich habe keine Kinder. _(No. I don't have children.)_
 - Ja. Ich habe Kinder. _(Yes. I have children.)_
 - Ja. Ich habe eine Tochter. _(Yes. I have a daughter.)_
@@ -34,7 +34,7 @@ tags:
 - Ich habe eine Schwester. _(I have a sister.)_
 - Ich habe einen Bruder. _(I have a brother.)_
 ---
-- Sprechen Sie bitte langsam. _(Please speak slowly.)_ 
+- Sprechen Sie bitte langsam. _(Please speak slowly.)_
 - Was bedeutet Postleitzahl? _(What does postal code mean?)_
 - Wie schreibt man das? _(How do you write that?)_
 - Ich verstehe kein Schweizerdeutsch. _(I don't understand Swiss German.)_
