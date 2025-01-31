@@ -5,7 +5,7 @@ tags:
   - German/Writing
 ---
 - **Was machst du gern?** (What do you like to do?)
-- Ich spiele gern Fußball. (I like to play soccer.)
+- **Ich spiele gern Fußball.** (I like to play soccer.)
 - Ich spiele gern Basketball. (I like to play basketball.)
 - Ich schwimme gern. (I like to swim.)
 - Ich tanze gern. (I like to dance.)
@@ -48,8 +48,8 @@ tags:
 > - Ich lese die Zeitung（我在读报纸）- 特指某份报纸
 
 ---
-- Was machst du am Montag? (What are you doing on Monday?)
-- Ich gehe ins Kino. (I'm going to the movies.)
+- **Was machst du am Montag?** (What are you doing on Monday?)
+- Ich gehe **ins Kino**. (I'm going to the movies.)
 - Was machst du am Dienstag? (What are you doing on Tuesday?)
 - Ich putze die Wohnung. (I'm cleaning the apartment.)
 ---
@@ -57,11 +57,11 @@ tags:
 - Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
 - Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
 ---
-- Fährst du gern Rad? (Do you like to ride a bike?)
+- **Fährst du gern Rad?** (Do you like to ride a bike?)
 - Ja. Ich fahre gern Rad. (Yes, I like to ride a bike.)
 - Nein. Ich fahre nicht gern Rad. (No, I don't like to ride a bike.)
 ---
-- Siehst du gern Filme?
+- **Siehst du gern Filme?**
 - Ja. Ich sehe gern Filme.
 - Nein. Ich sehe nicht gern Filme.
 ---

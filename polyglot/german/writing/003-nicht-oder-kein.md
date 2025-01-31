@@ -4,10 +4,10 @@ date: 2025-01-30 17:55:58
 tags:
   - German/Writing
 ---
-- Was ist das? _(What is this?)_
+- **Was ist das?** _(What is this?)_
 - Das ist ein Buch. _(This is a book.)_
 ---
-- Wer ist das? _(Who is this?)_
+- **Wer ist das?** _(Who is this?)_
 - Das ist Nicole. _(This is Nicole.)_
 - Sie kommt aus Deutschland. _(She comes from Germany.)_
 ---
@@ -35,10 +35,10 @@ tags:
 - Ich habe einen Bruder. _(I have a brother.)_
 ---
 - Sprechen Sie bitte langsam. _(Please speak slowly.)_
+- Sprechen Sie bitte Hochdeutsch. _(Please speak Standard German.)_
 - Was bedeutet Postleitzahl? _(What does postal code mean?)_
 - Wie schreibt man das? _(How do you write that?)_
 - Ich verstehe kein Schweizerdeutsch. _(I don't understand Swiss German.)_
-- Sprechen Sie bitte Hochdeutsch. _(Please speak Standard German.)_
 - Können Sie das bitte buchstabieren? _(Could you please spell that?)_
 - Kannst du das bitte buchstabieren? _(Can you please spell that?)_
 - Können Sie das bitte wiederholen? _(Could you please repeat that?)_
@@ -49,7 +49,7 @@ tags:
 > 这句话 "Kannst du das bitte wiederholen?" 中：
 >
 > - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
-> - 在德语中，当句子有情态动词时，第二个动词要用原形放在句尾
+> - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
 > - "wiederholen" 就是这个需要放在句尾的原形动词
 >
 > 所以完整的语法解析是：

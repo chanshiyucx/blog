@@ -22,7 +22,7 @@ tags:
 - Wie viel kosten die Tabletten? _(How much are the pills?)_
 - Sie kosten vierzehn Euro dreißig. _(They cost fourteen euros thirty.)_
 ---
-- Neun Euro für ein Bier **sind** teuer! _(Nine euros for a beer is expensive!)_
+- **Neun Euro für ein Bier sind teuer!** _(Nine euros for a beer is expensive!)_
 
 > [!NOTE]  
 >
@@ -40,5 +40,5 @@ tags:
 - **Das ist teuer!** _(That is expensive!)_
 - Der Kaffee ist heiß. _(The coffee is hot.)_
 - Der Wein ist sauer. _(The wine is sour.)_
-- Vitamine sind gesund. _(Vitamins are healthy.)_
 - Die Schokolade ist süß. _(The chocolate is sweet.)_
+- Vitamine sind gesund. _(Vitamins are healthy.)_
