@@ -12,7 +12,7 @@ tags:
 - Es ist schwarz. _(It is black.)_
 - Welche Farbe haben die Schuhe? _(What color are the shoes?)_
 - Sie sind braun. _(They are brown.)_
-----
+---
 - Wie viel kostet das Kleid? _(How much is the dress?)_
 - Es kostet hundertneunundvierzig Euro. _(It costs one hundred and forty-nine euros.)_
 - Wie viel kostet der Pullover? _(How much is the sweater?)_
