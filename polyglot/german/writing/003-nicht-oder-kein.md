@@ -24,25 +24,25 @@ tags:
 - Hast du eine Freundin? _(Do you have a girlfriend?)_
 - Nein. Ich habe keine Freundin. _(No. I don't have a girlfriend.)_
 ---
-- Haben Sie Kinder? _(Do you have children?)_
-- Hast du Kinder?
+- Haben Sie Kinder? _(Do you have children?)_ 
+- Hast du Kinder? _(Do you have children?)_ 
 - Nein. Ich habe keine Kinder. _(No. I don't have children.)_
-- Ja. Ich habe Kinder.
+- Ja. Ich habe Kinder. _(Yes. I have children.)_
 - Ja. Ich habe eine Tochter. _(Yes. I have a daughter.)_
 - Ja. Ich habe einen Sohn. _(Yes. I have a son.)_
 ---
 - Ich habe eine Schwester. _(I have a sister.)_
 - Ich habe einen Bruder. _(I have a brother.)_
 ---
-- Sprechen Sie bitte langsam. _(Please speak slowly.)_
-- Was bedeutet Postleitzahl? _(What does Postleitzahl mean?)_
+- Sprechen Sie bitte langsam. _(Please speak slowly.)_ 
+- Was bedeutet Postleitzahl? _(What does postal code mean?)_
 - Wie schreibt man das? _(How do you write that?)_
 - Ich verstehe kein Schweizerdeutsch. _(I don't understand Swiss German.)_
 - Sprechen Sie bitte Hochdeutsch. _(Please speak Standard German.)_
 - Können Sie das bitte buchstabieren? _(Could you please spell that?)_
 - Kannst du das bitte buchstabieren? _(Can you please spell that?)_
 - Können Sie das bitte wiederholen? _(Could you please repeat that?)_
-- Kannst du das bitte wiederholen? _(Can you please repeat that?)_
+- **Kannst du das bitte wiederholen?** _(Can you please repeat that?)_
 
 > [!NOTE]
 >

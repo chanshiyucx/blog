@@ -48,28 +48,18 @@ tags:
 > - Ich lese die Zeitung（我在读报纸）- 特指某份报纸
 
 ---
-- **Spielst du gern Fußball?** (Do you like to play soccer?)
-- Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
-- Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
-- Fährst du gern Velo?
-- Ja. Ich fahre gern Velo.
-- Nein. Ich fahre nicht gern Velo.
----
-- **Machst du oft Sport?**
-- Ja. Ich mache oft Sport.
-- Nein. Ich mache selten Sport.
----
 - Was machst du am Montag? (What are you doing on Monday?)
-- Ich gehe ins Kino. (I'm going to the cinema.)
+- Ich gehe ins Kino. (I'm going to the movies.)
 - Was machst du am Dienstag? (What are you doing on Tuesday?)
 - Ich putze die Wohnung. (I'm cleaning the apartment.)
 ---
-- Rauchst du?
-- Ja. Ich rauche manchmal.
-- Nein. Ich rauche nicht.
+- **Spielst du gern Fußball?** (Do you like to play soccer?)
+- Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
+- Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
+- Fährst du gern Rad? (Do you like to ride a bike?)
+- Ja. Ich fahre gern Rad. (Yes, I like to ride a bike.)
+- Nein. Ich fahre nicht gern Rad. (No, I don't like to ride a bike.)
 ---
-- Isst du gesund?
-- Ja. Ich esse meistens gesund.
-- Nein. Ich esse selten gesund.
----
-- 
+- **Machst du oft Sport?** (Do you exercise often?)
+- Ja. Ich mache oft Sport. (Yes, I exercise often.)
+- Nein. Ich mache selten Sport. (No, I rarely exercise.)
