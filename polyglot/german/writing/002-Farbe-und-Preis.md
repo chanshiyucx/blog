@@ -4,14 +4,14 @@ date: 2025-01-30 16:01:16
 tags:
   - German/Writing
 ---
-- Welche Farbe hat die Jacke? _(What color is the jacket?)_
+- Welche Farbe **hat** die Jacke? _(What color is the jacket?)_
 - Sie ist rot. _(It is red.)_
-- Welche Farbe hat der Rucksack? _(What color is the backpack?)_
+- Welche Farbe **hat** der Rucksack? _(What color is the backpack?)_
 - Er ist grün. _(It is green.)_
-- Welche Farbe hat das Handy? _(What color is the mobile phone?)_
+- Welche Farbe **hat** das Handy? _(What color is the mobile phone?)_
 - Es ist schwarz. _(It is black.)_
-- Welche Farbe haben die Schuhe? _(What color are the shoes?)_
-- Sie sind braun. _(They are brown.)_
+- Welche Farbe **haben** die Schuhe? _(What color are the shoes?)_
+- **Sie sind braun.** _(They are brown.)_
 ---
 - Wie viel kostet das Kleid? _(How much is the dress?)_
 - Es kostet hundertneunundvierzig Euro. _(It costs one hundred and forty-nine euros.)_

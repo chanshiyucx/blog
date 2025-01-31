@@ -4,30 +4,30 @@ date: 2025-01-31 10:45:07
 tags: 
   - German/Writing
 ---
-- Was machst du gern?
-- Ich spiele gern Fußball.
-- Ich spiele gern Basketball.
-- Ich schwimme gern.
-- Ich tanze gern.
-- Ich reise gern.
-- Ich chatte gern.
-- **Ich trinke gern Kaffee.**
-- **Ich esse gern Pizza.**
-- **Ich kaufe gern Schuhe.**
+- Was machst du gern? (What do you like to do?)
+- Ich spiele gern Fußball. (I like to play soccer.)
+- Ich spiele gern Basketball. (I like to play basketball.)
+- Ich schwimme gern. (I like to swim.)
+- Ich tanze gern. (I like to dance.)
+- Ich reise gern. (I like to travel.)
+- Ich chatte gern. (I like to chat.)
+- **Ich trinke gern Kaffee.** (I like to drink coffee.)
+- **Ich esse gern Pizza.** (I like to eat pizza.)
+- **Ich kaufe gern Schuhe.** (I like to buy shoes.)
 ---
-- Spielst du gern Fußball?
-- Ja. Ich spiele gern Fußball.
-- Nein. Ich spiele nicht gern Fußball.
+- Spielst du gern Fußball? (Do you like to play soccer?)
+- Ja. Ich spiele gern Fußball. (Yes, I like to play soccer.)
+- Nein. Ich spiele nicht gern Fußball. (No, I don't like to play soccer.)
 ---
-- Was machst du nicht gern?
-- Ich putze nicht gern.
-- Ich arbeite nicht gern.
-- Ich koche nicht gern.
-- Ich lerne nicht gern.
-- Ich fliege nicht gern.
-- Ich telefonieren nicht gern.
-- Ich bezahle nicht gern **die Rechnung**.
-- Ich gieße nicht gern **die Blumen**.
+- Was machst du nicht gern? (What don't you like to do?)
+- Ich putze nicht gern. (I don't like to clean.)
+- Ich arbeite nicht gern. (I don't like to work.)
+- Ich koche nicht gern. (I don't like to cook.)
+- Ich lerne nicht gern. (I don't like to study.)
+- Ich fliege nicht gern. (I don't like to fly.)
+- Ich telefoniere nicht gern. (I don't like to talk on the phone.)
+- Ich bezahle nicht gern **die Rechnung**. (I don't like to pay the bill.)
+- Ich gieße nicht gern **die Blumen**. (I don't like to water the flowers.)
 
 > [!NOTE]
 >
@@ -51,9 +51,8 @@ tags:
 > - Ich mag Musik（我喜欢音乐）- 泛指音乐
 > - Ich lese die Zeitung（我在读报纸）- 特指某份报纸
 
---- 
-- Was machst du am Montag?
-- Ich gehe ins Kino.
-- Was machst du am Dienstag?
-- Ich putze die Wohnung.
-- 
+---
+- Was machst du am Montag? (What are you doing on Monday?)
+- Ich gehe ins Kino. (I'm going to the cinema.)
+- Was machst du am Dienstag? (What are you doing on Tuesday?)
+- Ich putze die Wohnung. (I'm cleaning the apartment.)
