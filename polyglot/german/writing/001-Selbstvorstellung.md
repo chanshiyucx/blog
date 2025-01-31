@@ -14,12 +14,12 @@ tags:
 ---
 - Welche Sprache sprechen Sie? _(What language do you speak?)_
 - Ich spreche Deutsch. _(I speak German.)_
-- Ich spreche Englisch und ein bisschen Deutsch. _(I speak English and a little bit of German.)_
+- Ich spreche Englisch und **ein bisschen** Deutsch. _(I speak English and a little bit of German.)_
 - Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
 - Sprechen Sie Deutsch? _(Do you speak German?)_
 - Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
 ---
-- Was kann ich für Sie tun? _(What can I do for you?)_
+- **Was kann ich für Sie tun?** _(What can I do for you?)_
 - Ich möchte mich in der Schweiz anmelden. _(I want to register in Switzerland.)_
 - Wie ist Ihr Vorname? _(What is your first name?)_
 - Mein Vorname ist Xin. _(My first name is Xin.)_
@@ -36,17 +36,17 @@ tags:
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
 - Kommst du aus China? _(Are you from China?)_
-- Ja, ich komme aus China. _(Yes, I am from China.)_
-- Nein, ich komme nicht aus China. _(No, I am not from China.)_
+- Ja. Ich komme aus China. _(Yes, I am from China.)_
+- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
 ---
-- Sind Sie verheiratet? _(Are you married?)_
-- Bist du verheiratet? _(Are you married?)_
-- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
+- **Sind Sie** verheiratet? _(Are you married?)_
+- **Bist du** verheiratet? _(Are you married?)_
 - Ja. Ich bin verheiratet. _(I am married.)_
+- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
 - Ich bin ledig. _(I am single.)_
 ---
-- Wie alt sind Sie? _(How old are you?)_
-- Wie alt bist du? _(How old are you?)_
+- Wie alt **sind Sie**? _(How old are you?)_
+- Wie alt **bist du**? _(How old are you?)_
 - Ich bin 30 Jahre alt. _(I am 30 years old.)_
 ---
 - Wie geht es Ihnen? _(How are you?)_
@@ -56,9 +56,9 @@ tags:
 - Mir geht es nicht so gut. _(I am not so fine.)_
 - Es geht mir gut. _(I am fine.)_
 - Mir ist kalt. _(I am cold.)_
-- Mir ist schlecht. _(I am sick.)  
+- Mir ist schlecht. _(I am sick.)_
 ---
-- Wer ist das? _(Who is that?)_
+- **Wer ist das?** _(Who is that?)_
 - Das ist meine Familie. _(This is my family.)_
 - Das sind meine Kinder. _(These are my children.)_
 - Das sind meine Eltern. _(This is my parents.)_
