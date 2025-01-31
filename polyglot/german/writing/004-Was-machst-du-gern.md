@@ -1,7 +1,7 @@
 ---
-title: Was Machst Du Gern?
+title: Was Machst Du Gern
 date: 2025-01-31 10:45:07
-tags: 
+tags:
   - German/Writing
 ---
 - **Was machst du gern?** (What do you like to do?)

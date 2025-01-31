@@ -1,5 +1,5 @@
 ---
-title: Hilfst du mir?
+title: Hilfst du mir
 date: 2025-01-31 14:50:53
 tags:
   - German/Writing
