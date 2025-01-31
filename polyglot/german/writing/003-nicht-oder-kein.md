@@ -42,7 +42,8 @@ tags:
 - Können Sie das bitte wiederholen?
 - **Kannst du das bitte wiederholen?**
 
-> [!NOTE]  
+> [!NOTE]
+>
 > 这句话 "Kannst du das bitte wiederholen?" 中：
 >
 > - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
@@ -65,3 +66,22 @@ tags:
 > - 主要动词原形（位于句尾）
 >
 > 这就是为什么是 "wiederholen" 而不是 "wiederholst" 的原因。
+
+---
+- Hier ist ein Schlüssel.
+- Ist das dein Schlüssel?
+- Nein. Das ist nicht mein Schlüssel.
+- Welche Farbe hat der Schlüssel?
+- **Er** ist blau.
+---
+- Hier ist eine Jacke.
+- Ist das deine Jacke?
+- Nein. Das ist nicht meine Jacke.
+- Welche Farbe hat die Jacke?
+- **Sie** ist rot.
+---
+- Hier ist ein Handy.
+- Ist das dein Handy?
+- Nein. Das ist nicht mein Handy.
+- Welche Farbe hat das Handy?
+- **Es** ist schwarz.
