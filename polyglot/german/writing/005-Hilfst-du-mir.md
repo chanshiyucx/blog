@@ -163,6 +163,3 @@ tags:
 > • **可分动词由 " 前缀 + 动词 " 组成**，在句子中通常会分离，前缀跑到句尾。  
 > • **从句、情态动词等情况下，可分动词不会分离，而是保持原形或变成过去分词。**  
 > • **德语中有很多可分动词，熟悉常见前缀的含义有助于理解它们的用法。**
-
----
-Hallo! Ich heiße XinChen und komme aus China. Ich arbeite als Programmierer. Am Dienstag und am Donnerstag **fahre ich** immer mit **dem Rad** zur Bank. Ich laufe immer am Mittwoch am Abend im Park. Am Montag **gehe ich** **nach dem Deutschkurs** mit Tina in ein Cafe. Sie erklärt mir die Aufgaben und wir trinken Kaffee und essen Kuchen. **Am Donnerstag lade ich sie dann ins Kino ein.** Jeden Freitag treffe ich nach der Arbeit Freunde. Wie gehen in eine Bar. Am Samstag ich putze die Wohnung und wasche die Kleider.
