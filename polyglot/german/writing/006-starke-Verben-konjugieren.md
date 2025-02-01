@@ -82,8 +82,8 @@ tags:
 
 ---
 - Ich lese.
-- Du liest.
-- Er, sie, es liest.
+- Du **liest**.
+- Er, sie, es **liest**.
 - Wir lesen.
 - Ihr lest.
 - Sie lesen.
