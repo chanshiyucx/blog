@@ -13,8 +13,31 @@ tags:
 - Nein. Ich gebe dir meine Handynummer nicht. _(No, I won't give you my phone number.)_
 ---
 - **Ich laufe immer am Mittwoch am Abend im Park.** _(I always run in the park on Wednesday evening.)_
-- Jeden Freitag treffe ich nach der Arbeit Freunde. _(Every Friday I meet friends after work.)_
-- Wir gehen in eine Bar. _(We go to a bar.)_
+- **Jeden Freitag treffe ich nach der Arbeit Freunde.** _(Every Friday I meet friends after work.)_
+
+> [!NOTE]
+>
+> "Jeden Freitag treffe ich nach der Arbeit Freunde"（每周五下班后我都和朋友见面）
+>
+> 这里 "treffe" 在 "ich" 前面是因为德语有一个重要的语序规则：
+> - **当句子以时间副词开头时，动词必须放在第二位置**
+> - 主语（在这里是 "ich"）则要放在动词后面
+>
+> 让我们逐个分析句子成分：
+> 1. "Jeden Freitag"（每周五）- 时间状语，放在句首
+> 2. "treffe"（见面）- 动词必须在第二位
+> 3. "ich"（我）- 主语，因为动词要在第二位，所以主语要后移
+> 4. "**nach der Arbeit**"（下班后）- 时间状语
+> 5. "Freunde"（朋友们）- 宾语
+>
+> 如果我们不把时间状语放在句首，句子就会是这样：
+> - Ich treffe jeden Freitag nach der Arbeit Freunde.  
+> 这时就是标准语序：主语 + 动词 + 其他成分
+>
+> 这就是德语 " 动词第二位 "（Verbzweitstellung）的规则。**无论句子开头是什么成分，动词总是要保持在第二位置。**
+
+ - Wir gehen in eine Bar. _(We go to a bar.)_
+
 ---
 - Rauchst du? _(Do you smoke?)_
 - Ja. Ich rauche manchmal. _(Yes, I smoke sometimes.)_
@@ -44,7 +67,7 @@ tags:
  - **Ja. Ich kann sehr gut kochen.** _(Yes, I can cook very well.)_
  - **Nein. Ich kann nicht gut kochen.** _(No, I cannot cook well.)_
 ---
-- Kannst du Gitarre spielen? _(Can you play guitar?)_
+- **Kannst du Gitarre spielen?** _(Can you play guitar?)_
 - Ja. Ich kann Gitarre spielen. _(Yes, I can play guitar.)_
 - Nein. Ich kann nicht Gitarre spielen. _(No, I cannot play guitar.)_
 ---
@@ -80,3 +103,66 @@ tags:
 > •	疑问词（Was）+ 谓语（ziehst）+ 主语（du）+ 其他成分（für die Party）+ 可分动词前缀（an）。
 > 3.	第四格宾语（Akkusativobjekt）：  
 > •	"ein Kleid"（裙子）是第四格（Akkusativ），因为 "ziehen" 需要一个直接宾语。
+
+> [!NOTE]
+>
+> **可分动词前缀（Trennbares Verb Präfix）简介**
+>
+> **1. 什么是可分动词前缀？**  
+> 可分动词（trennbare Verben）是指**由前缀 + 主要动词**组成的动词，这些前缀在句子中**可以分开**，通常会跑到句尾。  
+> 例如：  
+> • **anziehen**（穿上） → **Ich ziehe ein Kleid an.**（我穿上一条裙子。）  
+> 这里，"an" 就是可分动词的前缀，虽然它是 "anziehen" 的一部分，但在句子中被拆开，动词变位后，前缀单独放在句尾。
+>
+> **2. 常见的可分动词前缀**
+>
+>
+> 以下是一些常见的可分前缀，通常带有特定的含义：  
+> **可分前缀** **含义** **例子**  
+> an- 方向朝向（接近、开始） **anfangen**（开始）、**anmachen**（打开）  
+> ab- 方向离开、下降 **abfahren**（出发）、**abholen**（接人）  
+> auf- 向上、打开 **aufstehen**（起床）、**aufmachen**（打开）  
+> aus- 向外、结束 **ausgehen**（外出）、**ausmachen**（关掉）  
+> ein- 进入、开始 **einsteigen**（上车）、**einladen**（邀请）  
+> mit- 一起、带上 **mitkommen**（一起来）、**mitnehmen**（带走）  
+> nach- 跟随、补充 **nachdenken**（思考）、**nachfragen**（询问）  
+> vor- 事先、前面 **vorstellen**（介绍）、**vorhaben**（打算）  
+> zurück- 返回 **zurückkommen**（回来）、**zurückgeben**（归还）
+>
+> **3. 可分动词的句子结构**  
+> 可分动词的前缀在句子中通常**会分离**，具体规则如下：
+>
+> 🔹 **陈述句（正常语序）**：前缀分离，放在句尾  
+> ✅ **Ich stehe früh auf.**（我早起。）  
+> ✅ **Er macht das Fenster auf.**（他打开窗户。）
+>
+> 🔹 **疑问句（W-Frage / Ja-Nein-Frage）**：前缀分离，放在句尾  
+> ✅ **Wann stehst du auf?**（你什么时候起床？）  
+> ✅ **Machst du das Fenster auf?**（你打开窗户吗？）
+>
+> 🔹 **命令句（Imperativ）**：动词位于句首，前缀仍然分开  
+> ✅ **Steh früh auf!**（早点起！）  
+> ✅ **Mach das Fenster auf!**（打开窗户！）
+>
+> 🔹 **从句（副句，weil, dass, wenn…）**：前缀和动词合并，动词不变位，整体放在句末  
+> ✅ **Ich weiß, dass du früh aufstehst.**（我知道你早起。）  
+> ✅ **Er sagt, dass er das Fenster aufmacht.**（他说他打开窗户。）
+>
+> **4. 特殊情况**
+> 1. **情态动词（Modalverben）+ 可分动词**  
+> • 在情态动词（如：**können, müssen, sollen, wollen**）的句子中，可分动词**不再分离**，而是以**不定式**形式放在句末：  
+> ✅ **Ich muss früh aufstehen.**（我必须早起。）  
+> ✅ **Er will das Fenster aufmachen.**（他想打开窗户。）
+>
+> 2. **过去分词（Partizip II）形式**  
+> • 可分动词的**过去分词**一般是在前缀和动词之间加上 **ge-**：  
+> ✅ **Ich bin früh aufgestanden.**（我早起了。）  
+> ✅ **Er hat das Fenster aufgemacht.**（他打开了窗户。）
+>
+> **总结**  
+> • **可分动词由 " 前缀 + 动词 " 组成**，在句子中通常会分离，前缀跑到句尾。  
+> • **从句、情态动词等情况下，可分动词不会分离，而是保持原形或变成过去分词。**  
+> • **德语中有很多可分动词，熟悉常见前缀的含义有助于理解它们的用法。**
+
+---
+Hallo! Ich heiße XinChen und komme aus China. Ich arbeite als Programmierer. Am Dienstag und am Donnerstag **fahre ich** immer mit **dem Rad** zur Bank. Ich laufe immer am Mittwoch am Abend im Park. Am Montag **gehe ich** **nach dem Deutschkurs** mit Tina in ein Cafe. Sie erklärt mir die Aufgaben und wir trinken Kaffee und essen Kuchen. **Am Donnerstag lade ich sie dann ins Kino ein.** Jeden Freitag treffe ich nach der Arbeit Freunde. Wie gehen in eine Bar. Am Samstag ich putze die Wohnung und wasche die Kleider.
