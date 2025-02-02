@@ -1,7 +1,7 @@
 ---
-title: Starke Verben Konjugieren
+title: starke Verben konjugieren
 date: 2025-02-01 13:05:11
-tags: 
+tags:
   - German/Writing
 ---
 - Ich fahre.

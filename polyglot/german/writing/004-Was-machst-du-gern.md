@@ -1,5 +1,5 @@
 ---
-title: Was Machst Du Gern
+title: Was machst du gern?
 date: 2025-01-31 10:45:07
 tags:
   - German/Writing
