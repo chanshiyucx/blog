@@ -35,21 +35,8 @@ tags:
 - Meine Herkunft ist China. _(My origin is China.)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
-- Kommst du aus China? _(Are you from China?)_
-- Ja. Ich komme aus China. _(Yes, I am from China.)_
-- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
 ---
-- **Sind Sie** verheiratet? _(Are you married?)_
-- **Bist du** verheiratet? _(Are you married?)_
-- Ja. Ich bin verheiratet. _(I am married.)_
-- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
-- Ich bin ledig. _(I am single.)_
----
-- Wie alt **sind Sie**? _(How old are you?)_
-- Wie alt **bist du**? _(How old are you?)_
-- Ich bin 30 Jahre alt. _(I am 30 years old.)_
----
-- Wie geht es Ihnen? _(How are you?)_
+- **Wie geht es Ihnen?** _(How are you?)_
 - Wie geht es dir? _(How are you?)_
 - Danke, mir geht es gut. _(Thank you, I am fine.)_
 - Mir geht es sehr gut. _(I am very fine.)_
@@ -57,6 +44,16 @@ tags:
 - Es geht mir gut. _(I am fine.)_
 - Mir ist kalt. _(I am cold.)_
 - Mir ist schlecht. _(I am sick.)_
+---
+- Wie alt **sind Sie**? _(How old are you?)_
+- Wie alt **bist du**? _(How old are you?)_
+- Ich bin 30 Jahre alt. _(I am 30 years old.)_
+---
+- **Sind Sie** verheiratet? _(Are you married?)_
+- **Bist du** verheiratet? _(Are you married?)_
+- Ja. Ich bin verheiratet. _(I am married.)_
+- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
+- Ich bin ledig. _(I am single.)_
 ---
 - **Wer ist das?** _(Who is that?)_
 - Das ist meine Familie. _(This is my family.)_
@@ -96,6 +93,9 @@ tags:
 - Wie ist deine Telefonnummer? _(What is your phone number?)_
 - Wie ist deine Herkunft? _(What is your origin?)_
 - Was ist deine Muttersprache? _(What is your mother tongue?)_
+- Kommst du aus China? _(Are you from China?)_
+- Ja. Ich komme aus China. _(Yes, I am from China.)_
+- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
 ---
 - Woher kommt Erik? _(Where does Erik come from?)_
 - Er kommt aus Schweden. _(He comes from Sweden.)_
