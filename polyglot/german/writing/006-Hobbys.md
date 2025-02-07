@@ -4,7 +4,7 @@ date: 2025-02-01 11:28:47
 tags:
   - German/Writing
 ---
-Hallo! Ich heiße XinChen und komme aus China. Ich arbeite als Programmierer. Am Dienstag und am Donnerstag **fahre ich** immer mit **dem Rad** zur Bank. Ich laufe immer am Mittwoch am Abend im Park. Am Montag **gehe ich** **nach dem Deutschkurs** mit Tina in ein Cafe. Sie erklärt mir die Aufgaben und wir trinken Kaffee und essen Kuchen. **Am Donnerstag lade ich sie dann ins Kino ein.** Jeden Freitag treffe ich **nach der Arbeit** Freunde. Wir gehen in eine Bar. Am Samstag putze ich die Wohnung und wasche die Kleider. Am Sonntag kann ich ausschlafen. Ich stehe meistens spät auf und **lese beim Frühstück die Zeitung**.
+Hallo! Ich heiße XinChen und komme aus China. Ich ==arbeite als== Programmierer. Am Dienstag und am Donnerstag **fahre ich** immer mit **dem Rad** zur Bank. Ich laufe immer am Mittwoch am Abend im Park. Am Montag **gehe ich** **nach dem Deutschkurs** mit Tina in ein Cafe. Sie erklärt mir die Aufgaben und wir trinken Kaffee und essen Kuchen. **Am Donnerstag lade ich sie dann ins Kino ein.** Jeden Freitag treffe ich **nach der Arbeit** Freunde. Wir gehen in eine Bar. Am Samstag putze ich die Wohnung und wasche die Kleider. Am Sonntag kann ich ausschlafen. Ich stehe meistens spät auf und **lese beim Frühstück die Zeitung**.
 
 > [!NOTE]
 >

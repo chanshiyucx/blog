@@ -4,7 +4,6 @@ date: 2025-01-20 15:07:45
 tags: 
   - English/Writing
 ---
-
 Like many English learners, I always get nervous when someone asks me a question in English. I often struggle to discuss certain topics and feel my vocabulary is limited. Speaking fluently for long periods is challenging, and I haven't yet mastered thinking in English. These are common challenges I face in my daily English conversations.
 
 Today, I came across an insight episode online about how to get fluent in English in just 5 days. It's designed for intermediate and advanced English learners. Let's dive into the details!

@@ -15,7 +15,7 @@ tags:
 - Welche Sprache sprechen Sie? _(What language do you speak?)_
 - Ich spreche Deutsch. _(I speak German.)_
 - Ich spreche Englisch und **ein bisschen** Deutsch. _(I speak English and a little bit of German.)_
-- Ich spreche auch Englisch und lerne Deutsch. _(I also speak English and I am learning German.)_
+- Ich spreche auch Englisch und lerne Deutsch. _(I speak English and I am learning German.)_
 - Sprechen Sie Deutsch? _(Do you speak German?)_
 - Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
 ---
@@ -35,13 +35,15 @@ tags:
 - Meine Herkunft ist China. _(My origin is China.)_
 - Was ist Ihre Muttersprache? _(What is your mother tongue?)_
 - Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
+- Kommen Sie aus China? _(Are you from China?)_
+- Ja. Ich komme aus China. _(Yes, I am from China.)_
+- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
 ---
 - **Wie geht es Ihnen?** _(How are you?)_
 - Wie geht es dir? _(How are you?)_
 - Danke, mir geht es gut. _(Thank you, I am fine.)_
 - Mir geht es sehr gut. _(I am very fine.)_
 - Mir geht es nicht so gut. _(I am not so fine.)_
-- Es geht mir gut. _(I am fine.)_
 - Mir ist kalt. _(I am cold.)_
 - Mir ist schlecht. _(I am sick.)_
 ---
@@ -94,8 +96,6 @@ tags:
 - Wie ist deine Herkunft? _(What is your origin?)_
 - Was ist deine Muttersprache? _(What is your mother tongue?)_
 - Kommst du aus China? _(Are you from China?)_
-- Ja. Ich komme aus China. _(Yes, I am from China.)_
-- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
 ---
 - Woher kommt Erik? _(Where does Erik come from?)_
 - Er kommt aus Schweden. _(He comes from Sweden.)_
