@@ -12,7 +12,7 @@ tags:
 - Ich wohne in München. _(I live in Munich.)_
 - Ich wohne hier in München. _(I live here in Munich.)_
 ---
-- Welche Sprache sprechen Sie? _(What language do you speak?)_
+- Welche Sprachen sprechen Sie? _(What language do you speak?)_
 - Ich spreche Deutsch. _(I speak German.)_
 - Ich spreche Englisch und **ein bisschen** Deutsch. _(I speak English and a little bit of German.)_
 - Ich spreche auch Englisch und lerne Deutsch. _(I speak English and I am learning German.)_
