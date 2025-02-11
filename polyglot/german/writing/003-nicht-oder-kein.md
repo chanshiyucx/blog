@@ -10,28 +10,27 @@ tags:
 - **Wer ist das?** _(Who is this?)_
 - Das ist Nicole. _(This is Nicole.)_
 ---
-- Ist das eine Lampe? _(Is this a lamp?)_
+- Ist das **eine** Lampe? _(Is this a lamp?)_
 - Nein. Das ist **keine** Lampe. _(No. This is not a lamp.)_
 - Das ist ein Glas. _(This is a glass.)_
 ---
-- Ist das ein Bett? _(Is this a bed?)_
+- Ist das **ein** Bett? _(Is this a bed?)_
 - Nein. Das ist **kein** Bett. _(No. This is not a bed.)_
 - Das ist ein Sofa. _(This is a sofa.)_
 ---
-- Ist das dein Freund? _(Is this your boyfriend?)_
-- Nein. Das ist nicht mein Freund. _(No. This is not my boyfriend.)_
-- Hast du eine Freundin? _(Do you have a girlfriend?)_
-- Nein. Ich habe keine Freundin. _(No. I don't have a girlfriend.)_
+- **Ist das dein Freund?** _(Is this your boyfriend?)_
+- Nein. Das ist **nicht** mein Freund. _(No. This is not my boyfriend.)_
+- **Hast du eine Freundin?** _(Do you have a girlfriend?)_
+- Nein. Ich habe **keine** Freundin. _(No. I don't have a girlfriend.)_
 ---
-- Haben Sie Kinder? _(Do you have children?)_
-- Hast du Kinder? _(Do you have children?)_
-- Nein. Ich habe keine Kinder. _(No. I don't have children.)_
-- Ja. Ich habe Kinder. _(Yes. I have children.)_
-- Ja. Ich habe eine Tochter. _(Yes. I have a daughter.)_
-- Ja. Ich habe einen Sohn. _(Yes. I have a son.)_
+- **Haben Sie Kinder?** _(Do you have children?)_
+- **Hast du Kinder?** _(Do you have children?)_
+- Nein. Ich habe **keine** Kinder. _(No. I don't have children.)_
+- Ja. Ich habe **eine** Tochter. _(Yes. I have a daughter.)_
+- Ja. Ich habe **einen** Sohn. _(Yes. I have a son.)_
 ---
-- Ich habe eine Schwester. _(I have a sister.)_
-- Ich habe einen Bruder. _(I have a brother.)_
+- Ich habe **eine** Schwester. _(I have a sister.)_
+- Ich habe **einen** Bruder. _(I have a brother.)_
 ---
 - Sprechen Sie bitte langsam. _(Please speak slowly.)_
 - Sprechen Sie bitte Hochdeutsch. _(Please speak Standard German.)_
@@ -70,19 +69,13 @@ tags:
 
 ---
 - Hier ist ein Schlüssel. _(Here is a key.)_
-- Ist das dein Schlüssel? _(Is this your key?)_
-- Nein. Das ist nicht mein Schlüssel. _(No. This is not my key.)_
-- Welche Farbe hat der Schlüssel? _(What color is the key?)_
-- Er ist blau. _(It is blue.)_
+- Ist das **dein** Schlüssel? _(Is this your key?)_
+- Nein. Das ist **nicht** mein Schlüssel. _(No. This is not my key.)_
 ---
 - Hier ist eine Jacke. _(Here is a jacket.)_
-- Ist das deine Jacke? _(Is this your jacket?)_
-- Nein. Das ist nicht meine Jacke. _(No. This is not my jacket.)_
-- Welche Farbe hat die Jacke? _(What color is the jacket?)_
-- Sie ist rot. _(It is red.)_
+- Ist das **deine** Jacke? _(Is this your jacket?)_
+- Nein. Das ist **nicht** meine Jacke. _(No. This is not my jacket.)_
 ---
 - Hier ist ein Handy. _(Here is a mobile phone.)_
-- Ist das dein Handy? _(Is this your mobile phone?)_
-- Nein. Das ist nicht mein Handy. _(No. This is not my mobile phone.)_
-- Welche Farbe hat das Handy? _(What color is the mobile phone?)_
-- Es ist schwarz. _(It is black.)_
+- Ist das **dein** Handy? _(Is this your mobile phone?)_
+- Nein. Das ist **nicht** mein Handy. _(No. This is not my mobile phone.)_
