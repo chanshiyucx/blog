@@ -9,14 +9,13 @@ tags:
 ---
 - **Wer ist das?** _(Who is this?)_
 - Das ist Nicole. _(This is Nicole.)_
-- Sie kommt aus Deutschland. _(She comes from Germany.)_
 ---
 - Ist das eine Lampe? _(Is this a lamp?)_
-- Nein. Das ist keine Lampe. _(No. This is not a lamp.)_
+- Nein. Das ist **keine** Lampe. _(No. This is not a lamp.)_
 - Das ist ein Glas. _(This is a glass.)_
 ---
 - Ist das ein Bett? _(Is this a bed?)_
-- Nein. Das ist kein Bett. _(No. This is not a bed.)_
+- Nein. Das ist **kein** Bett. _(No. This is not a bed.)_
 - Das ist ein Sofa. _(This is a sofa.)_
 ---
 - Ist das dein Freund? _(Is this your boyfriend?)_
