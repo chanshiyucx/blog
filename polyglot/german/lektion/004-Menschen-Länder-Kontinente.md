@@ -4,7 +4,7 @@ date: 2025-02-12 16:13:33
 tags: 
   - German/Lektion
 ---
-- Aber im Moment **lebe ich nicht** in Hamburg. 这句话进行语法分析，
+- Aber im Moment **lebe ich nicht** in Hamburg. 
 
 > [!NOTE]
 >

@@ -28,6 +28,7 @@ tags:
 - Ich spreche **ein bisschen** Deutsch.
 - Ich spreche **nur ein bisschen** Deutsch.
 - Ich spreche **nicht so gut** Deutsch.
+---
 - **Sprichst du** Deutsch?
 - **Sprechen Sie** Deutsch?
 - Ja, **ein bisschen**.
