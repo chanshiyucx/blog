@@ -18,7 +18,7 @@ tags:
 ---
 - **Sind** das deine Kinder?
 - **Ist Maren dein Freund?**
-- **Er kommt nicht aus India, oder?**
+- **Er kommt nicht aus Indien, oder?**
 - **Geht es dir nicht gut?**
 ---
 - **Welche Sprachen sprichst du?**
@@ -34,7 +34,7 @@ tags:
 - Nein, **gar nicht**.
 - Nein, ich spreche **nicht** Deutsch.
 ---
-- Ich spreche vier Sprechen.
+- Ich spreche vier Sprachen.
 - Du **sprichst aber super Deutsch**.
 - Mein Bruder **spricht aber noch Deutsch**.
 

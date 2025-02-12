@@ -14,6 +14,8 @@ tags:
 | ihr       | seid | wohnt  | lebt  | habt     | macht  | sprecht      |
 | sie/Sie   | sind | wohnen | leben | haben    | machen | sprechen     |
 
+---
+
 - **Lebt ihr zusammen?**
 - Ja, **wir leben zusammen, aber wir sind nicht verheiratet und wir haben keine Kinder.**
 - Wo **wohnt ihr**?

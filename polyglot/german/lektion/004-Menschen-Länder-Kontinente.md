@@ -4,7 +4,7 @@ date: 2025-02-12 16:13:33
 tags: 
   - German/Lektion
 ---
-- Aber im Moment lebe ich nicht in Hamburg. 这句话进行语法分析，
+- Aber im Moment **lebe ich nicht** in Hamburg. 这句话进行语法分析，
 
 > [!NOTE]
 >
@@ -36,3 +36,6 @@ tags:
 > 这就是为什么 "lebe" 会出现在这个位置 —— 它遵循了德语的 V2 规则，即使句子前面有 "aber" 和时间状语。
 
 ---
+- Aber ich **lebe und arbeite** in München.
+- Ich **habe noch** keine Kinder.
+- Ich **lebe jetzt** in München.
