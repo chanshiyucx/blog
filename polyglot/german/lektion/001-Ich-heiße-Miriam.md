@@ -4,10 +4,10 @@ date: 2025-02-10 12:06:45
 tags:
   - German/Lektion
 ---
-- Wie **heißt du**? _(What's your name?)_
-- Wie **heißen Sie**? _(What's your name?)_
-- Wer **bist du**? _(Who are you?)_
-- Wer **sind Sie**? _(Who are you?)_
+- Wie **heißt du**?
+- Wie **heißen Sie**?
+- Wer **bist du**?
+- Wer **sind Sie**?
 - Ich heiße Xin. / Ich bin Xin. / Mein Name ist Xin.
 ---
 - Wie alt **bist du**?
@@ -28,24 +28,24 @@ tags:
 > 在德语中，国家名称使用冠词的规则：
 >
 > 1. **大多数中性国家名称可以省略冠词**：
->    - aus dem Deutschland → aus Deutschland ✓
->    - aus dem Frankreich → aus Frankreich ✓
->    - aus dem China → aus China ✓
+>    - aus dem Deutschland → aus Deutschland
+>    - aus dem Frankreich → aus Frankreich
+>    - aus dem China → aus China
 >
 > 2. **以下情况必须保留冠词**：
 >    - 阴性国家名称：
-> 	 - aus der Türkei （不能省略）
-> 	 - aus der Schweiz （不能省略）
+> 	 - aus der Türkei
+> 	 - aus der Schweiz
 >    - 复数国家名称：
-> 	 - aus den USA （不能省略）
-> 	 - aus den Niederlanden （不能省略）
+> 	 - aus den USA
+> 	 - aus den Niederlanden
 >    - 带有形容词修饰的国家名称：
-> 	 - aus dem alten Deutschland （不能省略）
+> 	 - aus dem alten Deutschland
 >
 > 所以正确的说法是：
-> - Ich komme aus Deutschland. ✓
-> - Ich komme aus der Türkei. ✓
-> - Ich komme aus den USA. ✓
+> - Ich komme aus Deutschland.
+> - Ich komme aus der Türkei.
+> - Ich komme aus den USA.
 
 ---
 - **Wer ist das?**
