@@ -13,6 +13,25 @@ tags:
 - Ja. Das ist **ein** Tisch.
 - Nein. Das ist **kein** Tisch.
 ---
+- Ich habe **keine** Kinder.
+- Das ist **kein** Sonderangebot.
+- Das Sofa ist **nicht** günstig.
+
+> [!NOTE]
+>
+> nicht 和 kein/keine 的区别：
+>    - **nicht：用来否定动词、形容词或整个句子**
+>    - **kein/keine：用来否定带不定冠词的名词**
+
+---
+- Wo ist das Auto? // 车在哪里？
+- **Da ist es.** // 在那里。
+---
+- Ist **das** Buch gut?
+- Ja, sehr gut.
+- Schau mal! Ist das **nicht ein** super Sofa?
+- Ja, das Sofa ist super.
+---
 - Ich kaufe Äpfel, Bananen **und so weiter**.
 ---
 - Tom **sagt zu** Maria: "Ich bin krank." // 汤姆对玛丽亚说：" 我病了。"
@@ -60,4 +79,19 @@ tags:
 - Kein Problem! // 没问题！
 - Noch einmal, bitte. // 再要一杯，请！
 ---
-- Wie heißt das auf Deutsch? // 这个用德语怎么说？
+- Entschuldigung. **Wie heißt das auf Deutsch?** // 这个用德语怎么说？
+- Das ist ein Buch.
+- Wie bitte?
+- Das ist ein Buch.
+---
+- **Wir schreibt man Buch?**
+- B-U-C-H.
+- **Danke schön.**
+- **Bitte. Sehr gern.**
+---
+- **Wie schreibt man das?**
+- **Wie buchstabiert man das?**
+- Kannst du das **schreiben**, bitte?
+- Kannst du das **buchstabieren**, bitte?
+- Können Sie das **schreiben**, bitte?
+- Können Sie das **buchstabieren**, bitte?

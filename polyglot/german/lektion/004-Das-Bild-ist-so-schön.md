@@ -52,10 +52,32 @@ tags:
 - Das Bild ist **günstig**.
 - Das Bild ist **billig**.
 ---
-- **Ich finde**, der Stuhl ist schön.
+- Wie findest du **den Stuhl**?
+- Wie findest du **die Lampe**?
+- Wie findest du **das Bild**?
+- Ich finde, **der Stuhl ist schön.**
+- **Ich finde den Stuhl ist schön.**
+
+> [!NOTE]
+>
+> 1. Ich finde, der Stuhl ist schön. // ✓ 正确
+>    - 这里 "finden" 后面接从句，所以用主格 "der Stuhl"
+>    - 逗号后是完整的从句 "der Stuhl ist schön"
+>
+> 2. Ich finde den Stuhl schön. // ✓ 正确
+>    - 这里 "finden" 直接接宾语，所以用第四格 "den Stuhl"
+>    - "schön" 作为补语
+>
+> 3. Ich finde den Stuhl ist schön. // ✗ 错误
+>    - 这是一个常见错误
+>    - 不能同时使用第四格宾语和完整从句
+
+---
 - **Schau mal**, der Stuhl! Er ist so schön.
 - Schau mal, die Lampe! Sie ist so schön.
-- Schau mal, das Bett! Es ist so schön.
+- Schau mal, das Bild! Es ist so schön.
+- Das finde ich **auch**.
+- Das finde ich **nicht**.
 ---
 - Das Bett ist modern.
 - Das Bett ist **zu groß**.
@@ -118,10 +140,3 @@ tags:
 - 430.000 vierhundertdreißigtausend
 - 999.999 neunhundertneunundneunzigtausendneunhundertneunundneunzig
 - 1.000.000 eine Million
----
-- **Wie schreibt man das?**
-- **Wie buchstabiert man das?**
-- Kannst du das **schreiben**, bitte?
-- Kannst du das **buchstabieren**, bitte?
-- Können Sie das **schreiben**, bitte?
-- Können Sie das **buchstabieren**, bitte?
