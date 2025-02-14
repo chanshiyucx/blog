@@ -84,3 +84,8 @@ tags:
 > - **doch**（语气副词，加强语气）
 > - **mal**（语气副词，轻松、随意）
 > - **da**（副词，表示地点）
+
+---
+- **Ich finde**, der Stuhl ist so schön.
+- oh ja! **Das finde ich auch.**
+- **Wie viel kostet er denn?**
