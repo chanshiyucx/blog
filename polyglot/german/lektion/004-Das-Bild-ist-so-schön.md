@@ -52,7 +52,24 @@ tags:
 - Das Bild ist **günstig**.
 - Das Bild ist **billig**.
 ---
-- **Schau doch mal, da!**
+- **Ich finde**, der Stuhl is schön.
+- **Schau mal**, der Stuhl! Er ist so schön.
+- Schau mal, dim Lampe! Sie ist so schön.
+- Schau mal, das Bett! Es ist so schön.
+---
+- Das Bett ist modern.
+- Das Bett ist **zu groß**.
+- Der Preis ist **zu hoch**.
+- Die Lampe ist **zu hell**.
+- Der Schrank ist **nicht praktisch**, Er ist **zu klein**.
+---
+- **Schau doch mal, da!** Der Stuhl ist so schön.
+- Oh ja! **Das finde ich auch.**
+- **Wie viel kostet er denn?**
+- **Sie haben Glück!** Der Stuhl kostet nur 59 Euro.
+- Oh, **das ist aber günstig**.
+- Das ist **ein Sonderangebot**.
+- Er ist **wirklich sehr schön**.
 
 > [!NOTE]
 >
@@ -86,6 +103,18 @@ tags:
 > - **da**（副词，表示地点）
 
 ---
-- **Ich finde**, der Stuhl ist so schön.
-- oh ja! **Das finde ich auch.**
-- **Wie viel kostet er denn?**
+- **Wie viel kostet** die Lampe?
+- **Wie viel kostet** der Stuhl?
+- **Was kostet** die Lampe?
+- **Was kostet** der Stuhl?
+---
+- 100 einhundert
+- 200 zweihundert
+- 450 vierhundertfünfzig
+- 452 vierhundertzweiundfünfzig
+- 1.000 eintausend
+- 10.000 zehntausend
+- 210.000 zweihundertzehntausend
+- 430.000 vierhundertdreißigtausend
+- 999.999 neunhundertneunundneunzigtausendneunhundertneunundneunzig
+- 1.000.000 eine Million
