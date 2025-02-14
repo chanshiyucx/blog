@@ -52,16 +52,16 @@ tags:
 - Das Bild ist **günstig**.
 - Das Bild ist **billig**.
 ---
-- **Ich finde**, der Stuhl is schön.
+- **Ich finde**, der Stuhl ist schön.
 - **Schau mal**, der Stuhl! Er ist so schön.
-- Schau mal, dim Lampe! Sie ist so schön.
+- Schau mal, die Lampe! Sie ist so schön.
 - Schau mal, das Bett! Es ist so schön.
 ---
 - Das Bett ist modern.
 - Das Bett ist **zu groß**.
 - Der Preis ist **zu hoch**.
 - Die Lampe ist **zu hell**.
-- Der Schrank ist **nicht praktisch**, Er ist **zu klein**.
+- Der Schrank ist **nicht praktisch**, er ist **zu klein**.
 ---
 - **Schau doch mal, da!** Der Stuhl ist so schön.
 - Oh ja! **Das finde ich auch.**
@@ -118,3 +118,10 @@ tags:
 - 430.000 vierhundertdreißigtausend
 - 999.999 neunhundertneunundneunzigtausendneunhundertneunundneunzig
 - 1.000.000 eine Million
+---
+- **Wie schreibt man das?**
+- **Wie buchstabiert man das?**
+- Kannst du das **schreiben**, bitte?
+- Kannst du das **buchstabieren**, bitte?
+- Können Sie das **schreiben**, bitte?
+- Können Sie das **buchstabieren**, bitte?
