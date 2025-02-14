@@ -50,9 +50,9 @@ tags:
 - Wo leben Sie?
 - Ich lebe in München.
 ---
-- **Wer ist das?**
-- **Wer sind das?**
+- Wer ist das?
 - Das ist Simon.
+- Wer sind das?
 - Das sind Simon und Maria.
 ---
 - **Wie bitte?**
