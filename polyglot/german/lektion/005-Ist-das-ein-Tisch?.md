@@ -1,0 +1,59 @@
+---
+title: Ist das ein Tisch?
+date: 2025-02-14 16:26:18
+tags:
+  - German/Lektion
+---
+- **Im Zimmer** **sind** viele Dinge. // 房间里有很多东西
+- **Im Haus** **ist** eine Katze. // 房子里有一只猫
+- **In der Küche** **sind** drei Stühle. // 厨房里有三把椅子
+- **Auf dem Tisch** **ist** eine Lampe. // 桌子上有一盏灯
+---
+- Ich kaufe Äpfel, Bananen **und so weiter**.
+---
+- Tom **sagt zu** Maria: "Ich bin krank." // 汤姆对玛丽亚说：" 我病了。"
+- Maria **sagt zu** Tom: "Das tut mir leid." // 玛丽亚对汤姆说：" 我很抱歉。"
+- Der Lehrer **sagt zu** den Schülern: "Guten Morgen!" // 老师对学生们说：" 早上好！"
+
+> [!NOTE]
+>
+> "sagt zu" 是动词 "sagen"（说）加上介词 "zu"（对，向），表示 " 对某人说 "。
+>
+> "sagen" 的几种常见用法：
+> 1. sagen + zu + 第三格（向某人说）
+>    - Ich sage zu **dir**…（我对你说…）
+>    - Er sagt zu **mir**…（他对我说…）
+>
+> 2. 直接用第三格（省略 zu）
+>    - Ich sage dir…（我对你说…）
+>    - Er sagt mir…（他对我说…）
+>
+> 两种形式都是正确的，意思相同，但：
+> - "sagen zu" 更强调说话的方向性
+> - 直接用第三格更简洁，在口语中更常用
+>
+> 注意：当使用代词时，更常见的是省略 "zu" 的形式。
+
+---
+- **Ich sehe etwas! Siehst du es auch?**
+- Ist es aus Plastik?
+- Der Stuhl ist **aus Holz**. // 这把椅子是木头做的
+- Die Flasche ist **aus Glas**. // 这个瓶子是玻璃做的
+- Der Tisch ist **aus Metall**. // 这张桌子是金属做的
+- Das Spielzeug ist **aus Plastik**. // 这个玩具是塑料做的
+
+> [!NOTE]
+>
+> 在德语中，表示 " 由…材料制成 " 时，使用：
+>    - aus + 材料名词（第三格）
+>    - 而不是 auf（auf 表示 " 在…上面 "）
+
+---
+- Bitte schön! // 请便！
+- Danke schön! // 谢谢！
+- Bitte. Sehr gerne! // 不客气，很高兴能帮到你！
+- Wie bitte? // 请问？
+- Kein Problem! // 没问题！
+- Noch einmal, bitte. // 再要一杯，请！
+---
+- Wie heißt das auf Deutsch? // 这个用德语怎么说？
