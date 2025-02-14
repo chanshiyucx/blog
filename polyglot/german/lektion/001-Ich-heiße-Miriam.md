@@ -49,6 +49,8 @@ tags:
 - Wo lebst du?
 - Wo leben Sie?
 - Ich lebe in München.
+- Wo wohnt ihr?
+- Wir wohnen in München.
 ---
 - Wer ist das?
 - Das ist Simon.
@@ -68,8 +70,8 @@ tags:
 ---
 - **Wie geht's dir?** = Wie geht es dir?
 - Wie geh's Ihnen?
-- Super. / Sehr gut.
-- Gut, danke.
+- Super. / Sehr gut. **Und dir?**
+- Gut, danke. **Und Ihnen?**
 - Es geht.
 - Nicht so gut.
 - **Auch gut.**

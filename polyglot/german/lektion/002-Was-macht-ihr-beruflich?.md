@@ -15,11 +15,8 @@ tags:
 | sie/Sie   | **sind** | haben    | heiß**en** | arbeiten      | sprechen     |
 
 ---
-
 - **Lebt ihr zusammen?**
 - Ja, wir leben zusammen, **aber** wir **sind nicht verheiratet** und wir **haben keine Kinder**.
-- Wo **wohnt ihr**?
-- Wir wohnen in München.
 ---
 - **Sind ihr verheiratet?**
 - Wir sind **verheiratet**.
@@ -41,7 +38,7 @@ tags:
 ---
 - **Hast du Kinder?**
 - **Haben Sie Kinder?**
-- Ich habe **noch keine Kinder.**
+- Ich habe **keine Kinder.**
 ---
 - **Was macht ihr beruflich?**
 - Ich bin Paketzusteller und **arbeite bei** HotSped.
@@ -50,19 +47,25 @@ tags:
 - Was sind Sie von Beruf?
 - Was machst du beruflich?
 - Was machen Sie beruflich?
-- Wo arbeitest du?
-- Wo arbeiten Sie?
 - Ich bin Lehrer.
 - Ich bin Lehrer **von Beruf**.
 - Ich **arbeite als** Lehrer.
 - Ich **arbeite nicht**.
+- Ich arbeite los.
 - Ich **arbeite im Moment nicht**.
-- Ich **arbeite nicht als Lehrer**.
 - Ich **habe einen Job als** Lehrer.
 - Ich **habe eine Stelle als** Lehrer.
 - Ich **mache** eine Ausbildung **als** Lehrer.
-- Ich **mache** ein Praktikum **bei** HotSped.
 - **Von Beruf bin ich Lehrer, aber im Moment arbeite ich nicht.**
+---
+- **Bist du ein Lehrer?**
+- Ja, ich arbeite als Lehrer.
+- Nein, ich arbeite nicht als Lehrer.
+- Wo arbeitest du?
+- Wo arbeiten Sie?
+- Ich **mache** ein Praktikum **bei** HotSped.
+- Ich arbeite **bei** BMW.
+- Ich arbeite **bei** Siemens.
 
 > [!NOTE]
 >
@@ -92,10 +95,6 @@ tags:
 - Ich schreibe.
 - **Was macht ihr?**
 - Wir lernen Deutsch.
----
-- **Bist du ein Lehrer?**
-- **Ja, ich arbeite als Lehrer.**
-- Nein, ich bin Paketzusteller.
 ---
 - **Was studierst du?**
 - Ich studiere Medizin.

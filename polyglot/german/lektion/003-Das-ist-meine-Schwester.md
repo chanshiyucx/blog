@@ -8,8 +8,8 @@ tags:
 - Ja, das ist meine Mutter.
 - Nein, das ist **nicht** meine Mutter.
 ---
-- **Ist das nicht** deine Mutter?
-- **Das ist nicht** deine Mutter, **oder**?
+- Ist das **nicht** deine Mutter?
+- Das ist **nicht** deine Mutter, **oder**?
 - **Doch**, das ist meine Mutter.
 - Nein, das ist meine Oma.
 ---
@@ -17,9 +17,10 @@ tags:
 - **Wie alt ist** deine Mutter?
 ---
 - **Sind** das deine Kinder?
-- **Ist Maren dein Freund?**
-- **Er kommt nicht aus Indien, oder?**
-- **Geht es dir nicht gut?**
+- Ist Maren dein Freund?
+---
+- Er kommt **nicht** aus Indien, **oder**?
+- Geht es dir **nicht** gut?
 ---
 - **Welche Sprachen sprichst du?**
 - **Welche Sprachen sprachen Sie?**
