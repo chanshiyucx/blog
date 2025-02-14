@@ -9,6 +9,10 @@ tags:
 - **In der Küche** **sind** drei Stühle. // 厨房里有三把椅子
 - **Auf dem Tisch** **ist** eine Lampe. // 桌子上有一盏灯
 ---
+- Ist das **ein** Tisch?
+- Ja. Das ist **ein** Tisch.
+- Nein. Das ist **kein** Tisch.
+---
 - Ich kaufe Äpfel, Bananen **und so weiter**.
 ---
 - Tom **sagt zu** Maria: "Ich bin krank." // 汤姆对玛丽亚说：" 我病了。"
