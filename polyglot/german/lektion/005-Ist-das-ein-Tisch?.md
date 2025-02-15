@@ -72,17 +72,15 @@ tags:
 >    - 而不是 auf（auf 表示 " 在…上面 "）
 
 ---
-- Bitte schön! // 请便！
-- Danke schön! // 谢谢！
-- Bitte. Sehr gerne! // 不客气，很高兴能帮到你！
-- Wie bitte? // 请问？
-- Kein Problem! // 没问题！
-- Noch einmal, bitte. // 再要一杯，请！
----
-- Entschuldigung. **Wie heißt das auf Deutsch?** // 这个用德语怎么说？
-- Das ist ein Buch.
+- Bitte schön!
+- Danke schön!
+- Bitte. Sehr gerne!
 - Wie bitte?
-- Das ist ein Buch.
+- Kein Problem!
+- Noch einmal, bitte.
+---
+- Was sagt man auf Deutsch?
+- Wie heißt das auf Deutsch?
 ---
 - **Wir schreibt man Buch?**
 - B-U-C-H.
