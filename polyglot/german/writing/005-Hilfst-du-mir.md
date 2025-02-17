@@ -103,9 +103,3 @@ tags:
 > •	疑问词（Was）+ 谓语（ziehst）+ 主语（du）+ 其他成分（für die Party）+ 可分动词前缀（an）。
 > 3.	第四格宾语（Akkusativobjekt）：  
 > •	"ein Kleid"（裙子）是第四格（Akkusativ），因为 "ziehen" 需要一个直接宾语。
-
-> [!NOTE]
->
-> **可分动词前缀（Trennbares Verb Präfix）简介**
->
->

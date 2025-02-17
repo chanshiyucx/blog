@@ -71,5 +71,11 @@ tags:
 - Kannst du das **buchstabieren**, bitte?
 - Können Sie das **schreiben**, bitte?
 - Können Sie das **buchstabieren**, bitte?
+
+> [!NOTE]
+>
+> - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
+> - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
+
 ---
 - Was bestellst du?
