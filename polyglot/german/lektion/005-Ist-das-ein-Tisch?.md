@@ -9,6 +9,8 @@ tags:
 - **In der Küche** **sind** drei Stühle.
 - **Auf dem Tisch** **ist** eine Lampe.
 ---
+- Ich kaufe Äpfel, Bananen **und so weiter**.
+---
 - Ist das **ein** Tisch?
 - Ja. Das ist **ein** Tisch.
 - Nein. Das ist **kein** Tisch.
@@ -32,31 +34,12 @@ tags:
 - Schau mal! Ist das **nicht ein** super Sofa?
 - Ja, das Sofa ist super.
 ---
-- Ich kaufe Äpfel, Bananen **und so weiter**.
 ---
 - Tom **sagt zu** Maria: "Ich bin krank."
 - Maria **sagt zu** Tom: "Das tut mir leid."
 - Der Lehrer **sagt zu** den Schülern: "Guten Morgen!"
-
-> [!NOTE]
->
-> "sagt zu" 是动词 "sagen"（说）加上介词 "zu"（对，向），表示 " 对某人说 "。
->
-> "sagen" 的几种常见用法：
-> 1. sagen + zu + 第三格（向某人说）
->    - Ich sage zu **dir**…（我对你说…）
->    - Er sagt zu **mir**…（他对我说…）
->
-> 2. 直接用第三格（省略 zu）
->    - Ich sage dir…（我对你说…）
->    - Er sagt mir…（他对我说…）
->
-> 两种形式都是正确的，意思相同，但：
-> - "sagen zu" 更强调说话的方向性
-> - 直接用第三格更简洁，在口语中更常用
->
-> 注意：当使用代词时，更常见的是省略 "zu" 的形式。
-
+- Ich **sagte zu** **dir**: "Ich bin krank."
+- Er **sagte zu** **mir**: "Ich bin krank."
 ---
 - **Ich sehe etwas! Siehst du es auch?**
 - **Ist es aus Plastik?**
@@ -88,3 +71,5 @@ tags:
 - Kannst du das **buchstabieren**, bitte?
 - Können Sie das **schreiben**, bitte?
 - Können Sie das **buchstabieren**, bitte?
+---
+- Was bestellst du?

@@ -103,13 +103,20 @@ tags:
 ---
 - Haben Sie **den** Kalender?
 - Haben Sie **keinen** Kalender?
+- Haben Sie **vielleicht** die Lampe?
+- Hast du **das** Handy?
+- Hast du **kein** Handy?
+---
+- **Den Stift habe ich auch.**
+- Den Kalender habe ich auch.
+- Den Termin habe ich auch.
 ---
 - Da ist er.
 - Hier ist er.
 ---
 - **Wo ist denn der Kalender?** Frau Yun, haben Sie den Kalender?
 - Nein, ich habe **keinen** Kalender.
-- **Ach, da ist er ja!** Aber wo ist jetzt **schon wieder** das Tablet? Haben Sie vielleicht das Tablet, Frau Yun?
+- **Ach, da ist er ja!** Aber wo ist jetzt **schon wieder** das Tablet? **Haben Sie vielleicht das Tablet**, Frau Yun?
 
 > [!NOTE]
 >
