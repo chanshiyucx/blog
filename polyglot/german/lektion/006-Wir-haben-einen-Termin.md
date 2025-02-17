@@ -7,7 +7,13 @@ tags:
 - Oh Gott! So viel Arbeit!
 - Hilfe! Mein Passwort ist falsch!
 - Ein Albtraum!
-- Die Person auf Bild hat Hunger.
+- Die Person **auf Bild** hat Hunger.
+- Die Person **auf Bild** braucht einen Kaffee.
+---
+- Ich brauche **einen Stift**.
+- Ich brauche **keinen Stift**.
+- Ich brauche **Stifte**.
+- Ich brauche **keine Stifte**.
 ---
 - Ich komme **nicht ins WLAN**.
 - Ist das Passwort **neu**?
@@ -88,3 +94,44 @@ tags:
 - **Einen Moment bitte.** **Frau Yun ist leider nicht da.**
 - **Vielen Dank. Auf Wiederhören.**
 - **Sehr gern. Auf Wiederhören.**
+---
+- **Wir haben doch einen Termin**, Herr Yun. **Haben Sie keinen Kalender?**
+- Doch. Aber ich sehe einen Termin.
+- **Dann suchen Sie bitte einen Stift und notieren Sie.**
+- Ich habe **keinen Stift**.
+- **Das ist nicht gut.** **Sie brauchen einen Stift.**
+---
+- Haben Sie **den** Kalender?
+- Haben Sie **keinen** Kalender?
+---
+- Da ist er.
+- Hier ist er.
+---
+- **Wo ist denn der Kalender?** Frau Yun, haben Sie den Kalender?
+- Nein, ich habe **keinen** Kalender.
+- **Ach, da ist er ja!** Aber wo ist jetzt **schon wieder** das Tablet? Haben Sie vielleicht das Tablet, Frau Yun?
+
+> [!NOTE]
+>
+> - Ach, da ist er ja! // 啊，在这儿呢！
+>   - Ach = 感叹词，表示惊讶或发现
+>   - er = 指代前面提到的 Kalender（阳性）
+>   - ja = 语气词，强调发现
+> - Aber wo ist jetzt schon wieder das Tablet? // 但是平板电脑又在哪里呢？
+>   - schon wieder = 又，再次（表示这种情况经常发生）
+>   - das Tablet = 平板电脑（中性名词）
+> - Haben Sie vielleicht das Tablet, Frau Yun? // Yun 女士，您可能有这个平板电脑吗？
+>   - vielleicht = 可能，或许（使问句更礼貌）
+>
+> 语言和文化特点：
+> 1. 这段对话展示了典型的德语办公室场景：
+>    - 先找到一个丢失的物品（日历）
+>    - 但又发现另一个物品（平板）不见了
+>    - 用礼貌的方式询问同事
+>
+> 2. 语言特点：
+>    - 使用了多个语气词（ja, schon wieder）
+>    - 用 vielleicht 使问句更委婉
+>    - "schon wieder" 暗示这是一个反复发生的问题
+>
+> 这段对话反映了一个找不到办公用品的日常情景，说话人的语气既有发现的惊喜，也有对再次丢东西的无奈。
