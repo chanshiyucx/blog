@@ -5,14 +5,14 @@ tags:
   - German/Lektion
 ---
 
-|           | sein     | haben    | heißen     | arbeiten      | sprechen     |
-| --------- | -------- | -------- | ---------- | ------------- | ------------ |
-| ich       | **bin**  | habe     | heiß**e**  | arbeite       | spreche      |
-| du        | **bist** | **hast** | hei**ßt**  | arbeit**e**st | spr**i**chst |
-| er/sie/es | **ist**  | **hat**  | heiß**t**  | arbeit**e**t  | spr**i**cht  |
-| wir       | **sind** | haben    | heiß**en** | arbeiten      | sprechen     |
-| ihr       | **seid** | habt     | heiß**t**  | arbeit**e**t  | sprechen     |
-| sie/Sie   | **sind** | haben    | heiß**en** | arbeiten      | sprechen     |
+|           | sein     | haben    | heißen     | arbeiten      | sprechen     | sehen      |
+| --------- | -------- | -------- | ---------- | ------------- | ------------ | ---------- |
+| ich       | **bin**  | habe     | heiß**e**  | arbeite       | spreche      | sehe       |
+| du        | **bist** | **hast** | hei**ßt**  | arbeit**e**st | spr**i**chst | s**ie**hst |
+| er/sie/es | **ist**  | **hat**  | heiß**t**  | arbeit**e**t  | spr**i**cht  | s**ie**ht  |
+| wir       | **sind** | haben    | heiß**en** | arbeiten      | sprechen     | sehen      |
+| ihr       | **seid** | habt     | heiß**t**  | arbeit**e**t  | sprechen     | seht       |
+| sie/Sie   | **sind** | haben    | heiß**en** | arbeiten      | sprechen     | sehen      |
 
 ---
 - **Lebt ihr zusammen?**
