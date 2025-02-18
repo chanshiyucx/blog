@@ -9,6 +9,7 @@ tags:
 - **In der Küche** **sind** drei Stühle.
 - **Auf dem Tisch** **ist** eine Lampe.
 ---
+- Was bestellst du?
 - Ich kaufe Äpfel, Bananen **und so weiter**.
 ---
 - Ist das **ein** Tisch?
@@ -18,13 +19,6 @@ tags:
 - Ich habe **keine** Kinder.
 - Das ist **kein** Sonderangebot.
 - Das Sofa ist **nicht** günstig.
-
-> [!NOTE]
->
-> nicht 和 kein/keine 的区别：
->    - **nicht：用来否定动词、形容词或整个句子**
->    - **kein/keine：用来否定带不定冠词的名词**
-
 ---
 - Wo ist das Auto?
 - **Da ist es.**
@@ -33,7 +27,6 @@ tags:
 - Ja, sehr gut.
 - Schau mal! Ist das **nicht ein** super Sofa?
 - Ja, das Sofa ist super.
----
 ---
 - Tom **sagt zu** Maria: "Ich bin krank."
 - Maria **sagt zu** Tom: "Das tut mir leid."
@@ -49,15 +42,13 @@ tags:
 - Der Tisch ist **aus Metall**.
 - Das Spielzeug ist **aus Plastik**.
 ---
-- Wie bitte?
-- Noch einmal, bitte.
----
-- Danke schön.
-- Bitte schön.
-- Bitte. Sehr gerne.
-- Kein Problem.
+- Wie bitte? = Noch einmal, bitte.
+- **Danke schön. = Vielen Dank.**
+- Bitte schön. = Bitte.
+- Bitte. Sehr gerne. = Kein Problem.
 ---
 - **Wie heißt das auf Deutsch?**
+- **Was sagt man auf Deutsch?**
 - **Wie schreibe man das?**
 ---
 - **Wie schreibt man Buch?**
@@ -75,7 +66,4 @@ tags:
 > [!NOTE]
 >
 > - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
-> - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
-
----
-- Was bestellst du?
+>  - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
