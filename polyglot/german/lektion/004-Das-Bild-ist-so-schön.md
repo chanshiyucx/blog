@@ -77,3 +77,39 @@ tags:
 - **Wie viel kostet** der Stuhl?
 - **Was kostet** die Lampe?
 - **Was kostet** der Stuhl?
+---
+
+> [!NOTE]  
+> 在德语中，**Million、Billion、Hundert、Tausend** 的词性有所不同，具体如下：
+>
+> **1. 词性和用法**
+>
+> |**词**|**词性**|**说明**|
+> |---|---|---|
+> |**Million**|**阴性（die Million）**|表示 " 百万 "，有复数形式 **Millionen**|
+> |**Billion**|**阴性（die Billion）**|表示 " 万亿 "，有复数形式 **Billionen**|
+> |**Hundert**|**中性（das Hundert）**|表示 " 百 "，通常不用复数，作为数词时不带冠词|
+> |**Tausend**|**中性（das Tausend）**|表示 " 千 "，通常不用复数，作为数词时不带冠词|
+>
+> **2. 详细解析**
+>
+> **✅ Million（百万） & Billion（万亿）**
+>
+> - **Million** 和 **Billion** 是**阴性名词（die Million / die Billion）**，并且它们和普通名词一样可以有复数形式：
+> - **zwei Millionen Euro**（两百万欧元）
+> - **drei Billionen Dollar**（三万亿美元）
+> - 它们通常需要与 **基数词 + 复数形式** 连用，例如：
+> - **eine Million Menschen**（一百万人）
+> - **fünf Millionen Bücher**（五百万本书）
+>
+> **✅ Hundert（百）& Tausend（千）**
+>
+> - **Hundert** 和 **Tausend** **通常作为数词使用**，**不带冠词**：
+> - **Er hat hundert Euro.**（他有一百欧元。）
+> - **Tausend Leute kamen zur Feier.**（一千人来参加了庆祝活动。）
+> - **在某些情况下，它们可以作为中性名词（das Hundert / das Tausend）使用，带冠词**：
+> - **ein Hundert Leute**（一百人——强调数量时）
+> - **ein Tausend Soldaten**（一千名士兵）
+> - 在特定语境下，它们也可以有复数：
+> - **Hunderte von Menschen**（成百上千的人）
+> - **Tausende von Touristen**（成千上万的游客）
