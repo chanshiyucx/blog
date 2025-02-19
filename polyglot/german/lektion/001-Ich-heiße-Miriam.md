@@ -12,9 +12,9 @@ tags:
 ---
 - Wie alt bist du?
 - Wie alt sind Sie?
-- Ich bin sechsundzwanzig **Jahre alt**.
+- Ich bin sechsundzwanzig Jahre alt.
 - Wie alt seid ihr?
-- Ich bin 28 Jahre alt. Ich bin auch 28.
+- Ich bin 28 Jahre alt. **Ich bin auch 28.**
 ---
 - Woher kommst du?
 - Woher kommen Sie?
@@ -57,15 +57,12 @@ tags:
 - Wer sind das?
 - Das sind Simon und Maria.
 ---
-- **Wie bitte?**
-- **Nochmal bitte?**
----
 - **Sind Sie** Herr Li?
 - Ja, das bin ich.
 - Nein, das bin ich nicht.
 - Nein, **so heiße ich nicht**. Ich heiße Xin.
 - Ich heiße **nicht** Li.
-- Das ist **nicht** mein Name.
+- Das ist nicht mein Name.
 - **Ich glaube**, das ist er/sie/Name.
 ---
 - **Wie geht's dir?** = Wie geht es dir?

@@ -42,7 +42,7 @@ tags:
 - Der Tisch ist **aus Metall**.
 - Das Spielzeug ist **aus Plastik**.
 ---
-- Wie bitte? = Noch einmal, bitte.
+- Wie bitte? = Noch einmal, bitte. = Nochmal, bitte.
 - **Danke schön. = Vielen Dank.**
 - Bitte schön. = Bitte.
 - Bitte. Sehr gerne. = Kein Problem.
@@ -67,3 +67,9 @@ tags:
 >
 > - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
 >  - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
+
+---
+- **Wo ist der Bahnhof?**
+- **Ich weiß nicht.**
+- **Wie spät ist es?**
+- **Ich weiß nicht.**
