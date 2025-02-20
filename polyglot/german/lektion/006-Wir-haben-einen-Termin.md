@@ -75,3 +75,7 @@ tags:
 - Wie ist deine E-Mail-Adresse?
 - Wie ist deine Telefonnummer?
 - Wie ist dein Vorname?
+---
+- Du bist die Tochter von Peter.
+- Die Kinder lieben den Hund.
+- Der Ball ist sehr schön.
