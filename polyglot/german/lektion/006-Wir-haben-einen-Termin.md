@@ -10,6 +10,7 @@ tags:
 ---
 - Die Person **auf Bild** hat Hunger.
 - Die Person **auf Bild** braucht einen Kaffee.
+- Die Person **auf Bild** **kommt nicht ins WLAN**.
 ---
 - Ich brauche **einen Stift**.
 - Ich brauche **keinen Stift**.
@@ -23,7 +24,18 @@ tags:
 - Ich habe eine Frau.
 - Ich habe einen Mann.
 - Ich habe Kinder.
-- Wo ist der Drucker?
+- Ich packe einen Laptop, zwei Stifte und eine Brille in meine Tasche.
+- **Wo ist der Drucker?**
+---
+- Haben Sie **den** Kalender?
+- Haben Sie **keinen** Kalender?
+- Haben Sie **vielleicht** die Lampe?
+- Hast du **das** Handy?
+- Hast du **kein** Handy?
+---
+- **Den Stift habe ich auch.**
+- Den Kalender habe ich auch.
+- Den Termin habe ich auch.
 ---
 - Ich komme **nicht ins WLAN**.
 - Ist das Passwort **neu**?
@@ -39,10 +51,6 @@ tags:
 - Hilfe! Keine E-Mails von Frau Müller? Wo sind sie?
 - **LG** Svenja. (LG = Liebe Grüße，相当于 " 亲切的问候 ")
 ---
-- Ich packe einen Laptop in meine Tasche.
-- Ich packe einen Laptop und zwei Stifte in meine Tasche.
-- Ich packe einen Laptop, zwei Stifte und eine Brille in meine Tasche.
----
 - **Was kann ich für Sie tun?**
 - **Ist Frau Yun da?**
 - **Einen Moment bitte.** **Frau Yun ist leider nicht da.**
@@ -50,23 +58,10 @@ tags:
 - **Sehr gern. Auf Wiederhören.**
 ---
 - **Wir haben doch einen Termin**, Herr Yun. **Haben Sie keinen Kalender?**
-- Doch. Aber ich sehe **keinen Termin**.
+- **Doch**. Aber ich sehe **keinen Termin**.
 - **Dann suchen Sie bitte einen Stift und notieren Sie.**
 - Ich habe **keinen Stift**.
 - **Das ist nicht gut.** **Sie brauchen einen Stift.**
----
-- Haben Sie **den** Kalender?
-- Haben Sie **keinen** Kalender?
-- Haben Sie **vielleicht** die Lampe?
-- Hast du **das** Handy?
-- Hast du **kein** Handy?
----
-- **Den Stift habe ich auch.**
-- Den Kalender habe ich auch.
-- Den Termin habe ich auch.
----
-- Da ist er.
-- Hier ist er.
 ---
 - **Wo ist denn der Kalender?** Frau Yun, haben Sie den Kalender?
 - Nein, ich habe **keinen** Kalender.
@@ -76,6 +71,8 @@ tags:
 - Wie ist deine Telefonnummer?
 - Wie ist dein Vorname?
 ---
-- Du bist die Tochter von Peter.
 - Die Kinder lieben den Hund.
 - Der Ball ist sehr schön.
+---
+- Da ist er.
+- Hier ist er.

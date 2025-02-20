@@ -1,7 +1,7 @@
 ---
-title: Sie KöNnen Super Tanzen!
+title: Sie köNnen super tanzen!
 date: 2025-02-20 14:50:18
-tags: 
+tags:
   - German/Lektion
 ---
 
@@ -15,9 +15,9 @@ tags:
 | sie/Sie   | können | finden  | fahren |
 
 - **Wie findest du das?**
-- Ich finde das **tall**.
+- Ich finde das **toll**.
 - Du findest das **peinlich**.
-- Er/Sie findet das **lustig / blöd / interessant / komisch / normal / super.**
+- Er/Sie findet das **lustig / blöd / interessant / komisch / normal / super / schön.**
 ---
 - Sie können **wirklich super** tanzen!
  - Ich kann **überall** tanzen!
@@ -31,3 +31,14 @@ tags:
 - Danke sehr!
 - **Vielen Dank!**
 - **Herzlichen Dank!**
+---
+- Ich kann schwimmen. **Könnt ihr auch** schwimmen?
+- Ja, ich kann **auch** schwimmen. Ich kann **sehr gut** backen, **kannst du auch** backen?
+- Nein, ich kann **gar nicht** backen.
+- Ich kann auch nicht backen, aber ich…
+---
+- toll / sehr gut / super
+- gut
+- nicht so gut
+- ein bisschen
+- gar nicht
