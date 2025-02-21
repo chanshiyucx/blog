@@ -9,9 +9,6 @@ tags:
 - **In der Küche** **sind** drei Stühle.
 - **Auf dem Tisch** **ist** eine Lampe.
 ---
-- Was bestellst du?
-- Ich kaufe Äpfel, Bananen **und so weiter**.
----
 - Was ist das? Ist das **ein** Tisch?
 - Ja. Das ist **ein** Tisch.
 - Nein. Das ist **kein** Tisch.
@@ -19,9 +16,6 @@ tags:
 - Ich habe **keine** Kinder.
 - Das ist **kein** Sonderangebot.
 - Das Sofa ist **nicht** günstig.
----
-- Wo ist das Auto?
-- **Da ist es.**
 ---
 - Ist **das** Buch gut?
 - Ja, sehr gut.
@@ -63,6 +57,9 @@ tags:
 - Können Sie das **schreiben**, bitte?
 - Können Sie das **buchstabieren**, bitte?
 ---
+- **Wo ist das Auto?**
+- **Da ist es.**
+---
 - **Wo ist der Bahnhof?**
 - **Ich weiß nicht.**
 - **Ich weiß wirklich nicht, wo er ist.**  
@@ -70,3 +67,6 @@ tags:
 - **Wie spät ist es?**
 - **Ich weiß nicht.**
 - **Das weiß ich wirklich nicht.**
+---
+- Was bestellst du?
+- Ich kaufe Äpfel, Bananen **und so weiter**.

@@ -42,3 +42,21 @@ tags:
 - nicht so gut
 - ein bisschen
 - gar nicht
+---
+- Pia arbeitet **im** Hotel und spricht **schlecht** Englisch.
+- Mein Freund schwimmt **jeden Tag eine Stunde**.
+
+> [!NOTE]
+>
+> Mein Freund schwimmt **jeden Tag eine Stunde**.  
+> 我的朋友每天游泳一小时。
+>
+> - jeden Tag = 每天（jeden 是 jeder 的第四格形式，因为这里表示时间）
+> - eine Stunde = 一小时（这里用第四格，因为表示持续时间）
+>
+> 在德语中，**表示持续时间的时间段通常使用第四格（Akkusativ）**。"jeden Tag"（每天）和 "eine Stunde"（一小时）都是时间状语，用来说明动作发生的频率和持续时间。
+>
+> 类似的例子：
+> - Ich lerne zwei Stunden Deutsch. (我学习德语两小时。)
+> - Er arbeitet jeden Tag acht Stunden. (他每天工作八小时。)
+> - Sie joggt jeden Morgen **eine halbe Stunde**. (她每天早上慢跑半小时。)
