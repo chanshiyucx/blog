@@ -46,6 +46,8 @@ tags:
 - Pia arbeitet **im** Hotel und spricht **schlecht** Englisch.
 - Mein Freund schwimmt **jeden Tag eine Stunde**.
 - Ich gehe **jede Woche** schwimmen.
+- Ich gehe **ab und zu** ins Kino.
+- Er kommt ab und zu zu spät zur Arbeit.
 
 > [!NOTE]
 >
@@ -63,6 +65,16 @@ tags:
 > - Sie joggt jeden Morgen **eine halbe Stunde**. (她每天早上慢跑半小时。)
 
 ---
+ - Wie oft spielen Sie Tennis?
+ - Ich spiele zweimal **die Woche** Tennis.
+ - Ich spiele dreimal **in der Woche** Tennis.
+ - Ich spiele viermal **pro Woche** Tennis.
+ - Ich spiele **jeden Dienstag und Donnerstag** Tennis.
+ - Ich spiele **ab und zu** Tennis. 偶尔
+ - Ich spiele **manchmal** Tennis. 有时候
+ - Ich spiele **regelmäßig** Tennis. 经常
+ - Ich spiele **selten** Tennis. 很少
+ - Ich spiele **kein** Tennis. 完全不
 
 > [!NOTE]
 >
@@ -73,16 +85,13 @@ tags:
 > 	- Ich spiele **regelmäßig**, **etwa dreimal die Woche**. (我经常打，大约每周三次。)
 >
 > 1. 如果偶尔打：
-> 	- Ab und zu, vielleicht einmal im Monat. (偶尔打，可能一个月一次。)
-> 	- Nicht so oft, nur gelegentlich. (不是很频繁，只是偶尔打。)
+> 	- **Ab und zu**, vielleicht einmal **im Monat**. (偶尔打，可能一个月一次。)
+> 	- **Nicht so oft, nur gelegentlich.** (不是很频繁，只是偶尔打。)
 >
 > 1. 如果很少打：
-> 	- Leider sehr selten. (很遗憾，很少打。)
-> 	- Nur in den Ferien. (只在假期打。)
+> 	- **Leider sehr selten.** (很遗憾，很少打。)
+> 	- **Nur in den Ferien.** (只在假期打。)
 >
 > 1. 如果完全不打：
-> 	- Ich spiele kein Tennis. (我不打网球。)
-> 	- Ich habe noch nie Tennis gespielt. (我从来没打过网球。)
->
-> 回答时可以根据实际情况选择合适的表达，也可以补充一些细节，比如：  
->   - Ich spiele jeden Dienstag und Donnerstag Tennis. (我每周二和周四打网球。)
+> 	- Ich spiele **kein** Tennis. (我不打网球。)
+> 	- Ich habe **noch nie** Tennis gespielt. (我从来没打过网球。)
