@@ -70,11 +70,15 @@ tags:
  - Ich spiele dreimal **in der Woche** Tennis.
  - Ich spiele viermal **pro Woche** Tennis.
  - Ich spiele **jeden Dienstag und Donnerstag** Tennis.
+ - Ich spiele **immer** Tennis. 总是
+ - Ich spiele **oft** Tennis. 经常
  - Ich spiele **ab und zu** Tennis. 偶尔
  - Ich spiele **manchmal** Tennis. 有时候
- - Ich spiele **regelmäßig** Tennis. 经常
  - Ich spiele **selten** Tennis. 很少
- - Ich spiele **kein** Tennis. 完全不
+ - Ich spiele **nie** Tennis. 从不
+ - Ich spiele **regelmäßig**, **etwa dreimal die Woche**.
+ - Ich spiele **regelmäßig jeden Montag** Tennis.
+ - Ich spiele **gar kein** Tennis.
 
 > [!NOTE]
 >
