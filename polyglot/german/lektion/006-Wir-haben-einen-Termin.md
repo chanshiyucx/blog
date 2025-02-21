@@ -25,7 +25,6 @@ tags:
 - Ich habe einen Mann.
 - Ich habe Kinder.
 - Ich packe einen Laptop, zwei Stifte und eine Brille in meine Tasche.
-- **Wo ist der Drucker?**
 ---
 - Haben Sie **den** Kalender?
 - Haben Sie **keinen** Kalender?
@@ -67,6 +66,14 @@ tags:
 - Nein, ich habe **keinen** Kalender.
 - **Ach, da ist er ja!** Aber wo ist jetzt **schon wieder** das Tablet? **Haben Sie vielleicht das Tablet**, Frau Yun?
 ---
+- Hast du das Tablet?
+- Ja, aber ich suche **schon wieder** die Kamera.
+- **Hier! Ich habe sie.**
+- Gut. Und **wo ist der Autoschlüssel?** Hast du **vielleicht auch** den Autoschlüssel?
+- Ja, **den Schlüssel habe ich auch**.
+- Dann packe ich jetzt **nur noch** den Laptop in meine Tasche.
+- **Brauchst du den Laptop wirklich?** Wir haben **doch schon** das Tablet und die Handys.
+---
 - Wie ist deine E-Mail-Adresse?
 - Wie ist deine Telefonnummer?
 - Wie ist dein Vorname?
@@ -74,5 +81,6 @@ tags:
 - Die Kinder lieben den Hund.
 - Der Ball ist sehr schön.
 ---
+- **Wo ist der Drucker?**
 - Da ist er.
 - Hier ist er.

@@ -13,11 +13,11 @@ tags:
 - **Doch**, das ist meine Mutter.
 - Nein, das ist meine Oma.
 ---
-- **Wie heißt** deine Mutter?
-- **Wie alt ist** deine Mutter?
----
 - **Sind** das deine Kinder?
 - Ist Maren dein Freund?
+---
+- **Wie heißt** deine Mutter?
+- **Wie alt ist** deine Mutter?
 ---
 - Er kommt **nicht** aus Indien, **oder**?
 - Geht es dir **nicht** gut?
@@ -45,4 +45,4 @@ tags:
 - Aber ich **lebe und arbeite** in München.
 - Ich **habe noch** keine Kinder.
 - Ich **lebe jetzt** in München.
-- Du bist die Tochter von Peter.
+- Du bist die Tochter **von** Peter.

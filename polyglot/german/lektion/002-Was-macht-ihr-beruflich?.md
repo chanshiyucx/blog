@@ -75,4 +75,6 @@ tags:
 - **Was studierst du?**
 - Ich studiere Medizin.
 ---
+- Vielen Dank für das Interview!
+---
  - Ich heiße Xin Chen. Ich bin dreißig Jahre alt und komme aus China. Ich wohne jetzt in München. Ich bin Single und habe keine Kinder. Ich bin Student. Ich studiere Medizin und ich habe einen Job als Programmierer.

@@ -7,29 +7,13 @@ tags:
 - Ich bin **zu Hause**.
 - Er bleibt **zu Hause**.
 - Mein **Zuhause** ist in München.
-
 ---
-- Ich bin **im Möbelgeschäft**.
+- Ich bin **in der** Schule.
 - Ich bin **im** Supermarkt.
+- Ich bin **im** Möbelgeschäft.
 - Ich arbeite **im** Büro.
 - Ich treffe **dich** **im** Kino.
 - Wir essen **im** Restaurant.
-
-> [!NOTE]
->
-> "im Möbelgeschäft" 是 **"in dem Möbelgeschäft"** 的缩写，表示 " 在家具店里 "。这里使用 **Dativ（第三格）**，因为 **"in"** 在表示静态位置（Wo?）时，要求后面的名词用 **Dativ**。
->
-> **in** 既可以支配 **Akkusativ（第四格）** 也可以支配 **Dativ（第三格）**，取决于**是否有运动方向**：
->   - Dativ（静态，Wo? 哪里？）
-> 	  - Ich bin **im** Möbelgeschäft.
-> 	  - Ich kaufe **im** Möbelgeschäft ein.
->   - Akkusativ（动态，Wohin? 去哪里？）
-> 	  - Ich gehe **ins** Möbelgeschäft.
-> 	  - Ich gehe **ins** Kino.
-
----
-- Ich bin **in den** Bergen.
-- Ich bin **in der** Schule.
 
 > [!NOTE]
 >
