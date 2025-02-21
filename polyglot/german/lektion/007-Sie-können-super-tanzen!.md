@@ -45,6 +45,7 @@ tags:
 ---
 - Pia arbeitet **im** Hotel und spricht **schlecht** Englisch.
 - Mein Freund schwimmt **jeden Tag eine Stunde**.
+- Ich gehe **jede Woche** schwimmen.
 
 > [!NOTE]
 >
@@ -60,3 +61,28 @@ tags:
 > - Ich lerne zwei Stunden Deutsch. (我学习德语两小时。)
 > - Er arbeitet jeden Tag acht Stunden. (他每天工作八小时。)
 > - Sie joggt jeden Morgen **eine halbe Stunde**. (她每天早上慢跑半小时。)
+
+---
+
+> [!NOTE]
+>
+> 回复这个关于打网球频率的问题，有几种常见的方式：
+>
+> 1. 如果经常打：
+> 	- Ich spiele **zweimal** **pro Woche** Tennis. (我每周打两次网球。)
+> 	- Ich spiele **regelmäßig**, **etwa dreimal die Woche**. (我经常打，大约每周三次。)
+>
+> 1. 如果偶尔打：
+> 	- Ab und zu, vielleicht einmal im Monat. (偶尔打，可能一个月一次。)
+> 	- Nicht so oft, nur gelegentlich. (不是很频繁，只是偶尔打。)
+>
+> 1. 如果很少打：
+> 	- Leider sehr selten. (很遗憾，很少打。)
+> 	- Nur in den Ferien. (只在假期打。)
+>
+> 1. 如果完全不打：
+> 	- Ich spiele kein Tennis. (我不打网球。)
+> 	- Ich habe noch nie Tennis gespielt. (我从来没打过网球。)
+>
+> 回答时可以根据实际情况选择合适的表达，也可以补充一些细节，比如：  
+>   - Ich spiele jeden Dienstag und Donnerstag Tennis. (我每周二和周四打网球。)
