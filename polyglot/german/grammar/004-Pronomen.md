@@ -71,19 +71,21 @@ tags:
 
 ## Demonstrativ (指示代词)
 
-| N    | G      | D     | A     |
-|------|---------|-------|-------|
-| der  | dessen  | dem   | den   |
-| die  | deren   | der   | die   |
-| das  | dessen  | dem   | das   |
-| die  | deren   | denen | die   |
+指示代词用来指出特定的人或物，相当于"这个"、"那个"。主要用于：
+1. 强调某个人或物
+2. 指出距离远近
+3. 可以独立使用
 
-dieser/diese/dieses (这个)和 jener/jene/jenes (那个)的变化与定冠词类似。
+### 常用指示代词
+- der/die/das (这个/那个)
+- dieser/diese/dieses (这个)
+- jener/jene/jenes (那个)
 
 ### Beispiele
-1. Das ist mein Bruder. **Der** ist Arzt. (这是我哥哥。他是医生。)
-2. Ich nehme **dieses** Buch. (我要这本书。)
-3. **Jene** Frau kenne ich nicht. (那个女人我不认识。)
+1. **Das** ist mein Auto. (这是我的车。)
+2. Ich nehme **dieses** Buch, nicht **jenes**. (我要这本书，不要那本。)
+3. **Der** da drüben ist mein Bruder. (那边那位是我哥哥。)
+4. **Diese** Tasche gefällt mir besser als **jene**. (我更喜欢这个包而不是那个。)
 
 ## Interrogativ (疑问代词)
 
@@ -92,38 +94,57 @@ dieser/diese/dieses (这个)和 jener/jene/jenes (那个)的变化与定冠词�
 - welcher/welche/welches (哪个)
 - was für ein/eine/eines (什么样的)
 
-### Deklination von "wer"
-| N   | G     | D    | A    |
-|-----|--------|-------|-------|
-| wer | wessen | wem   | wen   |
+| N   | G      | D   | A   |
+| --- | ------ | --- | --- |
+| wer | wessen | wem | wen |
 
 ### Beispiele
+
 1. **Wer** ist das? (这是谁？)
 2. **Was** machst du? (你在做什么？)
 3. **Welches** Buch möchtest du? (你想要哪本书？)
 4. **Was für ein** Auto hast du? (你有什么样的车？)
 
 ## Relativ (关系代词)
+关系代词用来引导关系从句，连接主句和从句。它：
+1. 总是引导从句
+2. 必须与先行词在性数上保持一致
+3. 格取决于在从句中的语法功能
 
-|        | Maskulinum | Femininum | Neutrum | Plural |
-|--------|------------|-----------|----------|---------|
-| N      | der        | die       | das      | die     |
-| G      | dessen     | deren     | dessen   | deren   |
-| D      | dem        | der       | dem      | denen   |
-| A      | den        | die       | das      | die     |
-
-### Beispiele
-1. Der Mann, **der** dort steht, ist mein Lehrer. (站在那里的那个男人是我的老师。)
-2. Das Buch, **das** ich lese, ist interessant. (我正在读的这本书很有趣。)
-3. Die Frau, **deren** Auto rot ist, wohnt nebenan. (那个拥有红色汽车的女士住在隔壁。)
-
-## Reziprok (相互代词)
-
-- einander (互相)
+### 使用规则
+1. 关系代词的性和数由先行词决定
+2. 关系代词的格由从句中的功能决定
+3. 关系从句中的动词要放在句末
 
 ### Beispiele
-1. Sie lieben **einander**. (他们互相爱着对方。)
-2. Wir helfen **einander**. (我们互相帮助。)
+1. Das ist der Mann, **der** mir geholfen hat. 
+   (这就是帮助我的那个男人。)
+   - der: 阳性单数，因为 Mann 是阳性；第一格，因为在从句中作主语
+
+2. Die Frau, **deren** Kinder ich kenne, ist Lehrerin. 
+   (我认识她孩子的那位女士是位老师。)
+   - deren: 阴性单数，因为 Frau 是阴性；第二格，表示所属关系
+
+3. Das Buch, **das** ich gestern gekauft habe, ist sehr interessant.
+   (我昨天买的那本书很有趣。)
+   - das: 中性单数，因为 Buch 是中性；第四格，因为在从句中作宾语
+
+4. Die Studenten, **denen** ich Deutsch beibringe, kommen aus China.
+   (我教德语的那些学生来自中国。)
+   - denen: 复数，因为 Studenten 是复数；第三格，因为在从句中作间接宾语
+
+### 主要区别
+1. **功能不同**
+   - 指示代词：指出具体的人或物
+   - 关系代词：连接主句和从句
+
+2. **位置不同**
+   - 指示代词：可以在句子任何适合的位置
+   - 关系代词：总是在从句开头
+
+3. **独立性**
+   - 指示代词：可以独立使用
+   - 关系代词：必须用于从句中
 
 ## Indefinit (不定代词)
 
@@ -137,9 +158,11 @@ dieser/diese/dieses (这个)和 jener/jene/jenes (那个)的变化与定冠词�
 | A   | jeden      | jede      | jedes   |
 
 #### 复数形式
+
 复数只有一种形式 "alle"（所有的）
 
 #### 常见用法
+
 1. jeden Tag (每天) - Tag 是阳性名词，这里用第四格
 2. jede Woche (每周) - Woche 是阴性名词，用第一/四格
 3. jedes Mal (每次) - Mal 是中性名词，用第一/四格
@@ -157,6 +180,7 @@ dieser/diese/dieses (这个)和 jener/jene/jenes (那个)的变化与定冠词�
 - mehrere (多个)
 
 #### Beispiele
+
 1. Alle Kinder spielen im Garten. (所有的孩子都在花园里玩。)
 2. Einige Studenten fehlen heute. (今天有些学生缺席。)
 3. Viele Menschen mögen Musik. (许多人喜欢音乐。)
