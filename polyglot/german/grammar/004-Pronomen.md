@@ -89,21 +89,68 @@ tags:
 
 ## Interrogativ (疑问代词)
 
-- wer (谁) - 用于人
-- was (什么) - 用于物
-- welcher/welche/welches (哪个)
-- was für ein/eine/eines (什么样的)
+疑问代词用于提问，主要有以下几种：
 
-| N   | G      | D   | A   |
-| --- | ------ | --- | --- |
-| wer | wessen | wem | wen |
+### 1. wer (谁) - 用于人
+| Kasus | Form   | Beispiel                    |
+|-------|--------|----------------------------|
+| N     | wer    | **Wer** ist das?           |
+| G     | wessen | **Wessen** Buch ist das?   |
+| D     | wem    | **Wem** gehört das Auto?   |
+| A     | wen    | **Wen** hast du getroffen? |
 
-### Beispiele
+### 2. was (什么) - 用于物
+- was 没有变化形式
+- Beispiele:
+  - **Was** ist das? (这是什么？)
+  - **Was** machst du? (你在做什么？)
 
-1. **Wer** ist das? (这是谁？)
-2. **Was** machst du? (你在做什么？)
-3. **Welches** Buch möchtest du? (你想要哪本书？)
-4. **Was für ein** Auto hast du? (你有什么样的车？)
+### 3. welcher/welche/welches (哪个)
+用于在已知范围内选择，变化如下：
+
+|     | Maskulinum | Femininum | Neutrum  | Plural   |
+|-----|------------|-----------|----------|----------|
+| N   | welcher    | welche    | welches  | welche   |
+| G   | welches    | welcher   | welches  | welcher  |
+| D   | welchem    | welcher   | welchem  | welchen  |
+| A   | welchen    | welche    | welches  | welche   |
+
+Beispiele:
+- **Welches** Buch möchtest du? (你想要哪本书？)
+- **Welcher** Film hat dir gefallen? (你喜欢哪部电影？)
+- **Welche** Farbe magst du? (你喜欢哪种颜色？)
+
+### 4. was für ein/eine/eines (什么样的)
+用于询问种类或性质，变化如下：
+
+|     | Maskulinum    | Femininum     | Neutrum      | Plural    |
+|-----|---------------|---------------|--------------|-----------|
+| N   | was für ein   | was für eine  | was für ein  | was für   |
+| G   | was für eines | was für einer | was für eines| was für   |
+| D   | was für einem | was für einer | was für einem| was für   |
+| A   | was für einen | was für eine  | was für ein  | was für   |
+
+Beispiele:
+- **Was für ein** Auto fährst du? (你开什么样的车？)
+- **Was für eine** Musik hörst du gern? (你喜欢什么样的音乐？)
+- **Was für** Bücher liest du? (你读什么样的书？)
+
+### 常见疑问句型
+1. 人物询问：
+   - **Wer** ist dieser Mann? (这个男人是谁？)
+   - Mit **wem** sprichst du? (你在和谁说话？)
+
+2. 事物询问：
+   - **Was** ist in der Tasche? (包里是什么？)
+   - **Was** studierst du? (你学什么专业？)
+
+3. 选择询问：
+   - **Welchen** Kaffee möchten Sie? (您想要哪种咖啡？)
+   - **Welche** Sprache sprichst du? (你说哪种语言？)
+
+4. 性质询问：
+   - **Was für ein** Mensch ist er? (他是什么样的人？)
+   - **Was für** Hobbys hast du? (你有什么样的爱好？)
 
 ## Relativ (关系代词)
 关系代词用来引导关系从句，连接主句和从句。它：
@@ -140,7 +187,7 @@ tags:
 
 2. **位置不同**
    - 指示代词：可以在句子任何适合的位置
-   - 关系代词：总是在从句开头
+   | 关系代词：总是在从句开头
 
 3. **独立性**
    - 指示代词：可以独立使用
