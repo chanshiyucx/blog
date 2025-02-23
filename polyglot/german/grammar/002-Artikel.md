@@ -23,30 +23,6 @@ tags:
 | D   | einem Tisch   | einer Tasche | einem Kind   |
 | A   | einen Tisch   | eine Tasche  | ein Kind     |
 
-## Indefinitartikel
-
-|     | Maskulinum | Femininum | Neutrum |
-| --- | ---------- | --------- | ------- |
-| N   | jeder      | jede      | jedes   |
-| G   | jedes      | jeder     | jedes   |
-| D   | jedem      | jeder     | jedem   |
-| A   | jeden      | jede      | jedes   |
-
-### 复数形式
-
-复数只有一种形式 "alle"（所有的）
-
-常见用法：
-1. jeden Tag (每天) - Tag 是阳性名词，这里用第四格
-2. jede Woche (每周) - Woche 是阴性名词，用第一/四格
-3. jedes Mal (每次) - Mal 是中性名词，用第一/四格
-4. jedem Kind (给每个孩子) - Kind 是中性名词，用第三格
-
-这就是为什么我们说：
-- jeden Tag (每天，阳性第四格)
-- jede Woche (每周，阴性第四格)  
-而不是相反。
-
 ## Beispiel
 
 ### Nominativ
