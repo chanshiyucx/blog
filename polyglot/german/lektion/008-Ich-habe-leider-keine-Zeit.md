@@ -4,13 +4,13 @@ date: 2025-02-24 21:03:47
 tags:
   - German/Lektion
 ---
-- Gehen wir ins Kino?
+- **Gehen wir ins Kino?**
 - Gehen wir ins Schwimmbar?
 - **Heute Nachmittag um vier?**
 - **Ich gehe mit Yun ins Kino.**
 - **Nein, das glaube ich nicht.**
 ---
-- Jetzt habe ich ein Problem. Leider habe ich keine Zeit. **Tut mir sehr leid.**
+- Jetzt habe ich ein Problem. Leider habe ich keine Zeit. **Tut mir sehr leid.** Vielleicht am Montag oder am Dienstag? **Liebe Grüße**, Xin.
 
 > [!NOTE]
 >
@@ -26,3 +26,52 @@ tags:
 > - "sehr" 用来加强语气
 >
 > 这个表达相当于英语中的 "I'm very sorry"。
+
+> [!NOTE]
+>
+> "Viele Grüße" vs "Liebe Grüße" 的区别:
+>
+> **Viele Grüße**（很多问候）:
+> - 更正式和中性
+> - 适合商务场合
+> - 用于不太熟悉的人之间
+> - 相当于英语中的 "Best regards"
+>
+> **Liebe Grüße**（亲切的问候）:
+> - 更温暖和个人化
+> - 适合私人场合
+> - 用于朋友、家人或熟人之间
+> - 相当于英语中的 "Kind regards" 或 "Best wishes"
+>
+> 在这封信中使用 "Liebe Grüße" 是合适的，因为这是一个私人的、非正式的对话场景。
+
+---
+- Ich habe am Montag keine Zeit.
+- Am Montag habe ich keine Zeit.
+
+> [!NOTE]
+>
+> 1. **Ich habe am Montag keine Zeit.**
+>    - 这是标准语序：主语 + 动词 + 时间状语 + 宾语
+>    - 更自然、常用的说法
+>    - 重点在于 " 没有时间 " 这个事实
+>
+> 2. **Am Montag habe ich keine Zeit.**
+>    - 这是时间状语前置的语序
+>    - 由于**德语是 V2 语言（变位动词必须在第二位），当时间状语前置时，主语会移到动词后面**
+>    - 重点强调 " 周一 " 这个时间
+>    - 适用于特别想强调时间的场景，比如在讨论不同日期的安排时
+>
+> 两句话在语法上都完全正确，意思也基本相同，区别主要在于强调点的不同。选择使用哪种语序主要取决于你想强调什么信息。
+
+---
+- Was machst du heute Nachmittag?
+- **Das weiß ich noch nicht.**
+- **Lust auf Schwimmbad?**
+- **Nöö. Keine Lust.**
+- Gehen wir ins Kino?
+- Oh ja! **Gute Idee. Wann denn?**
+- Um Viertel nach sieben?
+- Nein, **das ist zu spät**. Am Abend habe ich keine zeit.
+- Na, **dann um halb vier?** Oder um vier?
+- Ja, okay. Um vier. Bis dann!
