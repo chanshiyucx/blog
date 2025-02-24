@@ -1,5 +1,5 @@
 ---
-title: Sie köNnen super tanzen!
+title: Sie können super tanzen!
 date: 2025-02-20 14:50:18
 tags:
   - German/Lektion
@@ -99,3 +99,84 @@ tags:
 > 1. 如果完全不打：
 > 	- Ich spiele **kein** Tennis. (我不打网球。)
 > 	- Ich habe **noch nie** Tennis gespielt. (我从来没打过网球。)
+
+---
+- **Was ist dein Hobby?**
+- Mein Hobby ist Fotografieren.
+- **Was sind deine Hobbys?**
+- Meine Hobbys sind Fotografieren und Kochen.
+- **Meine Lieblingshobbys sind Fotografieren und Kochen.**
+---
+- Was machst du gern?
+- Ich fotografiere gern. Das macht Spaß.
+- Ich fotografiere gern Tiere.
+- **Ich mache gern Musik.**
+- Was machst du nicht gern?
+- Ich singe nicht gern.
+---
+- Was machst du gern **in deiner Freizeit?**
+- Ich liebe Fotografieren.
+- Ich liebe Reisen. (我喜欢旅行。)
+- Ich liebe Malen. (我喜欢绘画。
+- Ich liebe Singen. (我喜欢唱歌。)
+
+> [!NOTE]
+>
+> 在句子 "Was machst du gern **in deiner Freizeit**?" 中，使用 "deiner" 是因为：
+>
+> 1. "Freizeit"（空闲时间）是一个阴性名词，所以用阴性形式
+> 2. **"in" 与格搭配时表示 " 在…之中 "，所以需要使用与格形式**
+> 3. "dein" 是第二人称单数所有格代词（你的），其阴性与格形式是 "deiner"
+>
+> 详细解析：
+> - "die Freizeit" - 阴性名词
+> - "in" + 与格 = 表示 " 在…之内 "
+> - "dein" 阴性与格形式为 "deiner"
+>
+> 所以组合起来就是 "in deiner Freizeit"（在你的空闲时间里）。
+>
+> 如果用不同人称，形式也会相应变化：
+> - 我的空闲时间：in meiner Freizeit
+> - 他的空闲时间：in seiner Freizeit
+> - 她的空闲时间：in ihrer Freizeit
+> - 我们的空闲时间：in unserer Freizeit
+
+> [!NOTE]
+>
+> 在句子 "Ich liebe **Schwimmen**" 中，"Schwimmen" 是动词 "schwimmen"（游泳）的名词化形式。当动词被转化为名词使用时，它们必须遵循名词的规则，因此首字母要大写。
+>
+> 其他例子：
+> - Ich mag **Lesen**. (我喜欢阅读。)
+> - Das **Kochen** macht mir Spaß. (烹饪让我感到有趣。)
+> - **Laufen** ist gesund. (跑步很健康。)
+
+---
+- Liest du gern?
+- Ja! Ich lese sehr gern.
+- Fährst du gern Auto?
+- Nein, ich fahre nicht so gern Auto.
+---
+- **Wie oft schwimmst du?**
+- Ich schwimme **nie lange**.
+- Ich schwimme **oft lange**.
+---
+- Wie oft arbeitest du **in der Woche**?
+- Ich arbeite **nie lange**.
+- Ich arbeite **oft lange**.  
+---
+- Wie oft spielst du Gitarre?
+- Ich kaufe oft Obst.
+---
+- Lernst du oft Deutsch?
+- Ich lerne oft Deutsch.
+- Fährst du oft Rad?
+- Ich fahre nie Rad.
+- Triffst du manchmal Yun?
+- Ja, ich treffe Yun morgen.
+---
+- Ich bin morgen krank.
+- Ich bin heute krank.
+- Ich mache morgen Sport. / Morgen mache ich Sport.
+- Ich backe heute einen Kuchen. / Heute backe ich einen Kuchen.
+- Ich spiele heute Fußball. / Heute spiele ich Fußball.
+- Ich habe heute keine Zeit. / Heute habe ich keine Zeit.
