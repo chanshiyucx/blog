@@ -5,9 +5,8 @@ tags:
   - German/Lektion
 ---
 - **Gehen wir ins Kino?**
-- Gehen wir ins Schwimmbad?
-- **Heute Nachmittag um vier?**
-- **Ich gehe mit Yun ins Kino.**
+- **Gehen wir ins Schwimmbad?**
+- **Heute Nachmittag um vier gehe ich mit Yun ins Kino.**
 - **Nein, das glaube ich nicht.**
 ---
 - Ich gehe morgen **ins Schwimmbad**.
@@ -60,7 +59,7 @@ tags:
 - Ich habe am Montag keine Zeit.
 - Am Montag habe ich keine Zeit.
 ---
-- Was machst du heute Nachmittag?
+- **Was machst du heute Nachmittag?**
 - **Das weiß ich noch nicht.**
 - **Lust auf Schwimmbad?**
 - **Nöö. Keine Lust.**
@@ -71,14 +70,21 @@ tags:
 - Na, **dann um halb vier?** Oder um vier?
 - Ja, okay. Um vier. Bis dann!
 ---
+- **Vielleicht können wir heute Abend ins Theater gehen?**
+- **Kannst du heute Abend ins Theater gehen?**
+- Ja, da kann ich.
+- Ja, gern.
+- Ja, **klar**.
+- Vielleicht.
+- **Tut mir leid, ich kann leider nicht.**
+- **Nein, heute Abend habe ich leider keine Zeit.**
+---
 - Hast du am Samstag Zeit?
 - Wann?
 - Um sieben?
 - Ja, um sieben habe ich Zeit.
 ---
-
----
-- Wie spät ist es?
+- Wie spät ist es? / Wie viel Uhr ist es?
 - Viertel vor acht.
 - Gehen wir ins Kino?
 - Nein, keine Lust.

@@ -107,7 +107,7 @@ tags:
 - Meine Hobbys sind Fotografieren und Kochen.
 - **Meine Lieblingshobbys sind Fotografieren und Kochen.**
 ---
-- Was machst du gern?
+- **Was machst du gern?**
 - Ich fotografiere gern. Das macht Spaß.
 - Ich fotografiere gern Tiere.
 - **Ich mache gern Musik.**
@@ -141,15 +141,10 @@ tags:
 > - 她的空闲时间：in ihrer Freizeit
 > - 我们的空闲时间：in unserer Freizeit
 
-> [!NOTE]
->
-> 在句子 "Ich liebe **Schwimmen**" 中，"Schwimmen" 是动词 "schwimmen"（游泳）的名词化形式。当动词被转化为名词使用时，它们必须遵循名词的规则，因此首字母要大写。
->
-> 其他例子：
-> - Ich mag **Lesen**. (我喜欢阅读。)
-> - Das **Kochen** macht mir Spaß. (烹饪让我感到有趣。)
-> - **Laufen** ist gesund. (跑步很健康。)
-
+---
+- Ich mag **Lesen**. (我喜欢阅读。)
+- Das **Kochen** macht mir Spaß. (烹饪让我感到有趣。)
+ - **Laufen** ist gesund. (跑步很健康。)
 ---
 - Liest du gern?
 - Ja! Ich lese sehr gern.
