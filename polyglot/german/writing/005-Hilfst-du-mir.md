@@ -9,8 +9,8 @@ tags:
 - Nein. Ich helfe dir nicht.
 ---
 - **Gibst du mir deine Handynummer?**
-- Ja. Ich gebe dir meine Handynummer.
-- Nein. Ich gebe dir meine Handynummer nicht.
+- Ja. Ich gebe **dir** meine Handynummer.
+- Nein. Ich gebe **dir** meine Handynummer **nicht**.
 ---
 - **Ich laufe immer am Mittwoch am Abend im Park.**
 - **Jeden Freitag treffe ich nach der Arbeit Freunde.**
