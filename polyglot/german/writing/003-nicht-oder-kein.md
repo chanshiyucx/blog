@@ -4,78 +4,52 @@ date: 2025-01-30 17:55:58
 tags:
   - German/Writing
 ---
-- **Was ist das?** _(What is this?)_
-- Das ist ein Buch. _(This is a book.)_
+- **Was ist das?**
+- Das ist ein Buch.
 ---
-- **Wer ist das?** _(Who is this?)_
-- Das ist Nicole. _(This is Nicole.)_
+- **Wer ist das?**
+- Das ist Nicole.
 ---
-- Ist das **eine** Lampe? _(Is this a lamp?)_
-- Nein. Das ist **keine** Lampe. _(No. This is not a lamp.)_
-- Das ist ein Glas. _(This is a glass.)_
+- Ist das **eine** Lampe?
+- Nein. Das ist **keine** Lampe.
+- Das ist ein Glas.
 ---
-- Ist das **ein** Bett? _(Is this a bed?)_
-- Nein. Das ist **kein** Bett. _(No. This is not a bed.)_
-- Das ist ein Sofa. _(This is a sofa.)_
+- Ist das **ein** Bett?
+- Nein. Das ist **kein** Bett.
+- Das ist ein Sofa.
 ---
-- **Ist das dein Freund?** _(Is this your boyfriend?)_
-- Nein. Das ist **nicht** mein Freund. _(No. This is not my boyfriend.)_
-- **Hast du eine Freundin?** _(Do you have a girlfriend?)_
-- Nein. Ich habe **keine** Freundin. _(No. I don't have a girlfriend.)_
+- **Ist das dein Freund?**
+- Nein. Das ist **nicht** mein Freund.
+- **Hast du eine Freundin?**
+- Nein. Ich habe **keine** Freundin.
 ---
-- **Haben Sie Kinder?** _(Do you have children?)_
-- **Hast du Kinder?** _(Do you have children?)_
-- Nein. Ich habe **keine** Kinder. _(No. I don't have children.)_
-- Ja. Ich habe **eine** Tochter. _(Yes. I have a daughter.)_
-- Ja. Ich habe **einen** Sohn. _(Yes. I have a son.)_
+- **Haben Sie Kinder?**
+- **Hast du Kinder?**
+- Nein. Ich habe **keine** Kinder.
+- Ja. Ich habe **eine** Tochter.
+- Ja. Ich habe **einen** Sohn.
 ---
-- Ich habe **eine** Schwester. _(I have a sister.)_
-- Ich habe **einen** Bruder. _(I have a brother.)_
+- Ich habe **eine** Schwester.
+- Ich habe **einen** Bruder.
 ---
-- Sprechen Sie bitte langsam. _(Please speak slowly.)_
-- Sprechen Sie bitte Hochdeutsch. _(Please speak Standard German.)_
-- Was bedeutet Postleitzahl? _(What does postal code mean?)_
-- Wie schreibt man das? _(How do you write that?)_
-- Ich verstehe kein Schweizerdeutsch. _(I don't understand Swiss German.)_
-- Können Sie das bitte buchstabieren? _(Could you please spell that?)_
-- Kannst du das bitte buchstabieren? _(Can you please spell that?)_
-- Können Sie das bitte wiederholen? _(Could you please repeat that?)_
-- **Kannst du das bitte wiederholen?** _(Can you please repeat that?)_
-
-> [!NOTE]
->
-> 这句话 "Kannst du das bitte wiederholen?" 中：
->
-> - "kannst" 是情态动词 "können"（能够）的第二人称单数形式
-> - 在德语中，**当句子有情态动词时，第二个动词要用原形放在句尾**
-> - "wiederholen" 就是这个需要放在句尾的原形动词
->
-> 所以完整的语法解析是：
->
-> 1. "Kannst" - 情态动词变位形式（第二人称单数）
-> 2. "du" - 主语（你）
-> 3. "das" - 宾语（这个）
-> 4. "bitte" - 礼貌用语（请）
-> 5. "wiederholen" - 动词原形（重复）
->
-> 如果没有情态动词 "können"，那么直接请求某人重复时，才会用 "wiederholst"，比如： "Du wiederholst das." (你重复这个。)
->
-> 这是因为德语中的情态动词结构要求：
->
-> - 情态动词变位（位于第二位）
-> - 主要动词原形（位于句尾）
->
-> 这就是为什么是 "wiederholen" 而不是 "wiederholst" 的原因。
-
+- Sprechen Sie bitte langsam.
+- Sprechen Sie bitte Hochdeutsch.
+- Was bedeutet Postleitzahl?
+- Wie schreibt man das?
+- Ich verstehe kein Schweizerdeutsch.
+- Können Sie das bitte buchstabieren?
+- Kannst du das bitte buchstabieren?
+- Können Sie das bitte wiederholen?
+- **Kannst du das bitte wiederholen?**
 ---
-- Hier ist ein Schlüssel. _(Here is a key.)_
-- Ist das **dein** Schlüssel? _(Is this your key?)_
-- Nein. Das ist **nicht** mein Schlüssel. _(No. This is not my key.)_
+- Hier ist ein Schlüssel.
+- Ist das **dein** Schlüssel?
+- Nein. Das ist **nicht** mein Schlüssel.
 ---
-- Hier ist eine Jacke. _(Here is a jacket.)_
-- Ist das **deine** Jacke? _(Is this your jacket?)_
-- Nein. Das ist **nicht** meine Jacke. _(No. This is not my jacket.)_
+- Hier ist eine Jacke.
+- Ist das **deine** Jacke?
+- Nein. Das ist **nicht** meine Jacke.
 ---
-- Hier ist ein Handy. _(Here is a mobile phone.)_
-- Ist das **dein** Handy? _(Is this your mobile phone?)_
-- Nein. Das ist **nicht** mein Handy. _(No. This is not my mobile phone.)_
+- Hier ist ein Handy.
+- Ist das **dein** Handy?
+- Nein. Das ist **nicht** mein Handy.

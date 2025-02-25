@@ -43,9 +43,45 @@ tags:
 - ein bisschen
 - gar nicht
 ---
-- Pia arbeitet **im** Hotel und spricht **schlecht** Englisch.
+- Er arbeitet **im Hotel** und spricht **schlecht** Englisch.
 - Mein Freund schwimmt **jeden Tag eine Stunde**.
-- Ich gehe **jede Woche** schwimmen.
+- Ich gehe **jede Woche** ==schwimmen==.
+
+> [!NOTE]
+>
+> 在德语句子 **"Ich gehe jede Woche schwimmen."** 中，**"schwimmen"** 之所以保持原形（不变位），是因为这里使用了 **动词支配的不定式结构（Infinitivkonstruktion）**，具体来说是 **" 动词 gehen + 不定式（Infinitiv）"** 结构。
+>
+> **语法分析**
+>
+> 1. **主语（Subjekt）：**
+> 	- **Ich**（我，第一人称单数）
+> 1. **谓语（Prädikat）：**
+> 	- **gehe**（gehen 的第一人称单数变位，表示 " 去 "）
+> 1. **时间状语（Temporale Angabe）：**
+> 	- **jede Woche**（每周，表时间）
+> 1. **方式状语（Modale Angabe）：**
+> 	- **schwimmen**（游泳，不定式，作动词 "gehen" 的补足）
+>
+> **为什么 "schwimmen" 用原形？**  
+> 在德语中，某些动词（如 **gehen, fahren, kommen** 等）可以和另一个动词的不定式（Infinitiv）搭配，表示一种 **目的** 或 **计划的动作**。这种结构通常用于 **表达某人去做某事**，例如：
+>
+> Ich gehe schwimmen.（我去游泳。）  
+> Ich gehe schlafen.（我去睡觉。）  
+> Sie kommt singen.（她来唱歌。）  
+> Er fährt einkaufen.（他开车去购物。）  
+> Wir kommen tanzen.（我们来跳舞。）  
+> Wir fahren wandern.（我们去徒步旅行。）
+>
+> 在这些句子中，前面的动词（gehen, fahren, kommen）是主要动词，后面的不定式（schwimmen, einkaufen, tanzen）表示动作的目的。
+>
+> ⚠️ 需要注意的是，这种结构只适用于某些 **表示运动的动词**（如 gehen, fahren, kommen 等），而不能随意用于所有动词。例如，❌ **"Ich mache schwimmen."** 是错误的。
+>
+> **总结**
+>
+> - **"schwimmen" 用原形（不定式）**，因为它与 **"gehen"** 形成 **目的结构**（"gehen + Infinitiv"）。
+> - 这种结构表示 **" 去做某事 "**，常见的动词包括 **gehen, fahren, kommen** 等。
+> - 这种表达方式 **不能** 随意用于其他动词（如 "machen", "haben" 等）。
+
 - Ich gehe **ab und zu** ins Kino.
 - Er kommt ab und zu zu spät zur Arbeit.
 

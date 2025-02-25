@@ -4,16 +4,16 @@ date: 2025-01-31 14:50:53
 tags:
   - German/Writing
 ---
-- **Hilfst du mir?** _(Can you help me?)_
-- Ja. Ich helfe dir. _(Yes, I help you.)_
-- Nein. Ich helfe dir nicht. _(No, I don't help you.)_
+- **Hilfst du mir?**
+- Ja. Ich helfe dir.
+- Nein. Ich helfe dir nicht.
 ---
-- **Gibst du mir deine Handynummer?** _(Will you give me your phone number?)_
-- Ja. Ich gebe dir meine Handynummer. _(Yes, I'll give you my phone number.)_
-- Nein. Ich gebe dir meine Handynummer nicht. _(No, I won't give you my phone number.)_
+- **Gibst du mir deine Handynummer?**
+- Ja. Ich gebe dir meine Handynummer.
+- Nein. Ich gebe dir meine Handynummer nicht.
 ---
-- **Ich laufe immer am Mittwoch am Abend im Park.** _(I always run in the park on Wednesday evening.)_
-- **Jeden Freitag treffe ich nach der Arbeit Freunde.** _(Every Friday I meet friends after work.)_
+- **Ich laufe immer am Mittwoch am Abend im Park.**
+- **Jeden Freitag treffe ich nach der Arbeit Freunde.**
 
 > [!NOTE]
 >
@@ -36,43 +36,43 @@ tags:
 >
 > 这就是德语 " 动词第二位 "（Verbzweitstellung）的规则。**无论句子开头是什么成分，动词总是要保持在第二位置。**
 
- - Wir gehen in eine Bar. _(We go to a bar.)_
+- Wir gehen in eine Bar.
 
 ---
-- Rauchst du? _(Do you smoke?)_
-- Ja. Ich rauche manchmal. _(Yes, I smoke sometimes.)_
-- Nein. Ich rauche nicht. _(No, I don't smoke.)_
+- Rauchst du?
+- Ja. Ich rauche manchmal.
+- Nein. Ich rauche nicht.
 ---
-- Isst du gesund? _(Do you eat healthy?)_
-- Ja. Ich esse meistens gesund. _(Yes, I mostly eat healthy.)_
-- Nein. Ich esse selten gesund. _(No, I rarely eat healthy.)_
+- Isst du gesund?
+- Ja. Ich esse meistens gesund.
+- Nein. Ich esse selten gesund.
 ---
-- **Wann beginnt der Film?** _(When does the movie start?)_
-- Der Film beginnt um achtzehn Uhr fünfzehn. _(The movie starts at 18:15.)_
+- **Wann beginnt der Film?**
+- Der Film beginnt um achtzehn Uhr fünfzehn.
 ---
-- **Wann stehst du am Morgen auf?** _(When do you get up in the morning?)_
-- **Ich stehe um zwanzig nach sechs auf.** _(I get up at 6:20.)_
+- **Wann stehst du am Morgen auf?**
+- **Ich stehe um zwanzig nach sechs auf.**
 ---
-- **Wann ist dein Arzttermin?** _(When is your doctor's appointment?)_
-- Mein Termin ist am Montag um neun Uhr dreißig. _(My appointment is on Monday at 9:30.)_
+- **Wann ist dein Arzttermin?**
+- Mein Termin ist am Montag um neun Uhr dreißig.
 ---
-- **Ist am Montag noch ein Termin frei?** _(Is there still an appointment available on Monday?)_
-- **Ja. Am Montag ist noch ein Termin frei.** _(Yes, there is still an appointment available on Monday.)_
-- **Nein. Am Montag ist kein Termin mehr frei.** _(No, there are no more appointments available on Monday.)_
+- **Ist am Montag noch ein Termin frei?**
+- **Ja. Am Montag ist noch ein Termin frei.**
+- **Nein. Am Montag ist kein Termin mehr frei.**
 ---
-- Bis wann hat der Supermarkt geöffnet? _(Until when is the supermarket open?)_
-- Der Supermarkt hat bis neunzehn Uhr dreißig geöffnet. _(The supermarket is open until 19:30.)_
+- Bis wann hat der Supermarkt geöffnet?
+- Der Supermarkt hat bis neunzehn Uhr dreißig geöffnet.
 ---
- - **Kannst du gut kochen?** _(Can you cook well?)_
- - **Ja. Ich kann sehr gut kochen.** _(Yes, I can cook very well.)_
- - **Nein. Ich kann nicht gut kochen.** _(No, I cannot cook well.)_
+- **Kannst du gut kochen?**
+- **Ja. Ich kann sehr gut kochen.**
+- **Nein. Ich kann nicht gut kochen.**
 ---
-- **Kannst du Gitarre spielen?** _(Can you play guitar?)_
-- Ja. Ich kann Gitarre spielen. _(Yes, I can play guitar.)_
-- Nein. Ich kann nicht Gitarre spielen. _(No, I cannot play guitar.)_
+- **Kannst du Gitarre spielen?**
+- Ja. Ich kann Gitarre spielen.
+- Nein. Ich kann nicht Gitarre spielen.
 ---
-- **Was ziehst du für die Party an?** _(What are you wearing to the party?)_
-- **Ich ziehe ein Kleid an.** _(I'm wearing a dress.)_
+- **Was ziehst du für die Party an?**
+- **Ich ziehe ein Kleid an.**
 
 > [!NOTE]
 >

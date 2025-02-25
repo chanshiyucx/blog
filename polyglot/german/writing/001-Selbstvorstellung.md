@@ -4,106 +4,106 @@ date: 2025-01-23 11:15:03
 tags: 
   - German/Writing
 ---
-- Wie heißen Sie? _(What is your name?)_
-- Ich heiße XinChen. _(My name is XinChen.)_
-- Woher kommen Sie? _(Where are you from?)_
-- Ich komme aus China. _(I am from China.)_
-- Wo wohnen Sie? _(Where do you live?)_
-- Ich wohne in München. _(I live in Munich.)_
-- Ich wohne hier in München. _(I live here in Munich.)_
+- Wie heißen Sie?
+- Ich heiße XinChen.
+- Woher kommen Sie?
+- Ich komme aus China.  
+- Wo wohnen Sie?
+- Ich wohne in München.
+- Ich wohne hier in München.
 ---
-- Welche Sprachen sprechen Sie? _(What language do you speak?)_
-- Ich spreche Deutsch. _(I speak German.)_
-- Ich spreche Englisch und **ein bisschen** Deutsch. _(I speak English and a little bit of German.)_
-- Ich spreche auch Englisch und lerne Deutsch. _(I speak English and I am learning German.)_
-- Sprechen Sie Deutsch? _(Do you speak German?)_
-- Nein. Ich spreche nicht Deutsch. _(No, I don't speak German.)_
+- Welche Sprachen sprechen Sie?
+- Ich spreche Deutsch.
+- Ich spreche Englisch und **ein bisschen** Deutsch.
+- Ich spreche auch Englisch und lerne Deutsch.
+- Sprechen Sie Deutsch?
+- Nein. Ich spreche nicht Deutsch.
 ---
-- **Was kann ich für Sie tun?** _(What can I do for you?)_
-- Ich möchte mich in der Schweiz anmelden. _(I want to register in Switzerland.)_
-- Wie ist Ihr Vorname? _(What is your first name?)_
-- Mein Vorname ist Xin. _(My first name is Xin.)_
-- Wie ist Ihr Nachname? _(What is your last name?)_
-- Mein Nachname ist Chen. _(My last name is Chen.)_
-- Wie ist Ihre Adresse? _(What is your address?)_
-- Meine Adresse ist Thalkirchner Str.88, R602, 80337 München. _(My address is Thalkirchner Str. 88, R602, 80337 Munich.)_
-- Was ist Ihr Wohnort? _(What is your place of residence?)_
-- Mein Wohnort ist München. _(My place of residence is Munich.)_
-- Wie ist Ihre Telefonnummer? _(What is your phone number?)_
-- Meine Telefonnummer ist 0176 12345678. _(My phone number is 0176 12345678.)_
-- Was ist Ihre Herkunft? _(What is your origin?)_
-- Meine Herkunft ist China. _(My origin is China.)_
-- Was ist Ihre Muttersprache? _(What is your mother tongue?)_
-- Meine Muttersprache ist Chinesisch. _(My mother tongue is Chinese.)_
-- Kommen Sie aus China? _(Are you from China?)_
-- Ja. Ich komme aus China. _(Yes, I am from China.)_
-- Nein. Ich komme nicht aus China. _(No, I am not from China.)_
+- **Was kann ich für Sie tun?**
+- Ich möchte mich in der Schweiz anmelden.
+- Wie ist Ihr Vorname?
+- Mein Vorname ist Xin.
+- Wie ist Ihr Nachname?
+- Mein Nachname ist Chen.
+- Wie ist Ihre Adresse?
+- Meine Adresse ist Thalkirchner Str.88, R602, 80337 München.
+- Was ist Ihr Wohnort?
+- Mein Wohnort ist München.
+- Wie ist Ihre Telefonnummer?
+- Meine Telefonnummer ist 0176 12345678.
+- Was ist Ihre Herkunft?
+- Meine Herkunft ist China.
+- Was ist Ihre Muttersprache?
+- Meine Muttersprache ist Chinesisch.
+- Kommen Sie aus China?
+- Ja. Ich komme aus China.
+- Nein. Ich komme nicht aus China.
 ---
-- **Wie geht es Ihnen?** _(How are you?)_
-- Wie geht es dir? _(How are you?)_
-- Danke, mir geht es gut. _(Thank you, I am fine.)_
-- Mir geht es sehr gut. _(I am very fine.)_
-- Mir geht es nicht so gut. _(I am not so fine.)_
-- Mir ist kalt. _(I am cold.)_
-- Mir ist schlecht. _(I am sick.)_
+- **Wie geht es Ihnen?**
+- Wie geht es dir?
+- Danke, mir geht es gut.
+- Mir geht es sehr gut.
+- Mir geht es nicht so gut.
+- Mir ist kalt.
+- Mir ist schlecht.
 ---
-- Wie alt **sind Sie**? _(How old are you?)_
-- Wie alt **bist du**? _(How old are you?)_
-- Ich bin 30 Jahre alt. _(I am 30 years old.)_
+- Wie alt **sind Sie**?
+- Wie alt **bist du**?
+- Ich bin 30 Jahre alt.
 ---
-- **Sind Sie** verheiratet? _(Are you married?)_
-- **Bist du** verheiratet? _(Are you married?)_
-- Ja. Ich bin verheiratet. _(I am married.)_
-- Nein. Ich bin nicht verheiratet. _(No, I am not married.)_
-- Ich bin ledig. _(I am single.)_
+- **Sind Sie** verheiratet?
+- **Bist du** verheiratet?
+- Ja. Ich bin verheiratet.
+- Nein. Ich bin nicht verheiratet.
+- Ich bin ledig.
 ---
-- **Wer ist das?** _(Who is that?)_
-- Das ist meine Familie. _(This is my family.)_
-- Das sind meine Kinder. _(These are my children.)_
-- Das sind meine Eltern. _(This is my parents.)_
-- Das ist meine Frau. _(This is my wife.)_
-- Das ist mein Mann. _(This is my husband.)_
-- Das ist meine Tochter. _(This is my daughter.)_
-- Das ist mein Sohn. _(This is my son.)_
-- Das ist meine Mutter. _(This is my mother.)_
-- Das ist mein Vater. _(This is my father.)_
-- Das ist meine Schwester. _(This is my sister.)_
-- Das ist mein Bruder. _(This is my brother.)_
-- Das sind meine Freunde. _(These are my friends.)_
+- **Wer ist das?**
+- Das ist meine Familie.
+- Das sind meine Kinder.
+- Das sind meine Eltern.
+- Das ist meine Frau.
+- Das ist mein Mann.
+- Das ist meine Tochter.
+- Das ist mein Sohn.
+- Das ist meine Mutter.
+- Das ist mein Vater.
+- Das ist meine Schwester.
+- Das ist mein Bruder.
+- Das sind meine Freunde.
 ---
-- Sie sind verheiratet. _(They are married.)_
-- Ich habe zwei Kinder. _(I have two children.)_
-- Meine Mutter arbeitet als Kassiererin. _(My mother works as a cashier.)_
-- Sie arbeitet als Kassiererin. _(She works as a cashier.)_
-- Mein Mann arbeitet als Polizist. _(My husband works as a policeman.)_
-- Er arbeitet als Polizist. _(He works as a policeman.)_
-- Meine Schwester ist neun Jahre alt. _(My sister is nine years old.)_
-- Sie ist neun Jahre alt. _(She is nine years old.)_
-- Mein Bruder ist zwölf Jahre alt. _(My brother is twelve years old.)_
-- Er ist elf Jahre alt. _(He is eleven years old.)_
-- Sie tanzt gern. _(She likes to dance.)_  
-- Er spielt gern Fußball. _(He likes to play football.)_
+- Sie sind verheiratet.
+- Ich habe zwei Kinder.
+- Meine Mutter arbeitet als Kassiererin.
+- Sie arbeitet als Kassiererin.
+- Mein Mann arbeitet als Polizist.
+- Er arbeitet als Polizist.
+- Meine Schwester ist neun Jahre alt.
+- Sie ist neun Jahre alt.
+- Mein Bruder ist zwölf Jahre alt.
+- Er ist elf Jahre alt.
+- Sie tanzt gern.
+- Er spielt gern Fußball.
 ---
-- Wie heißt du? _(What is your name?)_
-- Woher kommst du? _(Where are you from?)_
-- Wo wohnst du? _(Where do you live?)_
-- Welche Sprachen sprichst du? _(What language do you speak?)_
-- Sprichst du Deutsch? _(Do you speak German?)_
-- Wie ist dein Vorname? _(What is your first name?)_
-- Wie ist dein Nachname? _(What is your last name?)_
-- Wie ist deine Adresse? _(What is your address?)_
-- Wie ist deine Telefonnummer? _(What is your phone number?)_
-- Wie ist deine Herkunft? _(What is your origin?)_
-- Was ist deine Muttersprache? _(What is your mother tongue?)_
-- Kommst du aus China? _(Are you from China?)_
+- Wie heißt du?
+- Woher kommst du?
+- Wo wohnst du?
+- Welche Sprachen sprichst du?
+- Sprichst du Deutsch?
+- Wie ist dein Vorname?
+- Wie ist dein Nachname?
+- Wie ist deine Adresse?
+- Wie ist deine Telefonnummer?
+- Wie ist deine Herkunft?
+- Was ist deine Muttersprache?
+- Kommst du aus China?
 ---
-- Woher kommt Erik? _(Where does Erik come from?)_
-- Er kommt aus Schweden. _(He comes from Sweden.)_
-- Sie kommt aus Indien. _(She comes from India.)_
-- Wo wohnt Erik? _(Where does Erik live?)_
-- Er wohnt in Zürich. _(He lives in Zurich.)_
-- Sie wohnt in Basel. _(She lives in Basel.)_
+- Woher kommt Erik?
+- Er kommt aus Schweden.
+- Sie kommt aus Indien.
+- Wo wohnt Erik?
+- Er wohnt in Zürich.
+- Sie wohnt in Basel.
 ---
-- Guten Tag! Nehmen Sie Platz. _(Good morning! Take a seat.)_
-- Ja. Richtig. _(Yes, correct.)_
-- Ja. Genau. _(Yes, exactly.)_
+- Guten Tag! Nehmen Sie Platz.
+- Ja. Richtig.
+- Ja. Genau.
