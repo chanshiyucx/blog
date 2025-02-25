@@ -10,6 +10,29 @@ tags:
 - **Ich gehe mit Yun ins Kino.**
 - **Nein, das glaube ich nicht.**
 ---
+- Ich gehe ins Kino.
+- Ich bin im Kino.
+
+> [!NOTE]
+> 这两句话展示了德语中表达位置和方向的区别：
+>
+> 1. **Ich gehe ins Kino** (我去电影院)
+>    - "ins" = in + das（第四格）
+>    - 表示动作的方向或目标
+>    - 用于表达"去某处"的动作
+>    - 使用第四格（Akkusativ）
+>
+> 2. **Ich bin im Kino** (我在电影院)
+>    - "im" = in + dem（第三格）
+>    - 表示静态的位置
+>    - 用于表达"在某处"的状态
+>    - 使用第三格（Dativ）
+>
+> 这是德语中一个重要的语法规则：
+> - 表示移动方向时用第四格
+> - 表示静态位置时用第三格
+
+---
 - Jetzt habe ich ein Problem. Leider habe ich keine Zeit. **Tut mir sehr leid.** Vielleicht am Montag oder am Dienstag? **Liebe Grüße**, Xin.
 
 > [!NOTE]
