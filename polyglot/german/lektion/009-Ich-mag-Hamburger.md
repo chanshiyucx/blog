@@ -38,18 +38,18 @@ tags:
 - Zum Frühstück trinke ich Kaffee oder Tee.
 - Aber Käse? Nee!
 ---
-- Guten Tag! Sie wünschen?
+- Guten Tag! **Sie wünschen?**
 - Eine Tasse Kaffee und einen Kuchen, bitte.
 - **Möchten Sie vielleicht einen Nusskuchen?**
 - Nein, danke!
 - Unser Nusskuchen ist **besonders gut**!
 - Ich mag aber keinen Nusskuchen.
-- Möchten Sie einen Apfelkuchen?
+- **Möchten Sie einen Apfelkuchen?**
 - Nein, nein! Ich mag einen **Schokoladenkuchen**.
 - Einen Schokoladenkuchen und eine Tasse Kaffee. **Gern**!（好的，很乐意！）
-- Tut mir leid, aber wir haben keinen Schokoladenkuchen mehr.
+- Tut mir leid, aber wir haben keinen Schokoladenkuchen **mehr**.
 - Schade! Na gut, **dann** nehme ich einen Apfelkuchen.
-- Hach! Jetzt haben wir auch keinen Apfelkuchen mehr.
+- Hach! Jetzt haben wir auch keinen Apfelkuchen **mehr**.
 - Was! Tja, **was haben Sie denn noch?**
 - Wir haben nur noch Nusskuchen.
 - Nein. Nusskuchen mag ich nicht.
