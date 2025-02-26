@@ -9,7 +9,25 @@ tags:
 - Ich mag keinen Käse. / Käse mag ich nicht.
 - Ich schon! / Ich auch nicht!
 - Ich mag keinen Kuchen.
-- Ich schon! Ich liebe Kuchen.
+- Ich schon! Ich **liebe** Kuchen.
+---
+- Ich **mag** Pizza.（我喜欢披萨。）
+- Ich **möchte** eine Pizza.（我想要一份披萨。）
+---
+- Was magst du besonders gern?
+- Besonders gern mag ich Schokolade. 更强调程度
+- Magst du Schokolade?
+- Schokolade mag ich besonders gern. 强调的是喜欢的对象
+---
+- Ich esse **nicht gern** Fisch. 我不喜欢吃鱼。
+- Ich esse **keinen** Fisch. 我不吃鱼
+---
+- Wir essen gern Fisch.
+- Wir mögen Fisch.
+- Esst ihr gern Kuchen?
+- Mögt ihr Kuchen?
+- Essen Sie gern Brot?
+- Mögen Sie Brot?
 ---
 - Was isst du gern **zum Frühstück**?
 - Zum Frühstück esse ich gern **Brötchen mit Marmelade**.
@@ -27,6 +45,16 @@ tags:
 > - Guten Tag（日安）
 > - Guten Morgen（早安）
 > - Guten Abend（晚安）
+
+---
+- Was isst du gern zum Frühstück?
+- **Ich esse gern Brötchen**, mit Käse **oder** Schinken.
+- Und was magst du besonders gern?
+- Besonders gern mag ich Käse.
+- Was esst ihr gern zum Frühstück?
+- **Wir essen gern Brot mit Marmelade.**
+- Mögt ihr auch Kuchen zum Frühstück?
+- Oh ja, **Kuchen mögen wir besonders gern**.
 
 ---
 - **Salat macht fit, schön und intelligent.**
@@ -53,3 +81,4 @@ tags:
 - Was! Tja, **was haben Sie denn noch?**
 - Wir haben nur noch Nusskuchen.
 - Nein. Nusskuchen mag ich nicht.
+---

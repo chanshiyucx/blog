@@ -65,3 +65,10 @@ Hallo! Ich heiße XinChen und komme aus China. Ich arbeite als Programmierer. Am
 >
 > 如果我们改变语序，也可以说：
 > - Beim Frühstück lese ich die Zeitung.  
+
+---
+- Am Donnerstag **lade** ich sie dann ins Kino **ein**. einladen 邀请
+- Er kauft im Supermarkt ein. einkaufen 购物
+- Ich **stehe** früh **auf**. aufstehen 起床
+- Ich lade dich ins Restaurant ein.
+- Er lädt uns zur Party ein.
