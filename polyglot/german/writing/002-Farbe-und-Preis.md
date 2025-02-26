@@ -10,7 +10,7 @@ tags:
 - Er ist grün.
 - Welche Farbe hat das Handy?
 - Es ist schwarz.
-- Welche Farbe haben dieSchuhe?
+- Welche Farbe haben die Schuhe?
 - Sie sind braun.
 ---
 - Wie viel kostet das Kleid?

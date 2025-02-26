@@ -70,3 +70,6 @@ tags:
 ---
 - Was bestellst du?
 - Ich kaufe Äpfel, Bananen **und so weiter**.
+---
+- Ich buche den Flug.
+- Er kauft den Laptop.

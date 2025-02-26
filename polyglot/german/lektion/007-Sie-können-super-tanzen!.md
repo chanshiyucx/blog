@@ -188,6 +188,9 @@ tags:
 - Wie oft spielst du Gitarre?
 - Ich kaufe oft Obst.
 ---
+- Machst du oft Sport?
+- Ja, ich mache **oft** Sport.
+- Nein, ich mache **selten** Sport.
 - Lernst du oft Deutsch?
 - Ich lerne oft Deutsch.
 - Fährst du oft Rad?
@@ -197,6 +200,7 @@ tags:
 ---
 - Ich bin morgen krank.
 - Ich bin heute krank.
+- Ich bin zurzeit krank.
 - Ich mache morgen Sport. / Morgen mache ich Sport.
 - Ich backe heute einen Kuchen. / Heute backe ich einen Kuchen.
 - Ich spiele heute Fußball. / Heute spiele ich Fußball.
