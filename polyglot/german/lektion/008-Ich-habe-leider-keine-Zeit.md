@@ -97,3 +97,10 @@ tags:
 - In der Nacht.
 - Um ein Uhr / eins / zwei.
 - Um ein Uhr fünfzig / Viertel nach eins.
+---
+- Gehen wir am Freitag um 12:30 Uhr zusammen Mittagessen?
+- **Nächste Woche** ist der Workshop. Vielleicht können wir **den Workshop** am Montag planen?
+- Am Mittwoch habe ich **schon viele Termine**. Aber am Donnerstag habe ich **noch etwas Zeit**.
+---
+- Ich buche den Flug.
+- Er kauft den Laptop.

@@ -47,7 +47,6 @@ tags:
 - **Wir essen gern Brot mit Marmelade.**
 - Mögt ihr auch Kuchen zum Frühstück?
 - Oh ja, **Kuchen mögen wir besonders gern**.
-
 ---
 - **Salat macht fit, schön und intelligent.**
 - **Na prima!** Dann brauche ich viel Salat.
@@ -74,3 +73,6 @@ tags:
 - Wir haben nur noch Nusskuchen.
 - Nein. Nusskuchen mag ich nicht.
 ---
+- **Ich esse gern Brot mit Butter und Schinken zum Abendessen und trinke gern Milch.** Und ihr?
+- Ich mag kein Fleisch, aber **Brot mit Käse esse ich sehr gern**. Mein Lieblingsgetränk ist Tee.
+- **Mein Lieblingsgetränk ist Apfelsaft. Und mein Lieblingsessen ist Schokolade.**
