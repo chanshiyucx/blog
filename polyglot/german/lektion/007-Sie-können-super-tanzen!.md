@@ -4,17 +4,6 @@ date: 2025-02-20 14:50:18
 tags:
   - German/Lektion
 ---
-****
-
-|           | können | finden  | fahren |
-| --------- | ------ | ------- | ------ |
-| ich       | kann   | finde   | fahre  |
-| du        | kannst | findest | fährst |
-| er/sie/es | kann   | findet  | fährt  |
-| wir       | können | finden  | fahren |
-| ihr       | könnt  | findet  | fahrt  |
-| sie/Sie   | können | finden  | fahren |
-
 - **Wie findest du das?**
 - Ich finde das **toll**.
 - Du findest das **peinlich**.

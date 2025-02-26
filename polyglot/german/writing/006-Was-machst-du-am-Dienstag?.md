@@ -1,5 +1,5 @@
 ---
-title: Hobbys
+title: Was machst du am Dienstag?
 date: 2025-02-01 11:28:47
 tags:
   - German/Writing

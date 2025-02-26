@@ -1,7 +1,7 @@
 ---
-title: Selbstvorstellung
+title: sich vorstellen
 date: 2025-01-23 11:15:03
-tags: 
+tags:
   - German/Writing
 ---
 - Wie heißen Sie?
@@ -10,23 +10,20 @@ tags:
 - Ich komme aus China.  
 - Wo wohnen Sie?
 - Ich wohne in München.
-- Ich wohne hier in München.
 ---
 - Welche Sprachen sprechen Sie?
-- Ich spreche Deutsch.
-- Ich spreche Englisch und **ein bisschen** Deutsch.
-- Ich spreche auch Englisch und lerne Deutsch.
+- Ich spreche Englisch und ein bisschen Deutsch.
 - Sprechen Sie Deutsch?
 - Nein. Ich spreche nicht Deutsch.
 ---
-- **Was kann ich für Sie tun?**
-- Ich möchte mich in der Schweiz anmelden.
+- Was kann ich für Sie tun?
+- **Ich möchte mich in der Schweiz anmelden.**
 - Wie ist Ihr Vorname?
 - Mein Vorname ist Xin.
 - Wie ist Ihr Nachname?
 - Mein Nachname ist Chen.
 - Wie ist Ihre Adresse?
-- Meine Adresse ist Thalkirchner Str.88, R602, 80337 München.
+- Meine Adresse ist Thalkirchner Str.80, R602, 80037 München.
 - Was ist Ihr Wohnort?
 - Mein Wohnort ist München.
 - Wie ist Ihre Telefonnummer?
@@ -39,25 +36,23 @@ tags:
 - Ja. Ich komme aus China.
 - Nein. Ich komme nicht aus China.
 ---
-- **Wie geht es Ihnen?**
+- Wie geht es Ihnen?
 - Wie geht es dir?
 - Danke, mir geht es gut.
 - Mir geht es sehr gut.
 - Mir geht es nicht so gut.
-- Mir ist kalt.
-- Mir ist schlecht.
 ---
-- Wie alt **sind Sie**?
-- Wie alt **bist du**?
+- Wie alt sind Sie?
+- Wie alt bist du?
 - Ich bin 30 Jahre alt.
 ---
-- **Sind Sie** verheiratet?
-- **Bist du** verheiratet?
+- Sind Sie verheiratet?
+- Bist du verheiratet?
 - Ja. Ich bin verheiratet.
 - Nein. Ich bin nicht verheiratet.
 - Ich bin ledig.
 ---
-- **Wer ist das?**
+- Wer ist das?
 - Das ist meine Familie.
 - Das sind meine Kinder.
 - Das sind meine Eltern.
@@ -96,13 +91,6 @@ tags:
 - Wie ist deine Herkunft?
 - Was ist deine Muttersprache?
 - Kommst du aus China?
----
-- Woher kommt Erik?
-- Er kommt aus Schweden.
-- Sie kommt aus Indien.
-- Wo wohnt Erik?
-- Er wohnt in Zürich.
-- Sie wohnt in Basel.
 ---
 - Guten Tag! Nehmen Sie Platz.
 - Ja. Richtig.

@@ -4,55 +4,38 @@ date: 2025-02-11 14:30:48
 tags:
   - German/Lektion
 ---
-
-|           | sein     | haben    | heißen     | arbeiten      | sprechen     | sehen      |
-| --------- | -------- | -------- | ---------- | ------------- | ------------ | ---------- |
-| ich       | **bin**  | habe     | heiß**e**  | arbeite       | spreche      | sehe       |
-| du        | **bist** | **hast** | hei**ßt**  | arbeit**e**st | spr**i**chst | s**ie**hst |
-| er/sie/es | **ist**  | **hat**  | heiß**t**  | arbeit**e**t  | spr**i**cht  | s**ie**ht  |
-| wir       | **sind** | haben    | heiß**en** | arbeiten      | sprechen     | sehen      |
-| ihr       | **seid** | habt     | heiß**t**  | arbeit**e**t  | sprechen     | seht       |
-| sie/Sie   | **sind** | haben    | heiß**en** | arbeiten      | sprechen     | sehen      |
-
+- Lebt ihr zusammen?
+- Ja, wir leben zusammen, aber wir sind nicht verheiratet und wir haben keine Kinder.
 ---
-- **Lebt ihr zusammen?**
-- Ja, wir leben zusammen, **aber** wir **sind nicht verheiratet** und wir **haben keine Kinder**.
+- Sind ihr verheiratet?
+- Wir sind verheiratet.
+- Wir sind nicht verheiratet.
+- Wir sind geschieden.
+- Wir sind nicht verheiratet, aber wir leben zusammen.
 ---
-- **Sind ihr verheiratet?**
-- Wir sind **verheiratet**.
-- Wir sind **nicht verheiratet**.
-- Wir sind **geschieden**.
-- Wir sind **nicht verheiratet, aber wir leben zusammen**.
----
-- **Bist du verheiratete?**
-- **Sind Sie verheiratete?**
+- Bist du verheiratete?
+- Sind Sie verheiratete?
 - Ich **bin Single**.
 - Ich **lebe allein**.
 - Ich **bin nicht verheiratet**.
 ---
 - **Habt ihr Kinder?**
-- Wir haben **ein Kind**.
-- Wir haben **zwei Kinder**.
-- Wir haben **keine Kinder**.
-- Wir haben **noch keine Kinder**.
----
-- **Hast du Kinder?**
-- **Haben Sie Kinder?**
-- Ich habe **keine Kinder.**
+- Wir haben ein Kind.
+- Wir haben zwei Kinder.
+- Wir haben keine Kinder.
+- Wir haben **noch** keine Kinder.
 ---
 - **Was macht ihr beruflich?**
 - Ich bin Paketzusteller und **arbeite bei** HotSped.
 ---
 - Was bist du von Beruf?
-- Was sind Sie von Beruf?
 - Was machst du beruflich?
-- Was machen Sie beruflich?
 - Ich bin Lehrer.
 - Ich bin Lehrer **von Beruf**.
 - Ich **arbeite als** Lehrer.
 - Ich **arbeite nicht**.
-- Ich arbeite los.
 - Ich **arbeite im Moment nicht**.
+- Ich arbeite los.
 - Ich **habe einen Job als** Lehrer.
 - Ich **habe eine Stelle als** Lehrer.
 - Ich **mache** eine Ausbildung **als** Lehrer.
@@ -62,10 +45,8 @@ tags:
 - Ja, ich arbeite als Lehrer.
 - Nein, ich arbeite nicht als Lehrer.
 - Wo arbeitest du?
-- Wo arbeiten Sie?
 - Ich **mache** ein Praktikum **bei** HotSped.
 - Ich arbeite **bei** BMW.
-- Ich arbeite **bei** Siemens.
 ---
 - **Was machst du?**
 - Ich schreibe.

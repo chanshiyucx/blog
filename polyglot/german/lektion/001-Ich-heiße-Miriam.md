@@ -14,7 +14,7 @@ tags:
 - Wie alt sind Sie?
 - Ich bin sechsundzwanzig Jahre alt.
 - Wie alt seid ihr?
-- Ich bin 28 Jahre alt. **Ich bin auch 28.**
+- Ich bin 28 Jahre alt. Ich bin auch 28.
 ---
 - Woher kommst du?
 - Woher kommen Sie?
@@ -60,10 +60,6 @@ tags:
 - **Sind Sie** Herr Li?
 - Ja, das bin ich.
 - Nein, das bin ich nicht.
-- Nein, **so heiße ich nicht**. Ich heiße Xin.
-- Ich heiße **nicht** Li.
-- Das ist nicht mein Name.
-- **Ich glaube**, das ist er/sie/Name.
 ---
 - **Wie geht's dir?** = Wie geht es dir?
 - Wie geh's Ihnen?
@@ -83,6 +79,5 @@ tags:
 - Tschüs.
 - **Auf Wiedersehen.**
 ---
-- Ich komme aus China **und lerne** Deutsch.
-- Er kommt aus der Schweiz **und lernt** Deutsch.
+- Ich komme aus China und lerne Deutsch.
 - Das ist Max und er ist 25 Jahre alt.
