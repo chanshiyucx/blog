@@ -137,6 +137,7 @@ tags:
 - Ich fotografiere gern. Das macht Spaß.
 - Ich fotografiere gern Tiere.
 - **Ich mache gern Musik.**
+- ich mache gern Yoga.
 - Was machst du nicht gern?
 - Ich singe nicht gern.
 ---
