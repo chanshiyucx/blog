@@ -6,7 +6,7 @@ tags:
 ---
 - Ist das deine Mutter?
 - Ja, das ist meine Mutter.
-- Nein, das ist **nicht** meine Mutter.
+- Nein, das ist nicht meine Mutter.
 ---
 - Ist das **nicht** deine Mutter?
 - Das ist **nicht** deine Mutter, **oder**?
@@ -39,7 +39,6 @@ tags:
 - Ich spreche vier Sprachen.
 - Du **sprichst aber super Deutsch**.
 - Mein Bruder **spricht aber noch Deutsch**.
-- Ich spreche **schon viele Jahre** hier.
 ---
 - Aber im Moment **lebe ich nicht** in Hamburg.
 - Aber ich **lebe und arbeite** in München.

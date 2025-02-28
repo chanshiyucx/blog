@@ -15,11 +15,11 @@ tags:
 ---
 - Bist du verheiratete?
 - Sind Sie verheiratete?
-- Ich **bin Single**.
-- Ich **lebe allein**.
-- Ich **bin nicht verheiratet**.
+- Ich bin Single.
+- Ich lebe allein.
+- Ich bin nicht verheiratet.
 ---
-- **Habt ihr Kinder?**
+- Habt ihr Kinder?
 - Wir haben ein Kind.
 - Wir haben zwei Kinder.
 - Wir haben keine Kinder.
@@ -32,7 +32,7 @@ tags:
 - Was machst du beruflich?
 - Ich bin Lehrer.
 - Ich bin Lehrer **von Beruf**.
-- Ich **arbeite als** Lehrer.
+- Ich arbeite als Lehrer.
 - Ich **arbeite nicht**.
 - Ich **arbeite im Moment nicht**.
 - Ich arbeite los.

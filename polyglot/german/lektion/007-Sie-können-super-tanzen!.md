@@ -73,7 +73,7 @@ tags:
 > - 这种表达方式 **不能** 随意用于其他动词（如 "machen", "haben" 等）。
 
 - Ich gehe **ab und zu** ins Kino.
-- Er kommt ab und zu zu spät zur Arbeit.
+- Er kommt **ab und zu** zu spät zur Arbeit.
 
 > [!NOTE]
 >
