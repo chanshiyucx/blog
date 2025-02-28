@@ -4,15 +4,18 @@ date: 2025-02-28 09:06:53
 tags:
   - German/Lektion
 ---
+- Kannst du mich abholen?
+- Holst du mich ab?
+---
 - Ich nehme jetzt doch den Abendflug.
-- Wann fliegst du denn ab?
+- **Wann fliegst du denn ab?**
 - Mein Flug startet um 21 Uhr 30.
-- Wann kommst du dort an?
+- **Wann kommst du dort an?**
 - So kurz nach sechs.
 - Rufst du mich aus Amsterdam noch mal an?
 - So früh? **Bist du sicher?**
 - Ja, **ich möchte deine Stimme hören.**
-- **Ich versuche es.** **Hoffentlich wir haben keine Verspätung.**
+- **Ich versuche es.** **Hoffentlich haben wir keine Verspätung.**
 
 > [!NOTE]
 >
@@ -40,10 +43,10 @@ tags:
 ---
 - Guten Morgen, meine schöne! Ich bin jetzt in Amsterdam.
 - Guten Morgen, Liebster! **Alles okay bei dir?**
-- Ja, alles okay. **Ich ruhe lieber nicht an.** Mein Handy hat **nur noch** wenig Akku.
+- Ja, alles okay. **Ich rufe lieber nicht an.** Mein Handy hat **nur noch** wenig Akku.
 - Verstehe. Und **wann bist du hier?**
 - Ich komme um 8:25 an. **Kannst du mich abholen?**
-- **Was für einen Frage?! Natürlich hole ich dich ab!**
+- **Was für eine Frage?! Natürlich hole ich dich ab!**
 - Super! **Ich freue mich so auf dich!**
 - Und ich freue mich so auf dich!
 - **Bis gleich.**
@@ -62,3 +65,37 @@ tags:
 > - 与朋友或亲人即将重逢时
 > - 表达对未来见面的热切期待
 > - 表示对某人到来的期盼和喜悦
+
+---
+- **Ich komme heute erst am Nachmittag ins Büro.** Ich bin leider noch in Madrid. Mein Flug hat Verspätung.
+- Wann fliegst du denn ab?
+- Die Machine startet hoffentlich um 11 Uhr. Dann bin ich nach 14 Uhr **am Flughafen** in Hamburg. Informierst du die Kollegen? Ich habe nur noch wenig Akku.
+- Okay.
+---
+- **Holst du mich am Flughafen ab?**
+- Gern. Wann kommst du an?
+- Um 19 Uhr.
+- **Oh nein, tut mir leid. Da habe ich keine Zeit.**
+---
+- Der Flug hat Verspätung.
+- On nein. Wann **landest** du?
+- Ich komme um 19 Uhr in Frankfurt an. Kannst du mich abholen?
+- **Natürlich hole ich dich ab.**
+- Danke. Bis dann!
+---
+- Wann fliegst du an? Telefonieren wir um fünf?
+- Das geht nicht. Die Maschine startet schon um vier.
+---
+- Ich komme am Vormittag an. Ich rufe dich an.
+- Okay! Natürlich hole ich dich ab.
+---
+- Holst du Anna heute Abend **am Flughafen** ab?
+- Ich kann leider nicht sie abholen. Ich arbeite heute Abend.
+---
+- Könnt ihr uns morgen **vom Flughafen** abholen?
+- Ja, wir können euch abholen.
+
+> [!NOTE]
+>
+> "am" = "an dem"，其中 "an"（在……旁边）+ Dativ（第三格），强调接人地点。  
+> "vom" = "von dem"，其中 "von"（从……离开）+ Dativ（第三格），强调从机场带走。
