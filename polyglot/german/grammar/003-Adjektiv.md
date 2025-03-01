@@ -32,6 +32,15 @@ tags:
 | D   | gut**em** Wein   | gut**er** Milch   | gut**em** Brot    | gut**en** Büchern |
 | A   | gut**en** Wein   | gut**e** Milch    | gut**es** Brot    | gut**e** Bücher |
 
+## 4. Nach dem Negativartikel (否定冠词后)
+
+|     | Maskulinum             | Femininum            | Neutrum              | Plural              |
+| --- | ---------------------- | -------------------- | -------------------- | ------------------- |
+| N   | kein gut**er** Mann    | keine gut**e** Frau  | kein gut**es** Kind  | keine gut**en** Leute |
+| G   | keines gut**en** Mannes| keiner gut**en** Frau| keines gut**en** Kindes| keiner gut**en** Leute |
+| D   | keinem gut**en** Mann  | keiner gut**en** Frau| keinem gut**en** Kind| keinen gut**en** Leuten |
+| A   | keinen gut**en** Mann  | keine gut**e** Frau  | kein gut**es** Kind  | keine gut**en** Leute |
+
 ## Beispiele (例句)
 
 1. **定冠词 + 形容词**:
