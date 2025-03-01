@@ -51,7 +51,8 @@ tags:
 - **In Berlin gibt es alles?** Wirklich? Ich find, es gibt fast keine billigen Wohnungen.
 - Ja, **stimmt**. **Da hast du recht**, Hennie. Mein Zimmer ist **auch viel zu teuer**. Seufz!
 - Ich komme **bald** mit **meinem** Sohn Pedro **nach Berlin**. Das Hotel ist in Friedrichshain. Gibt es dort **einen** Spielplatz? **Weißt du das?**
-- Oh ja, da **gibt es** viele Spielplätze. **Zum Beispiel** im Volkspark Friedrichshain. Dort **gibt es** auch den "Märchenbrunnen". Der **gefällt** Pedro **ganz sicher**. Und in der **Nähe** ist auch ein Kino, das Filmtheater am Friedrichshain. Die zeigen auch oft Filme für die Kleinen.
+- Oh ja, da **gibt es** viele Spielplätze. **Zum Beispiel** im Volkspark Friedrichshain. Dort **gibt es** auch den "Märchenbrunnen". Der gefällt Pedro **ganz sicher**. Und in der Nähe ist auch ein Kino, das Filmtheater am Friedrichshain. Die **zeigen** auch oft Filme für **die Kleinen**.
+- Hey, **ich danke dir**, Sofia! Dein Blog **hilft** mir sehr. Er ist **echt** super!
 
 > [!NOTE]
 >
@@ -60,9 +61,12 @@ tags:
 > - viel zu teuer: 太贵了（字面意思是 " 多得太贵 "）
 > - Seufz!: 叹气，表示无奈或遗憾的感叹词
 > - nach: 介词，表示 " 去往 "，通常用于表示去往一个没有冠词的地点时，特别是城市名称、国家名称（不带定冠词的国家）。
+> - zum Beispiel: 例如，举个例子
+> - ganz sicher: 非常确定，肯定
+> - in der Nähe: 附近，在附近
+> - echt: 真的，确实
 >
 > 常见的方向介词用法：
->
 > - nach + 城市/国家（无冠词）：去往某地
 >   - nach Berlin (去柏林)
 >   - nach Deutschland (去德国)
@@ -72,3 +76,29 @@ tags:
 > - zu + 人/机构/建筑物：
 >   - zum Arzt (去看医生)
 >   - zur Schule (去学校)
+>
+> 动词宾语：
+> - 大多数动词需要第四格 (Akkusativ) 宾语，如: sehen(看见), haben(有), lieben(爱)
+> - 一些特定动词需要第三格 (Dativ) 宾语，如: danken(感谢), helfen(帮助), folgen(跟随)
+
+---
+- In Berlin gibt es eine Altstadt. Sie ist sehr klein. Aber ich finde sie toll. Und es gibt viele Kirchen. **Besonders schön** **sieht** die Berlinerkirche **aus**, finde ich. Aber es gibt keinen Hafen. Leider!
+
+> [!NOTE]
+>
+> - "aussehen" 是一个可分动词，意思是 " 看起来 "、" 显得 "
+
+---
+- Der Tierpark ist superschön. Er **gefällt mir** sehr.
+- Super Tipps! Ich danke **dir**.
+- Dein Blog **hilft mir** sehr. Er ist echt super.
+---
+- Was ist ihr Lieblingsort?
+- Was machen Sie dort?
+- Was gibt es da?
+- Was **fehlt** Ihnen?
+- Was **gefällt** Ihnen besonders?
+
+> [!NOTE]
+>
+> fehlen 和 gefallen 都是需要第三格 (Dativ) 宾语的动词。
