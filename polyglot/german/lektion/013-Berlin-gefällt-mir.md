@@ -17,7 +17,7 @@ tags:
 
 > [!NOTE]
 >
-> - seit 表示 " 自从…以来 "，" 已经…时间 "，要求后面的名词或代词使用第三格 (Dativ)。"Jahren" 是 "Jahr" (年) 的复数第三格形式。
+> - seit 表示 " 自从…以来 "，要求后面的名词或代词使用第三格 (Dativ)。"Jahren" 是 "Jahr" (年) 的复数第三格形式。
 > - 使用的是从句词序（动词放在末尾），而不是疑问句词序。正常疑问句应该是："Warum mache ich diesen Blog?"
 > - "ganz einfach" 是一个德语表达，意思是 " 非常简单 " 或 " 很简单 "。"ganz" = 完全地，非常，十分，"einfach" = 简单的，容易的
 > - Euch (间接宾语): 你们 (第三格，大写表示尊重或正式)
@@ -82,7 +82,7 @@ tags:
 > - 一些特定动词需要第三格 (Dativ) 宾语，如: danken(感谢), helfen(帮助), folgen(跟随)
 
 ---
-- In Berlin gibt es eine Altstadt. Sie ist sehr klein. Aber ich finde sie toll. Und es gibt viele Kirchen. **Besonders schön** **sieht** die Berlinerkirche **aus**, finde ich. Aber es gibt keinen Hafen. Leider!
+- In Berlin gibt es eine Altstadt. Sie ist sehr klein. Aber ich finde sie toll. Und es gibt viele Kirchen. **Besonders schön** **sieht** die Berlinerkirche **aus**, finde ich. Aber es gibt keinen **Hafen**. Leider!
 
 > [!NOTE]
 >
@@ -102,3 +102,19 @@ tags:
 > [!NOTE]
 >
 > fehlen 和 gefallen 都是需要第三格 (Dativ) 宾语的动词。
+
+---
+- Mein **Lieblingsort** ist der Kiessee in Göttingen. Ich bin gern **draußen** und liebe **die Natur**. Ich gehe dort gern **spazieren** oder ich lerne Deutsch und mache meine **Hausaufgaben**. Am Abend machen meine Freunde und ich dort manchmal **ein Picknick**, **das macht Spaß**.
+- Leider gibt es keinen Volleyballplatz! Wir spielen **nämlich** gern ball. Am Kiessee **kann man aber Boote mieten**. **Das gefällt mir besonders gut.** Es gibt auch ein super Café. **Dort kann man Kaffee trinken** und **es gibt auch Kuchen und Eis**. So lecker! Der Kiessee ist toll!
+---
+- Gibt es **in dem See** auch Fisch?
+- Ja, und kann man dort auch **angeln**.
+---
+- Wir finden den Park schön.
+- Der Park finden wir schön.
+---
+- Das ist mein Fahrrad.
+- Das Fahrrad ist mein.
+---
+- Vielen Dank, Frau.
+- **Wir danken Ihnen.**
