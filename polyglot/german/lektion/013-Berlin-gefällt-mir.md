@@ -1,10 +1,10 @@
 ---
-title: Berlin gefäLlt mir
+title: Berlin gefällt mir
 date: 2025-02-28 17:15:06
 tags:
   - German/Lektion
 ---
-- Das Buch hat mir gut gefallen. 这本书我很喜欢。
+- Das Buch **hat mir gut gefallen**. 这本书我很喜欢。
 - Berlin **gefällt** mir.
 - Die East Side Gallery kenne ich. Da war ich **schon mal**. Da kann man noch die Mauer sehen.
 
@@ -105,16 +105,22 @@ tags:
 
 ---
 - Mein **Lieblingsort** ist der Kiessee in Göttingen. Ich bin gern **draußen** und liebe **die Natur**. Ich gehe dort gern **spazieren** oder ich lerne Deutsch und mache meine **Hausaufgaben**. Am Abend machen meine Freunde und ich dort manchmal **ein Picknick**, **das macht Spaß**.
-- Leider gibt es keinen Volleyballplatz! Wir spielen **nämlich** gern ball. Am Kiessee **kann man aber Boote mieten**. **Das gefällt mir besonders gut.** Es gibt auch ein super Café. **Dort kann man Kaffee trinken** und **es gibt auch Kuchen und Eis**. So lecker! Der Kiessee ist toll!
+- **Leider gibt es** keinen Volleyballplatz! Wir spielen **nämlich** gern ball. Am Kiessee **kann man aber Boote mieten**. **Das gefällt mir besonders gut.** Es gibt auch ein super Café. **Dort kann man Kaffee trinken** und **es gibt auch Kuchen und Eis**. So lecker! Der Kiessee ist toll!
 ---
 - Gibt es **in dem See** auch Fisch?
-- Ja, und kann man dort auch **angeln**.
----
-- Wir finden den Park schön.
-- Der Park finden wir schön.
+- Ja, und man **kann** dort auch **angeln**.
 ---
 - Das ist mein Fahrrad.
-- Das Fahrrad ist mein.
+- **Das Fahrrad hat mir gut gefallen.**
 ---
-- Vielen Dank, Frau.
+- Vielen Dank, Frau Yun.
 - **Wir danken Ihnen.**
+---
+- **Leider gibt es keinen See.**
+- **Es gibt hier viele Cafés.**
+- Ich liebe St.Gallen.
+- **Besonders schön ist** die Altstadt.
+- **Mir gefallen besonders** die Kirchen.
+---
+- **Dort kann man Kaffee trinken.**
+- **Man kann dort Kaffee trinken.**
