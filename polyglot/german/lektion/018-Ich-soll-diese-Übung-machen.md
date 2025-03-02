@@ -18,3 +18,20 @@ tags:
 > - "beim Friseur sein" = " 在理发店 "
 > - "beim Bäcker sein" = " 在面包店 "
 
+---
+- Bei uns ist Sport im Büro nicht **üblich**.
+- Ich finde das** (nicht / etwas / ziemlich) komisch.**
+---
+- **Zu viel** Sitzen macht krank!
+
+> [!NOTE]
+>
+> - "zu viel" = " 太多/过多 "
+
+---
+
+- **Jeder weiß**: Bewegung ist gesund. Aber wissen Sie auch, wie lange wir jeden Tag
+sitzen? Ungefähr acht Stunden. Büromenschen sitzen sogar zehn Stunden
+jeden Tag! Wir haben also viel zu wenig Bewegung und das bedeutet für viele Menschen:
+Übergewicht, Rückenschmerzen, Herzprobleme und viele andere Krankheiten. Tja,
+dagegen kann man nichts tun, oder? Doch, man kann. Und es ist sogar ganz einfach:
