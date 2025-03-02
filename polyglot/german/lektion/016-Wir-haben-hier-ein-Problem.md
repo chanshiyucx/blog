@@ -22,8 +22,8 @@ tags:
 - Entschuldigung. **Können Sie mir helfen?**
 ---
 - Was kann ich für Sie tun?
-- Was ist los? **Kann ich Ihren helfen?**
-- **Wie kann ich Ihren helfen?**
+- Was ist los? **Kann ich Ihnen helfen?**
+- **Wie kann ich Ihnen helfen?**
 ---
 - Wir haben ein Problem: **Der Aufzug funktioniert nicht.**
 - Wir brauchen **Ihre Hilfe**.
@@ -67,7 +67,7 @@ tags:
 > 在德语中，动词 "gehen" 除了基本意思 " 走/去 " 外，还有 " 运行/工作/可行 " 的引申含义。当用于描述某事是否可行或某物是否正常工作时，常用 "geht" 或 "geht nicht" 这样的表达。
 >
 > - "Das geht" = " 这是可行的/这没问题 "
-> - "Das geht nicht" = " 这不行/这不可能 "
+> - "Das geht nicht" = " 这不行/这不可能 "
 
 ---
 Hey Oskar,  
@@ -77,7 +77,7 @@ Eric
 
 > [!NOTE]
 >
-> - "gerade" = " 正在/此刻/现在 "
+> - "gerade" = " 正在/此刻/现在 "
 > - "noch" = " 还/仍然 "
 > - "ungefähr zwei Stunden" = " 大约两个小时 "  
 > "uns sehen" = " 见面 "（反身动词 "sich sehen"，字面意思是 " 看见彼此 "）
@@ -87,5 +87,53 @@ Eric
 >
 > 在德语中，"nach Hause" 和 "zu Hause" 有不同的用法：
 >
-> - nach Hause = 回家/往家的方向（表示移动的方向，用于表达 " 去家里 " 的动作）
-> - zu Hause = 在家里（表示位置，用于表达 " 在家 " 的状态）
+> - nach Hause = 回家/往家的方向（表示移动的方向， 用于表达 " 去家里 " 的动作）
+> - zu Hause = 在家里（表示位置，用于表达 " 在家 " 的状态）
+
+---
+Oje, **du Armer!**  
+Hoffentlich **klappt** das mit dem Termin **noch**! Heute Abend habe ich leider keine Zeit. Ich arbeite **bis** 18 Uhr und **nach der Arbeit** habe ich Handballtraining.  
+**Bis bald! Viel Glück!**  
+
+> [!NOTE]
+>
+> - "du Armer!" = " 可怜的你！"（表示同情的感叹语）
+> - "Hoffentlich klappt das mit dem Termin noch!" = " 希望预约的事情还能成功！"
+>   - "Hoffentlich" = " 希望/但愿 "
+>   - "klappen" = " 成功/顺利进行 "
+>   - "mit dem Termin" = " 关于预约的事情 "
+>   - "noch" = " 还/仍然 "
+> - "Bis bald!" = " 回头见！"（直译：直到很快再见）
+> - "Viel Glück!" = " 祝你好运！"（直译：很多幸运）
+
+---
+- **Warum** **ruft** Eric Frau Graf nicht **an**?
+- **Warum** **hat** Oskar keine Zeit?
+- **Was für einen** Termin hat er bei Frau Graf?
+- **Wann** fährt Erics Zug **zurück nach Hause**?
+- **Wo** möchte er Oskar treffen?
+
+> [!NOTE]
+>
+> - "Was für einen" = " 什么样的 "（询问类型或性质）
+
+---
+- Am Freitag kann ich leider nicht.
+- Am Freitag habe ich keine Zeit.
+- Ich arbeite bis 17 Uhr und danach habe ich einen Termin.
+- Können wir den Termin / das Treffen vielleicht verschieben?
+---
+- Aber ich kann am Montag / nach der Arbeit / in zwei Wochen **bei Ihnen sein**.
+- Am Mittag / Nach der Arbeit / **In einer Woche** habe ich Zeit.
+- Vielleicht am Donnerstag um 17 Uhr?
+---
+- Sie möchte das Handy aufladen.
+- Sie möchte einen Film sehen.
+- Sie möchte in der Nacht lesen.
+---
+- Ich habe **ein Problem**. Ich brauche **Ihre Hilfe**.
+- Was kann ich für Sie tun?
+- Mein Herd ist kaputt.
+- Kein Problem. Den kann ich reparieren. Haben Sie am Dienstag ab 16 Uhr Zeit?
+- Am Dienstag kann ich nicht.
+- Geht es am Mittwoch um 15 Uhr?
