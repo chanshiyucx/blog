@@ -17,6 +17,7 @@ tags:
 - Ich will Medizin studieren.
 - Wir wollen ein Start-up gründen.
 - Ich will mit einem Blog **Geld verdienen**.
+- Ich will **unbedingt** Arzt werden.
 
 > [!NOTE]
 >
@@ -36,7 +37,7 @@ tags:
 > - "haben … gefragt" = " 询问了… "（现在完成时态）
 
 ---
-- Mode und Lifestyle Marketing finde ich interessant. Mit meinem Bachelor in **Wirtschaft** ==habe== ich **vor einem Monat** eine **Halbtagsstelle** in einer Modefirma in Berlin ==bekommen==. Ich will gern **selbstständig** arbeiten. **Aber das ist nicht so einfach.** Also mache ich den Job jetzt zuerst **für ein paar Jahre**. Ich habe auch schon einen **eigenen** Lifestyle-Blog. Ich **will** ja vielleicht Influencerin **werden**. **Damit kann man viel Geld verdienen.** Na ja, mal sehen!
+- Mode und Lifestyle Marketing finde ich interessant. Mit meinem Bachelor in **Wirtschaft** ==habe== ich **vor einem Monat** eine **Halbtagsstelle** in einer Modefirma in Berlin ==bekommen==. Ich will gern **selbstständig** arbeiten. **Aber das ist nicht so einfach.** Also mache ich den Job jetzt zuerst **für ein paar Jahre**. Ich habe auch schon einen **eigenen** Lifestyle-Blog. Ich **will** ja vielleicht Influencerin **werden**. **Damit kann man viel Geld verdienen.** Na ja, **mal sehen!**
 
 > [!NOTE]
 >
@@ -49,3 +50,30 @@ tags:
 > - "eigenen" = " 自己的 "，是形容词 "eigen" 的第四格（宾格）阳性单数形式
 > - "Damit" = " 通过这个/用这个 "（"da" + "mit"，指代前面提到的事物）
 > - "viel Geld" = " 很多钱 "
+
+---
+- Ich will **unbedingt** Arzt werden. Aber man bekommt in Deutschland nur **mit einem super Schulabschluss** **sofort einen Studienplatz** für Medizin. Meine **Noten** sind leider nicht so toll. **Also** werde ich **jetzt zuerst** mal **Krankenpfleger**. **Was dabei prima ist**: Ich lerne schon viel **über Medizin**. Nach meinem Studium möchte ich dann **ein halbes Jahr** bei "Ärzte ohne Grenzen" **mitmachen**. Die helfen **Menschen** **auf der ganzen Welt**. Das finde ich **wichtig**!
+
+> [!NOTE]
+>
+> - "man bekommt" = " 人们获得 "（"man" 是不特定的主语）  
+> - "in Deutschland" = " 在德国 "  
+> - "mit einem super Schulabschluss" = " 凭借一个极好的学业成绩/毕业成绩 "  
+> - "sofort" = " 立即/马上 "  
+> - "einen Studienplatz" = " 一个大学入学名额/学位 "  
+> - "für Medizin" = " 用于医学/医学专业的 "
+> - "zuerst" = " 首先/先 "
+> - "Was dabei prima ist:" = " 这其中好的/棒的是:"（引导后面的内容）
+> 	- "Was" = " 什么/那个 "（这里作为关系代词使用）
+> 	- "dabei" = " 在这过程中/其中 "
+> 	- "prima" = " 好的/棒的/优秀的 "（形容词）
+> - "Ich lerne schon viel über Medizin." = " 我已经学到了很多关于医学的知识。"
+> 	- "viel" = " 很多 "
+> 	- "über Medizin" = " 关于医学 "
+> - "ein halbes Jahr" = " 半年 "
+> - "mitmachen" = " 参加/参与 "
+> - "Menschen" = " 人们/人类 "
+> - "auf der ganzen Welt" = " 在全世界 "
+> 	- "auf" = " 在…上 "（介词）
+> 	- "der ganzen Welt" = " 整个世界 "（"die Welt" 的第三格/与格形式，带有形容词 "ganz"）
+> - "wichtig" = " 重要/重要性 "
