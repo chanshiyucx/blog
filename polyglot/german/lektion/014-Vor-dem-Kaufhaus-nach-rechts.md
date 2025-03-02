@@ -23,7 +23,7 @@ tags:
 - Bist du in der Schule?
 - Bist du auf dem Platz?
 ---
-- Entschuldigung. Können Sie mir helfen?
+- Entschuldigung. **Können Sie mir helfen?**
 - Eine Frage bitte: Ich suche die Schule.
 - Wo ist denn hier eine Schule?
 - **Kann ich zu Fuß gehen?**
