@@ -8,3 +8,37 @@ tags:
 - Vor dem Kaufhaus nach links. 在百货商店前向左转。
 - Der Weg ist sehr weit. 路很长。
 - Der weg ist nicht sehr weit. Sie kann **zu Fuß gehen**. 路不是很长，可以步行。
+---
+- vor dem Kaufhaus
+- unter einer Brücke.
+- an der Ampel
+- zwischen dem Bahnhof und dem Kaufhaus
+- auf dem Platz
+- in dem Kaufhaus
+- über einer Brücke
+- hinter dem Bahnhof
+- neben einem Baum
+---
+- Bist du vor der Apotheke?
+- Bist du in der Schule?
+- Bist du auf dem Platz?
+---
+- Entschuldigung. Können Sie mir helfen?
+- Eine Frage bitte: Ich suche die Schule.
+- Wo ist denn hier eine Schule?
+- **Kann ich zu Fuß gehen?**
+---
+- Sie gehen hier geradeaus.
+- Sie gehen hier nach rechts / links.
+- Sie gehen die erste / zweite / dritte Straße nach rechts / links.
+- Tut mir leid. **Ich bin nicht von hier.**
+- Das weiß ich leider nicht.
+- **Ich bin fremd hier.**
+---
+- Ist das sehr weit?
+- Das ist weit.
+- Das ist gar nicht weit.
+---
+- Herzlichen Dank.
+- Sehr nett. Vielen Dank.
+- Oh, danke schön.
