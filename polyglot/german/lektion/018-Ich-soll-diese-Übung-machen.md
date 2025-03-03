@@ -5,7 +5,7 @@ tags:
   - German/Lektion
 ---
 
-- Herr Davids macht eine Übung **gegen** Kopfschmerzen. Die Chefin findet das **schlimm**. Herr Davids war **vor ein paar Wochen beim Arzt**. Er macht die Übung dreibis viermal **in der Woche**.
+- Herr Davids macht eine Übung **gegen** Kopfschmerzen. Die Chefin findet das **schlimm**. Herr Davids war **vor ein paar Wochen beim Arzt**. Er macht die Übung drei bis viermal **in der Woche**.
 
 > [!NOTE]
 >
