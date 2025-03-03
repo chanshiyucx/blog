@@ -111,3 +111,18 @@ Aber bitte: die Fenster später **dann auch wieder** zu! Sei so nett und **vergi
 
 ---
 - Herr Martens hat angerufen. Ruf ihn bitte zurück!
+- Die Kaffeemaschine ist schmutzig. Putz sie bitte!
+- Ich habe eine Frage. Ruf mich bitte an!
+- Ich habe den Beamer in meinem Büro. Hole ihn bitte nach dem Mittagessen ab!
+- Das Geschirr in der Teeküche ist nicht sauber. Wasche es bitte ab!
+
+---
+- **Das geht so nicht.**
+- Du hast recht.
+- Das verstehe ich.
+
+---
+- Ich habe ein Problem. Ich räume **jeden Abend** die Küche auf. **Das geht so nicht.**
+- Oh, wirklich? Tut mir leid. Heute Abend mache ich das.
+- Danke. Vielleicht kannst du auch die Wäsche waschen?
+- Ja, natürlich.
