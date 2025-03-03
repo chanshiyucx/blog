@@ -69,15 +69,41 @@ tags:
 - Stehen Sie manchmal kurz auf!
 - Machen Sie einen Spaziergang!
 - Fahren Sie oft mit dem Rad!
+---
+- Mein Rücken **tut** jeden Abend **weh**! Was hilft gegen Rückenschmerzen? Habt ihr einen Tipp?  
+Was empfehlt ihr?
+- Mein Arzt sagt, ich **soll** **viele Übungen** machen.
+- Was kann man gegen Schnupfen und Ohrenschmerzen machen? Meine Ohren **tun so weh**!
+- Wichtig ist: **Genug** trinken! Tee und Wasser oder auch Saft.
+- Ich habe auch eine Erkältung. Ich habe auch noch Husten und Halsschmerzen.
+- Meine Kollegin **sagt immer**, ich **soll** Milch mit Honig trinken. **Das hilft wirklich gut.**
+- Ich habe **Fieber** und mein Kopf tut weh. Habt ihr da auch Tipps?
+- **Ruhe**, Ruhe und **nochmal** Ruhe – und **ein paar Tage** im Bett bleiben. Das hilft sicher.
+
+> [!NOTE]
+>
+> - "weh tun" 是一个固定搭配，意为 " 疼痛/引起疼痛 "
+> 	- tut = " 做/感到 "（动词 "tun" 的第三人称单数现在时形式）
+> 	- weh = " 疼痛/疼 "
+> - "jeden Abend" = " 每天晚上 "
+> - "gegen" = " 对抗/反对/针对 "（介词）
+> - "empfehlt ihr" = " 你们推荐什么 "
+> - da = " 那里/对此/关于这个 "
+> - nochmal = " 再一次/又一次 "
+> - ein paar Tage = " 几天 "
+> - im Bett bleiben = " 待在床上/卧床休息 "
+> - Das hilft sicher = " 这肯定有帮助 "
 
 ---
-- Mein Rücken tut jeden Abend weh! Was hilft gegen Rückenschmerzen? Habt ihr einen Tipp?
-Was  empfehlt ihr?
-- Mein Arzt sagt, ich soll viele Übungen machen.
-
-- "weh tun" 是一个固定搭配，意为"疼痛/引起疼痛"
-    - tut = "做/感到"（动词"tun"的第三人称单数现在时形式）
-    - weh = "疼痛/疼"
-- "jeden Abend" = "每天晚上"
-- "gegen" = "对抗/反对/针对"（介词）
-- "empfehlt ihr" = "你们推荐什么"
+- Mein Kopf tut weh. / Ich habe Kopfschmerzen.  
+- Meine Ohren tun weh. / Ich habe Ohrenschmerzen.  
+- Was kann man gegen … machen? / Was hilft gegen … ?  
+- Hast du / Habt ihr einen Tipp / Tipps?  
+- Das hilft (wirklich) gut gegen … / Das hilft sicher.  
+- Wichtig ist …  
+- Das ist **ganz einfach.**
+---
+- Machen Sie **viele Übungen**.
+- Ich soll **viele Übungen** machen.
+---
+- Ich habe Halsschmerzen. Sandra **schreibt**, ich **soll viel Tee trinken**. Und Luna **meint**, ich soll Halstabletten **nehmen**. Carlos **findet**…, Und Sandra **denkt**…

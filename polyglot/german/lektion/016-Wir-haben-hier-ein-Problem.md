@@ -22,14 +22,15 @@ tags:
 - Entschuldigung. **Können Sie mir helfen?**
 ---
 - Was kann ich für Sie tun?
-- Was ist los? **Kann ich Ihnen helfen?**
-- **Wie kann ich Ihnen helfen?**
+- Wie kann ich Ihnen helfen?
+- Was ist los? Kann ich Ihnen helfen?
 ---
 - Wir haben ein Problem: **Der Aufzug funktioniert nicht.**
 - Wir brauchen **Ihre Hilfe**.
 ---
 - Ja, natürlich!
 - Kein Problem! Dan kann ich reparieren.
+- Ich kann heute um 19 Uhr kommen.
 ---
 - Tut mir leid. **Das geht leider nicht.**
 - Leider kann ich da **nichts** machen.
@@ -118,10 +119,10 @@ Hoffentlich **klappt** das mit dem Termin **noch**! Heute Abend habe ich leider 
 > - "Was für einen" = " 什么样的 "（询问类型或性质）
 
 ---
-- Am Freitag kann ich leider nicht.
-- Am Freitag habe ich keine Zeit.
-- Ich arbeite bis 17 Uhr und danach habe ich einen Termin.
-- Können wir den Termin / das Treffen vielleicht verschieben?
+- Am Freitag **kann ich leider nicht**.
+- Am Freitag **habe ich keine Zeit**.
+- Ich arbeite **bis** 17 Uhr und **danach** habe ich einen Termin.
+- Können wir den Termin / das Treffen vielleicht **verschieben**?
 ---
 - Aber ich kann am Montag / nach der Arbeit / in zwei Wochen **bei Ihnen sein**.
 - Am Mittag / Nach der Arbeit / **In einer Woche** habe ich Zeit.

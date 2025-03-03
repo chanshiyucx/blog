@@ -117,3 +117,6 @@ tags:
 - Der **Schulabschluss** von Luka ist nicht so toll.
 - Er kann **erst später** einen Studienplatz bekommen.
 - **Nach der Schule** macht Luka **zuerst** mal eine Ausbildung **zum Krankenpfleger**.
+---
+- Das finde ich wichtig.
+- **Freiheit** und **Selbstständigkeit** finden wir besonders wichtig.
