@@ -99,3 +99,15 @@ tags:
 >
 > "am" = "an dem"，其中 "an"（在……旁边）+ Dativ（第三格），强调接人地点。  
 > "vom" = "von dem"，其中 "von"（从……离开）+ Dativ（第三格），强调从机场带走。
+
+---
+- Ich hole meinen Freund am Flughafen ab.
+- Ich steige **aus dem Bus** aus.
+- Ich steige **in den Bus** ein.
+- Ich stehe jeden Morgen um 7 Uhr auf.
+- Ich kaufe Brot und Butter in dem Supermarkt am Samstag ein.
+- Ich räume mein Zimmer auf.
+- Ich rufe dich morgen an.
+- Ich sehe jeden Abend fern.
+- Der Zug fährt pünktlich ab.
+- Ich bringe Wein zur Party mit.
