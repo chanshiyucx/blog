@@ -59,9 +59,7 @@ tags:
 > - Es gefällt mir - " 我喜欢它 "
 > - Es hat mir gefallen - " 我喜欢了它/我享受了它 "
 
----
-
-- Stefan hat eine Stelle bei SUPS **bekommen**. Er ist sehr **zufrieden**.
+- Stefan hat **eine Stelle** bei SUPS **bekommen**. Er ist sehr **zufrieden**.
 
 > [!NOTE]
 >
@@ -69,3 +67,23 @@ tags:
 > - "einen Job bekommen" (得到一份工作)
 > - "eine Anstellung finden" (找到一份雇佣关系)
 > - "eine Position erhalten" (获得一个职位)
+
+- Stefan hat Melissa **alles über** SUPS erzählt, er hat es **vergessen**.
+- Stefan findet das SUPS-Team nett.
+---
+- Das ist aber schade!
+- Das freut mich so.
+- Ach komm!
+- Ach was!
+- Ach nee!
+---
+- Ich habe **schon mal** einen Flug verpasst.
+- Hast du **schon mal** Sushi **gegessen**?
+- Ich war **schon mal** in Deutschland.
+- Ich habe den Zug verpasst.
+- Er hat das Konzert verpasst.
+
+> [!NOTE]
+>
+> schon mal = " 曾经 / 有过一次 "  
+> verpasst = " 错过了 "（动词 "verpassen" 的过去分词）
