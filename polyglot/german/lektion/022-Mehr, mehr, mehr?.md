@@ -4,6 +4,7 @@ date: 2025-03-04 13:50:02
 tags:
   - German/Lektion
 ---
+![[Pasted image 20250304175827.png]]
 - Die Hose war **nicht billig**.
 - Die Hose war **billiger**.
 - Die Hose war **am billigsten**
@@ -38,7 +39,8 @@ tags:
 ---
 - Ich finde Sport **wichtiger als** Kunst.
 - **Echt?** Ich finde Sport **genauso wichtig wie** Kunst.
-- Wirklich? Ich gehe **lieber** ins Kino **als** ins Theater. Und du?
+- Wirklich? Ich gehe **lieber** ins Kino **als** ins Theater. Und du?  
+![[Pasted image 20250304175908.png]]
 ---
 - Linda Grosse spricht **über Billigkleidung**: **Jeans kann man schon für 8,99 € bekommen.** **Pro Jahr** kaufen wir circa 60 Kleidungsstücke. Viele Kleidungsstücke **ziehen** wir aber **nur ein oder zweimal** **an**. Sie meint: Das ist **Wahnsinn**!
 - 60 Kleidungsstücke pro Jahr! Das ist doch nicht viel.

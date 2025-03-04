@@ -4,6 +4,7 @@ date: 2025-03-04 15:20:17
 tags:
   - German/Lektion
 ---
+![[Pasted image 20250304175757.png]]
 - Das Wetter ist **schlecht**. Das mag ich gar nicht.
 - Wirklich? Also, ich bin bei Regen oft **draußen**. Da bin ich **glücklich**.
 - Ich hasse Regen.
