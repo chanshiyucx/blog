@@ -71,11 +71,12 @@ tags:
 - Stefan hat Melissa **alles über** SUPS erzählt, er hat es **vergessen**.
 - Stefan findet das SUPS-Team nett.
 ---
-- Das ist aber schade!
-- Das freut mich so.
+- **Das ist aber schade!**
+- **Das freut mich so.**
 - Ach komm!
 - Ach was!
-- Ach nee!
+- Ach nee!  
+![[Pasted image 20250304134829.png]]
 ---
 - Ich habe **schon mal** einen Flug verpasst.
 - Hast du **schon mal** Sushi **gegessen**?

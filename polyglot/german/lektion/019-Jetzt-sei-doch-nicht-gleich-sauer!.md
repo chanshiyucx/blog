@@ -12,12 +12,10 @@ tags:
 > - "sauer" = " 酸的/生气的 "（形容词，在这里是口语表达，意为 " 生气/恼怒 "）
 
 ---
-
 - Habt ihr die Fenster aufgemacht?
 - Der **Müll** in der Teeküche, der ist doch **von uns allen**, oder?
 - Wer wäscht die **Wäsche**?
 - Wer **kauft ein**?
-
 ---
 - Nadine ist **sauer**. Harry macht wenig im **Haushalt**.
 - Wir haben am Abend die Fenster nicht **zugemacht**.
@@ -44,7 +42,6 @@ tags:
 - Sei pünktlich! - 准时！
 - Sei doch nicht so stur! - 别那么固执！
 - Sei vorsichtig **auf dem Weg** **nach Hause**. - 回家路上小心。
-
 ---
 
 "Hab" 是 "haben"（有）的第二人称单数（du）命令式形式。
@@ -54,24 +51,23 @@ tags:
 - Hab Spaß! - 玩得开心！
 - Hab doch Verständnis für ihn. - 对他多点理解吧。
 - Hab ein schönes Wochenende! - 周末愉快！
-
+---
+- Du bist ruhig. (陈述句) - 你很安静。  
+- Sei ruhig! (命令式) - 安静点！  
+- Du hast Geduld. (陈述句) - 你有耐心。  
+- Hab Geduld! (命令式) - 要有耐心！
 ---
 
-Du bist ruhig. (陈述句) - 你很安静。  
-Sei ruhig! (命令式) - 安静点！  
-Du hast Geduld. (陈述句) - 你有耐心。  
-Hab Geduld! (命令式) - 要有耐心！
+- **Sei so lieb** und bring bitte den Müll raus.
 
----
-
-Sei so lieb und bring bitte den Müll raus.
-
-- "Sei so lieb" 是命令式，表示 " 请/希望对方做某事 "
-- "bring bitte den Müll raus"
-	- "bring" 是动词 "bringen"(带/拿) 的命令式形式
-	- "bitte" 是 " 请 "，增加礼貌程度
-	- "den Müll" 是 " 垃圾 "，这里是第四格 (Akkusativ)
-	- "raus" 是 "heraus" 的缩写，表示 " 出去 "
+> [!NOTE]
+>
+> - "Sei so lieb" 是命令式，表示 " 请/希望对方做某事 "
+> - "bring bitte den Müll raus"
+> 	- "bring" 是动词 "bringen"(带/拿) 的命令式形式
+> 	- "bitte" 是 " 请 "，增加礼貌程度
+> 	- "den Müll" 是 " 垃圾 "，这里是第四格 (Akkusativ)
+> 	- "raus" 是 "heraus" 的缩写，表示 " 出去 "
 
 ---
 - Bring bitte den Abfall raus.
@@ -80,13 +76,12 @@ Sei so lieb und bring bitte den Müll raus.
 - Sei doch nicht gleich sauer.
 ---
 
-- Sei so lieb und bring bitte den Müll raus.
-- Sei so gut und wache bitte die Wäsche.
-- Sei so nett und putz bitte die Küche.
+- **Sei so lieb** und bring bitte den Müll raus.
+- **Sei so gut** und wache bitte die Wäsche.
+- **Sei so nett** und putz bitte die Küche.
 - Das kann ich gern machen.
 - Tut mir leid, ich habe leider keine Zeit.
 - Koch heute Abend bitte eine Suppe! Vielen Dank!
-
 ---
 
 **Manchmal ist es heiß** und die Luft ist nicht gut. Dann mache ich die Fenster auch auf. **Das verstehe ich ja**.  
@@ -104,23 +99,19 @@ Aber bitte: die Fenster später **dann auch wieder** zu! Sei so nett und **vergi
 省略形式：Die Fenster später dann auch wieder zu!
 
 ---
-
 - Warum bringe immer ich **ihn** raus?
 - Ihr **nervt** mich!
 - Ich habe **ihn** auch schon rausgebracht.
-
 ---
 - Herr Martens hat angerufen. Ruf ihn bitte zurück!
 - Die Kaffeemaschine ist schmutzig. Putz sie bitte!
 - Ich habe eine Frage. Ruf mich bitte an!
 - Ich habe den Beamer in meinem Büro. Hole ihn bitte nach dem Mittagessen ab!
 - Das Geschirr in der Teeküche ist nicht sauber. Wasche es bitte ab!
-
 ---
 - **Das geht so nicht.**
 - Du hast recht.
 - Das verstehe ich.
-
 ---
 - Ich habe ein Problem. Ich räume **jeden Abend** die Küche auf. **Das geht so nicht.**
 - Oh, wirklich? Tut mir leid. Heute Abend mache ich das.
