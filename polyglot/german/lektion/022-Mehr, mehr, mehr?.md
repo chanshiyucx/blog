@@ -85,5 +85,22 @@ tags:
 - Wir kaufen unsere Klamotten **meistens** in Secondhandläden. Da findet man viele **verschiedene Sachen**. Und sie sind auch nicht so teuer. Für uns ist die Kombination **am wichtigsten**! **Die muss interessant sein.** Manchmal **tauschen** wir auch die Kleidung. Das finden wir **besonders lustig**.
 ---
 - Welcher Hut gefällt dir **am besten**?
-- Dieser hier ist witzig. Der Spruch gefällt mir! 
-- Findest du? Ich finde diesen schöner.
+- **Dieser** hier ist witzig. Der Spruch gefällt mir! 
+- Findest du? Ich finde **diesen** schöner.
+
+> [!NOTE]
+>
+> 1. **"Dieser hier ist witzig."**（这个很有趣。）
+>
+> 	- **"Dieser"** 是指示代词，主格（Nominativ），指代 **"Hut"**（帽子，阳性 "der Hut"）。
+> 	- **"Dieser hier"**（这个）强调指向某个具体的帽子。
+>
+> 1. **"Ich finde diesen schöner."**（我觉得这个更好看。）
+>
+> 	- **"diesen"** 是 **"dieser"** 的第四格（Akkusativ，宾格）形式，因为它是 **"finden"** 这个及物动词的宾语。
+> 	- 这里的 **"diesen"** 也是指 "Hut"。
+
+---
+- **Dieser Mantel ist teuer.**（这件外套很贵。）→ **主格**
+- **Ich kaufe diesen Mantel.**（我买这件外套。）→ **宾格**  
+![[Pasted image 20250304151921.png]]
