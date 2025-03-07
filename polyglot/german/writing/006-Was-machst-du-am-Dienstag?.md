@@ -67,8 +67,8 @@ Hallo! Ich heiße XinChen und komme aus China. Ich arbeite als Programmierer. Am
 > - Beim Frühstück lese ich die Zeitung.  
 
 ---
-- Am Donnerstag **lade** ich sie dann ins Kino **ein**. einladen 邀请
-- Er kauft im Supermarkt ein. einkaufen 购物
-- Ich **stehe** früh **auf**. aufstehen 起床
+- Am Donnerstag **lade** ich sie dann ins Kino **ein**.
+- Er kauft im Supermarkt ein.
+- Ich **stehe** früh **auf**.
 - Ich lade dich ins Restaurant ein.
 - Er lädt uns zur Party ein.
