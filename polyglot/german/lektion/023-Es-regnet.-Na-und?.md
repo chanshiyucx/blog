@@ -54,9 +54,4 @@ tags:
 ---
 - **Ich fahre gern in die Berge, denn dort kann ich wandern.**
 - Im Sommer gehe ich gern in den Wald, denn dort ist **es** kühl.
-
-> [!NOTE]
->
-> **"es" 作为形式主语，不指代具体事物，仅用于使句子结构完整**
-
 - Sie ist am Wochenende immer an der See, denn sie badet gern .
