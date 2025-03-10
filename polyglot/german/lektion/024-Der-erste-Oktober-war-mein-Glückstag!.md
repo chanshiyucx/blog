@@ -7,7 +7,7 @@ tags:
 - **Der erste Oktober** war mein Glückstag!
 - Der dritte Mai war kein Glückstag.
 ---
-- Am dreiundzwanzig==sten== September.
+- Am dreiundzwanzig**sten** September.
 - Vom **dritten** bis (zum) elf**ten** April.
 ---
 - Ist der erste März vielleicht dein Hochzeitstag?
@@ -40,7 +40,7 @@ tags:
 ---
 - Ich **würde** gern **mit meinen Kindern** **auf der Straße** **spielen**.
 - Ich würde lieber den ganzen Tag zu Hause **bleiben**.
-- Wir **würden** gern ein Picknick mitten auf dem Romanplatz **machen**.
+- Wir **würden** gern ein Picknick mitten auf dem Romanplatz **machen**.  
 ![[Pasted image 20250304175640.png]]
 ---
 - Wir **beachten** unsere Mitmenschen **zu wenig**!" Finden Sie das auch? Dann ist der Weltknuddeltag **genau richtig für Sie**. **Den weltweiten Aktionstag** gibt es **seit** 1986. Er findet **jedes Jahr** am 21. Januar statt. Im Winter ist es oft dunkel und **viele Leute sind traurig**. Sie möchten ihnen gern **eine Freude** machen? Nehmen Sie sie **in den Arm** und wünschen ihnen alles Gute **zum Weltknuddeltag**! **Auf der Straße**, in der U-Bahn, … **egal wo**!
