@@ -5,6 +5,30 @@ tags:
   - German/Writing
 ---
 
+## Sport und Bewegung
+
+- Was machst du gerne für Sport? Schreib es in die Kommentare.
+- Ich mache Sport.
+- Ich mache Yoga.
+- Ich spiele Basketball.
+- Ich fahre Ski.
+- Ich gehe **zum** Sport.
+- Ich gehe **ins** Fitnessstudio.
+- Ich gehe **ins** Schwimmbad.
+- Ich laufe **auf dem Laufband**.
+- Ich laufe **an der Straße entlang**.
+- Ich laufe **durch den Wald**.
+- Ich jogge **durch den Park**.
+- Ich jogge **im Park**.
+- Ich jogge **um den See**.
+- Ich jogge **am Strand**.
+- Ich schwimme **im Schwimmbad**.
+- Ich schwimme **im See**.
+- Ich schwimme **im Meer**.
+- Ich klettere **auf einen Apfelbaum**.
+- Ich klettere **auf einen Berg**.
+- Ich tanze mit Freunden **in der Disko**.
+
 ## Wie oft machst du Sport?
 
 - Isst du gesund?
