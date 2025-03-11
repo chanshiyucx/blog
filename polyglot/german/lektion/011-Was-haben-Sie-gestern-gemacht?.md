@@ -5,17 +5,19 @@ tags:
   - German/Lektion
 ---
 
-| ge…t         | ge…en       | …ge…t      | …ge…en      | …iert        |
-| ------------ | ----------- | ---------- | ----------- | ------------ |
-| gemacht      | getrunken   | eingekauft | ferngesehen | telefoniert  |
-| gehört       | gelesen     | eingeladen | abgewaschen | fotografiert |
-| gearbeitet   | gesehen     | aufgeräumt | angerufen   |              |
-| gekocht      | gesungen    |            |             |              |
-| gefrühstückt | geschrieben |            |             |              |
-| gelernt      | geschlafen  |            |             |              |
-|              | getroffen   |            |             |              |
-|              | gegessen    |            |             |              |
-|              | gebacken    |            |             |              |
+| ge…t         | ge…en       | …ge…t      | …ge…en      | …iert        | …t    |
+| ------------ | ----------- | ---------- | ----------- | ------------ | ------- |
+| gemacht      | getrunken   | eingekauft | ferngesehen | telefoniert  | besucht |
+| gehört       | gelesen     | eingeladen | abgewaschen | fotografiert |         |
+| gearbeitet   | gesehen     | aufgeräumt | angerufen   |              |         |
+| gekocht      | gesungen    | ausgemacht | abgeflogen  |              |         |
+| gefrühstückt | geschrieben | angeklickt |             |              |         |
+| gelernt      | geschlafen  |            |             |              |         |
+| gefragt      | getroffen   |            |             |              |         |
+|              | gegessen    |            |             |              |         |
+|              | gebacken    |            |             |              |         |
+|              | gekommen    |            |             |              |         |
+|              | gefahren    |            |             |              |         |
 
  ---
  - Heute trinke ich Kaffee.
@@ -70,3 +72,5 @@ tags:
 - Gelernt? **Was denn?**
 - Ich habe **natürlich Deutsch gelernt**. Und meine Hausaufgabe gemacht.
 - Das ist gut.
+
+Ich habe gestern Kaffee getrunken.
