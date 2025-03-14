@@ -21,6 +21,10 @@ tags:
 - **Vielen Dank!**
 - **Herzlichen Dank!**
 ---
+- Kannst du gut **Auto fahren**?
+- Ja, ich kann sehr gut Auto fahren.
+- Nein, ich kann gar nicht Auto fahren.
+---
 - Was kannst du gut?
 - Ich kann schwimmen. **Könnt ihr auch** schwimmen?
 - Ja, ich kann **auch** schwimmen. Ich kann **sehr gut** backen, **kannst du auch** backen?
@@ -137,35 +141,13 @@ tags:
 ---
 - Was machst du gern **in deiner Freizeit?**
 - Ich liebe Fotografieren.
-- Ich liebe Reisen. (我喜欢旅行。)
-- Ich liebe Malen. (我喜欢绘画。
-- Ich liebe Singen. (我喜欢唱歌。)
-
-> [!NOTE]
->
-> 在句子 "Was machst du gern **in deiner Freizeit**?" 中，使用 "deiner" 是因为：
->
-> 1. "Freizeit"（空闲时间）是一个阴性名词，所以用阴性形式
-> 2. **"in" 与格搭配时表示 " 在…之中 "，所以需要使用与格形式**
-> 3. "dein" 是第二人称单数所有格代词（你的），其阴性与格形式是 "deiner"
->
-> 详细解析：
-> - "die Freizeit" - 阴性名词
-> - "in" + 与格 = 表示 " 在…之内 "
-> - "dein" 阴性与格形式为 "deiner"
->
-> 所以组合起来就是 "in deiner Freizeit"（在你的空闲时间里）。
->
-> 如果用不同人称，形式也会相应变化：
-> - 我的空闲时间：in meiner Freizeit
-> - 他的空闲时间：in seiner Freizeit
-> - 她的空闲时间：in ihrer Freizeit
-> - 我们的空闲时间：in unserer Freizeit
-
+- Ich liebe Reisen.
+- Ich liebe Malen.
+- Ich liebe Singen.
 ---
-- Ich mag **Lesen**. (我喜欢阅读。)
-- Das **Kochen** macht mir Spaß. (烹饪让我感到有趣。)
- - **Laufen** ist gesund. (跑步很健康。)
+- Ich mag **Lesen**.
+- Das **Kochen** macht mir Spaß.
+ - **Laufen** ist gesund.
 ---
 - Liest du gern?
 - Ja! Ich lese sehr gern.
