@@ -17,29 +17,22 @@ tags:
 - Du kannst **ja** toll tanzen!
 - Du kannst **wirklich** toll tanzen!
 - Du kannst **aber** toll tanzen!
-- Oh, danke!
 - Danke sehr!
 - **Vielen Dank!**
 - **Herzlichen Dank!**
 ---
+- Was kannst du gut?
 - Ich kann schwimmen. **Könnt ihr auch** schwimmen?
 - Ja, ich kann **auch** schwimmen. Ich kann **sehr gut** backen, **kannst du auch** backen?
 - Nein, ich kann **gar nicht** backen.
 - Ich kann auch nicht backen, aber ich…
 ---
-- toll / sehr gut / super
-- gut
-- nicht so gut
-- ein bisschen
-- gar nicht
----
 - Er arbeitet **im Hotel** und spricht **schlecht** Englisch.
-- Mein Freund schwimmt **jeden Tag eine Stunde**.
-- Ich gehe **jede Woche** ==schwimmen==.
+- Ich gehe **jede Woche** schwimmen.
 
 > [!NOTE]
 >
-> 在德语句子 **"Ich gehe jede Woche schwimmen."** 中，**"schwimmen"** 之所以保持原形（不变位），是因为这里使用了 **动词支配的不定式结构（Infinitivkonstruktion）**，具体来说是 **" 动词 gehen + 不定式（Infinitiv）"** 结构。
+> 在德语句子 **"Ich gehe jede Woche schwimmen."** 中，**"schwimmen"** 之所以保持原形，是因为这里使用了 **动词支配的不定式结构（Infinitivkonstruktion）**，具体来说是 **" 动词 gehen + 不定式（Infinitiv）"** 结构。
 >
 > **语法分析**
 >
@@ -74,6 +67,7 @@ tags:
 
 - Ich gehe **ab und zu** ins Kino.
 - Er kommt **ab und zu** zu spät zur Arbeit.
+- Mein Freund schwimmt **jeden Tag eine Stunde**.
 
 > [!NOTE]
 >
