@@ -5,6 +5,22 @@ tags:
   - German/Writing
 ---
 
+## Das ist meine Familie
+
+- **Sein Beruf** ist Polizist.
+- **Ihr Beruf** ist Verkäuferin.
+- **Seine Jacke** ist blau.
+- **Ihre Jacke** ist rosa.
+- Ich trage eine Brille.
+- Ich kaufe **das Hemd / das Kleid**.
+- Ich kaufe **den Koffer / den Badeanzug / den Hut / den Rock**.
+- Ich kaufe **die Krawatte / die Handtasche / die Stiefel / die Halskette** / die Hose.
+- Ich kaufe die Schuhe / die Socken.
+---
+- Das Bild zeigt meine Familie. **Ich stehe vorne in der Mitte**. Es ist mein **Geburtstag**. Ich **werde** neun **Jahre** alt. Mein Rock ist rosa und mein T-Shirt ist weiß. **Meine Haare** ist lang und braun. Ich bin klein. **Wir Kinder stehen vorne und die Erwachsenen hinten.** Mein Cousin **trägt eine Brille**. **Seine Haare sind blond**.
+
+## Trennbare Verben
+
 - Wann **stehst** du am Morgen **auf**?
 - Ich stehe um zwanzig nach sechs auf.
 ---
