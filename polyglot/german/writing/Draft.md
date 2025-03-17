@@ -17,7 +17,7 @@ tags:
 - Ich kaufe **die Krawatte / die Handtasche / die Stiefel / die Halskette** / die Hose.
 - Ich kaufe die Schuhe / die Socken.
 ---
-- Das Bild zeigt meine Familie. **Ich stehe vorne in der Mitte**. Es ist mein **Geburtstag**. Ich **werde** neun **Jahre** alt. Mein Rock ist rosa und mein T-Shirt ist weiß. **Meine Haare** ist lang und braun. Ich bin klein. **Wir Kinder stehen vorne und die Erwachsenen hinten.** Mein Cousin **trägt eine Brille**. **Seine Haare sind blond**.
+- Das Bild **zeigt** meine Familie. **Ich stehe vorne in der Mitte**. Es ist mein **Geburtstag**. Ich **werde** neun **Jahre** alt. Mein Rock ist **rosa** und mein T-Shirt ist weiß. **Meine Haare** ist **lang** und braun. Ich bin klein. **Wir Kinder stehen vorne und die Erwachsenen hinten.** Mein Cousin **trägt eine Brille**. **Seine Haare sind blond**. Sein T-Shirt ist gelb und seine kurze Hose ist blau. 
 
 ## Trennbare Verben
 
