@@ -15,14 +15,10 @@ tags:
 > - seit 表示 " 自从…以来 "，要求后面的名词或代词使用第三格 (Dativ)。"Jahren" 是 "Jahr" (年) 的复数第三格形式。
 > - 使用的是从句词序（动词放在末尾），而不是疑问句词序。正常疑问句应该是："Warum mache ich diesen Blog?"
 > - "ganz einfach" 是一个德语表达，意思是 " 非常简单 " 或 " 很简单 "。"ganz" = 完全地，非常，十分，"einfach" = 简单的，容易的
-> - Euch (间接宾语): 你们 (第三格，大写表示尊重或正式)
 > - zeigen (不定式): 展示，显示
-> - euch (间接宾语): 你们 (第三格，小写表示非正式)
-> - viele Berlin-Tipps (直接宾语): 许多柏林建议
-> - geben (不定式): 给予
 
 ---
-- Es gibt so **viele interessante Leute** hier, so viel Musik, Kunst und Kultur, so viele Festivals, so viele Museen, so viele Bars und Restaurants. **Manche** Leute sagen: Ach komm, Sofia, so toll ist Berlin nun auch wieder nicht. **Doch**! Berlin ist cool, Berlin ist **verrückt**, Berlin ist … **einfach anders**!
+- Es gibt so **viele interessante Leute** hier, so viel Musik, Kunst und Kultur, so viele Festivals, so viele Museen, so viele Bars und Restaurants. **Manche** Leute sagen: Ach komm, Sofia, **so toll ist Berlin nun auch wieder nicht**. **Doch**! Berlin ist cool, Berlin ist **verrückt**, Berlin ist … **einfach anders**!
 
 > [!NOTE]
 >
@@ -38,9 +34,6 @@ tags:
 >
 > - hat gefragt，这个句子使用了倒装语序，正常语序是 Der Blogger Bharat aus Indien hat mich gefragt.
 > - "zurückgeschrieben" 是 "zurückschreiben" 的过去分词，表示 " 回信 "。zurück (副词): 回，返回。
-> - hat gedacht。gedacht (过去分词): denken (思考，想) 的过去分词
-> - bin gefahren, bin gegangen.
-> - gefällt 是动词 gefallen (喜欢，使人愉快) 的第三人称单数现在时形式。
 
 ---
 - **In Berlin gibt es alles?** Wirklich? Ich find, es gibt fast keine billigen Wohnungen.
@@ -51,11 +44,7 @@ tags:
 
 > [!NOTE]
 >
-> - es gibt (固定表达): 有，存在
 > - fast keine (否定词组): 几乎没有
-> - viel zu teuer: 太贵了（字面意思是 " 多得太贵 "）
-> - Seufz!: 叹气，表示无奈或遗憾的感叹词
-> - nach: 介词，表示 " 去往 "，通常用于表示去往一个没有冠词的地点时，特别是城市名称、国家名称（不带定冠词的国家）。
 > - zum Beispiel: 例如，举个例子
 > - ganz sicher: 非常确定，肯定
 > - in der Nähe: 附近，在附近
