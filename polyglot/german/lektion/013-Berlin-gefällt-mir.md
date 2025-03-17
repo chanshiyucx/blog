@@ -67,11 +67,6 @@ tags:
 
 ---
 - In Berlin gibt es eine Altstadt. Sie ist sehr klein. Aber ich finde sie toll. Und es gibt viele Kirchen. **Besonders schön** **sieht** die Berlinerkirche **aus**, finde ich. Aber es gibt keinen **Hafen**. Leider!
-
-> [!NOTE]
->
-> - "aussehen" 是一个可分动词，意思是 " 看起来 "、" 显得 "
-
 ---
 - Der Tierpark ist superschön. Er **gefällt mir** sehr.
 - Super Tipps! Ich danke **dir**.
@@ -108,3 +103,20 @@ tags:
 ---
 - **Dort kann man Kaffee trinken.**
 - **Man kann dort Kaffee trinken.**
+---
+- Wie findest du die Bibliothek?
+- **Sie gefällt mir nicht so**. Sie ist sehr klein.
+---
+- Das Buch **gehört** mir.
+---
+- Wo ist Miriams Jacke?
+- Hier ist eine Jacke. Gehört sie ihr?
+---
+- Hast du Hunger? Wir haben gekocht.
+- Toll! Ich danke dir.
+---
+- Das Handy geht nicht. Ich brauche deine Hilfe.
+- Klar, ich helfe dir gern.
+---
+- Das Kino zeigt einen Märchenfile. Mögen die Kinder Märchen?
+- Ja, die Märchenfilme gefallen mir sehr.
