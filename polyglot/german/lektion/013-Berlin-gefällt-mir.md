@@ -120,3 +120,27 @@ tags:
 ---
 - Das Kino zeigt einen Märchenfile. Mögen die Kinder Märchen?
 - Ja, die Märchenfilme gefallen mir sehr.
+---
+- Ist das dein Stift?
+- Ja, er gehört **mir**.
+---
+- Ist das mein Stift?
+- Ja, er gehört **dir**.
+---
+- Ist das unser Schirm?
+- Ja, er gehört **euch**.
+---
+- Ist das euer Schlüssel?
+- Ja, er gehört **uns**.
+---
+- Hilfst du mir?
+- Ja, ich helfe **dir**.
+---
+- Geht es deinen Kindern gut?
+- Ja, es geht **ihnen** gut.
+---
+- Ist das dein Buch?
+- Nein, es gehört **mir** nicht.
+---
+- Magst du den File?
+- Nein, er gefällt **mir** nicht.

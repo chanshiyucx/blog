@@ -31,4 +31,5 @@ tags:
 - Er bittet **mich** um einen Gefallen.
 - **Mich** kannst du anrufen, **mir** lieber nicht.
 ---
-
+- Hat er **dich** auch zur Party eingeladen?
+- Ja, **mich** hat er auch dazu eingeladen.
