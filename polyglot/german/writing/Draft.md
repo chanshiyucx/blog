@@ -33,3 +33,23 @@ tags:
 - Möchten Sie etwas trinken?
 - Ja, gern. Ich möchte eine Tasse Tee, bitte.
 - Nein, danke. **Ich habe keinen Durst.**
+---
+- Bezahlen Sie zusammen oder **getrennt**?
+- **Alles zusammen**, bitte.
+- **Getrennt**, bitte.
+---
+- Ich **bezahle** den Orangensaft.
+- Ich bezahle **den Teller Spaghetti** und das Bier.
+- Ich nehme einen Kaffee.
+- **Nimmst** du auch einen Kaffee.
+- Wir nehmen eine Flasche Wasser.
+- Nehmt ihr auch eine Flasche Wasser?
+---
+- Magst du Fisch?
+- Ich mag keinen Fisch.
+---
+- Mögt ihr Fleisch?
+- Wir mögen kein Fleisch.
+---
+- Hast du Hunger?
+- Hast du Durst?
