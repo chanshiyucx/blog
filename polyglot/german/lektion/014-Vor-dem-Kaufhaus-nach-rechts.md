@@ -4,10 +4,10 @@ date: 2025-03-01 17:10:30
 tags:
   - German/Lektion
 ---
-- Vor dem Kaufhaus nach rechts. 在百货商店前向右转。
-- Vor dem Kaufhaus nach links. 在百货商店前向左转。
-- Der Weg ist sehr weit. 路很长。
-- Der Weg ist nicht sehr weit. Sie kann **zu Fuß gehen**. 路不是很长，可以步行。
+- Vor dem Kaufhaus nach rechts.
+- Vor dem Kaufhaus nach links.
+- Der Weg ist sehr weit.
+- Der Weg ist nicht sehr weit. Sie kann **zu Fuß gehen**.
 ---
 - vor dem Kaufhaus
 - unter einer Brücke.
@@ -42,3 +42,30 @@ tags:
 - Herzlichen Dank.
 - Sehr nett. Vielen Dank.
 - Oh, danke schön.
+---
+- Wo ist mein Smartphone? Weiße du das?
+- Es ist **auf dem Tisch**.
+---
+- Wo ist denn das Café?
+- Es ist neben der Kirche.
+---
+- Wo kann ich schöne Blumen kaufen?
+- In dem Blumenladen vor der Brücke.
+---
+- Wo steht denn mein Auto?
+- Er steht vor dem Haus.
+---
+- Entschuldigung, **können Sie mir helfen**?
+- Ja gern.
+- Wo ist denn hier eine Post?
+- Tut mir leid. Das weiß ich leider nicht. **Ich bin nicht von hier.**
+- Oh, kein Problem. **Danke schön.**
+---
+- Entschuldigung, ich bin fremd hier.
+- Ich suche eine Apotheke.
+- Sie gehen die Straße nach links und **dann geradeaus bis zum Platz**. **Dort ist eine Apotheke.**
+- Ist das weit?
+- Nein, das ist **gar nicht** weit.
+- Herzlichen Dank.
+---
+- Wie Sie **zum** Kaufhaus **kommen**? Sie **biegen** an der Ampel nach rechts **ab**. Sie gehen dann 100 Meter **geradeaus** **bis zum Schillerplatz**. Dort **biegen** Sie nach links in die Heinestraße **ab**. Jetzt gehen Sie weiter geradeaus **über** die Lessingstraße und **über** die Goethestraße. **Schon stehen Sie vor dem Kaufhaus.**
