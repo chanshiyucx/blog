@@ -8,21 +8,27 @@ tags:
 ## Dativ
 
 - Frank möchte **mir** heute etwas zeigen.
-
-> [!NOTE]
->
-> **zeigen**（展示、给……看）是一个带 **第三格（间接宾语）+ 第四格（直接宾语）** 的动词。
-
-- Das Buch hat mir gefallen.
-
-> [!NOTE]
->
-> 动词 **gefallen**（使……喜欢、让……觉得好）是一个 **支配第三格的动词**。
+- Das Buch hat **mir** gefallen.
+- Er gibt **mir** ein Buch.
+- Mama gibt **mir** gleich das Glas.
+- Bitte gib **mir** das Heft.
+- Kannst du **mir** bei der Aufgabe helfen?
+- Sie haben **mir** leider keine Karte hinterlassen.
+- Er hat **mir** eine Nachricht hinterlassen.
+- Kannst du **mir** helfen?
+- Warum helft ihr **mir** nicht?
+- Diese Jacke gehört **mir**.
+- Sollst du dir nicht die Haare schneiden?
+- Isabel sucht **mir** und **dir** ein Geschenk aus.
 
 ## Akkusativ
 
 - Frank möchte **mich** heute sehen.
+- Julia will **mich** einladen.
+- Ich kann **dich** nicht finden.
+- Wo bringst du **mich** hin?
+- Heute bittest du **mich** um Hilfe.
+- Er bittet **mich** um einen Gefallen.
+- **Mich** kannst du anrufen, **mir** lieber nicht.
+---
 
-> [!NOTE]
->
-> 动词 **sehen**（看见）是一个及物动词，直接作用于宾语，因此需要用 **mich**（而不是 mir，mir 是第三格/与格）。
