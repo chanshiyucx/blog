@@ -69,3 +69,22 @@ tags:
 - Herzlichen Dank.
 ---
 - Wie Sie **zum** Kaufhaus **kommen**? Sie **biegen** an der Ampel nach rechts **ab**. Sie gehen dann 100 Meter **geradeaus** **bis zum Schillerplatz**. Dort **biegen** Sie nach links in die Heinestraße **ab**. Jetzt gehen Sie weiter geradeaus **über** die Lessingstraße und **über** die Goethestraße. **Schon stehen Sie vor dem Kaufhaus.**
+---
+- Bitte, **wie komme ich zum Bahnhof?**
+- **Sie gehen zuerst etwa 800 Meter geradeaus**, dann biegen Sie links ab. Da ist der Bahnhof.
+---
+- Entschuldigung! Ich habe eine Frage. **Wo ist die Polizei?**
+- Sie gehen gleich da an der Ampel rechts, dann gehen Sie etwa 300 Meter geradeaus. Da ist die Polizei.
+---
+- Entschuldigung! Eine Frage bitte: Wo ist das Café Schäfer?
+- **Sie gehen zuerst hier rechts**, dann biegen Sie an der Bank links ab. Da ist das Café.
+---
+- **Entschuldigen Sie bitte!** **Gibt es hier einen Parkplatz?**
+- Ja. Fahren Sie zuerst geradeaus, dann gehen Sie die dritte Straße rechts. Da ist ein Parkplatz.
+---
+- Entschuldigen Sie bitte! Wo ist der Stadtpark?
+- Sie gehen zuerst hier 500 Meter geradeaus, dann biegen Sie links ab. Da ist der Stadtpark.
+---
+- Entschuldigung! Ich habe eine Frage. Wo ist der Dom, bitte?
+- Tut mir leid. Ich bin auch fremd hier.
+- Tut mir leid. Ich bin nicht von hier.
