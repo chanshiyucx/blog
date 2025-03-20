@@ -4,6 +4,7 @@ date: 2025-03-07 16:57:07
 tags:
   - German/Writting
 ---
+
 Liebe Susa  
 Sonntag! Ein super Tag!  
 Am Morgen habe ich lange geschlafen und spät gefrühstückt. Zum Frühstück habe ich ein Brot mit Marmelade gegessen und einen Kaffee getrunken. Danach habe ich eine Pause gemacht. Dann habe ich mein Zimmer aufgeräumt. Ich habe auch meine Wäsche abgewaschen. Am Abend habe ich einen Spaziergang am Fluss gemacht. Ab halb acht habe ich eine Stunde Deutsch gelernt. Später habe ich im Internet gesurft und mit meinen Freunden gechattet.  
