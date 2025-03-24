@@ -44,7 +44,8 @@ tags:
  **es tut mir sehr leid**, aber ich **stecke** hier im Hotelaufzug **fest** und **der Notdienst** kommt erst **in einer Stunde**. ==**Ich schaffe es also leider nicht pünktlich.**== Können wir den Termin **vielleicht verschieben**? Ich denke, **in drei Stunden** kann ich **bei Ihnen sein**. **Telefonieren geht** hier im Aufzug leider nicht: **zu wenig Netz!** **Hoffentlich bekommen Sie diese Nachricht!**  
  Mit freundlichen Grüßen  
  Eric Seidel
----
+ 
+----
 Hey Oskar,  
 der Abend **gestern** war schön! Leider stecke ich **gerade** noch ungefähr zwei Stunden im Hotelaufzug fest. Und das kurz vor dem Vorstellungsgespräch! Mein Zug **zurück nach Hause** geht erst heute Abend um 20 Uhr. Können wir uns nach dem Gespräch noch mal kurz sehen? Am Hauptbahnhof vielleicht?  
 **Hast du Lust?**  
