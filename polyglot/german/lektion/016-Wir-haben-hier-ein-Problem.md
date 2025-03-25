@@ -41,7 +41,7 @@ tags:
 - Ich frage meinen Freund. **Der kann das.**
 ---
  Sehr geehrte Frau Graf,  
- **es tut mir sehr leid**, aber ich **stecke** hier im Hotelaufzug **fest** und **der Notdienst** kommt erst **in einer Stunde**. ==**Ich schaffe es also leider nicht pünktlich.**== Können wir den Termin **vielleicht verschieben**? Ich denke, **in drei Stunden** kann ich **bei Ihnen sein**. **Telefonieren geht** hier im Aufzug leider nicht: **zu wenig Netz!** **Hoffentlich bekommen Sie diese Nachricht!**  
+ **es tut mir sehr leid**, aber ich **stecke** hier im Hotelaufzug **fest** und **der Notdienst** kommt erst **in einer Stunde**. **Ich schaffe es also leider nicht pünktlich.** Können wir den Termin **vielleicht verschieben**? Ich denke, **in drei Stunden** kann ich **bei Ihnen sein**. **Telefonieren geht** hier im Aufzug leider nicht: **zu wenig Netz!** **Hoffentlich bekommen Sie diese Nachricht!**  
  Mit freundlichen Grüßen  
  Eric Seidel
  
@@ -80,7 +80,7 @@ Hoffentlich **klappt** das mit dem Termin **noch**! Heute Abend habe ich leider 
 - Ich habe **ein Problem**. Ich brauche **Ihre Hilfe**.
 - Was kann ich für Sie tun?
 - Mein Herd ist kaputt.
-- Kein Problem. Den kann ich reparieren. Haben Sie am Dienstag ab 16 Uhr Zeit?
+- Kein Problem. Das kann ich reparieren. Haben Sie am Dienstag ab 16 Uhr Zeit?
 - Am Dienstag kann ich nicht.
 - Geht es am Mittwoch um 15 Uhr?
 ---
@@ -91,4 +91,3 @@ Hoffentlich **klappt** das mit dem Termin **noch**! Heute Abend habe ich leider 
 - Meine Heizung ist kaputt.
 - Meine Waschmaschine **funktioniert nicht**.
 - **Wir können gern einen Termin ausmachen.**
----
