@@ -4,9 +4,8 @@ date: 2025-03-08 10:24:02
 tags: 
   - German/Grammar
 ---
-德语中 "machen" 可以与不同的前缀组合形成多种可分动词，每个都有特定的含义和用法。以下是主要的几种及其用法：
 
-## 1. anmachen (打开/开启)
+## anmachen (打开/开启)
 
 用于打开电子设备、灯光等：
 - Das Licht anmachen (开灯)
@@ -18,7 +17,7 @@ tags:
 - Kannst du bitte das Licht anmachen? (你能把灯打开吗？)
 - Ich mache **morgens** immer **zuerst** die Heizung an. (我早上总是先开暖气。)
 
-## 2. ausmachen (关闭/熄灭)
+## ausmachen (关闭/熄灭)
 
 "anmachen" 的反义词，用于关闭电子设备、灯光等：
 - Das Licht ausmachen (关灯)
@@ -29,7 +28,7 @@ tags:
 - Mach bitte das Radio aus! (请把收音机关掉！)
 - Hast du das Licht im Badezimmer ausgemacht? (你关浴室的灯了吗？)
 
-## 3. aufmachen (打开/开启)
+## aufmachen (打开/开启)
 
 用于打开可以物理开关的物体：
 - Die Tür aufmachen (开门)
@@ -41,7 +40,7 @@ tags:
 - Kannst du mir die Dose aufmachen? (你能帮我打开这个罐头吗？)
 - Mach bitte das Fenster auf, **es ist zu warm hier**. (请打开窗户，这里太热了。)
 
-## 4. zumachen (关闭)
+## zumachen (关闭)
 
 "aufmachen" 的反义词，用于关闭可以物理开关的物体：
 - Die Tür zumachen (关门)
@@ -52,7 +51,7 @@ tags:
 - Mach bitte die Tür zu, es zieht! (请关上门，有穿堂风！)
 - Er hat den Koffer zugemacht und ist gegangen. (他合上箱子就走了。)
 
-## 5. mitmachen (参与)
+## mitmachen (参与)
 
 表示参与或加入某活动：
 - Bei einem Spiel mitmachen (参加游戏)
@@ -62,7 +61,7 @@ tags:
 - Machst du bei der Stadtführung mit? (你参加城市导览吗？)
 - Die Kinder machen gerne bei Gruppenspielen mit. (孩子们喜欢参加团体游戏。)
 
-## 6. fertigmachen (完成/准备好)
+## fertigmachen (完成/准备好)
 
 表示完成某事或准备好：
 - Das Essen fertigmachen (准备好饭菜)
@@ -72,7 +71,7 @@ tags:
 - Ich mache mich fertig für die Party. (我为派对做准备。)
 - Hast du den Bericht fertiggemacht? (你完成报告了吗？)
 
-## 7. abmachen (约定/取下)
+## abmachen (约定/取下)
 
 有两个主要含义：约定某事或取下某物：
 - Einen Termin abmachen (约定时间)
@@ -82,7 +81,7 @@ tags:
 - Wir haben abgemacht, uns um 8 Uhr zu treffen. (我们约好 8 点见面。)
 - Kannst du das Preisschild abmachen? (你能把价格标签取下来吗？)
 
-## 8. weitermachen (继续)
+## weitermachen (继续)
 
 表示继续做某事：
 - Mit der Arbeit weitermachen (继续工作)

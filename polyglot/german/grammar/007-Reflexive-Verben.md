@@ -9,19 +9,19 @@ tags:
 
 德语反身代词根据人称和数量变化:
 
-|人称|反身代词 (第四格)|反身代词 (第三格)|
-|---|---|---|
-|ich (我)|mich|mir|
-|du (你)|dich|dir|
-|er/sie/es (他/她/它)|sich|sich|
-|wir (我们)|uns|uns|
-|ihr (你们)|euch|euch|
-|sie (他们/她们)|sich|sich|
-|Sie (您/您们)|sich|sich|
+| 人称        | 反身代词 (第四格) | 反身代词 (第三格) |
+| --------- | ---------- | ---------- |
+| ich       | mich       | mir        |
+| du        | dich       | dir        |
+| er/sie/es | sich       | sich       |
+| wir       | uns        | uns        |
+| ihr       | euch       | euch       |
+| sie       | sich       | sich       |
+| Sie       | sich       | sich       |
 
 ## 反身代词的主要用法
 
-### 1. 真正的反身动词 (Echte reflexive Verben)
+### 1. 真正的反身动词
 
 这些动词必须与反身代词一起使用，没有反身代词就无法使用:
 
@@ -34,7 +34,7 @@ tags:
 - **sich befinden** (位于)
 	- _Das Museum befindet sich im Zentrum._ (博物馆位于市中心。)
 
-### 2. 非真正的反身动词 (Unechte reflexive Verben)
+### 2. 非真正的反身动词
 
 这些动词可以与反身代词一起使用，也可以用于非反身结构:
 
@@ -45,7 +45,7 @@ tags:
 	- 反身: _Die Kinder ziehen sich an._ (孩子们穿衣服。)
 	- 非反身: _Die Mutter zieht das Kind an._ (妈妈给孩子穿衣服。)
 
-### 3. 相互反身结构 (Reziproke reflexive Konstruktionen)
+### 3. 相互反身结构
 
 表示相互之间的行为:
 
@@ -86,5 +86,3 @@ tags:
 	- _Ich weiß, dass er sich für Geschichte interessiert._ (我知道他对历史感兴趣。)
 3. 当句子中有情态动词时，反身代词通常放在主语之后，主要动词在句尾:
 	- _Ich muss mich beeilen._ (我必须赶快。)
-
-反身代词是德语中一个非常重要的语法概念，掌握它可以帮助你更自然地表达很多日常动作和情况。
