@@ -5,14 +5,12 @@ tags:
   - German/Grammar
 ---
 
-## 基本区别
+## 区别
 
-1. **第三格 (Dativ)**：表示间接宾语，回答 "wem?"(给谁?) 的问题
-2. **第四格 (Akkusativ)**：表示直接宾语，回答 "wen?" 或 "was?"(谁/什么?) 的问题
+- **第三格 (Dativ)**：表示间接宾语，回答 "wem?"(给谁?) 的问题
+- **第四格 (Akkusativ)**：表示直接宾语，回答 "wen?" 或 "was?"(谁/什么?) 的问题
 
-## 实际例句分析
-
-### 第三格 (Dativ) 使用情况
+## 第三格 (Dativ)
 
 1. **作为间接宾语**
 	- Ich gebe **dir** das Buch. (我把这本书给你。)
@@ -30,7 +28,7 @@ tags:
 	- Das gefällt **mir**. (我喜欢这个。)
 	- Ich danke **dir**. (我谢谢你。)
 
-### 第四格 (Akkusativ) 使用情况
+## 第四格 (Akkusativ)
 
 1. **作为直接宾语**
 	- Ich sehe **dich**. (我看见你。)
@@ -45,14 +43,11 @@ tags:
 3. **表示时间段**
 	- Ich bleibe **einen** Monat in Berlin. (我在柏林待一个月。)
 
-### 双向介词
+## 双向介词
 
 有些介词可以接第三格或第四格，区别在于：
 - 第三格表示位置（静态，wo?）
 - 第四格表示方向（动态，wohin?）
-
-例如：
-
 - **in**:
 	- 第三格：Ich bin **in dem** (im) Haus. (我在房子里。)【位置】
 	- 第四格：Ich gehe **in das** (ins) Haus. (我走进房子。)【方向】
@@ -61,12 +56,6 @@ tags:
 	- 第四格：Ich lege das Buch **auf den** Tisch. (我把书放在桌子上。)【方向】
 
 其他双向介词还有：an, über, unter, vor, hinter, neben, zwischen
-
-## 常见错误区分
-
-比较以下句子：
-- Ich gebe **dir** das Buch. (我把这本书给你。) 【dir 是第三格，表示间接宾语】
-- Ich sehe **dich** im Park. (我在公园里看见你。) 【dich 是第四格，表示直接宾语】
 
 ## Dativ
 

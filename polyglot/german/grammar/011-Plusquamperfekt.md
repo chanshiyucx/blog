@@ -52,19 +52,15 @@ tags:
 #### 时间顺序表达
 
 1. **现在完成时**：简单表述过去发生的事情
-	
 	- "Gestern **habe** ich ein Buch **gekauft**." (昨天我买了一本书)
 2. **过去完成时**：强调在另一过去事件之前发生
-	
 	- "Ich **hatte** das Buch schon **gekauft**, bevor du mir davon erzähltest." (在你告诉我这件事之前，我已经买了那本书)
 
 #### 叙事中的使用
 
 1. **连续事件**用现在完成时：
-	
 	- "Ich **bin** aufgestanden, **habe** gefrühstückt und **bin** zur Arbeit gefahren." (我起床，吃了早餐，然后开车去上班)
 2. **事件先后顺序**需要过去完成时：
-	
 	- "Als ich zur Arbeit kam, **hatte** mein Kollege die Präsentation bereits **vorbereitet**." (当我到达工作地点时，我的同事已经准备好了演示)
 
 #### 详细情境例子
