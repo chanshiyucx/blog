@@ -4,29 +4,20 @@ date: 2025-02-11 14:30:48
 tags:
   - German/Lektion
 ---
-- Lebt ihr zusammen?
-- Ja, wir leben zusammen, aber wir sind nicht verheiratet und wir haben keine Kinder.
+- Lebt ihr **zusammen**?
+- Ja, wir leben zusammen, aber wir sind nicht **verheiratet** und wir haben keine Kinder.
 ---
-- Sind ihr verheiratet?
-- Wir sind verheiratet.
-- Wir sind nicht verheiratet.
-- Wir sind geschieden.
-- Wir sind nicht verheiratet, aber wir leben zusammen.
----
-- Bist du verheiratete?
-- Sind Sie verheiratete?
+- Sind Sie verheiratet?
 - Ich bin Single.
-- Ich lebe allein.
-- Ich bin nicht verheiratet.
+- Ich bin **verheiratet**.
+- Ich bin **geschieden**.
+- Ich lebe **allein**.
 ---
 - Habt ihr Kinder?
 - Wir haben ein Kind.
 - Wir haben zwei Kinder.
 - Wir haben keine Kinder.
 - Wir haben **noch** keine Kinder.
----
-- **Was macht ihr beruflich?**
-- Ich bin Paketzusteller und **arbeite bei** HotSped.
 ---
 - Was bist du von Beruf?
 - Was machst du beruflich?

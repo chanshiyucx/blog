@@ -27,7 +27,7 @@ tags:
 >
 > 在德语中，国家名称使用冠词的规则：
 >
-> 1. **大多数中性国家名称可以省略冠词**：
+> 1. 大多数中性国家名称可以省略冠词：
 >    - aus dem Deutschland → aus Deutschland
 >    - aus dem Frankreich → aus Frankreich
 >    - aus dem China → aus China
@@ -52,11 +52,6 @@ tags:
 - Wo wohnt ihr?
 - Wir wohnen in München.
 ---
-- Wer ist das?
-- Das ist Simon.
-- Wer sind das?
-- Das sind Simon und Maria.
----
 - **Sind Sie** Herr Li?
 - Ja, das bin ich.
 - Nein, das bin ich nicht.
@@ -67,17 +62,8 @@ tags:
 - Gut, danke. **Und Ihnen?**
 - Es geht.
 - Nicht so gut.
-- **Auch gut.**
-- **Mir geht's** sehr gut.
-- Mir geht's gut.
-- Mir geht's nicht so gut.
 ---
 - Guten Tag.
-- Guten Morgen.
-- Guten Abend.
 - **Gute Nacht.**
 - Tschüs.
 - **Auf Wiedersehen.**
----
-- Ich komme aus China und lerne Deutsch.
-- Das ist Max und er ist 25 Jahre alt.
