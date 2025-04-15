@@ -4,14 +4,6 @@ date: 2025-02-15 09:25:19
 tags:
   - German/Lektion
 ---
-- Oh Gott! So viel Arbeit!
-- Hilfe! Mein Passwort ist falsch!
-- Ein Albtraum!
----
-- Die Person **auf Bild** hat Hunger.
-- Die Person **auf Bild** braucht einen Kaffee.
-- Die Person **auf Bild** **kommt nicht ins WLAN**.
----
 - Ich brauche **einen Stift**.
 - Ich brauche **keinen Stift**.
 - Ich brauche **Stifte**.

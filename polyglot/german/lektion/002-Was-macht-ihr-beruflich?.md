@@ -13,38 +13,16 @@ tags:
 - Ich bin **geschieden**.
 - Ich lebe **allein**.
 ---
-- Habt ihr Kinder?
-- Wir haben ein Kind.
-- Wir haben zwei Kinder.
-- Wir haben keine Kinder.
-- Wir haben **noch** keine Kinder.
----
-- Was bist du von Beruf?
-- Was machst du beruflich?
-- Ich bin Lehrer.
+- Was sind Sie **von Beruf**?
+- Was machen Sie **beruflich**?
 - Ich bin Lehrer **von Beruf**.
-- Ich arbeite als Lehrer.
-- Ich **arbeite nicht**.
-- Ich **arbeite im Moment nicht**.
-- Ich arbeite los.
+- Ich arbeite **als** Lehrer.
+- Ich arbeite **im Moment** nicht.
 - Ich **habe einen Job als** Lehrer.
 - Ich **habe eine Stelle als** Lehrer.
-- Ich **mache** eine Ausbildung **als** Lehrer.
-- **Von Beruf bin ich Lehrer, aber im Moment arbeite ich nicht.**
+- Ich **mache eine Ausbildung als** Lehrer.
+- Von Beruf bin ich Lehrer, aber im Moment arbeite ich nicht.
 ---
-- **Bist du ein Lehrer?**
-- Ja, ich arbeite als Lehrer.
-- Nein, ich arbeite nicht als Lehrer.
 - Wo arbeitest du?
 - Ich **mache** ein Praktikum **bei** HotSped.
 - Ich arbeite **bei** BMW.
----
-- **Was machst du?**
-- Ich schreibe.
-- **Was macht ihr?**
-- Wir lernen Deutsch.
----
-- **Was studierst du?**
-- Ich studiere Medizin.
----
-- Vielen Dank für das Interview!

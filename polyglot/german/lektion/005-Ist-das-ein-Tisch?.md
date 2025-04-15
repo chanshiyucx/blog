@@ -4,33 +4,9 @@ date: 2025-02-14 16:26:18
 tags:
   - German/Lektion
 ---
-- **Im Zimmer** **sind** viele Dinge.
-- **Im Haus** **ist** eine Katze.
-- **In der Küche** **sind** drei Stühle.
-- **Auf dem Tisch** **ist** eine Lampe.
+- **Im Haus** ist eine Katze.
+- **Auf dem Tisch** ist eine Lampe.
 ---
-- Was ist das? Ist das **ein** Tisch?
-- Ja. Das ist **ein** Tisch.
-- Nein. Das ist **kein** Tisch.
----
-- Ich habe **keine** Kinder.
-- Das ist **kein** Sonderangebot.
-- Das Sofa ist **nicht** günstig.
----
-- Ist **das** Buch gut?
-- Ja, sehr gut.
-- Schau mal! Ist das **nicht ein** super Sofa?
-- Ja, das Sofa ist super.
----
-- Tom **sagt zu** Maria: "Ich bin krank."
-- Maria **sagt zu** Tom: "Das tut mir leid."
-- Der Lehrer **sagt zu** den Schülern: "Guten Morgen!"
-- Ich **sagte zu** **dir**: "Ich bin krank."
-- Er **sagte zu** **mir**: "Ich bin krank."
----
-- **Ich sehe etwas! Siehst du es auch?**
-- **Ist es aus Plastik?**
-- **Ist es blau?**
 - Der Stuhl ist **aus Holz**.
 - Die Flasche ist **aus Glas**.
 - Der Tisch ist **aus Metall**.
@@ -38,38 +14,16 @@ tags:
 ---
 - Wie bitte? = Noch einmal, bitte. = Nochmal, bitte.
 - **Danke schön. = Vielen Dank.**
-- Bitte schön. = Bitte.
-- Bitte. Sehr gerne. = Kein Problem.
 ---
-- **Wie heißt das auf Deutsch?**
-- **Was sagt man auf Deutsch?**
-- **Wie schreibe man das?**
----
-- **Wie schreibt man Buch?**
+- Wie schreibt man Buch?
 - B-U-C-H.
 - **Danke schön.**
 - **Bitte. Sehr gern.**
 ---
-- **Wie schreibt man das?**
-- **Wie buchstabiert man das?**
-- Kannst du das **schreiben**, bitte?
-- Kannst du das **buchstabieren**, bitte?
+- Wie **schreibt** man das?
+- Wie **buchstabiert** man das?
 - Können Sie das **schreiben**, bitte?
 - Können Sie das **buchstabieren**, bitte?
 ---
-- **Wo ist das Auto?**
-- **Da ist es.**
----
-- **Wo ist der Bahnhof?**
-- **Ich weiß nicht.**
-- **Ich weiß wirklich nicht, wo er ist.**  
----
-- **Wie spät ist es?**
-- **Ich weiß nicht.**
-- **Das weiß ich wirklich nicht.**
----
-- Was bestellst du?
+- Was **bestellst** du?
 - Ich kaufe Äpfel, Bananen **und so weiter**.
----
-- Ich buche den Flug.
-- Er kauft den Laptop.

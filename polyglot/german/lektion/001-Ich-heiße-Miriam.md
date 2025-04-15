@@ -4,21 +4,19 @@ date: 2025-02-10 12:06:45
 tags:
   - German/Lektion
 ---
-- Wie heißt du?
-- Wie heißen Sie?
-- Wer bist du?
-- Wer sind Sie?
-- Ich heiße Xin. / Ich bin Xin. / Mein Name ist Xin.
----
-- Wie alt bist du?
 - Wie alt sind Sie?
-- Ich bin sechsundzwanzig Jahre alt.
-- Wie alt seid ihr?
-- Ich bin 28 Jahre alt. Ich bin auch 28.
+- Ich bin sechsundzwanzig **Jahre alt**.
+- Woher kommen Sie?
+- Ich komme aus China.
+- Wo wohnen Sie?
+- Ich wohne in München.
+---
+- **Wie geht's dir?** = Wie geht es dir?
+- Super. **Und dir?**
 ---
 - Woher kommst du?
 - Woher kommen Sie?
-- Ich komme aus Deutschland.
+- Ich komme aus China.
 - Ich komme aus **der Türkei**.
 - Ich komme aus **der Schweiz**.
 - Ich komme aus **den USA**.
@@ -41,29 +39,3 @@ tags:
 > 		- aus den Niederlanden
 >    - 带有形容词修饰的国家名称：
 > 		- aus dem alten Deutschland
-
----
-- Wo wohnst du?
-- Wo wohnen Sie?
-- Ich wohne in München.
-- Wo lebst du?
-- Wo leben Sie?
-- Ich lebe in München.
-- Wo wohnt ihr?
-- Wir wohnen in München.
----
-- **Sind Sie** Herr Li?
-- Ja, das bin ich.
-- Nein, das bin ich nicht.
----
-- **Wie geht's dir?** = Wie geht es dir?
-- Wie geh's Ihnen?
-- Super. / Sehr gut. **Und dir?**
-- Gut, danke. **Und Ihnen?**
-- Es geht.
-- Nicht so gut.
----
-- Guten Tag.
-- **Gute Nacht.**
-- Tschüs.
-- **Auf Wiedersehen.**

@@ -4,43 +4,18 @@ date: 2025-02-11 17:02:11
 tags: 
   - German/Lektion
 ---
-- Ist das deine Mutter?
-- Ja, das ist meine Mutter.
-- Nein, das ist nicht meine Mutter.
----
-- Ist das **nicht** deine Mutter?
+
 - Das ist **nicht** deine Mutter, **oder**?
 - **Doch**, das ist meine Mutter.
 - Nein, das ist meine Oma.
 ---
-- **Sind** das deine Kinder?
-- Ist Maren dein Freund?
+- Welche **Sprachen** sprechen Sie?
+- Ich spreche **sehr gut** Chinesisch und **ein bisschen** Deutsch.
 ---
-- **Wie heißt** deine Mutter?
-- **Wie alt ist** deine Mutter?
----
-- Er kommt **nicht** aus Indien, **oder**?
-- Geht es dir **nicht** gut?
----
-- **Welche Sprachen sprichst du?**
-- **Welche Sprachen sprachen Sie?**
-- Ich spreche Englisch und Chinesisch.
-- Ich spreche **sehr gut** Chinesisch.
-- Ich spreche **ein bisschen** Deutsch.
-- Ich spreche **nur ein bisschen** Deutsch.
-- Ich spreche **nicht so gut** Deutsch.
----
-- **Sprichst du** Deutsch?
 - **Sprechen Sie** Deutsch?
 - Ja, **ein bisschen**.
 - Nein, **gar nicht**.
-- Nein, ich spreche **nicht** Deutsch.
 ---
-- Ich spreche vier Sprachen.
-- Du **sprichst aber super Deutsch**.
-- Mein Bruder **spricht aber noch Deutsch**.
----
-- Aber im Moment **lebe ich nicht** in Hamburg.
 - Aber ich **lebe und arbeite** in München.
 - Ich **habe noch** keine Kinder.
 - Ich **lebe jetzt** in München.
