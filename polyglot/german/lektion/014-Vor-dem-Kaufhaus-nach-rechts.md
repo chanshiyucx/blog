@@ -4,11 +4,7 @@ date: 2025-03-01 17:10:30
 tags:
   - German/Lektion
 ---
-- Vor dem Kaufhaus nach rechts.
-- Vor dem Kaufhaus nach links.
-- Der Weg ist sehr weit.
-- Der Weg ist nicht sehr weit. Sie kann **zu Fuß gehen**.
----
+
 - vor dem Kaufhaus
 - unter einer Brücke.
 - an der Ampel
@@ -18,10 +14,6 @@ tags:
 - über einer Brücke
 - hinter dem Bahnhof
 - neben einem Baum
----
-- Bist du vor der Apotheke?
-- Bist du in der Schule?
-- Bist du auf dem Platz?
 ---
 - Entschuldigung. **Können Sie mir helfen?**
 - Eine Frage bitte: Ich suche die Schule.
