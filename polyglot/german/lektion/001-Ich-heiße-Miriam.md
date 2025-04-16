@@ -4,6 +4,8 @@ date: 2025-02-10 12:06:45
 tags:
   - German/Lektion
 ---
+- Wie heißen Sie?
+- Ich heiße Xin.
 - Wie alt sind Sie?
 - Ich bin sechsundzwanzig **Jahre alt**.
 - Woher kommen Sie?

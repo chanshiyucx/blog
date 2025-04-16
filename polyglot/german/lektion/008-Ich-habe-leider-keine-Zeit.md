@@ -17,40 +17,31 @@ tags:
 ---
 - Jetzt habe ich ein Problem. Leider habe ich keine Zeit. **Tut mir sehr leid.** Vielleicht am Montag oder am Dienstag? **Liebe Grüße**, Xin.
 ---
-- Ich habe am Montag keine Zeit.
-- Am Montag habe ich keine Zeit.
----
-- **Was machst du heute Nachmittag?**
-- **Das weiß ich noch nicht.**
+- Was machst du heute Nachmittag?
+- Das weiß ich **noch** nicht.
 - **Lust auf Schwimmbad?**
 - **Nöö. Keine Lust.**
 - Gehen wir ins Kino?
 - Oh ja! **Gute Idee. Wann denn?**
 - Um Viertel nach sieben?
 - Nein, **das ist zu spät**. Am Abend habe ich keine zeit.
-- Na, **dann um halb vier?** Oder um vier?
-- Ja, okay. Um vier. Bis dann!
+- Na, **dann** um halb vier? Oder um vier?
+- Ja, okay. Um vier. **Bis dann!**
 ---
-- **Vielleicht können wir heute Abend ins Theater gehen?**
-- **Kannst du heute Abend ins Theater gehen?**
-- Ja, da kann ich.
-- Ja, gern.
-- Ja, **klar**.
-- Vielleicht.
-- **Tut mir leid, ich kann leider nicht.**
-- **Nein, heute Abend habe ich leider keine Zeit.**
+- **Vielleicht** können wir heute Abend ins Theater gehen?
+- Ja, gern / **klar**.
+- Tut mir leid, ich kann **leider** nicht.
 ---
-- Hast du am Samstag Zeit?
-- Wann?
-- Um sieben?
-- Ja, um sieben habe ich Zeit.
----
-- Wie spät ist es? / Wie viel Uhr ist es?
+- **Wie spät ist es? / Wie viel Uhr ist es?**
 - Viertel vor acht.
 - Gehen wir ins Kino?
 - Nein, keine Lust.
 ---
-- Wann?
+- Gehen wir am Freitag um 12:30 Uhr zusammen Mittagessen?
+- **Nächste Woche** ist der Workshop. Vielleicht können wir **den Workshop** am Montag planen?
+- Am Mittwoch habe ich **schon viele Termine**. Aber am Donnerstag habe ich **noch etwas Zeit**.
+- Dann telefoniere ich **mit einem Kunden**.
+---
 - Am Montag / Dienstag / Mittwoch / Donnerstag / Freitag / Samstag / Sonntag.
 - Am Wochenende.
 - Am Morgen / Vormittag / Mittag / Nachmittag / Abend.
@@ -58,8 +49,3 @@ tags:
 - In der Nacht.
 - Um ein Uhr / eins / zwei.
 - Um ein Uhr fünfzig / Viertel nach eins.
----
-- Gehen wir am Freitag um 12:30 Uhr zusammen Mittagessen?
-- **Nächste Woche** ist der Workshop. Vielleicht können wir **den Workshop** am Montag planen?
-- Am Mittwoch habe ich **schon viele Termine**. Aber am Donnerstag habe ich **noch etwas Zeit**.
-- Dann telefoniere ich **mit einem Kunden**.

@@ -7,10 +7,10 @@ tags:
 - Ich mag Schokolade.
 - Ich auch! / Ich nicht!
 - Ich mag keinen Käse. / Käse mag ich nicht.
-- Ich schon! / Ich auch nicht!
+- Ich **schon**! / Ich auch nicht!
 ---
 - Ich mag keinen Kuchen.
-- Ich schon! Ich **liebe** Kuchen.
+- Ich **schon**! Ich **liebe** Kuchen.
 ---
 - Ich **mag** Kuchen. 一般喜欢
 - Ich **liebe** Kuchen. 非常喜欢
@@ -18,35 +18,22 @@ tags:
 - Ich **mag** Pizza.
 - Ich **möchte** eine Pizza.
 ---
-- Was magst du besonders gern?
-- Besonders gern mag ich Schokolade.
+- Was magst du **besonders gern**?
+- **Besonders gern** mag ich Schokolade.
 - Magst du Schokolade?
-- Schokolade mag ich besonders gern.
----
-- Ich esse **nicht gern** Fisch.
-- Ich esse **keinen** Fisch.
-- Wir essen gern Fisch.
-- Wir mögen Fisch.
-- Esst ihr gern Kuchen?
-- Mögt ihr Kuchen?
-- Essen Sie gern Brot?
-- Mögen Sie Brot?
+- Schokolade mag ich **besonders gern**.
 ---
 - Was isst du gern **zum Frühstück**?
 - Zum Frühstück esse ich gern **Brötchen mit Marmelade**.
-- Und **was magst du besonders gern?**
-- **Besonders gern mag ich Schokolade.**
+- Und was magst du besonders gern?
+- Besonders gern mag ich Schokolade.
 - Hier bitte, **guten Appetit!**
 - Danke. Hm…, **lecker**!
 ---
 - Was isst du gern zum Frühstück?
-- **Ich esse gern Brötchen**, mit Käse **oder** Schinken.
-- Und was magst du besonders gern?
-- Besonders gern mag ich Käse.
-- Was esst ihr gern zum Frühstück?
-- **Wir essen gern Brot mit Marmelade.**
+- **Ich esse gern Brötchen**, mit Käse oder Schinken.
 - Mögt ihr auch Kuchen zum Frühstück?
-- Oh ja, **Kuchen mögen wir besonders gern**.
+- Oh ja, Kuchen **mögen** wir besonders gern.
 ---
 - **Salat macht fit, schön und intelligent.**
 - **Na prima!** Dann brauche ich viel Salat.
@@ -55,24 +42,24 @@ tags:
 - Ich esse gern Fleisch und ich esse gern Fisch.
 - Ich habe Tomaten und Salat **auf dem Tisch**.
 - Zum Frühstück trinke ich Kaffee oder Tee.
-- Aber Käse? Nee!
+- **Aber Käse? Nee!**
 ---
-- Guten Tag! **Sie wünschen?**
-- Eine Tasse Kaffee und einen Kuchen, bitte.
-- **Möchten Sie vielleicht einen Nusskuchen?**
+- Guten Tag! Sie **wünschen**?
+- Eine **Tasse** Kaffee und einen Kuchen, bitte.
+- **Möchten Sie vielleicht** einen Nusskuchen?
 - Nein, danke!
 - Unser Nusskuchen ist **besonders gut**!
-- Ich mag aber keinen Nusskuchen.
-- **Möchten Sie einen Apfelkuchen?**
-- Nein, nein! Ich mag einen **Schokoladenkuchen**.
-- Einen Schokoladenkuchen und eine Tasse Kaffee. **Gern**!（好的，很乐意！）
+- Ich mag **aber** keinen Nusskuchen.
+- Möchten Sie einen Apfelkuchen?
+- Nein, nein! Ich mag einen Schokoladenkuchen.
+- Einen Schokoladenkuchen und eine Tasse Kaffee. **Gern**!
 - Tut mir leid, aber wir haben keinen Schokoladenkuchen **mehr**.
-- Schade! Na gut, **dann** nehme ich einen Apfelkuchen.
+- **Schade**! **Na gut**, **dann** nehme ich einen Apfelkuchen.
 - Hach! Jetzt haben wir auch keinen Apfelkuchen **mehr**.
-- Was! Tja, **was haben Sie denn noch?**
-- Wir haben nur noch Nusskuchen.
+- Was! Tja, was haben Sie **denn noch**?
+- Wir haben **nur noch** Nusskuchen.
 - Nein. Nusskuchen mag ich nicht.
 ---
-- **Ich esse gern Brot mit Butter und Schinken zum Abendessen und trinke gern Milch.** Und ihr?
-- Ich mag kein Fleisch, aber **Brot mit Käse esse ich sehr gern**. Mein Lieblingsgetränk ist Tee.
-- **Mein Lieblingsgetränk ist Apfelsaft. Und mein Lieblingsessen ist Schokolade.**
+- Ich esse gern Brot mit Butter und Schinken **zum Abendessen** und trinke gern Milch. Und ihr?
+- Ich mag kein Fleisch, aber Brot mit Käse esse ich sehr gern. Mein Lieblingsgetränk ist Tee.
+- Mein Lieblingsgetränk ist Apfelsaft. Und mein Lieblingsessen ist Schokolade.

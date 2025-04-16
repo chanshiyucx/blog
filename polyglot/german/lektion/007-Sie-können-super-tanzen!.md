@@ -14,13 +14,13 @@ tags:
 - Du kannst **aber** toll tanzen!
 ---
 - Was kannst du gut?
-- Ich kann schwimmen. **Könnt ihr auch** schwimmen?
+- Ich kann schwimmen. Könnt ihr auch schwimmen?
 - Ja, ich kann auch schwimmen. Ich kann sehr gut backen, kannst du auch backen?
 - Nein, ich kann **gar nicht** backen.
 - Ich kann auch nicht backen, aber ich…
 ---
 - Was sind deine Hobbys?
-- Meine Hobbys sind Fotografieren und Kochen.
+- Meine Hobbys sind **Fotografieren** und **Kochen**.
 ---
 - Was machst du gern?
 - Ich fotografiere gern Tiere. Das macht Spaß.
