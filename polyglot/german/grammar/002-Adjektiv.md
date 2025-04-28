@@ -25,12 +25,12 @@ tags:
 
 ## Ohne Artikel
 
-|     | Maskulinum        | Femininum         | Neutrum           | Plural        |
-| --- | ---------------- | ----------------- | ----------------- | ------------- |
-| N   | gut**er** Wein   | gut**e** Milch    | gut**es** Brot    | gut**e** Bücher |
-| G   | gut**en** Weins  | gut**er** Milch   | gut**en** Brots   | gut**er** Bücher |
-| D   | gut**em** Wein   | gut**er** Milch   | gut**em** Brot    | gut**en** Büchern |
-| A   | gut**en** Wein   | gut**e** Milch    | gut**es** Brot    | gut**e** Bücher |
+|     | Maskulinum      | Femininum       | Neutrum         | Plural            |
+| --- | --------------- | --------------- | --------------- | ----------------- |
+| N   | gut**er** Wein  | gut**e** Milch  | gut**es** Brot  | gut**e** Bücher   |
+| G   | gut**en** Weins | gut**er** Milch | gut**en** Brots | gut**er** Bücher  |
+| D   | gut**em** Wein  | gut**er** Milch | gut**em** Brot  | gut**en** Büchern |
+| A   | gut**en** Wein  | gut**e** Milch  | gut**es** Brot  | gut**e** Bücher   |
 
 ## Nach dem Negativartikel
 
