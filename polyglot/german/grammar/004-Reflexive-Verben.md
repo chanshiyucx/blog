@@ -10,8 +10,8 @@ tags:
 这些动词必须与反身代词一起使用，没有反身代词就无法使用:
 
 - **sich freuen** (高兴)
-	- Ich freue mich auf das Wochenende. 我期待周末。
-	- Er freut sich über das Geschenk. 他对这份礼物感到高兴。
+	- Ich freue mich **auf** das Wochenende. 我期待周末。
+	- Er freut sich **über** das Geschenk. 他对这份礼物感到高兴。
 - **sich erholen** (休息，恢复)
 	- Wir erholen uns am Strand. 我们在海滩休息。
 	- Du musst dich nach der Arbeit erholen. 你必须在工作后休息。
