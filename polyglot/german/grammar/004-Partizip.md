@@ -9,7 +9,7 @@ tags:
 | ------------ | ----------- | ----------- | ----------- | ------------ | ------- |
 | gemacht      | getrunken   | eingekauft  | ferngesehen | telefoniert  | besucht |
 | gehört       | gelesen     | eingeladen  | abgewaschen | fotografiert | erzählt |
-| gearbeitet   | gesehen     | aufgeräumt  | angerufen   | repariert    |         |
+| gearbeitet   | gesehen     | aufgeräumt  | angerufen   | repariert    | erlebt  |
 | gekocht      | gesungen    | ausgemacht  | abgeflogen  | passiert     |         |
 | gelernt      | geschrieben | angeklickt  | angefangen  | diskutiert   |         |
 | gefragt      | geschlafen  | mitgebracht |             |              |         |
@@ -18,5 +18,5 @@ tags:
 | gespielt     | gebacken    |             |             |              |         |
 | gewohnt      | gekommen    |             |             |              |         |
 | gewartet     | gefahren    |             |             |              |         |
-|              | geblieben   |             |             |              |         |
+| gekauft      | geblieben   |             |             |              |         |
 |              |             |             |             |              |         |
