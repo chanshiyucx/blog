@@ -9,14 +9,23 @@ tags:
 | ------------ | ----------- | ----------- | ----------- | ------------ | ------- |
 | gemacht      | getrunken   | eingekauft  | ferngesehen | telefoniert  | besucht |
 | gehört       | gelesen     | eingeladen  | abgewaschen | fotografiert | erzählt |
-| gearbeitet   | gesehen     | aufgeräumt  | angerufen   | repariert    | erlebt  |
-| gekocht      | gesungen    | ausgemacht  | abgeflogen  | passiert     |         |
+| gesagt       | gesehen     | aufgeräumt  | angerufen   | repariert    | erlebt  |
+| gekocht      | gesungen    | ausgemacht  | abgeflogen  | passiert     | bezahlt |
 | gelernt      | geschrieben | angeklickt  | angefangen  | diskutiert   |         |
-| gefragt      | geschlafen  | mitgebracht |             |              |         |
+| gefragt      | geschlafen  | mitgebracht |             | notiert      |         |
 | gefrühstückt | getroffen   | aufgehört   |             |              |         |
 | gebracht     | gegessen    |             |             |              |         |
 | gespielt     | gebacken    |             |             |              |         |
 | gewohnt      | gekommen    |             |             |              |         |
-| gewartet     | gefahren    |             |             |              |         |
-| gekauft      | geblieben   |             |             |              |         |
-|              |             |             |             |              |         |
+| gekauft      | gefahren    |             |             |              |         |
+|              | geblieben   |             |             |              |         |
+| gezeigt      | gefunden    |             |             |              |         |
+| gesucht      | gegeben     |             |             |              |         |
+| gelebt       | gegangen    |             |             |              |         |
+| gedacht      | genommen    |             |             |              |         |
+| gelöscht     |             |             |             |              |         |
+| gezeichnet   |             |             |             |              |         |
+| gewartet     |             |             |             |              |         |
+| gearbeitet   |             |             |             |              |         |
+| gezählt      |             |             |             |              |         |
+| gezahlt      |             |             |             |              |         |
