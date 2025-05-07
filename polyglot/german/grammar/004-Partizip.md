@@ -14,11 +14,11 @@ tags:
 | gelernt      | geschrieben | angeklickt  | angefangen  | diskutiert   |         |
 | gefragt      | geschlafen  | mitgebracht |             | notiert      |         |
 | gefrühstückt | getroffen   | aufgehört   |             |              |         |
-| gebracht     | gegessen    |             |             |              |         |
+| gebracht     | gegessen    | angefangen  |             |              |         |
 | gespielt     | gebacken    |             |             |              |         |
 | gewohnt      | gekommen    |             |             |              |         |
 | gekauft      | gefahren    |             |             |              |         |
-|              | geblieben   |             |             |              |         |
+| gelernt      | geblieben   |             |             |              |         |
 | gezeigt      | gefunden    |             |             |              |         |
 | gesucht      | gegeben     |             |             |              |         |
 | gelebt       | gegangen    |             |             |              |         |
