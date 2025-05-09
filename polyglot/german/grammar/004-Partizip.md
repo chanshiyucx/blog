@@ -13,11 +13,11 @@ tags:
 | gekocht      | gesungen    | ausgemacht  | abgeflogen  | passiert     | erlebt   | entschieden |
 | gelernt      |             | angeklickt  | angefangen  | diskutiert   | erlaubt  | bekommen    |
 | gefragt      | geschlafen  | mitgebracht | angeboten   | notiert      | entfernt | erraten     |
-| gefrühstückt | getroffen   | aufgehört   |             |              | verdient |             |
+| gefrühstückt | getroffen   | aufgehört   |             | studiert     | verdient |             |
 | gebracht     | gegessen    | angefangen  |             |              |          |             |
 | gespielt     | gebacken    | abgeholt    |             |              |          |             |
 | gewohnt      | gekommen    | eingepackt  |             |              |          |             |
-| gekauft      | gefahren    |             |             |              |          |             |
+| gekauft      | gefahren    | angeschaut  |             |              |          |             |
 | gelernt      | geblieben   |             |             |              |          |             |
 | gezeigt      | gefunden    |             |             |              |          |             |
 | gesucht      | gegeben     |             |             |              |          |             |
