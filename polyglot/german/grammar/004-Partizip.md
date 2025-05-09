@@ -31,3 +31,5 @@ tags:
 | gezahlt      |             |             |             |              |          |             |
 | geschwommen  |             |             |             |              |          |             |
 | gemietet     |             |             |             |              |          |             |
+| getrennt     |             |             |             |              |          |             |
+| geplant      |             |             |             |              |          |             |
