@@ -18,7 +18,7 @@ tags:
 | gespielt     | gebacken    | abgeholt    |             |              |          |             |
 | gewohnt      | gekommen    | eingepackt  |             |              |          |             |
 | gekauft      | gefahren    | angeschaut  |             |              |          |             |
-|              | geblieben   | abgeholt    |             |              |          |             |
+| geputzt      | geblieben   | abgeholt    |             |              |          |             |
 | gezeigt      | gefunden    |             |             |              |          |             |
 | gesucht      | gegeben     |             |             |              |          |             |
 | gelebt       | gegangen    |             |             |              |          |             |
@@ -33,4 +33,4 @@ tags:
 | gemietet     |             |             |             |              |          |             |
 | getrennt     |             |             |             |              |          |             |
 | geplant      |             |             |             |              |          |             |
-|              |             |             |             |              |          |             |
+| gefeiert     |             |             |             |              |          |             |
