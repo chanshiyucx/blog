@@ -35,3 +35,4 @@ tags:
 | geplant      |             |             |             |              |          |             |
 | gefeiert     |             |             |             |              |          |             |
 | gezeigt      |             |             |             |              |          |             |
+| gestellt     |             |             |             |              |          |             |
