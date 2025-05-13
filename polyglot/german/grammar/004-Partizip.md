@@ -34,3 +34,4 @@ tags:
 | getrennt     |             |             |             |              |          |             |
 | geplant      |             |             |             |              |          |             |
 | gefeiert     |             |             |             |              |          |             |
+| gezeigt      |             |             |             |              |          |             |
