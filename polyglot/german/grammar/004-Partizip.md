@@ -11,7 +11,7 @@ tags:
 | gehört       | gelesen     | eingeladen  | abgewaschen | fotografiert | bezahlt  | gewonnen    |
 | gesagt       | gesehen     | aufgeräumt  | angerufen   | repariert    | erzählt  | verstanden  |
 | gekocht      | gesungen    | ausgemacht  | abgeflogen  | passiert     | erlebt   | entschieden |
-| gelernt      |             | angeklickt  | angefangen  | diskutiert   | erlaubt  | bekommen    |
+| gelernt      | gestiegen   | angeklickt  | angefangen  | diskutiert   | erlaubt  | bekommen    |
 | gefragt      | geschlafen  | mitgebracht | angeboten   | notiert      | entfernt | erraten     |
 | gefrühstückt | getroffen   | aufgehört   |             | studiert     | verdient |             |
 | gebracht     | gegessen    | angefangen  |             |              |          |             |
@@ -25,7 +25,7 @@ tags:
 | gedacht      | genommen    |             |             |              |          |             |
 | gelöscht     | geliehen    |             |             |              |          |             |
 | gezeichnet   | geschrieben |             |             |              |          |             |
-| gewartet     | gestiegen   |             |             |              |          |             |
+| gewartet     |             |             |             |              |          |             |
 | gearbeitet   |             |             |             |              |          |             |
 | gezählt      |             |             |             |              |          |             |
 | gezahlt      |             |             |             |              |          |             |

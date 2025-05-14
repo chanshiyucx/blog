@@ -1,5 +1,5 @@
 ---
-title: 德语从句引导词与语序规则
+title: Nebensatzverben
 date: 2025-05-11 21:25:03
 tags:
   - German/Grammar
