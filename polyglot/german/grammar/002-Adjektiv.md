@@ -23,6 +23,15 @@ tags:
 | D   | einem gut**en** Mann   | einer gut**en** Frau | einem gut**en** Kind   |
 | A   | einen gut**en** Mann   | eine gut**e** Frau   | ein gut**es** Kind     |
 
+## Nach dem Negativartikel
+
+|     | Maskulinum              | Femininum             | Neutrum                 | Plural                  |
+| --- | ----------------------- | --------------------- | ----------------------- | ----------------------- |
+| N   | kein gut**er** Mann     | keine gut**e** Frau   | kein gut**es** Kind     | keine gut**en** Leute   |
+| G   | keines gut**en** Mannes | keiner gut**en** Frau | keines gut**en** Kindes | keiner gut**en** Leute  |
+| D   | keinem gut**en** Mann   | keiner gut**en** Frau | keinem gut**en** Kind   | keinen gut**en** Leuten |
+| A   | keinen gut**en** Mann   | keine gut**e** Frau   | kein gut**es** Kind     | keine gut**en** Leute   |
+
 ## Ohne Artikel
 
 |     | Maskulinum      | Femininum       | Neutrum         | Plural            |
@@ -31,12 +40,3 @@ tags:
 | G   | gut**en** Weins | gut**er** Milch | gut**en** Brots | gut**er** Bücher  |
 | D   | gut**em** Wein  | gut**er** Milch | gut**em** Brot  | gut**en** Büchern |
 | A   | gut**en** Wein  | gut**e** Milch  | gut**es** Brot  | gut**e** Bücher   |
-
-## Nach dem Negativartikel
-
-|     | Maskulinum             | Femininum            | Neutrum              | Plural              |
-| --- | ---------------------- | -------------------- | -------------------- | ------------------- |
-| N   | kein gut**er** Mann    | keine gut**e** Frau  | kein gut**es** Kind  | keine gut**en** Leute |
-| G   | keines gut**en** Mannes| keiner gut**en** Frau| keines gut**en** Kindes| keiner gut**en** Leute |
-| D   | keinem gut**en** Mann  | keiner gut**en** Frau| keinem gut**en** Kind| keinen gut**en** Leuten |
-| A   | keinen gut**en** Mann  | keine gut**e** Frau  | kein gut**es** Kind  | keine gut**en** Leute |

@@ -25,7 +25,7 @@ tags:
 | gedacht      | genommen    |             |             |              |          |             |
 | gelöscht     | geliehen    |             |             |              |          |             |
 | gezeichnet   | geschrieben |             |             |              |          |             |
-| gewartet     |             |             |             |              |          |             |
+| gewartet     | gesprochen  |             |             |              |          |             |
 | gearbeitet   |             |             |             |              |          |             |
 | gezählt      |             |             |             |              |          |             |
 | gezahlt      |             |             |             |              |          |             |
@@ -36,3 +36,5 @@ tags:
 | gefeiert     |             |             |             |              |          |             |
 | gezeigt      |             |             |             |              |          |             |
 | gestellt     |             |             |             |              |          |             |
+| gebucht      |             |             |             |              |          |             |
+| gedacht      |             |             |             |              |          |             |
