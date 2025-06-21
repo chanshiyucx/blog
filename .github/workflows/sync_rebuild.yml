@@ -26,8 +26,8 @@ jobs:
           rsync -av --delete obsidian/Notes/ ./notes/
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rsync -av --delete obsidian/Album/ ./album/
-          # rsync -av --delete obsidian/Polyglot/English/Writing/ ./polyglot/english/writing/
-          # rsync -av --delete obsidian/Polyglot/German/Grammar/ ./polyglot/german/grammar/
+          rsync -av --delete obsidian/Polyglot/English/Article/ ./polyglot/english/article/
+          rsync -av --delete obsidian/Polyglot/German/Grammar/ ./polyglot/german/grammar/
           # rsync -av --delete obsidian/Polyglot/German/Writing/ ./polyglot/german/writing/
           # rsync -av --delete obsidian/Polyglot/German/Lektion/ ./polyglot/german/lektion/
           find . -name "SUMMARY.md" -delete
