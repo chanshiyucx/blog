@@ -8,7 +8,7 @@ Today, I read an insightful article online about the benefits of writing technic
 
 ## Knowledge improvement
 
-Writing technical articles is an excellent way to deepen your understanding of a subject. As the saying goes, _"You don't truly understand something unless you can explain it to your grandmother."_ Writing forces you to explore topics in detail, research thoroughly, and consider different perspectives. This process not only enhances your knowledge but also helps you communicate it more effectively.
+Writing technical articles is an excellent way to deepen your understanding of a subject. As the saying goes, **"You don't truly understand something unless you can explain it to your grandmother."** Writing forces you to explore topics in detail, research thoroughly, and consider different perspectives. This process not only enhances your knowledge but also helps you communicate it more effectively.
 
 ## Better communication skills
 
