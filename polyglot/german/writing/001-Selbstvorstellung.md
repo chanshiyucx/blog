@@ -5,6 +5,8 @@ tags:
   - German/Writing
 ---
 
+## Selbstvorstellung
+
 Hallo! Ich heiße Xin Chen und bin 30 Jahre alt. Ich komme aus China und bin seit über sechs Monaten in Deutschland. Zurzeit wohne ich in München. Von Beruf bin ich Programmierer, aber im Moment bin ich nicht **berufstätig**.
 
 Meine Hobbys sind Programmieren, Musik hören, Reisen und Fotografieren. Ich liebe die Natur und **verbringe** meine Freizeit gern draußen, **um mich zu entspannen**. Besonders gern gehe ich wandern und mache dabei viele Fotos. Wenn ich wandern gehe oder **verreise**, habe ich meine Kamera **immer dabei**. **Das bereitet mir richtig große Freude.**
@@ -13,7 +15,7 @@ Ich lerne seit etwa vier Monaten Deutsch und finde die Sprache sehr interessant.
 
 Ich freue mich sehr **darauf**, euch kennenzulernen. Vielen Dank!
 
----
+## Self-Introduction
 
 Hello everyone! My name is Xin Chen, and I'm 30 years old. I'm **originally** from China and have been living in Germany for over six months now. I'm **currently based** in Munich. I work **as** a programmer, though I'm not **actively working at the moment**.
 
