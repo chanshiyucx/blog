@@ -5,12 +5,10 @@ tags:
   - German/Writing
 ---
 
-## Deutschland Leben
+**Wir alle wissen**, dass **verschiedene Länder verschiedene Kulturen** und **Traditionen** haben. **Nach mehr als einem halben Jahr** in München kann ich das **nur bestätigen**. **Anfangs** war ich hier noch nicht **eingelebt** – mein Leben war **völlig anders als gewohnt**, deshalb war ich oft **unsicher**. Aber **mittlerweile** habe ich **mich besser eingefunden** und finde alles sehr **faszinierend**.
 
-Wir alle wissen, dass verschiedene Länder verschiedene Kulturen und Künste haben. Nach mehr als einem halben Jahr meines Lebens in München, Deutschland, bin ich mir ganz sicher, dass das genau richtig ist. Ich war anfangs hier noch nicht gewöhnt, mein Leben war ganz anders als sonst, deshalb war ich oft nervös. Aber mittlerweile kenne ich mehr, und ich finde alles voll krass.
+**In dieser Zeit ist viel passiert** – **manches war schön, anderes herausfordernd**. Das **Schönste daran** ist, dass ich endlich mit meiner Freundin zusammenleben kann. **Während** sie im Büro arbeitet, lerne ich zu Hause und **bereite** das Essen für uns **vor**. Obwohl ich nicht der beste Koch bin, **genießen** wir beide diese gemeinsamen Momente sehr. **Außerdem** kann man in Deutschland wunderschöne Landschaften **erleben**. Deshalb gehen wir gern wandern – wir haben **bereits** viele Orte besucht wie den Eibsee, den Tegernsee und **viele andere**. **Unser Leben empfinden wir als einfach und dennoch erfüllend.**
 
-In dieser Zeit ist viel passiert – manches war schön, anderes herausfordernd. Das Beste daran ist, dass ich endlich mit meiner Freundin zusammenleben kann. Wenn sie ins Büro geht, lerne ich zu Hause und bereite das Essen für sie vor. Obwohl ich nicht der beste Koch bin, genießen wir beide diese gemeinsamen Momente. Außerdem kann man in Deutschland viel herrliche Landschaft sehen. Deshalb gehen wir gern in Ferien wandern, haben wir schon viel dort besuchen wie Eibsee, Tegernsee und so weiter. Wir empfinden unser Leben als einfach und dennoch schön.
+**Allerdings** ist nicht mehr alles so **unbeschwert wie früher**. Jetzt **stehe** ich **vor** einer großen **Herausforderung**: Ich muss eine Arbeit finden, um mein **Visum** **aufrechtzuerhalten**. **Dennoch bleibe** ich optimistisch und **hoffe auf das Beste**. Ich wünsche **mir** ein **erfülltes** Leben in Deutschland.
 
-Allerdings ist nicht mehr alles so unbeschwert wie früher. Jetzt stehe ich vor einer großen Herausforderung: Ich muss eine Arbeit finden, um mein Visum gültig zu halten. Ich bleibe optimistisch und hoffe auf das Beste. Ich erhoffe mir ein wunderschönes Leben in Deutschland.
-
-Natürlich gibt es viel lustig Ding über das Leben in München, vielleicht kann ich bei nächsten Mal mehr über deutsches Essen, Verkehr und schöne Landschaften erzählen.
+Natürlich gibt es viele interessante **Aspekte** des Lebens in München. Vielleicht kann ich **beim nächsten Mal** mehr über deutsches Essen, Verkehrsmittel und die schönen Landschaften erzählen.
