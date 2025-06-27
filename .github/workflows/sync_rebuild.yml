@@ -15,7 +15,7 @@ jobs:
 
       - name: Clone obsidian private repository
         run: |
-          git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/sinntag/obsidian.git" obsidian
+          git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
           git sparse-checkout set Blog Notes Leetcode Album Polyglot
         continue-on-error: false
