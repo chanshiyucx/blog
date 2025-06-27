@@ -24,6 +24,3 @@ We all know that Paris is a **stunning** city with rich cultural **heritage**. T
 However, one thing wasn't so **pleasant**: the public transportation was quite uncomfortable because the air in the buses and trains was **rather stuffy**. We were there during winter, and although it was **bitterly** cold outside, **we both treasured those shared moments together**.
 
 This trip **truly brought us immense** joy.
-
-
-zeitnova.com
