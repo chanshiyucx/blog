@@ -7,11 +7,11 @@ tags:
 
 ## Kamera
 
-Als Kind träumte ich oft **davon**, eine eigene Kamera zu **besitzen**, **um damit wunderschöne Fotos zu machen** – von Tieren, Pflanzen oder Sonnenuntergängen. **Ich stellte mir vor, wie spannend es wäre, besondere Momente einzufangen und sie für immer festzuhalten.**
+Als Kind träumte ich oft davon, eine eigene Kamera zu besitzen, um damit wunderschöne Fotos zu machen – von Tieren, Pflanzen oder Sonnenuntergängen. Ich stellte mir vor, wie spannend es wäre, besondere Momente einzufangen und sie für immer festzuhalten. Doch eine Kamera war damals für mich unerschwinglich teuer.
 
-**Nach einigen Jahren** konnte ich mir diesen Traum endlich **erfüllen**. Als ich anfing zu arbeiten, hatte ich endlich genug Geld für eine Kamera, auch wenn sie immer noch ziemlich teuer war. Als ich sie endlich in **den Händen hielt**, war ich **unglaublich aufgeregt**! Die Kamera war für mich **wie ein Schatz**, und obwohl ich noch nicht **besonders begabt** bin, macht mir das Fotografieren **riesigen** Spaß.
+Nach einigen Jahren konnte ich mir diesen Traum endlich erfüllen. Als ich anfing zu arbeiten, hatte ich zum ersten Mal genug Geld für eine Kamera. Als ich sie endlich in den Händen hielt, war ich unglaublich aufgeregt! Die Kamera war für mich wie ein Schatz, und obwohl ich noch nicht besonders begabt bin, macht mir das Fotografieren riesigen Spaß.
 
-Eigentlich habe ich noch gar keine richtige Erfahrung **im** Fotografieren und kenne mich mit **Blende** und **Belichtungszeit** kaum aus, aber trotzdem gehe ich gern **hinaus** und **knipse** schöne Landschaften oder interessante Motive. Immer wenn ich **wandern gehe** oder **verreise**, ist meine Kamera mein **treuer Begleiter**. Auf meinen Reisen habe ich schon **unzählige** Fotos gemacht - v**on Sonnenuntergängen am Meer bis hin zu verschneiten Berggipfeln**. In vielen Jahren werden diese Bilder zu **wertvollen Erinnerungen** an all die schönen Momente - ist das nicht toll?
+Ehrlich gesagt bin ich noch ein kompletter Neuling und verstehe von Blende und Belichtungszeit so gut wie nichts. Trotzdem zieht es mich regelmäßig hinaus, um schöne Landschaften oder interessante Motive abzulichten. Ob beim Wandern oder auf Reisen – meine Kamera ist stets mein treuer Begleiter. Auf meinen Reisen habe ich schon unzählige Fotos gemacht - von romantischen Sonnenuntergängen am Meer bis hin zu verschneiten Berggipfeln. In vielen Jahren werden diese Bilder zu wertvollen Erinnerungen an all die schönen Momente. Ist das nicht schön?
 
 ## Camera
 
