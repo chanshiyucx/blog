@@ -10,8 +10,8 @@ tags:
 
 ![Stone Madonna](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05165.jpg)
 
-![](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05179.jpg)
+![Verdant Rush](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05179.jpg)
 
-https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05212.jpg
+![Peak of Silence](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05212.jpg)
 
-https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05303.jpg
+![Distant Majesty](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05303.jpg)
