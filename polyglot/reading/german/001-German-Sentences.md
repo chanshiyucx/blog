@@ -1,5 +1,5 @@
 ---
-title: Sentence
+title: German Sentences
 date: 2025-04-15 20:25:15
 tags:
   - German/Writing
