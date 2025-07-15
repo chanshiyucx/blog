@@ -4,6 +4,9 @@ date: 2025-07-09 08:54:42
 tags:
   - English/Reading
 ---
+- Before we sign the tenancy agreement, do you have any questions about the **terms and conditions**?
+- You **will need to** pay the utility bills directly to the service providers. I will give you the details of the companies, and you can pay them online or **through your bank**. You must make sure to pay these bills **on time to avoid any issues**. Is that clear?
+- It is **quite** a big challenge for me to communicate in English here.
 - I prefer city holidays — cities are **generally** more historic, so you can **experience** the local culture. I'd **also** like to try **the** local food.
 - Are pets **allowed** here?
 - **It did help** — **at least now** I'm able to speak English.
