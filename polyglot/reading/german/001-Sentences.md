@@ -1,0 +1,229 @@
+---
+title: Sentence
+date: 2025-04-15 20:25:15
+tags:
+  - German/Writing
+---
+- Wir hören wieder **voneinander**.
+- **Wenn es anfängt zu dämmern.**
+- Das ist so **geil**.
+- **Also worauf wartet ihr?**
+- Alles gut **soweit**.
+- Mir geht es **soweit** gut, **danke der Nachfrage**.
+- **Ich bedanke mich bei dir.**
+- Wie geht es weiter?
+- Wie geht es dir?
+- Habe ich **noch nie** gemacht.
+- Das ist doch **eklig**. **Schmeiß das weg.**
+- Die **lagere** ich **bei mir** im Keller.
+- **Auf gar keinen Fall.**
+- Wir **drehen** gerade ein Video.
+- Kann man die **wegschmeißen** oder **lieber behalten**, wenn man das Handy später verkauft?
+- Hier ist etwas, **bei dem ich mir immer unsicher bin**.
+- Hier haben wir **noch mehr** Kisten.
+- Die Deutschen **sollten** sich nicht **einbilden**, dass sie die einzige ordentliche Nation der Welt sind.
+- Ich freue mich **darauf**, **mit den Menschen zu plaudern**.
+- Ich habe **mir einen Lebenstraum erfüllt**.
+- Was **hast** du heute **vor**?
+- Ich **habe vor**, ins Kino zu gehen. / Ich **habe** nichts **vor**.
+- Ich habe **vor Kurzem** gelernt, dieses Gericht zu kochen.
+- Ich **lasse** mir die Haare schneiden.
+- Ich **lasse** mich beraten.
+- Er **lässt** sich gerade beraten.
+- Ich verstehe das nicht so ganz.
+- **Wo gehen wir jetzt hin?**
+- **Wie gefällt dir** der Film?
+- Er fährt auf der Rolltreppe **nach oben**.
+- **Warst du schon mal** in diesem Fitnessstudio?  
+- **Tatsächlich**, ich war hier einmal. / Ich war noch nie hier.
+- Ich möchte **ein Abenteuer erleben**.
+- Wir sind **in der Mitte** von München.
+- Ich habe ein Geschenk bekommen, und **zwar** ein neues Handy.
+
+> [!NOTE]  
+> **"Und zwar"** = 更具体地说 / 就是说
+
+- Kann ich dich etwas fragen?
+- Entschuldigung, kann ich dir eine Frage stellen?
+- Wir haben eine **ganz bewusste Entscheidung getroffen**.
+- Wir haben das **ganz bewusst entschieden**.
+- Man soll lieber immer **Rücksicht nehmen**.
+- **Sag mir Bescheid**, wenn du etwas hörst.
+- Gestern hatte ich ein **schreckliches Erlebnis**.
+- **Bisher** haben wir es immer so gemacht.
+- Das ist **allerdings richtig**, was du sagst, aber es ist nicht die **volle Wahrheit**.
+- Ich muss **allerdings gestehen**, dass …
+- Der Zug verkehrt täglich **außer** sonntags.
+- Die Wettervorhersage ist nicht **zuverlässig**.
+- Der Schüler ist immer sehr **aufmerksam**.
+- Sein **Verhalten** **wundert** uns sehr.
+- **Zwar** ist er noch jung, aber er ist **schon recht erfahren**.
+- Ich werde es **dennoch** versuchen.
+- Er hat nur einen kleinen **Freundeskreis**.
+- In dieser Straße dürfen nur **Anlieger** parken.
+- Der Zug hat zehn Minuten **Aufenthalt**.
+- **Der Aufenthalt** im **Depot** ist verboten.
+- **Mit** 18 **Jahren** habe ich meinen Führerschein gemacht.
+- Ich möchte gesund bleiben, **darum** **treibe** ich Sport.
+- Ich hatte sofort **Ärger** mit meinem Chef.
+- In China **wird** viel Chili gegessen, weil die meisten Menschen es scharf mögen.
+- Ich werde von **meinem** Freund vom Bahnhof abgeholt.
+- Die Rechnungen **werden** von euch bezahlt.
+- Wann hast du **zum ersten Mal** Deutsch gelernt?
+- Ich habe meine Sätze mit einem Werkzeug **korrigiert**.
+- Ich **erinnere mich** nicht **an** den Termin beim Arzt.
+- Ich **spreche mit** meiner Freundin **über** die Reise nach Spanien.
+- Ich **verabschiede mich von** dem Chef, weil es zu spät ist.
+- Ich **entschuldige mich für** meine Verspätung zu deiner Geburtstagsparty.
+- Ich **ärgere mich über** deine Verspätung zu meiner Geburtstagsparty.
+- Ich **frage dich nach** dem Weg zum Hauptbahnhof.
+- Ich **warte auf** den Zug nach Berlin.
+- Ich **sorge für** den Kranken und hoffe, dass er bald gesund wird.
+- Ich **treffe mich mit** meinem besten Freund im Cafe.
+- Ich **kümmere mich um** meine Freundin, weil sie krank ist.
+- Ich **erkundige mich** bei der Information am Hauptbahnhof, wann der Zug nach Berlin fährt.
+- Ich **interessiere mich für** den Preis der Jacke.
+- Ich **danke Ihnen für** Ihre Hilfe.
+- Ich bin **gestresst**.
+- Die Arbeit ist **stressig**.
+- Ich komme zu spät, weil ich **im Stau** stehe.
+- **Im ersten Moment** war ich **richtig** sauer!
+- Ich kann **mir überhaupt nicht vorstellen**, ein gutes Leben allein **zu führen**.
+- Bitte **schicken** Sie ihn **herein**. Ich habe jetzt Zeit für ihn.
+- Ich bin neugierig **auf** deine Meinung.
+- In **dem** Moment **hatte** ich diese Idee.
+- Da ist mir diese Idee **eingefallen**.
+- Ich bin froh, dass ich die richtige Entscheidung getroffen habe.
+- **Was für** Bücher liest du gern?
+- **Was für** Musik hörst du gern?
+- Ich bin **ziemlich skeptisch**, ob das wohl gut gehen wird.
+- **Das geht mich nichts an.**
+- Du **eignest dich** für diese Aufgabe.
+- Wie hast du das Wochenende **verbracht**?
+- Wir sind spazieren gegangen, **trotz** dem schlechten Wetter.
+- Er hilft seiner Frau **täglich** im **Haushalt**.
+- Wenn Sie Zeit haben, dann **besichtigen** Sie auch die Altstadt.
+- **Werden** Sie schon **bedient**?
+- Die Fahrt dauert zwei Stunden, **sofern** es keinen Stau gibt.
+- **Sofern** das Wetter schön bleibt, machen wir morgen einen Ausflug. 
+- An der Kreuzung bitte **genau aufpassen**!
+- **Werde nicht ungeduldig!**
+- Weißt du vielleicht **eine bessere Idee**?
+- Ich **bewerbe** mich **bei** dieser Firma **um** eine Stelle.
+- Darf ich einmal Ihre **Reservierung** sehen?
+- **Ein Freund hat mir das Ticket geschenkt.**
+- **So einen Spaß hatten wir seit Monaten nicht mehr!**
+- **Hast du eine Ahnung, wie der Unfall passiert ist?**
+- Das kann man **so einfach gar nicht** beantworten.
+- Ich hatte einen **ähnlichen Gedanken** wie du.
+- Er **verfügt über** ein großes **Vermögen**.
+- Er kann **über** seine Zeit frei **verfügen**.
+- Ich spreche **sowohl** Chinesisch **als auch** Deutsch.
+- Ich **würde lieber** den ganzen Tag zu Hause bleiben.
+- Der Regen **macht mir nichts aus**, ich habe einen Regenschirm **dabei**.
+- **Macht es dir etwas aus**, wenn ich rauche? - Nein, **das macht mir nichts aus**.
+- Das Buch gefällt dir **(ganz sicher / ganz besonders)** .
+- Entschuldigung, ich bin **fremd** hier. Wo ist **denn hier** eine Post?
+- Bitte **geben** Sie Ihren Schlüssel an der Rezeption **ab**!
+- **Meldet euch, wenn ihr angekommen seid.**
+- Wir machen jetzt eine Pause **von** einer Stunde.
+- Ich sitze **außerhalb** von meinem Haus.
+- Sie sind **herzlich eingeladen**!
+- Bitte **schließen** Sie alle Türen und Fenster und gehen Sie nicht **aus** dem Haus.
+- Ich muss das Fahrrad **nehmen** und komme also **ein bisschen später** ins Büro.
+- Ich bin **bereit**, jeden Tag drei Stunden **Vokabeln** **zu lernen**.
+- Wir finden es **blöd**, jeden Tag **so viele** Hausaufgaben **zu haben**.
+- Ich bin **entschlossen**, Deutsch zu lernen.
+- Er ist nicht erlaubt, **bei Rot über die Ampel zu fahren**.
+- Es ist verboten, **bei Rot über die Ampel zu fahren**.
+- **Es war nicht richtig, sauer auf dich zu sein.**
+- Sie ist **davon überzeugt**, **alles richtig gemacht zu haben**.
+- Wir haben Glück **mit** dem Wetter, denn es ist hier jetzt richtig warm.
+- Ich kaufe Äpfel, Bananen **und so weiter**.
+- Weißt du, was ist ich **am liebsten** möchte?
+- Ich hoffe, dass es nicht so **schlimm** wird.
+- **Im Notfall die Scheibe einschlagen.**
+- Ich esse Pizza **genauso gern wie** Pasta.
+- **Fleiß und Umsicht sind der Schlüssel zum Erfolg.**
+- Sie **vergleicht** die zwei Lampen, **um die bessere zu wählen**.
+- Ich war so **traurig**. Ich habe **gedacht**, sie ist **für immer** weg.
+- Sie **genießt** es, am Sonntag lange zu schlafen.
+- Die Einladung kommt mir sehr **überraschend**.
+- **Ich bewerbe mich bei einer Firma als Buchhalter.**
+- Sie haben den **Vertrag** schon **unterschrieben**.
+- Nun müssen wir aber leider **bis nächste Woche** sehr viel **erledigen**!
+- Er hat **den Auftrag gewissenhaft erledigt**.
+- **Ich mache einen Termin beim Arzt aus.**
+- Dieser Brief ist sehr **eilig**, bring ihn bitte **gleich** zur Post!
+- Wir **waren (verschiedener / gleicher) Meinung**.
+- **Es war auf jeden Fall sehr interessant!**
+- Das **Spiel** hat über zwei Stunden **gedauert**, aber es war **von Anfang bis Ende** super **spannend**.
+- **Vom** 1. September **bis zum** 30. April bin ich bei **jedem** Spiel **dabei**!!!
+- **Was hältst du davon?**
+- **Beeil dich ein bisschen, sonst kommen wir zu spät.**
+- Hast du den Bericht **fertiggemacht**?
+- Wir haben **abgemacht**, uns um 8 Uhr zu treffen.
+- **Mach weiter** mit deinen Hausaufgaben!
+- Wir **machen** morgen mit dem Projekt **weiter**.
+- **Ich erschrak über seine Worte.**
+- Ich erwarte dich an der **verabredeten** Stelle **im Park**.
+- **Wir werden hier sauber machen und aufräumen.**
+- **Wie komme ich zum Hauptplatz?**
+- **Biegen Sie bitte bei der nächsten Kreuzung rechts ab.**
+- **Wovon träumst du?**
+- **Ich träume von einem Haus am Strand.**
+- Welches Datum ist heute? Heute ist der 8. Mai.
+- Welches Datum haben wir? Wir haben den 8. Mai.
+- Sie hat eine **Auszeichnung** für ihren Vortrag **bekommen**.
+- Kann euch meine Hilfe **anbieten**.
+- Wann bist du **mit** der Ausbildung **fertig**?
+- **Er hat den Auftrag gewissenhaft erledigen.**
+- **Ich schaffe es rechtzeitig.**
+- Ich schaffe es also leider nicht pünktlich.
+- Das Projekt läuft bis zum nächsten Monat.
+- Wir bleiben bis zum Ende der Konferenz.
+- Dein **Hinweis** bringt mich **auf** einen guten **Gedanke**.
+- Sie hat **den Glauben** **an** ihn **verloren**.
+- Das ist **häufig** der Fall.
+- Das hast du **ausgezeichnet** gemacht.
+- **Dazu** haben Sie noch etwas **zu sagen**?
+- Das macht **einen schlechten Eindruck**.
+- **Ganz links** steht meine Tante. Meine Mutter steht **ganz rechts**. Ich stehe **vorne in der Mitte**. Meine Großeltern stehen **hinten in der Mitte**.
+- Bitte **schicken** Sie mir einen **Prospekt** von Ihrem Hotel.
+- Fragen Sie bitte im Hotel an der **Rezeption**.
+- Ich **verstehe dich** **deutlich**.
+- Wir wollen uns **kennenlernen**. Können Sie sich bitte **vorstellen**?
+- **Ich bin gestern an den Fluss spazieren gegangen.**
+- **Der Eintritt** ins Museum ist frei.
+- Kannst du **mir** das Fenster **aufmachen / zumachen / schließen**?
+- Ich **habe vergessen**, meinen Wecker **auszuschalten**.
+- Bitte **schalte** den Herd **aus**, **bevor** du gehst.
+- Das Restaurant **um die Ecke** soll gut und nicht teuer sein.
+- Ich sehe **gerade**, das Restaurant Zwiebel **hat** heute **geschlossen**.
+- Können wir uns am Bahnhof treffen und dann **zusammen ein anderes Restaurant suchen**?
+- Morgen hat das **Amt** keine **Sprechstunden**.
+- Wenn du mich **vermisst**, kannst du mich **anrufen**.
+- **Geh** nicht so schnell, ich **komme** **nicht mehr** **mit**.
+- Willst du mit uns **auf** die Party **mitkommen**?
+- Bitte **steigen** Sie an der nächsten Haltestelle **aus**.
+- Ich bin nicht **dafür**. Ich finde eine Party im Garten **viel besser**.
+- Liebe Freunde, bitte **meldet** euch bald **an**.
+- Die Party **findet** draußen **statt**.
+- Wir wollen **nämlich** draußen im Garten feiern.
+- Die Fahrgäste sollen **sich** im Restaurant treffen.
+- **Wird** zum Informationsschalter in der Ankunftshalle C **gebeten**.
+- Bitte schreiben Sie Ihre **Anschrift**!
+- **Da** gehen Sie hier rechts **um die Ecke und nehmen den Aufzug**.
+- Ich hoffe, dass es morgen sonnig **bleibt**.
+- Er sagte, dass es heute Abend schneien **wird**.
+- Ich bin **mit deinem Vorschlag einverstanden**.
+- Das war der Traum **meines Lebens**.
+- **Wenn** es morgen regnet, **dann** bleiben wir **zu Hause**.
+- Ich esse **erst zu Mittag**, **dann** mache ich ein **Nickerchen**.
+- **Wo bist du gewesen? / Ich bin gestern beim Friseur gewesen.**
+- Wir haben noch keine Nachricht **über ihn erhalten**.
+- Es ist sehr **wahrscheinlich**, **dass er Recht hat**.
+- Den Film **dürft** ihr **auf keinen Fall verpassen**.
+- Das Buch hat **einen guten Eindruck bei mir hinterlassen**.
+- In **wenigen** Minuten **erreichen** wir München.
+- Ich wohne **unter** dieser Adresse **nicht mehr**.
