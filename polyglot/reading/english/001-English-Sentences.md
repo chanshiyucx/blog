@@ -1,5 +1,5 @@
 ---
-title: Sentences
+title: English Sentences
 date: 2025-07-09 08:54:42
 tags:
   - English/Reading
