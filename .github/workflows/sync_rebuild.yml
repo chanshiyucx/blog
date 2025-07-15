@@ -28,8 +28,8 @@ jobs:
           rsync -av --delete obsidian/Album/ ./album/
           rsync -av --delete obsidian/Polyglot/English/Writing/ ./polyglot/writing/english/
           rsync -av --delete obsidian/Polyglot/German/Writing/ ./polyglot/writing/german/
-          rsync -av --delete obsidian/Polyglot/English/Reading/ ./clippings/reading/english/
-          # rsync -av --delete obsidian/Polyglot/German/Reading/ ./clippings/reading/german/
+          rsync -av --delete obsidian/Polyglot/English/Reading/ ./polyglot/reading/english/
+          # rsync -av --delete obsidian/Polyglot/German/Reading/ ./polyglot/reading/german/
           find . -name "SUMMARY.md" -delete
         continue-on-error: false
 
