@@ -13,7 +13,7 @@ tags:
 
 **Answer:**
 
-- Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in [mention company's product or tech area, e.g., AI solutions/cloud services/a specific industry] and truly appreciate your philosophy regarding [mention company culture, innovation, or projects]. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company.
+- Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in AI solutions and truly appreciate your philosophy regarding innovation. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company.
 
 ## Work Experience
 
@@ -25,7 +25,7 @@ tags:
 
 - Certainly. At Toyou Feiji Electronics, I was primarily responsible for the complete overhaul of the storage management platform. A key challenge was developing Redfish-compliant RESTful APIs and refactoring over 100 existing interfaces to optimize storage device management for clusters. This not only involved understanding complex technical specifications but also close collaboration with the backend team to ensure smooth and efficient data flow between frontend and backend. Through this refactoring, we significantly improved the system's scalability and maintainability.
 
-## Vue.js vs React Experience
+## Vue.js vs React
 
 **Question:**
 
@@ -33,8 +33,7 @@ tags:
 
 **Answer:**
 
-- **中文:** " 两个框架各有优势。Vue.js 学习曲线相对平缓，模板语法直观，适合快速开发。React 的生态系统更加丰富，组件化思想更纯粹，在大型项目中表现出色。我在最近的项目中更多使用 Vue.js，但我能够根据项目需求灵活选择。重要的是理解它们的核心概念，如虚拟 DOM、组件生命周期和状态管理，这些原理是相通的。"
-- **English:** "Both frameworks have their strengths. Vue.js has a gentler learning curve with intuitive template syntax, making it great for rapid development. React has a richer ecosystem and a more pure component-based approach, excelling in large-scale projects. I've been using Vue.js more in recent projects, but I can flexibly choose based on project requirements. What's important is understanding their core concepts like virtual DOM, component lifecycle, and state management - these principles are universal."
+- Both frameworks have their strengths. Vue.js has a gentler learning curve with intuitive template syntax, making it great for rapid development. React has a richer ecosystem and a more pure component-based approach, excelling in large-scale projects. I've been using Vue.js more in recent projects, but I can flexibly choose based on project requirements. What's important is understanding their core concepts like virtual DOM, component lifecycle, and state management - these principles are universal.
 
 ## Technical Skills
 
