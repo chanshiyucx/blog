@@ -23,9 +23,7 @@ tags:
 
 **面试官提问:**
 
-- **中文:** " 您的简历显示您在 Toyou Feiji Electronics 担任高级前端开发人员。能详细谈谈您在那里负责的最具挑战性的项目吗？特别是关于 Redfish-compliant RESTful APIs 的开发。"
-	
-- **English:** "Your resume states you were a Senior Frontend Developer at Toyou Feiji Electronics. Could you elaborate on the most challenging project you were responsible for there, especially regarding the development of Redfish-compliant RESTful APIs?" 7
+- **English:** "Your resume states you were a Senior Frontend Developer at Toyou Feiji Electronics. Could you elaborate on the most challenging project you were responsible for there, especially regarding the development of Redfish-compliant RESTful APIs?"
 	
 - **Deutsch:** "Ihr Lebenslauf zeigt, dass Sie als Senior Frontend-Entwickler bei Toyou Feiji Electronics tätig waren. 8Können Sie uns mehr über das anspruchsvollste Projekt erzählen, für das Sie dort verantwortlich waren, insbesondere bezüglich der Entwicklung der Redfish-konformen RESTful-APIs?" 9
 
