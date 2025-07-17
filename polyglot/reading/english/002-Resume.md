@@ -21,7 +21,7 @@ tags:
 
 ## Work Experience / Berufserfahrung
 
-**Qustion:**
+**Question:**
 
 - **English:** "Your resume states you were a Senior Frontend Developer at Toyou Feiji Electronics. Could you elaborate on the most challenging project you were responsible for there, especially regarding the development of Redfish-compliant RESTful APIs?"
 	
@@ -35,7 +35,7 @@ tags:
 
 ## Technical Skills / Technische Fähigkeiten
 
-**Qustion:**
+**Question:**
 
 - **English:** "Your skills list mentions optimizing with Vite and ESLint, achieving over 60% faster build times. How did you accomplish this, and how do you ensure code quality and team collaboration in your projects?"
 	
@@ -47,50 +47,38 @@ tags:
 	
 - **Deutsch:** "Ja, wir konnten die Build-Zeiten erfolgreich um über 60% reduzieren, indem wir unsere Entwicklungsumgebung von Webpack auf Vite migriert haben. Die schnellen Kaltstarts und die On-Demand-Kompilierung von Vite waren dabei entscheidend. Gleichzeitig haben wir strenge ESLint-Standards eingeführt und über 300 bestehende Fehler behoben, um eine konsistente Code-Qualität und -Stil sicherzustellen. Um die Teamzusammenarbeit und die Code-Qualität zu fördern, habe ich außerdem drei Junior-Entwickler betreut und einen obligatorischen Code-Review-Prozess etabliert. Dies gewährleistet, dass der gesamte Code von Kollegen überprüft wird, Probleme frühzeitig erkannt werden und die Code-Qualität kontinuierlich verbessert wird."
 
-## **5. 德国求职意向与语言 (Motivation for Germany & Language / Motivation für Deutschland & Sprache)**
+## Motivation for Germany & Language / Motivation für Deutschland & Sprache
 
-**Qustion:**
+**Question:**
 
-- **中文:** " 您目前正在学习德语，并且在简历中也提到了希望在德国寻找新的挑战。除了语言学习，您觉得在德国工作和生活，还有哪些方面需要适应？您对德国的 IT 行业有什么了解？" 26
+- **English:** "You're currently learning German, and your resume mentions seeking new challenges in Germany. Besides language learning, what other aspects of working and living in Germany do you think you'll need to adapt to? What do you know about the IT industry in Germany?"
 	
-- **English:** "You're currently learning German, and your resume mentions seeking new challenges in Germany. Besides language learning, what other aspects of working and living in Germany do you think you'll need to adapt to? What do you know about the IT industry in Germany?" 27
-	
-- **Deutsch:** "Sie lernen derzeit Deutsch und erwähnen in Ihrem Lebenslauf, dass Sie neue Herausforderungen in Deutschland suchen. 28 Abgesehen vom Sprachenlernen, welche anderen Aspekte des Arbeitens und Lebens in Deutschland müssen Sie Ihrer Meinung nach anpassen? Was wissen Sie über die IT-Branche in Deutschland?"
+- **Deutsch:** "Sie lernen derzeit Deutsch und erwähnen in Ihrem Lebenslauf, dass Sie neue Herausforderungen in Deutschland suchen. Abgesehen vom Sprachenlernen, welche anderen Aspekte des Arbeitens und Lebens in Deutschland müssen Sie Ihrer Meinung nach anpassen? Was wissen Sie über die IT-Branche in Deutschland?"
 
 **Answer:**
 
-- **中文:** " 是的，我目前正积极学习德语，并已达到 B1 水平，还在参加强化课程。除了语言，我认为适应德国高效、结构化的工作方式以及注重细节和准时的文化非常重要。我已经对德国的 IT 行业进行了一些研究，了解到这里对创新和工程质量有很高的要求，尤其是在 [提及具体领域，如汽车、工业 4.0 或软件工程] 方面。我对能成为德国 IT 生态系统的一部分感到非常兴奋，并相信我的技术背景和快速学习能力将帮助我顺利融入。"
+- **English:** "Yes, I am actively learning German and have reached B1 level, currently attending an intensive course. Besides the language, I believe adapting to Germany's efficient, structured work approach and its culture of attention to detail and punctuality is very important. I've done some research on the German IT industry and understand that there's a high demand for innovation and engineering quality. I am very excited to become part of the German IT ecosystem and believe my technical background and quick learning ability will help me integrate smoothly."
 	
-- **English:** "Yes, I am actively learning German and have reached B1 level, currently attending an intensive course. Besides the language, I believe adapting to Germany's efficient, structured work approach and its culture of attention to detail and punctuality is very important. I've done some research on the German IT industry and understand that there's a high demand for innovation and engineering quality, especially in areas like [mention specific areas like automotive, Industry 4.0, or software engineering]. I am very excited to become part of the German IT ecosystem and believe my technical background and quick learning ability will help me integrate smoothly."
-	
-- **Deutsch:** "Ja, ich lerne derzeit aktiv Deutsch und habe das B1-Niveau erreicht; aktuell nehme ich an einem Intensivkurs teil. Neben der Sprache halte ich es für sehr wichtig, mich an die effiziente, strukturierte Arbeitsweise und die Kultur der Detailgenauigkeit und Pünktlichkeit in Deutschland anzupassen. Ich habe bereits einige Recherchen über die deutsche IT-Branche durchgeführt und weiß, dass hier hohe Anforderungen an Innovation und Ingenieurqualität gestellt werden, insbesondere in Bereichen wie [mention specific areas like Automobilindustrie, Industrie 4.0 oder Softwareentwicklung]. Ich freue mich sehr darauf, Teil des deutschen IT-Ökosystems zu werden, und bin überzeugt, dass mein technischer Hintergrund und meine schnelle Auffassungsgabe mir dabei helfen werden, mich reibungslos zu integrieren."
+- **Deutsch:** "Ja, ich lerne derzeit aktiv Deutsch und habe das B1-Niveau erreicht; aktuell nehme ich an einem Intensivkurs teil. Neben der Sprache halte ich es für sehr wichtig, mich an die effiziente, strukturierte Arbeitsweise und die Kultur der Detailgenauigkeit und Pünktlichkeit in Deutschland anzupassen. Ich habe bereits einige Recherchen über die deutsche IT-Branche durchgeführt und weiß, dass hier hohe Anforderungen an Innovation und Ingenieurqualität gestellt werden. Ich freue mich sehr darauf, Teil des deutschen IT-Ökosystems zu werden, und bin überzeugt, dass mein technischer Hintergrund und meine schnelle Auffassungsgabe mir dabei helfen werden, mich reibungslos zu integrieren."
 
-## **6. 团队合作与沟通 (Teamwork & Communication / Teamarbeit & Kommunikation)**
+## Teamwork & Communication / Teamarbeit & Kommunikation
 
-**Qustion:**
+**Question:**
 
-- **中文:** " 您的简历中提到您建立了代码审查流程并指导了初级开发人员。您认为在跨文化团队中，有效的沟通和协作有多重要？您如何确保团队成员理解您的技术决策？"
-	
 - **English:** "Your resume states you established a code review process and mentored junior developers. How important do you consider effective communication and collaboration in a cross-cultural team? How do you ensure team members understand your technical decisions?"
 	
 - **Deutsch:** "In Ihrem Lebenslauf erwähnen Sie, dass Sie einen Code-Review-Prozess etabliert und Junior-Entwickler betreut haben. Wie wichtig ist Ihrer Meinung nach effektive Kommunikation und Zusammenarbeit in einem interkulturellen Team? Wie stellen Sie sicher, dass Teammitglieder Ihre technischen Entscheidungen verstehen?"
 
 **Answer:**
-
-- **中文:** " 在我的经验中，尤其是在跨文化团队中，有效的沟通和协作是项目成功的基石。我始终努力以清晰、简洁的方式表达技术概念，无论是通过口头解释、图示还是详细的文档。在代码审查中，我注重提供建设性反馈，并鼓励双向交流。当做出重要的技术决策时，我会解释背后的理由和潜在影响，确保团队成员理解并认同，从而建立共识并避免误解。我还发现，开放地提问和积极倾听对于弥合文化和技术理解上的差异至关重要。"
 	
 - **English:** "In my experience, especially in cross-cultural teams, effective communication and collaboration are the cornerstones of project success. I always strive to articulate technical concepts clearly and concisely, whether through verbal explanations, diagrams, or detailed documentation. In code reviews, I focus on providing constructive feedback and encourage two-way communication. When making important technical decisions, I explain the reasoning and potential implications behind them to ensure team members understand and agree, thereby building consensus and preventing misunderstandings. I also find that openly asking questions and actively listening are crucial for bridging cultural and technical understanding gaps."
 	
 - **Deutsch:** "Meiner Erfahrung nach sind effektive Kommunikation und Zusammenarbeit, insbesondere in interkulturellen Teams, die Grundpfeiler des Projekterfolgs. Ich bemühe mich stets, technische Konzepte klar und prägnant zu vermitteln, sei es durch mündliche Erklärungen, Diagramme oder detaillierte Dokumentation. Bei Code-Reviews lege ich Wert auf konstruktives Feedback und fördere den zweiseitigen Austausch. Wenn wichtige technische Entscheidungen getroffen werden, erläutere ich die Beweggründe und möglichen Auswirkungen, um sicherzustellen, dass die Teammitglieder sie verstehen und unterstützen. Dies schafft Konsens und vermeidet Missverständnisse. Ich stelle auch fest, dass offenes Fragenstellen und aktives Zuhören entscheidend sind, um kulturelle und technische Verständnisunterschiede zu überbrücken."
 
----
+## Expectations & Future / Erwartungen & Zukunft
 
-## **8. 期待与未来 (Expectations & Future / Erwartungen & Zukunft)**
+**Question:**
 
-**Qustion:**
-
-- **中文:** " 您对未来在德国的 IT 职业生涯有什么期待？您希望在我们的公司（或在下一个职位）中实现什么样的发展？"
-	
 - **English:** "What are your expectations for your future IT career in Germany? What kind of development do you hope to achieve in our company (or in your next role)?"
 	
 - **Deutsch:** "Welche Erwartungen haben Sie an Ihre zukünftige IT-Karriere in Deutschland? Welche Entwicklungsmöglichkeiten erhoffen Sie sich in unserem Unternehmen (oder in Ihrer nächsten Position)?"
@@ -103,15 +91,15 @@ tags:
 
 ---
 
-## **9. 提问环节 (Questions from Candidate / Fragen des Kandidaten)**
+## Questions from Candidate / Fragen des Kandidaten
 
-**Qustion:**
+**Question:**
 
 - **English:** "Do you have any questions for us?"
 	
 - **Deutsch:** "Haben Sie noch Fragen an uns?"
 
-**Answer（请准备 1-2 个具体问题）：**
+**Answer：**
 
 - **English:** "Yes, I do have a few questions. First, what role does the frontend team typically play in your company's future product roadmap? Are there plans to introduce new tech stacks or delve deeper into specific areas? Second, what professional development and training opportunities does your company usually offer for frontend developers?"
 	
