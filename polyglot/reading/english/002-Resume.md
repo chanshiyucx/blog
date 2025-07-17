@@ -15,17 +15,15 @@ tags:
 
 **您的回答建议:**
 
-- **中文:** " 早上好！非常感谢。我叫陈欣，是一名拥有 8 年多经验的前端开发者，尤其擅长使用 React、Vue.js 和 TypeScript 构建 Web 应用程序。我在优化复杂系统、UI 实现和团队协作方面有丰富的经验。我注意到贵公司在 [提及公司产品或技术领域，例如：人工智能解决方案/云服务/某个特定行业] 领域的领先地位，并且非常欣赏贵公司在 [提及公司文化、创新或项目] 方面的理念。我希望能在德国寻找新的挑战，并相信我的技能和经验能为贵公司带来价值。"
+- **English:** "Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in [mention company's product or tech area, e.g., AI solutions/cloud services/a specific industry] and truly appreciate your philosophy regarding [mention company culture, innovation, or projects]. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company."
 	
-- **English:** "Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in [mention company's product or tech area, e.g., AI solutions/cloud services/a specific industry] and truly appreciate your philosophy regarding [mention company culture, innovation, or projects]. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company." 2
-	
-- **Deutsch:** "Guten Morgen! Vielen Dank. Mein Name ist Xin Chen, und ich bin ein erfahrener Frontend-Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit React, Vue.js und TypeScript. 3Ich habe nachweisliche Erfolge in der Optimierung komplexer Systeme, UI-Implementierung und Teamzusammenarbeit erzielt. 4 Ich habe festgestellt, dass Ihr Unternehmen eine führende Position im Bereich [mention company's product or tech area, z.B. KI-Lösungen/Cloud-Dienste/einer bestimmten Branche] einnimmt, und schätze Ihre Philosophie bezüglich [mention company culture, innovation, or projects] sehr. Ich bin bereit für neue Herausforderungen in Deutschland und bin überzeugt, dass meine Fähigkeiten und Erfahrungen einen wertvollen Beitrag zu Ihrem Unternehmen leisten können." 5
+- **Deutsch:** "Guten Morgen! Vielen Dank. Mein Name ist Xin Chen, und ich bin ein erfahrener Frontend-Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit React, Vue.js und TypeScript. 3Ich habe nachweisliche Erfolge in der Optimierung komplexer Systeme, UI-Implementierung und Teamzusammenarbeit erzielt. 4 Ich habe festgestellt, dass Ihr Unternehmen eine führende Position im Bereich [mention company's product or tech area, z.B. KI-Lösungen/Cloud-Dienste/einer bestimmten Branche] einnimmt, und schätze Ihre Philosophie bezüglich [mention company culture, innovation, or projects] sehr. Ich bin bereit für neue Herausforderungen in Deutschland und bin überzeugt, dass meine Fähigkeiten und Erfahrungen einen wertvollen Beitrag zu Ihrem Unternehmen leisten können."
 
 ## **2. 职业经验 (Work Experience / Berufserfahrung)**
 
 **面试官提问:**
 
-- **中文:** " 您的简历显示您在 Toyou Feiji Electronics 担任高级前端开发人员。能详细谈谈您在那里负责的最具挑战性的项目吗？特别是关于 Redfish-compliant RESTful APIs 的开发。" 6
+- **中文:** " 您的简历显示您在 Toyou Feiji Electronics 担任高级前端开发人员。能详细谈谈您在那里负责的最具挑战性的项目吗？特别是关于 Redfish-compliant RESTful APIs 的开发。"
 	
 - **English:** "Your resume states you were a Senior Frontend Developer at Toyou Feiji Electronics. Could you elaborate on the most challenging project you were responsible for there, especially regarding the development of Redfish-compliant RESTful APIs?" 7
 	
