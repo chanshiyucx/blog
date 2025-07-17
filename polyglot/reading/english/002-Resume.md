@@ -17,7 +17,7 @@ tags:
 
 - **English:** "Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in [mention company's product or tech area, e.g., AI solutions/cloud services/a specific industry] and truly appreciate your philosophy regarding [mention company culture, innovation, or projects]. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company."
 	
-- **Deutsch:** "Guten Morgen! Vielen Dank. Mein Name ist Xin Chen, und ich bin ein erfahrener Frontend-Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit React, Vue.js und TypeScript. 3Ich habe nachweisliche Erfolge in der Optimierung komplexer Systeme, UI-Implementierung und Teamzusammenarbeit erzielt. 4 Ich habe festgestellt, dass Ihr Unternehmen eine führende Position im Bereich [mention company's product or tech area, z.B. KI-Lösungen/Cloud-Dienste/einer bestimmten Branche] einnimmt, und schätze Ihre Philosophie bezüglich [mention company culture, innovation, or projects] sehr. Ich bin bereit für neue Herausforderungen in Deutschland und bin überzeugt, dass meine Fähigkeiten und Erfahrungen einen wertvollen Beitrag zu Ihrem Unternehmen leisten können."
+- **Deutsch:** "Guten Morgen! Vielen Dank. Mein Name ist Xin Chen, und ich bin ein erfahrener Frontend-Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit React, Vue.js und TypeScript. Ich habe nachweisliche Erfolge in der Optimierung komplexer Systeme, UI-Implementierung und Teamzusammenarbeit erzielt. Ich habe festgestellt, dass Ihr Unternehmen eine führende Position im Bereich [mention company's product or tech area, z.B. KI-Lösungen/Cloud-Dienste/einer bestimmten Branche] einnimmt, und schätze Ihre Philosophie bezüglich [mention company culture, innovation, or projects] sehr. Ich bin bereit für neue Herausforderungen in Deutschland und bin überzeugt, dass meine Fähigkeiten und Erfahrungen einen wertvollen Beitrag zu Ihrem Unternehmen leisten können."
 
 ## **2. 职业经验 (Work Experience / Berufserfahrung)**
 
@@ -25,25 +25,21 @@ tags:
 
 - **English:** "Your resume states you were a Senior Frontend Developer at Toyou Feiji Electronics. Could you elaborate on the most challenging project you were responsible for there, especially regarding the development of Redfish-compliant RESTful APIs?"
 	
-- **Deutsch:** "Ihr Lebenslauf zeigt, dass Sie als Senior Frontend-Entwickler bei Toyou Feiji Electronics tätig waren. 8Können Sie uns mehr über das anspruchsvollste Projekt erzählen, für das Sie dort verantwortlich waren, insbesondere bezüglich der Entwicklung der Redfish-konformen RESTful-APIs?" 9
+- **Deutsch:** "Ihr Lebenslauf zeigt, dass Sie als Senior Frontend-Entwickler bei Toyou Feiji Electronics tätig waren. Können Sie uns mehr über das anspruchsvollste Projekt erzählen, für das Sie dort verantwortlich waren, insbesondere bezüglich der Entwicklung der Redfish-konformen RESTful-APIs?"
 
 **您的回答建议:**
 
-- **中文:** " 当然。在 Toyou Feiji Electronics，我主要负责存储管理平台的全面重构。其中一个关键挑战是开发与 Redfish 标准兼容的 RESTful API，并重构了超过 100 个现有接口，以优化集群的存储设备管理。这不仅涉及到复杂的技术规范理解，还需要与后端团队紧密协作，确保前后端数据流的顺畅和高效。通过这次重构，我们大大提升了系统的可扩展性和维护性。" 10
+- **English:** "Certainly. At Toyou Feiji Electronics, I was primarily responsible for the complete overhaul of the storage management platform. A key challenge was developing Redfish-compliant RESTful APIs and refactoring over 100 existing interfaces to optimize storage device management for clusters. This not only involved understanding complex technical specifications but also close collaboration with the backend team to ensure smooth and efficient data flow between frontend and backend. Through this refactoring, we significantly improved the system's scalability and maintainability."
 	
-- **English:** "Certainly. At Toyou Feiji Electronics, I was primarily responsible for the complete overhaul of the storage management platform. A key challenge was developing Redfish-compliant RESTful APIs and refactoring over 100 existing interfaces to optimize storage device management for clusters. This not only involved understanding complex technical specifications but also close collaboration with the backend team to ensure smooth and efficient data flow between frontend and backend. Through this refactoring, we significantly improved the system's scalability and maintainability." 11
-	
-- **Deutsch:** "Gerne. Bei Toyou Feiji Electronics war ich maßgeblich an der kompletten Überarbeitung der Speicher-Management-Plattform beteiligt. 12Eine zentrale Herausforderung war die Entwicklung Redfish-konformer RESTful-APIs und das Refactoring von über 100 bestehenden Schnittstellen zur Optimierung der Speichergeräteverwaltung für Cluster. 13 Dies erforderte nicht nur ein tiefes Verständnis komplexer technischer Spezifikationen, sondern auch eine enge Zusammenarbeit mit dem Backend-Team, um einen reibungslosen und effizienten Datenfluss zwischen Frontend und Backend sicherzustellen. Durch diese Umstrukturierung konnten wir die Skalierbarkeit und Wartbarkeit des Systems erheblich verbessern." 14
+- **Deutsch:** "Gerne. Bei Toyou Feiji Electronics war ich maßgeblich an der kompletten Überarbeitung der Speicher-Management-Plattform beteiligt. Eine zentrale Herausforderung war die Entwicklung Redfish-konformer RESTful-APIs und das Refactoring von über 100 bestehenden Schnittstellen zur Optimierung der Speichergeräteverwaltung für Cluster. Dies erforderte nicht nur ein tiefes Verständnis komplexer technischer Spezifikationen, sondern auch eine enge Zusammenarbeit mit dem Backend-Team, um einen reibungslosen und effizienten Datenfluss zwischen Frontend und Backend sicherzustellen. Durch diese Umstrukturierung konnten wir die Skalierbarkeit und Wartbarkeit des Systems erheblich verbessern."
 
 ## **3. 技术能力 (Technical Skills / Technische Fähigkeiten)**
 
 **面试官提问:**
 
-- **中文:** " 您的技能列表中提到了 Vite 和 ESLint 的优化，并实现了 60% 的构建速度提升。您是如何实现这一点的？以及您在项目中如何确保代码质量和团队协作？" 15
+- **English:** "Your skills list mentions optimizing with Vite and ESLint, achieving over 60% faster build times. How did you accomplish this, and how do you ensure code quality and team collaboration in your projects?"
 	
-- **English:** "Your skills list mentions optimizing with Vite and ESLint, achieving over 60% faster build times. How did you accomplish this, and how do you ensure code quality and team collaboration in your projects?" 16
-	
-- **Deutsch:** "In Ihrer Fähigkeitenliste erwähnen Sie die Optimierung mit Vite und ESLint, wodurch Sie über 60% schnellere Build-Zeiten erreicht haben. 17 Wie haben Sie das umgesetzt? Und wie stellen Sie in Ihren Projekten die Codequalität und Teamzusammenarbeit sicher?"
+- **Deutsch:** "In Ihrer Fähigkeitenliste erwähnen Sie die Optimierung mit Vite und ESLint, wodurch Sie über 60% schnellere Build-Zeiten erreicht haben. Wie haben Sie das umgesetzt? Und wie stellen Sie in Ihren Projekten die Codequalität und Teamzusammenarbeit sicher?"
 
 **您的回答建议:**
 
