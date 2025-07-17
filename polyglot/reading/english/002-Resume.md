@@ -5,21 +5,21 @@ tags:
   - German/Reading
 ---
 
-## **1. 自我介绍 (Self-Introduction / Selbstvorstellung)**
+## Self-Introduction / Selbstvorstellung
 
-**面试官提问:**
+**Question:**
 
 - **English:** "Good morning, Mr. Chen. Welcome to our booth. Could you please briefly introduce yourself and tell us why you're interested in our company?"
 	
 - **Deutsch:** "Guten Morgen, Herr Chen. Herzlich willkommen an unserem Stand. Bitte stellen Sie sich kurz vor und erzählen Sie uns, warum Sie sich für unser Unternehmen interessieren."
 
-**您的回答建议:**
+**Answer:**
 
 - **English:** "Good morning! Thank you very much. My name is Xin Chen, and I am a Frontend Developer with over 8 years of experience, particularly skilled in building web applications with React, Vue.js, and TypeScript. I have a proven track record in optimizing complex systems, UI implementation, and teamwork. I noticed your company's leading position in [mention company's product or tech area, e.g., AI solutions/cloud services/a specific industry] and truly appreciate your philosophy regarding [mention company culture, innovation, or projects]. I am looking for new challenges in Germany and believe my skills and experience can bring significant value to your company."
 	
 - **Deutsch:** "Guten Morgen! Vielen Dank. Mein Name ist Xin Chen, und ich bin ein erfahrener Frontend-Entwickler mit über 8 Jahren Erfahrung in der Entwicklung von Webanwendungen mit React, Vue.js und TypeScript. Ich habe nachweisliche Erfolge in der Optimierung komplexer Systeme, UI-Implementierung und Teamzusammenarbeit erzielt. Ich habe festgestellt, dass Ihr Unternehmen eine führende Position im Bereich [mention company's product or tech area, z.B. KI-Lösungen/Cloud-Dienste/einer bestimmten Branche] einnimmt, und schätze Ihre Philosophie bezüglich [mention company culture, innovation, or projects] sehr. Ich bin bereit für neue Herausforderungen in Deutschland und bin überzeugt, dass meine Fähigkeiten und Erfahrungen einen wertvollen Beitrag zu Ihrem Unternehmen leisten können."
 
-## **2. 职业经验 (Work Experience / Berufserfahrung)**
+## 职业经验 (Work Experience / Berufserfahrung)
 
 **面试官提问:**
 
@@ -33,7 +33,7 @@ tags:
 	
 - **Deutsch:** "Gerne. Bei Toyou Feiji Electronics war ich maßgeblich an der kompletten Überarbeitung der Speicher-Management-Plattform beteiligt. Eine zentrale Herausforderung war die Entwicklung Redfish-konformer RESTful-APIs und das Refactoring von über 100 bestehenden Schnittstellen zur Optimierung der Speichergeräteverwaltung für Cluster. Dies erforderte nicht nur ein tiefes Verständnis komplexer technischer Spezifikationen, sondern auch eine enge Zusammenarbeit mit dem Backend-Team, um einen reibungslosen und effizienten Datenfluss zwischen Frontend und Backend sicherzustellen. Durch diese Umstrukturierung konnten wir die Skalierbarkeit und Wartbarkeit des Systems erheblich verbessern."
 
-## **3. 技术能力 (Technical Skills / Technische Fähigkeiten)**
+## 技术能力 (Technical Skills / Technische Fähigkeiten)
 
 **面试官提问:**
 
@@ -103,24 +103,6 @@ tags:
 
 ---
 
-## **7. 你的 GitHub 项目/开源贡献 (Your GitHub Projects/Open Source Contributions / Ihre GitHub-Projekte/Open Source Beiträge)**
-
-**面试官提问:**
-
-- **中文:** " 您的简历中提到了活跃的开源贡献，以及 GitHub 上拥有 670 多个星和 300 多个关注者，这非常令人印象深刻。您能介绍一个您最引以为傲的开源项目吗？这个项目解决了什么问题？"
-	
-- **English:** "Your resume mentions active open-source contributions with over 670 stars and 300 followers on GitHub, which is very impressive. Could you tell us about one open-source project you're most proud of? What problem did it solve?"
-	
-- **Deutsch:** "In Ihrem Lebenslauf erwähnen Sie aktive Open-Source-Beiträge mit über 670 Sternen und 300 Followern auf GitHub, das ist sehr beeindruckend. Können Sie uns ein Open-Source-Projekt vorstellen, auf das Sie besonders stolz sind? Welches Problem hat es gelöst?"
-
-**您的回答建议:**
-
-- **中文:** " 感谢您的关注！我最引以为傲的一个项目是 [提及项目名称，例如：一个针对 Vue.js 开发者的通用组件库]。我注意到在日常开发中，许多开发者在 [提及具体痛点，例如：处理表单验证/状态管理/图片懒加载] 时会重复造轮子，或者现有的解决方案不够灵活。于是我着手开发了这个库，它提供了一套开箱即用的、高性能且高度可定制的组件。这个项目不仅解决了开发效率低下的问题，也帮助了许多开发者更专注于业务逻辑。我通过这个项目学到了很多关于代码设计、社区维护和项目推广的知识。"
-	
-- **English:** "Thank you for noticing! One project I'm most proud of is [mention project name, e.g., a general-purpose component library for Vue.js developers]. I noticed that in daily development, many developers would 'reinvent the wheel' when [mention specific pain points, e.g., handling form validation/state management/image lazy loading], or existing solutions lacked flexibility. So I started developing this library, which provides a set of out-of-the-box, high-performance, and highly customizable components. This project not only solved the problem of low development efficiency but also helped many developers focus more on business logic. Through this project, I learned a lot about code design, community maintenance, and project promotion."
-	
-- **Deutsch:** "Vielen Dank für Ihre Aufmerksamkeit! Eines meiner Projekte, auf das ich am stolzesten bin, ist [mention project name, z.B. eine allgemeine Komponentenbibliothek für Vue.js-Entwickler]. Mir ist aufgefallen, dass viele Entwickler im Alltag beim [mention specific pain points, z.B. Umgang mit Formularvalidierung/Zustandsverwaltung/Lazy Loading von Bildern] das Rad neu erfinden oder bestehende Lösungen nicht flexibel genug sind. Also habe ich angefangen, diese Bibliothek zu entwickeln, die eine Reihe von sofort einsatzbereiten, hochperformanten und hochgradig anpassbaren Komponenten bietet. Dieses Projekt hat nicht nur das Problem der geringen Entwicklungseffizienz gelöst, sondern auch vielen Entwicklern geholfen, sich stärker auf die Geschäftslogik zu konzentrieren. Durch dieses Projekt habe ich viel über Code-Design, Community-Pflege und Projektmarketing gelernt."
-
 ## **8. 期待与未来 (Expectations & Future / Erwartungen & Zukunft)**
 
 **面试官提问:**
@@ -133,8 +115,6 @@ tags:
 
 **您的回答建议:**
 
-- **中文:** " 我希望在一家充满活力的公司中继续我的职业发展，能够参与到有挑战性且具有实际影响的项目中。我期待能不断学习最新的前端技术，深入了解德国 IT 行业的最佳实践，并与优秀的工程师团队协作。我希望能在一个注重创新、提供学习和成长机会的环境中工作，并最终能贡献我的经验和技能，帮助公司实现其目标。"
-	
 - **English:** "I hope to continue my professional growth in a dynamic company, participating in challenging projects with real-world impact. I look forward to continuously learning the latest frontend technologies, gaining deeper insights into best practices in the German IT industry, and collaborating with a strong team of engineers. I wish to work in an environment that values innovation, offers opportunities for learning and growth, and where I can ultimately contribute my experience and skills to help the company achieve its goals."
 	
 - **Deutsch:** "Ich hoffe, meine berufliche Entwicklung in einem dynamischen Unternehmen fortsetzen zu können, das es mir ermöglicht, an herausfordernden Projekten mit realer Wirkung mitzuarbeiten. Ich freue mich darauf, kontinuierlich die neuesten Frontend-Technologien zu erlernen, tiefere Einblicke in die Best Practices der deutschen IT-Branche zu gewinnen und mit einem starken Ingenieurteam zusammenzuarbeiten. Ich wünsche mir ein Arbeitsumfeld, das Innovation schätzt, Lernund Wachstumsmöglichkeiten bietet und in dem ich meine Erfahrung und Fähigkeiten einbringen kann, um die Unternehmensziele zu erreichen."
@@ -145,16 +125,12 @@ tags:
 
 **面试官提问:**
 
-- **中文:** " 您对我们公司还有什么问题吗？"
-	
 - **English:** "Do you have any questions for us?"
 	
 - **Deutsch:** "Haben Sie noch Fragen an uns?"
 
 **您的回答建议（请准备 1-2 个具体问题）：**
 
-- **中文:** " 是的，我有一些问题。第一个问题是：贵公司在未来的产品路线图中，前端团队将扮演怎样的角色？是否有计划引入新的技术栈或者深入发展某个特定领域？第二个问题是：对于前端开发者来说，贵公司通常会提供哪些专业发展和培训机会？"
-	
 - **English:** "Yes, I do have a few questions. First, what role does the frontend team typically play in your company's future product roadmap? Are there plans to introduce new tech stacks or delve deeper into specific areas? Second, what professional development and training opportunities does your company usually offer for frontend developers?"
 	
 - **Deutsch:** "Ja, ich habe einige Fragen. Meine erste Frage wäre: Welche Rolle spielt das Frontend-Team in Ihrer zukünftigen Produkt-Roadmap? Gibt es Pläne, neue Technologien einzuführen oder sich in einem bestimmten Bereich zu spezialisieren? Und meine zweite Frage: Welche Möglichkeiten zur beruflichen Weiterentwicklung und Schulungen bietet Ihr Unternehmen typischerweise für Frontend-Entwickler?"
