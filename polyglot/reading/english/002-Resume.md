@@ -84,3 +84,7 @@ tags:
 **Answer：**
 
 - Yes, I do have a few questions. First, what role does the frontend team typically play in your company's future product roadmap? Are there plans to introduce new tech stacks or delve deeper into specific areas? Second, what professional development and training opportunities does your company usually offer for frontend developers?
+
+---
+- I have learned about Angular, but have hardly used it in any projects.
+- Zurzeit mache ich einen Intensivkurs Deutsch, um so schnell wie möglich das Niveau B2 zu erreichen.
