@@ -18,3 +18,5 @@ for (const post of posts) {
   console.log(post.textContent);
 }
 ```
+
+Ref: [Iterator helpers have become Baseline Newly available](https://web.dev/blog/baseline-iterator-helpers)
