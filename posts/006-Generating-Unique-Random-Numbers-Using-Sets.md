@@ -7,27 +7,33 @@ tags:
 references: 
   - https://www.smashingmagazine.com/2024/08/generating-unique-random-numbers-javascript-using-sets/
 ---
-JavaScript comes with a lot of built-in functions that allow you to carry out so many different operations. One of these built-in functions is the `Math.random()` method, which generates a random floating-point number that can then be manipulated into integers.
+JavaScript's built-in `Math.random()` method is great for generating random floating-point numbers that you can convert to integers. However, it has one significant limitation: it can't guarantee uniqueness across multiple calls. If you need to generate a series of unique random numbers, you'll need a more sophisticated approach.
 
-However, if you wish to generate a series of unique random numbers and create more random effects in your code, you will need to come up with a custom solution for yourself because the `Math.random()` method on its own cannot do that for you.
+In this article, we'll explore how to solve this problem using JavaScript's `Set` object, which naturally ensures uniqueness among its elements.
 
-In this article, we're going to be learning how to circumvent this issue and generate a series of unique random numbers using the `Set` object in JavaScript, which we can then use to create more randomized effects in our code.
+## The Problem with Standard Random Generation
 
-## Generating a Unique Series of Random Numbers
+When you call `Math.random()` multiple times, there's always a chance of getting duplicate values, especially when working with smaller ranges or generating many numbers. For example:
 
-One of the ways to generate a unique series of random numbers in JavaScript is by using `Set` objects. The reason why we're making use of sets is because the elements of a set are unique. We can iteratively generate and insert random integers into sets until we get the number of integers we want.
+```typescript
+// This might produce duplicates
+const numbers: number[] = []
+for (let i = 0; i < 5; i++) {
+  numbers.push(Math.floor(Math.random() * 10) + 1)
+}
+console.log(numbers) // Could be [3, 7, 3, 9, 1] - notice the duplicate 3
+```
 
-And since sets do not allow duplicate elements, they are going to serve as a filter to remove all of the duplicate numbers that are generated and inserted into them so that we get a set of unique integers.
+## The Solution: Leveraging Sets for Uniqueness
 
-Here's how we are going to approach the work:
+Sets in JavaScript automatically handle uniqueness—they simply ignore attempts to add duplicate values. This makes them perfect for our use case. Here's our strategy:
 
-1. Create a `Set` object.
-2. Define how many random numbers to produce and what range of numbers to use.
-3. Generate each random number and immediately insert the numbers into the `Set` until the `Set` is filled with a certain number of them.
+1. Create a Set to store our unique numbers
+2. Define our parameters: how many numbers we need and the range to draw from
+3. Generate and collect random numbers until we have enough unique values
+4. Convert to array for easier manipulation
 
-One thing to note, however, is that the number of integers you want to generate (represented by `count` in the code) should be less than the upper limit of your range plus one (represented by `max + 1` in the code). Otherwise, the code will run forever. You can add an `if statement` to the code to ensure that this is always the case.
-
-The following is a quick example of how the code comes together:
+Here's a robust function that generates unique random numbers:
 
 ```typescript
 const generateRandomNumbers = (
@@ -41,22 +47,40 @@ const generateRandomNumbers = (
     throw new Error('Count cannot be greater than the size of the range')
   }
 
-  // 1: Create a `Set` object
   const uniqueNumbers: Set<number> = new Set()
 
-  // 2: Generate each random number
+  // Keep generating until we have enough unique numbers
   while (uniqueNumbers.size < count) {
     const random = Math.floor(Math.random() * rangeSize) + min
     uniqueNumbers.add(random)
   }
   
-  // 3: Immediately insert them numbers into the Set…
   return Array.from(uniqueNumbers)
 }
 
 console.log(generateRandomNumbers(5, 5, 10))
 ```
 
-What the code does is create a new `Set` object and then generate and add the random numbers to the set until our desired number of integers has been included in the set. The reason why we're returning an array is because they are easier to work with.
+## Key Benefits of This Approach
 
-The best way to learn anything in software development is by consuming content and reinforcing whatever knowledge you've gotten from that content by practicing. So, don't stop here. Run the examples in this tutorial, play around with them, come up with your own unique solutions, and also don't forget to share your good work. Ciao!
+- **Guaranteed Uniqueness**: Sets automatically filter out duplicates, so you'll never get repeated values.
+- **Flexible Range**: Works with any integer range, whether it's 1-100 or -50 to 50.
+- **Error Handling**: The function validates inputs to prevent infinite loops (like requesting 10 unique numbers from a range of only 5 possible values).
+- **Performance**: For reasonable input sizes, this approach is efficient and straightforward.
+
+## Performance Considerations
+
+This method works well for most use cases, but be aware that as the ratio of `count` to `rangeSize` approaches 1 (i.e., you want most of the possible numbers), the algorithm may need many iterations to find the remaining unique values.
+
+For such scenarios, you might consider alternative approaches like:
+
+- Generating all possible numbers and shuffling the array
+- Using a rejection sampling method with tracking
+
+## Wrapping Up
+
+By combining JavaScript's `Math.random()` with the uniqueness properties of Sets, we can easily generate collections of unique random numbers. This approach is clean, readable, and handles edge cases gracefully.
+
+The key takeaway? When you need uniqueness in randomness, don't fight against duplicates—use data structures that naturally prevent them.
+
+Try experimenting with different ranges and counts to see how this function behaves. You might also consider extending it to handle floating-point numbers or custom step sizes between values.
