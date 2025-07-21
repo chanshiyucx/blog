@@ -8,7 +8,7 @@ Iterator helpers are exposed by defining new methods on the [`Iterator`](https:
 
 For example, you could use an iterator helper on the `filter` method to filter list items by the contents of their `innerText` property for a collection of DOM nodes, which you can then use later in a `for` loop:
 
-```JavaScript
+```javascript
 const posts = document.querySelectorAll("ul#specific-list > li")
   .values()
   .filter(item => item.textContent.includes("kiwi"));
