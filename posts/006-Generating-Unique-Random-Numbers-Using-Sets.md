@@ -46,6 +46,12 @@ const generateRandomNumbers = (
   if (count > rangeSize) {
     throw new Error('Count cannot be greater than the size of the range')
   }
+  if (count <= 0) {
+    throw new Error('Count must be a positive number')
+  }
+  if (min > max) {
+    throw new Error('Minimum value cannot be greater than maximum value')
+  }
 
   const uniqueNumbers: Set<number> = new Set()
 
