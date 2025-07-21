@@ -82,5 +82,3 @@ For such scenarios, you might consider alternative approaches like:
 By combining JavaScript's `Math.random()` with the uniqueness properties of Sets, we can easily generate collections of unique random numbers. This approach is clean, readable, and handles edge cases gracefully.
 
 The key takeaway? When you need uniqueness in randomness, don't fight against duplicates—use data structures that naturally prevent them.
-
-Try experimenting with different ranges and counts to see how this function behaves. You might also consider extending it to handle floating-point numbers or custom step sizes between values.
