@@ -24,7 +24,7 @@ for (let i = 0; i < 5; i++) {
 console.log(numbers) // Could be [3, 7, 3, 9, 1] - notice the duplicate 3
 ```
 
-## The Solution: Leveraging Sets for Uniqueness
+## Leveraging Sets for Uniqueness
 
 Sets in JavaScript automatically handle uniqueness—they simply ignore attempts to add duplicate values. This makes them perfect for our use case. Here's our strategy:
 
@@ -60,13 +60,6 @@ const generateRandomNumbers = (
 
 console.log(generateRandomNumbers(5, 5, 10))
 ```
-
-## Key Benefits of This Approach
-
-- **Guaranteed Uniqueness**: Sets automatically filter out duplicates, so you'll never get repeated values.
-- **Flexible Range**: Works with any integer range, whether it's 1-100 or -50 to 50.
-- **Error Handling**: The function validates inputs to prevent infinite loops (like requesting 10 unique numbers from a range of only 5 possible values).
-- **Performance**: For reasonable input sizes, this approach is efficient and straightforward.
 
 ## Performance Considerations
 
