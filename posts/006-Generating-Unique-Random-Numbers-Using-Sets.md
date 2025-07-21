@@ -70,7 +70,7 @@ console.log(generateRandomNumbers(5, 5, 10))
 
 ## Performance Considerations
 
-This method works well for most use cases, but be aware that as the ratio of `count` to `rangeSize` approaches 1 (i.e., you want most of the possible numbers), the algorithm may need many iterations to find the remaining unique values.
+This method works well for most use cases, but be aware that as the ratio of `count` to `rangeSize` approaches 1, the algorithm may need many iterations to find the remaining unique values.
 
 For such scenarios, you might consider alternative approaches like:
 
