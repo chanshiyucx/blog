@@ -73,7 +73,7 @@ tags:
 
 **Answer:**
 
-- I hope to continue my professional growth in a dynamic company, participating in challenging projects with real-world impact. I look forward to continuously learning the latest frontend technologies, gaining deeper insights into best practices in the German IT industry, and collaborating with a strong team of engineers. I wish to work in an environment that values innovation, offers opportunities for learning and growth, and where I can ultimately contribute my experience and skills to help the company achieve its goals.
+- I hope to continue my professional growth in a dynamic company, participating in challenging projects. I look forward to continuously learning the latest frontend technologies, gaining deeper insights into best practices in the German IT industry, and collaborating with a strong team of engineers. I wish to work in an environment that values innovation, offers opportunities for learning and growth, and where I can ultimately contribute my experience and skills to help the company achieve its goals.
 
 ## Questions from Candidate
 
@@ -84,7 +84,3 @@ tags:
 **Answer：**
 
 - Yes, I do have a few questions. First, what role does the frontend team typically play in your company's future product roadmap? Are there plans to introduce new tech stacks or delve deeper into specific areas? Second, what professional development and training opportunities does your company usually offer for frontend developers?
-
----
-- I have learned about Angular, but have hardly used it in any projects.
-- Zurzeit mache ich einen Intensivkurs Deutsch, um so schnell wie möglich das Niveau B2 zu erreichen.
