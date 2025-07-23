@@ -1,8 +1,8 @@
 ---
 title: Introducing Yourself
 date: 2025-07-22 16:58:17
-tags: 
-  - German/Reading
+tags:
+  - English/Reading
 ---
 Let me tell you a little about myself.  
 
