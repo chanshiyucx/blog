@@ -2,8 +2,7 @@
 title: Getting Up
 date: 2025-07-23 16:05:38
 tags:
-  - English/Reading
-  - Reading/ESLPod
+  - English/Listening
 ---
 The worst part of the day for me is definitely when I have to get up. Waking up, that I can handle. But getting up? That, I hate. The covers I have on my bed are heavy, mostly because I have a comforter as well as a light blanket. I sleep with two pillows, which for some reason have different color pillowcases. Well, at least the sheets match.
 

@@ -2,7 +2,7 @@
 title: German Sentences
 date: 2025-04-15 20:25:15
 tags:
-  - German/Writing
+  - German/Reading
 ---
 - Wir hören wieder **voneinander**.
 - **Wenn es anfängt zu dämmern.**

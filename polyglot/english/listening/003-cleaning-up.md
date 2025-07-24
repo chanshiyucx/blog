@@ -2,8 +2,7 @@
 title: Cleaning Up
 date: 2025-07-23 16:49:26
 tags:
-  - English/Reading
-  - Reading/ESLPod
+  - English/Listening
 ---
 I go into my bathroom sometime around 6:45 a.m. My sink and medicine cabinet are on the left when you enter my bathroom. The toilet is next to that, with the tub in front. Anyway, I turn on the lights, and try to find the mouthwash in the medicine cabinet. I pour a small amount into a cup, swish it around for 30 seconds, gargle, and spit. Not pleasant, but necessary. Then I get out the floss. When I'm done flossing, I pull out the toothbrush and the toothpaste. I brush and then it's off to the shower.
 

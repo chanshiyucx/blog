@@ -2,8 +2,7 @@
 title: Eating Breakfast
 date: 2025-07-23 16:50:38
 tags:
-  - English/Reading
-  - Reading/ESLPod
+  - English/Listening
 ---
 I walk into my kitchen and turn on the coffeemaker. I always put the coffee, filter, and water in the night before so it's ready to go. Next, I open the door of the cupboard where the cereal is stored. I would love to have ham and eggs for breakfast every morning, or maybe a stack of waffles, but the truth is that I just don't have the time to cook.
 
