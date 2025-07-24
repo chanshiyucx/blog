@@ -3,6 +3,7 @@ title: Ab in den Biergarten!
 date: 2025-07-24 17:44:50
 tags:
   - German/Reading
+  - Reading/SlowGerman
 references:
   - https://slowgerman.com/2007/06/19/slow-german-008-ab-in-den-biergarten/#
 ---
