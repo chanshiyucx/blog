@@ -26,10 +26,10 @@ jobs:
           rsync -av --delete obsidian/Notes/ ./notes/
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rsync -av --delete obsidian/Album/ ./album/
-          rsync -av --delete obsidian/Polyglot/English/Writing/ ./polyglot/writing/english/
-          rsync -av --delete obsidian/Polyglot/German/Writing/ ./polyglot/writing/german/
-          rsync -av --delete obsidian/Polyglot/English/Reading/ ./polyglot/reading/english/
-          rsync -av --delete obsidian/Polyglot/German/Reading/ ./polyglot/reading/german/
+          rsync -av --delete obsidian/Polyglot/English/Writing/ ./polyglot/english/writing/
+          rsync -av --delete obsidian/Polyglot/English/Reading/ ./polyglot/english/reading/
+          rsync -av --delete obsidian/Polyglot/German/Writing/ ./polyglot/german/writing/
+          rsync -av --delete obsidian/Polyglot/German/Reading/ ./polyglot/german/reading/
           find . -name "SUMMARY.md" -delete
         continue-on-error: false
 
