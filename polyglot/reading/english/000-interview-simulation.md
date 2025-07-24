@@ -2,7 +2,7 @@
 title: Interview Simulation
 date: 2025-07-17 14:10:45
 tags:
-  - German/Reading
+  - English/Reading
 ---
 
 ## Self-Introduction
