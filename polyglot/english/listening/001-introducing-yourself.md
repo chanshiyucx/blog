@@ -4,6 +4,8 @@ date: 2025-07-22 16:58:17
 tags:
   - English/Listening
 ---
+<audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/001-introducing-yourself.mp3"></audio>
+
 Let me tell you a little about myself.
 
 I was born and raised in Minnesota and I'm a native of the city of Saint Paul. I grew up there with my parents and my eight brothers and two sisters. I'm the eleventh child so you could say I'm the baby of the family, but I swear I wasn't spoiled.
