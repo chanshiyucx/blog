@@ -6,7 +6,7 @@ tags:
 references:
   - https://slowgerman.com/2007/06/19/slow-german-008-ab-in-den-biergarten/#
 ---
-<audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/SlowGerman/sg08.mp3"></audio>
+<audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/SlowGerman/sg08.mp3"></audio>
 
 Ich lebe in Bayern, genauer gesagt in München. Und hier gibt es eine Tradition, die Ihr vielleicht kennt - Biergärten. Ein typischer Biergarten hat orangefarbene Bänke und Tische. Der Boden ist mit kleinen Kieselsteinen bedeckt. Große Kastanienbäume spenden Schatten.
 
