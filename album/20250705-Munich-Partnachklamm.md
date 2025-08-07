@@ -1,7 +1,7 @@
 ---
-title: Partnachklamm
+title: Munich Partnachklamm
 date: 2025-07-06 21:52:41
-tags: 
+tags:
   - Album
 ---
 ![Alpine Ascent](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250705-Partnachklamm/DSC05024.jpg)

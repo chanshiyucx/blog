@@ -1,7 +1,7 @@
 ---
-title: Napoli
+title: Italy Napoli
 date: 2025-08-05 16:46:27
-tags: 
+tags:
   - Album
 ---
 
