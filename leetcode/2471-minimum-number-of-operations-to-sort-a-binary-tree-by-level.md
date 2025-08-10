@@ -32,7 +32,7 @@ The key insight is that for a cycle of size k, we need (k-1) swaps to put all el
 
 Let's break down the cycle detection intuition with an example:
 
-```
+```text
 Original array: [3, 1, 2, 4]
 After creating [value, index] pairs and sorting by value:
 [1,1], [2,2], [3,0], [4,3]
@@ -47,7 +47,7 @@ This forms a cycle: 0 -> 1 -> 2 -> 0
 
 Visualizing the cycle:
 
-```
+```text
 Index: 0  1  2  3
 Value: 3  1  2  4
       ↙  ↙  ↙
