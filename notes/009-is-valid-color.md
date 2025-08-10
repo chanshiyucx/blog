@@ -6,7 +6,7 @@ tags:
 ---
 The `CSS.supports()` static method returns a boolean value indicating if the browser supports a given CSS feature, or not. We can use it to verify if a color value is valid.
 
-Strings like `unset`, `initial`, `inherit`, `currentcolor`, `transparent` are also valid values, so if you want to exclude these strings, just change the function a bit:
+Strings like `unset`, `initial`, `inherit`, `currentcolor`, `transparent` are also valid values, so if you want to exclude these strings, just change the function a bit:
 
 ```typescript
 const isValidColor = (color: string): boolean => {
