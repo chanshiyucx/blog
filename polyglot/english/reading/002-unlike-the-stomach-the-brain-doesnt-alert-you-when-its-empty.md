@@ -1,6 +1,6 @@
 ---
 title: Unlike The Stomach The Brain Doesnt Alert You When Its Empty
-date: 2025-08-12T16:45:17
+date: 2025-08-12 16:45:17
 tags:
   - English/Reading
 references:
