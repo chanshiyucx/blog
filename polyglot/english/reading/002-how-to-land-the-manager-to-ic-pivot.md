@@ -6,8 +6,6 @@ tags:
 references:
   - https://stackoverflow.blog/2023/09/13/how-to-land-the-manager-to-ic-pivot/
 ---
-The conventional metaphor for career success is a ladder, but there are a lot of problems with this narrative.
-
 The conventional metaphor for career success is a ladder: you start as a humble individual contributor and gradually climb the rungs until you're managing a team of junior folks gripping the rungs below you. There's only one trajectory (up!) and no detours.
 
 There are a lot of problems with this narrative, but one of them is that not everyone finds themselves happier or more satisfied in a role that makes them directly responsible for others' success and productivity.
