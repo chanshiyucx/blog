@@ -39,7 +39,7 @@ Walking Pompeii's stone streets, peering into preserved homes and bathhouses, wa
 
 The 50-minute ferry to Capri felt like sailing toward a postcard. This glamorous island, playground of celebrities and millionaires, certainly lives up to its reputation—including the eye-watering prices.
 
- The views from the mountain town were worth every euro.The chairlift carried us up to the mountaintop for panoramic vistas of Naples Bay, where luxury yachts dotted the azure water like floating jewels. We had hoped to visit the famous Blue Grotto, but Mother Nature had other plans—the sea conditions forced its closure. Sometimes the best-laid travel plans remind you that adventure has its own schedule.
+ The views from the mountain town were worth every euro. The chairlift carried us up to the mountaintop for panoramic vistas of Naples Bay, where luxury yachts dotted the azure water like floating jewels. We had hoped to visit the famous Blue Grotto, but Mother Nature had other plans—the sea conditions forced its closure. Sometimes the best-laid travel plans remind you that adventure has its own schedule.
 
 ![Boats and Rocks](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05647.jpg)  
 ![Blue Grotto](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05784.jpg)  
