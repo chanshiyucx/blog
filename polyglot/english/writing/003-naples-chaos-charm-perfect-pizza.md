@@ -1,8 +1,9 @@
 ---
 title: Naples Chaos Charm Perfect Pizza
 date: 2025-08-12 21:50:57
-tags: 
+tags:
   - English/Writing
+priority: 1
 ---
 
 When my girlfriend and I landed in Naples from Munich in late July, the first thing that hit us wasn't the legendary chaos of this southern Italian city—it was the heat. The Mediterranean sun blazed mercilessly, but we couldn't have asked for better weather. Five straight days of brilliant blue skies awaited us in one of Italy's most authentic and unvarnished destinations.
@@ -41,7 +42,6 @@ The 50-minute ferry to Capri felt like sailing toward a postcard. This glamorous
  The views from the mountain town were worth every euro.The chairlift carried us up to the mountaintop for panoramic vistas of Naples Bay, where luxury yachts dotted the azure water like floating jewels. We had hoped to visit the famous Blue Grotto, but Mother Nature had other plans—the sea conditions forced its closure. Sometimes the best-laid travel plans remind you that adventure has its own schedule.
 
 ![Boats and Rocks](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05647.jpg)  
-![Anacapri](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05664.jpg)  
 ![Blue Grotto](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05784.jpg)  
 
 ## Day Five: Lemon-Scented Farewell
