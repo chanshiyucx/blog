@@ -23,24 +23,22 @@ The highlight was descending into Naples' underground city, Napoli Sotterranea. 
 
 Pompeii demanded an entire day, and rightfully so. The train ride through the Campanian countryside offered glimpses of Mount Vesuvius looming in the distance—the very volcano that preserved this ancient city in ash nearly 2,000 years ago.
 
-Walking Pompeii's stone streets, peering into preserved homes and bathhouses, was like time travel. The site is massive; we spent eight hours exploring and barely scratched the surface. Our day took an unexpected turn when a nearby wildfire forced train cancellations. We joined a crowd of stranded tourists on a replacement bus, everyone sharing stories and snacks during the slow journey back to Naples.
+Walking Pompeii's stone streets, peering into preserved homes and bathhouses, was like time travel. The site is massive; we spent around six hours exploring and barely scratched the surface. Our day took an unexpected turn when a nearby wildfire forced train cancellations. We joined a crowd of stranded tourists on a replacement bus for the slow journey back to Naples.
 
-## Day Four: Island Paradise (Almost)
+## Day Four: Island Paradise
 
-The 50-minute ferry to Capri felt like sailing toward a postcard. This glamorous island, playground of celebrities and millionaires, certainly lives up to its reputation—including the eye-watering prices. A simple lunch cost more than our entire day's meals in Naples.
+The 50-minute ferry to Capri felt like sailing toward a postcard. This glamorous island, playground of celebrities and millionaires, certainly lives up to its reputation—including the eye-watering prices.
 
-But the views from the mountain town were worth every euro. The chairlift carried us above terracotta rooftops to panoramic vistas of Naples Bay, where luxury yachts dotted the azure water like floating jewels. We had hoped to visit the famous Blue Grotto, but Mother Nature had other plans—the sea conditions forced its closure. Sometimes the best-laid travel plans remind you that adventure has its own schedule.
+ The views from the mountain town were worth every euro.The chairlift carried us up to the mountaintop for panoramic vistas of Naples Bay, where luxury yachts dotted the azure water like floating jewels. We had hoped to visit the famous Blue Grotto, but Mother Nature had other plans—the sea conditions forced its closure. Sometimes the best-laid travel plans remind you that adventure has its own schedule.
 
 ## Day Five: Lemon-Scented Farewell
 
 Our final day took us to Sorrento, perched dramatically on cliffs overlooking the bay. This charming town, famous for its lemons, felt like a gentler introduction to the Amalfi Coast. We indulged in a seafood feast overlooking the water, then found a weathered bench by the harbor.
 
-For an hour, we simply sat and watched. Pigeons gathered hopefully for breadcrumbs. Ferry boats chugged toward distant islands. The late afternoon light painted everything golden. It was one of those perfect travel moments when you're not rushing to the next sight—you're just being present in a beautiful place with someone you love.
+For an hour, we simply sat and watched. Pigeons gathered hopefully for breadcrumbs. Ferry boats toward distant islands. It was one of those perfect travel moments when you're not rushing to the next sight—you're just being present in a beautiful place with someone you love.
 
 ## The Real Naples
 
 Let's be honest: Naples isn't for everyone. The traffic is manic, the streets can be grimy, and the city operates on its own unique logic that sometimes defies reason. But that's also its charm. This is Italy unfiltered—passionate, authentic, and utterly alive.
 
 Our five days revealed a city where 2,000-year-old ruins neighbor world-class pizzerias, where underground labyrinths hide beneath modern streets, and where chaos and beauty dance together under the Mediterranean sun. Naples might not polish itself for tourists, but maybe that's exactly why it's so unforgettable.
-
-Would we return? In a heartbeat. Next time, we're hoping the Blue Grotto cooperates—and we're definitely making room for more pizza.
