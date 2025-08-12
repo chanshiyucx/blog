@@ -1,6 +1,6 @@
 ---
 title: Making And Eating Dinner, And Washing Up
-date: 2025-08-12T15:35:52
+date: 2025-08-12 15:35:52
 tags:
   - English/Listening
 ---
