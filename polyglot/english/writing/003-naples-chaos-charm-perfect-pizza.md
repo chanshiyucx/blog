@@ -13,6 +13,9 @@ No trip to Naples would be complete without paying homage to the birthplace of p
 
 Inside, the controlled chaos was mesmerizing. Pizza makers stretched dough with balletic precision while servers weaved through packed tables. We ordered what any first-timer should: a classic Margherita and a simple Marinara. When they arrived—charred at the edges, bubbling with San Marzano tomatoes and fresh mozzarella—I understood why people make pilgrimages here. The best part? Each pizza cost less than what you'd pay for a sandwich back home. I was officially converted.
 
+![Marinara](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/IMG_2784.jpg)  
+![Margherita](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/IMG_2785.jpg)
+
 ## Day Two: Underground Wonders and Street Food
 
 The next morning found us exploring Naples' gritty city center. Everyone raves about Toledo Metro Station as "the world's most beautiful subway stop," but honestly, it felt overhyped—pretty, sure, but hardly jaw-dropping. The real discovery came at a bustling seafood stand where we devoured fresh mussels and clams, the briny flavors enhanced by the salty Mediterranean air.
