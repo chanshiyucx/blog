@@ -4,6 +4,8 @@ date: 2025-08-13 17:37:51
 tags: 
   - English/Listening
 ---
+<audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/014-going-to-the-post-office.mp3"></audio>
+
 For me, things never go very smoothly at the local post office. I've learned that if you want to mail a letter, you'll have no problems. But if things get more complicated than that, well, watch out!
 
 Yesterday I went there to mail a small package and pick up a book of stamps. I wait my turn in line, and when I get up to the window, the clerk says, "What can I do for you?" "Well," I say, "I need a book – no make that a roll – of stamps. And I need to send this package priority to San Francisco." "You want insurance with that?" he asks me. "Uh, I don't know, what do you recommend?" "Well," he says, "you can send it priority with tracking if you want to see when it gets there, you can send it insured if the contents are valuable, or you can do both."
