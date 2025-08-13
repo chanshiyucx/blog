@@ -1,8 +1,8 @@
 ---
 title: Relaxing, The Mail, And The Trash
 date: 2025-08-13 14:46:50
-tags: 
-  - English/Reading
+tags:
+  - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/010-relaxing-the-mail-and-the-trash.mp3"></audio>
 
