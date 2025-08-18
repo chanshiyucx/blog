@@ -4,6 +4,8 @@ date: 2025-08-18 10:24:37
 tags: 
   - English/Listening
 ---
+<audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/016-driving-on-the-freeways.mp3"></audio>
+
 Driving in a big city like L.A. can be very difficult. It sometimes feels like I'm doing battle just to get to the grocery store. What is it about getting behind the wheel that brings out people's aggressive side? The most mild-mannered driver becomes crazy when they get on the road.
 
 In L.A., people rely on the freeway to commute to their jobs or just to get around town. I think driving on the freeway has its good and its bad. On the one hand, there are no stoplights and the speed limit is over 55 miles per hour so you can get somewhere quickly. On the other hand, there are drawbacks, too. People like to gun their engines and cut off other cars to get ahead. If you're driving in the passing lane, for example, you'd better be driving very fast, since most people are speeding. With all of these speeding cars, it's not unusual to see a pileup every day of the week!
