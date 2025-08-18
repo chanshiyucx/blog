@@ -14,7 +14,9 @@ Lucy: Well, I have a sticky situation at work and I wanted to get your input. Yo
 
 Jeff: Thanks. I'm not sure I can help but I'll give you my two cents.
 
-Lucy: Well, it's like this. There's this guy I work with who is always making jokes about the boss. Don't get me wrong. I like a good joke now and then, especially about the boss. But, sometimes he goes too far. Jeff. What do you mean?
+Lucy: Well, it's like this. There's this guy I work with who is always making jokes about the boss. Don't get me wrong. I like a good joke now and then, especially about the boss. But, sometimes he goes too far.
+
+Jeff. What do you mean?
 
 Lucy: Well, just the other day, he got a picture off the Internet and cut and pasted the boss's head onto it. Let's just say it was a very unflattering picture of him.
 
