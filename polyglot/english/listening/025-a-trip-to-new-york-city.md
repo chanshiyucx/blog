@@ -6,7 +6,11 @@ tags:
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/025-a-trip-to-new-york-city.mp3"></audio>
 
-Lucy: Hello. Jeff: Hey, Lucy, it's Jeff. Lucy: Hey, welcome back. How was your vacation?
+Lucy: Hello.
+
+Jeff: Hey, Lucy, it's Jeff.
+
+Lucy: Hey, welcome back. How was your vacation?
 
 Jeff: Oh, it was great. The seven days in New York were a blast. Lucy: Oh, yeah? Did you do any sightseeing or just visit with friends? Jeff: I got to do both, actually. First, I saw my friend Edmundo, who just moved there. He hadn't seen much of the city himself, so we went to all the tourist spots. We got a guidebook and went to the major museums, saw a play, went to a concert in Central Park, and took the Staten Island Ferry. We did all of that in a day and a half. It was a whirlwind, but we got to see a lot.
 

@@ -1,5 +1,5 @@
 ---
-title: Calculating String Bytes Number
+title: Calculating String Bytes Count
 date: 2024-03-18 11:25:00
 tags:
   - Web/Unicode
