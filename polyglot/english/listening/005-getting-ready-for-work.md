@@ -1,5 +1,5 @@
 ---
-title: Getting Dressed & Ready For Work
+title: " Getting Ready for Work"
 date: 2025-07-23 16:51:38
 tags:
   - English/Listening

@@ -1,8 +1,8 @@
 ---
-title: Roman To Integer
+title: Roman to Integer
 date: 2024-10-30 19:52:31
 level: Easy
-tags:  
+tags:
   - Algorithm/HashTable
 ---
 

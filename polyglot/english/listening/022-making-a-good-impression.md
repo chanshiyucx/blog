@@ -1,7 +1,7 @@
 ---
-title: Making A Good Impression
+title: Making a Good Impression
 date: 2025-08-18 11:18:20
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/022-making-a-good-impression.mp3"></audio>

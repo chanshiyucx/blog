@@ -1,8 +1,8 @@
 ---
-title: Minimum Number Of Operations To Sort A Binary Tree By Level
+title: Minimum Number of Operations to Sort a Binary Tree by Level
 date: 2024-12-23 20:23:24
 level: Medium
-tags: 
+tags:
   - Algorithm/BFS
 ---
 

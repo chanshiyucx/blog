@@ -1,7 +1,7 @@
 ---
-title: How To Get Fluent In English In 5 Days
+title: How to Get Fluent in English in 5 Days
 date: 2025-01-20 15:07:45
-tags: 
+tags:
   - English/Writing
 ---
 Like many English learners, I always get nervous when someone asks me a question in English. I often struggle to discuss certain topics and feel my vocabulary is limited. Speaking fluently for long periods is challenging, and I haven't yet mastered thinking in English. These are common challenges I face in my daily English conversations.

@@ -1,5 +1,5 @@
 ---
-title: Relaxing, The Mail, And The Trash
+title: Relaxing, the Mail, and the Trash
 date: 2025-08-13 14:46:50
 tags:
   - English/Listening

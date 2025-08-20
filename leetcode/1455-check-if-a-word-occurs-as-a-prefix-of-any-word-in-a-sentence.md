@@ -1,8 +1,8 @@
 ---
-title: Check If A Word Occurs As A Prefix Of Any Word In A Sentence
+title: Check If a Word Occurs As a Prefix of Any Word in a Sentence
 date: 2024-12-02 21:15:36
 level: Easy
-tags: 
+tags:
   - Algorithm/TwoPointers
 ---
 

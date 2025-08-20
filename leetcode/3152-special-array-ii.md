@@ -1,8 +1,8 @@
 ---
-title: Special Array Ii
+title: Special Array II
 date: 2024-12-09 22:11:05
 level: Medium
-tags: 
+tags:
   - Algorithm/PrefixSum
 ---
 

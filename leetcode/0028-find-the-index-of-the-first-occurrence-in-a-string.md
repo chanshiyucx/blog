@@ -1,8 +1,8 @@
 ---
-title: Find The Index Of The First Occurrence In A String
+title: Find the Index of the First Occurrence in a String
 date: 2024-11-17 10:17:26
 level: Easy
-tags:  
+tags:
   - Algorithm/String
 ---
 

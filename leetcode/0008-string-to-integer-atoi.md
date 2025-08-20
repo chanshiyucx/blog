@@ -1,8 +1,8 @@
 ---
-title: String To Integer Atoi
+title: String to Integer Atoi
 date: 2024-10-30 11:05:52
 level: Medium
-tags:  
+tags:
   - Algorithm/String
 ---
 

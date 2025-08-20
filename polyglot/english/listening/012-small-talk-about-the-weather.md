@@ -1,7 +1,7 @@
 ---
-title: Small Talk About The Weather
+title: Small Talk About the Weather
 date: 2025-08-13 15:29:03
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/012-small-talk-about-the-weather.mp3"></audio>

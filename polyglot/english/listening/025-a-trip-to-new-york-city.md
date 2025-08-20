@@ -1,7 +1,7 @@
 ---
-title: A Trip To New York City
+title: A Trip to New York City
 date: 2025-08-19 19:48:27
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/025-a-trip-to-new-york-city.mp3"></audio>

@@ -5,7 +5,6 @@ tags:
   - Web/JavaScript
   - JavaScript/RegExp
 ---
-
 When searching for "JavaScript regex for matching Chinese characters" on Google, most results suggest using `/[\u4e00-\u9fa5]/`. But is this regular expression really correct? Let's dive in and find out.
 
 ## Han Script and Han Characters

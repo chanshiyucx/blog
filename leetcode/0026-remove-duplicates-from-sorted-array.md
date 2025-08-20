@@ -1,8 +1,8 @@
 ---
-title: Remove Duplicates From Sorted Array
+title: Remove Duplicates from Sorted Array
 date: 2024-11-07 10:32:29
 level: Easy
-tags:  
+tags:
   - Algorithm/TwoPointers
 ---
 

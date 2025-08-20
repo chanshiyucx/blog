@@ -1,8 +1,8 @@
 ---
-title: Letter Combinations Of A Phone Number
+title: Letter Combinations of a Phone Number
 date: 2024-11-05 17:56:50
 level: Medium
-tags:  
+tags:
   - Algorithm/HashTable
 ---
 

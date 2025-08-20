@@ -1,5 +1,5 @@
 ---
-title: Unlike the stomach, the brain doesn’t alert you when it’s empty
+title: Unlike the Stomach, the Brain Doesn’t Alert You When It’s Empty
 date: 2025-08-13 16:45:17
 tags:
   - English/Reading

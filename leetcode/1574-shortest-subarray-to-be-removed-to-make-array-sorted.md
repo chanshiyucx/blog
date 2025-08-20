@@ -1,8 +1,8 @@
 ---
-title: Shortest Subarray To Be Removed To Make Array Sorted
+title: Shortest Subarray to be Removed to Make Array Sorted
 date: 2024-11-15 16:31:50
 level: Medium
-tags:  
+tags:
   - Algorithm/TwoPointers
 ---
 

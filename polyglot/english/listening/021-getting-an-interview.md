@@ -1,7 +1,7 @@
 ---
-title: Getting An Interview
+title: Getting an Interview
 date: 2025-08-18 11:16:39
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/021-getting-an-interview.mp3"></audio>

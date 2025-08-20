@@ -1,8 +1,8 @@
 ---
-title: Remove Nth Node From End Of List
+title: Remove Nth Node From End of List
 date: 2024-11-06 14:22:18
 level: Medium
-tags:  
+tags:
   - Algorithm/TwoPointers
 ---
 

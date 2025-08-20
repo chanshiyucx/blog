@@ -1,8 +1,8 @@
 ---
-title: Defuse The Bomb
+title: Defuse the Bomb
 date: 2024-11-18 16:40:35
 level: Easy
-tags: 
+tags:
   - Algorithm/SlidingWindow
 ---
 

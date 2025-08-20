@@ -4,7 +4,6 @@ date: 2024-03-18 11:24:00
 tags:
   - Web/React
 ---
-
 In software development, an escape hatch is a mechanism that allows a developer to bypass or override certain constraints or limitations of the system. Escape hatches are typically used in situations where the developer needs to access features or functionality that is not directly exposed by the system's API or user interface.
 
 In react, both useEffect and useRef are marked as an escape hatch.

@@ -1,8 +1,8 @@
 ---
-title: Count Prefix And Suffix Pairs I
+title: Count Prefix and Suffix Pairs I
 date: 2025-01-08 20:12:09
 level: Easy
-tags: 
+tags:
   - Algorithm/String
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Reading The Newspaper
+title: Reading the Newspaper
 date: 2025-08-18 10:54:18
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/017-reading-the-newspaper.mp3"></audio>
