@@ -24,6 +24,7 @@ jobs:
         run: |
           rsync -av --delete obsidian/Blog/ ./posts/
           rsync -av --delete obsidian/Notes/ ./notes/
+          mkdir -p ./vibes
           rsync -av --delete obsidian/Vibes/ ./vibes/
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rsync -av --delete obsidian/Album/ ./album/
