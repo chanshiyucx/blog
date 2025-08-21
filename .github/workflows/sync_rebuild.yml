@@ -13,6 +13,12 @@ jobs:
       - name: Checkout target repository (blog)
         uses: actions/checkout@v3
 
+      - name: 检查目录结构
+        run: |
+          ls -la obsidian/
+          ls -la obsidian/Vibes/
+          pwd
+
       - name: Clone obsidian private repository
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
