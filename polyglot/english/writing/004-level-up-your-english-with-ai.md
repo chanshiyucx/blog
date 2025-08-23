@@ -5,7 +5,7 @@ tags:
   - English/Writing
 ---
 
-## prompt
+## AI Prompt
 
 > I am an English beginner, hoping to improve my English level by learning English expressions on the theme of `{XXXX}`. Please help me generate a passage, divided into 10 levels, from the most basic short sentences to complex advanced sentences. Each level should be slightly more difficult than the previous one, gradually incorporating more complex grammar and sentence structures. Please provide the following content for each level:
 >
