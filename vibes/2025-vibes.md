@@ -7,7 +7,9 @@ tags:
 
 ## 2025-08-22 Munich
 
-不要温和地走进那个良夜。
+Do not go gentle into that good night,  
+Old age should burn and rave at close of day;  
+Rage, rage against the dying of the light.
 
 ## 2025-08-21 Munich
 
