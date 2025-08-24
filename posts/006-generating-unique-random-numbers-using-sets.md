@@ -3,8 +3,7 @@ title: Generating Unique Random Numbers Using Sets
 date: 2025-07-21 13:57:19
 tags:
   - Web/JavaScript
-  - JavaScript/Set
-references: 
+references:
   - https://www.smashingmagazine.com/2024/08/generating-unique-random-numbers-javascript-using-sets/
 ---
 JavaScript's built-in `Math.random()` method is great for generating random floating-point numbers that you can convert to integers. However, it has one significant limitation: it can't guarantee uniqueness across multiple calls. If you need to generate a series of unique random numbers, you'll need a more sophisticated approach.
