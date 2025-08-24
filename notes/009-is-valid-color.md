@@ -2,7 +2,8 @@
 title: Is Valid Color
 date: 2025-08-08 13:28:38
 tags:
-  - Web/TypeScript
+  - Web/CSS
+  - Web/JavaScript
 ---
 The `CSS.supports()` static method returns a boolean value indicating if the browser supports a given CSS feature, or not. We can use it to verify if a color value is valid.
 

@@ -3,6 +3,7 @@ title: Hidden Tricks with AbortController
 date: 2025-01-11 22:44:14
 tags:
   - Web/JavaScript
+  - JavaScript/AbortController
 ---
 Today, I'd like to talk about one of the standard JavaScript APIs you are likely sleeping on. It's called [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
 
