@@ -1,7 +1,7 @@
 ---
-title:  at the Art Exhibit
+title: At the Art Exhibit
 date: 2025-08-25 11:39:29
-tags: 
+tags:
   - English/Listening
 ---
 <audio controls src="https://cx-onedrive.pages.dev/api/raw?path=/Polyglot/ESLPod/030-at-the-art-exhibit.mp3"></audio>
