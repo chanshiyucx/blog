@@ -4,15 +4,19 @@ date: 2025-08-21 11:17:55
 tags:
   - Vibes
 ---
+## Munich
+
+> Seize the day, gather ye rosebuds while ye may.
+
 ## 2025-08-25 Munich
 
 Sometimes I just feel like going out for a walk after staying at home too long, to enjoy  the greenery and breathe the fresh air  to clear my mind.
 
 ## 2025-08-24 Munich
 
-slow is steady,
-steady is smooth,
-smooth is fast.
+> slow is steady,
+> steady is smooth,
+> smooth is fast.
 
 ## 2025-08-22 Munich
 
