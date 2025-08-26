@@ -4,7 +4,7 @@ date: 2025-08-21 11:17:55
 tags:
   - Vibes
 ---
-## Munich
+## 2025-08-26 Munich
 
 > Seize the day, gather ye rosebuds while ye may.
 
