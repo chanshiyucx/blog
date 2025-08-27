@@ -5,5 +5,5 @@ tags:
   - Album
 ---
 ![Neues Rathaus](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250826-Munich/IMG_3275.jpg)
-![Frauenkirche](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250826-Munich/IMG_3282.jpg)
-![](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250826-Munich/IMG_3294.jpg)
+![Zwiebeltürme](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250826-Munich/IMG_3282.jpg)
+![Frauenkirche](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250826-Munich/IMG_3294.jpg)
