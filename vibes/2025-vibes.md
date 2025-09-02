@@ -4,6 +4,12 @@ date: 2025-08-21 11:17:55
 tags:
   - Vibes
 ---
+## 2025-09-02 Munich
+
+I love the design concept of the Rosé Pine theme.  
+
+> Something beautiful.  All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
+
 ## 2025-08-31 Munich
 
 > Per aspera ad astra.
