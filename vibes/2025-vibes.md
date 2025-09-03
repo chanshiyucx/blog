@@ -8,7 +8,8 @@ tags:
 
 I love the design concept of the Rosé Pine theme.  
 
-> Something beautiful.  All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
+> Something beautiful.  
+> All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 
 ## 2025-08-31 Munich
 
