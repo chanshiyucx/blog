@@ -17,13 +17,13 @@ jobs:
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          git sparse-checkout set Blog Notes Vibes Leetcode Album Polyglot
+          git sparse-checkout set Blog Snippets Vibes Leetcode Album Polyglot
         continue-on-error: false
 
       - name: Sync obsidian directories
         run: |
           rsync -av --delete obsidian/Blog/ ./posts/
-          rsync -av --delete obsidian/Notes/ ./notes/
+          rsync -av --delete obsidian/Snippets/ ./snippets/
           rsync -av --delete obsidian/Vibes/ ./vibes/
           rsync -av --delete obsidian/Leetcode/ ./leetcode/
           rsync -av --delete obsidian/Album/ ./album/
