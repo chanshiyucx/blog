@@ -38,3 +38,15 @@ Impressive work on those projects, Xin—it sounds like you really drove some me
 ### Answer
 
 Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
+
+---
+
+## Backend Development and Full-Stack Capabilities
+
+### Question
+
+That's a great example of framework selection, Xin. I can see you have solid frontend expertise, but I also notice you mention full-stack responsibilities in your recent role. Since we're looking for someone who can work across the entire stack, could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
+
+### Answer
+
+Excellent question! While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot. At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment. More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
