@@ -9,11 +9,11 @@ tags:
 
 ### Question
 
-Hello Xin, it's great to meet you! I've reviewed your resume, and I'm impressed by your experience moving from China to Munich. Let's start with the basics to get to know you better. Tell me a bit about yourself and your professional journey so far.  
+- Tell me a bit about yourself and your professional journey so far.  
 
 ### Answer
 
-Thank you for the warm welcome! I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
+I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
 I have over 8 years of experience in web development, mainly focusing on frontend with React, Vue.js, and TypeScript. Over the years, I grew from junior to senior roles, building scalable and performant web applications.
 
@@ -158,8 +158,9 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-- Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. My goal is to reach a higher level so I can integrate better into daily life and the workplace.
-- I'm currently at B1 level and attending intensive courses. While English is fine for work, I want to keep improving my German to communicate more naturally with colleagues and clients.
+Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. My goal is to reach a higher level so I can integrate better into daily life and the workplace.
+
+I'm currently at B1 level and attending intensive courses. While English is fine for work, I want to keep improving my German to communicate more naturally with colleagues and clients.
 
 ## Available Date
 
@@ -170,8 +171,7 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-- I am available to start immediately.
-- I can start right away, but I'm also flexible if you prefer a later date.
+I am available to start immediately.
 
 ## Visa
 
@@ -182,8 +182,7 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-- I already hold an Opportunity Card work permit, which allows me to work in Germany without company sponsorship.
-- I'm currently based in Munich with an Opportunity Card, so I am fully authorized to work in Germany.
+I already hold an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
 
 ## Salary
 
@@ -194,4 +193,4 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-I'm open to discussing the salary. I would expect something in the range of €55,000 to €65,000 per year, but I'm flexible depending on the overall package and responsibilities.
+Based on my experience and research of the Munich market, I would expect something in the €60,000 to €70,000 range, but I'm flexible depending on the overall package, growth opportunities, and specific responsibilities.
