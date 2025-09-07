@@ -13,7 +13,13 @@ Hello Xin, it's great to meet you! I've reviewed your resume, and I'm impressed 
 
 ### Answer
 
-Thank you for the warm welcome! I'm Xin Chen, a 31-year-old Full-Stack Developer originally from China, now living in Munich with an Opportunity Card work permit. I have over 8 years of experience in web development, starting as a Junior Frontend Developer and progressing to senior roles. My background includes building end-to-end applications using React, Vue.js, and Spring Boot, with a focus on performance optimization. Recently, I've been enhancing my German skills through intensive courses up to B1 level, and I'm excited about contributing to innovative projects in a German company.
+Thank you for the warm welcome! I'm Xin Chen, a Full-Stack Developer originally from China, currently based in Munich with an Opportunity Card work permit.
+
+I have over 8 years of experience in web development, my expertise is primarily in frontend development. I've worked extensively with React, Vue.js, and TypeScript, progressing from junior to senior roles.
+
+I also have solid backend experience with Spring Boot, which gives me a full-stack perspective when collaborating with backend teams.
+
+Currently, I'm advancing my German skills through intensive courses up to B1 level, and I'm highly motivated to contribute to innovative projects in a German company where I can grow further as a web specialist.
 
 ---
 
@@ -61,8 +67,10 @@ That's really valuable full-stack experience, Xin. Now, every developer faces te
 
 ### Answer
 
-One of the most challenging problems I faced was at Toyou Feiji Electronics when we were experiencing severe performance issues with our storage management platform. The application was loading slowly, and users were experiencing timeouts when managing large storage clusters. I approached this systematically: first, I profiled the application and identified that our build process was taking over 10 minutes, and the frontend was making too many API calls. My solution involved migrating from Webpack to Vite, which reduced build times by over 60%, and I refactored the API layer to implement batch requests and caching strategies. I also optimized our Vue.js components by implementing lazy loading and virtual scrolling for large data sets. The outcome was dramatic - page load times improved from 8 seconds to under 2 seconds, and the overall user experience became much smoother. This experience taught me the importance of performance monitoring and taking a holistic approach to optimization across the entire stack.
+One of the most challenging problems I faced was at Toyou Feiji Electronics when our Vue 2 storage management platform was experiencing severe build performance issues.
 
-1. 不是调用太多API，我们原先使用 webpack 进行项目构建，而是随着项目代码规模的扩大，webpack 构建速度慢的问题逐渐显现，每次构建都需要花费大量时间，体验不是很好。此时新兴工具 vite 的成熟和官方支持，我计划将 webpack 替换为 vite。在重构期间我们遇到了一些问题：1. 第一个问题是依赖库的兼容问题，当升级到 vite 时，一些构建依赖库也需要替换为 vite 生态中的方案 2. 构建脚本的重新编排 3. 新语法
+As our codebase grew, the Webpack build process was taking over 10 minutes, severely impacting our development workflow. I proposed migrating to Vite to solve this, but it wasn't straightforward since Vite is designed for Vue 3 by default.
+
+I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
 
 ---
