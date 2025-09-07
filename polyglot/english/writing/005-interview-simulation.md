@@ -49,4 +49,20 @@ That's a great example of framework selection, Xin. I can see you have solid fro
 
 ### Answer
 
-Excellent question! While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot. At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment. More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
+While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot. At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment. More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
+
+---
+
+## Problem-Solving and Technical Challenges
+
+### Question
+
+That's really valuable full-stack experience, Xin. Now, every developer faces technical challenges that push them to grow. Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
+
+### Answer
+
+One of the most challenging problems I faced was at Toyou Feiji Electronics when we were experiencing severe performance issues with our storage management platform. The application was loading slowly, and users were experiencing timeouts when managing large storage clusters. I approached this systematically: first, I profiled the application and identified that our build process was taking over 10 minutes, and the frontend was making too many API calls. My solution involved migrating from Webpack to Vite, which reduced build times by over 60%, and I refactored the API layer to implement batch requests and caching strategies. I also optimized our Vue.js components by implementing lazy loading and virtual scrolling for large data sets. The outcome was dramatic - page load times improved from 8 seconds to under 2 seconds, and the overall user experience became much smoother. This experience taught me the importance of performance monitoring and taking a holistic approach to optimization across the entire stack.
+
+1. 不是调用太多API，我们原先使用 webpack 进行项目构建，而是随着项目代码规模的扩大，webpack 构建速度慢的问题逐渐显现，每次构建都需要花费大量时间，体验不是很好。此时新兴工具 vite 的成熟和官方支持，我计划将 webpack 替换为 vite。在重构期间我们遇到了一些问题：1. 第一个问题是依赖库的兼容问题，当升级到 vite 时，一些构建依赖库也需要替换为 vite 生态中的方案 2. 构建脚本的重新编排 3. 新语法
+
+---
