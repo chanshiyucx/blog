@@ -5,7 +5,7 @@ tags:
   - English/Writing
 ---
 
-## Introduction: Professional Background
+## Self Introduction
 
 ### Question
 
@@ -19,7 +19,9 @@ I have over 8 years of experience in web development, mainly focusing on fronten
 
 I also have hands-on experience with Spring Boot on the backend, which makes it easy for me to work closely with full-stack teams.
 
-I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects [at 4Soft] / [in a German company] where I can grow further as a web specialist. I look forward to talking about how I can support your team.
+I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects [at 4Soft] / [in a German company] where I can grow further as a web specialist.
+
+I look forward to talking about how I can support your team.
 
 ## Reason for application
 
@@ -37,13 +39,31 @@ Indirect inquiry:
 
 ### Answer
 
-I'm genuinely excited about [4Soft] for several reasons. First, your company's mission to ['combine innovation with quality'] and create ['solid and high-quality software solutions using innovative techniques and methods,'] as stated on your About Us page, really resonates with my approach to development. I appreciate how you secure Germany's industrial strength by making companies more agile and competitive—that aligns perfectly with my motivation to contribute to innovative projects in Germany.
+I'm genuinely excited about 4Soft for several reasons. Your mission to combine innovation with quality really resonates with my development approach - I appreciate how you help companies become more agile and competitive through solid software solutions.
 
-From a technical perspective, this role is a perfect match. My experience with React, Vue.js, and TypeScript aligns directly with your requirements. Your emphasis on performance, security, and clean code matches my own development standards.
+From a technical perspective, this is a perfect match. My React, Vue.js, and TypeScript experience aligns directly with your requirements, and **your emphasis on performance and clean code matches my own standards**.
 
-%% I'm genuinely excited about 4Soft for several reasons. First, your company's mission to combine innovation with quality really resonates with my approach to development. I've read about how you encourage trying new things on the official website - that's exactly the kind of environment where I do my best work.
+What really drew me in was your culture of encouraging innovation and collaborative teamwork. Dennis Bock's testimonial about developing freely and sharing knowledge with talented colleagues is exactly the environment where I thrive. Combined with the flexibility and Munich location, this feels like the ideal next step in my career.
 
-I read about the company's philosophy on the official website about being able to develop freely and choose frameworks, while working with talented colleagues who share knowledge. That collaborative, growth-oriented culture is exactly what I'm looking for as I continue developing my career in Germany. %%
+I'd love to hear more about your current projects!
+
+## Example for clean code standards
+
+### Question
+
+Can you give an example of how you've applied these standards in a past project?
+
+### Answer
+
+Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
+
+To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
+
+At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
+
+---
+
+##
 
 ---
 ---
