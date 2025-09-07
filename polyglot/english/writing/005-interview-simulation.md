@@ -136,6 +136,31 @@ As our codebase grew, the Webpack build process was taking over 10 minutes, seve
 
 I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
 
+## English Level
+
+### Question
+
+- How would you describe your English skills?
+- Are you comfortable working in English on a daily basis?
+
+### Answer
+
+- I would describe my English as fluent at a professional level. I use it daily for technical communication, documentation, and meetings, so I feel confident working in English.
+- My English is at a B2 level. I can communicate fluently in professional settings, especially in technical discussions and teamwork.
+
+## German Level
+
+### Question
+
+- Are you learning German?
+- What is your current level of German?
+- Do you plan to improve your German skills while working here?
+
+### Answer
+
+- Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. My goal is to reach a higher level so I can integrate better into daily life and the workplace.
+- I'm currently at B1 level and attending intensive courses. While English is fine for work, I want to keep improving my German to communicate more naturally with colleagues and clients.
+
 ## Available Date
 
 ### Question
