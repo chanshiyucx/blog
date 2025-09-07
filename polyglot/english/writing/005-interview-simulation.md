@@ -116,25 +116,31 @@ Thank you—I'm glad you found them impressive! For instance, in my role at Toyo
 
 ### Question
 
-That's a great example of framework selection, Xin. I can see you have solid frontend expertise, but I also notice you mention full-stack responsibilities in your recent role. Since we're looking for someone who can work across the entire stack, could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
+- Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
 
 ### Answer
 
-While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot. At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment. More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
+While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot.
+
+At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment.
+
+More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
 
 ## Problem-Solving and Technical Challenges
 
 ### Question
 
-That's really valuable full-stack experience, Xin. Now, every developer faces technical challenges that push them to grow. Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
+- Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
 
 ### Answer
 
-One of the most challenging problems I faced was at Toyou Feiji Electronics when our Vue 2 storage management platform was experiencing severe build performance issues.
+At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on vue2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
-As our codebase grew, the Webpack build process was taking over 10 minutes, severely impacting our development workflow. I proposed migrating to Vite to solve this, but it wasn't straightforward since Vite is designed for Vue 3 by default.
+My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
 
-I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
+I researched various approaches and proposed migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
+
+The result was impressive - we reduced build times from 9 minutes to under 3 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
 
 ## English Level
 
@@ -145,8 +151,7 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-- I would describe my English as fluent at a professional level. I use it daily for technical communication, documentation, and meetings, so I feel confident working in English.
-- My English is at a B2 level. I can communicate fluently in professional settings, especially in technical discussions and teamwork.
+I would describe my English as fluent at a professional level. I use it daily for technical communication, documentation, and meetings, so I feel confident working in English.
 
 ## German Level
 
@@ -158,9 +163,7 @@ I had to tackle several technical challenges: first, configuring the @vitejs/plu
 
 ### Answer
 
-Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. My goal is to reach a higher level so I can integrate better into daily life and the workplace.
-
-I'm currently at B1 level and attending intensive courses. While English is fine for work, I want to keep improving my German to communicate more naturally with colleagues and clients.
+Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. I want to keep improving my German to communicate more naturally with colleagues and clients.
 
 ## Available Date
 
