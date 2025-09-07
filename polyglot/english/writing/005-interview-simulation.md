@@ -23,6 +23,28 @@ I'm currently advancing my German skills through intensive courses to B1 level, 
 
 I look forward to talking about how I can support your team.
 
+## Reasons for coming to Germany
+
+### Question
+
+Direct inquiry:
+- Why did you decide to come to Germany for work?
+- What motivated you to seek opportunities in Germany specifically?
+- Why Germany over other countries?
+
+Indirect inquiry:
+- What attracts you about working in the German tech industry?
+- How do you see your career developing in Germany?
+- What's your long-term plan in Germany?
+
+### Answer
+
+Germany has always appealed to me for several professional reasons. First, the German tech industry's reputation for engineering excellence and quality-focused development really resonates with my approach to software development. I appreciate the emphasis on building robust, well-architected solutions rather than rushing to market.
+
+Additionally, Germany offers a unique combination of established enterprises and innovative startups, which means diverse project opportunities and the chance to work with cutting-edge technologies. The work-life balance culture here also allows for sustainable career growth.
+
+From a personal development perspective, working in Germany challenges me to grow professionally in an international environment while contributing my unique perspective and experience to diverse teams.
+
 ## Reason for application
 
 ### Question
@@ -119,7 +141,3 @@ One of the most challenging problems I faced was at Toyou Feiji Electronics when
 As our codebase grew, the Webpack build process was taking over 10 minutes, severely impacting our development workflow. I proposed migrating to Vite to solve this, but it wasn't straightforward since Vite is designed for Vue 3 by default.
 
 I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
-
----
-
-为什么对我们公司/这个职位感兴趣？/ 你为什么考虑来德国工作？
