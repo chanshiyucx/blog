@@ -13,14 +13,41 @@ Hello Xin, it's great to meet you! I've reviewed your resume, and I'm impressed 
 
 ### Answer
 
-Thank you for the warm welcome! I'm Xin Chen, a Full-Stack Developer originally from China, currently based in Munich with an Opportunity Card work permit.
+Thank you for the warm welcome! I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
-I have over 8 years of experience in web development, my expertise is primarily in frontend development. I've worked extensively with React, Vue.js, and TypeScript, progressing from junior to senior roles.
+I have over 8 years of experience in web development, mainly focusing on frontend with React, Vue.js, and TypeScript. Over the years, I grew from junior to senior roles, building scalable and performant web applications.
 
-I also have solid backend experience with Spring Boot, which gives me a full-stack perspective when collaborating with backend teams.
+I also have hands-on experience with Spring Boot on the backend, which makes it easy for me to work closely with full-stack teams.
 
-Currently, I'm advancing my German skills through intensive courses up to B1 level, and I'm highly motivated to contribute to innovative projects in a German company where I can grow further as a web specialist.
+I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects [at 4Soft] / [in a German company] where I can grow further as a web specialist. I look forward to talking about how I can support your team.
 
+## Reason for application
+
+### Question
+
+Direct inquiry:
+- Why are you interested in 4Soft specifically?
+- What attracts you to this Frontend Developer position?
+- Why do you want to work for our company?
+
+Indirect inquiry:
+- What do you know about our company?
+- How do you see yourself fitting into our team?
+- What aspects of this role excite you most?
+
+### Answer
+
+I'm genuinely excited about [4Soft] for several reasons. First, your company's mission to ['combine innovation with quality'] and create ['solid and high-quality software solutions using innovative techniques and methods,'] as stated on your About Us page, really resonates with my approach to development. I appreciate how you secure Germany's industrial strength by making companies more agile and competitive—that aligns perfectly with my motivation to contribute to innovative projects in Germany.
+
+From a technical perspective, this role is a perfect match. My experience with React, Vue.js, and TypeScript aligns directly with your requirements. Your emphasis on performance, security, and clean code matches my own development standards.
+
+%% I'm genuinely excited about 4Soft for several reasons. First, your company's mission to combine innovation with quality really resonates with my approach to development. I've read about how you encourage trying new things on the official website - that's exactly the kind of environment where I do my best work.
+
+I read about the company's philosophy on the official website about being able to develop freely and choose frameworks, while working with talented colleagues who share knowledge. That collaborative, growth-oriented culture is exactly what I'm looking for as I continue developing my career in Germany. %%
+
+---
+---
+---
 ---
 
 ## Recent Work Experience
@@ -74,3 +101,5 @@ As our codebase grew, the Webpack build process was taking over 10 minutes, seve
 I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
 
 ---
+
+为什么对我们公司/这个职位感兴趣？/ 你为什么考虑来德国工作？
