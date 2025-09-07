@@ -69,6 +69,25 @@ What really drew me in was your culture of encouraging innovation and collaborat
 
 I'd love to hear more about your current projects!
 
+## Work Experience
+
+### Question
+
+- Can you walk me through your previous work experience?
+- What kind of projects did you mainly work on in your last role?
+- Which achievements or responsibilities are you most proud of in your past jobs?
+- What were your key contributions as a Senior Frontend Developer at Toyou Feiji Electronics?  
+
+### Answer
+
+I worked as a Senior Frontend Developer with full-stack responsibilities at Toyou Feiji Electronics last two year. My main project was the redesign of a storage management platform. I led the frontend architecture with Vue.js and TypeScript, migrated the build system to Vite, which improved build times by over 60%, and introduced ESLint standards that resolved more than 300 code issues. I also designed an AI chat tool integrated with Ragflow to support customer service.
+
+Before that, at Blitz Interactive, I built a proprietary instant messaging system with a Spring Boot backend and a chat interface with media support. I also containerized the system with Docker for scalability.
+
+And earlier in my career at Jinji Network Technology, I focused on React Native and React projects, such as building a cross-platform mobile app and an admin frontend with file upload and data visualization.
+
+Overall, my projects gave me strong experience in building scalable frontend systems, improving performance, and collaborating across full-stack teams.
+
 ## Example for clean code standards
 
 ### Question
@@ -83,28 +102,7 @@ To improve performance and user experience, I optimized the upload component by 
 
 At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
 
----
-
-##
-
----
----
----
----
-
-## Recent Work Experience
-
-### Question
-
-That's a solid background, Xin—it's clear you've built up a lot of expertise over the years. Moving on, I notice your most recent role was as a Senior Frontend Developer at Toyou Feiji Electronics in China. Could you walk me through some of the key projects you led there and what you learned from them?
-
-### Answer
-
-Absolutely, I'd be happy to dive into that. At Toyou Feiji Electronics from August 2022 to October 2024, I led the redesign of our storage management platform using Vue.js and TypeScript, implementing a modern frontend-backend separation which improved efficiency. I also developed Redfish-compliant RESTful APIs and refactored over 100 interfaces for better cluster management. Another highlight was creating an AI chat tool integrated with Ragflow to boost customer support. Through these, I learned the importance of scalable architecture and team collaboration, especially while mentoring juniors and optimizing workflows—like migrating to Vite for 60% faster builds and integrating Tailwind CSS.
-
----
-
-## Technical Expertise: Frontend Frameworks
+## Example of choosing vue or react
 
 ### Question
 
@@ -113,8 +111,6 @@ Impressive work on those projects, Xin—it sounds like you really drove some me
 ### Answer
 
 Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
-
----
 
 ## Backend Development and Full-Stack Capabilities
 
@@ -125,8 +121,6 @@ That's a great example of framework selection, Xin. I can see you have solid fro
 ### Answer
 
 While my primary strength is frontend development, I do have hands-on backend experience, particularly with Spring Boot. At Blitz Interactive Entertainment, I built a complete instant messaging system from scratch using Spring Boot, which handled real-time communication, business inquiries, and feedback features. This included developing RESTful APIs, implementing WebSocket connections for real-time messaging, and creating an analytics dashboard to visualize session data. I also worked with MySQL for data persistence and containerized the entire system using Docker for scalable deployment. More recently at Toyou Feiji Electronics, I developed Redfish-compliant APIs for storage device management. I'm comfortable working with databases, API design, and server-side logic, though I'd say my backend skills are intermediate level compared to my advanced frontend expertise.
-
----
 
 ## Problem-Solving and Technical Challenges
 
@@ -141,3 +135,38 @@ One of the most challenging problems I faced was at Toyou Feiji Electronics when
 As our codebase grew, the Webpack build process was taking over 10 minutes, severely impacting our development workflow. I proposed migrating to Vite to solve this, but it wasn't straightforward since Vite is designed for Vue 3 by default.
 
 I had to tackle several technical challenges: first, configuring the @vitejs/plugin-vue2 to make Vue 2.7 compatible with Vite; second, replacing incompatible Webpack loaders with Vite plugins; and third, updating syntax differences like environment variables and import statements throughout the codebase. The most critical part was coordinating extensive stability testing with our QA team to ensure no regressions were introduced. After weeks of careful migration and testing, we achieved over 60% faster build times - from 9 minutes down to under 3 minutes. This experience taught me the importance of thorough planning when upgrading core infrastructure and the value of close collaboration with the testing team.
+
+## Available Date
+
+### Question
+
+- When would you be available to start?
+- What is your earliest possible starting date?
+
+### Answer
+
+- I am available to start immediately.
+- I can start right away, but I'm also flexible if you prefer a later date.
+
+## Visa
+
+### Question
+
+- Do you already have a valid work permit for Germany, or would you need sponsorship?
+- What is your current visa status?
+
+### Answer
+
+- I already hold an Opportunity Card work permit, which allows me to work in Germany without company sponsorship.
+- I'm currently based in Munich with an Opportunity Card, so I am fully authorized to work in Germany.
+
+## Salary
+
+### Question
+
+- What are your salary expectations?
+- Do you have a salary range in mind?
+
+### Answer
+
+I'm open to discussing the salary. I would expect something in the range of €55,000 to €65,000 per year, but I'm flexible depending on the overall package and responsibilities.
