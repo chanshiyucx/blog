@@ -27,12 +27,8 @@ I look forward to talking about how I can support your team.
 
 ### Question
 
-Direct inquiry:
 - Why did you decide to come to Germany for work?
 - What motivated you to seek opportunities in Germany specifically?
-- Why Germany over other countries?
-
-Indirect inquiry:
 - What attracts you about working in the German tech industry?
 - How do you see your career developing in Germany?
 - What's your long-term plan in Germany?
