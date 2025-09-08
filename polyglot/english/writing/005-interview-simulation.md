@@ -31,15 +31,16 @@ I look forward to talking about how I can support your team.
 - What motivated you to seek opportunities in Germany specifically?
 - What attracts you about working in the German tech industry?
 - How do you see your career developing in Germany?
-- What's your long-term plan in Germany?
 
 ### Answer
 
-Germany has always appealed to me for several professional reasons. First, the German tech industry's reputation for engineering excellence and quality-focused development really resonates with my approach to software development. I appreciate the emphasis on building robust, well-architected solutions rather than rushing to market.
+There are a few reasons actually.
 
-Additionally, Germany offers a unique combination of established enterprises and innovative startups, which means diverse project opportunities and the chance to work with cutting-edge technologies. The work-life balance culture here also allows for sustainable career growth.
+Personally, my girlfriend is doing her PhD at LMU and has been here for four years, so moving here made sense for us personally.
 
-From a personal development perspective, working in Germany challenges me to grow professionally in an international environment while contributing my unique perspective and experience to diverse teams.
+Professionally, I've always been interested in the German tech scene. Munich has a really strong IT industry, and I like the way German companies approach engineering - there's a focus on quality and sustainable practices that appeals to me. Plus, the work-life balance here is something I really value.
+
+I'm also excited about working with international teams and contributing to innovative projects. With my background in web development, I feel ready for new challenges in a different market.
 
 ## Reason for Application
 
