@@ -17,9 +17,9 @@ I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opp
 
 I have over 8 years of experience in web development, mainly focusing on frontend with React, Vue.js, and TypeScript. Over the years, I grew from junior to senior roles, building scalable and performant web applications.
 
-I also have hands-on experience with Spring Boot on the backend, which makes it easy for me to work closely with full-stack teams.
+I also have hands-on experience with Spring Boot on the backend, which makes it easy for me to work closely with backend teams.
 
-I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects [at 4Soft] / [in a German company] where I can grow further as a web specialist.
+I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects in a German company where I can grow further as a web specialist.
 
 I look forward to talking about how I can support your team.
 
