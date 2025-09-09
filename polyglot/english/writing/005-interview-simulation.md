@@ -51,7 +51,6 @@ I'm also excited about working with international teams and contributing to inno
 - What made you apply to our company?
 - Why do you want to work for our company?
 - How do you see yourself fitting into our team?
-- Why this role, and why our company specifically?
 
 ### Answer
 
@@ -59,7 +58,7 @@ That's a great question. This role at Sungrow really appeals to me for a few key
 
 First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
-Second, the role is a perfect match for my experience. The role involves front-end architecture design, performance optimization, and working with technologies like Vue and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies—Vue.js and TypeScript. With my 8+ years of experience, I'm confident I can handle the technical challenges.
+Second, the role is a perfect match for my experience. The role involves front-end architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
 
 So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
