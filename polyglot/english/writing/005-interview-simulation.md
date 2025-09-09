@@ -44,6 +44,9 @@ I'm also excited about working with international teams and contributing to inno
 
 ## Reason for Application
 
+
+
+
 ### Question
 
 - Why are you interested in this position?
@@ -55,15 +58,13 @@ I'm also excited about working with international teams and contributing to inno
 
 ### Answer
 
-That's a great question. This role at Sungrow really stood out to me for a few key reasons.
+That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
-First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is something I'm passionate about.
+First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
-Second, the role is a perfect match for my experience. The job description mentions leading front-end architecture design, performance optimization, and working with technologies like Vue and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies—Vue.js and TypeScript. I have solid experience in performance optimization and building scalable applications.
+Second, the role is a perfect match for my experience. The role involves front-end architecture design, performance optimization, and working with technologies like Vue and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies—Vue.js and TypeScript. With my 8+ years of experience, I'm confident I can handle the technical challenges.
 
-Finally, I was very excited to read that this is a new subsidiary and you're looking for 'pioneers'. With my 8+ years of experience, I'm confident I can not only handle the technical challenges but also help build a strong foundation for the new team here in Munich.
-
-So, the combination of the company's mission, the alignment with my technical skills, and the chance to be part of a foundational team makes this a uniquely exciting opportunity for me.
+So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
 ## Work Experience
 
