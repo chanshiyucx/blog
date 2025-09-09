@@ -15,11 +15,11 @@ tags:
 
 I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
-I have over 8 years of experience in web development, mainly focusing on frontend with React, Vue.js, and TypeScript. Over the years, I grew from junior to senior roles, building scalable and performant web applications.
+I have over 8 years of experience in web development, mainly focusing on the frontend with technologies like React, Vue.js, and TypeScript. Over the years, I have grown from junior to senior roles, building scalable and high-performance web applications.
 
-I also have hands-on experience with Spring Boot on the backend, which makes it easy for me to work closely with backend teams.
+I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
-I'm currently advancing my German skills through intensive courses to B1 level, and I'm highly motivated to contribute to innovative projects in a German company where I can grow further as a web specialist.
+I've completed intensive German courses and reached B1 level. I'm motivated to join a German company where I can contribute to innovative projects and continue growing as a web developer.
 
 I look forward to talking about how I can support your team.
 
@@ -34,37 +34,36 @@ I look forward to talking about how I can support your team.
 
 ### Answer
 
-There are a few reasons actually.
+Well, there are a couple of main reasons.
 
-Personally, my girlfriend is doing her PhD at LMU and has been here for four years, so moving here made sense for us personally.
+On the personal side, my girlfriend is doing her PhD at LMU and has been here for four years. So I moved here to be with her and start our life together.
 
-Professionally, I've always been interested in the German tech scene. Munich has a really strong IT industry, and I like the way German companies approach engineering - there's a focus on quality and sustainable practices that appeals to me. Plus, the work-life balance here is something I really value.
+Professionally, I've always been interested in the German tech scene. Munich is one of Europe's major IT hubs with a highly developed IT industry. This gives me much better opportunities to find the right position that matches my skills and experience. I really like the work culture of German companies, as they focus on quality and value work-life balance, which is important to me too.
 
-I'm also excited about working with international teams and contributing to innovative projects. With my background in web development, I feel ready for new challenges in a different market.
+I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
 
 ## Reason for Application
 
 ### Question
 
-Direct inquiry:
-- Why are you interested in 4Soft specifically?
+- Why are you interested in this position?
 - What attracts you to this Frontend Developer position?
+- What made you apply to our company?
 - Why do you want to work for our company?
-
-Indirect inquiry:
-- What do you know about our company?
 - How do you see yourself fitting into our team?
-- What aspects of this role excite you most?
+- Why this role, and why our company specifically?
 
 ### Answer
 
-I'm genuinely excited about 4Soft for several reasons. Your mission to combine innovation with quality really resonates with my development approach - I appreciate how you help companies become more agile and competitive through solid software solutions.
+That's a great question. This role at Sungrow really stood out to me for a few key reasons.
 
-From a technical perspective, this is a perfect match. My React, Vue.js, and TypeScript experience aligns directly with your requirements, and **your emphasis on performance and clean code matches my own standards**.
+First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is something I'm passionate about.
 
-What really drew me in was your culture of encouraging innovation and collaborative teamwork. Dennis Bock's testimonial about developing freely and sharing knowledge with talented colleagues is exactly the environment where I thrive. Combined with the flexibility and Munich location, this feels like the ideal next step in my career.
+Second, the role is a perfect match for my experience. The job description mentions leading front-end architecture design, performance optimization, and working with technologies like Vue and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies—Vue.js and TypeScript. I have solid experience in performance optimization and building scalable applications.
 
-I'd love to hear more about your current projects!
+Finally, I was very excited to read that this is a new subsidiary and you're looking for 'pioneers'. With my 8+ years of experience, I'm confident I can not only handle the technical challenges but also help build a strong foundation for the new team here in Munich.
+
+So, the combination of the company's mission, the alignment with my technical skills, and the chance to be part of a foundational team makes this a uniquely exciting opportunity for me.
 
 ## Work Experience
 
