@@ -36,7 +36,7 @@ I look forward to talking about how I can support your team.
 
 Well, there are a couple of main reasons.
 
-On the personal side, my girlfriend is doing her PhD at LMU and has been here for four years. So I moved here to be with her and start our life together.
+On the personal side, my girlfriend is doing her PhD at LMU in Munich and has been here for four years. So I moved here to be with her and start our life together.
 
 Professionally, I've always been interested in the German tech scene. Munich is one of Europe's major IT hubs with a highly developed IT industry. This gives me much better opportunities to find the right position that matches my skills and experience. I really like the work culture of German companies, as they focus on quality and value work-life balance, which is important to me too.
 
