@@ -50,7 +50,19 @@ Second, the role is a perfect match for my experience. The role involves front-e
 
 So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
----
+## Impressions of Munich
+
+> How do you like Munich so far?  
+> What's your impression of Munich?  
+> How are you finding life in Munich?
+
+I really love Munich! It's been a great experience living here so far.
+
+The city has such a nice balance. The public transport system is really convenient, so I can easily get anywhere I need to go.
+
+I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
+
+Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
 
 ## Work Experience
 
