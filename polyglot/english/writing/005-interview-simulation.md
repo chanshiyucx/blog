@@ -7,11 +7,7 @@ tags:
 
 ## Self Introduction
 
-### Question
-
-- Tell me a bit about yourself and your professional journey so far.  
-
-### Answer
+> - Tell me a bit about yourself and your professional journey so far.  
 
 I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
@@ -25,14 +21,10 @@ I look forward to talking about how I can support your team.
 
 ## Reasons for Coming to Germany
 
-### Question
-
-- Why did you decide to come to Germany for work?
-- What motivated you to seek opportunities in Germany specifically?
-- What attracts you about working in the German tech industry?
-- How do you see your career developing in Germany?
-
-### Answer
+> - Why did you decide to come to Germany for work?
+> - What motivated you to seek opportunities in Germany specifically?
+> - What attracts you about working in the German tech industry?
+> - How do you see your career developing in Germany?
 
 Well, there are a couple of main reasons.
 
@@ -44,15 +36,11 @@ I'm also excited about working with international teams and contributing to inno
 
 ## Reason for Application
 
-### Question
-
-- Why are you interested in this position?
-- What attracts you to this Frontend Developer position?
-- What made you apply to our company?
-- Why do you want to work for our company?
-- How do you see yourself fitting into our team?
-
-### Answer
+> - Why are you interested in this position?
+> - What attracts you to this Frontend Developer position?
+> - What made you apply to our company?
+> - Why do you want to work for our company?
+> - How do you see yourself fitting into our team?
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
@@ -184,13 +172,11 @@ I already hold an Opportunity Card work permit, so I'm authorized to work in Ger
 
 ## Salary
 
-### Question
+> - What are your salary expectations?
+> - Do you have a salary range in mind?
 
-- What are your salary expectations?
-- Do you have a salary range in mind?
+Based on my experience and my research of the Munich market, I would expect something in the €60,000 to €70,000 range. But I'm open to discussion depending on the overall package - things like benefits, growth opportunities, and the specific responsibilities of the role
 
-### Answer
+> - Is this range based on your current salary, or on market research?
 
-Based on my experience and research of the Munich market, I would expect something in the €60,000 to €70,000 range, but I'm flexible depending on the overall package, growth opportunities, and specific responsibilities.
-
-I'm more interested in the right opportunity and team fit, so there's definitely room for discussion.
+It's mainly based on my research of the Munich market and my 8 years of experience in web development.
