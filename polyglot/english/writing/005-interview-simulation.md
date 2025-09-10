@@ -169,7 +169,8 @@ I am available to start immediately.
 
 ## Visa
 
-> Do you already have a valid work permit for Germany, or would you need sponsorship?  
+> Do you already have a valid work permit for Germany?  
+> Would you need sponsorship?  
 > What is your current visa status?
 
 I already hold an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
@@ -192,13 +193,11 @@ It's mainly based on my research of the Munich market and my 8 years of experien
 
 > If we offered €55k, would you consider it?
 
-If the offer was around €55k, I'd definitely want to look at the full package first. Benefits, career growth, and responsibilities matter a lot to me as well.
-
 €55k is a bit below my target range, but I'd be open to discussing it if the role offers strong growth opportunities and is a great fit for my skills.
 
 > What's the minimum salary you would accept?
 
-Based on the market in Munich and my background, I believe €60 is a fair salary, but I'm open to a conversation about the full package.
+Based on the market in Munich and my background, I believe €60 is a fair salary.
 
 > What is your current salary?
 
