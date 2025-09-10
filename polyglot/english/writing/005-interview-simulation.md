@@ -150,33 +150,44 @@ Yes, I'm actively learning German. I've completed intensive courses up to B1 lev
 
 ## Available Date
 
-### Question
-
-- When would you be available to start?
-- What is your earliest possible starting date?
-
-### Answer
+> When would you be available to start?  
+> What is your earliest possible starting date?
 
 I am available to start immediately.
 
 ## Visa
 
-### Question
-
-- Do you already have a valid work permit for Germany, or would you need sponsorship?
-- What is your current visa status?
-
-### Answer
+> Do you already have a valid work permit for Germany, or would you need sponsorship?  
+> What is your current visa status?
 
 I already hold an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
 
+> How long is your Opportunity Card valid for?
+
+It's valid until November 2025.
+
 ## Salary
 
-> - What are your salary expectations?
-> - Do you have a salary range in mind?
+> What are your salary expectations?  
+> What salary do you envision?  
+> Do you have a salary range in mind?  
 
-Based on my experience and my research of the Munich market, I would expect something in the €60,000 to €70,000 range. But I'm open to discussion depending on the overall package - things like benefits, growth opportunities, and the specific responsibilities of the role
+Based on my experience and my research of the Munich market, my salary expectation is in the €60k to €70k range. But I'm open to discussion depending on the overall package, including benefits, growth opportunities, and the specific responsibilities of the role.
 
-> - Is this range based on your current salary, or on market research?
+> Is this range based on your current salary, or on market research?
 
 It's mainly based on my research of the Munich market and my 8 years of experience in web development.
+
+> If we offered €55k, would you consider it?
+
+If the offer was around €55k, I'd definitely want to look at the full package first. Benefits, career growth, and responsibilities matter a lot to me as well.
+
+€55k is a bit below my target range, but I'd be open to discussing it if the role offers strong growth opportunities and is a great fit for my skills.
+
+> What's the minimum salary you would accept?
+
+Based on the market in Munich and my background, I believe €60 is a fair salary, but I'm open to a conversation about the full package.
+
+> What is your current salary?
+
+I prefer to focus on the market value of the role here in Munich and the skills I bring, rather than my current salary. My expectation is based on my experience and the Munich market, not directly on my current salary.
