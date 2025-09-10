@@ -192,3 +192,5 @@ I already hold an Opportunity Card work permit, so I'm authorized to work in Ger
 ### Answer
 
 Based on my experience and research of the Munich market, I would expect something in the €60,000 to €70,000 range, but I'm flexible depending on the overall package, growth opportunities, and specific responsibilities.
+
+I'm more interested in the right opportunity and team fit, so there's definitely room for discussion.
