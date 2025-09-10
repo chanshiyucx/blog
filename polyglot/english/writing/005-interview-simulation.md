@@ -7,7 +7,7 @@ tags:
 
 ## Self Introduction
 
-> - Tell me a bit about yourself and your professional journey so far.  
+> Tell me a bit about yourself and your professional journey so far.  
 
 I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
@@ -21,10 +21,10 @@ I look forward to talking about how I can support your team.
 
 ## Reasons for Coming to Germany
 
-> - Why did you decide to come to Germany for work?
-> - What motivated you to seek opportunities in Germany specifically?
-> - What attracts you about working in the German tech industry?
-> - How do you see your career developing in Germany?
+> Why did you decide to come to Germany for work?  
+> What motivated you to seek opportunities in Germany specifically?  
+> What attracts you about working in the German tech industry?  
+> How do you see your career developing in Germany?
 
 Well, there are a couple of main reasons.
 
@@ -36,11 +36,11 @@ I'm also excited about working with international teams and contributing to inno
 
 ## Reason for Application
 
-> - Why are you interested in this position?
-> - What attracts you to this Frontend Developer position?
-> - What made you apply to our company?
-> - Why do you want to work for our company?
-> - How do you see yourself fitting into our team?
+> Why are you interested in this position?  
+> What attracts you to this Frontend Developer position?  
+> What made you apply to our company?  
+> Why do you want to work for our company?  
+> How do you see yourself fitting into our team?
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
