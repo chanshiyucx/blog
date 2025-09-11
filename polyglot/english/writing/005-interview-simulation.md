@@ -142,19 +142,19 @@ The result was impressive - we reduced build times from 9 minutes to under 3 min
 > How would you describe your English skills?  
 > Are you comfortable working in English on a daily basis?
 
-I'm fluent in professional English and use it every day at work. I can handle technical discussions, documentation, and meetings in English, so I feel very confident using it.
+I'm fluent in professional English and use it daily at work.
+
+For example, I've written documentation for my projects in English. I'm confident with both spoken communication and technical discussions, and I'm always working to improve my English. So, I would be very comfortable using English every day in this role.
 
 ## German Level
 
-### Question
+> Are you learning German?  
+> What is your current level of German?  
+> Do you plan to improve your German skills while working here?
 
-- Are you learning German?
-- What is your current level of German?
-- Do you plan to improve your German skills while working here?
+Yes, I'm actively learning German. I've completed intensive courses up to B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
 
-### Answer
-
-Yes, I'm actively learning German. I've completed intensive courses up to B1 level and I'm continuing to improve. I want to keep improving my German to communicate more naturally with colleagues and clients.
+I'm excited to use German in the workplace, like in team chats, and plan to keep improving by taking classes. I believe working in a German-speaking environment will actually accelerate my learning process.
 
 ## Available Date
 
