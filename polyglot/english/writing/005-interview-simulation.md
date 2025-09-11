@@ -139,14 +139,10 @@ The result was impressive - we reduced build times from 9 minutes to under 3 min
 
 ## English Level
 
-### Question
+> How would you describe your English skills?  
+> Are you comfortable working in English on a daily basis?
 
-- How would you describe your English skills?
-- Are you comfortable working in English on a daily basis?
-
-### Answer
-
-I would describe my English as fluent at a professional level. I use it daily for technical communication, documentation, and meetings, so I feel confident working in English.
+I'm fluent in professional English and use it every day at work. I can handle technical discussions, documentation, and meetings in English, so I feel very confident using it.
 
 ## German Level
 
@@ -173,7 +169,7 @@ I am available to start immediately.
 > Would you need sponsorship?  
 > What is your current visa status?
 
-I already hold an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
+I already have an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
 
 > How long is your Opportunity Card valid for?
 
