@@ -75,18 +75,14 @@ Overall, Munich feels like a great place for both my career and personal life. I
 > How do you adapt to different working cultures?  
 > Have you had experience working with German companies or European clients before?  
 
-This would be my first international work experience, and that's one of the reasons I find it so exciting.
+This would be my first international work experience with a German or European company, and that's one of the reasons I find it so exciting.
 
-I'm really eager to contribute my technical skills in a multicultural environment and to learn from different perspectives. I've always adapted quickly, so I feel confident about working with global teams and adjusting to different cultures.
+I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
 
-### Question
-
-- Can you walk me through your previous work experience?
-- What kind of projects did you mainly work on in your last role?
-- Which achievements or responsibilities are you most proud of in your past jobs?
-- What were your key contributions as a Senior Frontend Developer at Toyou Feiji Electronics?  
-
-### Answer
+> Can you walk me through your previous work experience?  
+> What kind of projects did you mainly work on in your last role?  
+> Which achievements or responsibilities are you most proud of in your past jobs?  
+> What were your key contributions as a Senior Frontend Developer at Toyou Feiji Electronics?  
 
 I worked as a Senior Frontend Developer with full-stack responsibilities at Toyou Feiji Electronics last two year. My main project was the redesign of a storage management platform. I led the frontend architecture with Vue.js and TypeScript, migrated the build system to Vite, which improved build times by over 60%, and introduced ESLint standards that resolved more than 300 code issues. I also designed an AI chat tool integrated with Ragflow to support customer service.
 
