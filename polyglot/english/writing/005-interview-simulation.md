@@ -66,6 +66,19 @@ Overall, Munich feels like a great place for both my career and personal life. I
 
 ## Work Experience
 
+> Do you have any international work experience?  
+> Have you worked abroad before?  
+> How comfortable are you working in a multicultural environment?  
+> Tell me about your experience working with global teams.  
+> Have you ever worked with remote teams across different time zones?  
+> What challenges do you anticipate in working in an international team?  
+> How do you adapt to different working cultures?  
+> Have you had experience working with German companies or European clients before?  
+
+This would be my first international work experience, and that's one of the reasons I find it so exciting.
+
+I'm really eager to contribute my technical skills in a multicultural environment and to learn from different perspectives. I've always adapted quickly, so I feel confident about working with global teams and adjusting to different cultures.
+
 ### Question
 
 - Can you walk me through your previous work experience?
@@ -152,9 +165,7 @@ For example, I've written documentation for my projects in English. I'm confiden
 > What is your current level of German?  
 > Do you plan to improve your German skills while working here?
 
-Yes, I'm actively learning German. I've completed intensive courses up to B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
-
-I'm excited to use German in the workplace, like in team chats, and plan to keep improving by taking classes. I believe working in a German-speaking environment will actually accelerate my learning process.
+Yes, I'm actively learning German. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
 
 ## Available Date
 
