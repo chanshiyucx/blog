@@ -37,9 +37,9 @@ I'm also excited about working with international teams and contributing to inno
 ## Reason for Application
 
 > Why are you interested in this position?  
+> Why do you want to work for our company?  
 > What attracts you to this Frontend Developer position?  
 > What made you apply to our company?  
-> Why do you want to work for our company?  
 > How do you see yourself fitting into our team?
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
