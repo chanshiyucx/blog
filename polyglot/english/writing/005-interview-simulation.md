@@ -58,7 +58,7 @@ So, the combination of meaningful work and perfect technical fit makes this role
 
 I really love Munich! It's been a great experience living here so far.
 
-The city has such a nice balance. The public transport system is really convenient, so I can easily get anywhere I need to go.
+The city has such a nice balance. The climate here is very pleasant, and I actually like the weather a lot. The public transport system is really convenient, so I can easily get anywhere I need to go.  
 
 I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
 
@@ -169,7 +169,12 @@ I am available to start immediately.
 > Would you need sponsorship?  
 > What is your current visa status?
 
-I already have an Opportunity Card work permit, so I'm authorized to work in Germany without requiring sponsorship.
+I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into a regular work visa.
+
+> When did you move to Germany?  
+> How long have you been in Germany?  
+
+I moved to Germany in November 2024 and have been here since then.
 
 > How long is your Opportunity Card valid for?
 
