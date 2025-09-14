@@ -43,9 +43,12 @@ I'm also excited about working with international teams and contributing to inno
 I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future here together.
 
 > What are your career goals in Germany?  
-> How does this role fit into your long-term plans?
+> How does this role fit into your long-term plans?  
+> Where do you see yourself in five years?
 
-My primary career goal is to become a senior technical expert in Web development. This role is perfect for my background and career goals, and I see it as a great opportunity to grow professionally in Germany.
+My career goal is to become a senior technical expert, eventually growing into technical leadership roles like tech lead or solution architect. This position aligns perfectly with that path by offering complex technical challenges in a strong tech environment.
+
+In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers. Germany's innovative tech scene makes it the ideal place to achieve these goals.
 
 > What field is your girlfriend studying?
 
@@ -159,7 +162,7 @@ I prefer to focus on the market value of the role here in Munich and the skills 
 
 This would be my first international work experience with a German or European company.
 
-I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
+I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments. I feel confident working with global teams and growing in this role.
 
 > Can you walk me through your resume?  
 > Can you tell us about your previous work experience?  
@@ -170,7 +173,7 @@ Of course. I'm a Full-Stack Developer with over 8 years of experience, specializ
 
 My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
 
-From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a proprietary instant messaging system. This was where I deepened my backend skills with Spring Boot.
+From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a instant messaging system. This was where I deepened my backend skills with Spring Boot.
 
 In my most recent role as a Senior Frontend Developer at Toyou Feiji, I took on a leadership role. I led the technical architecture of the storage management platform redesign using Vue.js and TypeScript, improving system scalability and maintainability. I also focused on optimizing the developer workflow, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
 
@@ -228,3 +231,12 @@ My task was to find a solution that would significantly improve build performanc
 I researched various approaches and determined migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
 
 The result was impressive - we reduced build times from 10 minutes to under 4 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
+
+## Questions
+
+> Do you have any questions for us?  
+> What would you like to know about the company/role/team?  
+> Is there anything else you'd like to ask?
+
+- What does a typical day look like for this role?
+- Could you tell me about the team structure and how collaboration usually works?
