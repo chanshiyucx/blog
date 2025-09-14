@@ -173,7 +173,7 @@ Of course. I'm a Full-Stack Developer with over 8 years of experience, specializ
 
 My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
 
-From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a instant messaging system. This was where I deepened my backend skills with Spring Boot.
+From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a instant messaging system. This was where I gained backend experience with Spring Boot.
 
 In my most recent role as a Senior Frontend Developer at Toyou Feiji, I took on a leadership role. I led the technical architecture of the storage management platform redesign using Vue.js and TypeScript, improving system scalability and maintainability. I also focused on optimizing the developer workflow, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
 
