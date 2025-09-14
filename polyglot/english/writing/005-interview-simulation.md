@@ -169,13 +169,13 @@ I'm eager to contribute my technical skills in a multicultural environment. I ad
 > Tell me a little bit about your professional background.  
 > Could you give me an overview of your work experience?
 
-Of course. I'm a Full-Stack Developer with over 8 years of experience, specializing in building scalable and high-performance web applications, with a strong focus on the frontend.
+Of course. As a Full-Stack Developer with over 8 years of experience, I specialize in crafting scalable frontend solutions.
 
-My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
+My career began at Jinji Network Technology, where I built a solid foundation in web development using React and also gained my first experience in cross-platform mobile development with React Native.
 
 From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a instant messaging system. This was where I gained backend experience with Spring Boot.
 
-In my most recent role as a Senior Frontend Developer at Toyou Feiji, I took on a leadership role. I led the technical architecture of the storage management platform redesign using Vue.js and TypeScript, improving system scalability and maintainability. I also focused on optimizing the developer workflow, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
+In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I served as a Senior Frontend Developer and took on a leadership role. I led the technical architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I optimized the developer workflow on our distributed storage platform by migrating from Webpack to Vite, achieving over 60% faster build times. I actively mentored three junior developers in modern frontend practices.
 
 Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
