@@ -185,11 +185,11 @@ Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Devel
 
 First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
-Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which improved our code quality.
 
 And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
-Finally, on top of all that, a key part of my role was mentoring. I was formally responsible for three junior developers, guiding their technical growth and leading our code review process to build a strong culture of quality.
+Finally, I mentored three junior developers, overseeing their technical development and establishing a standard code review process that significantly improved our team's code quality.
 
 > What were your key contributions at Blitz Interactive?
 
