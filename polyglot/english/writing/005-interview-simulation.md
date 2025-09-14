@@ -34,6 +34,16 @@ Professionally, I've always been interested in the German tech industry. Munich 
 
 I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
 
+> What are your long-term plans in Germany?  
+> Are you planning to stay in Germany long-term?  
+> How long are you planning to work in Germany?  
+> Is this a temporary move or are you looking to settle here?  
+> What's your commitment to staying with the company?  
+> What are your career goals in Germany?  
+> How does this role fit into your long-term plans?
+
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future here together.
+
 ## Reason for Application
 
 > Why are you interested in this position?  
