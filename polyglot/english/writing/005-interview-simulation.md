@@ -189,7 +189,7 @@ Next, on our distributed storage platform, I focused on optimizing the developer
 
 And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
-Finally, I mentored three junior developers, overseeing their technical development and establishing a standard code review process that significantly improved our team's code quality.
+Finally, I mentored three junior developers and established a standard code review process that significantly improved our team's code quality.
 
 > What were your key contributions at Blitz Interactive?
 
