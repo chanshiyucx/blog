@@ -160,7 +160,7 @@ I prefer to focus on the market value of the role here in Munich and the skills 
 > How do you adapt to different working cultures?  
 > Have you had experience working with German companies or European clients before?  
 
-This would be my first international work experience with a German or European company.
+This would be my first international work experience with a German company.
 
 I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments. I feel confident working with global teams and growing in this role.
 
@@ -177,15 +177,15 @@ From there, I joined Blitz Interactive Entertainment, I took on more responsibil
 
 In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I led the architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I migrated our distributed platform from Webpack to Vite, achieving over 60% faster build times. I actively mentored three junior developers in modern frontend practices.
 
-Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
+Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a senior frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
 > What were your key contributions at Toyou Feiji?  
 
 Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. My key contributions fall into three main areas.
 
-First, my primary project was leading the architectural redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain and scale. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
+First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
-Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I drove the migration from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
 
 And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
@@ -239,4 +239,5 @@ The result was impressive - we reduced build times from 10 minutes to under 4 mi
 > Is there anything else you'd like to ask?
 
 - What does a typical day look like for this role?
+- Will this role involve collaboration with the team in China?
 - Could you tell me about the team structure and how collaboration usually works?
