@@ -161,27 +161,45 @@ This would be my first international work experience with a German or European c
 
 I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
 
+> Can you walk me through your resume?  
 > Can you tell us about your previous work experience?  
+> Tell me a little bit about your professional background.  
+> Could you give me an overview of your work experience?
+
+Of course. I'm a Full-Stack Developer with over 8 years of experience, specializing in building scalable and high-performance web applications, with a strong focus on the frontend.
+
+My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
+
+From there, I moved to Blitz Interactive Entertainment, where I took on more end-to-end responsibilities. A key project was building a proprietary instant messaging system from scratch. This was where I deepened my backend skills with Spring Boot and learned to manage the entire application lifecycle using Docker.
+
+In my most recent role as a Senior Frontend Developer at Toyou Feiji, I shifted into a leadership position. I led the technical architecture for a major platform redesign using Vue.js and TypeScript, which significantly improved maintainability. I also focused heavily on optimizing the developer workflow—for instance, by migrating to Vite to achieve over 60% faster build times—and I had the opportunity to mentor three junior developers.
+
+Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my deep experience with frameworks like Vue.js and React, and my passion for performance optimization. Your company's work really resonates with me, and I'm very excited about the possibility of contributing to your team.
+
+> What were your key contributions at Toyou Feiji?  
 > What kind of projects did you mainly work on in your last role?  
-> Which achievements or responsibilities are you most proud of in your past jobs?  
 
-In my most recent role, I worked as a Senior Frontend Developer with full-stack responsibilities at Toyou Feiji Electronics last two year.
+Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. I'd say my key contributions fall into three main areas.
 
-My main project was the redesign of a storage management platform. I led the frontend architecture with Vue.js and TypeScript, migrated the build system to Vite, which improved build times by over 60%, and introduced ESLint standards that resolved more than 300 code issues. I also designed an AI chat tool integrated with Ragflow to support customer service.
+First, my primary project was leading the architectural redesign of our centralized storage platform. The old system was legacy code, making it really difficult to maintain and scale. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
-By the mean time, I mentored 3 junior developers and established comprehensive code review processes.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The team was struggling with long build times, which was a real drag on productivity. I drove the migration from Webpack to Vite, and integrated ESLint into our CI/CD pipeline. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
 
-> In your role at Toyou Feiji, you mentioned you 'led the technical architecture for the redesign' of a platform. Can you walk me through the key architectural decisions you made and explain the reasoning behind choosing Vue.js and TypeScript?
+And third, beyond the core platforms, I took the initiative to innovate. Our support team was overwhelmed with repetitive questions, so I designed and built an AI-powered chat tool using Vue.js and integrated it with a service called Ragflow. This tool successfully automated answers to common questions, which freed up our support team to focus on more complex cases.
 
-Certainly. The old platform was a legacy monolithic system, which was difficult to maintain and scale. My primary goal was to implement a modern frontend-backend separation.
-- **Situation:** The existing application had tightly coupled frontend and backend logic, leading to slow development cycles and performance bottlenecks.
-- **Task:** My task was to design a new architecture that was scalable, maintainable, and would improve developer productivity.
-- **Action:** I decided to build a Single Page Application (SPA) for the frontend. For the technology choice, I chose **Vue.js** because of its progressive framework, excellent documentation, and performance, which was a great fit for our team's existing skills. We chose **TypeScript** to ensure type safety and improve code quality, especially for a large and complex application. This significantly reduced runtime errors. I also introduced a component-based architecture to maximize code reuse and established a clear communication protocol with the backend via RESTful APIs.
-- **Result:** This new architecture decoupled the frontend and backend, allowing parallel development. It also made the application much easier to test and maintain. The adoption of TypeScript and clear standards resolved over 300 existing code issues and made onboarding new developers much smoother.
+Finally, on top of all that, a key part of my role was mentoring. I was formally responsible for three junior developers, guiding their technical growth and leading our code review process to build a strong culture of quality.
 
 > What were your key contributions at Blitz Interactive?
 
- Before that, at Blitz Interactive, I built a proprietary instant messaging system with a Spring Boot backend and a chat interface with media support. I also containerized the system with Docker for scalability.
+Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me. I joined as a Junior Frontend Developer, but I quickly took on a lot of responsibility.
+
+My main achievement there was building the company's entire instant messaging system from the ground up. This was a critical feature for our company portal to handle real-time business inquiries. Although my title was on the frontend, I really took ownership of the whole project. This meant I not only built the chat interface in the frontend, but I also participated in maintaining the backend system and developed new features and requirements. I also containerized the whole system using Docker for deployment. It was a great full-stack experience.
+
+Beyond that core project, I also developed the company's official website, which was crucial for our external presence and client engagement.
+
+Alongside that, I also worked on improving our internal tools. For example, I built a reusable component library with over 20 components, which helped speed up development for the whole team.
+
+So, my time at Blitz was really about that transition from being a junior developer to becoming an engineer who could own a complex project from end to end.
 
 > What were your key contributions at Jinji Network Technology?
 
