@@ -45,7 +45,11 @@ I'm planning to stay in Germany long-term. If I can get a suitable position here
 > What are your career goals in Germany?  
 > How does this role fit into your long-term plans?
 
-My primary career goal is to grow into a senior technical expert in Web development. This role fits well with my skills and career goals, and I see it as a great opportunity to grow professionally in Germany.
+My primary career goal is to become a senior technical expert in Web development. This role is perfect for my background and career goals, and I see it as a great opportunity to grow professionally in Germany.
+
+> What field is your girlfriend studying?
+
+She's a medical PhD student here at LMU in Munich.
 
 ## Reason for Application
 
@@ -76,88 +80,6 @@ The city has such a nice balance. The climate here is very pleasant, and I actua
 I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
 
 Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
-
-## Work Experience
-
-> Do you have any international work experience?  
-> Have you worked abroad before?  
-> How comfortable are you working in a multicultural environment?  
-> Tell me about your experience working with global teams.  
-> Have you ever worked with remote teams across different time zones?  
-> What challenges do you anticipate in working in an international team?  
-> How do you adapt to different working cultures?  
-> Have you had experience working with German companies or European clients before?  
-
-This would be my first international work experience with a German or European company, and that's one of the reasons I find it so exciting.
-
-I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
-
-> Can you walk me through your previous work experience?  
-> What kind of projects did you mainly work on in your last role?  
-> Which achievements or responsibilities are you most proud of in your past jobs?  
-> What were your key contributions as a Senior Frontend Developer at Toyou Feiji Electronics?  
-
-I worked as a Senior Frontend Developer with full-stack responsibilities at Toyou Feiji Electronics last two year. My main project was the redesign of a storage management platform. I led the frontend architecture with Vue.js and TypeScript, migrated the build system to Vite, which improved build times by over 60%, and introduced ESLint standards that resolved more than 300 code issues. I also designed an AI chat tool integrated with Ragflow to support customer service.
-
-Before that, at Blitz Interactive, I built a proprietary instant messaging system with a Spring Boot backend and a chat interface with media support. I also containerized the system with Docker for scalability.
-
-And earlier in my career at Jinji Network Technology, I focused on React Native and React projects, such as building a cross-platform mobile app and an admin frontend with file upload and data visualization.
-
-Overall, my projects gave me strong experience in building scalable frontend systems, improving performance, and collaborating across full-stack teams.
-
-## Clean Code Standards
-
-### Question
-
-- Can you give an example of how you've applied these standards in a past project?
-
-### Answer
-
-Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
-
-To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
-
-At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
-
-## Vue or React
-
-### Question
-
-- Since your resume highlights strong experience with both React and Vue.js, could you share an example of when you chose one framework over the other for a specific project, and what factors influenced your decision?
-
-### Answer
-
-Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
-
-## Backend Experience
-
-### Question
-
-- Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
-
-### Answer
-
-While my primary expertise is frontend development, I do have hands-on backend experience, particularly with Spring Boot.
-
-At Blitz Interactive Entertainment, I built a complete messaging system using Spring Boot. This involved developing RESTful APIs, implementing real-time communication features, and creating an analytics dashboard. I handled everything from database design with MySQL to deployment using Docker.
-
-More recently at Toyou Feiji Electronics, I joined the backend team to refactor APIs. During this project, I used Python and Django to build Redfish-compliant APIs for storage device management, and I successfully refactored over 100 interfaces.
-
-## Problem-Solving and Technical Challenges
-
-### Question
-
-- Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
-
-### Answer
-
-At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on vue2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
-
-My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
-
-I researched various approaches and proposed migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
-
-The result was impressive - we reduced build times from 9 minutes to under 3 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
 
 ## English Level
 
@@ -223,3 +145,100 @@ Based on the market in Munich and my background, I believe €60 is a fair salar
 > What is your current salary?
 
 I prefer to focus on the market value of the role here in Munich and the skills I bring, rather than my current salary. My expectation is based on my experience and the Munich market, not directly on my current salary.
+
+## Work Experience
+
+> Do you have any international work experience?  
+> Have you worked abroad before?  
+> How comfortable are you working in a multicultural environment?  
+> Tell me about your experience working with global teams.  
+> Have you ever worked with remote teams across different time zones?  
+> What challenges do you anticipate in working in an international team?  
+> How do you adapt to different working cultures?  
+> Have you had experience working with German companies or European clients before?  
+
+This would be my first international work experience with a German or European company, and that's one of the reasons I find it so exciting.
+
+I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
+
+> Can you tell us about your previous work experience?  
+> What kind of projects did you mainly work on in your last role?  
+> Which achievements or responsibilities are you most proud of in your past jobs?  
+
+In my most recent role, I worked as a Senior Frontend Developer with full-stack responsibilities at Toyou Feiji Electronics last two year.
+
+My main project was the redesign of a storage management platform. I led the frontend architecture with Vue.js and TypeScript, migrated the build system to Vite, which improved build times by over 60%, and introduced ESLint standards that resolved more than 300 code issues. I also designed an AI chat tool integrated with Ragflow to support customer service.
+
+By the mean time, I mentored 3 junior developers and established comprehensive code review processes.
+
+> In your role at Toyou Feiji, you mentioned you 'led the technical architecture for the redesign' of a platform. Can you walk me through the key architectural decisions you made and explain the reasoning behind choosing Vue.js and TypeScript?
+
+Certainly. The old platform was a legacy monolithic system, which was difficult to maintain and scale. My primary goal was to implement a modern frontend-backend separation.
+- **Situation:** The existing application had tightly coupled frontend and backend logic, leading to slow development cycles and performance bottlenecks.
+- **Task:** My task was to design a new architecture that was scalable, maintainable, and would improve developer productivity.
+- **Action:** I decided to build a Single Page Application (SPA) for the frontend. For the technology choice, I chose **Vue.js** because of its progressive framework, excellent documentation, and performance, which was a great fit for our team's existing skills. We chose **TypeScript** to ensure type safety and improve code quality, especially for a large and complex application. This significantly reduced runtime errors. I also introduced a component-based architecture to maximize code reuse and established a clear communication protocol with the backend via RESTful APIs.
+- **Result:** This new architecture decoupled the frontend and backend, allowing parallel development. It also made the application much easier to test and maintain. The adoption of TypeScript and clear standards resolved over 300 existing code issues and made onboarding new developers much smoother.
+
+> What were your key contributions at Blitz Interactive?
+
+ Before that, at Blitz Interactive, I built a proprietary instant messaging system with a Spring Boot backend and a chat interface with media support. I also containerized the system with Docker for scalability.
+
+> What were your key contributions at Jinji Network Technology?
+
+And earlier in my career at Jinji Network Technology, I focused on React Native and React projects, such as building a cross-platform mobile app and an admin frontend with file upload and data visualization.
+
+Overall, my projects gave me strong experience in building scalable frontend systems, improving performance, and collaborating across full-stack teams.
+
+## Clean Code Standards
+
+### Question
+
+- Can you give an example of how you've applied these standards in a past project?
+
+### Answer
+
+Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
+
+To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
+
+At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
+
+## Vue or React
+
+### Question
+
+- Since your resume highlights strong experience with both React and Vue.js, could you share an example of when you chose one framework over the other for a specific project, and what factors influenced your decision?
+
+### Answer
+
+Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
+
+## Backend Experience
+
+### Question
+
+- Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
+
+### Answer
+
+While my primary expertise is frontend development, I do have hands-on backend experience, particularly with Spring Boot.
+
+At Blitz Interactive Entertainment, I built a complete messaging system using Spring Boot. This involved developing RESTful APIs, implementing real-time communication features, and creating an analytics dashboard. I handled everything from database design with MySQL to deployment using Docker.
+
+More recently at Toyou Feiji Electronics, I joined the backend team to refactor APIs. During this project, I used Python and Django to build Redfish-compliant APIs for storage device management, and I successfully refactored over 100 interfaces.
+
+## Problem-Solving and Technical Challenges
+
+### Question
+
+- Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
+
+### Answer
+
+At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on vue2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
+
+My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
+
+I researched various approaches and proposed migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
+
+The result was impressive - we reduced build times from 9 minutes to under 3 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
