@@ -39,10 +39,13 @@ I'm also excited about working with international teams and contributing to inno
 > How long are you planning to work in Germany?  
 > Is this a temporary move or are you looking to settle here?  
 > What's your commitment to staying with the company?  
+
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future here together.
+
 > What are your career goals in Germany?  
 > How does this role fit into your long-term plans?
 
-I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future here together.
+My primary career goal is to grow into a senior technical expert in Web development. This role fits well with my skills and career goals, and I see it as a great opportunity to grow professionally in Germany.
 
 ## Reason for Application
 
