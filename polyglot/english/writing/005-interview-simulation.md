@@ -175,7 +175,7 @@ My career began at Jinji Network Technology, where I built a solid foundation in
 
 From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a instant messaging system. This was where I gained backend experience with Spring Boot.
 
-In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I served as a Senior Frontend Developer and took on a leadership role. I led the technical architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I optimized the developer workflow on our distributed storage platform by migrating from Webpack to Vite, achieving over 60% faster build times. I actively mentored three junior developers in modern frontend practices.
+In my most recent role at Toyou Feiji, a storage solutions provider, I led the architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I migrated our distributed platform from Webpack to Vite, achieving over 60% faster build times. I actively mentored three junior developers in modern frontend practices.
 
 Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
