@@ -170,15 +170,15 @@ Of course. I'm a Full-Stack Developer with over 8 years of experience, specializ
 
 My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
 
-From there, I moved to Blitz Interactive Entertainment. A key project was building a proprietary instant messaging system. This was where I deepened my backend skills with Spring Boot.
+From there, I moved to Blitz Interactive Entertainment, I took on more responsibility. A key project was building a proprietary instant messaging system. This was where I deepened my backend skills with Spring Boot.
 
-In my most recent role as a Senior Frontend Developer at Toyou Feiji, I shifted into a leadership position. I led the technical architecture for storage management platform redesign using Vue.js and TypeScript, which significantly improved maintainability. I also focused heavily on optimizing the developer workflow—for instance, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
+In my most recent role as a Senior Frontend Developer at Toyou Feiji, I took on a leadership role. I led the technical architecture of the storage management platform redesign using Vue.js and TypeScript, improving system scalability and maintainability. I also focused on optimizing the developer workflow, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
 
 Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
 > What were your key contributions at Toyou Feiji?  
 
-Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. I'd say my key contributions fall into three main areas.
+Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. My key contributions fall into three main areas.
 
 First, my primary project was leading the architectural redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain and scale. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
@@ -212,30 +212,19 @@ Overall, my time at Jinji was all about learning and building. It confirmed my p
 
 > Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
 
-While my primary expertise is frontend development, I do have hands-on backend experience, particularly with Spring Boot.
+My main expertise is in frontend development, but I also bring hands-on backend experience, especially with Spring Boot.
 
-At Blitz Interactive Entertainment, I built a complete messaging system using Spring Boot. This involved developing RESTful APIs, implementing real-time communication features, and creating an analytics dashboard. I handled everything from database design with MySQL to deployment using Docker.
+At Blitz Interactive Entertainment, I contributed to maintaining the backend system and developed new features for the messaging system using Spring Boot. This involved creating RESTful APIs and deploying it with Docker.
 
-More recently at Toyou Feiji Electronics, I joined the backend team to refactor APIs. During this project, I used Python and Django to build Redfish-compliant APIs for storage device management, and I successfully refactored over 100 interfaces.
+More recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
-> Can you give an example of how you've applied these standards in a past project?
+> Can you share a particularly challenging technical problem you encountered in one of your projects?  
+> How did you approach solving it, and what was the outcome?
 
-Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
-
-To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
-
-At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
-
-> Since your resume highlights strong experience with both React and Vue.js, could you share an example of when you chose one framework over the other for a specific project, and what factors influenced your decision?
-
-Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
-
-> Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
-
-At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on vue2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
+At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
 My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
 
-I researched various approaches and proposed migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
+I researched various approaches and determined migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
 
-The result was impressive - we reduced build times from 9 minutes to under 3 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
+The result was impressive - we reduced build times from 10 minutes to under 4 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
