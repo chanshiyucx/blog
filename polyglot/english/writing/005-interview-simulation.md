@@ -157,7 +157,7 @@ I prefer to focus on the market value of the role here in Munich and the skills 
 > How do you adapt to different working cultures?  
 > Have you had experience working with German companies or European clients before?  
 
-This would be my first international work experience with a German or European company, and that's one of the reasons I find it so exciting.
+This would be my first international work experience with a German or European company.
 
 I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments, so I feel confident working with global teams and growing in this role.
 
@@ -170,22 +170,21 @@ Of course. I'm a Full-Stack Developer with over 8 years of experience, specializ
 
 My career began at Jinji Network Technology, where I built a solid foundation in frontend development using React and also gained my first experience in cross-platform mobile development with React Native.
 
-From there, I moved to Blitz Interactive Entertainment, where I took on more end-to-end responsibilities. A key project was building a proprietary instant messaging system from scratch. This was where I deepened my backend skills with Spring Boot and learned to manage the entire application lifecycle using Docker.
+From there, I moved to Blitz Interactive Entertainment. A key project was building a proprietary instant messaging system. This was where I deepened my backend skills with Spring Boot.
 
-In my most recent role as a Senior Frontend Developer at Toyou Feiji, I shifted into a leadership position. I led the technical architecture for a major platform redesign using Vue.js and TypeScript, which significantly improved maintainability. I also focused heavily on optimizing the developer workflow—for instance, by migrating to Vite to achieve over 60% faster build times—and I had the opportunity to mentor three junior developers.
+In my most recent role as a Senior Frontend Developer at Toyou Feiji, I shifted into a leadership position. I led the technical architecture for storage management platform redesign using Vue.js and TypeScript, which significantly improved maintainability. I also focused heavily on optimizing the developer workflow—for instance, by migrating to Vite to achieve over 60% faster build times. I had the opportunity to mentor three junior developers.
 
-Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my deep experience with frameworks like Vue.js and React, and my passion for performance optimization. Your company's work really resonates with me, and I'm very excited about the possibility of contributing to your team.
+Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a dedicated frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
 > What were your key contributions at Toyou Feiji?  
-> What kind of projects did you mainly work on in your last role?  
 
 Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. I'd say my key contributions fall into three main areas.
 
-First, my primary project was leading the architectural redesign of our centralized storage platform. The old system was legacy code, making it really difficult to maintain and scale. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
+First, my primary project was leading the architectural redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain and scale. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
-Next, on our distributed storage platform, I focused on optimizing the developer workflow. The team was struggling with long build times, which was a real drag on productivity. I drove the migration from Webpack to Vite, and integrated ESLint into our CI/CD pipeline. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I drove the migration from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which drastically improved our code quality.
 
-And third, beyond the core platforms, I took the initiative to innovate. Our support team was overwhelmed with repetitive questions, so I designed and built an AI-powered chat tool using Vue.js and integrated it with a service called Ragflow. This tool successfully automated answers to common questions, which freed up our support team to focus on more complex cases.
+And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
 Finally, on top of all that, a key part of my role was mentoring. I was formally responsible for three junior developers, guiding their technical growth and leading our code review process to build a strong culture of quality.
 
@@ -203,41 +202,15 @@ So, my time at Blitz was really about that transition from being a junior develo
 
 > What were your key contributions at Jinji Network Technology?
 
-And earlier in my career at Jinji Network Technology, I focused on React Native and React projects, such as building a cross-platform mobile app and an admin frontend with file upload and data visualization.
+Jinji Network was my very first role after graduating, and it was the perfect place to start my career and build my foundation. My work there was quite diverse, which was great for learning.
 
-Overall, my projects gave me strong experience in building scalable frontend systems, improving performance, and collaborating across full-stack teams.
+One of the main projects was developing a cross-platform mobile app using React Native. I got to work on features for both Android and iOS, for example, integrating a video player called `ijkplayer`. This gave me great, hands-on experience with the challenges of mobile development.
 
-## Clean Code Standards
+On the web side, I focused on building an admin dashboard with React and Ant Design. This is where I really solidified my skills in React, implementing features like file uploads and data visualizations. I also got to work on redesigning the company's main website to improve the UI and user experience.
 
-### Question
+Overall, my time at Jinji was all about learning and building. It confirmed my passion for frontend development and really set the stage for the more complex challenges I took on later in my career.
 
-- Can you give an example of how you've applied these standards in a past project?
-
-### Answer
-
-Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
-
-To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
-
-At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
-
-## Vue or React
-
-### Question
-
-- Since your resume highlights strong experience with both React and Vue.js, could you share an example of when you chose one framework over the other for a specific project, and what factors influenced your decision?
-
-### Answer
-
-Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
-
-## Backend Experience
-
-### Question
-
-- Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
-
-### Answer
+> Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
 
 While my primary expertise is frontend development, I do have hands-on backend experience, particularly with Spring Boot.
 
@@ -245,13 +218,19 @@ At Blitz Interactive Entertainment, I built a complete messaging system using Sp
 
 More recently at Toyou Feiji Electronics, I joined the backend team to refactor APIs. During this project, I used Python and Django to build Redfish-compliant APIs for storage device management, and I successfully refactored over 100 interfaces.
 
-## Problem-Solving and Technical Challenges
+> Can you give an example of how you've applied these standards in a past project?
 
-### Question
+Sure. For example, in a management dashboard project, I worked on a file upload page where users often needed to upload very large files.
 
-- Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
+To improve performance and user experience, I optimized the upload component by implementing file chunking and batch uploading. This way, the files were uploaded in smaller parts simultaneously, which significantly reduced the waiting time.
 
-### Answer
+At the same time, I kept the code modular and easy to maintain, so other developers could quickly understand and extend the component if needed. As a result, the upload process became much faster and smoother, and the feedback from both the team and users was very positive.
+
+> Since your resume highlights strong experience with both React and Vue.js, could you share an example of when you chose one framework over the other for a specific project, and what factors influenced your decision?
+
+Thank you—I'm glad you found them impressive! For instance, in my role at Toyou Feiji Electronics, I chose Vue.js for the storage management platform redesign because of its lightweight nature and excellent reactivity system, which suited our need for rapid prototyping and seamless state management in a complex UI. In contrast, at Jinji Network Technology, I opted for React when building the admin frontend and React Native app, as it offered better ecosystem support for mobile cross-platform development and integrated well with libraries like Ant Design for data visualization. The decision often boils down to project scale, team familiarity, and performance requirements.
+
+> Can you walk me through a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
 
 At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on vue2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
