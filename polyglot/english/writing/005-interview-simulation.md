@@ -224,13 +224,13 @@ More recently at Toyou Feiji Electronics, I worked with the backend team to refa
 > Can you share a particularly challenging technical problem you encountered in one of your projects?  
 > How did you approach solving it, and what was the outcome?
 
-At Toyou Feiji Electronics, our centralized storage management platform had a critical performance issue. Our project is based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
+At Toyou Feiji Electronics, our centralized storage management platform had a critical performance issue. Our project was based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
 My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
 
-I researched various approaches and determined migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate extensive testing with our QA team to ensure stability.
+I researched various approaches and determined migrating from Webpack to Vite. However, this was complex because we were using Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate with our testing team to ensure stability.
 
-The result was impressive - we reduced build times from 10 minutes to under 4 minutes, a 60% improvement. More importantly, this taught me the value of thorough planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
+As a result, we reduced build times from 10 minutes to under 4 minutes, over 60% faster then before. More importantly, this taught me the value of planning when upgrading core infrastructure and the importance of close collaboration with testing teams.
 
 ## Questions
 
