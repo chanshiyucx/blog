@@ -207,7 +207,7 @@ So, my time at Blitz was really about that transition from being a junior develo
 
 Jinji Network was my first role after graduating, my work there was quite diverse, which was great for learning.
 
-My primary project was developing a cross-platform mobile app using React Native. I worked on features for both Android and iOS, for example, building a video player with `ijkplayer`. This gave me hands-on experience with the challenges of mobile development.
+My primary project was developing a cross-platform mobile app using React Native. I worked on features for both Android and iOS, for example, building a video player. This gave me hands-on experience with the challenges of mobile development.
 
 On the web side, I focused on building an admin dashboard with React and Ant Design. This was where I built up my skills in React, implementing features like file uploads and data visualizations. I also redesigned the company's official website to improve user experience.
 
