@@ -199,13 +199,13 @@ My main achievement there was building the company's instant messaging system fr
 
 Additionally, I also developed the company's official website, which was crucial for our external presence and client engagement.
 
-Moreover, I also worked on improving our internal tools. For example, I built a reusable component library with over 20 components, which helped speed up development for the whole team.
+Moreover, I also worked on improving our internal tools. For example, I built a reusable component library with over 20 components, which helped speed up development for the team.
 
 So, my time at Blitz was really about that transition from being a junior developer to becoming an engineer.
 
 > What were your key contributions at Jinji Network Technology?
 
-Jinji Network was my very first role after graduating, my work there was quite diverse, which was great for learning.
+Jinji Network was my first role after graduating, my work there was quite diverse, which was great for learning.
 
 One of the main projects was developing a cross-platform mobile app using React Native. I got to work on features for both Android and iOS, for example, integrating a video player called `ijkplayer`. This gave me great, hands-on experience with the challenges of mobile development.
 
