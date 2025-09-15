@@ -183,9 +183,9 @@ Now, I've moved to Germany to seek a new challenge in a more advanced tech envir
 
 Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. My key contributions fall into three main areas.
 
-First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
+First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and easier to work with, which really boosted the team's development speed.
 
-Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. As a result, we achieved over 60% faster build times, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, significantly improving our code quality.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. As a result, we achieved over 60% faster build times, and the ESLint integration helped us fix over 300 legacy issues, significantly improving our code quality.
 
 And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
