@@ -195,7 +195,7 @@ Finally, I mentored three junior developers and established a standard code revi
 
 Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me. I joined as a Junior Frontend Developer, but I quickly took on a lot of responsibility.
 
-My main achievement there was building the company's entire instant messaging system from the ground up. This was a critical feature for our company portal to handle real-time business inquiries. Although my title was on the frontend, I really took ownership of the whole project. This meant I not only built the chat interface in the frontend, but also participated in maintaining the backend system and developed new features. I also deployed the whole system using Docker. It was a great full-stack experience.
+My main achievement there was building the company's entire instant messaging system from the ground up. This was a critical feature for our company portal to handle real-time business inquiries. Although I worked as a frontend developer, I took ownership of the entire project. This meant I not only built the chat interface in the frontend, but also maintained the backend system and developed new features. I also deployed the whole system using Docker. It was an excellent full-stack learning experience.
 
 Additionally, I also developed the company's official website, which was crucial for our external presence and client engagement.
 
