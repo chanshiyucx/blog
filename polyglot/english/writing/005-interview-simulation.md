@@ -46,7 +46,7 @@ I'm planning to stay in Germany long-term. If I can get a suitable position here
 > How does this role fit into your long-term plans?  
 > Where do you see yourself in five years?
 
-My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This position aligns perfectly with that path by offering complex technical challenges in a strong tech environment.
+My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
 
 In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
 
