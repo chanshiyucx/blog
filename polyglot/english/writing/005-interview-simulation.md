@@ -211,13 +211,13 @@ My primary project was developing a cross-platform mobile app using React Native
 
 On the web side, I focused on building an admin dashboard with React and Ant Design. This was where I built up my skills in React, implementing features like file uploads and data visualizations. I also redesigned the company's official website to improve user experience.
 
-Overall, my time at Jinji was all about learning and building. It boosted my passion for frontend development and prepared me for the more complex challenges I took on later in my career.
+So, my time at Jinji was all about learning and building. It boosted my passion for frontend development and prepared me for the more complex challenges I took on later in my career.
 
 > Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
 
 My main expertise is in frontend development, but I also have hands-on backend experience, especially with Spring Boot.
 
-At Blitz Interactive Entertainment, I maintained the backend system and developed new features for the messaging system using Spring Boot. This involved creating RESTful APIs and deploying it with Docker.
+At Blitz Interactive Entertainment, I maintained the backend and developed new features for the messaging system using Spring Boot. This involved creating RESTful APIs and deploying it with Docker.
 
 More recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
