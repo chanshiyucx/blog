@@ -185,7 +185,7 @@ Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Devel
 
 First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and significantly easier to work with, which really boosted the team's development speed.
 
-Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. The results were immediate: we cut our build times by over 60%, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, which improved our code quality.
+Next, on our distributed storage platform, I focused on optimizing the developer workflow. The project had extremely slow build times, so I migrated from Webpack to Vite, and integrated ESLint. As a result, we achieved over 60% faster build times, and the ESLint integration automatically caught and helped us fix over 300 legacy issues, significantly improving our code quality.
 
 And third, our support team was overwhelmed with repetitive questions, so I built an AI-powered chat tool using Vue.js with Ragflow. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
@@ -197,15 +197,15 @@ Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me
 
 My main achievement there was building the company's entire instant messaging system from the ground up. This was a critical feature for our company portal to handle real-time business inquiries. Although my title was on the frontend, I really took ownership of the whole project. This meant I not only built the chat interface in the frontend, but I also participated in maintaining the backend system and developed new features and requirements. I also containerized the whole system using Docker for deployment. It was a great full-stack experience.
 
-Beyond that core project, I also developed the company's official website, which was crucial for our external presence and client engagement.
+Additionally, I also developed the company's official website, which was crucial for our external presence and client engagement.
 
-Alongside that, I also worked on improving our internal tools. For example, I built a reusable component library with over 20 components, which helped speed up development for the whole team.
+Moreover, I also worked on improving our internal tools. For example, I built a reusable component library with over 20 components, which helped speed up development for the whole team.
 
-So, my time at Blitz was really about that transition from being a junior developer to becoming an engineer who could own a complex project from end to end.
+So, my time at Blitz was really about that transition from being a junior developer to becoming an engineer.
 
 > What were your key contributions at Jinji Network Technology?
 
-Jinji Network was my very first role after graduating, and it was the perfect place to start my career and build my foundation. My work there was quite diverse, which was great for learning.
+Jinji Network was my very first role after graduating, my work there was quite diverse, which was great for learning.
 
 One of the main projects was developing a cross-platform mobile app using React Native. I got to work on features for both Android and iOS, for example, integrating a video player called `ijkplayer`. This gave me great, hands-on experience with the challenges of mobile development.
 
