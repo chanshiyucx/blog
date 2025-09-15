@@ -217,14 +217,14 @@ So, my time at Jinji was all about learning and building. It boosted my passion 
 
 My main expertise is in frontend development, but I also have hands-on backend experience, especially with Spring Boot.
 
-At Blitz Interactive Entertainment, I maintained the backend and developed new features for the messaging system using Spring Boot. This involved creating RESTful APIs and deploying it with Docker.
+At Blitz Interactive Entertainment, I maintained the backend and developed new features for the instant messaging system using Spring Boot. This involved creating RESTful APIs and deploying it with Docker.
 
 More recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
 > Can you share a particularly challenging technical problem you encountered in one of your projects?  
 > How did you approach solving it, and what was the outcome?
 
-At Toyou Feiji Electronics, our storage management platform had a critical performance issue. Our project is based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
+At Toyou Feiji Electronics, our centralized storage management platform had a critical performance issue. Our project is based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
 My task was to find a solution that would significantly improve build performance without disrupting our existing codebase or introducing bugs.
 
