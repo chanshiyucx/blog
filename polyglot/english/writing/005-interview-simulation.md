@@ -40,19 +40,19 @@ I'm also excited about working with international teams and contributing to inno
 > Is this a temporary move or are you looking to settle here?  
 > What's your commitment to staying with the company?  
 
-I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future here together.
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
 
 > What are your career goals in Germany?  
 > How does this role fit into your long-term plans?  
 > Where do you see yourself in five years?
 
-My career goal is to become a senior technical expert, eventually growing into technical leadership roles like tech lead or solution architect. This position aligns perfectly with that path by offering complex technical challenges in a strong tech environment.
+My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This position aligns perfectly with that path by offering complex technical challenges in a strong tech environment.
 
-In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers. Germany's innovative tech scene makes it the ideal place to achieve these goals.
+In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
 
 > What field is your girlfriend studying?
 
-She's a medical PhD student here at LMU in Munich.
+She's a medical PhD student at LMU in Munich.
 
 ## Reason for Application
 
