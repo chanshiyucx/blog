@@ -171,9 +171,9 @@ I'm eager to contribute my technical skills in a multicultural environment. I ad
 
 Of course. As a Full-Stack Developer with over 8 years of experience, I specialize in building scalable and high-performance web applications.
 
-My career began at Jinji Network Technology, where I built a solid foundation in web development using React and also gained my first experience in cross-platform mobile development with React Native.
+My career began at Jinji Network Technology, an online baking tutorial company, where I built a solid foundation in web development using React and also gained my first experience in cross-platform mobile development with React Native.
 
-From there, I joined Blitz Interactive Entertainment, I took on more responsibility. A key project was building an instant messaging system. This was where I gained backend experience with Spring Boot.
+From there, I joined Blitz Interactive Entertainment, a mobile game development and gaming media company, I took on more responsibility. A key project was building an instant messaging system. This was where I gained backend experience with Spring Boot.
 
 In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I led the architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I migrated our distributed storage platform from Webpack to Vite, achieving over 60% faster build times. I also actively mentored three junior developers in modern frontend practices.
 
@@ -181,7 +181,7 @@ Now, I've moved to Germany to seek a new challenge in a more advanced tech envir
 
 > What were your key contributions at Toyou Feiji?  
 
-Sure. For the past two years at Toyou Feiji, I worked as a Senior Frontend Developer with full-stack responsibilities. My main focus was on improving the performance, architecture, and overall developer experience for our storage management platforms. My key contributions fall into three main areas.
+Sure. For the past two years at Toyou Feiji, it's a tech company specializing in storage solutions, I worked as a Senior Frontend Developer with full-stack responsibilities. I focused on improving the performance, architecture, and overall developer experience for our storage management platforms. My key contributions fall into three main areas.
 
 First, my primary project was leading the architecture redesign of our centralized storage platform. The old system had no clear separation between frontend and backend, making it difficult to maintain. So, I led the design of a completely new frontend architecture using Vue.js and TypeScript. This created a much more scalable, component-based system. As a result, our codebase became type-safe and easier to work with, which really boosted the team's development speed.
 
@@ -193,7 +193,7 @@ Finally, I mentored three junior developers and established a standard code revi
 
 > What were your key contributions at Blitz Interactive?
 
-Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me. I joined as a Junior Frontend Developer, but I quickly took on a lot of responsibility.
+Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me. It's a mobile game development and gaming media company. I joined as a Junior Frontend Developer, but I quickly took on a lot of responsibility.
 
 My main achievement there was building the company's instant messaging system from the ground up. This was a critical feature for our company portal to handle real-time business inquiries. Although I worked as a frontend developer, I took ownership of the entire project. This meant I not only built the chat interface in the frontend, but also maintained the backend system and developed new features. I also deployed the whole system using Docker. It was an excellent full-stack learning experience.
 
@@ -205,7 +205,7 @@ So, my time at Blitz was really about that transition from being a junior develo
 
 > What were your key contributions at Jinji Network Technology?
 
-Jinji Network was my first role after graduating, my work there was quite diverse, which was great for learning.
+Jinji Network was my first role after graduating, it's an online baking tutorial company, my work there was quite diverse, which was great for learning.
 
 My primary project was developing a cross-platform mobile app using React Native. I worked on features for both Android and iOS, for example, building a video player. This gave me hands-on experience with the challenges of mobile development.
 
