@@ -21,6 +21,18 @@ I'm also a passionate open-source contributor, with a few personal projects on G
 
 I look forward to talking about how I can support your team.
 
+## Reason for Application
+
+> Why are you interested in this position?  
+
+That's a great question. This role at Sungrow really appeals to me for a few key reasons.
+
+First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
+
+Second, the role is a perfect match for my experience. The role involves frontend architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
+
+So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
+
 ## Reasons for Coming to Germany
 
 > Why did you decide to come to Germany for work?  
@@ -52,18 +64,6 @@ In five years, I see myself as a technical leader contributing to architectural 
 > What field is your girlfriend studying?
 
 She's a medical PhD student at LMU in Munich.
-
-## Reason for Application
-
-> Why are you interested in this position?  
-
-That's a great question. This role at Sungrow really appeals to me for a few key reasons.
-
-First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
-
-Second, the role is a perfect match for my experience. The role involves frontend architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
-
-So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
 ## Impressions of Munich
 
