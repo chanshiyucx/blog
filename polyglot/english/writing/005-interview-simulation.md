@@ -237,7 +237,9 @@ As a result, I created a scalable, type-safe system that improved team productiv
 
  > What were the main challenges, and how did you ensure the new architecture was scalable and maintainable?
 
-The main challenge was we couldn't risk a complete system replacement all at once. So, I planned a phased migration. We used a reverse proxy to direct traffic for specific routes to the new Vue application, while legacy pages were still served by the old system. This minimized risk and allowed us to iterate based on user feedback.
+The main challenge was we couldn't risk a complete system replacement all at once.
+
+My solution was a phased migration using a Nginx proxy. We used a proxy to direct traffic for specific routes to the new Vue application, while legacy pages were still served by the old system. This minimized risk and allowed us to iterate based on user feedback.
 
 ### Vue vs React
 
@@ -247,9 +249,25 @@ The choice between React and Vue.js really depends on several factors. From a te
 
 React's component architecture offers more control, but Vue's template syntax can speed up development. React has better TypeScript support, while Vue offers simpler state management.
 
-For team considerations, I'd lean toward Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers. The structured approach reduces the need for extensive code reviews compared to React's flexibility, which can sometimes lead to inconsistent patterns.
+For team considerations, I'd lean toward Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers.
 
-That said, if the existing codebase or team expertise heavily favors React, that would be the practical choice.
+Overall, if the existing codebase or team expertise heavily favors React, that would be the practical choice.
+
+### Communication
+
+> Tell me about a time when you had to collaborate with backend developers or other teams to solve a complex technical problem. How did you handle communication challenges, especially given the multilingual environment you'll be working in here?
+
+At Toyou Feiji Electronics, when I redesigned our centralized storage platform. As a senior frontend developer, I also worked with backend teams to refactor Redfish-compliant RESTful APIs.
+
+We need to ensure the new APIs does not affect the original functionality and is type-safe. The main communication challenge was confirming the type definitions and possible values for each new API with the backend team.
+
+We established a communication approach, we scheduled daily technical meetings to track complex issues and ensure clear communication.
+
+We set up a shared a shared documentation and a Postman collection so we could test endpoints together in real-time.
+
+As a result, we successfully refactored all APIs, I also refactored over 100 interfaces.
+
+This experience taught me that clear documentation is a great tool for communication.
 
 ## Questions
 
