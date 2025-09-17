@@ -17,16 +17,13 @@ I also have hands-on experience with Spring Boot on the backend, so I can collab
 
 I've completed intensive German courses and reached B1 level. I'm motivated to join a German company where I can contribute to innovative projects and continue growing as a web developer.
 
-I'm also a passionate open-source contributor, with a few personal projects on GitHub that have gained over 670 stars, which reflects the spirit highlighted in your job description.
+I'm also a passionate open-source contributor, with a few personal projects on GitHub that have gained over 670 stars, aligning with the innovative spirit emphasized in your job description.
 
 I look forward to talking about how I can support your team.
 
 ## Reasons for Coming to Germany
 
 > Why did you decide to come to Germany for work?  
-> What motivated you to seek opportunities in Germany specifically?  
-> What attracts you about working in the German tech industry?  
-> How do you see your career developing in Germany?
 
 Well, there are a couple of main reasons.
 
@@ -59,10 +56,6 @@ She's a medical PhD student at LMU in Munich.
 ## Reason for Application
 
 > Why are you interested in this position?  
-> Why do you want to work for our company?  
-> What attracts you to this Frontend Developer position?  
-> What made you apply to our company?  
-> How do you see yourself fitting into our team?
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
@@ -75,8 +68,6 @@ So, the combination of meaningful work and perfect technical fit makes this role
 ## Impressions of Munich
 
 > How do you like Munich so far?  
-> What's your impression of Munich?  
-> How are you finding life in Munich?
 
 I really love Munich! It's been a great experience living here so far.
 
@@ -89,7 +80,6 @@ Overall, Munich feels like a great place for both my career and personal life. I
 ## English Level
 
 > How would you describe your English skills?  
-> Are you comfortable working in English on a daily basis?
 
 I'm fluent in professional English and use it daily at work.
 
@@ -98,28 +88,22 @@ For example, I've written documentation for my projects in English. I'm confiden
 ## German Level
 
 > Are you learning German?  
-> What is your current level of German?  
-> Do you plan to improve your German skills while working here?
 
 Yes, I'm actively learning German. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
 
 ## Available Date
 
 > When would you be available to start?  
-> What is your earliest possible starting date?
 
 I am available to start immediately.
 
 ## Visa
 
 > Do you already have a valid work permit for Germany?  
-> Would you need sponsorship?  
-> What is your current visa status?
 
 I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into a regular work visa.
 
 > When did you move to Germany?  
-> How long have you been in Germany?  
 
 I moved to Germany in November 2024 and have been here since then.
 
@@ -130,8 +114,6 @@ It's valid until November 2025.
 ## Salary
 
 > What are your salary expectations?  
-> What salary do you envision?  
-> Do you have a salary range in mind?  
 
 Based on my experience and my research of the Munich market, my salary expectation is in the €60k to €70k range. But I'm open to discussion depending on the overall package, including benefits, growth opportunities, and the specific responsibilities of the role.
 
@@ -153,23 +135,17 @@ I prefer to focus on the market value of the role here in Munich and the skills 
 
 ## Work Experience
 
-> Do you have any international work experience?  
+### Abroad Experience
+
 > Have you worked abroad before?  
-> How comfortable are you working in a multicultural environment?  
-> Tell me about your experience working with global teams.  
-> Have you worked with remote teams across different time zones?  
-> What challenges do you anticipate in working in an international team?  
-> How do you adapt to different working cultures?  
-> Have you had experience working with German companies or European clients before?  
 
 This would be my first international work experience with a German company.
 
 I'm eager to contribute my technical skills in a multicultural environment. I adapt quickly to new environments. I feel confident working with global teams and growing in this role.
 
-> Can you walk me through your resume?  
+### Previous Experience
+
 > Can you tell us about your previous work experience?  
-> Tell me a little bit about your professional background.  
-> Could you give me an overview of your work experience?
 
 Of course. As a Full-Stack Developer with over 8 years of experience, I specialize in building scalable and high-performance web applications.
 
@@ -180,6 +156,8 @@ From there, I joined Blitz Interactive Entertainment, a mobile game development 
 In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I led the architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I migrated our distributed storage platform from Webpack to Vite, achieving over 60% faster build times. I also actively mentored three junior developers in modern frontend practices.
 
 Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a senior frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
+
+### Toyou Feiji
 
 > What were your key contributions at Toyou Feiji?  
 
@@ -193,6 +171,8 @@ And third, our support team was overwhelmed with repetitive questions, so I buil
 
 Finally, I mentored three junior developers and established a standard code review process that significantly improved our team's code quality.
 
+### Blitz Interactive
+
 > What were your key contributions at Blitz Interactive?
 
 Yes, absolutely. My time at Blitz Interactive was a period of huge growth for me. It's a mobile game development and gaming media company. I joined as a Junior Frontend Developer, but I quickly took on a lot of responsibility.
@@ -205,6 +185,8 @@ Moreover, I also worked on improving our internal tools. For example, I built a 
 
 So, my time at Blitz was really about that transition from being a junior developer to becoming an engineer.
 
+### Jinji
+
 > What were your key contributions at Jinji Network Technology?
 
 Jinji Network was my first role after graduating, it's an online baking tutorial company, my work there was quite diverse, which was great for learning.
@@ -215,7 +197,9 @@ On the web side, I focused on building an admin dashboard with React and Ant Des
 
 So, my time at Jinji was all about learning and building. It boosted my passion for web development and prepared me for the more complex challenges I took on later in my career.
 
-> Could you tell me about your backend experience, particularly with Spring Boot? What kind of backend systems have you built or worked with?
+### Backend Experience
+
+> Could you tell me about your backend experience?
 
 My main expertise is in frontend development, but I also have hands-on backend experience, especially with Spring Boot.
 
@@ -223,8 +207,9 @@ At Blitz Interactive Entertainment, I maintained the backend and developed new f
 
 Most recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
-> Can you share a particularly challenging technical problem you encountered in one of your projects?  
-> How did you approach solving it, and what was the outcome?
+### Vite Migration
+
+> Can you share a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
 
 At Toyou Feiji Electronics, our centralized storage management platform had a critical performance issue. Our project was based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
@@ -234,11 +219,13 @@ I researched various approaches and determined migrating from Webpack to Vite. H
 
 As a result, we reduced build times from 10 minutes to under 4 minutes, over 60% faster then before. More importantly, this taught me the value of planning when upgrading core infrastructure and the importance of close collaboration with testing team.
 
+### Architecture Redesign
+
+> You mentioned in your resume and just now that you led the technical architecture for a platform redesign using Vue.js and TypeScript. Could you walk me through the key decisions you made during that process? What were the main challenges, and how did you ensure the new architecture was scalable and maintainable?
+
 ## Questions
 
 > Do you have any questions for us?  
-> What would you like to know about the company/role/team?  
-> Is there anything else you'd like to ask?
 
 - What does a typical day look like for this role?
 - Will this role involve collaboration with the team in China?
