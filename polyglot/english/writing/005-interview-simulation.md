@@ -11,13 +11,13 @@ tags:
 
 I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
 
-I have over 8 years of experience in web development, mainly focusing on the frontend with technologies like React, Vue.js, and TypeScript. Over the years, I have grown from junior to senior roles, building scalable and high-performance web applications.
+With over 8 years of experience in web development, I specialize in frontend technologies like React, Vue.js, and TypeScript. I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
-I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
+In my last role at Toyou Feiji Electronics, I led the architecture redesign of a storage management platform, implementing Vue.js based separation system, optimizing build times by over 60% using Vite, and developing Redfish-compliant RESTful APIs.
 
-I've completed intensive German courses and reached B1 level. I'm motivated to join a German company where I can contribute to innovative projects and continue growing as a web developer.
+I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description.
 
-I'm also a passionate open-source contributor, with a few personal projects on GitHub that have gained over 670 stars, aligning with the innovative spirit emphasized in your job description.
+I've completed intensive German courses and reached B1 level. I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
 I look forward to talking about how I can support your team.
 
@@ -27,13 +27,13 @@ I look forward to talking about how I can support your team.
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
-First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
+First, I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
 Second, the role is a perfect match for my experience. The role involves frontend architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
 
 So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
-## Reasons for Coming to Germany
+## Coming to Germany
 
 > Why did you decide to come to Germany for work?  
 
@@ -211,7 +211,7 @@ Most recently at Toyou Feiji Electronics, I worked with the backend team to refa
 
 > Can you share a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
 
-At Toyou Feiji Electronics, our centralized storage management platform had a critical performance issue. Our project was based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
+At Toyou Feiji Electronics, our distributed storage management platform had a critical performance issue. Our project was based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
 My task was to find a solution that would improve build performance without disrupting our existing codebase or introducing bugs.
 
@@ -221,7 +221,33 @@ As a result, we reduced build times from 10 minutes to under 4 minutes, over 60%
 
 ### Architecture Redesign
 
-> You mentioned in your resume and just now that you led the technical architecture for a platform redesign using Vue.js and TypeScript. Could you walk me through the key decisions you made during that process? What were the main challenges, and how did you ensure the new architecture was scalable and maintainable?
+> Could you walk me through the key decisions you made during that process?
+
+At Toyou Feiji Electronics, our centralized storage management platform had no clear separation between frontend and backend, making it difficult to scale and maintain.
+
+As a senior frontend developer, my task was to lead the redesign and implementation of a new, completely decoupled frontend architecture.
+
+My first key decision was selecting Vue.js with TypeScript. I chose Vue.js and TypeScript for performance and type-safety, implementing a modular, component-based structure to enhance maintainability.
+
+I established a standard code review process that ensured code quality.
+
+As a result, I created a scalable, type-safe system that reduced bugs and improved team productivity, enabling independent frontend and backend development for faster iterations.
+
+ > What were the main challenges, and how did you ensure the new architecture was scalable and maintainable?
+
+The main challenge was we couldn't risk a complete system replacement all at once. So, I planned a phased migration. We used a reverse proxy to direct traffic for specific routes to the new Vue application, while legacy pages were still served by the old system. This minimized risk and allowed us to iterate based on user feedback.
+
+### Vue vs React
+
+> How would you decide which framework, Vue or React, to use? What are the key technical trade-offs you would consider?
+
+The choice between React and Vue.js really depends on several factors. From a technical standpoint, React offers more flexibility and has a larger ecosystem, but Vue provides a gentler learning curve and clearer structure out of the box.
+
+React's component architecture offers more control, but Vue's template syntax can speed up development. React has better TypeScript support, while Vue offers simpler state management.
+
+For team considerations, I'd lean toward Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers. The structured approach reduces the need for extensive code reviews compared to React's flexibility, which can sometimes lead to inconsistent patterns.
+
+That said, if the existing codebase or team expertise heavily favors React, that would be the practical choice.
 
 ## Questions
 
