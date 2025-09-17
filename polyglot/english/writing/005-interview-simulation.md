@@ -173,6 +173,10 @@ And third, our support team was overwhelmed with repetitive questions, so I buil
 
 Finally, I mentored three junior developers and established a standard code review process that significantly improved our team's code quality.
 
+> Can you tell me more about Toyou Feiji Electronics?
+
+Toyou Feiji Electronics is a tech company specializing in storage solutions. We primarily serve enterprise clients and government organizations, providing storage infrastructure including both hardware and software. Our services include data storage and management.
+
 ### Blitz Interactive
 
 > What were your key contributions at Blitz Interactive?
@@ -304,6 +308,33 @@ For Performance, virtual scrolling with Vue Virtual Scroller, lazy loading for c
 For scalability, use a CDN for static assets and progressive loading, show critical data first.
 
 My experience with Vue.js and TypeScript in storage management is a perfect fit for this challenge.
+
+### Data Visualization
+
+> Can you walk me through a specific project where you implemented a data visualization dashboard?
+
+I've developed data visualization dashboards in two key projects, both using ECharts.js.
+
+At Blitz Interactive, I built an admin dashboard for our instant messaging system that handled real-time business inquiries. I used ECharts.js to display live users, inquiry types, and customer satisfaction scores.
+
+At Toyou Feiji Electronics, I created a more complex storage device monitoring dashboard. We needed to track numerous hardware and software metrics across multiple storage clusters, including CPU usage, memory usage, disk I/O, and network. I used ECharts.js line charts to display real-time status indicators.
+
+A major challenge was managing hundreds of metrics for data disks that updated every few seconds. I solved this by implementing data aggregation on the frontend, showing detailed metrics for selected devices while displaying summarized views for the cluster overview.
+
+Both projects taught me the importance of balancing information density in data visualization.
+
+### CI/CD
+
+> Can you describe a project where you implemented or contributed to a CI/CD pipeline for a front-end application? Please
+
+At Toyou Feiji Electronics, on our storage management platform, we used Git for version control, with feature branches undergoing ESLint, Prettier, and TypeScript checks via pre-commit hooks. I configured Jenkins to automate builds for our frontend, creating binary files.
+
+Since our storage devices were in a secure, offline environment, which limited full CI/CD automation. deployment had to be performed manually by the hardware team.
+
+### XSS/CSRF
+
+> Can you share an experience where you addressed a cross-browser compatibility issue or a front-end security vulnerability (e.g., XSS, CSRF)?
+
 
 ## Questions
 
