@@ -9,7 +9,7 @@ tags:
 
 > Tell me a bit about yourself and your professional journey so far.  
 
-I'm Xin Chen, a Full-Stack Developer from China, now based in Munich with an Opportunity Card work permit.
+I'm Xin Chen, a Full-Stack Developer from China, currently based in Munich with an Opportunity Card work permit.
 
 With over 8 years of experience in web development, I specialize in frontend technologies like React, Vue.js, and TypeScript. I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
@@ -17,7 +17,9 @@ In my last role at Toyou Feiji Electronics, I led the architecture redesign of a
 
 I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description.
 
-I've completed intensive German courses and reached B1 level. I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
+I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails.
+
+I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
 I look forward to talking about how I can support your team.
 
@@ -231,7 +233,7 @@ My first key decision was selecting Vue.js with TypeScript. I chose Vue.js and T
 
 I established a standard code review process that ensured code quality.
 
-As a result, I created a scalable, type-safe system that reduced bugs and improved team productivity, enabling independent frontend and backend development for faster iterations.
+As a result, I created a scalable, type-safe system that improved team productivity, enabling independent frontend and backend development for faster iterations.
 
  > What were the main challenges, and how did you ensure the new architecture was scalable and maintainable?
 
