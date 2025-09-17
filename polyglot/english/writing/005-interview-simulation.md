@@ -269,6 +269,26 @@ As a result, we successfully refactored all APIs, I also refactored over 100 int
 
 This experience taught me that clear documentation is a great tool for communication.
 
+### Job Scope
+
+> Can you describe a time when you had to take initiative on a project or problem that wasn't clearly defined in your job scope? How did you approach it?
+
+At Toyou Feiji Electronics, I redesigned our centralized storage platform and collaborated with the backend team to standardize new APIs.
+
+A key challenge was that no one had a clearly understanding about Redfish compliance. So I researched the Redfish standards, created documentation to guide the team, mapped old APIs to requirements. This wasn't in my job scope, but I saw it as essential for project success.
+
+As a result, the APIs refactoring was successful, I also refactored over 100 interfaces. It was a excellent full-stack learning experience.
+
+So, I'm comfortable taking on tasks beyond my job scope. And I think dive into different job scope can be beneficial for personal growth as you can learn new skills and knowledge.
+
+### Learning Knowledge
+
+> How do you stay current with rapidly evolving web technologies? And how would you approach learning domain-specific knowledge about solar inverters and energy storage systems?
+
+I stay current with web technologies by multiple approaches: I follow tech blogs like JavaScript Weekly, contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
+
+For domain-specific knowledge, I'd start with the company's documentation and industry standards, then actively learn from colleagues and hands-on project work.
+
 ## Questions
 
 > Do you have any questions for us?  
