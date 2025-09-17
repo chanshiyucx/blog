@@ -255,7 +255,7 @@ Overall, if the existing codebase or team expertise heavily favors React, that w
 
 ### Communication
 
-> Tell me about a time when you had to collaborate with backend developers or other teams to solve a complex technical problem. How did you handle communication challenges, especially given the multilingual environment you'll be working in here?
+> How did you handle communication challenges?
 
 At Toyou Feiji Electronics, when I redesigned our centralized storage platform. As a senior frontend developer, I also worked with backend teams to refactor Redfish-compliant RESTful APIs.
 
@@ -271,7 +271,7 @@ This experience taught me that clear documentation is a great tool for communica
 
 ### Job Scope
 
-> Can you describe a time when you had to take initiative on a project or problem that wasn't clearly defined in your job scope? How did you approach it?
+> Can you describe a time when you had to take initiative on a project or problem that wasn't clearly defined in your job scope?
 
 At Toyou Feiji Electronics, I redesigned our centralized storage platform and collaborated with the backend team to standardize new APIs.
 
@@ -312,3 +312,8 @@ My experience with Vue.js and TypeScript in storage management is a perfect fit 
 - What does a typical day look like for this role?
 - Will this role involve collaboration with the team in China?
 - Could you tell me about the team structure and how collaboration usually works?
+
+## General Expression
+
+- Sorry, could you please repeat the question?
+- Thank you for your time today. I look forward to hearing from you.
