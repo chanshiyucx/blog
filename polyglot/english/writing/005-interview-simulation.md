@@ -47,17 +47,15 @@ Professionally, I've always been interested in the German tech industry. Munich 
 
 I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
 
+## Long Term Plans
+
 > What are your long-term plans in Germany?  
-> Are you planning to stay in Germany long-term?  
-> How long are you planning to work in Germany?  
-> Is this a temporary move or are you looking to settle here?  
-> What's your commitment to staying with the company?  
 
 I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
 
+## Career Goals
+
 > What are your career goals in Germany?  
-> How does this role fit into your long-term plans?  
-> Where do you see yourself in five years?
 
 My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
 
@@ -78,6 +76,16 @@ The city has such a nice balance. The climate here is very pleasant, and I actua
 I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
 
 Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
+
+## Work Life Balance
+
+> How important is work-life balance to you?
+
+Work-life balance is important to me, but I also understand that in a startup environment, there will be periods requiring extra dedication.
+
+I'm committed to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
+
+I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
 
 ## English Level
 
@@ -335,6 +343,35 @@ Since our storage devices were in a secure, offline environment, which limited f
 
 > Can you share an experience where you addressed a cross-browser compatibility issue or a front-end security vulnerability (e.g., XSS, CSRF)?
 
+At Blitz Interactive, I secured our instant messaging system against XSS attacks, as user inputs like chat messages posed risks of malicious scripts.
+
+During code reviews, I identified unescaped inputs in the frontend. I used the third library to filter inputs, preserving safe HTML for rich media, and ensuring secure user interactions.
+
+ I tested compatibility across Chrome, Firefox, and Safari. This strengthened my skills in frontend security.
+
+### Mentore Junior
+
+> Describe your management style when mentoring junior developers
+
+At Toyou Feiji, I mentored three junior developers using a structured approach. I began by understanding each person's learning style and career goals, then created personalized development plans.
+
+I assigned a different range of development tasks, starting with simple ones and gradually increasing complexity until they were able to undertake all development tasks.
+
+The key was building their confidence while maintaining code quality, so I established a standardized code review process to ensure code quality.
+
+### Deadlines
+
+> How would you handle tight deadlines with limited resources?
+
+I focus on three things: what's most important, using what we have, and clear communication.
+
+First, I work with the team to decide what features we must deliver and what can wait. At my last job, when we had a tight deadline for a monitoring feature, I built the basic functions first, then added extra features later.
+
+Second, I use existing code and tools instead of building everything new. This saves time and reduces mistakes.
+
+Third, I give daily updates and tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
+
+I'm happy to work extra hours when needed, but I try to keep code quality good so we don't create bigger problems later.
 
 ## Questions
 
@@ -348,3 +385,4 @@ Since our storage devices were in a secure, offline environment, which limited f
 
 - Sorry, could you please repeat the question?
 - Thank you for your time today. I look forward to hearing from you.
+- I haven't faced that exact situation, but I'm excited to learn.
