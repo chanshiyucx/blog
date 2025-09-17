@@ -17,6 +17,8 @@ I also have hands-on experience with Spring Boot on the backend, so I can collab
 
 I've completed intensive German courses and reached B1 level. I'm motivated to join a German company where I can contribute to innovative projects and continue growing as a web developer.
 
+I'm also a passionate open-source contributor, with a few personal projects on GitHub that have gained over 670 stars, which reflects the spirit highlighted in your job description.
+
 I look forward to talking about how I can support your team.
 
 ## Reasons for Coming to Germany
@@ -66,7 +68,7 @@ That's a great question. This role at Sungrow really appeals to me for a few key
 
 First, I'm genuinely excited about Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
 
-Second, the role is a perfect match for my experience. The role involves front-end architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
+Second, the role is a perfect match for my experience. The role involves frontend architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
 
 So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
 
