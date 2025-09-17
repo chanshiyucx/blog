@@ -289,6 +289,22 @@ I stay current with web technologies by multiple approaches: I follow tech blogs
 
 For domain-specific knowledge, I'd start with the company's documentation and industry standards, then actively learn from colleagues and hands-on project work.
 
+### Technical Architect
+
+> If you had to architect a real-time dashboard showing solar panel performance across multiple sites in different countries, what would be your high-level approach?
+
+Vue.js with TypeScript and Composition API for better state management.
+
+I'd use Pinia for global state and implement WebSocket connections for real-time updates.
+
+For visualization, I'd integrate Chart.js with Vue's reactive system. The UX would feature responsive layouts.
+
+For Performance, virtual scrolling with Vue Virtual Scroller, lazy loading for charts using Vue's async components, and intelligent caching with keep-alive.
+
+For scalability, use a CDN for static assets and progressive loading, show critical data first.
+
+My experience with Vue.js and TypeScript in storage management is a perfect fit for this challenge.
+
 ## Questions
 
 > Do you have any questions for us?  
