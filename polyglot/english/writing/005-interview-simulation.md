@@ -51,7 +51,9 @@ I'm also excited about working with international teams and contributing to inno
 
 > What are your long-term plans in Germany?  
 
-I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany. My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany.
+
+My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
 
 ## Career Goals
 
@@ -99,7 +101,9 @@ For example, I've written documentation for my projects in English. I'm confiden
 
 > Are you learning German?  
 
-Yes, I'm actively learning German. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
+Yes, I'm actively learning German. I started learning German in February this year and have been studying for about 4 months. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
+
+~~Ja, ich lerne Deutsch seit Februar - etwa 4 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
 ## Available Date
 
@@ -353,7 +357,7 @@ During code reviews, I identified unescaped inputs in the frontend. I used the t
 
 > Describe your management style when mentoring junior developers
 
-At Toyou Feiji, I mentored three junior developers using a structured approach. I began by understanding each person's learning style and career goals, then created personalized development plans.
+At Toyou Feiji, I mentored three junior developers using a structured approach. First, I got to know each person's learning style and career goals, then created personalized development plans.
 
 I assigned a different range of development tasks, starting with simple ones and gradually increasing complexity until they were able to undertake all development tasks.
 
@@ -365,13 +369,23 @@ The key was building their confidence while maintaining code quality, so I estab
 
 I focus on three things: what's most important, using what we have, and clear communication.
 
-First, I work with the team to decide what features we must deliver and what can wait. At my last job, when we had a tight deadline for a monitoring feature, I built the basic functions first, then added extra features later.
+First, I work with the team to decide what features we must deliver and what can wait. At my last job, when we had a tight deadline for a feature, I built the basic functions first, then added extra features later.
 
 Second, I use existing code and tools instead of building everything new. This saves time and reduces mistakes.
 
-Third, I give daily updates and tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
+Third, I tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
 
 I'm happy to work extra hours when needed, but I try to keep code quality good so we don't create bigger problems later.
+
+### AI
+
+> How do you use AI tools in your development workflow?
+
+I actively use AI tools like Claude, ChatGPT, and Gemini in my development workflow. They're excellent for research, documentation lookup, and helping with simple coding tasks, this significantly improves my development speed.
+
+However, I see AI as a powerful assistant, not a replacement. Complex architecture decisions and full project development still require developer expertise.
+
+At Toyou Feiji, I also worked on integrating AI into our workflow. We built an AI chat tool using RAGflow that helped our support team handle customer service issues. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
 ## Questions
 
