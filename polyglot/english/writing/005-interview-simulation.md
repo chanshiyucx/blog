@@ -9,7 +9,7 @@ tags:
 
 > Tell me a bit about yourself and your professional journey so far.  
 
-I'm Xin Chen, a Full-Stack Developer from China, currently based in Munich with an Opportunity Card work permit.
+Thank you for taking the time to meet with me today. I'm Xin Chen, a Full-Stack Developer from China, currently based in Munich with an Opportunity Card work permit.
 
 With over 8 years of experience in web development, I specialize in frontend technologies like React, Vue.js, and TypeScript. I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
