@@ -13,7 +13,7 @@ I'm Xin Chen, a Full-Stack Developer from China, currently based in Munich with 
 
 With over 8 years of experience in web development, I specialize in frontend technologies like React, Vue.js, and TypeScript. I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
-In my last role at Toyou Feiji Electronics, I led the architecture redesign of a storage management platform, implementing Vue.js based separation system, optimizing build times by over 60% using Vite, and developing Redfish-compliant RESTful APIs.
+In my last role at Toyou Feiji Electronics, I led the architecture redesign of our centralized storage management platform, implementing Vue.js based separation system, optimizing build times by over 60% using Vite for our distributed storage platform, and developing Redfish-compliant RESTful APIs.
 
 I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description.
 
@@ -23,17 +23,25 @@ I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for
 
 I look forward to talking about how I can support your team.
 
-## Reason for Application
+## Application Reason
 
 > Why are you interested in this position?  
 
 That's a great question. This role at Sungrow really appeals to me for a few key reasons.
 
-First, I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a field I'm passionate about.
+First, I'm inspired by Sungrow's mission - 'Clean Power for All'. I've been looking for opportunities where my tech skills can make a real positive impact, and renewable energy is a area I'm passionate about.
 
 Second, the role is a perfect match for my experience. The role involves frontend architecture design, performance optimization, and working with technologies like Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
 
 So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
+
+## About Sungrow
+
+> What do you know about Sungrow as a company?
+
+I visited Sungrow's official website and learned about your products and business scope. I understand Sungrow is a leading company focused on renewable energy solutions.
+
+I'm particularly inspired by Sungrow's mission - 'Clean Power for All'. The opportunity to contribute to clean energy technology is a area I'm passionate about.
 
 ## Coming to Germany
 
@@ -83,9 +91,9 @@ Overall, Munich feels like a great place for both my career and personal life. I
 
 > How important is work-life balance to you?
 
-Work-life balance is important to me, but I also understand that in a startup environment, there will be periods requiring extra dedication.
+Work-life balance is important to me, but I also understand that in a startup environment.
 
-I'm committed to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
+I'm excited to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
 
 I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
 
@@ -101,9 +109,9 @@ For example, I've written documentation for my projects in English. I'm confiden
 
 > Are you learning German?  
 
-Yes, I'm actively learning German. I started learning German in February this year and have been studying for about 4 months. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
+Yes, I'm actively learning German. I started learning German in February this year and have been studying for about 5 months. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
 
-~~Ja, ich lerne Deutsch seit Februar - etwa 4 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
+~~Ja, ich lerne Deutsch seit Februar - etwa 5 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
 ## Available Date
 
@@ -265,7 +273,7 @@ The choice between React and Vue.js really depends on several factors. From a te
 
 React's component architecture offers more control, but Vue's template syntax can speed up development. React has better TypeScript support, while Vue offers simpler state management.
 
-For team considerations, I'd lean toward Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers.
+For team considerations, I'd chose Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers.
 
 Overall, if the existing codebase or team expertise heavily favors React, that would be the practical choice.
 
@@ -285,7 +293,7 @@ As a result, we successfully refactored all APIs, I also refactored over 100 int
 
 This experience taught me that clear documentation is a great tool for communication.
 
-### Job Scope
+### Job Scope / Documentation
 
 > Can you describe a time when you had to take initiative on a project or problem that wasn't clearly defined in your job scope?
 
@@ -301,7 +309,7 @@ So, I'm comfortable taking on tasks beyond my job scope. And I think dive into d
 
 > How do you stay current with rapidly evolving web technologies? And how would you approach learning domain-specific knowledge about solar inverters and energy storage systems?
 
-I stay current with web technologies by multiple approaches: I follow tech blogs like JavaScript Weekly, contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
+I keep up with web technologies by various approaches: I follow tech blogs like JavaScript Weekly, contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
 
 For domain-specific knowledge, I'd start with the company's documentation and industry standards, then actively learn from colleagues and hands-on project work.
 
@@ -386,6 +394,14 @@ I actively use AI tools like Claude, ChatGPT, and Gemini in my development workf
 However, I see AI as a powerful assistant, not a replacement. Complex architecture decisions and full project development still require developer expertise.
 
 At Toyou Feiji, I also worked on integrating AI into our workflow. We built an AI chat tool using RAGflow that helped our support team handle customer service issues. This tool automated responses to common questions and helped our support team focus on more complex cases.
+
+## Hobbies
+
+> What do you do in your free time?
+
+I enjoy several outdoor activities that help me stay active and balanced.
+
+I enjoy hiking and badminton for staying active. Photography is another passion of mine. I love traveling to explore new places and cultures. These hobbies help me stay balanced.
 
 ## Questions
 
