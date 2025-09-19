@@ -17,7 +17,7 @@ jobs:
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          git sparse-checkout set Tech Notes Life Vibes Album
+          git sparse-checkout set Tech Notes Life Vibes Albums
         continue-on-error: false
 
       - name: Sync obsidian directories
@@ -26,7 +26,7 @@ jobs:
           rsync -av --delete obsidian/Notes/ ./notes/
           rsync -av --delete obsidian/Life/ ./life/
           rsync -av --delete obsidian/Vibes/ ./vibes/
-          rsync -av --delete obsidian/Album/ ./album/
+          rsync -av --delete obsidian/Albums/ ./albums/
           find . -name "SUMMARY.md" -delete
         continue-on-error: false
 
