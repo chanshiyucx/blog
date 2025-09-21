@@ -2,7 +2,7 @@
 title: Trim Text
 date: 2025-09-06 09:17:56
 tags:
-  - Snippets/JavaScript
+  - Notes/JavaScript
   - JavaScript/Function
 references:
   - https://www.lloydatkinson.net/notes/3/

@@ -2,7 +2,7 @@
 title: Delay
 date: 2025-09-04 14:08:12
 tags:
-  - Snippets/JavaScript
+  - Notes/JavaScript
   - JavaScript/Function
 ---
 

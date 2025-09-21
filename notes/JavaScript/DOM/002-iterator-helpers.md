@@ -2,7 +2,7 @@
 title: Iterator Helpers
 date: 2025-09-06 09:26:56
 tags:
-  - Snippets/JavaScript
+  - Notes/JavaScript
   - JavaScript/DOM
 references:
   - https://web.dev/blog/baseline-iterator-helpers
