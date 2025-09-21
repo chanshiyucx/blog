@@ -2,7 +2,6 @@
 title: Is Valid Color
 date: 2025-09-05 22:03:38
 tags:
-  - Notes/JavaScript
   - JavaScript/Function
 ---
 

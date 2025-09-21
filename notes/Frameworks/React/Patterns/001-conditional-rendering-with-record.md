@@ -2,7 +2,6 @@
 title: Conditional Rendering With Record
 date: 2025-09-06 08:25:27
 tags:
-  - Notes/Frameworks
   - React/Patterns
 references:
   - https://www.reddit.com/r/reactjs/comments/z5c7iu/react_conditional_rendering_with_type_safety_and/

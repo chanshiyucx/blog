@@ -2,7 +2,6 @@
 title: Light Dark
 date: 2025-09-06 09:22:27
 tags:
-  - Notes/CSS
   - CSS/Effects
 ---
 

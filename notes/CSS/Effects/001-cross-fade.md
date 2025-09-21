@@ -2,7 +2,6 @@
 title: Cross Fade
 date: 2025-09-06 09:12:12
 tags:
-  - Notes/CSS
   - CSS/Effects
 ---
 

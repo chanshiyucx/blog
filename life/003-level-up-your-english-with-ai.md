@@ -2,7 +2,7 @@
 title: Level Up Your English with AI
 date: 2025-08-21 08:51:26
 tags:
-  - English/Writing
+  - Life/English
 ---
 
 ## AI Prompt

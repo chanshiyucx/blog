@@ -2,7 +2,7 @@
 title: 5 Reasons Why You Should Start Writing Technical Articles
 date: 2025-01-14 23:20:03
 tags:
-  - English/Writing
+  - Life/English
 ---
 Today, I read an insightful article online about the benefits of writing technical articles. It outlined five compelling reasons to start writing.
 
