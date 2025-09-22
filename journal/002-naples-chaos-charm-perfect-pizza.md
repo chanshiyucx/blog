@@ -2,7 +2,7 @@
 title: Naples Chaos Charm Perfect Pizza
 date: 2025-08-12 21:50:57
 tags:
-  - Life/Travel
+  - Journal/Travel
 priority: 1
 ---
 
