@@ -1,5 +1,5 @@
 ---
-title: a Weekend Spent Chasing Mushrooms
+title: A Weekend Spent Chasing Mushrooms
 date: 2025-09-22 16:48:18
 tags:
   - Journal/Daily
@@ -16,10 +16,8 @@ Even though it was my first official outing, my girlfriend had already taught me
 
 After about an hour and a half, crossing through two patches of forest, our haul was pretty decent—we managed to fill up a big bag. To catch the return bus, my girlfriend and I called it a day and headed home.
 
-![Suillus granulatus](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/Mushroom.jpg)
-
-![Rotbrauner Scheidenstreifling](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3377.jpg)
-
+![Suillus granulatus](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/Mushroom.jpg)  
+![Rotbrauner Scheidenstreifling](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3377.jpg)  
 ![Today's Takeaways](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3382.jpg)
 
 Back home we sorted our treasures: mostly *Bay bolete* and *Red-footed bolete*, plus a few *Chanterelle*. We turned them into a mushroom feast that night—two quick stir-fried dishes that tasted incredible. No luck finding the prized porcini or honey mushrooms this time, but with honey mushroom season just around the corner, we're already excited to try again.
