@@ -6,7 +6,7 @@ tags:
 ---
 On Saturday, my girlfriend and I joined a mushroom-picking trip—it was my first real foray into Munich's mushroom season.
 
-There were about a dozen of us, mostly Chinese students studying in Munich, plus a few older ladies. Since mushrooms are best picked early, the meetup was scheduled for the morning, which meant we had to get up at the crack of dawn. Luckily, we'd packed everything the night before—paper bags, cloth bags, gloves, a small knife—so we were ready to go and even had time for breakfast.
+There were about a dozen of us, mostly Chinese students studying in Munich, plus a few older ladies. We'd packed everything the night before—paper bags, cloth bags, gloves, a small knife.
 
 Getting there was its own little journey: first the S-Bahn to Munich East, then the RB40, and finally a bus. About an hour later we arrived at our meeting point, Neupullach Gasthaus. Not too far, not too close—just right.
 
