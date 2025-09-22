@@ -22,6 +22,6 @@ After about an hour and a half, crossing through two patches of forest, our haul
 
 ![Today's Takeaways](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3382.jpg)
 
-Back home we sorted our treasures: mostly *Suillus granulatus* and *Boletus badius*, plus a few chanterelles. We turned them into a mushroom feast that night—two quick stir-fried dishes that tasted incredible. No luck finding the prized porcini or honey mushrooms this time, but with honey mushroom season just around the corner, we're already excited to try again.
+Back home we sorted our treasures: mostly *Bay bolete* and *Red-footed bolete*, plus a few *Chanterelle*. We turned them into a mushroom feast that night—two quick stir-fried dishes that tasted incredible. No luck finding the prized porcini or honey mushrooms this time, but with honey mushroom season just around the corner, we're already excited to try again.
 
 In fact, next weekend's foraging trip is already on the calendar. After a week of rain, the mushrooms should be thriving, just waiting for us to pick them. Can't wait.

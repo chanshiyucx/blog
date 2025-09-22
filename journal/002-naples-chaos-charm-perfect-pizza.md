@@ -3,7 +3,6 @@ title: Naples Chaos Charm Perfect Pizza
 date: 2025-08-12 21:50:57
 tags:
   - Journal/Travel
-priority: 1
 ---
 
 When my girlfriend and I arrived in Naples from Munich in late July, the first thing we noticed was the heat. The Mediterranean sun was intense, but we were happy with the weather. We had five days of clear blue skies ahead of us in one of Italy's most authentic cities.
