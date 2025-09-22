@@ -8,9 +8,7 @@ On Saturday, my girlfriend and I joined a mushroom-picking trip—it was my firs
 
 There were about a dozen of us, mostly Chinese students studying in Munich, plus a few older ladies. We'd packed everything the night before—paper bags, cloth bags, gloves, a small knife.
 
-Getting there was its own little journey: first the S-Bahn to Munich East, then the RB40, and finally a bus. About an hour later we arrived at our meeting point, Neupullach Gasthaus. Not too far, not too close—just right.
-
-After a short wait, our guide showed up—everyone affectionately calls him "Brother Fang." He wasted no time leading us into the woods. It was peak mushroom season, and the forest floor was dotted with all kinds of mushrooms—some delicious, others definitely not for eating. Since many in the group were beginners, Brother Fang gave a mini field lecture on how to tell edible species from the toxic ones.
+Getting there was its own little journey, about an hour later we arrived at our meeting point, Neupullach Gasthaus. After a short wait, our guide showed up—everyone affectionately calls him "Brother Fang." He wasted no time leading us into the woods. It was peak mushroom season, and the forest floor was dotted with all kinds of mushrooms—some delicious, others definitely not for eating. Since many in the group were beginners, Brother Fang gave a mini field lecture on how to tell edible species from the toxic ones.
 
 Even though it was my first official outing, my girlfriend had already taught me a few basics on our hikes, so I could recognize some common edible types. Instead of sticking close to the group, the two of us ventured ahead and started our own "carpet search."
 
