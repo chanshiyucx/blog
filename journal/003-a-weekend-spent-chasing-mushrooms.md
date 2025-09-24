@@ -4,11 +4,11 @@ date: 2025-09-22 16:48:18
 tags:
   - Journal/Daily
 ---
-On Saturday, my girlfriend and I joined a mushroom-picking trip—it was my first time really experiencing Munich's mushroom season.
+On Saturday, my girlfriend and I joined a mushroom-picking trip—it was my first time experiencing Munich's mushroom season. We'd packed everything the night before: paper bags, cloth bags, gloves, and a small knife.
 
-There were about a dozen of us, mostly Chinese students studying in Munich, plus a few older ladies. We'd packed everything the night before—paper bags, cloth bags, gloves, a small knife.
+It took us about an hour to get there, and then we arrived at our meeting point, Neupullach Gasthaus. Our group of about a dozen included mostly Chinese students, along with a few older ladies.
 
-It took us about an hour to get there, and then we arrived at our meeting point, Neupullach Gasthaus. After a short wait, our guide showed up—everyone affectionately calls him "Brother Fang." Without delay, he took us into the forest. It was peak mushroom season, and the forest floor was dotted with all kinds of mushrooms—some delicious, others definitely not for eating. Since many in the group were beginners, Brother Fang walked us through the basics on how to tell edible species from the toxic ones.
+After a short wait, our guide showed up—everyone affectionately calls him "Brother Fang." He led us straight into the forest. It was peak mushroom season, and the forest floor was dotted with all kinds of mushrooms—some delicious, others definitely not for eating. Since many in the group were beginners, Brother Fang walked us through the basics on how to tell edible species from the toxic ones.
 
 Even though it was my first real trip, my girlfriend had already taught me a few basics on our hikes, so I could recognize some common edible types. Instead of sticking close to the group, we searched the forest on our own.
 
