@@ -7,7 +7,7 @@ tags:
 
 ## Description
 
-Uses the [`cross-fade()`](https://developer.mozilla.org/en-US/docs/Web/CSS/cross-fade) CSS function to blend two or more images at defined transparency levels. This function allows you to create smooth transitions and overlay effects by specifying opacity percentages for each image in the blend.
+Uses the `cross-fade()` CSS function to blend two or more images at defined transparency levels. This function allows you to create smooth transitions and overlay effects by specifying opacity percentages for each image in the blend.
 
 ## Syntax
 

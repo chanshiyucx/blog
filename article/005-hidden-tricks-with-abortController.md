@@ -5,7 +5,7 @@ tags:
   - Web/JavaScript
   - JavaScript/AbortController
 ---
-Today, I'd like to talk about one of the standard JavaScript APIs you are likely sleeping on. It's called [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
+Today, I'd like to talk about one of the standard JavaScript APIs you are likely sleeping on. It's called `AbortController`.
 
 ## What is AbortController?
 
@@ -22,7 +22,7 @@ controller.abort()
 
 Creating a controller instance provides you with two key components:
 
-- `AbortController.signal`: an instance of [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal), which can be used to communicate with, or to abort, an asynchronous operation.
+- `AbortController.signal`: an instance of `AbortSignal`, which can be used to communicate with, or to abort, an asynchronous operation.
 - `AbortController.abort()`: aborts an asynchronous operation before it has completed. When called, triggers the abort event on the `signal`. It also updates the signal to be marked as aborted.
 
 You might wonder where the actual abort logic resides. Here's the elegant part—you define it! Simply listen for the `abort` event and implement your cancellation logic as needed:

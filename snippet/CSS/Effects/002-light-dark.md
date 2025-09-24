@@ -7,7 +7,7 @@ tags:
 
 ## Description
 
-Uses the [`light-dark()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) CSS function to automatically switch between light and dark color values based on the user's system preference or color scheme setting. This modern CSS feature eliminates the need for complex media queries when implementing dark mode support.
+Uses the `light-dark()` CSS function to automatically switch between light and dark color values based on the user's system preference or color scheme setting. This modern CSS feature eliminates the need for complex media queries when implementing dark mode support.
 
 ## Syntax
 

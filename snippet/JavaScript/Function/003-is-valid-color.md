@@ -7,7 +7,7 @@ tags:
 
 ## Description
 
-Validates whether a given string is a valid CSS color value. Uses the browser's [`CSS: supports()`](https://developer.mozilla.org/en-US/docs/Web/API/CSS/supports_static)  API to check color validity and provides an option to allow or disallow CSS special values like `inherit`, `transparent`, `currentcolor`, etc.
+Validates whether a given string is a valid CSS color value. Uses the browser's `CSS: supports()` API to check color validity and provides an option to allow or disallow CSS special values like `inherit`, `transparent`, `currentcolor`, etc.
 
 ## Code
 

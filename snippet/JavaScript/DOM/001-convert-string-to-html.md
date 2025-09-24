@@ -9,7 +9,7 @@ references:
 
 ## Description
 
-Converts an HTML string into real HTML DOM elements using the [`DOMParser`](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/parseFromString) Web API. This function safely parses HTML strings and returns the first element from the parsed content, with proper error handling for malformed HTML.
+Converts an HTML string into real HTML DOM elements using the `DOMParser` Web API. This function safely parses HTML strings and returns the first element from the parsed content, with proper error handling for malformed HTML.
 
 ## Code
 
