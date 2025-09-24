@@ -18,6 +18,6 @@ After about an hour and a half, crossing through two patches of forest, our haul
 ![Rotbrauner Scheidenstreifling](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3377.jpg)  
 ![Today's Takeaways](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250920-Munich-Mushroom/IMG_3382.jpg)
 
-Back home we went through what we'd picked: mostly *Bay bolete* and *Red-footed bolete*, plus a few *Chanterelle*. We turned them into a mushroom feast that night—two quick stir-fries that turned out really good. No luck finding the porcini or honey mushrooms we were hoping for this time, but with honey mushroom season just around the corner, we're already excited to try again.
+Once home, we went through what we'd picked: mostly *Bay bolete* and *Red-footed bolete*, plus a few *Chanterelles*. That night we cooked up a feast—two stir-fries that turned out delicious. We didn't find the porcini or honey mushrooms we'd hoped for, but with honey mushroom season coming up, we're already excited to try again.
 
-In fact, next weekend's trip is already planned. After this week's rain, the forest should be full of mushrooms—can't wait to get back out there.
+Actually, next weekend's trip is already planned. After this week's rain, the forest should be bursting with mushrooms—can't wait to get back out there.
