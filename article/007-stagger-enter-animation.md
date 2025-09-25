@@ -57,7 +57,7 @@ My first thought was `CSS Counters`, which can automatically increment variables
 
 But reality hit hard. As of now, variables defined by `CSS Counters` can't participate in `calc()` method calculations because counter values are treated as string types and can't be used in mathematical operations.
 
-Just when I was about to give up, I discovered the `sibling-index()` function in a [GitHub issue](https://github.com/w3c/csswg-drafts/issues/1026). It returns the current element's index within its parent element, and this value can directly participate in mathematical operations.
+Just when I was about to give up, I discovered the `sibling-index()` function in a [GitHub issue](https://github.com/w3c/csswg-drafts/issues/1026). It returns the current element's index within its parent element, and unlike counters, this value can actually be used in calculations.
 
 This allows the code above to be greatly simplified:
 
