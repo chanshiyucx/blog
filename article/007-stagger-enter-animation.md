@@ -5,9 +5,9 @@ tags:
   - CSS/Animation
 ---
 
-Recently I was redesigning my blog, I added stagger enter animations to all pages.
+Recently I was redesigning my blog, I added stagger enter animations to all pages using Framer Motion.
 
-In Framer Motion, a stagger animation makes child elements animate one after another with a delay. Instead of all animating at once, each element appears in sequence, creating a smooth, rhythmic effect.
+A stagger animation makes child elements animate one after another with a delay. Instead of all animating at once, each element appears in sequence, creating a smooth, rhythmic effect.
 
 While looking for blog design inspiration, I noticed that [Paco Coursey](https://paco.me/) blog and the [Rosé Pine](https://rosepinetheme.com/) official website had much smoother stagger enter animations. So I dove into their source code to see how they implemented it.
 
