@@ -1,5 +1,5 @@
 ---
-title: Stagger Animation
+title: Stagger Enter Animation
 date: 2025-09-25 20:17:45
 tags:
   - CSS/Animation
