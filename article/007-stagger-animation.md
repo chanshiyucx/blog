@@ -4,13 +4,16 @@ date: 2025-09-25 20:17:45
 tags:
   - CSS/Animation
 ---
-在重新设计博客时，我为所有页面添加了 stagger 渐入动画。在 Framer Motion 中，stagger 动画是一种让一组子元素依次带有延迟地播放动画的方式。简单来说，就是当一个容器开始动画时，它内部的子元素不会同时执行动画，而是一个接一个地按设定的时间间隔（stagger delay）触发，从而形成 " 错落有致 " 的动画效果。
 
-然后我在找博客设计灵感时，看到 [Paco Coursey](https://paco.me/) 博客和 [Rosé Pine](https://rosepinetheme.com/) 官方网站的页面 stagger 渐入动画更加丝滑流畅，所以我研究了下它们的源码。
+Recently I was redesigning my blog, I added stagger enter animations to all pages.
 
-## 实现原理
+In Framer Motion, a stagger animation makes child elements animate one after another with a delay. Instead of all animating at once, each element appears in sequence, creating a smooth, rhythmic effect.
 
-研究源码后，发现其实实现原理很简单。
+While looking for blog design inspiration, I noticed that [Paco Coursey](https://paco.me/) blog and the [Rosé Pine](https://rosepinetheme.com/) official website had much smoother stagger enter animations. So I dove into their source code to see how they implemented it.
+
+## How It Works
+
+After studying the source code, I found the implementation is actually quite straightforward. The core idea is using CSS Variables and animation delays to control when each element enters.
 
 ```css
 [data-animate] {
@@ -34,7 +37,7 @@ tags:
 }
 ```
 
-然后在 HTML 中，使用方法如下：
+Then in HTML, you use it like this:
 
 ```html
 <p style="--stagger: 1" data-animate>Hello, I'm Shiyu.</p>
@@ -42,21 +45,21 @@ tags:
 <p style="--stagger: 3" data-animate>Full-Stack Developer</p>
 ```
 
-TODO: 简单解释下上面的源码，结合源码说一下动画效果。
+The core principle is calculating different delay times for each element. Each element has a `--stagger` value representing its position in the sequence. When multiplied by a fixed delay interval, elements play their enter and upward slide animations in order.
 
-因为这个方案使用的是 CSS 原生动画，所以体验上比 Framer Motion 的 stagger 动画更加丝滑，我果断拥抱原生方案。
+Since this approach uses native CSS animations, it performs much better and feels smoother than Framer Motion's stagger animations. I immediately switched to this native solution.
 
-## 简化方案
+## Automation Approach
 
-在改造实施新的动画时我发现，为每个元素添加 `data-animate` 并设置 `--stagger` 其实很繁琐，甚至如果为第三方组件渲染的内容添加动画，比如 MDX 组件，需要破坏性改动，所以我再思考没有没更简单的方案。
+While implementing the new animations, I realized that manually adding `data-animate` and setting `--stagger` values for every element was quite tedious. This becomes especially problematic when you need to add animations to content rendered by third-party components, like MDX components, which requires invasive modifications. So I started thinking about simpler automation approaches.
 
-与 Framer Motion 的 stagger 动画最相似的就是 `CSS Counters` ，它可以让变量根据使用次数递增，从而实现 `--stagger` 自增，甚至不一定需要为子组件。
+My first thought was `CSS Counters`, which can make variables increment based on usage count, achieving auto-incrementing `--stagger` values that can even work across element hierarchies—similar to how Framer Motion works.
 
-但是理想很美好，现实很骨感。到目前为止，`CSS Counters` 定义的变量不能参与 `calc` 方法的计算，因为变量类型为字符串。
+But reality hit hard. As of now, variables defined by `CSS Counters` can't participate in `calc()` method calculations because counter values are treated as string types and can't be used in mathematical operations.
 
-就在我要放弃的时候，我在一条 [github issues](https://github.com/w3c/csswg-drafts/issues/1026) 中，发现 `sibling-index()` 函数，该函数返回一个整数，表示当前元素在 DOM 树中相对于其所有同级元素的位置。返回值是上下文子元素在父元素内所有同级元素中的索引号。最重要的是，返回值可以参与 `calc` 计算。
+Just when I was about to give up, I discovered the `sibling-index()` function in a [GitHub issue](https://github.com/w3c/csswg-drafts/issues/1026). It returns the current element's index within its parent element, and this value can directly participate in mathematical operations.
 
-所以上面的代码可以简化如下：
+This allows the code above to be greatly simplified:
 
 ```css
 
@@ -72,6 +75,6 @@ TODO: 简单解释下上面的源码，结合源码说一下动画效果。
 }
 ```
 
-效果完美，我们只需要简短为父元素添加 `animate-auto`，所有子元素都会获得动画效果。唯一不足的是，不能跨越层级添加动画，不过现在效果我已经很满意了，还能奢求什么呢？
+All you have to do is add `animate-auto` to the parent element, and all child elements automatically get the animation effect. The only limitation is that it can only calculate sibling element indices, so it can't add animations across hierarchical levels. But I'm already quite satisfied with the current effect—what more could I ask for?
 
-现在，也可以尝试给你的博客也添加时流畅的渐入阶梯动画吧！
+If you also want to add this kind of smooth stagger animation to your website, give this approach a try!
