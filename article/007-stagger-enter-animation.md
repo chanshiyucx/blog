@@ -13,7 +13,7 @@ While looking for blog design inspiration, I noticed that [Paco Coursey](https:/
 
 ## How It Works
 
-After studying the source code, I found the implementation is actually quite straightforward. The core idea is using CSS Variables and animation delays to control when each element enters.
+After studying the source code, I found the implementation is pretty simple. The core idea is using CSS variables and animation delays to control when each element enters.
 
 ```css
 [data-animate] {
@@ -51,9 +51,9 @@ Since this approach uses native CSS animations, it performs much better and feel
 
 ## Automation Approach
 
-While implementing the new animations, I realized that manually adding `data-animate` and setting `--stagger` values for every element was quite tedious. This becomes especially problematic when you need to add animations to content rendered by third-party components, like MDX components, which requires invasive modifications. So I started thinking about simpler automation approaches.
+While implementing the new animations, I realized that manually adding `data-animate` and setting `--stagger` values for every element was a real pain. It gets even worse when you need to add animations to content rendered by third-party components, like MDX components, which requires invasive modifications. So I started looking for simpler automation approaches.
 
-My first thought was `CSS Counters`, which can make variables increment based on usage count, achieving auto-incrementing `--stagger` values that can even work across element hierarchies—similar to how Framer Motion works.
+My first thought was `CSS Counters`, which can automatically increment variables based on usage count, achieving auto-incrementing `--stagger` values that can even work across element hierarchies—similar to how Framer Motion works.
 
 But reality hit hard. As of now, variables defined by `CSS Counters` can't participate in `calc()` method calculations because counter values are treated as string types and can't be used in mathematical operations.
 
