@@ -1,5 +1,5 @@
 ---
-title: Object groupBy
+title: Object.groupBy
 date: 2025-09-26 21:04:18
 tags:
   - Snippet/JavaScript
