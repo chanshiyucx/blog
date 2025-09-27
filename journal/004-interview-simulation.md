@@ -15,11 +15,11 @@ With over 8 years of experience in web development, I specialize in frontend tec
 
 In my last role at Toyou Feiji Electronics, I led the architecture redesign of our centralized storage management platform, implementing Vue.js based separation system, optimizing build times by over 60% using Vite for our distributed storage platform, and developing Redfish-compliant RESTful APIs.
 
-I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description.
+I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description. These projects basically use technologies such as React, Vue.js, TypeScript and Next.js, which match the job description.
 
 I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails.
 
-I've been looking for opportunities where my tech skills can make a real positive impact, and what repareo is doing in the automotive space is really exciting to me.
+I was really impressed by repareo's mission to digitize the workshop industry. The idea of building a seamless, user-friendly bridge between drivers and workshops is exactly the kind of impactful project I'm looking to contribute to.
 
 I look forward to talking about how I can support your team.
 
@@ -29,23 +29,25 @@ I look forward to talking about how I can support your team.
 
 That's a great question. This role at Repareo really appeals to me for a few key reasons.
 
-First, I'm genuinely interested in repareo because it's solving a real problem that many people face - finding reliable car repair services. I like that you're bringing technology to an industry that hasn't been very digital yet. The technical challenges of building a booking platform with real-time availability and workshop integrations are exactly what I want to work on. I can see this product actually makes a difference for people.
+First, I'm genuinely interested in Repareo because it's solving a real problem that many people face - finding reliable car repair services. Repareo is doing exactly that by digitizing a traditional industry and making car services more transparent and accessible for everyone. The challenge of building a user-friendly platform with complex backend integrations is incredibly motivating to me.I really value working with teams that focus on quality and continuous learning.
 
-Second, the role is a perfect match for my experience. The role involves working with technologies like React、Vue.js and TypeScript. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
+Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
 
-So, the combination of meaningful work and perfect technical fit makes this role really suitable to me.
+Finally, the culture. The posting mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
+
+So, the combination of meaningful work, perfect technical fit, and great team culture that makes this role exciting for me.
 
 ## About Repareo
 
 > What do you know about Repareo as a company?
 
-I visited Repareo's official website and learned about your products and business scope.  
+My understanding is that Repareo is at the forefront of digitizing the car service industry in Germany.
 
-From my research, Repareo is a Munich-based company that's basically digitizing car repair bookings. You've built a platform that connects car owners with trusted workshops, which is really impressive.
+You've built an impressive platform that solves a key problem: connecting drivers with trusted, bookable workshops. What I find particularly smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
 
-What I find interesting is that you're not just a simple booking site. You're integrating with workshop management systems and making workshops visible everywhere customers are already looking - like on Google or in manufacturer apps.
+This approach of meeting users exactly where they are is crucial for transforming a traditional industry.
 
-It's smart because you're meeting customers where they already are, rather than making them come to you. That kind of digital transformation in a traditional industry is exactly what excites me.
+For a Frontend Developer, this is especially exciting. It means the user interface is the core of the business—it has to be seamless, intuitive, and build trust instantly for both drivers and the workshop partners. The challenge of creating such a high-impact, user-centric interface is what really draws me to this role at Repareo."
 
 ## Coming to Germany
 
