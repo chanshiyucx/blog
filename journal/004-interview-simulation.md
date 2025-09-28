@@ -13,13 +13,13 @@ Thank you for taking the time to meet with me today. I'm Xin Chen, a Full-Stack 
 
 With over 8 years of experience in web development, I specialize in frontend technologies like React, Vue.js, and TypeScript. I also have hands-on experience with Spring Boot on the backend, so I can collaborate smoothly with backend teams.
 
-In my last role at Toyou Feiji Electronics, I led the architecture redesign of our centralized storage management platform, implementing Vue.js based separation system, optimizing build times by over 60% using Vite for our distributed storage platform, and developing Redfish-compliant RESTful APIs.
+In my last role at Toyou Feiji Electronics, I led the architecture redesign of our centralized storage management platform, implementing separation system, optimizing build times by over 60% using Vite, and developing RESTful APIs.
 
 I actively contribute to open-source projects, maintaining GitHub projects with over 670 stars, aligning with the innovative spirit emphasized in your job description. These projects basically use technologies such as React, Vue.js, TypeScript and Next.js, which match the job description.
 
 I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails.
 
-I was really impressed by repareo's mission to digitize the workshop industry. The idea of building a seamless, user-friendly bridge between drivers and workshops is exactly the kind of impactful project I'm looking to contribute to.
+I was really impressed by repareo's mission to digitize the workshop industry. The idea of building a seamless, user-friendly platform between drivers and workshops is exactly the kind of impactful project I'm looking to contribute to.
 
 I look forward to talking about how I can support your team.
 
@@ -29,9 +29,9 @@ I look forward to talking about how I can support your team.
 
 That's a great question. This role at Repareo really appeals to me for a few key reasons.
 
-First, I'm genuinely interested in Repareo because it's solving a real problem that many people face - finding reliable car repair services. Repareo is doing exactly that by digitizing a traditional industry and making car services more transparent and accessible for everyone. The challenge of building a user-friendly platform with complex backend integrations is incredibly motivating to me.I really value working with teams that focus on quality and continuous learning.
+First, I'm genuinely interested in Repareo because it's solving a real problem that many people face - finding reliable car repair services. Repareo is digitizing a traditional industry, making car services more transparent and accessible for everyone. The challenge of building a user-friendly platform is motivating to me.
 
-Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies. With my 8 years of web development experience, I'm confident I can handle the technical challenges.
+Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies.
 
 Finally, the culture. The posting mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
 
