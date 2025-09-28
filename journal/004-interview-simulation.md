@@ -47,7 +47,9 @@ You've built a platform that solves a real problem - helping drivers find truste
 
 As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really draws me to this role at Repareo.
 
-## Coming to Germany
+## About Germany
+
+### Coming to Germany
 
 > Why did you decide to come to Germany for work?  
 
@@ -59,27 +61,11 @@ Professionally, I've always been interested in the German tech industry. Munich 
 
 I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
 
-## Long Term Plans
-
-> What are your long-term plans in Germany?  
-
-I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany.
-
-My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
-
-## Career Goals
-
-> What are your career goals in Germany?  
-
-My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
-
-In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
-
 > What field is your girlfriend studying?
 
 She's a medical PhD student at LMU in Munich.
 
-## Impressions of Munich
+### Impressions of Munich
 
 > How do you like Munich so far?  
 
@@ -91,17 +77,60 @@ I also like how international Munich is. There is a good mix of locals and inter
 
 Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
 
-## Work Life Balance
+### Work-Life Balance
 
 > How important is work-life balance to you?
 
-Work-life balance is important to me, but I also understand that in a startup environment.
+Work-life balance is important to me.
 
 I'm excited to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
 
 I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
 
-## English Level
+### Long Term Plan
+
+> What are your long-term plans in Germany?  
+
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany.
+
+My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
+
+## Job
+
+### Career Goals
+
+> What are your career goals in Germany?  
+
+My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
+
+In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
+
+### Best Candidate
+
+> What makes you the best candidate for this position?
+
+I think three things make me a strong fit for this role.
+
+First, my full-stack experience. While I specialize in frontend, I understand the backend too, this helps me build better user interfaces and work smoothly with backend teams.
+
+Second, my experience with modernization projects. I've led platform redesigns using modern technologies like React and TypeScript - exactly what this role involves.
+
+Third, my adaptability. I contribute to open source, and I'm always ready to learn new technologies when they benefit the project.
+
+So I bring the right technical skills plus the mindset to grow with a company that's transforming a traditional industry.
+
+### Team Culture
+
+> What are you looking for in a team environment?  
+> What do you expect from your future team?
+
+I enjoy working in open, collaborative teams where we share knowledge and focus on delivering a great product. 
+
+From what I've learned about Repareo's culture, with its emphasis on innovation and teamwork, it feels like a strong match for me. I'm excited to join such a team and contribute my frontend development skills to build a high-quality, user-friendly platform.
+
+## Language and Visa
+
+### English Level
 
 > How would you describe your English skills?  
 
@@ -109,7 +138,7 @@ I'm fluent in professional English and use it daily at work.
 
 For example, I've written documentation for my projects in English. I'm confident with both spoken communication and technical discussions, and I'm always working to improve my English. So, I would be very comfortable using English every day in this role.
 
-## German Level
+### German Level
 
 > Are you learning German?  
 
@@ -117,13 +146,13 @@ Yes, I'm actively learning German. I started learning German in February this ye
 
 ~~Ja, ich lerne Deutsch seit Februar - etwa 5 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
-## Available Date
+### Available Date
 
 > When would you be available to start?  
 
 I am available to start immediately.
 
-## Visa
+### Visa
 
 > Do you already have a valid work permit for Germany?  
 
@@ -137,7 +166,7 @@ I moved to Germany in November 2024 and have been here since then.
 
 It's valid until November 2025.
 
-## Salary
+### Salary
 
 > What are your salary expectations?  
 
@@ -412,7 +441,6 @@ I enjoy hiking and badminton for staying active. Photography is another passion 
 > Do you have any questions for us?  
 
 - What does a typical day look like for this role?
-- Will this role involve collaboration with the team in China?
 - Could you tell me about the team structure and how collaboration usually works?
 
 ## General Expression
