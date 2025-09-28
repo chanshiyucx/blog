@@ -209,7 +209,7 @@ Second, my experience with modernization projects. I've led platform redesigns u
 
 Third, my adaptability. I contribute to open source, and I'm always ready to learn new technologies when they benefit the project.
 
-So I bring the right technical skills plus the mindset to grow with a company that's transforming a traditional industry.
+Therefore, I'm confident that my skills and experience make me a great match for this position.
 
 ### Strengths and Weaknesses
 
@@ -225,7 +225,9 @@ I'd describe myself as a collaborative and growth-minded developer. I enjoy shar
 
 > What's your tech stack?
 
-I specialize in React and Vue.js for frontend, with TypeScript, Next.js, and Tailwind CSS. On the backend, I use Node.js and Spring Boot with MySQL. For tools, I work with Vite, Git, Docker. I'm always eager to learn new technologies that add value to the project.
+I specialize in React and Vue.js for frontend, with TypeScript, Next.js, and Tailwind CSS. On the backend, I use Node.js and Spring Boot with MySQL. For tools, I work with Vite, Git, Docker.
+
+I keep up-to-date with the latest trends in these stacks and frameworks by reading blogs and contributing to open-source projects. I'm always eager to learn new technologies that add value to the project.
 
 ### Biggest Challenge
 
@@ -242,6 +244,7 @@ Technically, integrating with multiple workshop systems while maintaining consis
 - What does a typical day look like for this role?
 - Could you tell me about the team structure and how collaboration usually works?
 - What opportunities are there for professional growth in this role?
+- When I might hear back about the interview?
 
 ## Work Experience
 
@@ -283,7 +286,7 @@ Finally, I mentored three junior developers and established a standard code revi
 
 > Can you tell me more about Toyou Feiji Electronics?
 
-Toyou Feiji Electronics is a tech company specializing in storage solutions. We primarily serve enterprise clients and government organizations, providing storage infrastructure including both hardware and software. Our services include data storage and management.
+Toyou Feiji Electronics is a tech company specializing in storage solutions. We primarily serve enterprise clients and government organizations, providing storage infrastructure including both hardware and software. Our services include data storage and management. I contributed to developing the storage management platform software.
 
 ### Blitz Interactive
 
@@ -413,7 +416,11 @@ This experience taught me that clear documentation is a great tool for communica
 
 > Tell me about a time you had to make a technical decision that the team disagreed with.
 
-I focus on clear reasoning rather than opinions. I listen to the team's concerns, create small code demo when possible. Most importantly, I stay open to being wrong - sometimes team resistance reveals real issues I hadn't considered. The goal is finding the best solution that the team can successfully implement.
+I focus on clear reasoning rather than opinions. I listen to the team's concerns, create small code demo when possible.
+
+When I proposed our storage platform migrating from Webpack to Vite, team members worried about disrupting our build process. In order to resolve the conflict, I created a detailed migration plan and organized a technical meeting where I presented a minimal demo showing the performance benefits. The concrete demonstration convinced the team.  
+
+ This experience taught me that making strong technical decisions requires both solid reasoning and clear demonstration of value.
 
 ### Job Scope / Documentation
 
@@ -487,9 +494,9 @@ During the mentoring period, we have regular meetings to summarize and provide f
 
 > How would you handle tight deadlines with limited resources?
 
-I actually handle pressure quite well. I focus on three things: what's most important, using what we have, and clear communication.
+I actually handle pressure quite well. When facing tight deadlines or high-pressure situations, I remain calm and focused by prioritizing tasks. I focus on three things: what's most important, using what we have, and clear communication.
 
-First, I work with the team to decide what features we must deliver and what can wait. When we had a tight deadline for a feature, I built the basic functions first, then added extra features later.
+First, I work with the team to decide what features we must deliver and what can wait. I will built the basic functions first, then added extra features later.
 
 Second, I tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
 
@@ -556,6 +563,12 @@ For build-level optimization, like I did at my last job, I migrated from Webpack
 For runtime optimization, I use techniques like memoization with React.memo or Vue's computed properties, using debounce or throttle function.
 
 I use tools like Chrome DevTools, Lighthouse, or Web Vitals to identify performance issues.
+
+### Debugging / Problem Solving
+
+> How do you approach debugging a complex software issue?
+
+When debugging a complex software issue, I follow a systematic approach that involves several steps. First, I reproduce the issue in a controlled environment to isolate the problem. Then, I gather as much information as possible, such as error messages, logs, and stack traces. Next, I analyze the code and look for possible causes of the problem, such as syntax errors, logical errors, or performance issues. Then, I test different solutions and verify the results. Finally, I document the solution and share it with the team. Throughout the process, I stay organized, methodical, and persistent.
 
 ## Development
 
