@@ -574,6 +574,14 @@ For Authentication, the client sends credentials, the server validates and retur
 
 For Authorization, the token is included in an `Authorization: Bearer <token>` header on every subsequent request. The backend middleware validates the token's signature and expiration, extracts the user's role/permissions, and determines if the request should be granted access.
 
+### CRP
+
+> Walk me through the main steps of the Critical Rendering Path (CRP). How can a frontend developer minimize the 'render-blocking' time?
+
+The main steps are: DOM Construction (parsing HTML), CSSOM Construction (parsing CSS), combining them to form the Render Tree, Layout (calculating element positions/sizes), and finally Paint. To minimize render-blocking:
+1. Minimize Render-Blocking CSS: Use `<link rel='stylesheet' media='print'>` for non-critical CSS, or use Critical CSS inlining.
+2. Minimize Parser-Blocking JavaScript: Use the `defer` or `async` attributes on `<script>` tags. `defer` maintains execution order and executes after the DOM is loaded; `async` executes as soon as it's downloaded, without guaranteed order.
+
 ## General Expression
 
 - Sorry, could you please repeat the question?
