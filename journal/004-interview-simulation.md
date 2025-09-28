@@ -39,6 +39,8 @@ For example, I've written documentation for my projects in English. I'm confiden
 
 Yes, I'm actively learning German. I started learning German in February this year and have been studying for about 5 months. I've completed intensive German courses and reached B1 level. I can handle basic conversations, like greetings or simple emails, but I need more practice to be fluent.
 
+~~Guten Tag, ich freue mich, hier zu sein. Ich spreche Deutsch auf einem Grundniveau, aber ich arbeite daran, meine Fähigkeiten zu verbessern.~~
+
 ~~Ja, ich lerne Deutsch seit Februar - etwa 5 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
 ### Available Date
@@ -236,6 +238,22 @@ I keep up-to-date with the latest trends in these stacks and frameworks by readi
 I think the biggest challenge would be building user trust through the interface. When people book car repairs online, they're dealing with expensive services and may not know the workshop. The frontend has to instantly convey trustworthiness through clear pricing and seamless booking flows.
 
 Technically, integrating with multiple workshop systems while maintaining consistent user experience would be challenging - each workshop has different data formats and processes.
+
+### UX considerations
+
+> What UX considerations are important for a web application?
+
+I think some key UX considerations for a web application include making sure users get the information they need right away. I'd start with progressive disclosure—showing the essentials first, like location and availability, and then letting users dive into more details if they want. Mobile-first design is critical since many users operate on mobile.
+
+Provide clear next steps and contact information to reduce anxiety about what happens next.
+
+> How would you approach building trust in an online car repair booking interface?
+
+Trust is crucial for car repair bookings since people are dealing with expensive services from unfamiliar providers.
+
+I'd focus on transparency - clear upfront pricing, detailed service descriptions, no hidden fees. Social proof through real reviews, workshop certifications, and clear business information. A reliable booking process with confirmations, updates, and easy support contact.
+
+The interface needs to look professional and provide easy cancellation options. If users know they can easily change bookings and reach real people for help, they're more likely to trust the initial booking.
 
 ### Questions
 
@@ -450,7 +468,7 @@ I've developed data visualization dashboards in two key projects, both using ECh
 
 At Blitz Interactive, I built an admin dashboard for our instant messaging system that handled real-time business inquiries. I used ECharts.js to display live users, inquiry types, and customer satisfaction scores.
 
-At Toyou Feiji Electronics, I created a more complex storage device monitoring dashboard. We needed to track numerous hardware and software metrics across multiple storage clusters, including CPU usage, memory usage, disk I/O, and network. I used ECharts.js line charts to display real-time status indicators.
+At Toyou Feiji Electronics, I created a more complex storage device monitoring dashboard. We needed to track hardware and software metrics across multiple storage clusters, including CPU usage, memory usage, disk I/O, and network. I used ECharts.js line charts to display real-time status indicators.
 
 A major challenge was managing hundreds of metrics for data disks that updated every few seconds. I solved this by implementing data aggregation on the frontend, showing detailed metrics for selected devices while displaying summarized views for the cluster overview.
 
