@@ -41,13 +41,11 @@ So, the combination of meaningful work, perfect technical fit, and great team cu
 
 > What do you know about Repareo as a company?
 
-My understanding is that Repareo is at the forefront of digitizing the car service industry in Germany.
+ I understand Repareo is leading the digitization of Germany's car service industry.
 
-You've built an impressive platform that solves a key problem: connecting drivers with trusted, bookable workshops. What I find particularly smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
+You've built a platform that solves a real problem - helping drivers find trusted workshops they can actually book online. What I find really smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
 
-This approach of meeting users exactly where they are is crucial for transforming a traditional industry.
-
-For a Frontend Developer, this is especially exciting. It means the user interface is the core of the business—it has to be seamless, intuitive, and build trust instantly for both drivers and the workshop partners. The challenge of creating such a high-impact, user-centric interface is what really draws me to this role at Repareo."
+As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really draws me to this role at Repareo.
 
 ## Coming to Germany
 
