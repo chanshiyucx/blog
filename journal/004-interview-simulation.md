@@ -220,6 +220,12 @@ An area I'm actively working on is becoming more confident with German in techni
 
 I'd describe myself as a collaborative and growth-minded developer. I enjoy sharing knowledge - like contribute to open source. I'm always eager to learn new technologies when they add real value to the project.
 
+### Tech Stack
+
+> What's your tech stack?
+
+I specialize in React and Vue.js for frontend, with TypeScript, Next.js, and Tailwind CSS. On the backend, I use Node.js and Spring Boot with MySQL. For tools, I work with Vite, Git, Docker. I'm always eager to learn new technologies that add value to the project.
+
 ### Questions
 
 > Do you have any questions for us?  
@@ -465,6 +471,16 @@ I actively use AI tools like Claude, ChatGPT, and Gemini in my development workf
 However, I see AI as a powerful assistant, not a replacement. Complex architecture decisions and full project development still require developer expertise.
 
 At Toyou Feiji, I also worked on integrating AI into our workflow. We built an AI chat tool using RAGflow that helped our support team handle customer service issues. This tool automated responses to common questions and helped our support team focus on more complex cases.
+
+### Accomplishment / Interesting
+
+> What's your biggest professional accomplishment?
+
+My biggest accomplishment was leading the complete redesign of our storage management platform. As a result, I created a scalable, type-safe system that improved team productivity, enabling independent frontend and backend development for faster iterations.
+
+> What's the most interesting project you've worked on?
+
+The most interesting project was developing an AI chat tool integrated with Ragflow for customer support. It was my first deep dive into how AI can enhance user experience. The technical challenge of making AI responses feel natural and helpful was really engaging.
 
 ## General Expression
 
