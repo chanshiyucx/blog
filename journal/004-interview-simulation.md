@@ -588,6 +588,14 @@ I use tools like Chrome DevTools, Lighthouse, or Web Vitals to identify performa
 
 When debugging a complex software issue, I follow a systematic approach that involves several steps. First, I reproduce the issue in a controlled environment to isolate the problem. Then, I gather as much information as possible, such as error messages, logs, and stack traces. Next, I analyze the code and look for possible causes of the problem, such as syntax errors, logical errors, or performance issues. Then, I test different solutions and verify the results. Finally, I document the solution and share it with the team. Throughout the process, I stay organized, methodical, and persistent.
 
+### SSR
+
+> When would you choose server-side rendering versus client-side rendering?
+
+I choose SSR when I need fast initial page loads, SEO benefits, or when users have slow connections. It's great for content-heavy sites, landing pages, and public-facing pages.
+
+I choose CSR for highly interactive applications where user experience after initial load is more important than first paint time. It's better for dashboards, admin panels, or apps behind authentication.
+
 ## Development
 
 ### Event Loop
