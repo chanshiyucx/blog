@@ -226,6 +226,14 @@ I'd describe myself as a collaborative and growth-minded developer. I enjoy shar
 
 I specialize in React and Vue.js for frontend, with TypeScript, Next.js, and Tailwind CSS. On the backend, I use Node.js and Spring Boot with MySQL. For tools, I work with Vite, Git, Docker. I'm always eager to learn new technologies that add value to the project.
 
+### Biggest Challenge
+
+> What do you think would be the biggest challenge in this role?
+
+I think the biggest challenge would be building user trust through the interface. When people book car repairs online, they're dealing with expensive services and may not know the workshop. The frontend has to instantly convey trustworthiness through clear pricing and seamless booking flows.
+
+Technically, integrating with multiple workshop systems while maintaining consistent user experience would be challenging - each workshop has different data formats and processes.
+
 ### Questions
 
 > Do you have any questions for us?  
@@ -456,6 +464,12 @@ However, I see AI as a powerful assistant, not a replacement. Complex architectu
 
 At Toyou Feiji, I also worked on integrating AI into our workflow. We built an AI chat tool using RAGflow that helped our support team handle customer service issues. This tool automated responses to common questions and helped our support team focus on more complex cases.
 
+> Can you tell me more about your role in AI chat tool?
+
+At Toyou Feiji Electronics, our support team was overwhelmed with repetitive questions, so I led the development of an AI-powered chat tool.
+
+My role involved designing and building the tool using Vue.js for the frontend and integrating it with Ragflow to power AI-driven responses. I focused on creating an intuitive interface with clear navigation and responsive design, optimized for both desktop and mobile users. This tool automated responses to common questions and helped our support team focus on more complex cases.
+
 ### Accomplishment / Interesting
 
 > What's your biggest professional accomplishment?
@@ -465,6 +479,8 @@ My biggest accomplishment was leading the complete redesign of our storage manag
 > What's the most interesting project you've worked on?
 
 The most interesting project was developing an AI chat tool integrated with Ragflow for customer support. It was my first deep dive into how AI can enhance user experience. The technical challenge of making AI responses feel natural and helpful was really engaging.
+
+## Development
 
 ## General Expression
 
