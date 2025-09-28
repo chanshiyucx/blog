@@ -320,6 +320,16 @@ At Blitz Interactive Entertainment, I maintained the backend and developed new f
 
 Most recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
+> Tell me about developing those Redfish-compliant RESTful APIs
+
+The Redfish APIs were part of our storage management platform redesign. Redfish is a standard REST API specification for managing data center hardware - it's widely used in enterprise storage systems.
+
+I refactored over 100 APIs to follow the Redfish standard. This involved standardizing URL patterns, data models, and error handling to match Redfish specifications. The main challenge was mapping our existing storage data to standardized schemas while maintaining backward compatibility.
+
+> How does backend experience help you as a frontend developer?
+
+Backend experience helps me understand APIs deeply, communicate better with backend teams, and debug issues faster. I can design better error handling. This full-stack perspective helps me build interfaces that work smoothly with backend systems.
+
 ### Vite Migration / Challenge
 
 > Can you share a particularly challenging technical problem you encountered in one of your projects?
@@ -331,6 +341,10 @@ My task was to find a solution that would improve build performance without disr
 I researched various approaches and determined migrating from Webpack to Vite. However, this was complex because this project was based on Vue 2, and Vite primarily supports Vue 3. I had to carefully plan the migration, configure compatibility plugins, update our build configuration, and coordinate with our testing team to ensure stability.
 
 As a result, we reduced build times from 10 minutes to under 4 minutes, over 60% faster then before. More importantly, this taught me the value of planning when upgrading core infrastructure and the importance of close collaboration with testing team.
+
+> You mentioned improving build times by 60% - how did you achieve that?
+
+I migrated our build system from Webpack to Vite. Webpack was slow because it bundled everything, even during development. Vite uses native ES modules and only processes changed files. This significantly reduced build times and improved team productivity.
 
 ### Architecture Redesign
 
@@ -370,6 +384,10 @@ Vue provides a more opinionated structure with templates and built-in features l
 
 In short, Vue feels more integrated, while React gives more freedom and ecosystem choices.
 
+> This role focuses on React, but your recent experience is with Vue.js - how quickly can you transition?
+
+I actually use React regularly in personal projects, my blog is built with Next.js, TypeScript, and Tailwind CSS, which matches your tech stack exactly. The concepts between Vue and React are very similar. Having experience with both frameworks actually gives me a broader perspective on frontend development.
+
 ### Communication
 
 > How did you handle communication challenges?
@@ -380,7 +398,7 @@ We need to ensure the new APIs does not affect the original functionality and is
 
 We established a communication approach, we scheduled daily technical meetings to track complex issues and ensure clear communication.
 
-We set up a shared a shared documentation and a Postman collection so we could test endpoints together in real-time.
+We set up a shared documentation and a Postman collection so we could test endpoints together in real-time.
 
 As a result, we successfully refactored all APIs, I also refactored over 100 interfaces.
 
@@ -402,7 +420,7 @@ So, I'm comfortable taking on tasks beyond my job scope. And I think dive into d
 
 > How do you stay current with rapidly evolving web technologies?
 
-I keep up with web technologies by various approaches: I follow tech blogs like JavaScript Weekly, contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
+I keep up with web technologies by various approaches: I follow tech blogs like JavaScript Weekly and some personal blogs. Additionally, I actively contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
 
 For domain-specific knowledge, I'd start with the company's documentation and industry standards, then actively learn from colleagues and hands-on project work.
 
@@ -508,7 +526,19 @@ I focus on strict typing from the start - defining interfaces for APIs, componen
 
 I choose state management tools based on complexity.
 
-For Vue, I use Composition API for simple state and Pinia for complex apps. For React, I start with useState/useContext and move to Zustand when needed. My principle is keeping state close to where it's used.
+For Vue, I use Composition API for simple state and Pinia for complex apps. For React, I start with useState/useContext and prefer Zustand for global state management. My principle is keeping state close to where it's used.
+
+### Performance Optimization
+
+> What specific techniques do you use for performance optimization?
+
+I approach performance optimization on multiple levels.
+
+For build-level optimization, like I did at my last job, I migrated from Webpack to Vite, which improved build times by 60%. I also implement code splitting and lazy loading for components.
+
+For runtime optimization, I use techniques like memoization with React.memo or Vue's computed properties, using debounce or throttle function.
+
+I use tools like Chrome DevTools, Lighthouse, or Web Vitals to identify performance issues.
 
 ## Development
 
