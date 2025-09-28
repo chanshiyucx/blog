@@ -556,7 +556,23 @@ I use tools like Chrome DevTools, Lighthouse, or Web Vitals to identify performa
 
 > Explain the JavaScript Event Loop in detail. What is the difference between the Microtask Queue (Job Queue) and the Macrotask Queue (Task Queue), and how does the browser prioritize them?
 
-The Event Loop is a crucial part of how JavaScript handles asynchronous operations, preventing blocking despite being single-threaded. When the Call Stack is empty, the Event Loop checks the queues. The Microtask Queue(containing Promises callbacks, `queueMicrotask`, `async/await` code) is given priority over the Macrotask Queue (containing I/O, timers like `setTimeout`, UI rendering). This means all microtasks are executed immediately after the current macrotask finishes and before the next macrotask is processed or the browser renders. For example, a `Promise.resolve()` callback will execute before a `setTimeout(…, 0)` callback.
+The Event Loop is a crucial part of how JavaScript handles asynchronous operations, preventing blocking despite being single-threaded.
+
+The Microtask Queue contains Promise callbacks, `queueMicrotask`, and `async/await` code, while the Macrotask Queue contains I/O, timers like `setTimeout`, and UI rendering tasks. When the Call Stack is empty, the Event Loop checks the queues. The Microtask Queue is given priority over the Macrotask Queue . This means all microtasks are executed immediately after the current macrotask finishes and before the next macrotask is processed or the browser renders. For example, a `Promise.resolve()` callback will execute before a `setTimeout(…, 0)` callback.
+
+### JS Closures
+
+> What are Closures in JavaScript, and why are they important for module patterns and handling state in React Hooks?
+
+A Closure is when a function retains access to its outer scope's variables _even after_ the outer function has finished executing. It's essentially a function bundled together with references to its surrounding state (the lexical environment). They are vital because they allow for data privacy (module pattern) and for state preservation. In React, custom Hooks rely heavily on closures to 'remember' the state and props from a specific render, even as the component is re-rendered.
+
+### JWT
+
+> How do you handle authentication and authorization in a Single Page Application (SPA) using tokens (like JWT)?
+
+For Authentication, the client sends credentials, the server validates and returns a JWT (JSON Web Token). I would store this token in HTTP-only Cookies for better security against XSS attacks, or in Web Storage (localStorage/sessionStorage) if HTTP-only cookies are not feasible, but I'd ensure proper security measures (like short expiry) are in place.
+
+For Authorization, the token is included in an `Authorization: Bearer <token>` header on every subsequent request. The backend middleware validates the token's signature and expiration, extracts the user's role/permissions, and determines if the request should be granted access.
 
 ## General Expression
 
