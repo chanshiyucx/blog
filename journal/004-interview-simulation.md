@@ -360,9 +360,15 @@ The choice between React and Vue.js really depends on several factors. From a te
 
 React's component architecture offers more control, but Vue's template syntax can speed up development. React has better TypeScript support, while Vue offers simpler state management.
 
-For team considerations, I'd chose Vue.js for this project because it's easier to maintain consistent code style across teams, especially with less experienced developers.
-
 Overall, if the existing codebase or team expertise heavily favors React, that would be the practical choice.
+
+> What are the key differences between Vue and React?
+
+Both Vue and React are popular frontend frameworks, but they have different design concepts.
+
+Vue provides a more opinionated structure with templates and built-in features like reactivity and directives, which makes it easier to start quickly. React is more flexible and component-driven, relying on JSX and external libraries for things like state management or routing.
+
+In short, Vue feels more integrated, while React gives more freedom and ecosystem choices.
 
 ### Communication
 
@@ -434,13 +440,13 @@ During code reviews, I identified unescaped inputs in the frontend. I used the t
 
 ### Mentore Junior
 
-> Describe your management style when mentoring junior developers
+> Describe your management style when mentoring junior developers?
 
 At Toyou Feiji, I mentored three junior developers using a structured approach. First, I got to know each person's learning style and career goals, then created personalized development plans.
 
 I assigned a different range of development tasks, starting with simple ones and gradually increasing complexity until they were able to undertake all development tasks.
 
-The key was building their confidence while maintaining code quality, so I established a standardized code review process to ensure code quality.
+The key challenge was building their confidence while maintaining code quality, so I established a standardized code review process to ensure code quality.
 
 ### Deadlines / High-Pressure
 
@@ -448,7 +454,7 @@ The key was building their confidence while maintaining code quality, so I estab
 
 I actually handle pressure quite well. I focus on three things: what's most important, using what we have, and clear communication.
 
-First, I work with the team to decide what features we must deliver and what can wait. At my last job, when we had a tight deadline for a feature, I built the basic functions first, then added extra features later.
+First, I work with the team to decide what features we must deliver and what can wait. When we had a tight deadline for a feature, I built the basic functions first, then added extra features later.
 
 Second, I tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
 
@@ -479,6 +485,30 @@ My biggest accomplishment was leading the complete redesign of our storage manag
 > What's the most interesting project you've worked on?
 
 The most interesting project was developing an AI chat tool integrated with Ragflow for customer support. It was my first deep dive into how AI can enhance user experience. The technical challenge of making AI responses feel natural and helpful was really engaging.
+
+### Code Review
+
+> How do you approach code reviews?
+
+I see code reviews as both quality control and learning opportunities. As a reviewer, I focus on functionality, code standards, and sharing knowledge. When my code is reviewed, I'm open to feedback and try to make it easy to review with clear comments.
+
+At my last job, I set up a code review process where we required at least one approval and ensure code quality, especially for junior developers.
+
+### TypeScript
+
+> How have you used TypeScript in your projects?
+
+I've used TypeScript in my recent projects, especially for our centralized storage platform redesign. The main benefits are catching errors early and better code documentation.
+
+I focus on strict typing from the start - defining interfaces for APIs, component props, and data models. As a result, our codebase became type-safe and easier to work with, when new team members join, they can understand the data structures just by looking at the types.
+
+### State Management
+
+> How do you handle state management in frontend applications?
+
+I choose state management tools based on complexity.
+
+For Vue, I use Composition API for simple state and Pinia for complex apps. For React, I start with useState/useContext and move to Zustand when needed. My principle is keeping state close to where it's used.
 
 ## Development
 
