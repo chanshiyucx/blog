@@ -149,7 +149,7 @@ My girlfriend is doing her PhD and will graduate next year, she is also planning
 
 You've built a platform that solves a real problem - helping drivers find trusted workshops they can actually book online. What I find really smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
 
-As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really draws me to this role at Repareo.
+As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really appeals to me for this role at Repareo.
 
 ### Application Reason
 
@@ -161,7 +161,7 @@ First, I'm genuinely interested in Repareo because it's solving a real problem t
 
 Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies.
 
-Finally, the culture. The posting mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
+Finally, the culture. The job description mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
 
 So, the combination of meaningful work, perfect technical fit, and great team culture that makes this role exciting for me.
 
@@ -190,7 +190,8 @@ In five years, I see myself as a technical leader contributing to architectural 
 ### Team Culture
 
 > What are you looking for in a team environment?  
-> What do you expect from your future team?
+> What do you expect from your future team?  
+> What values are important to you when working with a team company?
 
 I enjoy working in open, collaborative teams where we share knowledge and focus on delivering a great product.
 
@@ -388,6 +389,12 @@ In short, Vue feels more integrated, while React gives more freedom and ecosyste
 
 I actually use React regularly in personal projects, my blog is built with Next.js, TypeScript, and Tailwind CSS, which matches your tech stack exactly. The concepts between Vue and React are very similar. Having experience with both frameworks actually gives me a broader perspective on frontend development.
 
+> What's cons and pros of React as a framework?
+
+React has several strengths. It's component-based, which makes code reusable and maintainable. Its large ecosystem and community provide many third-party libraries and solutions. It also supports server-side rendering with frameworks like Next.js, which improves performance and SEO.
+
+On the downside, React is not a full framework—it's just a view library. So you often need to make choices about routing, state management, or styling, which can increase complexity. Also, JSX and the fast-moving ecosystem can have a steep learning curve for newcomers.
+
 ### Communication
 
 > How did you handle communication challenges?
@@ -581,6 +588,14 @@ For Authorization, the token is included in an `Authorization: Bearer <token>` h
 The main steps are: DOM Construction (parsing HTML), CSSOM Construction (parsing CSS), combining them to form the Render Tree, Layout (calculating element positions/sizes), and finally Paint. To minimize render-blocking:
 1. Minimize Render-Blocking CSS: Use `<link rel='stylesheet' media='print'>` for non-critical CSS, or use Critical CSS inlining.
 2. Minimize Parser-Blocking JavaScript: Use the `defer` or `async` attributes on `<script>` tags. `defer` maintains execution order and executes after the DOM is loaded; `async` executes as soon as it's downloaded, without guaranteed order.
+
+### CSS Stacking Contexts
+
+> Explain the concept of CSS Stacking Contexts and how the `z-index` property interacts with them.
+
+A Stacking Context is a three-dimensional concept in the browser that dictates how elements overlap. It is created by properties like `position: relative/absolute/fixed/sticky` with a defined `z-index`, or by modern properties like `transform`, `filter`, or `opacity < 1`. Crucially, `z-index` only works within the same stacking context. If Element A has a higher `z-index` but is in a lower stacking context than Element B, Element B will always render on top. This is critical when dealing with modal overlays or sticky navigation bars, where they must be in a new, high-level stacking context to cover everything else.
+
+---
 
 ## General Expression
 
