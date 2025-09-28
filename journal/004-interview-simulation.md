@@ -5,7 +5,9 @@ tags:
   - English/Writing
 ---
 
-## Self Introduction
+## About Me
+
+### Self Introduction
 
 > Tell me a bit about yourself and your professional journey so far.  
 
@@ -22,113 +24,6 @@ I've completed intensive German courses and reached B1 level. I can handle basic
 I was really impressed by repareo's mission to digitize the workshop industry. The idea of building a seamless, user-friendly platform between drivers and workshops is exactly the kind of impactful project I'm looking to contribute to.
 
 I look forward to talking about how I can support your team.
-
-## Application Reason
-
-> Why are you interested in this position?  
-
-That's a great question. This role at Repareo really appeals to me for a few key reasons.
-
-First, I'm genuinely interested in Repareo because it's solving a real problem that many people face - finding reliable car repair services. Repareo is digitizing a traditional industry, making car services more transparent and accessible for everyone. The challenge of building a user-friendly platform is motivating to me.
-
-Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies.
-
-Finally, the culture. The posting mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
-
-So, the combination of meaningful work, perfect technical fit, and great team culture that makes this role exciting for me.
-
-## About Repareo
-
-> What do you know about Repareo as a company?
-
- I understand Repareo is leading the digitization of Germany's car service industry.
-
-You've built a platform that solves a real problem - helping drivers find trusted workshops they can actually book online. What I find really smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
-
-As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really draws me to this role at Repareo.
-
-## About Germany
-
-### Coming to Germany
-
-> Why did you decide to come to Germany for work?  
-
-Well, there are a couple of main reasons.
-
-On the personal side, my girlfriend is doing her PhD at LMU in Munich and has been here for four years. So I moved here to be with her and start our life together.
-
-Professionally, I've always been interested in the German tech industry. Munich is one of Europe's major IT hubs with a highly developed IT industry. This gives me much better opportunities to find the right position that matches my skills and experience. I really like the work culture of German companies, as they focus on quality and value work-life balance, which is important to me too.
-
-I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
-
-> What field is your girlfriend studying?
-
-She's a medical PhD student at LMU in Munich.
-
-### Impressions of Munich
-
-> How do you like Munich so far?  
-
-I really love Munich! It's been a great experience living here so far.
-
-The city has such a nice balance. The climate here is very pleasant, and I actually like the weather a lot. The public transport system is really convenient, so I can easily get anywhere I need to go.  
-
-I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
-
-Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
-
-### Work-Life Balance
-
-> How important is work-life balance to you?
-
-Work-life balance is important to me.
-
-I'm excited to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
-
-I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
-
-### Long Term Plan
-
-> What are your long-term plans in Germany?  
-
-I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany.
-
-My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
-
-## Job
-
-### Career Goals
-
-> What are your career goals in Germany?  
-
-My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
-
-In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
-
-### Best Candidate
-
-> What makes you the best candidate for this position?
-
-I think three things make me a strong fit for this role.
-
-First, my full-stack experience. While I specialize in frontend, I understand the backend too, this helps me build better user interfaces and work smoothly with backend teams.
-
-Second, my experience with modernization projects. I've led platform redesigns using modern technologies like React and TypeScript - exactly what this role involves.
-
-Third, my adaptability. I contribute to open source, and I'm always ready to learn new technologies when they benefit the project.
-
-So I bring the right technical skills plus the mindset to grow with a company that's transforming a traditional industry.
-
-### Team Culture
-
-> What are you looking for in a team environment?  
-> What do you expect from your future team?
-
-I enjoy working in open, collaborative teams where we share knowledge and focus on delivering a great product. 
-
-From what I've learned about Repareo's culture, with its emphasis on innovation and teamwork, it feels like a strong match for me. I'm excited to join such a team and contribute my frontend development skills to build a high-quality, user-friendly platform.
-
-## Language and Visa
 
 ### English Level
 
@@ -187,6 +82,151 @@ Based on the market in Munich and my background, I believe €60 is a fair salar
 > What is your current salary?
 
 I prefer to focus on the market value of the role here in Munich and the skills I bring, rather than my current salary. My expectation is based on my experience and the Munich market, not directly on my current salary.
+
+### Hobbies
+
+> What do you do in your free time?
+
+I enjoy several outdoor activities that help me stay active and balanced.
+
+I enjoy hiking and badminton for staying active. Photography is another passion of mine. I love traveling to explore new places and cultures. These hobbies help me stay balanced.
+
+## About Germany
+
+### Coming to Germany
+
+> Why did you decide to come to Germany for work?  
+
+Well, there are a couple of main reasons.
+
+On the personal side, my girlfriend is doing her PhD at LMU in Munich and has been here for four years. So I moved here to be with her and start our life together.
+
+Professionally, I've always been interested in the German tech industry. Munich is one of Europe's major IT hubs with a highly developed IT industry. This gives me much better opportunities to find the right position that matches my skills and experience. I really like the work culture of German companies, as they focus on quality and value work-life balance, which is important to me too.
+
+I'm also excited about working with international teams and contributing to innovative projects. I'm ready to bring my web development background to this market and take on new challenges.
+
+> What field is your girlfriend studying?
+
+She's a medical PhD student at LMU in Munich.
+
+### Impressions of Munich
+
+> How do you like Munich so far?  
+
+I really love Munich! It's been a great experience living here so far.
+
+The city has such a nice balance. The climate here is very pleasant, and I actually like the weather a lot. The public transport system is really convenient, so I can easily get anywhere I need to go.  
+
+I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
+
+Overall, Munich feels like a great place for both my career and personal life. I can definitely see myself staying here long-term.
+
+### Work-Life Balance
+
+> How important is work-life balance to you?
+
+Work-life balance is important to me.
+
+I'm excited to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
+
+I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
+
+### Long Term Plan
+
+> What are your long-term plans in Germany?  
+
+I'm planning to stay in Germany long-term. If I can get a suitable position here, I'd like to build my career in Germany.
+
+My girlfriend is doing her PhD and will graduate next year, she is also planning to look for opportunities here. So we're both looking to establish our future in Munich together.
+
+## About Job
+
+### About Repareo
+
+> What do you know about Repareo as a company?
+
+ I understand Repareo is leading the digitization of Germany's car service industry.
+
+You've built a platform that solves a real problem - helping drivers find trusted workshops they can actually book online. What I find really smart is your integration strategy. You're not just waiting for users to find you; you integrate with existing workshop systems and make them visible on platforms people already use, like Google, manufacturer apps, or insurance portals.
+
+As a frontend developer, this is really exciting to me. The user interface becomes the core of the business, it has to be seamless and build trust instantly for both drivers and workshop partners. The challenge of creating such a high-impact, user-friendly platform is what really draws me to this role at Repareo.
+
+### Application Reason
+
+> Why are you interested in this position?  
+
+That's a great question. This role at Repareo really appeals to me for a few key reasons.
+
+First, I'm genuinely interested in Repareo because it's solving a real problem that many people face - finding reliable car repair services. Repareo is digitizing a traditional industry, making car services more transparent and accessible for everyone. The challenge of building a user-friendly platform is motivating to me.
+
+Second, the role is a perfect match for my experience. The job description emphasizes a modern stack with React, Vue.js, Next.js, and TypeScript, which aligns perfectly with my experience. In my most recent role, I led the technical architecture for a storage management platform using exactly those technologies.
+
+Finally, the culture. The posting mentions a young, dynamic team. As an active open-source contributor, I really value working with teams that focus on quality and continuous learning.
+
+So, the combination of meaningful work, perfect technical fit, and great team culture that makes this role exciting for me.
+
+### Job Responsibilities
+
+> What do you understand about this role?
+
+From the job description, I understand this frontend role has three main areas.
+
+First, UI development - creating user interfaces that are both visually appealing and functional, using React, TypeScript, and Next.js for the booking platform.
+
+Second, workflow automation - developing processes for testing, deployment, and CI/CD. I have experience with from optimizing build processes at my last job.
+
+And third, creative collaboration - contributing ideas to improve user experience. I really value that this role encourages UX input.
+
+The booking experience needs to be seamless and build trust for both car owners and workshops.
+
+### Career Goals
+
+> What are your career goals in Germany?  
+
+My career goal is to become a senior technical expert in web development, eventually growing into technical leadership roles like solution architect. This role fits perfectly with my career path because it offers complex technical challenges in an innovative environment.
+
+In five years, I see myself as a technical leader contributing to architectural decisions and mentoring other developers.
+
+### Team Culture
+
+> What are you looking for in a team environment?  
+> What do you expect from your future team?
+
+I enjoy working in open, collaborative teams where we share knowledge and focus on delivering a great product.
+
+From what I've learned about Repareo's culture, with its emphasis on innovation and teamwork, it feels like a strong match for me. I'm excited to join such a team and contribute my frontend development skills to build a high-quality, user-friendly platform.
+
+### Best Candidate
+
+> What makes you the best candidate for this position?
+
+I think three things make me a strong fit for this role.
+
+First, my full-stack experience. While I specialize in frontend, I understand the backend too, this helps me build better user interfaces and work smoothly with backend teams.
+
+Second, my experience with modernization projects. I've led platform redesigns using modern technologies like React and TypeScript - exactly what this role involves.
+
+Third, my adaptability. I contribute to open source, and I'm always ready to learn new technologies when they benefit the project.
+
+So I bring the right technical skills plus the mindset to grow with a company that's transforming a traditional industry.
+
+### Strengths and Weaknesses
+
+> What are your strengths and weaknesses?
+
+My biggest strength is problem-solving with a full-stack perspective. Even though I focus on frontend, I understand how the whole system works, which helps me build better solutions and collaborate more effectively with backend teams.
+
+An area I'm actively working on is becoming more confident with German in technical discussions. I've reached B1 level and can handle simple conversations, but I want to be completely fluent when discussing complex technical topics with team members.
+
+I'd describe myself as a collaborative and growth-minded developer. I enjoy sharing knowledge - like contribute to open source. I'm always eager to learn new technologies when they add real value to the project.
+
+### Questions
+
+> Do you have any questions for us?  
+
+- What does a typical day look like for this role?
+- Could you tell me about the team structure and how collaboration usually works?
+- What opportunities are there for professional growth in this role?
 
 ## Work Experience
 
@@ -266,9 +306,9 @@ At Blitz Interactive Entertainment, I maintained the backend and developed new f
 
 Most recently at Toyou Feiji Electronics, I worked with the backend team to refactor APIs. I used Python and Django to build Redfish-compliant APIs for our centralized storage management platform, and successfully refactored over 100 interfaces.
 
-### Vite Migration
+### Vite Migration / Challenge
 
-> Can you share a particularly challenging technical problem you encountered in one of your projects? How did you approach solving it, and what was the outcome?
+> Can you share a particularly challenging technical problem you encountered in one of your projects?
 
 At Toyou Feiji Electronics, our distributed storage management platform had a critical performance issue. Our project was based on Vue 2, as the codebase grew, the Webpack build process was taking over 10 minutes, which was severely impacting our team's productivity.
 
@@ -340,7 +380,7 @@ So, I'm comfortable taking on tasks beyond my job scope. And I think dive into d
 
 ### Learning Knowledge
 
-> How do you stay current with rapidly evolving web technologies? And how would you approach learning domain-specific knowledge about solar inverters and energy storage systems?
+> How do you stay current with rapidly evolving web technologies?
 
 I keep up with web technologies by various approaches: I follow tech blogs like JavaScript Weekly, contribute to open-source projects which keeps me hands-on with new technologies, and my GitHub projects force me to stay updated with community trends.
 
@@ -404,17 +444,15 @@ I assigned a different range of development tasks, starting with simple ones and
 
 The key was building their confidence while maintaining code quality, so I established a standardized code review process to ensure code quality.
 
-### Deadlines
+### Deadlines / High-Pressure
 
 > How would you handle tight deadlines with limited resources?
 
-I focus on three things: what's most important, using what we have, and clear communication.
+I actually handle pressure quite well. I focus on three things: what's most important, using what we have, and clear communication.
 
 First, I work with the team to decide what features we must deliver and what can wait. At my last job, when we had a tight deadline for a feature, I built the basic functions first, then added extra features later.
 
-Second, I use existing code and tools instead of building everything new. This saves time and reduces mistakes.
-
-Third, I tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
+Second, I tell people about problems early, not at the last minute. If we need to change the plan, I explain the options clearly.
 
 I'm happy to work extra hours when needed, but I try to keep code quality good so we don't create bigger problems later.
 
@@ -427,21 +465,6 @@ I actively use AI tools like Claude, ChatGPT, and Gemini in my development workf
 However, I see AI as a powerful assistant, not a replacement. Complex architecture decisions and full project development still require developer expertise.
 
 At Toyou Feiji, I also worked on integrating AI into our workflow. We built an AI chat tool using RAGflow that helped our support team handle customer service issues. This tool automated responses to common questions and helped our support team focus on more complex cases.
-
-## Hobbies
-
-> What do you do in your free time?
-
-I enjoy several outdoor activities that help me stay active and balanced.
-
-I enjoy hiking and badminton for staying active. Photography is another passion of mine. I love traveling to explore new places and cultures. These hobbies help me stay balanced.
-
-## Questions
-
-> Do you have any questions for us?  
-
-- What does a typical day look like for this role?
-- Could you tell me about the team structure and how collaboration usually works?
 
 ## General Expression
 
