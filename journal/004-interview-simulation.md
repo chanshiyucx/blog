@@ -404,6 +404,10 @@ As a result, we successfully refactored all APIs, I also refactored over 100 int
 
 This experience taught me that clear documentation is a great tool for communication.
 
+> Tell me about a time you had to make a technical decision that the team disagreed with.
+
+I focus on clear reasoning rather than opinions. I listen to the team's concerns, create small code demo when possible. Most importantly, I stay open to being wrong - sometimes team resistance reveals real issues I hadn't considered. The goal is finding the best solution that the team can successfully implement.
+
 ### Job Scope / Documentation
 
 > Can you describe a time when you had to take initiative on a project or problem that wasn't clearly defined in your job scope?
@@ -465,6 +469,12 @@ At Toyou Feiji, I mentored three junior developers using a structured approach. 
 I assigned a different range of development tasks, starting with simple ones and gradually increasing complexity until they were able to undertake all development tasks.
 
 The key challenge was building their confidence while maintaining code quality, so I established a standardized code review process to ensure code quality.
+
+> How do you balance writing code yourself versus mentoring junior developers?
+
+At Toyou Feiji, I split my time 80% coding and 20% mentoring three juniors. In daily development, I coded key UI components and guided juniors via code reviews.
+
+During the mentoring period, we have regular meetings to summarize and provide feedback to ensure that we learn something new each time.
 
 ### Deadlines / High-Pressure
 
@@ -541,6 +551,12 @@ For runtime optimization, I use techniques like memoization with React.memo or V
 I use tools like Chrome DevTools, Lighthouse, or Web Vitals to identify performance issues.
 
 ## Development
+
+### Event Loop
+
+> Explain the JavaScript Event Loop in detail. What is the difference between the Microtask Queue (Job Queue) and the Macrotask Queue (Task Queue), and how does the browser prioritize them?
+
+The Event Loop is a crucial part of how JavaScript handles asynchronous operations, preventing blocking despite being single-threaded. When the Call Stack is empty, the Event Loop checks the queues. The Microtask Queue(containing Promises callbacks, `queueMicrotask`, `async/await` code) is given priority over the Macrotask Queue (containing I/O, timers like `setTimeout`, UI rendering). This means all microtasks are executed immediately after the current macrotask finishes and before the next macrotask is processed or the browser renders. For example, a `Promise.resolve()` callback will execute before a `setTimeout(…, 0)` callback.
 
 ## General Expression
 
