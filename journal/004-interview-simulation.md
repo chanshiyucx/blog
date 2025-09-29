@@ -177,7 +177,7 @@ First, UI development - creating user interfaces that are both visually appealin
 
 Second, workflow automation - developing processes for testing, deployment, and CI/CD. I have experience with from optimizing build processes at my last job.
 
-And third, creative collaboration - contributing ideas to improve user experience. I really value that this role encourages UX input.
+And third, creative collaboration - contributing ideas to improve user experience.
 
 The booking experience needs to be seamless and build trust for both car owners and workshops.
 
@@ -207,7 +207,7 @@ I think three things make me a strong fit for this role.
 
 First, my full-stack experience. While I specialize in frontend, I understand the backend too, this helps me build better user interfaces and work smoothly with backend teams.
 
-Second, my experience with modernization projects. I've led platform redesigns using modern technologies like React and TypeScript - exactly what this role involves.
+Second, my experience with modernization projects. I've led platform redesigns using modern technologies like Vue and TypeScript - exactly what this role involves.
 
 Third, my adaptability. I contribute to open source, and I'm always ready to learn new technologies when they benefit the project.
 
@@ -280,11 +280,11 @@ I'm eager to contribute my technical skills in a multicultural environment. I ad
 
 Of course. As a Full-Stack Developer with over 8 years of experience, I specialize in building scalable and high-performance web applications.
 
-My career began at Jinji Network Technology, an online baking tutorial company, where I built a solid foundation in web development using React and also gained my first experience in cross-platform mobile development with React Native.
-
-From there, I joined Blitz Interactive Entertainment, a mobile game development and gaming media company, I took on more responsibility. A key project was building an instant messaging system. This was where I gained backend experience with Spring Boot.
-
 In my most recent role at Toyou Feiji, a tech company specializing in storage solutions, I led the architecture redesign of our centralized storage management platform using Vue.js and TypeScript, which improved system scalability and maintainability. Additionally, I migrated our distributed storage platform from Webpack to Vite, achieving over 60% faster build times. I also actively mentored three junior developers in modern frontend practices.
+
+Before that, I joined Blitz Interactive Entertainment, a mobile game development and gaming media company, I took on more responsibility. A key project was building an instant messaging system. This was where I gained backend experience with Spring Boot.
+
+My career began at Jinji Network Technology, an online baking tutorial company, where I built a solid foundation in web development using React and also gained my first experience in cross-platform mobile development with React Native.
 
 Now, I've moved to Germany to seek a new challenge in a more advanced tech environment. I'm looking for a senior frontend role where I can apply my skills and experience. I'm very excited about the possibility of contributing to your team.
 
@@ -366,7 +366,7 @@ As a result, we reduced build times from 10 minutes to under 4 minutes, over 60%
 
 > You mentioned improving build times by 60% - how did you achieve that?
 
-I migrated our build system from Webpack to Vite. Webpack was slow because it bundled everything, even during development. Vite uses native ES modules and only processes changed files. This significantly reduced build times and improved team productivity.
+I migrated our build tools from Webpack to Vite. Webpack was slow because it bundled everything, even during development. Vite uses native ES modules and only processes changed files. This significantly reduced build times and improved team productivity.
 
 ### Architecture Redesign
 
@@ -643,3 +643,4 @@ A Stacking Context is a three-dimensional concept in the browser that dictates h
 - I haven't faced that exact situation, but I'm excited to learn.
 - I know the concept, but I'm not sure how to express it in English.
 - I don't really understand the concept.
+- I don't speak German very well. Can we speak English?
