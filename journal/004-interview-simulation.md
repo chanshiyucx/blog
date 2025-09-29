@@ -641,3 +641,5 @@ A Stacking Context is a three-dimensional concept in the browser that dictates h
 - Sorry, could you please repeat the question?
 - Thank you for your time today. I look forward to hearing from you.
 - I haven't faced that exact situation, but I'm excited to learn.
+- I know the concept, but I'm not sure how to express it in English.
+- I don't really understand the concept.
