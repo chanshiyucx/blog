@@ -255,6 +255,12 @@ I'd focus on transparency - clear upfront pricing, detailed service descriptions
 
 The interface needs to look professional and provide easy cancellation options. If users know they can easily change bookings and reach real people for help, they're more likely to trust the initial booking.
 
+### Workflow
+
+> Describe your daily development workflow
+
+I start with daily standup, then tackle the most complex tasks when I'm fresh. I work in focused blocks with breaks, review teammates' code throughout the day, and help junior developers with questions. Before pushing code, I test locally and run linters. End of day, I update task status so I can resume smoothly the next morning.
+
 ### Questions
 
 > Do you have any questions for us?  
@@ -452,6 +458,10 @@ As a result, the APIs refactoring was successful, I also refactored over 100 int
 
 So, I'm comfortable taking on tasks beyond my job scope. And I think dive into different job scope can be beneficial for personal growth as you can learn new skills and knowledge.
 
+> How do you document your code and technical decisions?
+
+I write clear comments for complex logic, and add JSDoc for public APIs. For technical decisions, I document the 'why' behind choices - like why we migrated to Vite. At my last job, we used Confluence for this. My principle is: could another developer maintain this code if I left tomorrow?
+
 ### Learning Knowledge
 
 > How do you stay current with rapidly evolving web technologies?
@@ -554,6 +564,10 @@ I see code reviews as both quality control and learning opportunities. As a revi
 
 At my last job, I set up a code review process where we required at least one approval and ensure code quality, especially for junior developers.
 
+> How do you ensure code quality in your projects?
+
+I use multiple approaches: ESLint and Prettier for consistent code style, mandatory code reviews before merging, TypeScript for type safety, and tests for critical functionality. At my last job, implementing these practices resolved over 300 code issues. The key is automating quality checks so they're built into the workflow, not optional.
+
 ### TypeScript
 
 > How have you used TypeScript in your projects?
@@ -595,6 +609,18 @@ When debugging a complex software issue, I follow a systematic approach that inv
 I choose SSR when I need fast initial page loads, SEO benefits, or when users have slow connections. It's great for content-heavy sites, landing pages, and public-facing pages.
 
 I choose CSR for highly interactive applications where user experience after initial load is more important than first paint time. It's better for dashboards, admin panels, or apps behind authentication.
+
+### responsive Design
+
+> How do you handle responsive design for different devices?
+
+I use responsive breakpoints with Tailwind CSS. I design with Flexbox and Grid for flexible layouts, and test on real devices and various viewports.
+
+### API Error
+
+> How do you handle API errors and edge cases in frontend?
+
+I use try-catch blocks to handle network and API errors separately, display user-friendly error messages with retry options, and implement proper loading, empty, and error states. I validate inputs before sending and handle timeouts with retry logic.
 
 ## Development
 
