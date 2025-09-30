@@ -40,6 +40,41 @@ A closure is a function that retains access to variables from its outer lexical 
 
 One common use case is data encapsulation and creating private variables. For example, you can use closures to implement a counter where the count variable is private and can only be modified through exposed methods. Another practical use is in event handlers or callbacks where you need to preserve access to specific variables from the outer scope. Closures are also fundamental to higher-order functions and functional programming patterns like currying and partial application.
 
+```javascript
+function createCounter() {
+  let count = 0 
+  return {
+    increment: function () {
+      count++
+      return count
+    },
+    getCount: function () {
+      return count
+    },
+  }
+}
+
+const counter = createCounter()
+console.log(counter.increment()) // 1
+console.log(counter.getCount()) // 1
+```
+
+Here, `increment` and `getCount` are closures that retain access to the `count` variable, even after `createCounter` has executed. This allows us to encapsulate `count`, making it private and only accessible through the returned methods.
+
 > What's a common pitfall with closures?
 
 A classic issue occurs when creating closures inside loops with `var`. For example, if you create multiple event handlers in a loop using `var i`, all handlers will reference the same variable `i`, which ends up with the final loop value. This happens because `var` is function-scoped, not block-scoped. The solution is to use `let` which creates a new binding for each iteration, or create an IIFE to capture the current value. Modern JavaScript with `let` and `const` largely solves this problem since they're block-scoped.
+
+## CSS
+
+### Visibility
+
+> What is the difference between `visibility: hidden` and `display: none` properties in CSS?
+
+The key difference is how they affect layout.
+
+The `visibility: hidden` property hides the element but preserves its space in the layout, so surrounding elements don't shift. The element remains in the DOM but is hidden from users and screen readers, and won't respond to events. This is preferred when you need to maintain layout structure.
+
+The `display: none` property completely removes the element from the document flow, freeing its space for other elements. It's not rendered and inaccessible to screen readers. It's the standard choice when you need to reclaim layout space, though toggling it triggers reflow, which can impact performance.
+
+## React
