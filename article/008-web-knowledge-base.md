@@ -173,7 +173,7 @@ Second, regarding hoisting, `var` declarations are hoisted and initialized with 
 
 Finally, concerning immutability, `const` requires an initial value and prevents the variable itself from being reassigned to a new value, although its contents (if an object or array) can be modified; `let` allows reassignment; and `var` is fully mutable.
 
-In modern JavaScript, `const` is preferred by default, with `let` used only when reassignment is necessary, and `var` is largely obsolete.
+In modern JavaScript, `const` is preferred by default, use `let` when reassignment is needed, and `var` is largely obsolete.
 
 ## CSS
 
