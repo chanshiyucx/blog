@@ -26,4 +26,20 @@ Promise.resolve().then(() => console.log('3'))
 console.log('4')
 ```
 
-The output will be 1, 4, 3, 2. First, '1' and '4' execute synchronously as they're in the main call stack. Then the Promise callback printing '3' goes into the microtask queue, while the setTimeout callback printing '2' goes into the macrotask queue. After synchronous code finishes, the event loop processes microtasks before macrotasks, so '3' prints before '2'.
+The output will be 1, 4, 3, 2. First, '1' and '4' execute synchronously on the Call Stack. Then the Promise callback printing '3' goes into the Microtask Queue, while the setTimeout callback printing '2' goes into the Macrotask Queue. After synchronous code finishes, the Event Loop processes all microtasks before macrotasks, so '3' prints before '2'.
+
+## JavaScript
+
+### JS Closures
+
+> What is a closure in JavaScript and how does it work?
+
+A closure is a function that retains access to variables from its outer lexical scope, even after the outer function has finished executing. This works because JavaScript maintains a reference to the outer scope's variables in memory. Closures are created every time a function is defined inside another function, allowing the inner function to 'remember' the environment in which it was created.
+
+> Can you give me a practical use case where closures are beneficial?
+
+One common use case is data encapsulation and creating private variables. For example, you can use closures to implement a counter where the count variable is private and can only be modified through exposed methods. Another practical use is in event handlers or callbacks where you need to preserve access to specific variables from the outer scope. Closures are also fundamental to higher-order functions and functional programming patterns like currying and partial application.
+
+> What's a common pitfall with closures?
+
+A classic issue occurs when creating closures inside loops with `var`. For example, if you create multiple event handlers in a loop using `var i`, all handlers will reference the same variable `i`, which ends up with the final loop value. This happens because `var` is function-scoped, not block-scoped. The solution is to use `let` which creates a new binding for each iteration, or create an IIFE to capture the current value. Modern JavaScript with `let` and `const` largely solves this problem since they're block-scoped.
