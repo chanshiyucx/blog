@@ -28,6 +28,26 @@ console.log('4')
 
 The output will be 1, 4, 3, 2. First, '1' and '4' execute synchronously on the Call Stack. Then the Promise callback printing '3' goes into the Microtask Queue, while the setTimeout callback printing '2' goes into the Macrotask Queue. After synchronous code finishes, the Event Loop processes all microtasks before macrotasks, so '3' prints before '2'.
 
+### XSS & CSRF
+
+> Can you explain what XSS and CSRF are, and the key difference between them?
+
+XSS, or Cross-Site Scripting, is when an attacker injects malicious scripts into a trusted website, which then executes in other users' browsers. The attacker exploits the trust a user has in a particular site.
+
+CSRF, or Cross-Site Request Forgery, is when an attacker tricks a user's browser into making unwanted requests to a site where the user is authenticated. The attacker exploits the trust a site has in the user's browser.
+
+The key difference is the direction of attack: XSS injects malicious code into the target site, while CSRF sends malicious requests from the user to the target site.
+
+> How do you protect against XSS attacks?
+
+There are three main types: Stored XSS, where malicious scripts are permanently stored on the server like in a database; Reflected XSS, where the script is reflected off a web server through URL parameters or form inputs; and DOM-based XSS, where the vulnerability exists in client-side code that improperly handles user input.
+
+Prevention includes sanitizing and validating all user input, encoding output data based on context, implementing Content Security Policy headers, using HTTPOnly flags on cookies to prevent JavaScript access, and avoiding dangerous functions like `innerHTML` or `eval` with user-controlled data. Modern frameworks like React help by escaping content by default.
+
+> How do you protect against CSRF attacks?
+
+The most common defense is using CSRF tokens, which are random values generated per session or per request that must be included in state-changing requests. The server validates this token before processing the request. Other defenses include SameSite cookie attribute which prevents cookies from being sent in cross-site requests, validating the Origin and Referer headers, and requiring re-authentication for sensitive operations. For modern applications, using SameSite cookies combined with CSRF tokens provides strong protection.
+
 ## JavaScript
 
 ### JS Closures
@@ -63,7 +83,9 @@ Here, `increment` and `getCount` are closures that retain access to the `count` 
 
 > What's a common pitfall with closures?
 
-A classic issue occurs when creating closures inside loops with `var`. For example, if you create multiple event handlers in a loop using `var i`, all handlers will reference the same variable `i`, which ends up with the final loop value. This happens because `var` is function-scoped, not block-scoped. The solution is to use `let` which creates a new binding for each iteration, or create an IIFE to capture the current value. Modern JavaScript with `let` and `const` largely solves this problem since they're block-scoped.
+A common pitfall occurs when using `var` in a loop to create closures, like event handlers. Since `var` is function-scoped, all closures share the same variable, leading to unexpected results.
+
+The solution is to use `let` which creates a new binding for each iteration, or create an IIFE to capture the current value. Modern JavaScript with `let` and `const` largely solves this problem since they're block-scoped.
 
 ## CSS
 
