@@ -48,6 +48,28 @@ Prevention includes sanitizing and validating all user input, encoding output da
 
 The most common defense is using CSRF tokens, which are random values generated per session or per request that must be included in state-changing requests. The server validates this token before processing the request. Other defenses include SameSite cookie attribute which prevents cookies from being sent in cross-site requests, validating the Origin and Referer headers, and requiring re-authentication for sensitive operations. For modern applications, using SameSite cookies combined with CSRF tokens provides strong protection.
 
+### Same-Origin Policy
+
+> What is the same-origin policy and why does it exist?
+
+The same-origin policy is a critical security mechanism that restricts how documents or scripts from one origin can interact with resources from another origin. Two URLs have the same origin only if they share the same protocol, domain, and port. This policy exists to prevent malicious scripts on one site from accessing sensitive data on another site through the user's browser.
+
+> What resources are actually restricted by same-origin policy?
+
+The policy primarily restricts JavaScript access to cross-origin resources. You cannot read responses from `fetch` or `XMLHttpRequest` to different origins without CORS headers. You cannot access the DOM of cross-origin iframes or windows, and JavaScript cannot directly read data belonging to other origins, such as their localStorage or cookies. However, some things are allowed: embedding resources like images, stylesheets, and scripts from different origins works fine, which is why CDNs function. Form submissions to different origins are also allowed. The key distinction is that you can load cross-origin resources, but JavaScript cannot read their content without explicit permission.
+
+> What are the main ways to work around same-origin policy restrictions when you need cross-origin communication?
+
+There are several legitimate approaches.
+
+CORS, or Cross-Origin Resource Sharing, is the standard solution where the server explicitly allows cross-origin requests through specific HTTP headers like `Access-Control-Allow-Origin`.
+
+JSONP was a legacy workaround using script tags, but it is now largely obsolete and insecure.
+
+For controlled communication between windows or iframes, `postMessage` API allows secure cross-origin messaging. Proxying requests through your own server is another option where your backend makes the request instead of the browser.
+
+Modern applications primarily rely on CORS for API calls and `postMessage` for iframe communication.
+
 ## JavaScript
 
 ### JS Closures
@@ -106,7 +128,7 @@ Prototypal inheritance works through the prototype chain. Every object has an in
 
 Unlike classical inheritance where classes copy behavior, JavaScript objects delegate to their prototypes at runtime. This means multiple objects can share methods through a common prototype without duplicating them in memory, which is both memory-efficient and flexible.
 
-### `.call` & `.apply`
+### `.call` `.apply` `.bind`
 
 > What's the difference between `.call` and `.apply`?
 
@@ -120,6 +142,24 @@ function add(a, b) {
 console.log(add.call(null, 1, 2)) // 3
 console.log(add.apply(null, [1, 2])) // 3
 ```
+
+> What does `.bind` do and how is it different from `.call` and `.apply`?
+
+`.bind` creates a new function with a permanently bound `this` context and optionally pre-set arguments.
+
+Unlike `.call` and `.apply` which invoke the function immediately, `.bind` returns a new function that you can call later. The bound `this` value cannot be changed, even if you try to use `.call` or `.apply` on the bound function. This makes it useful for event handlers, callbacks, and partial application where you need to preserve context.
+
+```javascript
+function multiply(a, b) {
+  return a * b
+}
+
+const double = multiply.bind(null, 2)
+console.log(double(5))  // 10
+console.log(double(10)) // 20
+```
+
+Here, `2` is permanently bound as the first argument, so `double` only needs one argument. This is useful for creating specialized functions from generic ones, though modern JavaScript developers often use arrow functions or currying for the same purpose.
 
 ## CSS
 
