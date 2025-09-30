@@ -161,6 +161,20 @@ console.log(double(10)) // 20
 
 Here, `2` is permanently bound as the first argument, so `double` only needs one argument. This is useful for creating specialized functions from generic ones, though modern JavaScript developers often use arrow functions or currying for the same purpose.
 
+### `var` `let` `const`
+
+> What are the main differences between `var`, `let`, and `const`?
+
+The key distinctions revolve around **scope, hoisting behavior, and immutability**.
+
+First, `var` is function-scoped, while `let` and `const` are block-scoped, restricting their existence to the nearest enclosing curly braces.
+
+Second, regarding hoisting, `var` declarations are hoisted and initialized with `undefined`, whereas `let` and `const` are also hoisted but remain uninitialized in the Temporal Dead Zone (TDZ) until their execution flow reaches the declaration, preventing accidental early access.
+
+Finally, concerning immutability, `const` requires an initial value and prevents the variable itself from being reassigned to a new value, although its contents (if an object or array) can be modified; `let` allows reassignment; and `var` is fully mutable.
+
+In modern JavaScript, `const` is preferred by default, with `let` used only when reassignment is necessary, and `var` is largely obsolete.
+
 ## CSS
 
 ### Visibility
