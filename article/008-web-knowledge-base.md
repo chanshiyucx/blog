@@ -71,10 +71,10 @@ A classic issue occurs when creating closures inside loops with `var`. For examp
 
 > What is the difference between `visibility: hidden` and `display: none` properties in CSS?
 
-The key difference is how they affect layout.
+The key difference is their impact on layout.
 
-The `visibility: hidden` property hides the element but preserves its space in the layout, so surrounding elements don't shift. The element remains in the DOM but is hidden from users and screen readers, and won't respond to events. This is preferred when you need to maintain layout structure.
+`visibility: hidden` hides the element but preserves its space in the layout, so other elements don't shift. It remains in the DOM, is accessible to screen readers, and can respond to events like clicks. This is preferred when you need to maintain layout structure.
 
-The `display: none` property completely removes the element from the document flow, freeing its space for other elements. It's not rendered and inaccessible to screen readers. It's the standard choice when you need to reclaim layout space, though toggling it triggers reflow, which can impact performance.
+ `display: none` completely removes the element from the document flow, freeing its space for other elements. It's not rendered and inaccessible to screen readers, and ignores events. It's the standard choice when you need to reclaim layout space, though toggling it triggers reflow, which can impact performance.
 
 ## React
