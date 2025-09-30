@@ -87,6 +87,40 @@ A common pitfall occurs when using `var` in a loop to create closures, like even
 
 The solution is to use `let` which creates a new binding for each iteration, or create an IIFE to capture the current value. Modern JavaScript with `let` and `const` largely solves this problem since they're block-scoped.
 
+### Event Delegation
+
+> Can you explain the Event Delegation
+
+Event delegation is a technique where you attach an event listener to a parent element rather than individual descendant elements. The listener fires whenever the event is triggered on descendants due to event bubbling up the DOM.
+
+The benefits are:
+
+- Reduced memory footprint - only one handler is needed on the parent rather than multiple handlers on each descendant.
+- Automatic handling of dynamic content - no need to bind listeners when elements are added or unbind them when removed.
+
+### Prototype
+
+> Explain how prototypal inheritance works
+
+Prototypal inheritance works through the prototype chain. Every object has an internal prototype reference. When accessing a property, if it's not found on the object itself, JavaScript traverses up the prototype chain until it finds the property or reaches `null`.
+
+Unlike classical inheritance where classes copy behavior, JavaScript objects delegate to their prototypes at runtime. This means multiple objects can share methods through a common prototype without duplicating them in memory, which is both memory-efficient and flexible.
+
+### `.call` & `.apply`
+
+> What's the difference between `.call` and `.apply`?
+
+Both `.call` and `.apply` invoke a function and set its `this` context to the first parameter. The difference is how they handle additional arguments: `.call` takes arguments individually, while `.apply` takes them as an array.
+
+```javascript
+function add(a, b) {
+  return a + b
+}
+
+console.log(add.call(null, 1, 2)) // 3
+console.log(add.apply(null, [1, 2])) // 3
+```
+
 ## CSS
 
 ### Visibility
