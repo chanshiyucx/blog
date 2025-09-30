@@ -120,6 +120,12 @@ The benefits are:
 - Reduced memory footprint - only one handler is needed on the parent rather than multiple handlers on each descendant.
 - Automatic handling of dynamic content - no need to bind listeners when elements are added or unbind them when removed.
 
+> Can you explain event bubbling and how it works?
+
+Event bubbling is the process where an event triggered on a DOM element propagates upward through its ancestors in the DOM tree. When an event occurs on an element, it first runs handlers on that element, then on its parent, then on its grandparent, and so on up to the document root.
+
+For example, if you click a button inside a div inside a form, the click event fires first on the button, then bubbles up to the div, then to the form, and continues up the tree. Each ancestor with a listener for that event will have its handler executed. You can stop this propagation using `event.stopPropagation()` if needed. This bubbling behavior is what makes event delegation possible, allowing you to attach one listener to a parent instead of many listeners to individual children.
+
 ### Prototype
 
 > Explain how prototypal inheritance works
@@ -128,7 +134,7 @@ Prototypal inheritance works through the prototype chain. Every object has an in
 
 Unlike classical inheritance where classes copy behavior, JavaScript objects delegate to their prototypes at runtime. This means multiple objects can share methods through a common prototype without duplicating them in memory, which is both memory-efficient and flexible.
 
-### `.call` `.apply` `.bind`
+### call, apply, bind
 
 > What's the difference between `.call` and `.apply`?
 
@@ -161,7 +167,7 @@ console.log(double(10)) // 20
 
 Here, `2` is permanently bound as the first argument, so `double` only needs one argument. This is useful for creating specialized functions from generic ones, though modern JavaScript developers often use arrow functions or currying for the same purpose.
 
-### `var` `let` `const`
+### var, let, const
 
 > What are the main differences between `var`, `let`, and `const`?
 
@@ -174,6 +180,14 @@ Second, regarding hoisting, `var` declarations are hoisted and initialized with 
 Finally, concerning immutability, `const` requires an initial value and prevents the variable itself from being reassigned to a new value, although its contents (if an object or array) can be modified; `let` allows reassignment; and `var` is fully mutable.
 
 In modern JavaScript, `const` is preferred by default, use `let` when reassignment is needed, and `var` is largely obsolete.
+
+### `==` vs `===`
+
+> What's the difference between `==` and `===` in JavaScript?
+
+The key difference is type coercion. `==` is the abstract equality operator while `===` is the strict equality operator. `==` performs loose equality comparison with type coercion, meaning it converts operands to the same type before comparing. `===` performs strict equality without type coercion, requiring both value and type to be identical.
+
+Best practice is to always use `===` to avoid unexpected behavior from type coercion, unless you specifically need the coercion behavior, which is rare.
 
 ## CSS
 
