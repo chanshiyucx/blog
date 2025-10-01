@@ -111,7 +111,7 @@ The solution is to use `let` which creates a new binding for each iteration, or 
 
 ### Event Delegation
 
-> Can you explain the Event Delegation
+> Can you explain the Event Delegation?
 
 Event delegation is a technique where you attach an event listener to a parent element rather than individual descendant elements. The listener fires whenever the event is triggered on descendants due to event bubbling up the DOM.
 
@@ -126,7 +126,7 @@ Event bubbling is the process where an event triggered on a DOM element propagat
 
 For example, if you click a button inside a div inside a form, the click event fires first on the button, then bubbles up to the div, then to the form, and continues up the tree. Each ancestor with a listener for that event will have its handler executed. You can stop this propagation using `event.stopPropagation()` if needed. This bubbling behavior is what makes event delegation possible, allowing you to attach one listener to a parent instead of many listeners to individual children.
 
-### Prototype
+### Prototypal Inheritance
 
 > Explain how prototypal inheritance works
 
@@ -241,7 +241,21 @@ The core difference lies in their impact on the document layout and flow.
 
 `display: none` completely removes the element from the document flow, reclaiming its space. It's not rendered, is inaccessible to screen readers, and ignores all events. This is the standard choice when you need to reclaim layout space, though toggling its state triggers a costly reflow, which is a significant performance consideration.
 
+### BFC
+
+> What is BFC (Block Formatting Context) and when is it useful?
+
+BFC, or Block Formatting Context, is an isolated rendering region in CSS where block-level boxes are laid out according to specific rules. Elements inside a BFC don't affect the layout of elements outside it.
+
+A BFC is created by elements with specific properties: non-visible `overflow` values, `position: absolute` or `fixed`, `float` values, or modern methods like `display: flow-root`, flex, or grid containers.
+
+BFC is useful for solving common layout issues. It prevents margin collapse between a parent and its first/last child, clears floats by containing floated children, and prevents text wrapping around floated elements.
+
+In modern CSS, `display: flow-root` is the cleanest way to create a BFC without side effects.
+
 ## React
+
+## Vue
 
 ## Workflow
 
