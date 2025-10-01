@@ -417,15 +417,15 @@ Both spread and rest syntax use the three-dot `…` operator but serve opposite 
 Spread is used when calling functions or creating new arrays and objects. It's useful for copying arrays, merging objects, and passing array elements as function arguments.
 
 ```javascript
-Math.max(…[1, 2, 3])
-const newObj = {…obj1, …obj2}
+Math.max(...[1, 2, 3])
+const newObj = {...obj1, ...obj2}
 ```
 
 Rest syntax collects remaining arguments into an array, used in function parameters and destructuring.
 
 ```javascript
-function sum(…numbers) { }
-const [first, …rest] = array
+function sum(...numbers) { }
+const [first, ...rest] = array
 ```
 
 The key distinction: spread expands, rest collects. They look identical but their context determines their behavior.
@@ -455,11 +455,68 @@ const { name: userName } = user // rename variable
 You can also use default values, nested destructuring, and combine it with rest syntax:
 
 ```javascript
-const { name = 'Anonymous', …rest } = user
-const [first, …remaining] = array
+const { name = 'Anonymous', ...rest } = user
+const [first, ...remaining] = array
+```
+
+### Debounce & Throttle
+
+> What's the difference between debouncing and throttling?
+
+Both are techniques to limit how often a function executes, but they work differently. In summary: debouncing waits for silence, throttling ensures regular intervals.
+
+Debouncing delays function execution until after a specified time has passed since the last invocation. If the function is called again before the delay expires, the timer resets. It's like waiting for a pause in activity, This is ideal for search inputs where you only want to query after the user stops typing.
+
+```javascript
+function debounce(func, delay) {
+  let timeoutId
+  return function(...args) {
+    clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => func.apply(this, args), delay)
+  }
+}
+
+const handleSearch = debounce(searchAPI, 300)
+```
+
+Throttling ensures a function executes at most once per specified time interval, regardless of how many times it's called. It guarantees regular execution. This is perfect for scroll or resize handlers where you want updates but not on every single event.
+
+```javascript
+function throttle(func, limit) {
+  let inThrottle = false
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
 ```
 
 ## React
+
+### Virtual DOM
+
+> What is Virtual DOM and why is it useful?
+
+Virtual DOM is a lightweight JavaScript representation of the actual DOM. It's an in-memory tree structure that mirrors the real DOM but is much faster to manipulate.
+
+The process works in three steps: when state changes, a new Virtual DOM tree is created. The framework diffs it against the previous version to identify changes, then applies only necessary updates to the real DOM in an optimized batch.
+
+This is efficient because direct DOM manipulation is expensive - it triggers reflows and repaints. The Virtual DOM minimizes actual DOM operations by calculating the minimal set of changes needed, keeping most work in fast JavaScript memory operations.
+
+Frameworks like React use it to improve performance and enable a declarative programming model where you describe what the UI should look like, and the framework handles efficient updates.
+
+### CSR vs SSR
+
+> What's the difference between CSR and SSR?
+
+CSR renders content in the browser using JavaScript. The server sends minimal HTML and a JavaScript bundle that builds the UI client-side. This means faster subsequent navigation but slower initial load and potential SEO issues.
+
+SSR renders HTML on the server and sends fully formed pages to the browser. Users see content immediately, then JavaScript hydrates for interactivity. This provides better initial load performance and SEO, but increases server load.
+
+Modern frameworks often combine both - SSR for initial page load, then CSR for navigation. The choice depends on priorities: use SSR for content-heavy sites needing SEO, CSR for highly interactive applications.
 
 ## Vue
 
@@ -476,6 +533,3 @@ For framework-specific debugging, I use React DevTools and Redux DevTools to ins
 I also use the Network tab for API debugging and the Performance tab to profile execution and identify rendering bottlenecks. For production issues, I use error tracking tools like Sentry with source maps to debug minified code and capture user context.
 
 ## TODO
-
-- Virtual DOM
-- CSR vs SSR
