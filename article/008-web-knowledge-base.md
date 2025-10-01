@@ -181,6 +181,18 @@ Finally, concerning immutability, `const` requires an initial value and prevents
 
 In modern JavaScript, `const` is preferred by default, use `let` when reassignment is needed, and `var` is largely obsolete.
 
+### null, undefined
+
+> What's the difference between `null` and `undefined` in JavaScript?
+
+Both represent absence of value, but they differ in meaning and usage.
+  
+`undefined` is JavaScript's default state for uninitialized variables, function arguments not passed, or functions that implicitly return nothing. `null` is an intentional assignment representing 'no value' or 'empty'. You explicitly set something to `null` to indicate it's empty.
+
+In terms of type, `typeof undefined` returns `'undefined'`, while `typeof null` returns `'object'`, which is actually a legacy bug in JavaScript.
+
+In practice, use `undefined` to check if something hasn't been initialized, and use `null` when you want to explicitly clear or reset a value.
+
 ### `==` vs `===`
 
 > What's the difference between `==` and `===` in JavaScript?
@@ -197,6 +209,26 @@ Using Promises makes asynchronous code cleaner and easier to read by avoiding de
 
 On the downside, Promises can still become hard to follow if you chain too many `.then()` calls, and if you forget to add `.catch()`, errors might be silently ignored. For very simple cases, they may introduce a bit of overhead compared to plain callbacks.
 
+### Arrow Function
+
+> What are arrow functions and how do they differ from regular functions?
+
+Arrow functions are a concise ES6 syntax for writing functions. The key difference is `this` binding - arrow functions don't have their own `this`, they inherit it lexically from the surrounding scope. Regular functions have their own `this` that depends on how they're called.
+
+This makes arrow functions ideal for callbacks where you want to preserve context, like in array methods or event handlers. However, they can't be used as constructors with `new` and don't have their own `arguments` object.
+
+In practice, I use arrow functions for most cases, especially callbacks, but use regular functions when I need dynamic `this` or constructor functionality.
+
+### Higher-Order Function
+
+> What is a higher-order function?
+
+A higher-order function is a function that either takes one or more functions as arguments, returns a function, or both. This is a core concept in functional programming.
+
+Common examples include array methods like `map`, `filter`, and `reduce`, which all accept callback functions. For instance, map is a higher-order function because it takes a function as an argument. Function factories are another example, like a function that returns a customized function based on parameters.
+
+Higher-order functions enable code reuse, composition, and abstraction. They're fundamental to functional programming patterns and are widely used in modern JavaScript for data transformation and creating reusable logic.
+
 ## CSS
 
 ### Visibility
@@ -211,9 +243,14 @@ The core difference lies in their impact on the document layout and flow.
 
 ## React
 
-
 ## Workflow
 
 ### Debugging
 
 > What tools and techniques do you use for debugging JavaScript code?
+
+I primarily use browser DevTools, especially Chrome DevTools. The Source panel with breakpoints is essential for stepping through code and inspecting the call stack and variable states. I use console methods for quick logging and tracing.
+
+For framework-specific debugging, I use React DevTools and Redux DevTools to inspect component hierarchies and state changes. When working with Vue, I use Vue DevTools to inspect components, props, and Vuex state, which is especially helpful for pinpointing reactivity issues in complex SPAs.
+
+I also use the Network tab for API debugging and the Performance tab to profile execution and identify rendering bottlenecks. For production issues, I use error tracking tools like Sentry with source maps to debug minified code and capture user context.
