@@ -253,6 +253,49 @@ BFC is useful for solving common layout issues. It prevents margin collapse betw
 
 In modern CSS, `display: flow-root` is the cleanest way to create a BFC without side effects.
 
+### Pseudo Elements vs Pseudo Classes
+
+> What are pseudo-elements and how do they differ from pseudo-classes?
+
+Pseudo-elements allow you to style specific parts of an element without adding extra HTML. They use double colons `::` like `::before`, `::after`, `::first-line`, and `::first-letter`. The most common use is `::before` and `::after`, which insert content before or after an element's actual content. They're useful for decorative elements, icons, or styling effects without cluttering the HTML.
+
+Pseudo-classes target elements based on their state or position, using a single colon `:` like `:hover`, `:focus`, `:active`, or `:nth-child()`. They style elements when they're in a particular condition.
+
+The key difference: pseudo-elements create and style virtual elements that are parts of existing elements, while pseudo-classes select existing elements based on their state.
+
+### Layout
+
+> Can you explain how Flexbox works and its key properties?
+
+Flexbox is a one-dimensional layout system that arranges items along a main axis. You enable it by setting `display: flex` on a container, which makes its direct children flex items.
+
+Key container properties include `flex-direction` which sets the main axis direction (row or column), `justify-content` for alignment along the main axis, `align-items` for alignment along the cross axis, and `flex-wrap` to control whether items wrap to new lines.
+
+For flex items, the most important property is `flex`, which is shorthand for three properties: `flex-grow` determines how much an item grows relative to others, `flex-shrink` controls shrinking when space is limited, and `flex-basis` sets the initial size before growing or shrinking.
+
+Common patterns include `flex: 1` to make items grow equally, `flex: 0 0 auto` to prevent growing or shrinking, and using `align-items: center` with `justify-content: center` to perfectly center content.
+
+> Can you explain how CSS Grid works and its key properties?
+
+CSS Grid is a two-dimensional layout system that divides space into rows and columns. You enable it with `display: grid` on a container, making its direct children grid items.
+
+Key container properties include `grid-template-columns` and `grid-template-rows` to define the grid structure, `gap` for spacing between cells, and `grid-template-areas` for naming regions. For example:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+}
+```
+
+The `fr` unit represents a fraction of available space, making responsive layouts easier.
+
+For grid items, you can position them using `grid-column` and `grid-row` to span multiple cells, or use `grid-area` to place items in named regions. Auto-placement handles items automatically if not explicitly positioned.
+
+Common patterns include using `repeat()` for repetitive columns like `grid-template-columns: repeat(3, 1fr)`, `minmax()` for responsive sizing, and `auto-fit` or `auto-fill` for automatically adjusting column count based on available space.
+
 ## React
 
 ## Vue
