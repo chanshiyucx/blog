@@ -102,6 +102,30 @@ Both have a storage limit of around 5-10MB per origin and store data as strings,
 
 Use Local Storage for data that should persist across sessions like user preferences or themes, and Session Storage for temporary data like form inputs or navigation state within a single session
 
+### Web Workers
+
+> What are Web Workers and when would you use them?
+
+Web Workers allow you to run JavaScript in background threads separate from the main browser thread, enabling true parallel execution without blocking the UI. This is crucial because JavaScript is normally single-threaded.
+
+You create a worker by instantiating it with a separate script file:
+
+```javascript
+const worker = new Worker('worker.js')
+
+worker.postMessage({ data: 'hello' })
+
+worker.onmessage = (event) => {
+  console.log('Result:', event.data)
+}
+```
+
+Workers communicate with the main thread through message passing using `postMessage()` and `onmessage`. They have their own global scope and cannot access the DOM, window object, or most browser APIs.
+
+Web Workers are ideal for CPU-intensive tasks like complex calculations, data processing, image manipulation, or parsing large datasets. For example, processing a large CSV file, performing heavy algorithms, or real-time data analysis. This keeps the main thread responsive and prevents UI freezing.
+
+There's also Service Workers for network request interception and offline functionality, and Shared Workers for communication between multiple tabs, but regular Web Workers are most common for computation offloading.
+
 ## HTML
 
 ### Semantic HTML
@@ -453,6 +477,5 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
-- Debouncing, throttling
 - Virtual DOM
 - CSR vs SSR
