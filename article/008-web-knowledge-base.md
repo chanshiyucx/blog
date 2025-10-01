@@ -90,6 +90,18 @@ Modern applications primarily rely on CORS for API calls and `postMessage` for i
 
 ### Local Storage, Session Storage
 
+> What's the difference between Local Storage and Session Storage?
+
+Both are browser storage mechanisms that store key-value pairs as strings, but they differ in persistence and scope.
+
+Local Storage persists data permanently until explicitly deleted. Data remains even after closing the browser or restarting the computer. It's shared across all tabs and windows from the same origin.
+
+Session Storage only persists for the duration of the page session. Data is cleared when the tab or window is closed, and it's isolated to that specific tab - other tabs don't share the data even from the same origin.
+
+Both have a storage limit of around 5-10MB per origin and store data as strings, so you need to use `JSON.stringify()` and `JSON.parse()` for objects.
+
+Use Local Storage for data that should persist across sessions like user preferences or themes, and Session Storage for temporary data like form inputs or navigation state within a single session
+
 ## HTML
 
 ### Semantic HTML
@@ -441,7 +453,6 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
-- Web Workers
 - Debouncing, throttling
 - Virtual DOM
 - CSR vs SSR
