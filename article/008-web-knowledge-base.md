@@ -340,7 +340,7 @@ In practice, I use arrow functions for most cases, especially callbacks, but use
 
 > What are spread syntax and rest syntax, and how do they differ?
 
-Both use the three-dot `…` operator but serve opposite purposes. Spread syntax expands an array or object into individual elements, while rest syntax collects multiple elements into an array.
+Both spread and rest syntax use the three-dot `…` operator but serve opposite purposes. Spread syntax expands an array or object into individual elements, while rest syntax collects multiple elements into an array.
 
 Spread is used when calling functions or creating new arrays and objects. It's useful for copying arrays, merging objects, and passing array elements as function arguments.
 
@@ -358,6 +358,35 @@ const [first, …rest] = array
 
 The key distinction: spread expands, rest collects. They look identical but their context determines their behavior.
 
+### Destructuring
+
+> What is destructuring in JavaScript?
+
+Destructuring is a syntax for extracting values from arrays or properties from objects into distinct variables in a concise way. It makes code cleaner and more readable.
+
+Destructuring is particularly useful in function parameters to extract only needed properties, in React for props, and when working with API responses. It reduces repetitive code and makes variable extraction more explicit and declarative.
+
+For arrays, you extract values by position:
+
+```javascript
+const [first, second] = [1, 2, 3]
+const [a, , c] = [1, 2, 3] // skip elements
+```
+
+For objects, you extract properties by name:
+
+```javascript
+const { name, age } = { name: 'John', age: 30 }
+const { name: userName } = user // rename variable
+```
+
+You can also use default values, nested destructuring, and combine it with rest syntax:
+
+```javascript
+const { name = 'Anonymous', …rest } = user
+const [first, …remaining] = array
+```
+
 ## React
 
 ## Vue
@@ -373,3 +402,12 @@ I primarily use browser DevTools, especially Chrome DevTools. The Source panel w
 For framework-specific debugging, I use React DevTools and Redux DevTools to inspect component hierarchies and state changes. When working with Vue, I use Vue DevTools to inspect components, props, and Vuex state, which is especially helpful for pinpointing reactivity issues in complex SPAs.
 
 I also use the Network tab for API debugging and the Performance tab to profile execution and identify rendering bottlenecks. For production issues, I use error tracking tools like Sentry with source maps to debug minified code and capture user context.
+
+## TODO
+
+- Map, Set, WeakMap, WeakSet
+- Local Storage, Session Storage
+- Web Workers
+- Debouncing, throttling
+- Virtual DOM
+- CSR vs SSR
