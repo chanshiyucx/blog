@@ -48,6 +48,24 @@ Prevention includes sanitizing and validating all user input, encoding output da
 
 The most common defense is using CSRF tokens, which are random values generated per session or per request that must be included in state-changing requests. The server validates this token before processing the request. Other defenses include SameSite cookie attribute which prevents cookies from being sent in cross-site requests, validating the Origin and Referer headers, and requiring re-authentication for sensitive operations. For modern applications, using SameSite cookies combined with CSRF tokens provides strong protection.
 
+### CORS
+
+> What is CORS and why is it necessary?
+
+CORS, or Cross-Origin Resource Sharing, is a security mechanism that allows servers to specify which origins can access their resources. It's built on top of the same-origin policy, which by default blocks cross-origin requests from JavaScript.
+
+When a browser makes a cross-origin request, it sends an `Origin` header. The server responds with CORS headers like `Access-Control-Allow-Origin` to indicate whether the request is permitted:
+
+```
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: Content-Type
+```
+
+For simple requests like GET or POST with standard headers, the browser makes the request directly. For complex requests with custom headers or methods like PUT or DELETE, the browser sends a preflight OPTIONS request first to check permissions.
+
+CORS is necessary because without it, malicious websites could make requests to other sites using your cookies and credentials, potentially accessing sensitive data. It's a common issue in development when your frontend and backend are on different ports. The solution is configuring the server to include appropriate CORS headers, or using a proxy in development.
+
 ### Same-Origin Policy
 
 > What is the same-origin policy and why does it exist?
@@ -69,6 +87,8 @@ JSONP was a legacy workaround using script tags, but it is now largely obsolete 
 For controlled communication between windows or iframes, `postMessage` API allows secure cross-origin messaging. Proxying requests through your own server is another option where your backend makes the request instead of the browser.
 
 Modern applications primarily rely on CORS for API calls and `postMessage` for iframe communication.
+
+### Local Storage, Session Storage
 
 ## HTML
 
@@ -310,6 +330,22 @@ In terms of type, `typeof undefined` returns `'undefined'`, while `typeof null` 
 
 In practice, use `undefined` to check if something hasn't been initialized, and use `null` when you want to explicitly clear or reset a value.
 
+### Map, Set, WeakMap, WeakSet
+
+> Can you explain Map, Set, WeakMap, and WeakSet in JavaScript?
+
+These are data structures introduced in ES6 that offer alternatives to objects and arrays.
+
+Map is a key-value collection where keys can be any type, not just strings.
+
+Set stores unique values of any type, automatically removing duplicates.
+
+WeakMap is similar to Map but only accepts objects as keys and holds weak references, meaning if there are no other references to the key object, it can be garbage collected. It doesn't prevent memory leaks and has no iteration methods.
+
+WeakSet is like Set but only stores objects with weak references, also allowing garbage collection.
+
+Use Map for general key-value storage with non-string keys, Set for unique collections, WeakMap for storing metadata about objects without preventing garbage collection, and WeakSet for tracking object presence without memory leaks.
+
 ### `==` vs `===`
 
 > What's the difference between `==` and `===` in JavaScript?
@@ -405,9 +441,6 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
-- CORS
-- Map, Set, WeakMap, WeakSet
-- Local Storage, Session Storage
 - Web Workers
 - Debouncing, throttling
 - Virtual DOM
