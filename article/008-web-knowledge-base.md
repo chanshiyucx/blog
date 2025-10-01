@@ -70,6 +70,113 @@ For controlled communication between windows or iframes, `postMessage` API allow
 
 Modern applications primarily rely on CORS for API calls and `postMessage` for iframe communication.
 
+## HTML
+
+### Semantic HTML
+
+> What is semantic HTML and why is it important?
+
+Semantic HTML uses elements that clearly describe their meaning and content, rather than generic containers like `<div>` or `<span>`. Examples include `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, and `<footer>`.
+
+It's important for several reasons. First, it improves accessibility - screen readers can better understand page structure and navigate more effectively. Second, it benefits SEO because search engines can better understand content hierarchy and importance. Third, it makes code more readable and maintainable for developers. Using semantic HTML is a best practice that improves overall web quality with minimal extra effort.
+
+### script: async vs defer
+
+> What's the difference between `<script>`, `<script async>`, and `<script defer>`?
+
+The key difference is how they affect HTML parsing and script execution timing.
+
+Regular `<script>` blocks HTML parsing. When the browser encounters it, it stops parsing, downloads the script, executes it immediately, then continues parsing. This can slow down page load if scripts are large or in the `<head>`.
+
+`<script async>` downloads the script in parallel with HTML parsing without blocking, but executes immediately once downloaded, which pauses parsing during execution. Scripts execute in whatever order they finish downloading, not in the order they appear in HTML. This is ideal for independent scripts like analytics that don't depend on other scripts or the DOM.
+
+`<script defer>` also downloads in parallel without blocking, but waits to execute until HTML parsing is complete. Scripts execute in the order they appear in the document, right before `DOMContentLoaded` fires. This is best for scripts that need the full DOM or have dependencies on other scripts.
+
+In practice, I use `defer` for most scripts that manipulate the DOM, `async` for independent third-party scripts like analytics, and place regular scripts at the end of `<body>` if neither attribute is suitable.
+
+## CSS
+
+### Visibility
+
+> What is the difference between `visibility: hidden` and `display: none` properties in CSS?
+
+The core difference lies in their impact on the document layout and flow.
+
+`visibility: hidden` hides the element but preserves its space in the layout, preventing other elements from shifting. It remains in the DOM, is fully accessible to screen readers, and retains event capacity for user actions like clicks. This is generally preferred for temporary toggles where maintaining the layout structure is necessary.
+
+`display: none` completely removes the element from the document flow, reclaiming its space. It's not rendered, is inaccessible to screen readers, and ignores all events. This is the standard choice when you need to reclaim layout space, though toggling its state triggers a costly reflow, which is a significant performance consideration.
+
+### BFC
+
+> What is BFC (Block Formatting Context) and when is it useful?
+
+BFC, or Block Formatting Context, is an isolated rendering region in CSS where block-level boxes are laid out according to specific rules. Elements inside a BFC don't affect the layout of elements outside it.
+
+A BFC is created by elements with specific properties: non-visible `overflow` values, `position: absolute` or `fixed`, `float` values, or modern methods like `display: flow-root`, flex, or grid containers.
+
+BFC is useful for solving common layout issues. It prevents margin collapse between a parent and its first/last child, clears floats by containing floated children, and prevents text wrapping around floated elements.
+
+In modern CSS, `display: flow-root` is the cleanest way to create a BFC without side effects.
+
+### Pseudo Elements vs Pseudo Classes
+
+> What are pseudo-elements and how do they differ from pseudo-classes?
+
+Pseudo-elements allow you to style specific parts of an element without adding extra HTML. They use double colons `::` like `::before`, `::after`, `::first-line`, and `::first-letter`. The most common use is `::before` and `::after`, which insert content before or after an element's actual content. They're useful for decorative elements, icons, or styling effects without cluttering the HTML.
+
+Pseudo-classes target elements based on their state or position, using a single colon `:` like `:hover`, `:focus`, `:active`, or `:nth-child()`. They style elements when they're in a particular condition.
+
+The key difference: pseudo-elements create and style virtual elements that are parts of existing elements, while pseudo-classes select existing elements based on their state.
+
+### Layout
+
+> Can you explain how Flexbox works and its key properties?
+
+Flexbox is a one-dimensional layout system that arranges items along a main axis. You enable it by setting `display: flex` on a container, which makes its direct children flex items.
+
+Key container properties include `flex-direction` which sets the main axis direction (row or column), `justify-content` for alignment along the main axis, `align-items` for alignment along the cross axis, and `flex-wrap` to control whether items wrap to new lines.
+
+For flex items, the most important property is `flex`, which is shorthand for three properties: `flex-grow` determines how much an item grows relative to others, `flex-shrink` controls shrinking when space is limited, and `flex-basis` sets the initial size before growing or shrinking.
+
+Common patterns include `flex: 1` to make items grow equally, `flex: 0 0 auto` to prevent growing or shrinking, and using `align-items: center` with `justify-content: center` to perfectly center content.
+
+> Can you explain how CSS Grid works and its key properties?
+
+CSS Grid is a two-dimensional layout system that divides space into rows and columns. You enable it with `display: grid` on a container, making its direct children grid items.
+
+Key container properties include `grid-template-columns` and `grid-template-rows` to define the grid structure, `gap` for spacing between cells, and `grid-template-areas` for naming regions. For example:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+}
+```
+
+The `fr` unit represents a fraction of available space, making responsive layouts easier.
+
+For grid items, you can position them using `grid-column` and `grid-row` to span multiple cells, or use `grid-area` to place items in named regions. Auto-placement handles items automatically if not explicitly positioned.
+
+Common patterns include using `repeat()` for repetitive columns like `grid-template-columns: repeat(3, 1fr)`, `minmax()` for responsive sizing, and `auto-fit` or `auto-fill` for automatically adjusting column count based on available space.
+
+> What are the differences between Flexbox and CSS Grid, and when would you use each?
+
+The key difference is dimensionality: Flexbox works along a single axis, while Grid works with both axes at once. In practice, they complement each other - Grid for the overall page layout, Flexbox for components within those grid areas. For example, you might use Grid to create a page with header, sidebar, and main content, then use Flexbox within each section to arrange individual elements.
+
+### Responsive Design
+
+> What is responsive design and how do you implement it?
+
+Responsive design is an approach where websites adapt their layout and content to different screen sizes and devices, providing an optimal viewing experience across desktops, tablets, and mobile phones.
+
+The core technique is using CSS media queries to apply different styles based on viewport width.
+
+Beyond media queries, I use fluid layouts with relative units like percentages or `fr` units instead of fixed pixels, flexible images with `max-width: 100%` to prevent overflow, and responsive typography using `clamp()` or viewport units like `vw`.
+
+Modern approaches include using Flexbox and Grid for inherently flexible layouts, mobile-first design where you start with mobile styles and progressively enhance for larger screens, and CSS container queries for component-level responsiveness. The viewport meta tag is also essential to ensure proper scaling on mobile devices.
+
 ## JavaScript
 
 ### JS Closures
@@ -133,6 +240,16 @@ For example, if you click a button inside a div inside a form, the click event f
 Prototypal inheritance works through the prototype chain. Every object has an internal prototype reference. When accessing a property, if it's not found on the object itself, JavaScript traverses up the prototype chain until it finds the property or reaches `null`.
 
 Unlike classical inheritance where classes copy behavior, JavaScript objects delegate to their prototypes at runtime. This means multiple objects can share methods through a common prototype without duplicating them in memory, which is both memory-efficient and flexible.
+
+### Higher-Order Function
+
+> What is a higher-order function?
+
+A higher-order function is a function that either takes one or more functions as arguments, returns a function, or both. This is a core concept in functional programming.
+
+Common examples include array methods like `map`, `filter`, and `reduce`, which all accept callback functions. For instance, map is a higher-order function because it takes a function as an argument. Function factories are another example, like a function that returns a customized function based on parameters.
+
+Higher-order functions enable code reuse, composition, and abstraction. They're fundamental to functional programming patterns and are widely used in modern JavaScript for data transformation and creating reusable logic.
 
 ### call, apply, bind
 
@@ -219,82 +336,27 @@ This makes arrow functions ideal for callbacks where you want to preserve contex
 
 In practice, I use arrow functions for most cases, especially callbacks, but use regular functions when I need dynamic `this` or constructor functionality.
 
-### Higher-Order Function
+### Spread & Rest Operators
 
-> What is a higher-order function?
+> What are spread syntax and rest syntax, and how do they differ?
 
-A higher-order function is a function that either takes one or more functions as arguments, returns a function, or both. This is a core concept in functional programming.
+Both use the three-dot `…` operator but serve opposite purposes. Spread syntax expands an array or object into individual elements, while rest syntax collects multiple elements into an array.
 
-Common examples include array methods like `map`, `filter`, and `reduce`, which all accept callback functions. For instance, map is a higher-order function because it takes a function as an argument. Function factories are another example, like a function that returns a customized function based on parameters.
+Spread is used when calling functions or creating new arrays and objects. It's useful for copying arrays, merging objects, and passing array elements as function arguments.
 
-Higher-order functions enable code reuse, composition, and abstraction. They're fundamental to functional programming patterns and are widely used in modern JavaScript for data transformation and creating reusable logic.
-
-## CSS
-
-### Visibility
-
-> What is the difference between `visibility: hidden` and `display: none` properties in CSS?
-
-The core difference lies in their impact on the document layout and flow.
-
-`visibility: hidden` hides the element but preserves its space in the layout, preventing other elements from shifting. It remains in the DOM, is fully accessible to screen readers, and retains event capacity for user actions like clicks. This is generally preferred for temporary toggles where maintaining the layout structure is necessary.
-
-`display: none` completely removes the element from the document flow, reclaiming its space. It's not rendered, is inaccessible to screen readers, and ignores all events. This is the standard choice when you need to reclaim layout space, though toggling its state triggers a costly reflow, which is a significant performance consideration.
-
-### BFC
-
-> What is BFC (Block Formatting Context) and when is it useful?
-
-BFC, or Block Formatting Context, is an isolated rendering region in CSS where block-level boxes are laid out according to specific rules. Elements inside a BFC don't affect the layout of elements outside it.
-
-A BFC is created by elements with specific properties: non-visible `overflow` values, `position: absolute` or `fixed`, `float` values, or modern methods like `display: flow-root`, flex, or grid containers.
-
-BFC is useful for solving common layout issues. It prevents margin collapse between a parent and its first/last child, clears floats by containing floated children, and prevents text wrapping around floated elements.
-
-In modern CSS, `display: flow-root` is the cleanest way to create a BFC without side effects.
-
-### Pseudo Elements vs Pseudo Classes
-
-> What are pseudo-elements and how do they differ from pseudo-classes?
-
-Pseudo-elements allow you to style specific parts of an element without adding extra HTML. They use double colons `::` like `::before`, `::after`, `::first-line`, and `::first-letter`. The most common use is `::before` and `::after`, which insert content before or after an element's actual content. They're useful for decorative elements, icons, or styling effects without cluttering the HTML.
-
-Pseudo-classes target elements based on their state or position, using a single colon `:` like `:hover`, `:focus`, `:active`, or `:nth-child()`. They style elements when they're in a particular condition.
-
-The key difference: pseudo-elements create and style virtual elements that are parts of existing elements, while pseudo-classes select existing elements based on their state.
-
-### Layout
-
-> Can you explain how Flexbox works and its key properties?
-
-Flexbox is a one-dimensional layout system that arranges items along a main axis. You enable it by setting `display: flex` on a container, which makes its direct children flex items.
-
-Key container properties include `flex-direction` which sets the main axis direction (row or column), `justify-content` for alignment along the main axis, `align-items` for alignment along the cross axis, and `flex-wrap` to control whether items wrap to new lines.
-
-For flex items, the most important property is `flex`, which is shorthand for three properties: `flex-grow` determines how much an item grows relative to others, `flex-shrink` controls shrinking when space is limited, and `flex-basis` sets the initial size before growing or shrinking.
-
-Common patterns include `flex: 1` to make items grow equally, `flex: 0 0 auto` to prevent growing or shrinking, and using `align-items: center` with `justify-content: center` to perfectly center content.
-
-> Can you explain how CSS Grid works and its key properties?
-
-CSS Grid is a two-dimensional layout system that divides space into rows and columns. You enable it with `display: grid` on a container, making its direct children grid items.
-
-Key container properties include `grid-template-columns` and `grid-template-rows` to define the grid structure, `gap` for spacing between cells, and `grid-template-areas` for naming regions. For example:
-
-```css
-.container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 20px;
-}
+```javascript
+Math.max(…[1, 2, 3])
+const newObj = {…obj1, …obj2}
 ```
 
-The `fr` unit represents a fraction of available space, making responsive layouts easier.
+Rest syntax collects remaining arguments into an array, used in function parameters and destructuring.
 
-For grid items, you can position them using `grid-column` and `grid-row` to span multiple cells, or use `grid-area` to place items in named regions. Auto-placement handles items automatically if not explicitly positioned.
+```javascript
+function sum(…numbers) { }
+const [first, …rest] = array
+```
 
-Common patterns include using `repeat()` for repetitive columns like `grid-template-columns: repeat(3, 1fr)`, `minmax()` for responsive sizing, and `auto-fit` or `auto-fill` for automatically adjusting column count based on available space.
+The key distinction: spread expands, rest collects. They look identical but their context determines their behavior.
 
 ## React
 
