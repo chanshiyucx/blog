@@ -189,6 +189,14 @@ The key difference is type coercion. `==` is the abstract equality operator whi
 
 Best practice is to always use `===` to avoid unexpected behavior from type coercion, unless you specifically need the coercion behavior, which is rare.
 
+### Promise
+
+> What are the pros and cons of using Promises instead of callbacks?
+
+Using Promises makes asynchronous code cleaner and easier to read by avoiding deeply nested callback structures. They provide consistent error handling through `.catch()`, and compose well with features like `.then()` chains or `Promise.all()`, which is useful for running multiple tasks in parallel. They also integrate seamlessly with `async/await`, making async code look almost synchronous.
+
+On the downside, Promises can still become hard to follow if you chain too many `.then()` calls, and if you forget to add `.catch()`, errors might be silently ignored. For very simple cases, they may introduce a bit of overhead compared to plain callbacks.
+
 ## CSS
 
 ### Visibility
@@ -202,3 +210,10 @@ The core difference lies in their impact on the document layout and flow.
 `display: none` completely removes the element from the document flow, reclaiming its space. It's not rendered, is inaccessible to screen readers, and ignores all events. This is the standard choice when you need to reclaim layout space, though toggling its state triggers a costly reflow, which is a significant performance consideration.
 
 ## React
+
+
+## Workflow
+
+### Debugging
+
+> What tools and techniques do you use for debugging JavaScript code?
