@@ -405,6 +405,7 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
+- CORS
 - Map, Set, WeakMap, WeakSet
 - Local Storage, Session Storage
 - Web Workers
