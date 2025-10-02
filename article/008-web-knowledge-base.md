@@ -68,7 +68,7 @@ CORS is necessary because without it, malicious websites could make requests to 
 
 > What is the same-origin policy and why does it exist?
 
-The same-origin policy is a critical security mechanism that restricts how documents or scripts from one origin can interact with resources from another origin. Two URLs have the same origin only if they share the same protocol, domain, and port. This policy exists to prevent malicious scripts on one site from accessing sensitive data on another site through the user's browser.
+The same-origin policy is a critical security mechanism that restricts how documents or scripts from one origin can interact with resources from another origin. Two URLs have the same origin only if they share the same **protocol, domain, and port**. This policy exists to prevent malicious scripts on one site from accessing sensitive data on another site through the user's browser.
 
 > What resources are actually restricted by same-origin policy?
 
@@ -221,15 +221,15 @@ The key difference is dimensionality: Flexbox works along a single axis, while G
 
 ### Responsive Design
 
-> What is responsive design and how do you implement it?
+> What is responsive design and how to implement it?
 
-Responsive design is an approach where websites adapt their layout and content to different screen sizes and devices, providing an optimal viewing experience across desktops, tablets, and mobile phones.
+ Responsive design is an approach where websites adapt their layout and content to different screen sizes and devices, providing an optimal viewing experience across desktops, tablets, and mobile phones.
 
 The core technique is using CSS media queries to apply different styles based on viewport width.
 
-Beyond media queries, I use fluid layouts with relative units like percentages or `fr` units instead of fixed pixels, flexible images with `max-width: 100%` to prevent overflow, and responsive typography using `clamp()` or viewport units like `vw`.
+Beyond media queries, key techniques include fluid layouts with relative units like percentages or `fr` units instead of fixed pixels, flexible images with `max-width: 100%` to prevent overflow, and responsive typography using `clamp()` or viewport units like `vw`.
 
-Modern approaches include using Flexbox and Grid for inherently flexible layouts, mobile-first design where you start with mobile styles and progressively enhance for larger screens, and CSS container queries for component-level responsiveness. The viewport meta tag is also essential to ensure proper scaling on mobile devices.
+Modern approaches include using Flexbox and Grid for inherently flexible layouts, mobile-first design where styles start with mobile and progressively enhance for larger screens, and CSS container queries for component-level responsiveness. The viewport meta tag is also essential to ensure proper scaling on mobile devices.
 
 ## JavaScript
 
