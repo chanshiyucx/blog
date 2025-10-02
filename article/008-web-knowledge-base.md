@@ -13,8 +13,6 @@ tags:
 
 The JavaScript Event Loop enables asynchronous execution in its single-threaded environment. It continuously checks the Call Stack, and when empty, processes tasks from two queues: the Microtask Queue and the Macrotask Queue.
 
-The Microtask Queue has higher priority and handles tasks like `Promise callbacks`, `queueMicrotask`, and `MutationObserver`. The Event Loop processes all microtasks before moving to the next macrotask.
-
 The Macrotask Queue handles tasks like `setTimeout`, `setInterval`, I/O operations, or UI rendering, executing one task per loop iteration.
 
 > Can you predict the output of this code?
