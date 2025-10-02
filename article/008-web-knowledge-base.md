@@ -54,7 +54,7 @@ CORS, or Cross-Origin Resource Sharing, is a security mechanism that allows serv
 
 When a browser makes a cross-origin request, it sends an `Origin` header. The server responds with CORS headers like `Access-Control-Allow-Origin` to indicate whether the request is permitted:
 
-```
+```text
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Methods: GET, POST
 Access-Control-Allow-Headers: Content-Type
