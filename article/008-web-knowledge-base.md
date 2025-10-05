@@ -516,6 +516,18 @@ SSR renders HTML on the server and sends fully formed pages to the browser. User
 
 Modern frameworks often combine both - SSR for initial page load, then CSR for navigation. The choice depends on priorities: use SSR for content-heavy sites needing SEO, CSR for highly interactive applications.
 
+### React Hooks
+
+> What are React Hooks and why were they introduced?
+
+React Hooks are functions that let you use state and other React features in functional components without writing classes. They were introduced in React 16.8 to solve problems with class components like complex lifecycle methods, difficulty reusing stateful logic, and confusion around `this` binding.
+
+The most common hooks are `useState` for managing component state and `useEffect` for side effects like data fetching or subscriptions:
+
+Other important hooks include `useContext` for consuming context, `useRef` for accessing DOM elements or persisting values, `useMemo` and `useCallback` for performance optimization, and `useReducer` for complex state logic.
+
+Hooks follow specific rules: they must be called at the top level, not inside loops or conditions, and only in functional components or custom hooks. Custom hooks enable reusable stateful logic by extracting hook-based code into separate functions, promoting code reuse without wrapper components."
+
 ## Vue
 
 ## Workflow
