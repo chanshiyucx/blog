@@ -599,6 +599,35 @@ Vue 3's Proxy resolves these issues by intercepting operations at the object lev
 
 Another consideration involves **handling primitive values**. Proxies can only intercept operations on objects, not primitives (like strings, numbers, or booleans). This is why Vue 3 introduced `ref()` to wrap primitives in an object with a `.value` property, adding a small syntax overhead compared to Vue 2's plain values.
 
+### Vite
+
+> What is Vite and what's its core philosophy?
+
+Vite is a modern build tool that leverages native browser ES module support. Its core philosophy is '**on-demand compilation with instant HMR**' during development.
+
+During development, it uses esbuild for dependency pre-bundling. For production, it uses Rollup for optimized bundling. This approach provides fast development experience while maintaining production performance.
+
+> Why does Vite start so fast compared to traditional bundlers?
+
+Vite starts fast because it doesn't bundle the entire project upfront like Webpack. Instead, it serves source code based on native browser ES modules with on-demand loading.
+
+It uses esbuild, written in Go, for dependency pre-bundling, which is 10-100x faster than JavaScript-based bundlers. This means startup time remains constant regardless of project size.
+
+> What is Vite's build process?
+
+Vite has two distinct modes:
+
+- Development mode: esbuild pre-bundles dependencies in `node_modules`, the browser loads source code directly via ES module imports, and when files change, Vite only recompiles affected modules through HMR.
+- Production mode: Rollup bundles the code into optimized static assets with automatic code splitting and tree-shaking.
+
+This dual strategy optimizes for both developer experience in development and performance in production.
+
+> How does Vite's HMR work?
+
+Vite's HMR is built on native ES modules with WebSocket communication. When a file changes, Vite's file watcher detects it and pushes only the updated module to the browser via WebSocket.
+
+The browser receives the update and reloads only the changed module without refreshing the entire page. This module-level granularity makes updates nearly instantaneous, unlike bundle-level HMR in traditional bundlers.
+
 ## Workflow
 
 ### Debugging
@@ -613,4 +642,26 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
-1. vue
+**1. 什么是 Vite？它的核心理念是什么？**  
+Vite 是一个基于 ES Module 的新型前端构建工具，它利用浏览器原生的 ESM 支持，在开发阶段实现**" 按需编译 + 极速热更新 "**。
+- 开发阶段用 **ESBuild** 进行依赖预构建。
+- 生产阶段用 **Rollup** 打包优化。
+
+**2. Vite 为什么启动快？**
+- 不需要像 Webpack 那样一次性打包整个项目。
+- 基于浏览器原生 ES Module 按需加载。
+- 使用 **esbuild（Go 实现）** 进行依赖预构建，速度极快。
+
+**3. Vite 的构建流程是什么？**
+1. **开发模式（dev）：**
+	- 使用 esbuild 预构建依赖（node_modules）。
+	- 浏览器直接加载源码（通过 ESM 导入）。
+	- 修改文件时，Vite 只重新编译受影响的模块（HMR）。
+2. **生产模式（build）：**
+	- 使用 Rollup 打包成静态资源。
+	- 自动进行代码分割与优化。
+
+**4. Vite 的热更新（HMR）机制是怎么实现的？**
+- Vite 基于原生 ESM，通过 WebSocket 监听文件变化。
+- 当模块变化时，只向浏览器推送该模块的更新。
+- 浏览器只重新加载变化部分，而不刷新整个页面。
