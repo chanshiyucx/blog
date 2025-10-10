@@ -144,9 +144,23 @@ ETag: "abc123"
 Last-Modified: Wed, 21 Oct 2024 07:28:00 GMT
 ```
 
-The browser sends a conditional request with `If-None-Match` or `If-Modified-Since`. If unchanged, the server returns 304 Not Modified with no body, saving bandwidth. If changed, it returns 200 with new content.
+The browser sends a conditional request with `If-None-Match` or `If-Modified-Since`. If unchanged, the server returns `304 Not Modified` with no body, saving bandwidth. If changed, it returns `200 OK` with new content.
 
 In practice, combine both: use strong cache with long expiration for versioned assets, and negotiated cache for resources that change unpredictably like HTML files.
+
+> Can you explain the overall browser caching flow?
+
+When the browser requests a resource, it follows this flow:
+
+If there's no cache, the browser makes a normal request and receives `200 OK` with the resource, then caches it based on the response headers.
+
+On subsequent requests, the browser first checks if a strong cache exists and is still valid based on `Cache-Control` or `Expires`. If valid, it uses the cached version directly without asking the server.
+
+If the strong cache has expired, the browser checks for negotiated cache validators like `ETag` or `Last-Modified`. It sends a conditional request with `If-None-Match` or `If-Modified-Since` headers.
+
+The server compares the validators. If unchanged, it responds with `304 Not Modified` and no body - the browser uses its cached version. If changed, it responds with `200 OK` and the new content, which replaces the cache.
+
+This flow optimizes performance by eliminating requests when possible, reducing bandwidth when content hasn't changed, and only transferring full content when necessary.
 
 ## HTML
 
@@ -554,6 +568,31 @@ Hooks follow specific rules: they must be called at the top level, not inside lo
 
 ## Vue
 
+### Reactivity
+
+> Can you explain the difference between Vue 2 and Vue 3's reactivity systems?
+
+Vue 2 uses `Object.defineProperty()` to implement reactivity. It intercepts getter and setter operations on object properties to track dependencies and trigger updates. When you access a property, it collects dependencies, and when you modify it, it notifies watchers to re-render.
+
+Vue 3 uses the Proxy API for reactivity. Proxies intercept operations at the object level rather than the property level, providing more comprehensive tracking of changes including property addition, deletion, and array modifications.
+
+The key difference is that Vue 2 requires properties to exist at initialization for reactivity to work, while Vue 3 can detect new properties automatically. Vue 3's approach is more powerful and eliminates many of Vue 2's limitations.
+
+> What are the limitations of Vue 2's reactivity system? How does Vue 3's Proxy-based reactivity solve these problems?
+
+Vue 2 has several limitations due to `Object.defineProperty()` works at the property level and can only track properties that exist when the reactivity system initializes.
+
+1. It cannot detect property addition or deletion. Adding a new property won't trigger reactivity - you need `Vue.set()`.
+2. It cannot detect array modifications by index like `arr[0] = value` or length changes like `arr.length = 0`. You must use array methods like `push`, `splice`, or `Vue.set()`.
+3. It requires recursively walking through all properties at initialization to make them reactive, which has performance overhead for deeply nested objects.
+
+Vue 3's Proxy solves these issues because Proxies intercept operations at the object level, not individual properties.
+
+1. For property addition and deletion, Proxy can detect when new properties are added or removed through its traps, so adding a new property works automatically without needing special methods.
+2. For arrays, Proxy intercepts all operations including index access and length modifications, making `arr[0] = value` and `arr.length = 0` fully reactive.
+3. For performance, Vue 3 implements lazy reactivity - it only makes nested objects reactive when they're actually accessed, not upfront. This significantly improves initialization performance for large data structures.
+4. Additionally, Proxies enable better TypeScript support and allow Vue 3 to track more operation types like `has`, `deleteProperty`, and `ownKeys`, making the reactivity system more complete and predictable.
+
 ## Workflow
 
 ### Debugging
@@ -567,3 +606,5 @@ For framework-specific debugging, I use React DevTools and Redux DevTools to ins
 I also use the Network tab for API debugging and the Performance tab to profile execution and identify rendering bottlenecks. For production issues, I use error tracking tools like Sentry with source maps to debug minified code and capture user context.
 
 ## TODO
+
+1. vue 
