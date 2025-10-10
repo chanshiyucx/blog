@@ -576,22 +576,28 @@ Vue 2 uses `Object.defineProperty()` to implement reactivity. It intercepts gett
 
 Vue 3 uses the Proxy API for reactivity. Proxies intercept operations at the object level rather than the property level, providing more comprehensive tracking of changes including property addition, deletion, and array modifications.
 
-The key difference is that Vue 2 requires properties to exist at initialization for reactivity to work, while Vue 3 can detect new properties automatically. Vue 3's approach is more powerful and eliminates many of Vue 2's limitations.
+The key difference is that Vue 2 requires properties to exist at initialization for reactivity to work, while Vue 3 can detect new properties automatically. Vue 3's approach is more powerful and eliminates many of the limitations of Vue 2.
 
 > What are the limitations of Vue 2's reactivity system? How does Vue 3's Proxy-based reactivity solve these problems?
 
-Vue 2 has several limitations due to `Object.defineProperty()` works at the property level and can only track properties that exist when the reactivity system initializes.
+Vue 2 has several limitations because `Object.defineProperty()` operates at the property level and can only track properties that were defined when the reactivity system was initialized.
 
-1. It cannot detect property addition or deletion. Adding a new property won't trigger reactivity - you need `Vue.set()`.
-2. It cannot detect array modifications by index like `arr[0] = value` or length changes like `arr.length = 0`. You must use array methods like `push`, `splice`, or `Vue.set()`.
-3. It requires recursively walking through all properties at initialization to make them reactive, which has performance overhead for deeply nested objects.
+1. **Property Addition/Deletion**: It cannot detect property addition or deletion. Adding a new property won't trigger reactivity - you need `Vue.set()`.
+2. **Array Modifications**: It cannot detect array modifications by index like `arr[0] = value` or length changes like `arr.length = 0`. You must use array methods like `push`, `splice`, or `Vue.set()`.
+3. **Initialization Performance**: It requires recursively walking through all properties at initialization to make them reactive, which has performance overhead for deeply nested objects.
 
-Vue 3's Proxy solves these issues because Proxies intercept operations at the object level, not individual properties.
+Vue 3's Proxy resolves these issues by intercepting operations at the object level:
 
-1. For property addition and deletion, Proxy can detect when new properties are added or removed through its traps, so adding a new property works automatically without needing special methods.
-2. For arrays, Proxy intercepts all operations including index access and length modifications, making `arr[0] = value` and `arr.length = 0` fully reactive.
-3. For performance, Vue 3 implements lazy reactivity - it only makes nested objects reactive when they're actually accessed, not upfront. This significantly improves initialization performance for large data structures.
-4. Additionally, Proxies enable better TypeScript support and allow Vue 3 to track more operation types like `has`, `deleteProperty`, and `ownKeys`, making the reactivity system more complete and predictable.
+1. **Property Addition/Deletion**: Proxy can detect when new properties are added or removed through its traps. Therefore, adding or deleting properties works automatically without needing special methods like `Vue.set()`.
+2. **Array Modifications**: Proxy intercepts all operations, including index access and length modifications, making operations like `arr[0] = value` and `arr.length = 0` fully reactive.
+3. **Performance**: Vue 3 implements lazy reactivity. It only makes nested objects reactive when they're actually accessed, not upfront during initialization. This significantly improves initialization performance for complex data structures.
+4. **Completeness**: Proxies enable better TypeScript support and allow Vue 3 to track more operation types like `has`, `deleteProperty`, and `ownKeys`, making the reactivity system more complete and predictable.
+
+> Are there any drawbacks to Vue 3's Proxy-based approach?
+
+ The primary drawback is **browser compatibility**. Since the Proxy API is a language-level feature introduced in ES6, it cannot be fully polyfilled in older browsers like IE11. This is why Vue 3 doesn't support IE11, while Vue 2 does.
+
+Another consideration involves **handling primitive values**. Proxies can only intercept operations on objects, not primitives (like strings, numbers, or booleans). This is why Vue 3 introduced `ref()` to wrap primitives in an object with a `.value` property, adding a small syntax overhead compared to Vue 2's plain values.
 
 ## Workflow
 
@@ -607,4 +613,4 @@ I also use the Network tab for API debugging and the Performance tab to profile 
 
 ## TODO
 
-1. vue 
+1. vue
