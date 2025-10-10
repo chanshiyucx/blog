@@ -124,6 +124,30 @@ Web Workers are ideal for CPU-intensive tasks like complex calculations, data pr
 
 There's also Service Workers for network request interception and offline functionality, and Shared Workers for communication between multiple tabs, but regular Web Workers are most common for computation offloading.
 
+### Strong Cache, Negotiated Cache
+
+> What's the difference between strong cache and negotiated cache?
+
+These are two HTTP caching strategies that determine how browsers handle cached resources.
+
+Strong cache means the browser uses cached resources directly without asking the server. During the cache period, the browser doesn't send any request to the server, making it the fastest option. It's controlled by `Cache-Control` and `Expires` headers:
+
+```text
+Cache-Control: max-age=31536000
+Expires: Wed, 21 Oct 2025 07:28:00 GMT
+```
+
+Negotiated cache means the browser asks the server if the cached version is still valid. It uses `ETag` or `Last-Modified` headers:
+
+```text
+ETag: "abc123"
+Last-Modified: Wed, 21 Oct 2024 07:28:00 GMT
+```
+
+The browser sends a conditional request with `If-None-Match` or `If-Modified-Since`. If unchanged, the server returns 304 Not Modified with no body, saving bandwidth. If changed, it returns 200 with new content.
+
+In practice, combine both: use strong cache with long expiration for versioned assets, and negotiated cache for resources that change unpredictably like HTML files.
+
 ## HTML
 
 ### Semantic HTML
