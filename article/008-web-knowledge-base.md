@@ -628,6 +628,18 @@ Vite's HMR is built on native ES modules with WebSocket communication. When a fi
 
 The browser receives the update and reloads only the changed module without refreshing the entire page. This module-level granularity makes updates nearly instantaneous, unlike bundle-level HMR in traditional bundlers.
 
+### Vue Router
+
+> What are the different types of route guards in Vue Router and their practical use cases?
+
+Vue Router has three levels of route guards:
+
+**Global guards** apply to all routes. `beforeEach` runs before every navigation and is commonly used for authentication checks and permission validation. `beforeResolve` runs after all in-component guards but before navigation is confirmed. `afterEach` runs after navigation completes and is useful for analytics tracking or resetting scroll position.
+
+**Per-route guards** are defined in route configuration. `beforeEnter` is attached to specific routes and useful for role-based access control, like restricting admin pages to admin users only.
+
+**In-component guards** are defined inside components. `beforeRouteEnter` runs before the component is created, useful for fetching data before rendering. `beforeRouteUpdate` handles changes within the same component, like updating data when route params change. `beforeRouteLeave` runs before leaving the component, commonly used for unsaved changes warnings.
+
 ## Workflow
 
 ### Debugging
