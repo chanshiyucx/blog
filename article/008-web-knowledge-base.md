@@ -640,6 +640,18 @@ Vue Router has three levels of route guards:
 
 **In-component guards** are defined inside components. `beforeRouteEnter` runs before the component is created, useful for fetching data before rendering. `beforeRouteUpdate` handles changes within the same component, like updating data when route params change. `beforeRouteLeave` runs before leaving the component, commonly used for unsaved changes warnings.
 
+### Vuex
+
+> What is Vuex, its core concepts, and how do you use it?
+
+Vuex is Vue's official state management library for managing shared state across components. It provides a centralized store that follows a predictable state mutation pattern, making state changes trackable and debuggable.
+
+Common use cases include managing user authentication state, sharing data between unrelated components, and handling complex application state that doesn't fit component props and events.
+
+The core concepts are: **State** holds the application data. **Getters** are computed properties for the store, useful for derived state. **Mutations** are synchronous functions that directly modify state - they're the only way to change state. **Actions** handle asynchronous operations and commit mutations. **Modules** allow splitting the store into namespaced sections for large applications.
+
+The data flow is unidirectional: components dispatch actions, actions commit mutations, mutations modify state, and state changes trigger component updates. For cleaner code, helpers like `mapGetters`, `mapActions`, and `mapMutations` are used in components.
+
 ## Workflow
 
 ### Debugging
