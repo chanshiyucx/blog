@@ -7,6 +7,22 @@ tags:
 
 ## Browser
 
+### URL
+
+> What happens when you enter a URL in the browser until you see the page?
+
+The process involves several key steps:  
+1. **URL Parsing:** The browser parses the URL to extract the protocol, domain, port, and path. It checks if the input is a valid URL or a search query, and processes special characters.
+2. **DNS Resolution**: The browser checks its cache for the IP address. If not found, it queries DNS servers recursively until it resolves the domain to an IP address.  
+3. **TCP Connection**: The browser establishes a TCP connection with the server through a three-way handshake. If it's HTTPS, an additional TLS handshake occurs for encrypted communication.  
+4. **HTTP Request**: The browser sends an HTTP request with method, headers, and optional body to the server.  
+5. **Server Processing**: The server processes the request, queries databases if needed, and generates a response with status code, headers, and content.  
+6. **Browser Receives Response**: The browser receives the HTML and starts parsing it. When it encounters external resources like CSS, JavaScript, or images, it makes additional requests.  
+7. **Rendering**: The browser builds the DOM tree from HTML and CSSOM tree from CSS, combines them into a render tree, calculates layout, and paints pixels to the screen. JavaScript execution may modify the DOM and trigger reflows.  
+8. **Page Interactive**: Once critical resources load and JavaScript executes, the page becomes interactive. Additional resources may continue loading in the background.
+
+This entire process typically completes in seconds, involving DNS, TCP/IP, HTTP protocols, and browser rendering engines.
+
 ### Event Loop
 
 > Can you explain how the JavaScript Event Loop works? What's the difference between microtasks and macrotasks?
