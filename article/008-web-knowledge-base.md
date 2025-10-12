@@ -668,6 +668,21 @@ The core concepts are: **State** holds the application data. **Getters** are com
 
 The data flow is unidirectional: components dispatch actions, actions commit mutations, mutations modify state, and state changes trigger component updates. For cleaner code, helpers like `mapGetters`, `mapActions`, and `mapMutations` are used in components.
 
+### Communicate
+
+> What are the different ways to communicate between components in Vue 3?
+
+Vue 3 provides several methods for component communication:
+
+- **Props and Emits** are the foundation for parent-child communication. Parents pass data down via props, children emit events upward using `$emit` or the `emits` option.
+- **Provide/Inject** allows ancestor components to provide data that any descendant can inject, avoiding prop drilling. Vue 3 enhanced this with reactivity support using `ref` or `reactive`.
+- **Composables** with the Composition API enable sharing stateful logic across components. You can extract reactive state into composable functions and import them where needed.
+- **State Management** with Pinia provides centralized state for complex applications. It offers better TypeScript support and simpler API than Vuex.
+- **Event Bus** using a third-party library or custom implementation allows communication between unrelated components, though it's less recommended in Vue 3 since Provide/Inject and composables are more maintainable.
+- **Template Refs** and `expose()` allow parent components to directly access child component instances and methods when necessary.
+
+In practice, use props/emits for direct parent-child communication, provide/inject for deeply nested data, composables for shared logic, and Pinia for complex global state.
+
 ## Workflow
 
 ### Debugging
