@@ -53,7 +53,7 @@ I am available to start immediately.
 
 > Do you already have a valid work permit for Germany?  
 
-I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into a regular work visa.
+Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into a regular work visa, that typically takes 4-6 weeks. I can start working immediately while the Blue Card application is processed.
 
 > When did you move to Germany?  
 
@@ -93,7 +93,7 @@ I'm in conversations with a few companies, but Sungrow is my top choice because 
 
 > When would you need to give us an answer if we make an offer?
 
-I'd like 2 business days to review the complete offer carefully. This is an important decision, and I want to make sure I'm fully informed. So I will give you my decision by Monday.
+I'd like about two business days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
 
 ### Hobbies
 
