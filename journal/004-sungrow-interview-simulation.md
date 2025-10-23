@@ -46,14 +46,19 @@ Yes, I'm actively learning German. I started learning German in February this ye
 ### Available Date
 
 > When would you be available to start?  
+> What is your notice period?
 
-I am available to start immediately.
+I'm ready to start immediately. As I hold a German Opportunity Card, I would need to convert it into an Blue Card once I receive an employment contract. I can start working immediately while the Blue Card application is processed.
 
 ### Visa
 
 > Do you already have a valid work permit for Germany?  
 
-Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into a regular work visa, that typically takes 4-6 weeks. I can start working immediately while the Blue Card application is processed.
+Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into an Blue Card, that typically takes 4-6 weeks. I can start working immediately while the Blue Card application is processed.
+
+> What does Sungrow need to provide for this?
+
+Sungrow would just need to provide the employment contract showing the salary meets the Blue Card. I'll handle the application process myself.
 
 > When did you move to Germany?  
 
