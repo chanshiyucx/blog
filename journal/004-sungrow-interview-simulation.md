@@ -48,13 +48,13 @@ Yes, I'm actively learning German. I started learning German in February this ye
 > When would you be available to start?  
 > What is your notice period?
 
-I'm ready to start immediately. As I hold a German Opportunity Card, I would need to convert it into an Blue Card once I receive an employment contract. I can start working immediately while the Blue Card application is processed.
+I'm available to start immediately and could begin as early as November 1st. As I hold a German Opportunity Card, I would need to convert it into an Blue Card once I receive an employment contract. I can start working immediately while the Blue Card application is processed.
 
 ### Visa
 
 > Do you already have a valid work permit for Germany?  
 
-Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into an Blue Card, that typically takes 4-6 weeks. I can start working immediately while the Blue Card application is processed.
+Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into an Blue Card, that typically takes 4 weeks. I can start working immediately while the Blue Card application is processed.
 
 > What does Sungrow need to provide for this?
 
@@ -72,7 +72,7 @@ It's valid until November 2025.
 
 > What are your salary expectations?  
 
-Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm looking at an annual salary of €65k to €70k. I'm open to discussing the full compensation package, including benefits like flexible working hours, or performance bonuses, to ensure a mutually beneficial fit.
+Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm looking at an annual salary of €65k to €70k. I'm open to discussing the full compensation package, including benefits like flexible working hours, performance bonuses, to ensure a mutually beneficial fit.
 
 > What is your last salary?
 
@@ -80,11 +80,11 @@ I'd prefer to focus on the value I can bring to Sungrow rather than my last sala
 
 > If we offered €55k, would you consider it?
 
-I appreciate you sharing that figure. However, €55k is significantly below market rates for a frontend developer with 8 years of experience in Munich. Based on my research and the value I'd bring to Sungrow, I'm confident that €65k-€70k is fair.
+I appreciate you sharing that figure. However, €55k is significantly below market rates for a frontend developer with 8 years of experience. Based on my research and the value I can bring to Sungrow, I'm confident that €65k-€70k is fair.
 
 > What's the minimum salary you would accept?
 
-Based on the market in Munich and my background, I believe €65k is a fair salary.
+Based on the Munich market and my background, I believe €65k is a fair salary.
 
 > Why do you think you're worth €65k-€70k?
 
@@ -96,9 +96,13 @@ With 8 years of frontend development, this aligns with Munich market rates for m
 
 I'm in conversations with a few companies, but Sungrow is my top choice because of renewable energy impact, growth in European market, and technology stack . I'm genuinely excited about this opportunity.
 
+> If we make you an offer today, would you accept?
+
+I'm very motivated to join Sungrow. I'd need to review the complete offer details carefully, assuming everything aligns with our discussions, I'm ready to accept the offer.
+
 > When would you need to give us an answer if we make an offer?
 
-I'd like about two business days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
+I'd like about two days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
 
 ### Hobbies
 
@@ -107,6 +111,13 @@ I'd like about two business days to carefully review the offer. It's an importan
 I enjoy several outdoor activities that help me stay active and balanced.
 
 I enjoy hiking and badminton for staying active. Photography is another passion of mine. I love traveling to explore new places and cultures. These hobbies help me stay balanced.
+
+### Questions
+
+> Do you have any questions for me?
+
+1. What are the next steps in the process? When can I expect to hear back about the decision?
+2. 
 
 ## About Germany
 
