@@ -67,23 +67,33 @@ It's valid until November 2025.
 
 > What are your salary expectations?  
 
-Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm targeting an annual salary of €65,000 to €70,000. I'm open to discussing the full compensation package, including benefits like flexible working hours, professional development opportunities, or performance bonuses, to ensure a mutually beneficial fit.
+Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm looking at an annual salary of €65k to €70k. I'm open to discussing the full compensation package, including benefits like flexible working hours, professional development opportunities, or performance bonuses, to ensure a mutually beneficial fit.
 
 > What is your last salary?
 
-I'd prefer to focus on the value I can bring to Sungrow rather than my current salary. Based on this role's responsibilities and market rates, I'm looking at €65k-€70k. Is this within your budget range?
+I'd prefer to focus on the value I can bring to Sungrow rather than my last salary. Based on this role's responsibilities and market rates, I'm aiming for €65k to €70k.
 
 > If we offered €55k, would you consider it?
 
-€55k is a bit below my target range.
+I appreciate you sharing that figure. However, €55k is significantly below market rates for a mid-to-senior frontend developer with 8 years of experience in Munich. Based on my research and the value I'd bring to Sungrow, I'm confident that €65k-€70k is fair and competitive. Is there flexibility in the budget, or are there other components we could discuss to bridge this gap?
 
 > What's the minimum salary you would accept?
 
-Based on the market in Munich and my background, I believe €60 is a fair salary.
+Based on the market in Munich and my background, I believe €65k is a fair salary.
 
-> What is your current salary?
+> Why do you think you're worth €65k-€70k?
 
-I prefer to focus on the market value of the role here in Munich and the skills I bring, rather than my current salary. My expectation is based on my experience and the Munich market, not directly on my current salary.
+With 8 years of frontend development, this aligns with Munich market rates for mid-to-senior developers.
+
+### Offer
+
+> Are you currently interviewing elsewhere?
+
+I'm in conversations with a few companies, but Sungrow is my top choice because of renewable energy impact, growth in European market, and technology stack . I'm genuinely excited about this opportunity.
+
+> When would you need to give us an answer if we make an offer?
+
+I'd like 2 business days to review the complete offer carefully. This is an important decision, and I want to make sure I'm fully informed. So I will give you my decision by Monday.
 
 ### Hobbies
 
