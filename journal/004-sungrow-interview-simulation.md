@@ -43,7 +43,7 @@ Yes, I'm actively learning German. I started learning German in February this ye
 
 ~~Ja, ich lerne Deutsch seit Februar - etwa 5 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
-### About
+### About ME
 
 Thank you for taking the time to meet with me today. I'm Xin Chen, and I'm really excited to be here.
 
@@ -54,13 +54,13 @@ After the previous interviews and learning more about the team and projects, I'm
 > When would you be available to start?  
 > What is your notice period?
 
-I'm available to start immediately and could begin as early as November 1st. As I hold a German Opportunity Card, I would need to convert it into an Blue Card once I receive an employment contract. I can start working immediately while the Blue Card application is processed.
+I'm available to start immediately. I could begin as early as November 1st.
 
 ### Visa
 
 > Do you already have a valid work permit for Germany?  
 
-Yes, I already have an Opportunity Card work permit, so I'm authorized to work in Germany. If I receive an employment contract, I would need to convert it into an Blue Card, that typically takes 4 weeks. I can start working immediately while the Blue Card application is processed.
+Yes, I hold an Opportunity Card work permit, so I'm authorized to work in Germany. Once I receive an employment contract, I would need to convert it into an Blue Card, that typically takes 4 weeks. I can start working immediately while the Blue Card application is processed.
 
 > What does Sungrow need to provide for this?
 
@@ -105,7 +105,7 @@ I'm in conversations with a few companies, but Sungrow is my top choice because 
 > If we make you an offer today, would you accept?  
 > How serious are you about this opportunity?
 
-I'm very motivated to join Sungrow. Assuming the offer aligns with our discussions, I'm ready to accept.
+That's wonderful! I'm very motivated to join Sungrow. Assuming the offer aligns with our discussions, I'm ready to accept.
 
 > When would you need to give us an answer if we make an offer?
 
@@ -121,6 +121,10 @@ I'm looking forward to contributing to impactful projects, collaborating with th
 
 I'm flexible and value collaboration with the team. I work well in hybrid environments.
 
+> Do you have any concerns about the position?
+
+No major concerns. I'm excited about the opportunity.
+
 ### Hobbies
 
 > What do you do in your free time?
@@ -135,7 +139,8 @@ I enjoy hiking and badminton for staying active. Photography is another passion 
 
 1. What are the next steps in the process? When can I expect to hear back about the decision?
 2. Could you share details about the vacation policy for the Munich team?
-3. Is there a performance bonus structure for this role?
+3. Is there a performance bonus structure?
+4. Is there flexibility for hybrid or remote work?
 
 ## About Germany
 
@@ -161,7 +166,7 @@ She's a medical PhD student at LMU in Munich.
 
 I really love Munich! It's been a great experience living here so far.
 
-The city has such a nice balance. The climate here is very pleasant, and I actually like the weather a lot. The public transport system is really convenient, so I can easily get anywhere I need to go.  
+The city has such a nice balance. The climate here is very pleasant, and I actually like the weather a lot. The public transport system is really convenient, so I can easily get anywhere I need to go. Especially the beer here is great.
 
 I also like how international Munich is. There is a good mix of locals and internationals here. It makes it easier for me to settle in. At the same time, I'm trying to improve my German and connect more with the local culture.
 
@@ -193,7 +198,7 @@ My girlfriend is doing her PhD and will graduate next year, she is also planning
 
 I know Sungrow is a global leader in renewable energy, specializing in solar inverters and energy storage solutions.
 
-What I find impressive is that you're not just selling products - you're providing complete clean energy solutions for different types of customers, with a strong service network supporting them globally.
+You're providing complete clean energy solutions for different types of customers, with a strong service network supporting them globally.
 
 I was really impressed by sungrow's mission "clean power for all". It's is exactly the kind of impactful project I'm looking to contribute to. As a frontend developer, this is really exciting to me.
 
