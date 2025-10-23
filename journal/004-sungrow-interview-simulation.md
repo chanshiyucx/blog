@@ -67,15 +67,15 @@ It's valid until November 2025.
 
 > What are your salary expectations?  
 
-Based on my experience and my research of the Munich market, my salary expectation is in the €60k to €70k range. But I'm open to discussion depending on the overall package, including benefits, bonus structure, and professional development opportunities.
+Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm targeting an annual salary of €65,000 to €70,000. I'm open to discussing the full compensation package, including benefits like flexible working hours, professional development opportunities, or performance bonuses, to ensure a mutually beneficial fit.
 
-> Is this range based on your current salary, or on market research?
+> What is your last salary?
 
-It's mainly based on my research of the Munich market and my 8 years of experience in web development.
+I'd prefer to focus on the value I can bring to Sungrow rather than my current salary. Based on this role's responsibilities and market rates, I'm looking at €65k-€70k. Is this within your budget range?
 
 > If we offered €55k, would you consider it?
 
-€55k is a bit below my target range, but I'd be open to discussing it if the role offers strong growth opportunities and is a great fit for my skills.
+€55k is a bit below my target range.
 
 > What's the minimum salary you would accept?
 
