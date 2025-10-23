@@ -43,6 +43,12 @@ Yes, I'm actively learning German. I started learning German in February this ye
 
 ~~Ja, ich lerne Deutsch seit Februar - etwa 5 Monate. Ich habe B1-Level erreicht. Ich kann einfache Gespräche und E-Mails, aber brauche mehr Übung für fließendes Sprechen.~~
 
+### About
+
+Thank you for taking the time to meet with me today. I'm Xin Chen, and I'm really excited to be here.
+
+After the previous interviews and learning more about the team and projects, I'm genuinely motivated to join Sungrow. I'm looking forward to our conversation.
+
 ### Available Date
 
 > When would you be available to start?  
@@ -94,15 +100,26 @@ With 8 years of frontend development, this aligns with Munich market rates for m
 
 > Are you currently interviewing elsewhere?
 
-I'm in conversations with a few companies, but Sungrow is my top choice because of renewable energy impact, growth in European market, and technology stack . I'm genuinely excited about this opportunity.
+I'm in conversations with a few companies, but Sungrow is my top choice because this role aligns better with my career goals. I'm genuinely excited about this opportunity.
 
-> If we make you an offer today, would you accept?
+> If we make you an offer today, would you accept?  
+> How serious are you about this opportunity?
 
-I'm very motivated to join Sungrow. I'd need to review the complete offer details carefully, assuming everything aligns with our discussions, I'm ready to accept the offer.
+I'm very motivated to join Sungrow. Assuming the offer aligns with our discussions, I'm ready to accept.
 
 > When would you need to give us an answer if we make an offer?
 
 I'd like about two days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
+
+### Job & Work
+
+> What are your expectations for this role?
+
+I'm looking forward to contributing to impactful projects, collaborating with the team, and growing technically. I expect clear communication, support for professional development, and a healthy work-life balance.
+
+> How do you feel about [hybrid/remote/office] work?
+
+I'm flexible and value collaboration with the team. I work well in hybrid environments.
 
 ### Hobbies
 
@@ -117,7 +134,8 @@ I enjoy hiking and badminton for staying active. Photography is another passion 
 > Do you have any questions for me?
 
 1. What are the next steps in the process? When can I expect to hear back about the decision?
-2. 
+2. Could you share details about the vacation policy for the Munich team?
+3. Is there a performance bonus structure for this role?
 
 ## About Germany
 
