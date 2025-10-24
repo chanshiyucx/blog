@@ -78,7 +78,7 @@ It's valid until November 2025.
 
 > What are your salary expectations?  
 
-Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm looking at an annual salary of €65k to €70k. I'm open to discussing the full compensation package, including benefits like flexible working hours, performance bonuses, to ensure a mutually beneficial fit.
+Based on my 8 years of experience as a frontend developer and my research of the Munich market, I'm looking at an annual salary of €65k to €70k. However, I'm open to discussing the full compensation package, including benefits like flexible working hours, performance bonuses, to ensure a mutually beneficial fit.
 
 > What is your last salary?
 
@@ -88,6 +88,10 @@ I'd prefer to focus on the value I can bring to Sungrow rather than my last sala
 
 I appreciate you sharing that figure. However, €55k is significantly below market rates for a frontend developer with 8 years of experience. Based on my research and the value I can bring to Sungrow, I'm confident that €65k-€70k is fair.
 
+> The salary is €67k with performance bonus potential. Does that work for you?
+
+> Yes, that works for me. That's within my expected range.
+
 > What's the minimum salary you would accept?
 
 Based on the Munich market and my background, I believe €65k is a fair salary.
@@ -95,6 +99,10 @@ Based on the Munich market and my background, I believe €65k is a fair salary.
 > Why do you think you're worth €65k-€70k?
 
 With 8 years of frontend development, this aligns with Munich market rates for mid-to-senior developers.
+
+> I noticed in your application you indicated €55k, but now you're mentioning €65k-€70k. What changed?
+
+When I applied, I hadn't fully researched the Munich market for mid-to-senior frontend roles. Since then, I've done more research and after going through the technical interviews and learning more about the scope of responsibilities, I adjusted my expectation to €65k-€70k, this better aligns with market standards for a frontend developer with 8 years of experience.
 
 ### Offer
 
@@ -124,6 +132,32 @@ I'm flexible and value collaboration with the team. I work well in hybrid enviro
 > Do you have any concerns about the position?
 
 No major concerns. I'm excited about the opportunity.
+
+### Asking
+
+> The position is on-site for the first 6 months during onboarding. Would that work?
+
+- Yes, that works perfectly for me. I'm based in Munich, so commuting is not an issue.
+- Yes, I'm comfortable with that. I'm happy with that arrangement.
+
+> The role may require overtime during peak periods. Is that acceptable?  
+> During product launches or critical phases, the team sometimes works extended hours. Are you okay with that?  
+> We occasionally need flexibility with working hours. Can you be available for urgent issues?
+
+- Yes, absolutely. I can be flexible.
+- Yes, that's fine with me.
+
+> We have a 6-month probation period with a 2-week notice period during that time. Is that acceptable?
+
+- Yes, that's fine. I'm comfortable with those terms.
+- That's actually ideal for me!
+
+> We offer 30 days vacation, which is standard. Is that acceptable?
+
+- Yes, that's fine. That's actually one of the things I appreciate about.
+- That's not a problem at all.
+- That sounds great to me.
+- Yes, I understand and I'm comfortable with that.
 
 ### Hobbies
 
