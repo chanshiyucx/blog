@@ -94,7 +94,8 @@ I appreciate you sharing that figure. However, €55k is significantly below mar
 
 > The salary is €67k with performance bonus potential. Does that work for you?
 
-Yes, that works for me. That's within my expected range.
+- Yes, that works for me. That's within my expected range.
+- Yes, €67k total compensation is acceptable.
 
 > What's the minimum salary you would accept?
 
@@ -124,7 +125,7 @@ I'd like about **two days** to carefully review the offer. It's an important dec
 
 > How serious are you about this opportunity?
 
-I'm very motivated to join Sungrow. I was really impressed by sungrow's mission "clean power for all". I'm genuinely excited about this opportunity.
+I'm very motivated to join Sungrow. I was really impressed by sungrow's mission and products. I'm genuinely excited about this opportunity.
 
 > Are there any factors that might prevent you from accepting an offer?
 
@@ -134,7 +135,11 @@ No, there are no factors that would prevent me from accepting an offer.
 
 A competitive salary and growth opportunities are key, along with a collaborative culture. Sungrow's innovative projects aligns perfectly with my career goals.
 
-### Job & Work
+> We're considering you for a Mid Frontend Developer role. Would you be open to accepting this position?
+
+Yes, I'm open to starting at Sungrow. I'm genuinely excited about this opportunity. I'm eager to contribute to Sungrow.
+
+### Asking
 
 > What are your expectations for this role?
 
@@ -143,12 +148,6 @@ I'm looking forward to contributing to impactful projects, collaborating with th
 > How do you feel about [hybrid/remote/office] work?
 
 I'm flexible and value collaboration with the team. I work well in hybrid environments.
-
-> Do you have any concerns about the position?
-
-No major concerns. I'm excited about the opportunity.
-
-### Asking
 
 > The position is on-site for the first 6 months during onboarding. Would that work?
 
@@ -185,6 +184,10 @@ Yes, I'm comfortable with that. I'm eager to contribute to Sungrow.
 
 No specific terms. I'm excited to join Sungrow and contribute to its Munich team.
 
+> Do you have any concerns about the position?
+
+No major concerns. I'm excited about the opportunity.
+
 ### Hobbies
 
 > What do you do in your free time?
@@ -198,7 +201,7 @@ I enjoy hiking and badminton for staying active. Photography is another passion 
 > Do you have any questions for me?
 
 1. What are the next steps in the process? When can I expect to hear back about the decision?
-2. Could you share details about the vacation policy?
+2. Could you share details about the vacation policy? How many days of annual leave are there?
 3. Is there a performance bonus structure?
 4. Is there flexibility for hybrid or remote work?
 
