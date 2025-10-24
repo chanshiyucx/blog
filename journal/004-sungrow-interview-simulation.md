@@ -86,15 +86,15 @@ Based on my 8 years of experience as a frontend developer and my research of the
 
 > What is your last salary?
 
-I'd prefer to focus on the value I can bring to Sungrow rather than my last salary. Based on this role's responsibilities and market rates, I'm aiming for €65k to €70k.
+I'd prefer to focus on the value I can bring to Sungrow rather than my last salary. Based on this role's responsibilities and Munich market rates, I'm aiming for €65k to €70k.
 
 > If we offered €55k, would you consider it?
 
-I appreciate you sharing that figure. However, €55k is significantly below market rates for a frontend developer with 8 years of experience. Based on my research and the value I can bring to Sungrow, I'm confident that €65k-€70k is fair.
+I appreciate you sharing that figure. However, €55k is significantly below market rates for a frontend developer with 8 years of experience. Based on my research and my background, I'm confident that €65k-€70k is fair.
 
 > The salary is €67k with performance bonus potential. Does that work for you?
 
-> Yes, that works for me. That's within my expected range.
+Yes, that works for me. That's within my expected range.
 
 > What's the minimum salary you would accept?
 
@@ -124,7 +124,11 @@ I'd like about two days to carefully review the offer. It's an important decisio
 
 > How serious are you about this opportunity?
 
-I'm very motivated to join Sungrow. I was really impressed by sungrow's mission "clean power for all". It's is exactly the kind of impactful project I'm looking to contribute to.
+I'm very motivated to join Sungrow. I was really impressed by sungrow's mission "clean power for all". I'm genuinely excited about this opportunity.
+
+> Are there any factors that might prevent you from accepting an offer?
+
+No, there are no factors that would prevent me from accepting an offer.
 
 ### Job & Work
 
@@ -148,7 +152,6 @@ No major concerns. I'm excited about the opportunity.
 - Yes, I'm comfortable with that. I'm happy with that arrangement.
 
 > The role may require overtime during peak periods. Is that acceptable?  
-> During product launches or critical phases, the team sometimes works extended hours. Are you okay with that?  
 > We occasionally need flexibility with working hours. Can you be available for urgent issues?
 
 - Yes, absolutely. I can be flexible.
@@ -179,7 +182,7 @@ I enjoy hiking and badminton for staying active. Photography is another passion 
 > Do you have any questions for me?
 
 1. What are the next steps in the process? When can I expect to hear back about the decision?
-2. Could you share details about the vacation policy for the Munich team?
+2. Could you share details about the vacation policy?
 3. Is there a performance bonus structure?
 4. Is there flexibility for hybrid or remote work?
 
@@ -221,7 +224,7 @@ Work-life balance is important to me.
 
 I'm excited to delivering quality work and meeting deadlines. At the same time, I believe productivity comes from having time to recharge and stay mentally sharp.
 
-I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development, like continuing my German language studies.
+I'm flexible and willing to put in extra hours when needed, but I also value having time for personal development.
 
 ### Long Term Plan
 
@@ -241,7 +244,7 @@ I know Sungrow is a global leader in renewable energy, specializing in solar inv
 
 You're providing complete clean energy solutions for different types of customers, with a strong service network supporting them globally.
 
-I was really impressed by sungrow's mission "clean power for all". It's is exactly the kind of impactful project I'm looking to contribute to. As a frontend developer, this is really exciting to me.
+I was really impressed by sungrow's mission "clean power for all". As a frontend developer, this is really exciting to me.
 
 ### Application Reason
 
@@ -259,15 +262,13 @@ So, the combination of meaningful mission, perfect technical fit, that's what ma
 
 > What do you understand about this role?
 
-From the job description, I understand this frontend role has three main areas.
+From the job description, I understand this frontend role has two main areas.
 
-First, UI development - creating user interfaces that are both visually appealing and functional, using React, TypeScript, and Next.js for the booking platform.
+First, UI development - creating user interfaces that are both visually appealing and functional, using Vue, TypeScript for the platform.
 
-Second, workflow automation - developing processes for testing, deployment, and CI/CD. I have experience with from optimizing build processes at my last job.
+And Second, creative collaboration - contributing ideas to improve user experience.
 
-And third, creative collaboration - contributing ideas to improve user experience.
-
-The booking experience needs to be seamless and build trust for both car owners and workshops.
+As a frontend developer, these is really exciting to me.
 
 ### Career Goals
 
@@ -285,7 +286,7 @@ In five years, I see myself as a technical leader contributing to architectural 
 
 I enjoy working in open, collaborative teams where we share knowledge and focus on delivering a great product.
 
-In my previous role, I mentored junior developers and found that the best results come when people learn from each other. I like environments where asking questions is encouraged and code reviews are seen as learning opportunities.
+I like environments where asking questions is encouraged and code reviews are seen as learning opportunities.
 
 I also appreciate teams that care about quality and best practices - whether it's implementing clean code standards, optimizing processes, or building reusable components. These things matter for long-term success.
 
@@ -662,49 +663,6 @@ At my last job, I set up a code review process where we required at least one ap
 
 I use multiple approaches: ESLint and Prettier for consistent code style, mandatory code reviews before merging, TypeScript for type safety, and tests for critical functionality. At my last job, implementing these practices resolved over 300 code issues. The key is automating quality checks so they're built into the workflow, not optional.
 
-## Product
-
-### Redfish API
-
-Redfish API 是一种标准化的 RESTful 管理接口，专为管理服务器、存储、网络设备设计。它采用基于 HTTP/HTTPS 的架构和 JSON 数据格式，为不同厂商的硬件提供统一的管理接口。
-
-Redfish 提供一种简单、安全且可扩展的方式来管理现代数据中心的各种 IT 硬件，例如执行远程开关机、配置系统、监控硬件状态等操作，已成为数据中心自动化运维、云平台硬件管理和 DevOps 基础设施管理的重要标准工具。
-
-### RAGFlow
-
-RAGFlow 是一个开源的、智能文档处理和检索增强生成引擎。它的核心价值在于：
-1. 智能文档处理： 它可以自动、智能地处理各种复杂的文档格式（如 PDF、Word、Excel 等等）。它能识别文档的版面、表格和图片内容，并对数据进行结构化处理，以便后续的准确检索。
-2. 构建高质量知识库： 它是专门为 RAG（Retrieval-Augmented Generation，检索增强生成）技术设计的。它能将处理后的文档内容以高质量、精细化的方式存入知识库，为大型语言模型（LLM）提供准确的外部知识上下文。
-3. 提高 LLM 准确性： 通过其优化的 RAG 流程和文档处理能力，RAGFlow 能够显著减少大模型 " 胡言乱语 "（幻觉）的现象，确保大模型基于企业或个人的真实文档内容，给出更精准、更专业的回答。
-
-你可以把它理解为一个专业的 " 数据预处理器 " 和 " 知识连接器 "，专门解决大模型应用中 " 知识从哪里来 " 和 " 如何准确地获取知识 " 的问题。
-
-### TypeScript ESLint
-
-> 为什前端项目要引入 TypeScript 和 ESLint?
-
-前端项目引入 TypeScript 和 ESLint 的主要原因是为了提高代码质量、可维护性和团队协作效率。
-
-- TypeScript 的作用：
-	- 类型安全：在开发阶段就能发现类型错误，减少运行时 bug。
-	- 代码提示与补全：IDE 能更好地提供智能提示和跳转，提高开发效率。
-	- 结构清晰：通过接口（interface）、枚举（enum）、泛型（generic）等特性，让代码更易读、更易维护。
-	- 更易重构：类型约束能让大规模重构更安全、更可控。
-- ESLint 的作用：
-	- 统一代码风格：避免团队成员使用不同的写法，保持代码一致性。
-	- 发现潜在问题：在编写阶段检测语法错误或不规范用法。
-	- 与 TypeScript 集成：结合插件可实现类型层面的代码检查。
-	- 自动修复：部分问题可通过命令自动修复。  
-
-TypeScript 让代码更安全、更规范；ESLint 让代码更整洁、更一致。两者结合能显著提升前端项目的 可维护性 和 开发体验。
-
-Frontend projects adopt TypeScript and ESLint mainly to improve code quality, maintainability, and team collaboration.
-
-- TypeScript ensures type safety, enables powerful IDE support, and makes large-scale refactoring safer.
-- ESLint enforces consistent coding styles, detects syntax or logic issues early, and can automatically fix many problems.
-
-In short: TypeScript makes your code safer; ESLint makes it cleaner. Together, they make frontend development more reliable and efficient.
-
 ## Personal
 
 ### 自我介绍
@@ -929,50 +887,6 @@ Overall, I value a manager who empowers their team and focuses on collaboration 
 > 你能接受强势的管理风格吗？
 
 可以接受。如果 leader 在专业上有过人之处，强势的决策反而能提高效率。我在乎的是 ' 强势但专业 '，而不是 ' 强势但武断 '。只要决策合理、对团队有利，我都能配合。
-
-### 工作开展
-
-> 如果被录用，你会如何开展工作？
-
-如果有幸加入团队，我会快速融入、尽早产出价值。具体来说，我会分阶段开展工作：
-
-- **第一周重点是 ' 了解 '**：熟悉团队和协作方式，了解业务和产品，阅读学习产品和项目文档，搭建开发环境，熟悉技术栈和代码库，阅读核心模块的代码。
-- **第一个月重点是 ' 有产出 '**：从小任务开始建立信任，逐步承担核心需求的开发。保证代码质量，期间文档总结，经常复盘。
-- **试用期内重点是 ' 深度融入 '**：承担更有挑战的任务，主动推动流程优化，把经验沉淀成文档。定期跟 leader 同步进展，快速调整不足。
-
-目标是试用期结束时，成为团队的可靠战力。当然，具体还要看团队的安排，我会保持开放心态、快速适应。
-
-### 企业文化
-
-> 你觉得最重要的企业文化？
-
-我觉得不同企业有不同的文化侧重，关键是能否真正落地。我比较看重这几点:
-
-**首先是开放透明的沟通。** 我希望团队能坦诚讨论问题,做技术方案时大家能充分表达意见,遇到困难能及时同步,有不同观点时能对事不对人地讨论。我之前的团队就是这样,氛围很好,问题能快速解决。
-
-**其次是结果导向。** 好的文化应该关注产出和价值,评价标准看成果而不是加班时长,鼓励高效完成目标,出问题先想怎么解决而不是找人背锅。这样能让人专注在重要的事上。
-
-**第三是鼓励学习和成长。** 我希望团队包容试错、鼓励分享、支持学习。对我来说,工作不只是拿工资,更是持续成长的过程。
-
-当然,文化需要时间体验。我更看重团队成员的实际状态——如果大家都很投入、愿意相互帮助,那说明文化是真实存在的。
-
-### 团队沟通矛盾
-
-> 如何处理团队沟通矛盾？
-
-团队沟通中出现矛盾其实是正常的，关键是如何正确解决问题。我的处理原则是：**先理解、再沟通、最后找方案**。
-
-- 第一步是保持冷静，先听对方说完。尝试站在对方角度理解：他为什么会这么想？
-- 第二步是把焦点放在 ' 问题 ' 上，对事不对人。
-- 第三步是找到双方都能接受的解决方案。
-- 第四部向上管理，如果私下沟通解决不了，我会寻求领导的帮助。
-
-### 反问
-
-1. 公司的团队构成与人员安排？
-2. 公司这边的业务与开发的产品是什么？面向客户还是内部系统？
-3. 团队绩效评定是如何划分的？
-4. 福利政策是怎么样的？
 
 ## General Expression
 
