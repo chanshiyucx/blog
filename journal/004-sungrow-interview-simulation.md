@@ -120,7 +120,7 @@ That's wonderful! I'm very motivated to join Sungrow. Assuming the offer aligns 
 
 > When would you need to give us an answer if we make an offer?
 
-I'd like about two days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
+I'd like about **two days** to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
 
 > How serious are you about this opportunity?
 
@@ -129,6 +129,10 @@ I'm very motivated to join Sungrow. I was really impressed by sungrow's mission 
 > Are there any factors that might prevent you from accepting an offer?
 
 No, there are no factors that would prevent me from accepting an offer.
+
+> What factors are most important to you in an offer?
+
+A competitive salary and growth opportunities are key, along with a collaborative culture. Sungrow's innovative projects aligns perfectly with my career goals.
 
 ### Job & Work
 
@@ -168,6 +172,18 @@ No major concerns. I'm excited about the opportunity.
 - That's not a problem at all.
 - That sounds great to me.
 - Yes, I understand and I'm comfortable with that.
+
+> Would you need relocation support to start in Munich?
+
+I'm currently based in Munich and don't require any relocation support. I'm very excited about the opportunity to join Sungrow and can start working immediately.
+
+> Are you comfortable with our standard benefits package?
+
+Yes, I'm comfortable with that. I'm eager to contribute to Sungrow.
+
+> Do you have any specific contract terms you'd like included?
+
+No specific terms. I'm excited to join Sungrow and contribute to its Munich team.
 
 ### Hobbies
 
@@ -262,7 +278,7 @@ So, the combination of meaningful mission, perfect technical fit, that's what ma
 
 > What do you understand about this role?
 
-From the job description, I understand this frontend role has two main areas.
+From the job description, I understand this frontend role has some main areas.
 
 First, UI development - creating user interfaces that are both visually appealing and functional, using Vue, TypeScript for the platform.
 
