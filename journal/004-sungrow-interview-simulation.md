@@ -66,6 +66,10 @@ Yes, I hold an Opportunity Card work permit, so I'm authorized to work in German
 
 Sungrow would just need to provide the employment contract showing the salary meets the Blue Card. I'll handle the application process myself.
 
+> Can you start working before the Blue Card is approved?
+
+With my Opportunity Card, I can start limited work. My Opportunity Card allows up to 20 hours per week for part-time work, but I can start the Blue Card process immediately to transition to full-time.
+
 > When did you move to Germany?  
 
 I moved to Germany in November 2024 and have been here since then.
@@ -111,13 +115,16 @@ When I applied, I hadn't fully researched the Munich market for mid-to-senior fr
 I'm in conversations with a few companies, but Sungrow is my top choice because this role aligns better with my career goals. I'm genuinely excited about this opportunity.
 
 > If we make you an offer today, would you accept?  
-> How serious are you about this opportunity?
 
 That's wonderful! I'm very motivated to join Sungrow. Assuming the offer aligns with our discussions, I'm ready to accept.
 
 > When would you need to give us an answer if we make an offer?
 
 I'd like about two days to carefully review the offer. It's an important decision, so I can give you my final answer by next Monday.
+
+> How serious are you about this opportunity?
+
+I'm very motivated to join Sungrow. I was really impressed by sungrow's mission "clean power for all". It's is exactly the kind of impactful project I'm looking to contribute to.
 
 ### Job & Work
 
