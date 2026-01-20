@@ -2,7 +2,7 @@
 title: Create 2d Array
 date: 2025-09-06 09:02:55
 tags:
-  - JavaScript/Array
+  - Snippet/JavaScript
 ---
 
 ## Description

@@ -2,7 +2,7 @@
 title: Convert String to Html
 date: 2025-09-06 08:51:04
 tags:
-  - JavaScript/DOM
+  - Snippet/JavaScript
 references:
   - https://dev.to/melvin2016/how-to-convert-an-html-string-into-real-html-or-dom-using-javascript-5992
 ---
