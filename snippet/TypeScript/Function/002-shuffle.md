@@ -2,7 +2,7 @@
 title: Shuffle
 date: 2025-09-05 20:57:58
 tags:
-  - Snippet/JavaScript
+  - Snippet/TypeScript
 ---
 
 ## Description

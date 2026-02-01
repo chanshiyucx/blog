@@ -2,7 +2,7 @@
 title: Object GroupBy
 date: 2025-09-26 21:04:18
 tags:
-  - Snippet/JavaScript
+  - Snippet/TypeScript
 ---
 
 ## Usage
