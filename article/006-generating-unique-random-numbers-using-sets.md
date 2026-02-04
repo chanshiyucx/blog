@@ -6,21 +6,22 @@ tags:
 references:
   - https://www.smashingmagazine.com/2024/08/generating-unique-random-numbers-javascript-using-sets/
 ---
+
 JavaScript's built-in `Math.random()` method is great for generating random floating-point numbers that you can convert to integers. However, it has one significant limitation: it can't guarantee uniqueness across multiple calls. If you need to generate a series of unique random numbers, you'll need a more sophisticated approach.
 
 In this article, we'll explore how to solve this problem using JavaScript's `Set` object, which naturally ensures uniqueness among its elements.
 
-## The Problem with Standard Random Generation
+## The Problem with Random Generation
 
 When you call `Math.random()` multiple times, there's always a chance of getting duplicate values, especially when working with smaller ranges or generating many numbers. For example:
 
 ```typescript
 // This might produce duplicates
-const numbers: number[] = []
+const numbers: number[] = [];
 for (let i = 0; i < 5; i++) {
-  numbers.push(Math.floor(Math.random() * 10) + 1)
+  numbers.push(Math.floor(Math.random() * 10) + 1);
 }
-console.log(numbers) // Could be [3, 7, 3, 9, 1] - notice the duplicate 3
+console.log(numbers); // Could be [3, 7, 3, 9, 1] - notice the duplicate 3
 ```
 
 ## Leveraging Sets for Uniqueness
@@ -40,30 +41,30 @@ const generateRandomNumbers = (
   min: number,
   max: number,
 ): number[] => {
-  const rangeSize = max - min + 1
+  const rangeSize = max - min + 1;
   // Validation: ensure we're not asking for more numbers than possible
   if (count > rangeSize) {
-    throw new Error('Count cannot be greater than the size of the range')
+    throw new Error("Count cannot be greater than the size of the range");
   }
   if (count <= 0) {
-    throw new Error('Count must be a positive number')
+    throw new Error("Count must be a positive number");
   }
   if (min > max) {
-    throw new Error('Minimum value cannot be greater than maximum value')
+    throw new Error("Minimum value cannot be greater than maximum value");
   }
 
-  const uniqueNumbers: Set<number> = new Set()
+  const uniqueNumbers: Set<number> = new Set();
 
   // Keep generating until we have enough unique numbers
   while (uniqueNumbers.size < count) {
-    const random = Math.floor(Math.random() * rangeSize) + min
-    uniqueNumbers.add(random)
+    const random = Math.floor(Math.random() * rangeSize) + min;
+    uniqueNumbers.add(random);
   }
-  
-  return Array.from(uniqueNumbers)
-}
 
-console.log(generateRandomNumbers(5, 5, 10))
+  return Array.from(uniqueNumbers);
+};
+
+console.log(generateRandomNumbers(5, 5, 10));
 ```
 
 ## Performance Considerations

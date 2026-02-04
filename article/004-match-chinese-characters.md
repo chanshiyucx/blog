@@ -5,6 +5,7 @@ tags:
   - Web/JavaScript
   - JavaScript/RegExp
 ---
+
 When searching for "JavaScript regex for matching Chinese characters" on Google, most results suggest using `/[\u4e00-\u9fa5]/`. But is this regular expression really correct? Let's dive in and find out.
 
 ## Han Script and Han Characters
@@ -16,7 +17,7 @@ Let's start by understanding two fundamental concepts:
 
 Many countries and regions in the Han cultural sphere have developed their own character encoding standards. Unicode unifies these standards, aiming to achieve lossless conversion between original standards and Unicode encoding.
 
-## Character Sets and Character Encodings
+## Character Sets & Encodings
 
 What's the difference between Unicode, GBK, and UTF-8? They are actually concepts from different domains.
 
@@ -49,7 +50,7 @@ In summary:
 - **Character sets (e.g., Unicode, ASCII)** define mappings between characters and codes.
 - **Encodings (e.g., UTF-8, GBK)** specify how those codes are stored.
 
-## Matching Chinese Characters with Regex
+## Regex for Chinese Characters
 
 Now that we understand character sets and encodings, let's return to our main topic. What exactly do we mean by "Chinese characters" in terms of character sets?
 
@@ -62,9 +63,9 @@ However, Unicode has evolved significantly, with version 10.0.0 released in June
 Here's a maintenance-free regex for matching Han characters:
 
 ```typescript
-const HanZi = /\p{Unified_Ideograph}/u
+const HanZi = /\p{Unified_Ideograph}/u;
 
-!!'你好'.match(HanZi) // true
+!!"你好".match(HanZi); // true
 ```
 
 It's called [Unicode property escapes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) and already available in [Chrome 64, Firefox 78, Safari 11.1 and Node.js 10](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape#browser_compatibility).
@@ -78,7 +79,7 @@ It's called [Unicode property escapes](https://developer.mozilla.org/en-US/docs
 ## Similar Unicode Property Escapes
 
 ```typescript
-/\p{Ideographic}/u
+/\p{Ideographic}/u;
 ```
 
 This matches all characters with `Ideographic=yes`, including CJK Unified Ideographs, Tangut characters and components, Nüshu, CJK compatibility characters, Suzhou numerals, " 〇 ", and the Japanese letter-ending mark "〆".
@@ -86,10 +87,11 @@ This matches all characters with `Ideographic=yes`, including CJK Unified Ideogr
 Using `/\p{Ideographic}/u` is too broad for matching Han characters as it includes Tangut, Nüshu, and compatibility characters.
 
 ```typescript
-/\p{Script=Han}/u
+/\p{Script=Han}/u;
 ```
 
 The `Script` property selects characters that:
+
 1. Share common graphical features and historical development
 2. Are used to represent textual information in a writing system
 
@@ -104,5 +106,6 @@ The `Script` property selects characters that:
 3. `/\p{Ideographic}/u` and `/\p{Script=Han}/u` match additional characters beyond Han characters and are incorrect for this specific purpose
 
 Ref:
+
 - [Unicode character class escape](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
 - [Unicode Regular Expressions](https://www.regular-expressions.info/unicode.html)
