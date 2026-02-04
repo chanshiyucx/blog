@@ -7,7 +7,7 @@ tags:
 
 When my girlfriend and I arrived in Naples from Munich in late July, the first thing we noticed was the heat. The Mediterranean sun was intense, but we were happy with the weather. We had five days of clear blue skies ahead of us in one of Italy's most authentic cities.
 
-## Day One: Pizza, the Real Deal
+## Pizza, the Real Deal
 
 No trip to Naples would be complete without paying homage to the birthplace of pizza, and L'Antica Pizzeria da Michele was our first stop. The line was already wrapped around the block, and with more than forty thousand reviews online, we figured we were in the right place.
 
@@ -16,7 +16,7 @@ Inside was pretty chaotic but in a good way—dough flying through the air, wait
 ![Marinara](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/IMG_2784.jpg)  
 ![Margherita](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/IMG_2785.jpg)
 
-## Day Two: Underground Wonders and Street Food
+## Underground Wonders
 
 The next morning found us exploring Naples' gritty city center. Everyone raves about Toledo Metro Station as "the world's most beautiful subway stop," but honestly, it was nice but not as amazing as everyone says.
 
@@ -27,7 +27,7 @@ Later, we joined a tour of Napoli Sotterranea, the underground city beneath Napl
 ![Street Statue](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/IMG_2842.jpg)  
 ![Underground City](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05394.jpg)
 
-## Day Three: Walking Through Ancient History
+## Ancient Pompeii
 
 We set aside a full day for Pompeii, and it turned out to be the right call. The train ride itself was worth it—rolling past the countryside with Mount Vesuvius in the distance, both beautiful and a little eerie when you think about what happened here two thousand years ago.
 
@@ -38,7 +38,7 @@ The adventure didn't end there, though. A wildfire nearby shut down the train se
 ![Wall of Pompeii](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05534.jpg)  
 ![Vesuvius Framed](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05542.jpg)  
 
-## Day Four: Island Paradise
+## Island Paradise
 
 The ferry ride to Capri took about fifty minutes, and the whole way it felt like we were heading straight into a postcard. The island has a reputation for being glamorous—and expensive—and it didn't take long for us to notice both.
 
@@ -49,7 +49,7 @@ We had planned to visit the famous Blue Grotto, but the sea was too rough, so it
 ![Boats and Rocks](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05647.jpg)  
 ![Blue Grotto](https://cx-onedrive.pages.dev/api/raw?path=/Album/20250729-Napoli/DSC05784.jpg)  
 
-## Day Five: A Lemon-Scented Goodbye
+## A Lemon-Scented Goodbye
 
 On our last day we took a trip to Sorrento, a town perched high on the cliffs with views that go on forever. The place is famous for its lemons, but what I'll remember most is how calm it felt compared to Naples.
 
