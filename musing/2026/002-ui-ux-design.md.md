@@ -1,5 +1,5 @@
 ---
-title: Ui Ux Design.md
+title: UI UX Design
 date: 2026-02-08 20:56:30
 tags:
   - Musing/Blog
