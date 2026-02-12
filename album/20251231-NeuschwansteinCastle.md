@@ -4,7 +4,7 @@ date: 2026-01-06 16:55:57
 tags: 
   - Album
 ---
-![Snow World](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06463.jpeg)  
+![White World](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06463.jpeg)  
 ![NeuschwansteinCastle](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06502.jpeg)  
 ![Spires](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06440.jpeg)  
 ![Handsome Horse](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06467.jpeg)  
