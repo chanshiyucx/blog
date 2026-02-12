@@ -1,7 +1,8 @@
 # README
 
-Code is Long, Life is Short.
+Seize the day, gather ye rosebuds while ye may. 
 
 まだ五里霧中です。
 
 ❤️💛💚💙💜💕💞💓💗💖💘💝❣❤
+
