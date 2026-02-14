@@ -91,6 +91,4 @@ Before using it, you need to declare `color-scheme` to tell the browser which co
 
 Compared to the traditional approach, `light-dark()` keeps both colors on the same line—less code and the relationship is immediately clear. Since 2024, major browsers have all shipped support, so it's production-ready.
 
-## Easter Egg
-
 If you look closely, you'll notice my site's favicon uses a gradient from Love to Gold—warm and cozy, which is exactly the feeling I'm going for.
