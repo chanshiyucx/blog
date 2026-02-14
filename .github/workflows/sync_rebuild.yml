@@ -26,26 +26,14 @@ jobs:
           find . -name "SUMMARY.md" -delete
         continue-on-error: false
       
-      - name: Check for changes and Markdown files
+      - name: Check for changes
         id: check_changes
         run: |
           git add .
-          if ! git diff --staged --quiet; then
-            echo "changes=true" >> $GITHUB_OUTPUT
-            if git diff --cached --name-only | grep -q '\.md$'; then
-              echo "has_md_changes=true" >> $GITHUB_OUTPUT
-              echo "Markdown files changed:"
-              git diff --cached --name-status | grep '\.md$' || true
-            else
-              echo "has_md_changes=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "changes=false" >> $GITHUB_OUTPUT
-            echo "has_md_changes=false" >> $GITHUB_OUTPUT
-          fi
+          git diff --staged --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
       
       - name: Commit and push changes
-        if: steps.check_changes.outputs.changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config user.name "chanshiyu"
           git config user.email "chanshiyucx@gmail.com"
@@ -54,6 +42,6 @@ jobs:
         continue-on-error: false
       
       - name: Trigger Vercel Deploy
-        if: steps.check_changes.outputs.has_md_changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           curl -X POST -d {} "${{ secrets.VERCEL_DEPLOY_HOOK }}"
