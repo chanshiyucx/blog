@@ -4,7 +4,7 @@ date: 2026-02-13 11:53:12
 tags:
   - Web/CSS
 ---
-When I rebuilt my blog theme Zero from scratch, I went with [Rosé Pine](https://rosepinetheme.com/) as the color scheme. Their design philosophy really resonates with me:
+When I rebuilt my blog theme [Zero](https://github.com/chanshiyucx/zero) from scratch, I went with [Rosé Pine](https://rosepinetheme.com/) as the color scheme. Their design philosophy really resonates with me:
 
 > Something beautiful  
 > All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
