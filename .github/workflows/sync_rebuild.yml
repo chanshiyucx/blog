@@ -14,13 +14,13 @@ jobs:
         run: |
           git clone --depth=1 --filter=blob:none --sparse "https://${{ secrets.OBSIDIAN_SYNC_TOKEN }}@github.com/chanshiyucx/obsidian.git" obsidian
           cd obsidian
-          git sparse-checkout set Album Article Journal Musing
+          git sparse-checkout set Album Craft Journal Musing
         continue-on-error: false
       
       - name: Sync obsidian directories
         run: |
           rsync -av --delete obsidian/Album/ ./album/
-          rsync -av --delete obsidian/Article/ ./article/
+          rsync -av --delete obsidian/Craft/ ./craft/
           rsync -av --delete obsidian/Journal/ ./journal/
           rsync -av --delete obsidian/Musing/ ./musing/
           find . -name "SUMMARY.md" -delete
