@@ -9,7 +9,7 @@ When I rebuilt my blog theme [Zero](https://github.com/chanshiyucx/zero) from sc
 > Something beautiful  
 > All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 
-Natural, restrained, with a touch of warmth—exactly what I was after. I've switched everything over to Rosé Pine now: VSCode, Antigravity, Obsidian, and naturally, my blog.
+Natural, restrained, with a touch of warmth, exactly what I was after. I've switched everything over to Rosé Pine now: VSCode, Antigravity, Obsidian, and naturally, my blog.
 
 ## The Palette
 
@@ -30,7 +30,7 @@ Rosé Pine uses semantic color naming where each color has a clear purpose:
 |`foam`|Saltwater tidepools|
 |`iris`|Smells of groundedness|
 
-You can find the full color values on their [palette](https://rosepinetheme.com/palette/ingredients/). With this palette, my theme definition stays incredibly clean—one line per color variable, with light and dark modes all in one place:
+You can find the full color values on their [palette](https://rosepinetheme.com/palette/ingredients/). With this palette, my theme definition stays incredibly clean, one line per color variable, with light and dark modes all in one place:
 
 ```css
 /* https://rosepinetheme.com/palette/ingredients/ */
@@ -89,6 +89,6 @@ Before using it, you need to declare `color-scheme` to tell the browser which co
 }
 ```
 
-Compared to the traditional approach, `light-dark()` keeps both colors on the same line—less code and the relationship is immediately clear. Since 2024, major browsers have all shipped support, so it's production-ready.
+Compared to the traditional approach, `light-dark()` keeps both colors on the same line, less code and the relationship is immediately clear. Since 2024, major browsers have all shipped support, so it's production-ready.
 
 If you look closely, you'll notice my site's favicon uses a gradient from Love to Gold—warm and cozy, which is exactly the feeling I'm going for.
