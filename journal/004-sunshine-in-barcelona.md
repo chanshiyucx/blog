@@ -8,7 +8,9 @@ tags:
 
 ## Sagrada Familia
 
-Sagrada Familia 作为巴塞罗那最知名的景点，最为高迪的遗世之作，吸引了来自全球的游客。在抵达的第二天，幸运地遇上了圣家堂封顶，标志这这座教堂历经 144 年，正式成为世界最高教堂，" 会晤 " 了市长和大主教的讲话，也算见证了历史。
+Sagrada Familia 作为巴塞罗那最知名的景点，最为高迪的遗世之作，吸引了来自全球的游客。在抵达的第二天，幸运地遇上了圣家堂封顶，标志这这座教堂历经 144 年，正式成为世界最高教堂，并且 " 会晤 " 了市长和大主教的讲话，见证百年圣家堂的历史时刻。
+
+从桂尔公园遥遥俯瞰，整个巴塞罗那尽收眼底，高矗的圣家堂遗世独立，成为独特的城市风景线。
 
 ![Barcelona](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06713.jpeg)  
 ![Sagrada Familia](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06732.jpeg)
@@ -19,3 +21,5 @@ Sagrada Familia 作为巴塞罗那最知名的景点，最为高迪的遗世之�
 
 ![Casa Batlló](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06602.jpeg)  
 ![Casa Milà](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06671.jpeg)
+
+旅途中最美妙的事物莫过于温暖和煦的阳光，也是巴塞罗那居民最为自豪。在阳光下漫步在巴萨罗那的街头，惬意自然。期待xia ci
