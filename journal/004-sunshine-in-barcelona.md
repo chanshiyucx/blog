@@ -34,4 +34,4 @@ The pigeons at Plaça de Catalunya were something else. Hundreds of them, comple
 ![The Winged Solo](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06722.jpeg)  
 ![Plaça de Catalunya](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06638.jpeg)
 
-We were barely back before I started looking at flights again. Maybe March, when everything starts waking up. Feels like a good time to go somewhere.
+We'd just gotten home and I was already looking at flights again. Maybe March, when everything starts waking up. Feels like a good time to go somewhere.
