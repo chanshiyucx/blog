@@ -4,22 +4,34 @@ date: 2026-02-26 11:52:57
 tags:
   - Journal/Travel
 ---
-我和女朋友幸运地赶在大雪前离开冷冽的慕尼黑，来的温暖舒适的巴塞罗那，短短为期 5 天的旅行，带来甜蜜的回忆。  
 
-## Sagrada Familia
+Our first trip of the new year. We got lucky — slipped out of freezing Munich just before the snow hit and landed in warm, sunny Barcelona. Five days, but plenty to remember.
 
-Sagrada Familia 作为巴塞罗那最知名的景点，最为高迪的遗世之作，吸引了来自全球的游客。在抵达的第二天，幸运地遇上了圣家堂封顶，标志这这座教堂历经 144 年，正式成为世界最高教堂，并且 " 会晤 " 了市长和大主教的讲话，见证百年圣家堂的历史时刻。
+## Sagrada Família
 
-从桂尔公园遥遥俯瞰，整个巴塞罗那尽收眼底，高矗的圣家堂遗世独立，成为独特的城市风景线。
+Sagrada Família barely needs an introduction. Gaudí's life work, still pulling in crowds from every corner of the world. We happened to be there on the day it was officially topped out. 144 years in the making, now the tallest church in the world. The mayor and the archbishop both spoke in the square outside, the crowd was enormous, and the whole thing felt genuinely historic. We had no idea it was happening. Just got lucky.
+
+Later, from Park Güell up on the hill, we could see the whole city spread out below. The spires rose well above everything else, unmistakable against the low rooftops.
 
 ![Barcelona](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06713.jpeg)  
 ![Sagrada Familia](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06732.jpeg)
 
 ## Casa Batlló & Casa Milà
 
-巴特罗之家和米拉之家，作为高迪三件套作品，是来巴塞罗那不得不参观的景点，可以从中体验高迪的设计理念。与我而言，并没有多少艺术细胞，小而精致的巴特罗之家更得我心，特别是炫彩夺目的瓷砖拼贴外墙立面，令人驻足。
+Casa Batlló and Casa Milà both are essential Gaudí, the kind of thing you feel obligated to see in Barcelona.
+
+I'll be honest, I'm not really an architecture person, but Casa Batlló's facade stopped me in my tracks. The mosaic tiles are intricate and colorful, almost alive in the sunlight. Casa Milà feels grander and more serious. Different vibes, both worth a visit.
 
 ![Casa Batlló](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06602.jpeg)  
 ![Casa Milà](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06671.jpeg)
 
-旅途中最美妙的事物莫过于温暖和煦的阳光，也是巴塞罗那居民最为自豪。在阳光下漫步在巴萨罗那的街头，惬意自然。期待xia ci
+## Just Walking Around
+
+Some of the best moments on any trip are when you're not really doing anything, just wandering. Barcelona's winter sun is generous in a way that Munich's isn't, and walking around without a plan felt easy and unhurried.
+
+The pigeons at Plaça de Catalunya were something else. Hundreds of them, completely unbothered by people, waddling around like they owned the place. I'd never seen that many birds packed into one square. Ridiculous, in the best way.
+
+![The Winged Solo](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06722.jpeg)  
+![Plaça de Catalunya](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06638.jpeg)
+
+We were barely back before I started looking at flights again. Maybe March, when everything starts waking up. Feels like a good time to go somewhere.
