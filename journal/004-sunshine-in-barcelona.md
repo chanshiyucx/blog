@@ -5,7 +5,7 @@ tags:
   - Journal/Travel
 ---
 
-Our first trip of the new year. We got lucky — slipped out of freezing Munich just before the snow hit and landed in warm, sunny Barcelona. Five days, but plenty to remember.
+Our first trip of the new year. We were lucky to leave freezing Munich just before the snow arrived and step straight into warm sunshine in Barcelona. Five days, but plenty to remember.
 
 ## Sagrada Família
 
