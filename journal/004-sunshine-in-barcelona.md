@@ -9,9 +9,9 @@ Our first trip of the new year. We were lucky to leave freezing Munich just befo
 
 ## Sagrada Família
 
-Sagrada Família barely needs an introduction. Gaudí's life work, still pulling in crowds from every corner of the world. We happened to be there on the day it was officially topped out. 144 years in the making, now the tallest church in the world. The mayor and the archbishop both spoke in the square outside, the crowd was enormous, and the whole thing felt genuinely historic. We had no idea it was happening. Just got lucky.
+Sagrada Família barely needs an introduction. Gaudí's life work, still pulling in crowds from every corner of the world. We happened to be there on the day it was officially topped out. 144 years in the making, now the tallest church in the world. The mayor and the archbishop both spoke in the square outside, the crowd was enormous, and the whole thing felt genuinely historic. Just got lucky.
 
-Later, from Park Güell up on the hill, we could see the whole city spread out below. The spires rose well above everything else, unmistakable against the low rooftops.
+Later, from Park Güell up on the hill, we could see the whole city spread out below. Sagrada Família rose above everything else, unmistakable against the low rooftops.
 
 ![Barcelona](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06713.jpeg)  
 ![Sagrada Familia](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06732.jpeg)
