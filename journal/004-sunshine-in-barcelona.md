@@ -25,7 +25,7 @@ I'll be honest, I'm not really an architecture person, but Casa Batlló's facade
 ![Casa Batlló](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06602.jpeg)  
 ![Casa Milà](https://cx-onedrive.pages.dev/api/raw?path=/Album/20260220-Barcelona/DSC06671.jpeg)
 
-## Just Walking Around
+## Street Walking
 
 Some of the best moments on any trip are when you're not really doing anything, just wandering. Barcelona's winter sun is generous in a way that Munich's isn't, and walking around without a plan felt easy and unhurried.
 
