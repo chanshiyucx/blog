@@ -1,5 +1,5 @@
 ---
-title: Munich Partnachklamm
+title: Germany Partnachklamm
 date: 2025-07-06 21:52:41
 tags:
   - Album

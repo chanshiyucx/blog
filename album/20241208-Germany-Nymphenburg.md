@@ -1,5 +1,5 @@
 ---
-title: Munich Nymphenburg
+title: Germany Nymphenburg
 date: 2024-12-09 22:32:20
 tags:
   - Album

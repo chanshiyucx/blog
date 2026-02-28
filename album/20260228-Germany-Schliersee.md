@@ -1,5 +1,5 @@
 ---
-title: Munich Schliersee
+title: Germany Schliersee
 date: 2026-02-28 18:39:15
 tags:
   - Album

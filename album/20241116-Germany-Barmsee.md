@@ -1,5 +1,5 @@
 ---
-title: Munich Barmsee
+title: Germany Barmsee
 date: 2024-11-16 19:10:34
 tags:
   - Album

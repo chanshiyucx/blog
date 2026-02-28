@@ -1,7 +1,7 @@
 ---
-title:  NeuschwansteinCastle
+title: Germany NeuschwansteinCastle
 date: 2026-01-06 16:55:57
-tags: 
+tags:
   - Album
 ---
 ![White World](https://cx-onedrive.pages.dev/api/raw?path=/Album/20251231-NeuschwansteinCastle/DSC06463.jpeg)  
