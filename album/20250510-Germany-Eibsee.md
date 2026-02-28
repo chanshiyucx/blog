@@ -1,5 +1,5 @@
 ---
-title: Germany Eisee
+title: Germany Eibsee
 date: 2025-05-10 19:38:39
 tags:
   - Album
