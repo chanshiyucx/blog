@@ -1,7 +1,7 @@
 name: sync and rebuild
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '3/10 * * * *'
   workflow_dispatch:
 jobs:
   sync:
