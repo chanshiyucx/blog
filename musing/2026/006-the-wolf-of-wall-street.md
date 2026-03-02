@@ -1,5 +1,5 @@
 ---
-title: the Wolf of Wall Street
+title: The Wolf of Wall Street
 date: 2026-03-02 14:56:45
 tags:
   - Musing/Life
