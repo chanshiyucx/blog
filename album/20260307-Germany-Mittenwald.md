@@ -1,5 +1,5 @@
 ---
-title: Mittenwald
+title: Germany Mittenwald
 date: 2026-03-08 09:37:01
 tags:
   - Album
