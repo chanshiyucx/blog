@@ -2,7 +2,7 @@
 title: Photography
 date: 2026-03-04 16:19:43
 tags:
-  - Musing/Life
+  - Musing/Photography
 ---
 As you can see in my blog bio, I call myself a "Budding Photographer." I have a Sony A6700 that I spent a lot of money on two years ago. Since then, I've been trying to learn how to take better photos, with the goal of becoming a decent amateur photographer.
 
