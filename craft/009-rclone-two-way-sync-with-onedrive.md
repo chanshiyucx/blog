@@ -6,9 +6,9 @@ tags:
 ---
 I wanted to sync a folder from an external hard drive to OneDrive as a backup. But during setup, I realized it's not as straightforward on macOS as I expected.
 
-The OneDrive client on macOS can only sync its own local folder, while the data I want to sync is on an external drive. My first idea was to use a symlink to mount that folder into the OneDrive directory. However, this approach is not supported on macOS (it seems to work on Windows? Microsoft, please support this on Mac).
+The OneDrive client on macOS is limited to a single sync folder, while the folder I want to sync is on an external drive. I tried to use a symlink to mount that folder into the OneDrive directory. However, this approach is not supported on macOS (it seems to work on Windows? Microsoft, please support this on Mac).
 
-After some searching with the help of AI, I found an open-source tool called Rclone. It can bypass the limitations of the OneDrive client and sync any folder directly to the cloud. I'll document the setup process here.
+With the help of AI, I found Rclone. It can bypass the limitations of the OneDrive client and sync any folder directly to the cloud.
 
 ## What bisync does
 
