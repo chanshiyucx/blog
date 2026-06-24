@@ -1,5 +1,5 @@
 ---
-title: Mittenwald Hiking
+title: Mittenwald
 date: 2026-03-09 16:50:30
 tags:
   - Musing/Hiking
