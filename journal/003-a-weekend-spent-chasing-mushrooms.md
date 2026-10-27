@@ -15,9 +15,9 @@ Even though it was my first real trip, my girlfriend had already taught me a few
 
 After about an hour and a half, crossing through two patches of forest, our haul was pretty decent—we managed to fill up a big bag. To catch the return bus, we decided to wrap up and head home.
 
-![Suillus granulatus](https://cloud.shiyu.me/gallery/20240207-Life/IMG_3383.avif)  
-![Rotbrauner Scheidenstreifling](https://cloud.shiyu.me/gallery/20240207-Life/IMG_3377.avif)  
-![Today's Takeaways](https://cloud.shiyu.me/gallery/20240207-Life/IMG_3382.avif)
+![Suillus granulatus](https://cloud.shiyu.me/public/gallery/20240207-Life/IMG_3383.avif)  
+![Rotbrauner Scheidenstreifling](https://cloud.shiyu.me/public/gallery/20240207-Life/IMG_3377.avif)  
+![Today's Takeaways](https://cloud.shiyu.me/public/gallery/20240207-Life/IMG_3382.avif)
 
 Once home, we went through what we'd picked: mostly _Bay bolete_ and _Red-footed bolete_, plus a few _Chanterelles_. That night we cooked up a feast—two stir-fries that turned out delicious. We didn't find the porcini or honey mushrooms we'd hoped for, but with honey mushroom season coming up, we're already excited to try again.
 
