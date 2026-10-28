@@ -59,14 +59,14 @@ Just as we expected, the top was full of Asian faces. We Chinese really do love 
 
 From the start, we wanted to see the sea on this trip. It came down to Sicily or Malta, and we picked Malta. The main reason was that the island is easy to get around. You don't need a car, and you can see most of it in a few days. It was even hotter than Athens. Packing all those warm clothes was a real mistake.
 
-### Day 1
+### Day 1: Valletta
 
 On the first day we went to Valletta, the capital and the cultural heart of the island. The old buildings are made of yellow limestone blocks, and centuries of sea wind have left them worn and weathered. From here you can see the blue coastline and look across the water to the Three Cities.
 
 ![Blue coastline](https://cloud.shiyu.me/public/gallery/20261008-Malta/DSC08824.avif)  
 ![The Three Cities](https://cloud.shiyu.me/public/gallery/20261008-Malta/DSC08813.avif)  
 
-### Day 2
+### Day 2: The Blue Grotto
 
 On day two, we took an hour-long bus ride to the Blue Grotto. Once again, the boats weren't running because the sea was too rough. The higher the hopes, the bigger the letdown. That's the second time we've missed a blue grotto. Last time, in Capri, it was the weather too. A small regret.
 
@@ -75,7 +75,7 @@ We had a lovely seafood lunch, then spent the whole afternoon by the sea, enjoyi
 ![Elephant Trunk Rock](https://cloud.shiyu.me/public/gallery/20261008-Malta/DSC08929.avif)  
 ![Coastline](https://cloud.shiyu.me/public/gallery/20261008-Malta/DSC08934.avif)  
 
-### Day 3
+### Day 3: Candlelight
 
 On the last day we planned to visit Gozo. But we took the bus in the wrong direction and ended up back in Valletta. We didn't feel like spending another hour on a bus, so we just explored the old city again. First, we got tickets for St. John's Co-Cathedral, which we'd skipped on the first day because the queue was too long. We learned about Caravaggio's life and saw his paintings. What a legend.
 
