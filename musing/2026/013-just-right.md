@@ -5,6 +5,6 @@ tags:
   - Musing/Life
 ---
 
-![Theresienwiese](https://cloud.shiyu.me/public/gallery/20240207-Life/IMG_4692.avif)
+![Theresienwiese](https://cloud.shiyu.me/public/gallery/20240207-Munich/IMG_4692.avif)
 
 Took a walk on [Theresienwiese](https://google.com/maps/place/Theresienwiese,+München) on Sunday afternoon. The sun was just right, warm and comfortable. We played and laughed. Moments like this might not come around again.
